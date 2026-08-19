@@ -1,3 +1,5 @@
+import * as fs from "node:fs";
+
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
 import { gamedata } from "#/test/constants";
@@ -34,6 +36,8 @@ describe("equipment icons", () => {
   let overlapping: CliResult;
   let unpacked: CliResult;
   let packed: CliResult;
+  let packedIncomplete: CliResult;
+  let strictIncomplete: CliResult;
 
   beforeAll(() => {
     verified = box.run("verify-equipment-icons", ["--system-ltx", SYSTEM_LTX]);
@@ -61,6 +65,26 @@ describe("equipment icons", () => {
       "--output",
       box.at("repacked.dds"),
     ]);
+
+    // One section left without its icon. By default the sheet is still produced from what is
+    // there; strict refuses instead and names what is missing, which is what a build should gate
+    // on rather than shipping a sheet with a hole in it.
+    box.copyIn(box.at("icons"), "incomplete");
+    fs.rmSync(box.at("incomplete/test_icon_b.dds"));
+
+    packedIncomplete = box.run("pack-equipment-icons", [
+      "--system-ltx",
+      SYSTEM_LTX,
+      "--source",
+      box.at("incomplete"),
+      "--output",
+      box.at("incomplete.dds"),
+    ]);
+    strictIncomplete = box.run(
+      "pack-equipment-icons",
+      ["--system-ltx", SYSTEM_LTX, "--source", box.at("incomplete"), "--output", box.at("strict.dds"), "--strict"],
+      { expectExit: 1 }
+    );
   });
 
   // The committed sections include a pair sharing one slot exactly. Identical rects are legitimate,
@@ -85,6 +109,14 @@ describe("equipment icons", () => {
 
   it("should describe the packed sheet", () => {
     expect(box.run("info-dds", ["--path", box.at("repacked.dds")])).toMatchSnapshot();
+  });
+
+  it("should pack what it has when an icon is missing", () => {
+    expect(packedIncomplete).toMatchSnapshot();
+  });
+
+  it("should refuse a missing icon under strict", () => {
+    expect(strictIncomplete).toMatchSnapshot();
   });
 
   it("should write the expected files", () => {

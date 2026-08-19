@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`archive volumes and packing options should honour an xrCompress configuration 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Pack config: <sandbox>/compress.ltx",
+    "Pack source: <resources>/gamedata/configs",
+    "Pack destination: <sandbox>/configured",
+    "Wrote <sandbox>/configured/cfg.db",
+    "Packed 7 file(s) into 1 volume(s), took <duration>",
+    "Summary: 7 compressed, 0 stored, 0 aliased, 1 skipped",
+    "Size: 0.008 MB source, 0.004 MB written",
+  ],
+}
+`;
+
 exports[`archive volumes and packing options should keep them when the skip list is off 1`] = `
 {
   "exitCode": 0,
@@ -90,8 +106,32 @@ exports[`archive volumes and packing options should unpack a whole volume set 1`
 }
 `;
 
+exports[`archive volumes and packing options should unpack on a single thread 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Unpack source: <sandbox>/configured/cfg.db",
+    "Unpack destination: <sandbox>/serial",
+    "Summary: 1 archive(s), 9 file(s), 0.003 MB compressed, 0.008 MB real",
+    "Unpacking files, parallel 1",
+    "Unpacked archive, took <duration> (preparation <duration>, unpack <duration>)",
+  ],
+}
+`;
+
 exports[`archive volumes and packing options should write the expected files 1`] = `
 [
+  {
+    "path": "compress.ltx",
+    "sha256": "42efa649cb57f4f152ac3ca2329b1b07e247d87f5584153ad3e25327d36e6b63",
+    "size": 55,
+  },
+  {
+    "path": "configured/cfg.db",
+    "sha256": "cb430d8709d9476d434e16447072ac95d52a00ce4aee1da38b3cc67d4c6c945b",
+    "size": 3888,
+  },
   {
     "path": "from-first/gamedata/configs/alife.ltx",
     "sha256": "160920506a492754ff5c45ceb7f4d169e19e002dff25be0cfe03b1cc671b91cd",
@@ -286,6 +326,41 @@ exports[`archive volumes and packing options should write the expected files 1`]
     "path": "kept/a.db",
     "sha256": "e9aff26176d275aceece5ba47272a0b3e24aaa1dcff7e13cedbdf9ea470c12e2",
     "size": 4100,
+  },
+  {
+    "path": "serial/gamedata/alife.ltx",
+    "sha256": "160920506a492754ff5c45ceb7f4d169e19e002dff25be0cfe03b1cc671b91cd",
+    "size": 781,
+  },
+  {
+    "path": "serial/gamedata/defines.ltx",
+    "sha256": "3901c71e698c9be76fd7502c7837f9ee3176c592edcb120156788f1ad1957b7d",
+    "size": 3848,
+  },
+  {
+    "path": "serial/gamedata/evaluation.ltx",
+    "sha256": "13b3971565375db44d091d58246aaf728df84d55f61adcd232f1351b621e81cc",
+    "size": 276,
+  },
+  {
+    "path": "serial/gamedata/fonts.ltx",
+    "sha256": "c68091a9f10ac4545cd0818f9e1a98194898f8fe3483e620328122353e50b93d",
+    "size": 2021,
+  },
+  {
+    "path": "serial/gamedata/game.ltx",
+    "sha256": "c502a7d26aff39902fcd3631e65c37b732a8e85470aff4267cbb04f36a30184b",
+    "size": 218,
+  },
+  {
+    "path": "serial/gamedata/misc/inventory_icons.ltx",
+    "sha256": "5c7b9ae42acbb5e29fe65dc0b14417681fbca966fafac096807a369e30779c2a",
+    "size": 1126,
+  },
+  {
+    "path": "serial/gamedata/system.ltx",
+    "sha256": "b4a4a566d26d645fbb86678c4c16dc9fd8b540b786b191c596801de49ff60da1",
+    "size": 265,
   },
   {
     "path": "skipped/a.db",
