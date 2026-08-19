@@ -3,7 +3,7 @@ import { beforeAll, describe, expect, it } from "@jest/globals";
 import { gamedata } from "#/test/constants";
 import { Sandbox, type CliResult } from "#/test/sandbox";
 
-describe("verify-gamedata", () => {
+describe("verify-gamedata full run", () => {
   const box = new Sandbox(__filename);
 
   let verify: CliResult;

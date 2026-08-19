@@ -56,6 +56,25 @@ export interface ManifestOptions {
 }
 
 /**
+ * Sorts both captured streams so an unordered command can still be compared.
+ *
+ * @remarks
+ * Only for output a command does not order deterministically. `verify-gamedata --checks meshes`
+ * verifies in parallel and logs each finding to stderr as its worker finishes, so the same meshes
+ * are reported in a different order between two runs of one binary. The set is stable and the json
+ * report of the same run is byte-stable, so only the console path is affected.
+ *
+ * todo: sort the meshes findings in the tools repository before logging them, then delete this and
+ * snapshot the output in the order the command prints it.
+ *
+ * @param result - Result whose output is unordered.
+ * @returns The same result with both streams sorted.
+ */
+export function sortedOutput(result: CliResult): CliResult {
+  return { ...result, stdout: [...result.stdout].sort(), stderr: [...result.stderr].sort() };
+}
+
+/**
  * Hashes the exact bytes of a file.
  *
  * @param filePath - Absolute path to read.

@@ -6,14 +6,13 @@ import { Sandbox, sha, type CliResult } from "#/test/sandbox";
 const DESCRIPTION = gamedata("configs/ui/textures_descr/ui_test_sheet.xml");
 const SHEET = gamedata("textures/ui/ui_test_sheet.dds");
 
-describe("texture description pack and unpack", () => {
+describe("texture description roundtrip", () => {
   const box = new Sandbox(__filename);
 
   let unpack: CliResult;
   let pack: CliResult;
   let missingOutput: CliResult;
-  let selected: CliResult;
-  let unknownFile: CliResult;
+  let info: CliResult;
 
   beforeAll(() => {
     // The description names four 64x64 regions of a 256x64 sheet, so unpacking yields four files
@@ -46,36 +45,7 @@ describe("texture description pack and unpack", () => {
       box.at("packed"),
     ]);
 
-    // Naming a described file limits the run to it, and doing the work in parallel must not change
-    // what comes out.
-    selected = box.run("unpack-texture-description", [
-      "--description",
-      DESCRIPTION,
-      "--base",
-      gamedata("textures"),
-      "--output",
-      box.at("selected"),
-      "--file",
-      "ui_test_sheet",
-      "--parallel",
-    ]);
-
-    // A name the description does not carry is refused with the names it does, rather than
-    // producing an empty run that looks like success.
-    unknownFile = box.run(
-      "unpack-texture-description",
-      [
-        "--description",
-        DESCRIPTION,
-        "--base",
-        gamedata("textures"),
-        "--output",
-        box.at("unknown"),
-        "--file",
-        "no_such_file",
-      ],
-      { expectExit: 1 }
-    );
+    info = box.run("info-dds", ["--path", box.at("packed/ui/ui_test_sheet.dds")]);
   });
 
   it("should unpack every described region", () => {
@@ -99,23 +69,7 @@ describe("texture description pack and unpack", () => {
   });
 
   it("should describe the repacked sheet the same way", () => {
-    expect(box.run("info-dds", ["--path", box.at("packed/ui/ui_test_sheet.dds")])).toMatchSnapshot();
-  });
-
-  it("should unpack only the named file, in parallel", () => {
-    expect(selected).toMatchSnapshot();
-  });
-
-  it("should refuse a name the description does not carry", () => {
-    expect(unknownFile).toMatchSnapshot();
-  });
-
-  // Selecting the only described file and unpacking everything have to agree, or --file changes
-  // more than which files are considered.
-  it("should produce the same regions whether selected or not", () => {
-    expect(box.sha("selected/ui/ui_test_sheet/ui_test_left.dds")).toBe(
-      box.sha("unpacked/ui/ui_test_sheet/ui_test_left.dds")
-    );
+    expect(info).toMatchSnapshot();
   });
 
   it("should write the expected files", () => {

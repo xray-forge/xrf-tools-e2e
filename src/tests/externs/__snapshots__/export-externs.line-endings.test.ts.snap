@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`export-externs line endings should honour an explicit line ending 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Exported 3 externs to '<sandbox>/crlf.json'.",
+  ],
+}
+`;
+
+exports[`export-externs line endings should write the expected files 1`] = `
+[
+  {
+    "path": "crlf.json",
+    "sha256": "c798387584a950eabc2e40279908f8159961da5fa7b936874a3643cdf66d3d20",
+    "size": 846,
+  },
+  {
+    "path": "lf.json",
+    "sha256": "ab50080082a1c1c67a212ec2f30b9ea7efc3f45962b462e454660071d46e3fdc",
+    "size": 806,
+  },
+]
+`;

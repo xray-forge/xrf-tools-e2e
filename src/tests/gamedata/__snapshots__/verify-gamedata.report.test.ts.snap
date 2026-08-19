@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`verify-gamedata should answer non-zero and say nothing 1`] = `
+exports[`verify-gamedata full run should answer non-zero and say nothing 1`] = `
 {
   "exitCode": 1,
   "stderr": [],
@@ -8,7 +8,7 @@ exports[`verify-gamedata should answer non-zero and say nothing 1`] = `
 }
 `;
 
-exports[`verify-gamedata should write a findings report 1`] = `
+exports[`verify-gamedata full run should write a findings report 1`] = `
 [
   {
     "path": "report.json",
