@@ -11,6 +11,7 @@ describe("verify-gamedata check selection", () => {
   let ltx: CliResult;
   let scripts: CliResult;
   let meshes: CliResult;
+  let several: CliResult;
 
   beforeAll(() => {
     // The configs are in vanilla rather than formatter shape, so the ltx check has findings and
@@ -22,6 +23,10 @@ describe("verify-gamedata check selection", () => {
     scripts = box.run("verify-gamedata", [GAMEDATA, "--checks", "scripts"]);
 
     meshes = box.run("verify-gamedata", [GAMEDATA, "--checks", "meshes"], { expectExit: 1 });
+
+    // Several checks after one flag, which is how a caller narrows a run to the part of the tree
+    // they touched rather than running all thirteen.
+    several = box.run("verify-gamedata", [GAMEDATA, "--checks", "ltx", "scripts"], { expectExit: 1 });
   });
 
   it("should report findings from one named check", () => {
@@ -35,6 +40,10 @@ describe("verify-gamedata check selection", () => {
   // Sorted because the meshes check does not order its findings; see sortedOutput.
   it("should verify meshes", () => {
     expect(sortedOutput(meshes)).toMatchSnapshot();
+  });
+
+  it("should run several named checks at once", () => {
+    expect(several).toMatchSnapshot();
   });
 
   it("should write nothing", () => {

@@ -22,6 +22,33 @@ exports[`filter-omf-motions should keep motions by prefix 1`] = `
 }
 `;
 
+exports[`filter-omf-motions should keep several named motions at once 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Filtered omf motions <resources>/gamedata/meshes/omf/wpn_svd_hud_animation.omf, 2/3 kept",
+    "Filtered omf file written into <sandbox>/kept-two.omf",
+  ],
+}
+`;
+
+exports[`filter-omf-motions should read back every kept motion 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read omf file <sandbox>/kept-two.omf",
+    "Omf file information",
+    "Version: 4",
+    "Motions: 2 idle,svd_shoot",
+    "Bones total: 7",
+    "Parts: default",
+    "Part 'default' bones: wpn_body,body,trigger,wpn_scope,zatvor,lock,magazin",
+  ],
+}
+`;
+
 exports[`filter-omf-motions should read back only the kept motions 1`] = `
 {
   "exitCode": 0,
@@ -60,6 +87,11 @@ exports[`filter-omf-motions should write the expected files 1`] = `
     "path": "kept-svd.omf",
     "sha256": "e4d8b2326e0d3455d5e4efa81447008b453d3355b8fc0e8c05636e6838ec65dd",
     "size": 3158,
+  },
+  {
+    "path": "kept-two.omf",
+    "sha256": "9486d595a166652219c0e9feabcef44ac971e236a8066cd21b6c2f2ab280ad1e",
+    "size": 724,
   },
 ]
 `;

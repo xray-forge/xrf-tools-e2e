@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`verifiers meet damaged input should refuse a damaged particle container 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "[<timestamp> ERROR xrf_cli::commands::particle::verify_particles] Provided particle file is invalid: Invalid error: Chunk 0x00000003 at position 18 declares 1088704 bytes, beyond source end 500",
+    "Execution of command 'verify-particles' failed, error: Parsing error: Verification of particle file failed: Invalid error: Chunk 0x00000003 at position 18 declares 1088704 bytes, beyond source end 500",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`verifiers meet damaged input should refuse a damaged spawn 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "[<timestamp> ERROR xrf_cli::commands::spawn::verify_spawn] Provided spawn file is invalid: Invalid error: Chunk 0x00000001 at position 60 declares 66313 bytes, beyond source end 400",
+    "Execution of command 'verify-spawn' failed, error: Parsing error: Verification of spawn file failed: Invalid error: Chunk 0x00000001 at position 60 declares 66313 bytes, beyond source end 400",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`verifiers meet damaged input should refuse an unparseable icon configuration 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Execution of command 'verify-equipment-icons' failed, error: Ltx parse error: 2:1 Failed to parse section statement without closing bracket ']'",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`verifiers meet damaged input should report a damaged visual as a failed verification 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Verification failed, status: failed",
+  ],
+  "stdout": [
+    "Verifying ogf visuals in <sandbox>/bad.ogf",
+    "Swept 1 visuals in <duration>",
+    "Submeshes: 0 total, 0 packed, 0 unsupported, 0 malformed",
+    "Progressive submeshes: 0, of which 0 draw only part of their index buffer",
+    "Unreadable files: 1, files with nothing drawable: 0, bounds disagreements: 0",
+    "Texture references: 0 total, 0 resolved, 0 missing, 0 unreadable, 0 visuals with no root",
+    "Distinct textures: 0, of which 0 carry no mip chain",
+    "Header versions:",
+    "Root model types:",
+    "Submesh model types:",
+    "Vertex formats:",
+    "Texture formats:",
+    "Texture sizes:",
+    "Check 'read' is failed with 1 findings",
+  ],
+}
+`;
+
+exports[`verifiers meet damaged input should write nothing beyond the damaged inputs 1`] = `
+[
+  {
+    "path": "bad.ogf",
+    "sha256": "83adb76e4da181bc4040dd586f341f348976100451f0d5f82ddd6c8dca713780",
+    "size": 200,
+  },
+  {
+    "path": "bad.spawn",
+    "sha256": "9c376d5246bfd135df1478a08f993fd12ad24ed991a959d71573671ce6c33c22",
+    "size": 400,
+  },
+  {
+    "path": "bad.xr",
+    "sha256": "47bf2c694e97c13ff1ac3a2fe9e165504c6fb4a4bfd04bcef3c56aad853b0ba8",
+    "size": 500,
+  },
+  {
+    "path": "broken.ltx",
+    "sha256": "68fca290b625ab4e3516266e4d41abb093be37b1f029f738346f2b96f3c67541",
+    "size": 37,
+  },
+]
+`;

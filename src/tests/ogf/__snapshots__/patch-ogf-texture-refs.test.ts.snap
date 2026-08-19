@@ -58,8 +58,24 @@ exports[`patch-ogf-texture-refs should report a dry run without writing 1`] = `
 }
 `;
 
+exports[`patch-ogf-texture-refs should rewrite in place when given no destination 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Patch ogf texture refs <sandbox>/in-place.ogf, 'wpn\\wpn_bolt' -> 'wpn\\wpn_bolt_renamed', existing ["wpn\\\\wpn_bolt"]",
+    "Renamed 1 ogf texture references, written into <sandbox>/in-place.ogf",
+  ],
+}
+`;
+
 exports[`patch-ogf-texture-refs should write the expected files 1`] = `
 [
+  {
+    "path": "in-place.ogf",
+    "sha256": "a5146eb6c1a2617462bd6f7d43b99348c1bea45f3f2c55cacf2c0cdd829ac482",
+    "size": 13849,
+  },
   {
     "path": "renamed.ogf",
     "sha256": "a5146eb6c1a2617462bd6f7d43b99348c1bea45f3f2c55cacf2c0cdd829ac482",

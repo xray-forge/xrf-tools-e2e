@@ -36,6 +36,16 @@ exports[`duplicate-omf-motion should read back the duplicated motion 1`] = `
 }
 `;
 
+exports[`duplicate-omf-motion should rewrite in place when given no destination 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Copied motion 'idle' to 'idle_copy', written into <sandbox>/in-place.omf",
+  ],
+}
+`;
+
 exports[`duplicate-omf-motion should write the expected files 1`] = `
 [
   {
@@ -45,6 +55,11 @@ exports[`duplicate-omf-motion should write the expected files 1`] = `
   },
   {
     "path": "duplicated.omf",
+    "sha256": "d73bc7e8ed9dda81ef4827ef46b48e465b7dc4af8f0c93c0537da66d3d386c82",
+    "size": 3562,
+  },
+  {
+    "path": "in-place.omf",
     "sha256": "d73bc7e8ed9dda81ef4827ef46b48e465b7dc4af8f0c93c0537da66d3d386c82",
     "size": 3562,
   },
