@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`repack-spawn should repack in one step 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [],
+}
+`;
+
+exports[`repack-spawn should report the second pass the same way 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [],
+}
+`;
+
+exports[`repack-spawn should write the expected files 1`] = `
+[
+  {
+    "path": "repacked.spawn",
+    "sha256": "a976f8f3741e4f6befcc246b49bfe9477b97b6514b89a12c932fc366fe4c1002",
+    "size": 1051254,
+  },
+  {
+    "path": "twice.spawn",
+    "sha256": "a976f8f3741e4f6befcc246b49bfe9477b97b6514b89a12c932fc366fe4c1002",
+    "size": 1051254,
+  },
+]
+`;
