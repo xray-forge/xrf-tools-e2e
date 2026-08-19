@@ -6,8 +6,8 @@ exports[`verify-ltx should report section and field coverage 1`] = `
   "stderr": [],
   "stdout": [
     "Verify path: <resources>/gamedata/configs",
-    "Checked 6 files, 27 sections in <duration>",
-    "Verified 0.00%, 1 files, 0 sections, 0 fields",
+    "Checked 7 files, 32 sections in <duration>",
+    "Verified 0.00%, 2 files, 0 sections, 0 fields",
     "Found 0 error(s)",
   ],
 }

@@ -1,0 +1,8 @@
+<w>
+    <file name="ui\ui_test_sheet">
+        <texture id="ui_test_left" x="0" y="0" width="64" height="64" />
+        <texture id="ui_test_mid" x="64" y="0" width="64" height="64" />
+        <texture id="ui_test_right" x="128" y="0" width="64" height="64" />
+        <texture id="ui_test_end" x="192" y="0" width="64" height="64" />
+    </file>
+</w>

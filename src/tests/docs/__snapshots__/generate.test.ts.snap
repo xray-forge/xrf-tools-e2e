@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`generate-docs should accept pages it just wrote 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "CLI documentation in <sandbox>/docs is up to date (14 pages)",
+  ],
+}
+`;
+
+exports[`generate-docs should generate a page per command group 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Generated 14 documentation pages in <sandbox>/docs",
+  ],
+}
+`;
+
+exports[`generate-docs should reject pages that drifted 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Execution of command 'generate-docs' failed, error: CLI documentation in <sandbox>/drifted is stale, regenerate it with 'xrf-cli generate-docs':",
+    "outdated: README.md",
+    "missing: archive.md",
+    "missing: assets.md",
+    "missing: docs.md",
+    "missing: externs.md",
+    "missing: gamedata.md",
+    "missing: ltx.md",
+    "missing: ogf.md",
+    "missing: omf.md",
+    "missing: particles.md",
+    "missing: spawn.md",
+    "missing: textures.md",
+    "missing: thm.md",
+    "missing: translations.md",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`generate-docs should write the expected pages 1`] = `
+[
+  {
+    "path": "docs/README.md",
+    "sha256": "531cb2bf9b458aeac1f61879599c4ed96d7a786930faee37996423246de6a640",
+    "size": 2605,
+  },
+  {
+    "path": "docs/archive.md",
+    "sha256": "13db2979a079d84199b130133d20a2f2eeae514aff57d86df56963e7ead2fd95",
+    "size": 1715,
+  },
+  {
+    "path": "docs/assets.md",
+    "sha256": "0531c4e2b163ba0b22784219504d0dd7c30949a60ee2f0a6251f065fc0c7b1a2",
+    "size": 751,
+  },
+  {
+    "path": "docs/docs.md",
+    "sha256": "1a6dab8d43830ac867aa1c64ffdebc659098b3eb7cdeea33ec18c4340944c2ed",
+    "size": 613,
+  },
+  {
+    "path": "docs/externs.md",
+    "sha256": "951459c2a075b5b1a35e421f7d34195a92f7b7e91ec09d5a4655e53daed2f836",
+    "size": 926,
+  },
+  {
+    "path": "docs/gamedata.md",
+    "sha256": "0b23ea4808df78e57565c3fffa97b92943c97d233bc94250aa2631e7de3ba0dd",
+    "size": 815,
+  },
+  {
+    "path": "docs/ltx.md",
+    "sha256": "f33b64a043c7ce97a0f7f318e692c511f4400b8945a3e53ed65cdc5a1d63ed62",
+    "size": 958,
+  },
+  {
+    "path": "docs/ogf.md",
+    "sha256": "f20b1e8493e752ae88adb9377fcba52c53dc6b61398eab620632e4fb5e91e0f1",
+    "size": 2397,
+  },
+  {
+    "path": "docs/omf.md",
+    "sha256": "2bc6678e6854d73abb5b9be34f02739a10cb31876d3d365946c62d27c5a3103e",
+    "size": 3252,
+  },
+  {
+    "path": "docs/particles.md",
+    "sha256": "2a3823119bf3dc11f9f8f1708f09a86deeb8950c14f79a2aae482fc716bfd745",
+    "size": 2569,
+  },
+  {
+    "path": "docs/spawn.md",
+    "sha256": "a36cc20acd0a9741cb66e2a459b017ac5f42aa7921a83ff32fb45bb99f4623f2",
+    "size": 2393,
+  },
+  {
+    "path": "docs/textures.md",
+    "sha256": "0ee90d3fdf2fcba10e2c359a5aae4a276720f2a9b19ed707dda6b848e276ee2d",
+    "size": 4927,
+  },
+  {
+    "path": "docs/thm.md",
+    "sha256": "9f5c88e61abad75a431045030442e22c360c7de8e8b832bfc41505e6aba122e7",
+    "size": 946,
+  },
+  {
+    "path": "docs/translations.md",
+    "sha256": "56db77af1d7e74d1e0f1024660709fcbf9bb294fe9554ba58a1bd8b66ab32e7d",
+    "size": 2040,
+  },
+  {
+    "path": "drifted/README.md",
+    "sha256": "35db1bffa5ee9c9e44e31d2688bf494f0087c6e21f4d2e39393914acd793cae4",
+    "size": 25,
+  },
+]
+`;
