@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`export-externs formats should export html 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Exported 3 externs to '<sandbox>/externs.html'.",
+  ],
+}
+`;
+
+exports[`export-externs formats should export json 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Exported 3 externs to '<sandbox>/externs.json'.",
+  ],
+}
+`;
+
+exports[`export-externs formats should export xml 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Exported 3 externs to '<sandbox>/externs.xml'.",
+  ],
+}
+`;
+
+exports[`export-externs formats should write the expected files 1`] = `
+[
+  {
+    "path": "externs.html",
+    "sha256": "ae286bbbbd200f0dbd1eef72a086fad2126cc66438b152ca4ce8a780f88e238f",
+    "size": 1534,
+  },
+  {
+    "path": "externs.json",
+    "sha256": "cd73d87ff5474dcd2b790a191c1373a8cb5dfb7701b67acb9b5deebd8d872ce0",
+    "size": 805,
+  },
+  {
+    "path": "externs.xml",
+    "sha256": "9a979393cffce8fe234027f67300abcc974b7f3ef2c8b812fc520d622e7d3595",
+    "size": 894,
+  },
+]
+`;

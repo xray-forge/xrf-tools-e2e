@@ -1,0 +1,55 @@
+import { beforeAll, describe, expect, it } from "@jest/globals";
+
+import { gamedata } from "#/test/constants";
+import { Sandbox, type CliResult } from "#/test/sandbox";
+
+const SYSTEM_LTX = gamedata("configs/system.ltx");
+const SHEET = gamedata("textures/ui/ui_test_sheet.dds");
+
+describe("equipment icons roundtrip", () => {
+  const box = new Sandbox(__filename);
+
+  let unpacked: CliResult;
+  let packed: CliResult;
+  let info: CliResult;
+
+  beforeAll(() => {
+    unpacked = box.run("unpack-equipment-icons", [
+      "--system-ltx",
+      SYSTEM_LTX,
+      "--source",
+      SHEET,
+      "--output",
+      box.at("icons"),
+    ]);
+
+    packed = box.run("pack-equipment-icons", [
+      "--system-ltx",
+      SYSTEM_LTX,
+      "--source",
+      box.at("icons"),
+      "--output",
+      box.at("repacked.dds"),
+    ]);
+
+    info = box.run("info-dds", ["--path", box.at("repacked.dds")]);
+  });
+
+  // Only the opted-in sections are cut, so the section carrying $inventory_icon = false produces no
+  // file even though its grid fields are complete.
+  it("should unpack only the opted-in icons", () => {
+    expect(unpacked).toMatchSnapshot();
+  });
+
+  it("should pack the icons back into a sheet", () => {
+    expect(packed).toMatchSnapshot();
+  });
+
+  it("should describe the packed sheet", () => {
+    expect(info).toMatchSnapshot();
+  });
+
+  it("should write the expected files", () => {
+    expect(box.manifest()).toMatchSnapshot();
+  });
+});

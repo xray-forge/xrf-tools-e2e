@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`verify-equipment-icons should accept a grid whose only sharing is identical 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Inventory icon grid is clean, no overlapping rects",
+  ],
+}
+`;
+
+exports[`verify-equipment-icons should reject a partial overlap 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Overlapping icon rects at 1:1, 1 cell(s) shared by 'icon_a' and 'icon_b'",
+    "Found 1 overlapping icon rect pair(s)",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`verify-equipment-icons should write the expected files 1`] = `
+[
+  {
+    "path": "overlapping.ltx",
+    "sha256": "38cfcc53a56d236092b57dd927a869489ec20a14a2b76c79eb5b5cde2034fd7d",
+    "size": 203,
+  },
+]
+`;

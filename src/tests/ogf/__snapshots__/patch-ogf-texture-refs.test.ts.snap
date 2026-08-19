@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`ogf reference patching should read back the renamed texture reference 1`] = `
+exports[`patch-ogf-texture-refs should read back the renamed texture reference 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Read ogf file <sandbox>/texture-refs.ogf",
+    "Read ogf file <sandbox>/renamed.ogf",
     "Ogf file information",
     "Version: 4, model_type: 3, shader_id: 0, OgfBox { min: Vector3d { x: -0.016617509, y: -0.043978497, z: -0.016535774 }, max: Vector3d { x: 0.016760565, y: 0.03416283, z: 0.016411088 } } - OgfSphere { position: Vector3d { x: 7.152837e-5, y: -0.0049078334, z: -6.234273e-5 }, radius: 0.045567695 }",
     "Boundaries box: OgfBox { min: Vector3d { x: -0.016617509, y: -0.043978497, z: -0.016535774 }, max: Vector3d { x: 0.016760565, y: 0.03416283, z: 0.016411088 } }",
@@ -24,7 +24,7 @@ exports[`ogf reference patching should read back the renamed texture reference 1
 }
 `;
 
-exports[`ogf reference patching should refuse a reference the visual does not carry 1`] = `
+exports[`patch-ogf-texture-refs should refuse a reference the visual does not carry 1`] = `
 {
   "exitCode": 1,
   "stderr": [
@@ -36,29 +36,18 @@ exports[`ogf reference patching should refuse a reference the visual does not ca
 }
 `;
 
-exports[`ogf reference patching should rename a texture ref 1`] = `
+exports[`patch-ogf-texture-refs should rename a texture ref 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
   "stdout": [
     "Patch ogf texture refs <resources>/gamedata/meshes/ogf/dev_bolt_hud.ogf, 'wpn\\wpn_bolt' -> 'wpn\\wpn_bolt_renamed', existing ["wpn\\\\wpn_bolt"]",
-    "Renamed 1 ogf texture references, written into <sandbox>/texture-refs.ogf",
+    "Renamed 1 ogf texture references, written into <sandbox>/renamed.ogf",
   ],
 }
 `;
 
-exports[`ogf reference patching should report a motion ref dry run without writing 1`] = `
-{
-  "exitCode": 0,
-  "stderr": [],
-  "stdout": [
-    "Patch ogf motion refs <resources>/gamedata/meshes/ogf/dev_bolt_hud.ogf, ["dynamics\\\\devices\\\\dev_bolt\\\\dev_bolt_hud_animation"] -> ["dynamics\\\\devices\\\\dev_bolt\\\\dev_bolt_hud_animation"]",
-    "Dry run, nothing written, <sandbox>/never-written.ogf would receive 13841 bytes instead of 13841",
-  ],
-}
-`;
-
-exports[`ogf reference patching should report a texture ref dry run without writing 1`] = `
+exports[`patch-ogf-texture-refs should report a dry run without writing 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -69,26 +58,10 @@ exports[`ogf reference patching should report a texture ref dry run without writ
 }
 `;
 
-exports[`ogf reference patching should store motion refs 1`] = `
-{
-  "exitCode": 0,
-  "stderr": [],
-  "stdout": [
-    "Patch ogf motion refs <resources>/gamedata/meshes/ogf/dev_bolt_hud.ogf, ["dynamics\\\\devices\\\\dev_bolt\\\\dev_bolt_hud_animation"] -> ["dynamics\\\\devices\\\\dev_bolt\\\\dev_bolt_hud_animation"]",
-    "Ogf motion refs written into <sandbox>/motion-refs.ogf",
-  ],
-}
-`;
-
-exports[`ogf reference patching should write the expected files 1`] = `
+exports[`patch-ogf-texture-refs should write the expected files 1`] = `
 [
   {
-    "path": "motion-refs.ogf",
-    "sha256": "5d0f5f542199b99ccef02648b12a189b0bb8d6b17adb4223712c72f2303b50a1",
-    "size": 13841,
-  },
-  {
-    "path": "texture-refs.ogf",
+    "path": "renamed.ogf",
     "sha256": "a5146eb6c1a2617462bd6f7d43b99348c1bea45f3f2c55cacf2c0cdd829ac482",
     "size": 13849,
   },
