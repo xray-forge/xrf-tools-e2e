@@ -166,6 +166,28 @@ export class Sandbox {
   }
 
   /**
+   * Stages a deliberately truncated copy of a committed asset.
+   *
+   * @remarks
+   * For the readers, whose contract includes refusing damaged input rather than reporting nonsense
+   * from a half-parsed file. Cutting a real asset short is closer to what a failed download or a
+   * bad export produces than a file of random bytes would be.
+   *
+   * @param from - Absolute source path.
+   * @param to - Sandbox-relative destination.
+   * @param bytes - How many leading bytes to keep.
+   * @returns Absolute destination path.
+   */
+  public copyTruncated(from: string, to: string, bytes: number): string {
+    const destination: string = this.at(to);
+
+    fs.mkdirSync(path.dirname(destination), { recursive: true });
+    fs.writeFileSync(destination, fs.readFileSync(from).subarray(0, bytes));
+
+    return destination;
+  }
+
+  /**
    * Hashes a file inside this sandbox.
    *
    * @param relative - Sandbox-relative path.
