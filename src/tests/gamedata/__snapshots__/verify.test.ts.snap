@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`verify-gamedata should answer non-zero and say nothing 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [],
+  "stdout": [],
+}
+`;
+
+exports[`verify-gamedata should write a findings report 1`] = `
+[
+  {
+    "path": "report.json",
+    "sha256": "9bd4d7aa6dccce1626dd68d6bb83c84a1cde042035a02777a9d4e1b0c0b6fdf3",
+    "size": 227385,
+  },
+]
+`;

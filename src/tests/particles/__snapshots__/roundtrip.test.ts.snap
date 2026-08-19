@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`particles roundtrip should pack back into a container 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [],
+}
+`;
+
+exports[`particles roundtrip should report effect and group counts 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read particle file <resources>/gamedata/particles.xr",
+    "Particles file information:",
+    "Version: 1",
+    "Effects count: 921",
+    "Groups count: 350",
+  ],
+}
+`;
+
+exports[`particles roundtrip should unpack to ltx files 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [],
+}
+`;
+
+exports[`particles roundtrip should verify the packed container 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [],
+}
+`;
+
+exports[`particles roundtrip should verify the unpacked form 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [],
+}
+`;
+
+exports[`particles roundtrip should write the expected files 1`] = `
+[
+  {
+    "path": "repacked.xr",
+    "sha256": "4b78a17cd22fea8dc7ebad99ae423079bc9933157d68a37e6d48eed2e0b3c0ae",
+    "size": 1184775,
+  },
+  {
+    "path": "unpacked-again/effects.ltx",
+    "sha256": "883cd5b870743a27eec4c352b748e01eca0c17a62bc9da2d819079915658d400",
+    "size": 3251974,
+  },
+  {
+    "path": "unpacked-again/groups.ltx",
+    "sha256": "b9a39fb60d5fbc5e3e8afa0e580d3e3b13eecfb6a492c243b76ce32679feaa0a",
+    "size": 310075,
+  },
+  {
+    "path": "unpacked-again/header.ltx",
+    "sha256": "40a40cc067c5ae41dec907d61c4abf415bfe05aff3908ca9920aeb4b9768a08c",
+    "size": 49,
+  },
+  {
+    "path": "unpacked/effects.ltx",
+    "sha256": "883cd5b870743a27eec4c352b748e01eca0c17a62bc9da2d819079915658d400",
+    "size": 3251974,
+  },
+  {
+    "path": "unpacked/groups.ltx",
+    "sha256": "b9a39fb60d5fbc5e3e8afa0e580d3e3b13eecfb6a492c243b76ce32679feaa0a",
+    "size": 310075,
+  },
+  {
+    "path": "unpacked/header.ltx",
+    "sha256": "40a40cc067c5ae41dec907d61c4abf415bfe05aff3908ca9920aeb4b9768a08c",
+    "size": 49,
+  },
+]
+`;

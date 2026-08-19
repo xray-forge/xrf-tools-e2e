@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`format-ltx roundtrip should accept what it just wrote 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Checking 6 ltx file(s) from 1 provided path(s)",
+    "Checking 6 file(s)",
+    "All 6 files are formatted, checked in <duration>",
+  ],
+}
+`;
+
+exports[`format-ltx roundtrip should not change what the files mean 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Verify path: <sandbox>/configs",
+    "Checked 6 files, 27 sections in <duration>",
+    "Verified 0.00%, 1 files, 0 sections, 0 fields",
+    "Found 0 error(s)",
+  ],
+}
+`;
+
+exports[`format-ltx roundtrip should reject unformatted configs 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Format issues with 6/6 files in <duration>",
+    "Execution of command 'format-ltx' failed, error: Verify error: Project includes LTX files with invalid format",
+  ],
+  "stdout": [
+    "Checking 6 ltx file(s) from 1 provided path(s)",
+    "Checking 6 file(s)",
+    "Not formatted: <sandbox>/configs/alife.ltx",
+    "Not formatted: <sandbox>/configs/defines.ltx",
+    "Not formatted: <sandbox>/configs/evaluation.ltx",
+    "Not formatted: <sandbox>/configs/fonts.ltx",
+    "Not formatted: <sandbox>/configs/game.ltx",
+    "Not formatted: <sandbox>/configs/system.ltx",
+  ],
+}
+`;
+
+exports[`format-ltx roundtrip should rewrite them 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Formatting 6 ltx file(s) from 1 provided path(s)",
+    "Formatting 6 file(s)",
+    "Formatted: <sandbox>/configs/alife.ltx",
+    "Formatted: <sandbox>/configs/defines.ltx",
+    "Formatted: <sandbox>/configs/evaluation.ltx",
+    "Formatted: <sandbox>/configs/fonts.ltx",
+    "Formatted: <sandbox>/configs/game.ltx",
+    "Formatted: <sandbox>/configs/system.ltx",
+    "Formatted 6/6 files in <duration>",
+  ],
+}
+`;
+
+exports[`format-ltx roundtrip should write the formatted bytes 1`] = `
+[
+  {
+    "path": "configs/alife.ltx",
+    "sha256": "2c048ae4da7d986618a41ff5ed448da832bbf14168c86bcc43bf4e8b25ef3f41",
+    "size": 769,
+  },
+  {
+    "path": "configs/defines.ltx",
+    "sha256": "f36ed4c9ad846e6d45a01a30a2a0344d9a63623e48617b33de1522fe54003fc4",
+    "size": 4292,
+  },
+  {
+    "path": "configs/evaluation.ltx",
+    "sha256": "b783243013f3b4febbed4c7ca2b2dfcd1381451ae86ec3d8955408627d59b4bc",
+    "size": 283,
+  },
+  {
+    "path": "configs/fonts.ltx",
+    "sha256": "76af4dc2e8cc8b7281cae34f7a8e2f9ac5afc76edb2458c204d91efe3383755e",
+    "size": 1937,
+  },
+  {
+    "path": "configs/game.ltx",
+    "sha256": "5a019bb20e09a36d79616ff1d1c5815a15eadc9fc01a9778a3c4e895bcc823f6",
+    "size": 220,
+  },
+  {
+    "path": "configs/system.ltx",
+    "sha256": "947057ee249eafe72597a0adecda719dfaea62ab9433b7f113872a991e16d977",
+    "size": 247,
+  },
+]
+`;

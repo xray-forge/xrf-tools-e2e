@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Scenario sandboxes, wiped and rewritten on every run.
+target/
+
+# Editor and OS state
+/.idea/
+.DS_Store
+
+# Logs
+*.log
