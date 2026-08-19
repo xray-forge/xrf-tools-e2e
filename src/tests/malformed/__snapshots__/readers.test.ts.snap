@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`readers reject damaged input should refuse a path that does not exist 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Execution of command 'info-ogf' failed, error: Not found error: OGF file was not read: <sandbox>/does-not-exist.ogf, error: The system cannot find the file specified. (os error 2)",
+  ],
+  "stdout": [
+    "Read ogf file <sandbox>/does-not-exist.ogf",
+  ],
+}
+`;
+
+exports[`readers reject damaged input should refuse a truncated animation container 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Execution of command 'info-omf' failed, error: Invalid error: Chunk 0x0000000e at position 8 declares 3133 bytes, beyond source end 100",
+  ],
+  "stdout": [
+    "Read omf file <sandbox>/bad.omf",
+  ],
+}
+`;
+
+exports[`readers reject damaged input should refuse a truncated particle container 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Execution of command 'info-particles' failed, error: Invalid error: Chunk 0x00000003 at position 18 declares 1088704 bytes, beyond source end 500",
+  ],
+  "stdout": [
+    "Read particle file <sandbox>/bad.xr",
+  ],
+}
+`;
+
+exports[`readers reject damaged input should refuse a truncated spawn 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Execution of command 'info-spawn' failed, error: Invalid error: Chunk 0x00000001 at position 60 declares 66313 bytes, beyond source end 400",
+  ],
+  "stdout": [
+    "Read spawn file <sandbox>/bad.spawn",
+  ],
+}
+`;
+
+exports[`readers reject damaged input should refuse a truncated texture 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Execution of command 'info-dds' failed, error: Texture processing error: Failed to read texture by path <sandbox>/bad.dds, error: failed to fill whole buffer",
+  ],
+  "stdout": [
+    "Read dds file <sandbox>/bad.dds",
+  ],
+}
+`;
+
+exports[`readers reject damaged input should refuse a truncated visual 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Execution of command 'info-ogf' failed, error: Invalid error: Chunk 0x00000012 at position 60 declares 141 bytes, beyond source end 200",
+  ],
+  "stdout": [
+    "Read ogf file <sandbox>/bad.ogf",
+  ],
+}
+`;
+
+exports[`readers reject damaged input should refuse an empty file 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Execution of command 'info-ogf' failed, error: Invalid error: Failed to create chunk from empty source",
+  ],
+  "stdout": [
+    "Read ogf file <sandbox>/empty.ogf",
+  ],
+}
+`;
+
+exports[`readers reject damaged input should refuse an unparseable ltx 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Verify error: Cannot read <sandbox>/configs/broken.ltx: Ltx parse error: 2:1 Failed to parse section statement without closing bracket ']'",
+    "Execution of command 'verify-ltx' failed, error: Verify error: Failed to verify ltx files, got 1 errors",
+  ],
+  "stdout": [
+    "Verify path: <sandbox>/configs",
+    "Checked 1 files, 0 sections in <duration>",
+    "Verified NaN%, 1 files, 0 sections, 0 fields",
+    "Found 1 error(s)",
+  ],
+}
+`;
+
+exports[`readers reject damaged input should refuse an unparseable translation source 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Execution of command 'verify-translation' failed, error: Parsing error: Failed to parse translation JSON '<sandbox>/translations/broken.json': expected value at line 1 column 20",
+  ],
+  "stdout": [
+    "Verifying translation <sandbox>/translations, language - all",
+    "Verifying dir <sandbox>/translations",
+  ],
+}
+`;
+
+exports[`readers reject damaged input should write nothing beyond the damaged inputs 1`] = `
+[
+  {
+    "path": "bad.dds",
+    "sha256": "df4798fc9085e79f05f04c5a1dbf7911aea20569d14836de2122535f7ccd8459",
+    "size": 60,
+  },
+  {
+    "path": "bad.ogf",
+    "sha256": "83adb76e4da181bc4040dd586f341f348976100451f0d5f82ddd6c8dca713780",
+    "size": 200,
+  },
+  {
+    "path": "bad.omf",
+    "sha256": "c562390af637154c2397c3940ec44c63eefc2a10aca55df8b1be076dcee61101",
+    "size": 100,
+  },
+  {
+    "path": "bad.spawn",
+    "sha256": "9c376d5246bfd135df1478a08f993fd12ad24ed991a959d71573671ce6c33c22",
+    "size": 400,
+  },
+  {
+    "path": "bad.xr",
+    "sha256": "47bf2c694e97c13ff1ac3a2fe9e165504c6fb4a4bfd04bcef3c56aad853b0ba8",
+    "size": 500,
+  },
+  {
+    "path": "configs/broken.ltx",
+    "sha256": "6483b561c99a7e93105f3e2154ff249d792f8833963199b0e25d18566da5de1c",
+    "size": 26,
+  },
+  {
+    "path": "empty.ogf",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+  },
+  {
+    "path": "translations/broken.json",
+    "sha256": "93824b8be3037b3b714f7ecd7d3e81fdbccc41deb8ef47db68811be6d0d82de8",
+    "size": 21,
+  },
+]
+`;
