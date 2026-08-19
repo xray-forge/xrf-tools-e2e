@@ -1,0 +1,39 @@
+{
+  "name": "xrf-tools-e2e",
+  "version": "1.0.0",
+  "description": "End-to-end suite for the xrf-cli command line application",
+  "private": true,
+  "author": "Syrotenko Igor",
+  "license": "MIT",
+  "type": "commonjs",
+  "scripts": {
+    "e2e": "jest --ci",
+    "e2e:update": "jest --updateSnapshot",
+    "cli:refresh": "node cli/refresh.mjs",
+    "format": "prettier --write \"**/*.(js|mjs|ts|md|json)\" && eslint . --fix",
+    "format:check": "prettier --check \"**/*.(js|mjs|ts|md|json)\"",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "jest": {
+    "preset": "./cli/test/jest.config.ts"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.9.1",
+    "@typescript-eslint/eslint-plugin": "^8.62.0",
+    "@typescript-eslint/parser": "^8.62.0",
+    "eslint": "^9.39.4",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jest": "^29.15.2",
+    "eslint-plugin-jsdoc": "^63.0.7",
+    "globals": "^17.7.0",
+    "jest": "^30.4.2",
+    "prettier": "^3.8.4",
+    "ts-jest": "^29.4.7",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.62.0"
+  }
+}

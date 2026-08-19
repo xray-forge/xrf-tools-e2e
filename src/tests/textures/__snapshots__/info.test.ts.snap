@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`info-dds should report a compressed texture 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read dds file <resources>/gamedata/textures/prop_lampa_g.dds",
+    "File size: 184 (0kb)",
+    "Metadata size: 128",
+    "Data size: 56 (0kb)",
+    "Size: 8 x 8",
+    "Mipmap: 4 - 8",
+    "Linear size: 32",
+    "Block size: 8",
+    "D3D format: DXT1",
+  ],
+}
+`;
+
+exports[`info-dds should report a ui texture 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read dds file <resources>/gamedata/textures/ui_empty.dds",
+    "File size: 144 (0kb)",
+    "Metadata size: 128",
+    "Data size: 16 (0kb)",
+    "Size: 4 x 4",
+    "Mipmap: 1 - 16",
+    "Linear size: 16",
+    "Block size: 16",
+    "D3D format: DXT5",
+  ],
+}
+`;
+
+exports[`info-dds should write nothing 1`] = `[]`;

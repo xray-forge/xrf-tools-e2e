@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`repack-omf roundtrip should still read back after repacking 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read omf file <sandbox>/repacked.omf",
+    "Omf file information",
+    "Version: 4",
+    "Motions: 3 idle,svd_shoot,svd_reload",
+    "Bones total: 7",
+    "Parts: default",
+    "Part 'default' bones: wpn_body,body,trigger,wpn_scope,zatvor,lock,magazin",
+  ],
+}
+`;
+
+exports[`repack-omf roundtrip should verify in place 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [],
+}
+`;
+
+exports[`repack-omf roundtrip should write a repacked container 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Repack omf file <resources>/gamedata/meshes/omf/wpn_svd_hud_animation.omf",
+    "Omf file repacked into <sandbox>/repacked.omf",
+  ],
+}
+`;
+
+exports[`repack-omf roundtrip should write only the repacked container 1`] = `
+[
+  {
+    "path": "repacked.omf",
+    "sha256": "5fed0250b53cc35dc79e38611e1ca32c997c77f0c39690401ef65861810e9686",
+    "size": 3355,
+  },
+]
+`;

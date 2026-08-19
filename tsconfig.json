@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "lib": ["es2023"],
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "noUncheckedIndexedAccess": true,
+    "paths": {
+      "#/*": ["./cli/*"],
+      "@/*": ["./src/*"]
+    },
+    "resolveJsonModule": true,
+    "rootDir": "./",
+    "strict": true,
+    "target": "es2023",
+    "types": ["node", "jest"],
+    "verbatimModuleSyntax": false
+  },
+  "exclude": ["node_modules", "cli/app", "src/resources", "target"],
+  "include": ["cli/", "src/"]
+}

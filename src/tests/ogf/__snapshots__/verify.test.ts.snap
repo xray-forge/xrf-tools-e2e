@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`verify-ogf should sweep a directory 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Verification incomplete, status: incomplete",
+  ],
+  "stdout": [
+    "Verifying ogf visuals in <resources>/gamedata/meshes/ogf",
+    "Swept 3 visuals in <duration>",
+    "Submeshes: 3 total, 3 packed, 0 unsupported, 0 malformed",
+    "Progressive submeshes: 1, of which 1 draw only part of their index buffer",
+    "Unreadable files: 0, files with nothing drawable: 0, bounds disagreements: 0",
+    "Texture references: 3 total, 0 resolved, 3 missing, 0 unreadable, 0 visuals with no root",
+    "Distinct textures: 0, of which 0 carry no mip chain",
+    "Header versions: 4: 3",
+    "Root model types: MT_SKELETON_RIGID: 3",
+    "Submesh model types: MT_SKELETON_GEOMDEF_PM: 1, MT_SKELETON_GEOMDEF_ST: 2",
+    "Vertex formats: 0x00000001: 3",
+    "Texture formats:",
+    "Texture sizes:",
+    "Check 'textures' is incomplete with 3 findings",
+    "Wrote report to <sandbox>/report.json",
+  ],
+}
+`;
+
+exports[`verify-ogf should verify a standalone visual 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Verification incomplete, status: incomplete",
+  ],
+  "stdout": [
+    "Verifying ogf visuals in <resources>/gamedata/meshes/ogf/wpn_pm_lod.ogf",
+    "Swept 1 visuals in <duration>",
+    "Submeshes: 1 total, 1 packed, 0 unsupported, 0 malformed",
+    "Progressive submeshes: 0, of which 0 draw only part of their index buffer",
+    "Unreadable files: 0, files with nothing drawable: 0, bounds disagreements: 0",
+    "Texture references: 1 total, 0 resolved, 1 missing, 0 unreadable, 0 visuals with no root",
+    "Distinct textures: 0, of which 0 carry no mip chain",
+    "Header versions: 4: 1",
+    "Root model types: MT_SKELETON_RIGID: 1",
+    "Submesh model types: MT_SKELETON_GEOMDEF_ST: 1",
+    "Vertex formats: 0x00000001: 1",
+    "Texture formats:",
+    "Texture sizes:",
+    "Check 'textures' is incomplete with 1 findings",
+  ],
+}
+`;
+
+exports[`verify-ogf should write a report 1`] = `
+[
+  {
+    "path": "report.json",
+    "sha256": "2cf896e8b1de436170437df3fa8d8bad7e0a952c1fa98ede80ce8de4e9b7d388",
+    "size": 1437,
+  },
+]
+`;
