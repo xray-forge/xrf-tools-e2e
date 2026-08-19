@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`equipment icons should accept a grid whose only sharing is identical 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Inventory icon grid is clean, no overlapping rects",
+  ],
+}
+`;
+
+exports[`equipment icons should describe the packed sheet 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read dds file <sandbox>/repacked.dds",
+    "File size: 8052 (7kb)",
+    "Metadata size: 148",
+    "Data size: 7904 (7kb)",
+    "Size: 152 x 52",
+    "Mipmap: 1 - 16",
+    "Linear size: 7904",
+    "Block size: 16",
+    "Four CC: 894720068",
+    "DXGI format: BC3_UNorm",
+  ],
+}
+`;
+
+exports[`equipment icons should pack the icons back into a sheet 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Starting packing DDS icons file, parallel",
+    "System ltx: <resources>/gamedata/configs/system.ltx",
+    "Source icons dir: <sandbox>/icons",
+    "Output dir: <sandbox>/repacked.dds",
+    "Packed 4 icons in BC3RgbaUnorm format",
+    "Saved resulting file with combined icons <sandbox>/repacked.dds",
+  ],
+}
+`;
+
+exports[`equipment icons should reject a partial overlap 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Overlapping icon rects at 1:1, 1 cell(s) shared by 'icon_a' and 'icon_b'",
+    "Found 1 overlapping icon rect pair(s)",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`equipment icons should unpack only the opted-in icons 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Opening DDS file: <resources>/gamedata/textures/ui/ui_test_sheet.dds",
+    "Source DDS file details: 256x64, mip-maps: 0, format: None",
+    "Unpacking equipment DDS file into: <sandbox>/icons",
+    "Unpacked 4 icons",
+    "Successfully DDS equipment file based on LTX sections",
+  ],
+}
+`;
+
+exports[`equipment icons should write the expected files 1`] = `
+[
+  {
+    "path": "icons/test_icon_a.dds",
+    "sha256": "9e5161552c4b164c58eb80afee93cbf36a9083066f8709883bf025769f3c0323",
+    "size": 2852,
+  },
+  {
+    "path": "icons/test_icon_b.dds",
+    "sha256": "bb4c61c9d620ee98cb690fb5e4daf72beb8bef041534f9e95c379eb998391c48",
+    "size": 2852,
+  },
+  {
+    "path": "icons/test_icon_c.dds",
+    "sha256": "0ccd5870fc1bf3a9192611c314f927f0076d850a39a9e2419b49a834af4f95f4",
+    "size": 2852,
+  },
+  {
+    "path": "icons/test_icon_c_variant.dds",
+    "sha256": "0ccd5870fc1bf3a9192611c314f927f0076d850a39a9e2419b49a834af4f95f4",
+    "size": 2852,
+  },
+  {
+    "path": "overlapping.ltx",
+    "sha256": "38cfcc53a56d236092b57dd927a869489ec20a14a2b76c79eb5b5cde2034fd7d",
+    "size": 203,
+  },
+  {
+    "path": "repacked.dds",
+    "sha256": "d5530b9e72e489e25bc505e324f178c654629839931f0548fd6388c067ae4ed5",
+    "size": 8052,
+  },
+]
+`;

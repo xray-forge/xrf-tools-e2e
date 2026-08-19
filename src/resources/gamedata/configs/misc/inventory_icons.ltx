@@ -1,0 +1,42 @@
+; Inventory icons for the equipment icon commands. A section owns an icon only when it opts in with
+; $inventory_icon; grid fields alone are deliberately ignored, so a section cannot pack an asset by
+; accident. Coordinates are grid cells of 50 pixels, and these four sit in one row of the 256x64
+; ui_test_sheet.
+
+[test_icon_a]
+$inventory_icon = true
+inv_grid_x = 0
+inv_grid_y = 0
+inv_grid_width = 1
+inv_grid_height = 1
+
+[test_icon_b]
+$inventory_icon = true
+inv_grid_x = 1
+inv_grid_y = 0
+inv_grid_width = 1
+inv_grid_height = 1
+
+[test_icon_c]
+$inventory_icon = true
+inv_grid_x = 2
+inv_grid_y = 0
+inv_grid_width = 1
+inv_grid_height = 1
+
+; Shares its slot with test_icon_c on purpose. Identical rects are legitimate - variants such as
+; _nimble and the quest copies do it - and the verifier reports overlaps only when they are partial.
+[test_icon_c_variant]
+$inventory_icon = true
+inv_grid_x = 2
+inv_grid_y = 0
+inv_grid_width = 1
+inv_grid_height = 1
+
+; Grid complete but opted out, so nothing packs or unpacks it.
+[test_icon_disabled]
+$inventory_icon = false
+inv_grid_x = 3
+inv_grid_y = 0
+inv_grid_width = 1
+inv_grid_height = 1

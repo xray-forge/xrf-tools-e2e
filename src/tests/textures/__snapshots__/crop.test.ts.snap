@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`crop-dds should crop an offset region 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Wrote 64x64 region from 64:0 of <resources>/gamedata/textures/ui/ui_test_sheet.dds to <sandbox>/offset.dds",
+  ],
+}
+`;
+
+exports[`crop-dds should crop the top left region 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Wrote 64x64 region from 0:0 of <resources>/gamedata/textures/ui/ui_test_sheet.dds to <sandbox>/corner.dds",
+  ],
+}
+`;
+
+exports[`crop-dds should refuse a region that runs past the edge 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Execution of command 'crop-dds' failed, error: Texture processing error: Region 192:0 128x64 does not fit in source <resources>/gamedata/textures/ui/ui_test_sheet.dds which is 256x64",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`crop-dds should report the cropped dimensions 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read dds file <sandbox>/corner.dds",
+    "File size: 4244 (4kb)",
+    "Metadata size: 148",
+    "Data size: 4096 (4kb)",
+    "Size: 64 x 64",
+    "Mipmap: 1 - 16",
+    "Linear size: 4096",
+    "Block size: 16",
+    "Four CC: 894720068",
+    "DXGI format: BC3_UNorm",
+  ],
+}
+`;
+
+exports[`crop-dds should report the fitted dimensions 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read dds file <sandbox>/fitted.dds",
+    "File size: 1172 (1kb)",
+    "Metadata size: 148",
+    "Data size: 1024 (1kb)",
+    "Size: 32 x 32",
+    "Mipmap: 1 - 16",
+    "Linear size: 1024",
+    "Block size: 16",
+    "Four CC: 894720068",
+    "DXGI format: BC3_UNorm",
+  ],
+}
+`;
+
+exports[`crop-dds should scale a cropped region to fit 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Fitting cropped 64x64 region into 32x32",
+    "Wrote 32x32 region from 0:0 of <resources>/gamedata/textures/ui/ui_test_sheet.dds to <sandbox>/fitted.dds",
+  ],
+}
+`;
+
+exports[`crop-dds should write the expected files 1`] = `
+[
+  {
+    "path": "corner.dds",
+    "sha256": "8465624c2cad1d2486054856003ee6d275f53a36113059c36b972d512a1b44aa",
+    "size": 4244,
+  },
+  {
+    "path": "fitted.dds",
+    "sha256": "b7334cdbdc445ce9e95851029dd29be06660303d0597cb9389f50c6193763906",
+    "size": 1172,
+  },
+  {
+    "path": "offset.dds",
+    "sha256": "b01ac10e62d9f2c72831f0c1c5e44960e305cf869dbf33b1c5308047a23a5c26",
+    "size": 4244,
+  },
+]
+`;

@@ -5,9 +5,9 @@ exports[`format-ltx roundtrip should accept what it just wrote 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Checking 6 ltx file(s) from 1 provided path(s)",
-    "Checking 6 file(s)",
-    "All 6 files are formatted, checked in <duration>",
+    "Checking 7 ltx file(s) from 1 provided path(s)",
+    "Checking 7 file(s)",
+    "All 7 files are formatted, checked in <duration>",
   ],
 }
 `;
@@ -18,8 +18,8 @@ exports[`format-ltx roundtrip should not change what the files mean 1`] = `
   "stderr": [],
   "stdout": [
     "Verify path: <sandbox>/configs",
-    "Checked 6 files, 27 sections in <duration>",
-    "Verified 0.00%, 1 files, 0 sections, 0 fields",
+    "Checked 7 files, 32 sections in <duration>",
+    "Verified 0.00%, 2 files, 0 sections, 0 fields",
     "Found 0 error(s)",
   ],
 }
@@ -29,17 +29,18 @@ exports[`format-ltx roundtrip should reject unformatted configs 1`] = `
 {
   "exitCode": 1,
   "stderr": [
-    "Format issues with 6/6 files in <duration>",
+    "Format issues with 7/7 files in <duration>",
     "Execution of command 'format-ltx' failed, error: Verify error: Project includes LTX files with invalid format",
   ],
   "stdout": [
-    "Checking 6 ltx file(s) from 1 provided path(s)",
-    "Checking 6 file(s)",
+    "Checking 7 ltx file(s) from 1 provided path(s)",
+    "Checking 7 file(s)",
     "Not formatted: <sandbox>/configs/alife.ltx",
     "Not formatted: <sandbox>/configs/defines.ltx",
     "Not formatted: <sandbox>/configs/evaluation.ltx",
     "Not formatted: <sandbox>/configs/fonts.ltx",
     "Not formatted: <sandbox>/configs/game.ltx",
+    "Not formatted: <sandbox>/configs/misc/inventory_icons.ltx",
     "Not formatted: <sandbox>/configs/system.ltx",
   ],
 }
@@ -50,15 +51,16 @@ exports[`format-ltx roundtrip should rewrite them 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Formatting 6 ltx file(s) from 1 provided path(s)",
-    "Formatting 6 file(s)",
+    "Formatting 7 ltx file(s) from 1 provided path(s)",
+    "Formatting 7 file(s)",
     "Formatted: <sandbox>/configs/alife.ltx",
     "Formatted: <sandbox>/configs/defines.ltx",
     "Formatted: <sandbox>/configs/evaluation.ltx",
     "Formatted: <sandbox>/configs/fonts.ltx",
     "Formatted: <sandbox>/configs/game.ltx",
+    "Formatted: <sandbox>/configs/misc/inventory_icons.ltx",
     "Formatted: <sandbox>/configs/system.ltx",
-    "Formatted 6/6 files in <duration>",
+    "Formatted 7/7 files in <duration>",
   ],
 }
 `;
@@ -91,9 +93,19 @@ exports[`format-ltx roundtrip should write the formatted bytes 1`] = `
     "size": 220,
   },
   {
+    "path": "configs/misc/inventory_icons.ltx",
+    "sha256": "0bd10b9ebabf8026eed428a389a4b9ef475182a02dee46bb9a50875e19e991da",
+    "size": 1168,
+  },
+  {
     "path": "configs/system.ltx",
-    "sha256": "947057ee249eafe72597a0adecda719dfaea62ab9433b7f113872a991e16d977",
-    "size": 247,
+    "sha256": "42529752a2ce2f0816214ba1d67d633f2658750cf2948634dd1fe785af13652f",
+    "size": 263,
+  },
+  {
+    "path": "configs/ui/textures_descr/ui_test_sheet.xml",
+    "sha256": "44329d941bf367bbd107efb9eb255aa12752cb550d3b99d7b88a2d1d91090012",
+    "size": 352,
   },
 ]
 `;
