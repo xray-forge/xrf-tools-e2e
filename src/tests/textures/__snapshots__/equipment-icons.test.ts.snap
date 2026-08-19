@@ -44,6 +44,39 @@ exports[`equipment icons should pack the icons back into a sheet 1`] = `
 }
 `;
 
+exports[`equipment icons should pack what it has when an icon is missing 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [
+    "Skip icon <sandbox>/incomplete/test_icon_b.dds / 'test_icon_b', reason: IO error: The system cannot find the file specified. (os error 2)",
+  ],
+  "stdout": [
+    "Starting packing DDS icons file, parallel",
+    "System ltx: <resources>/gamedata/configs/system.ltx",
+    "Source icons dir: <sandbox>/incomplete",
+    "Output dir: <sandbox>/incomplete.dds",
+    "Packed 3 icons in BC3RgbaUnorm format",
+    "Saved resulting file with combined icons <sandbox>/incomplete.dds",
+  ],
+}
+`;
+
+exports[`equipment icons should refuse a missing icon under strict 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Skip icon <sandbox>/incomplete/test_icon_b.dds / 'test_icon_b', reason: IO error: The system cannot find the file specified. (os error 2)",
+    "Execution of command 'pack-equipment-icons' failed, error: Texture processing error: Expected an icon to exist for each of the 1 sections declaring inv_grid_* fields, found none for: test_icon_b",
+  ],
+  "stdout": [
+    "Starting packing DDS icons file, parallel",
+    "System ltx: <resources>/gamedata/configs/system.ltx",
+    "Source icons dir: <sandbox>/incomplete",
+    "Output dir: <sandbox>/strict.dds",
+  ],
+}
+`;
+
 exports[`equipment icons should reject a partial overlap 1`] = `
 {
   "exitCode": 1,
@@ -88,6 +121,26 @@ exports[`equipment icons should write the expected files 1`] = `
   },
   {
     "path": "icons/test_icon_c_variant.dds",
+    "sha256": "0ccd5870fc1bf3a9192611c314f927f0076d850a39a9e2419b49a834af4f95f4",
+    "size": 2852,
+  },
+  {
+    "path": "incomplete.dds",
+    "sha256": "9724ecc8a747c2b4905fd405e216b2b6fe08c16a17aedbbb314ec9a20e9e2ff3",
+    "size": 8052,
+  },
+  {
+    "path": "incomplete/test_icon_a.dds",
+    "sha256": "9e5161552c4b164c58eb80afee93cbf36a9083066f8709883bf025769f3c0323",
+    "size": 2852,
+  },
+  {
+    "path": "incomplete/test_icon_c.dds",
+    "sha256": "0ccd5870fc1bf3a9192611c314f927f0076d850a39a9e2419b49a834af4f95f4",
+    "size": 2852,
+  },
+  {
+    "path": "incomplete/test_icon_c_variant.dds",
     "sha256": "0ccd5870fc1bf3a9192611c314f927f0076d850a39a9e2419b49a834af4f95f4",
     "size": 2852,
   },
