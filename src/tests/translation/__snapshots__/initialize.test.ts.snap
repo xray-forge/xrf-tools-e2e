@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`initialize-translation should leave an already initialized project alone 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Verifying translation <sandbox>/translations",
+    "Initializing dir <sandbox>/translations",
+    "Skip file <sandbox>/translations/st_shared.xml",
+    "Skip file <sandbox>/translations/st_ui.eng.xml",
+    "Skip file <sandbox>/translations/st_ui.rus.xml",
+    "Initialized translation files in <duration>",
+  ],
+}
+`;
+
+exports[`initialize-translation should scaffold the missing languages 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Verifying translation <sandbox>/translations",
+    "Initializing dir <sandbox>/translations",
+    "Initializing missing key: st_medkit_name - fra",
+    "Initializing missing key: st_medkit_name - ger",
+    "Initializing missing key: st_medkit_name - ita",
+    "Initializing missing key: st_medkit_name - pol",
+    "Initializing missing key: st_medkit_name - spa",
+    "Initializing missing key: st_medkit_name - ukr",
+    "Initializing missing key: st_bread_name - fra",
+    "Initializing missing key: st_bread_name - ger",
+    "Initializing missing key: st_bread_name - ita",
+    "Initializing missing key: st_bread_name - pol",
+    "Initializing missing key: st_bread_name - spa",
+    "Skip file <sandbox>/translations/st_shared.xml",
+    "Skip file <sandbox>/translations/st_ui.eng.xml",
+    "Skip file <sandbox>/translations/st_ui.rus.xml",
+    "Initialized translation files in <duration>",
+  ],
+}
+`;
+
+exports[`initialize-translation should write the expected files 1`] = `
+[
+  {
+    "path": "translations/st_items.json",
+    "sha256": "feea3d894f3d204258ad78b7c6c8426a82ac6657fb143f716fb6b59dd9e5134e",
+    "size": 356,
+  },
+  {
+    "path": "translations/st_shared.xml",
+    "sha256": "6f6a8ad26c80dcb9ea7d65263f3cfd148ec6f65806b85aeb0b504697de00fa6e",
+    "size": 144,
+  },
+  {
+    "path": "translations/st_ui.eng.xml",
+    "sha256": "0c255423896df871d95248f74dc35a2a1deed5ffc0d192614a3b9cdc0f02ef14",
+    "size": 147,
+  },
+  {
+    "path": "translations/st_ui.rus.xml",
+    "sha256": "8db1cd4d626e2b472c3a2f6a7dda2d918d2e9cf85797d2e78140681787d02a44",
+    "size": 148,
+  },
+]
+`;

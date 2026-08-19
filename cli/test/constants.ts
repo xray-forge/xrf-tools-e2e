@@ -57,3 +57,17 @@ export const TOOLS_ROOT: string = path.resolve(PROJECT_ROOT, "../stalker-xrf-too
 export function gamedata(relative: string = ""): string {
   return relative ? path.resolve(GAMEDATA_ROOT, relative) : GAMEDATA_ROOT;
 }
+
+/**
+ * Refers to a committed resource that is not part of the gamedata tree.
+ *
+ * @remarks
+ * For inputs a command consumes to produce gamedata rather than reads out of it, such as the
+ * translation sources that `build-translation` compiles into per-language string tables.
+ *
+ * @param relative - Path relative to the resources root, for example `translations`.
+ * @returns Absolute path.
+ */
+export function resource(relative: string = ""): string {
+  return relative ? path.resolve(RESOURCES_ROOT, relative) : RESOURCES_ROOT;
+}

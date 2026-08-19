@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+# Husky points core.hooksPath at this directory, so the hooks git-lfs installed into .git/hooks
+# stop being found. They are re-declared here because this repository keeps its binary resources
+# and the executable under test in LFS: without this one, a push uploads pointers and leaves the
+# objects behind, which breaks the remote for everyone who clones it.
+command -v git-lfs >/dev/null 2>&1 || {
+  printf >&2 "\n%s\n\n" "This repository is configured for Git LFS but 'git-lfs' was not found on your path."
+  exit 2
+}
+
+git lfs pre-push "$@"

@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`verify-translation should fail under strict when translations are missing 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Translation key missing: st_medkit_name fra in <resources>/translations/st_items.json",
+    "Translation key missing: st_bread_name fra in <resources>/translations/st_items.json",
+    "Translation key missing: st_medkit_name ger in <resources>/translations/st_items.json",
+    "Translation key missing: st_bread_name ger in <resources>/translations/st_items.json",
+    "Translation key missing: st_medkit_name ita in <resources>/translations/st_items.json",
+    "Translation key missing: st_bread_name ita in <resources>/translations/st_items.json",
+    "Translation key missing: st_medkit_name pol in <resources>/translations/st_items.json",
+    "Translation key missing: st_bread_name pol in <resources>/translations/st_items.json",
+    "Translation key missing: st_medkit_name spa in <resources>/translations/st_items.json",
+    "Translation key missing: st_bread_name spa in <resources>/translations/st_items.json",
+    "Translation key missing: st_medkit_name ukr in <resources>/translations/st_items.json",
+    "[<timestamp> ERROR xrf_cli::commands::translation::verify_translations] Failing with non-zero error code, missing translation found",
+  ],
+  "stdout": [
+    "Verifying translation <resources>/translations, language - all",
+    "Verifying dir <resources>/translations",
+    "Skip file <resources>/translations/st_shared.xml",
+    "Skip file <resources>/translations/st_ui.eng.xml",
+    "Skip file <resources>/translations/st_ui.rus.xml",
+    "Verified translation files in <duration>, 2 checked, 11 missing",
+  ],
+}
+`;
+
+exports[`verify-translation should find nothing missing in a complete language 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Verifying translation <resources>/translations, language - eng",
+    "Verifying dir <resources>/translations",
+    "Skip file <resources>/translations/st_shared.xml",
+    "Skip file <resources>/translations/st_ui.eng.xml",
+    "Skip file <resources>/translations/st_ui.rus.xml",
+    "Verified translation files in <duration>, 2 checked, 0 missing",
+  ],
+}
+`;
+
+exports[`verify-translation should report gaps across every language 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [
+    "Translation key missing: st_medkit_name fra in <resources>/translations/st_items.json",
+    "Translation key missing: st_bread_name fra in <resources>/translations/st_items.json",
+    "Translation key missing: st_medkit_name ger in <resources>/translations/st_items.json",
+    "Translation key missing: st_bread_name ger in <resources>/translations/st_items.json",
+    "Translation key missing: st_medkit_name ita in <resources>/translations/st_items.json",
+    "Translation key missing: st_bread_name ita in <resources>/translations/st_items.json",
+    "Translation key missing: st_medkit_name pol in <resources>/translations/st_items.json",
+    "Translation key missing: st_bread_name pol in <resources>/translations/st_items.json",
+    "Translation key missing: st_medkit_name spa in <resources>/translations/st_items.json",
+    "Translation key missing: st_bread_name spa in <resources>/translations/st_items.json",
+    "Translation key missing: st_medkit_name ukr in <resources>/translations/st_items.json",
+  ],
+  "stdout": [
+    "Verifying translation <resources>/translations, language - all",
+    "Verifying dir <resources>/translations",
+    "Skip file <resources>/translations/st_shared.xml",
+    "Skip file <resources>/translations/st_ui.eng.xml",
+    "Skip file <resources>/translations/st_ui.rus.xml",
+    "Verified translation files in <duration>, 2 checked, 11 missing",
+  ],
+}
+`;
+
+exports[`verify-translation should write a structured report 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [
+    "Translation key missing: st_medkit_name fra in <resources>/translations/st_items.json",
+    "Translation key missing: st_bread_name fra in <resources>/translations/st_items.json",
+    "Translation key missing: st_medkit_name ger in <resources>/translations/st_items.json",
+    "Translation key missing: st_bread_name ger in <resources>/translations/st_items.json",
+    "Translation key missing: st_medkit_name ita in <resources>/translations/st_items.json",
+    "Translation key missing: st_bread_name ita in <resources>/translations/st_items.json",
+    "Translation key missing: st_medkit_name pol in <resources>/translations/st_items.json",
+    "Translation key missing: st_bread_name pol in <resources>/translations/st_items.json",
+    "Translation key missing: st_medkit_name spa in <resources>/translations/st_items.json",
+    "Translation key missing: st_bread_name spa in <resources>/translations/st_items.json",
+    "Translation key missing: st_medkit_name ukr in <resources>/translations/st_items.json",
+  ],
+  "stdout": [
+    "Verifying translation <resources>/translations, language - all",
+    "Verifying dir <resources>/translations",
+    "Skip file <resources>/translations/st_shared.xml",
+    "Skip file <resources>/translations/st_ui.eng.xml",
+    "Skip file <resources>/translations/st_ui.rus.xml",
+    "Verified translation files in <duration>, 2 checked, 11 missing",
+  ],
+}
+`;
+
+exports[`verify-translation should write only the report 1`] = `
+[
+  {
+    "path": "report.json",
+    "sha256": "bc23405018d852b6b857dd6438ccef0dca3ec744e5182732d87b2e9737e02e3c",
+    "size": 2612,
+  },
+]
+`;
