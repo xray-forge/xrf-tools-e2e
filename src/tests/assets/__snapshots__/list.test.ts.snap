@@ -7,13 +7,14 @@ exports[`list-assets should limit a listing to one subtree 1`] = `
   "stdout": [
     "Listing root <resources>/gamedata",
     "  Directory <resources>/gamedata (gamedata)",
+    "  meshes\\ogf\\dev_bolt_hud.ogf [<resources>/gamedata]",
     "  meshes\\ogf\\notes_paper_1.ogf [<resources>/gamedata]",
     "  meshes\\ogf\\part_none.ogf [<resources>/gamedata]",
     "  meshes\\ogf\\wpn_pm_lod.ogf [<resources>/gamedata]",
     "  meshes\\omf\\wpn_knife_hud_animation.omf [<resources>/gamedata]",
     "  meshes\\omf\\wpn_mp5_hud_animation.omf [<resources>/gamedata]",
     "  meshes\\omf\\wpn_svd_hud_animation.omf [<resources>/gamedata]",
-    "6 asset(s) across 1 mount(s) in <duration>",
+    "7 asset(s) across 1 mount(s) in <duration>",
   ],
 }
 `;
@@ -31,6 +32,7 @@ exports[`list-assets should resolve the whole tree 1`] = `
     "  configs\\fonts.ltx [<resources>/gamedata]",
     "  configs\\game.ltx [<resources>/gamedata]",
     "  configs\\system.ltx [<resources>/gamedata]",
+    "  meshes\\ogf\\dev_bolt_hud.ogf [<resources>/gamedata]",
     "  meshes\\ogf\\notes_paper_1.ogf [<resources>/gamedata]",
     "  meshes\\ogf\\part_none.ogf [<resources>/gamedata]",
     "  meshes\\ogf\\wpn_pm_lod.ogf [<resources>/gamedata]",
@@ -43,7 +45,7 @@ exports[`list-assets should resolve the whole tree 1`] = `
     "  textures\\act_cat_bump.thm [<resources>/gamedata]",
     "  textures\\prop_lampa_g.dds [<resources>/gamedata]",
     "  textures\\ui_empty.dds [<resources>/gamedata]",
-    "18 asset(s) across 1 mount(s) in <duration>",
+    "19 asset(s) across 1 mount(s) in <duration>",
   ],
 }
 `;
