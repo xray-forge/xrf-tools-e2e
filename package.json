@@ -10,9 +10,11 @@
     "e2e": "jest --ci",
     "e2e:update": "jest --updateSnapshot",
     "cli:refresh": "node cli/refresh.mjs",
+    "prepare": "husky cli/.husky",
     "format": "prettier --write \"**/*.(js|mjs|ts|md|json)\" && eslint . --fix",
     "format:check": "prettier --check \"**/*.(js|mjs|ts|md|json)\"",
     "lint": "eslint .",
+    "lint:staged": "lint-staged --config cli/hooks/lint-staged.config.mjs --max-arg-length 7000",
     "typecheck": "tsc --noEmit"
   },
   "jest": {
@@ -30,7 +32,9 @@
     "eslint-plugin-jest": "^29.15.2",
     "eslint-plugin-jsdoc": "^63.0.7",
     "globals": "^17.7.0",
+    "husky": "^9.1.7",
     "jest": "^30.4.2",
+    "lint-staged": "^17.0.8",
     "prettier": "^3.8.4",
     "ts-jest": "^29.4.7",
     "typescript": "^6.0.3",

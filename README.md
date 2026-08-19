@@ -21,16 +21,3 @@ npm run e2e
 | `npm run e2e -- -t ogf` | Run tests matching a name.                       |
 | `npm run e2e:update`    | Record current behavior as the new snapshots.    |
 | `npm run cli:refresh`   | Copy a freshly built CLI over the committed one. |
-
-## Layout
-
-| Path                      | Holds                                                     |
-| ------------------------- | --------------------------------------------------------- |
-| `src/tests/`              | The suite. One `*.test.ts` file per command or roundtrip. |
-| `src/resources/gamedata/` | The committed gamedata tree, binary files through LFS.    |
-| `cli/test/`               | Jest configuration and the helpers tests import.          |
-| `cli/app/`                | The binary under test, committed.                         |
-| `cli/refresh.mjs`         | Copies a freshly built CLI into `cli/app/`.               |
-| `target/`                 | Test sandboxes, wiped per run. Not committed.             |
-
-Imports use the same aliases as the engine: `#/*` resolves to `cli/*` and `@/*` to `src/*`.
