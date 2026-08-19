@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`verify-gamedata meets a damaged tree should name a damaged asset and finish the sweep 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "",
+    "  - [meshes] <sandbox>/gamedata/meshes/ogf/dev_bolt_hud.ogf: Mesh references missing motion 'dynamics\\devices\\dev_bolt\\dev_bolt_hud_animation'",
+    "  - [meshes] <sandbox>/gamedata/meshes/ogf/dev_bolt_hud.ogf: Mesh references missing texture 'wpn\\wpn_bolt'",
+    "  - [meshes] <sandbox>/gamedata/meshes/ogf/notes_paper_1.ogf: Mesh references missing texture 'item\\item_notes'",
+    "  - [meshes] <sandbox>/gamedata/meshes/ogf/part_none.ogf: Failed to read mesh: Invalid error: Chunk 0x00000012 at position 60 declares 141 bytes, beyond source end 200",
+    "  - [meshes] <sandbox>/gamedata/meshes/ogf/wpn_pm_lod.ogf: Mesh references missing texture 'wpn\\wpn_pm'",
+    "- 1/1 shader libraries valid, 205 blender definitions; 0/4 meshes valid",
+    "Cannot read OGF texture: item\\item_notes",
+    "Cannot read OGF texture: wpn\\wpn_bolt",
+    "Cannot read OGF texture: wpn\\wpn_pm",
+    "Gamedata project checked in <duration>",
+    "Mesh is not valid: <sandbox>/gamedata/meshes/ogf/dev_bolt_hud.ogf",
+    "Mesh is not valid: <sandbox>/gamedata/meshes/ogf/notes_paper_1.ogf",
+    "Mesh is not valid: <sandbox>/gamedata/meshes/ogf/wpn_pm_lod.ogf",
+    "Mesh motion refs not found by path: dynamics\\devices\\dev_bolt\\dev_bolt_hud_animation",
+    "Mesh verification failed: <sandbox>/gamedata/meshes/ogf/part_none.ogf - Invalid error: Chunk 0x00000012 at position 60 declares 141 bytes, beyond source end 200",
+    "Project gamedata is invalid",
+  ],
+  "stdout": [
+    "",
+    "  -meshes",
+    "Opening gamedata project",
+    "Root: <sandbox>/gamedata, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
+    "Verified gamedata meshes in <duration>, 1/1 shader libraries valid, 205 blender definitions; 0/4 meshes valid",
+    "Verify meshes:",
+    "Verifying gamedata project: <sandbox>/gamedata",
+    "Verifying modules:",
+  ],
+}
+`;
+
+exports[`verify-gamedata meets a damaged tree should write nothing of its own 1`] = `
+[
+  {
+    "path": "gamedata/configs/alife.ltx",
+    "sha256": "160920506a492754ff5c45ceb7f4d169e19e002dff25be0cfe03b1cc671b91cd",
+    "size": 781,
+  },
+  {
+    "path": "gamedata/configs/defines.ltx",
+    "sha256": "3901c71e698c9be76fd7502c7837f9ee3176c592edcb120156788f1ad1957b7d",
+    "size": 3848,
+  },
+  {
+    "path": "gamedata/configs/evaluation.ltx",
+    "sha256": "13b3971565375db44d091d58246aaf728df84d55f61adcd232f1351b621e81cc",
+    "size": 276,
+  },
+  {
+    "path": "gamedata/configs/fonts.ltx",
+    "sha256": "c68091a9f10ac4545cd0818f9e1a98194898f8fe3483e620328122353e50b93d",
+    "size": 2021,
+  },
+  {
+    "path": "gamedata/configs/game.ltx",
+    "sha256": "c502a7d26aff39902fcd3631e65c37b732a8e85470aff4267cbb04f36a30184b",
+    "size": 218,
+  },
+  {
+    "path": "gamedata/configs/misc/inventory_icons.ltx",
+    "sha256": "5c7b9ae42acbb5e29fe65dc0b14417681fbca966fafac096807a369e30779c2a",
+    "size": 1126,
+  },
+  {
+    "path": "gamedata/configs/system.ltx",
+    "sha256": "b4a4a566d26d645fbb86678c4c16dc9fd8b540b786b191c596801de49ff60da1",
+    "size": 265,
+  },
+  {
+    "path": "gamedata/configs/ui/textures_descr/ui_test_sheet.xml",
+    "sha256": "44329d941bf367bbd107efb9eb255aa12752cb550d3b99d7b88a2d1d91090012",
+    "size": 352,
+  },
+  {
+    "path": "gamedata/meshes/ogf/dev_bolt_hud.ogf",
+    "sha256": "5d0f5f542199b99ccef02648b12a189b0bb8d6b17adb4223712c72f2303b50a1",
+    "size": 13841,
+  },
+  {
+    "path": "gamedata/meshes/ogf/notes_paper_1.ogf",
+    "sha256": "ef49409071d4f3be76c82e6ffa995c2386d50aad5e5eff7663df11133d0c5a6b",
+    "size": 1976,
+  },
+  {
+    "path": "gamedata/meshes/ogf/part_none.ogf",
+    "sha256": "83adb76e4da181bc4040dd586f341f348976100451f0d5f82ddd6c8dca713780",
+    "size": 200,
+  },
+  {
+    "path": "gamedata/meshes/ogf/wpn_pm_lod.ogf",
+    "sha256": "bf41871ea019632e506b5efa4d748ab2d18240c8c8840a8e0e3a1d921694ff2e",
+    "size": 7321,
+  },
+  {
+    "path": "gamedata/meshes/omf/wpn_knife_hud_animation.omf",
+    "sha256": "2facf6d4c269eeb168a894bcb3a04584f050f94669bd60eeb8869b93b121df6d",
+    "size": 159,
+  },
+  {
+    "path": "gamedata/meshes/omf/wpn_mp5_hud_animation.omf",
+    "sha256": "71c4c92308378f045fb7962d751884003ce41557984b75ad8bb0374cce11bdd4",
+    "size": 3230,
+  },
+  {
+    "path": "gamedata/meshes/omf/wpn_svd_hud_animation.omf",
+    "sha256": "5fed0250b53cc35dc79e38611e1ca32c997c77f0c39690401ef65861810e9686",
+    "size": 3355,
+  },
+  {
+    "path": "gamedata/particles.xr",
+    "sha256": "0786f7746df643a37b6420b652744270d1fdc15787740bad1c1c33b222a81037",
+    "size": 1184775,
+  },
+  {
+    "path": "gamedata/shaders.xr",
+    "sha256": "526e9363e42764c56a39bae72de854d89d65dfc1fe9aca0231e576456b8720c9",
+    "size": 191315,
+  },
+  {
+    "path": "gamedata/spawns/all.spawn",
+    "sha256": "a976f8f3741e4f6befcc246b49bfe9477b97b6514b89a12c932fc366fe4c1002",
+    "size": 1051254,
+  },
+  {
+    "path": "gamedata/textures/act_cat_bump.thm",
+    "sha256": "b343b3f1db388b598a3acf9374e81a50693dc37f8e9d652ffb2ba9b7991b6fc1",
+    "size": 138,
+  },
+  {
+    "path": "gamedata/textures/prop_lampa_g.dds",
+    "sha256": "d2173b19a162948957e7110c5a2807a3223571b0ade2e61c65345b3e7c7534ea",
+    "size": 184,
+  },
+  {
+    "path": "gamedata/textures/ui/ui_test_sheet.dds",
+    "sha256": "7c3b7b767f4d9aec695041276d13db7c6798e1485004f213a668716d22021a5a",
+    "size": 16512,
+  },
+  {
+    "path": "gamedata/textures/ui_empty.dds",
+    "sha256": "3c353eaac54b08b29f50c8f2fb7bf68ef3d2b103c1a7ad9334fd4cb862e02e13",
+    "size": 144,
+  },
+]
+`;

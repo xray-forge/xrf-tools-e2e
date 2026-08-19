@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`particles force should prune it when forced 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [],
+}
+`;
+
+exports[`particles force should refuse an existing packed container 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Execution of command 'pack-particles' failed, error: Pack output file already exists, use --force to prune destination",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`particles force should refuse an existing unpack destination 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Execution of command 'unpack-particles' failed, error: Unpack output directory already exists, use --force to prune destination folder",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`particles force should replace it when forced 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [],
+}
+`;
+
+exports[`particles force should write the expected files 1`] = `
+[
+  {
+    "path": "packed.xr",
+    "sha256": "4b78a17cd22fea8dc7ebad99ae423079bc9933157d68a37e6d48eed2e0b3c0ae",
+    "size": 1184775,
+  },
+  {
+    "path": "unpacked/effects.ltx",
+    "sha256": "883cd5b870743a27eec4c352b748e01eca0c17a62bc9da2d819079915658d400",
+    "size": 3251974,
+  },
+  {
+    "path": "unpacked/groups.ltx",
+    "sha256": "b9a39fb60d5fbc5e3e8afa0e580d3e3b13eecfb6a492c243b76ce32679feaa0a",
+    "size": 310075,
+  },
+  {
+    "path": "unpacked/header.ltx",
+    "sha256": "40a40cc067c5ae41dec907d61c4abf415bfe05aff3908ca9920aeb4b9768a08c",
+    "size": 49,
+  },
+]
+`;
+
+exports[`particles force should write the same container when forced 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read particle file <sandbox>/packed.xr",
+    "Particles file information:",
+    "Version: 1",
+    "Effects count: 921",
+    "Groups count: 350",
+  ],
+}
+`;

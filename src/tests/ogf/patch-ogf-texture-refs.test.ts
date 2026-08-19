@@ -12,6 +12,7 @@ describe("patch-ogf-texture-refs", () => {
   let renamed: CliResult;
   let dryRun: CliResult;
   let unmatched: CliResult;
+  let inPlace: CliResult;
   let info: CliResult;
 
   beforeAll(() => {
@@ -55,6 +56,16 @@ describe("patch-ogf-texture-refs", () => {
       { expectExit: 1 }
     );
 
+    // With no --dest the command rewrites its input, which is the destructive default.
+    inPlace = box.run("patch-ogf-texture-refs", [
+      "--path",
+      box.copyIn(SOURCE, "in-place.ogf"),
+      "--from",
+      "wpn\\wpn_bolt",
+      "--to",
+      "wpn\\wpn_bolt_renamed",
+    ]);
+
     info = box.run("info-ogf", ["--path", box.at("renamed.ogf")]);
   });
 
@@ -76,6 +87,14 @@ describe("patch-ogf-texture-refs", () => {
 
   it("should change the bytes it patched", () => {
     expect(box.sha("renamed.ogf")).not.toBe(sha(SOURCE));
+  });
+
+  it("should rewrite in place when given no destination", () => {
+    expect(inPlace).toMatchSnapshot();
+  });
+
+  it("should agree with the copy written to a destination", () => {
+    expect(box.sha("in-place.ogf")).toBe(box.sha("renamed.ogf"));
   });
 
   it("should write the expected files", () => {
