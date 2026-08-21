@@ -5,7 +5,7 @@ exports[`list-assets should limit a listing to one subtree 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Listing root <resources>/gamedata",
+    "Listing containing-installation <resources>/gamedata",
     "  Directory <resources>/gamedata (gamedata)",
     "  meshes\\ogf\\dev_bolt_hud.ogf [<resources>/gamedata]",
     "  meshes\\ogf\\notes_paper_1.ogf [<resources>/gamedata]",
@@ -24,7 +24,7 @@ exports[`list-assets should resolve the whole tree 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Listing root <resources>/gamedata",
+    "Listing containing-installation <resources>/gamedata",
     "  Directory <resources>/gamedata (gamedata)",
     "  configs\\alife.ltx [<resources>/gamedata]",
     "  configs\\defines.ltx [<resources>/gamedata]",
