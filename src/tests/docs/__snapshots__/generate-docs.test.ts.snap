@@ -58,8 +58,8 @@ exports[`generate-docs should write the expected pages 1`] = `
   },
   {
     "path": "docs/assets.md",
-    "sha256": "0531c4e2b163ba0b22784219504d0dd7c30949a60ee2f0a6251f065fc0c7b1a2",
-    "size": 751,
+    "sha256": "59677e59f89d16b6d22cf8fe83ac5675fc2757ef95634d4644d05e3375aef8b1",
+    "size": 1199,
   },
   {
     "path": "docs/docs.md",

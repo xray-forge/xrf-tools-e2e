@@ -1,6 +1,19 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`verify-gamedata ignore list should leave the meshes check nothing to inspect when ignored 1`] = `
+exports[`verify-gamedata ignore list should abort a check that never reads the ignored prefix 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Execution of command 'verify-gamedata' failed, error: Invalid error: Ignored prefix 'configs' hides 'configs\\system.ltx', which every check needs",
+  ],
+  "stdout": [
+    "Opening gamedata project",
+    "Root: <resources>/gamedata, ignored: [configs]",
+  ],
+}
+`;
+
+exports[`verify-gamedata ignore list should empty a check whose subtree is ignored 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -20,7 +33,7 @@ exports[`verify-gamedata ignore list should leave the meshes check nothing to in
 }
 `;
 
-exports[`verify-gamedata ignore list should still report ltx findings for an ignored configs directory 1`] = `
+exports[`verify-gamedata ignore list should ignore a prefix that matches nothing 1`] = `
 {
   "exitCode": 1,
   "stderr": [
@@ -39,7 +52,7 @@ exports[`verify-gamedata ignore list should still report ltx findings for an ign
   ],
   "stdout": [
     "Opening gamedata project",
-    "Root: <resources>/gamedata, ignored: [configs]",
+    "Root: <resources>/gamedata, ignored: [nonexistent]",
     "Verifying gamedata project: <resources>/gamedata",
     "Verifying modules:",
     "  -ltx",
@@ -60,6 +73,118 @@ exports[`verify-gamedata ignore list should still report ltx findings for an ign
     "Verified 0.00%, 2 files, 0 sections, 0 fields",
     "Found 0 error(s)",
     "Verified gamedata ltx files in <duration>",
+  ],
+}
+`;
+
+exports[`verify-gamedata ignore list should leave a check alone when the prefix names another subtree 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Format issues with 7/7 files in <duration>",
+    "",
+    "Project gamedata is invalid",
+    "- 0/7 LTX files formatted; 0/32 sections valid",
+    "  - [ltx] <resources>/gamedata/configs/alife.ltx: LTX file needs formatting",
+    "  - [ltx] <resources>/gamedata/configs/defines.ltx: LTX file needs formatting",
+    "  - [ltx] <resources>/gamedata/configs/evaluation.ltx: LTX file needs formatting",
+    "  - [ltx] <resources>/gamedata/configs/fonts.ltx: LTX file needs formatting",
+    "  - [ltx] <resources>/gamedata/configs/game.ltx: LTX file needs formatting",
+    "  - [ltx] <resources>/gamedata/configs/misc/inventory_icons.ltx: LTX file needs formatting",
+    "  - [ltx] <resources>/gamedata/configs/system.ltx: LTX file needs formatting",
+    "Gamedata project checked in <duration>",
+  ],
+  "stdout": [
+    "Opening gamedata project",
+    "Root: <resources>/gamedata, ignored: [meshes/ogf]",
+    "Verifying gamedata project: <resources>/gamedata",
+    "Verifying modules:",
+    "  -ltx",
+    "",
+    "Verify LTX files",
+    "Verify LTX files formatting",
+    "Checking 7 file(s)",
+    "Not formatted: <resources>/gamedata/configs/alife.ltx",
+    "Not formatted: <resources>/gamedata/configs/defines.ltx",
+    "Not formatted: <resources>/gamedata/configs/evaluation.ltx",
+    "Not formatted: <resources>/gamedata/configs/fonts.ltx",
+    "Not formatted: <resources>/gamedata/configs/game.ltx",
+    "Not formatted: <resources>/gamedata/configs/misc/inventory_icons.ltx",
+    "Not formatted: <resources>/gamedata/configs/system.ltx",
+    "Verify LTX schemas",
+    "Verify path: <resources>/gamedata/configs",
+    "Checked 7 files, 32 sections in <duration>",
+    "Verified 0.00%, 2 files, 0 sections, 0 fields",
+    "Found 0 error(s)",
+    "Verified gamedata ltx files in <duration>",
+  ],
+}
+`;
+
+exports[`verify-gamedata ignore list should narrow a check to the unignored part of a subtree 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Format issues with 6/6 files in <duration>",
+    "",
+    "Project gamedata is invalid",
+    "- 0/6 LTX files formatted; 0/27 sections valid",
+    "  - [ltx] <resources>/gamedata/configs/alife.ltx: LTX file needs formatting",
+    "  - [ltx] <resources>/gamedata/configs/defines.ltx: LTX file needs formatting",
+    "  - [ltx] <resources>/gamedata/configs/evaluation.ltx: LTX file needs formatting",
+    "  - [ltx] <resources>/gamedata/configs/fonts.ltx: LTX file needs formatting",
+    "  - [ltx] <resources>/gamedata/configs/game.ltx: LTX file needs formatting",
+    "  - [ltx] <resources>/gamedata/configs/system.ltx: LTX file needs formatting",
+    "Gamedata project checked in <duration>",
+  ],
+  "stdout": [
+    "Opening gamedata project",
+    "Root: <resources>/gamedata, ignored: [configs/misc]",
+    "Verifying gamedata project: <resources>/gamedata",
+    "Verifying modules:",
+    "  -ltx",
+    "",
+    "Verify LTX files",
+    "Verify LTX files formatting",
+    "Checking 6 file(s)",
+    "Not formatted: <resources>/gamedata/configs/alife.ltx",
+    "Not formatted: <resources>/gamedata/configs/defines.ltx",
+    "Not formatted: <resources>/gamedata/configs/evaluation.ltx",
+    "Not formatted: <resources>/gamedata/configs/fonts.ltx",
+    "Not formatted: <resources>/gamedata/configs/game.ltx",
+    "Not formatted: <resources>/gamedata/configs/system.ltx",
+    "Verify LTX schemas",
+    "Verify path: <resources>/gamedata/configs",
+    "Checked 6 files, 27 sections in <duration>",
+    "Verified 0.00%, 2 files, 0 sections, 0 fields",
+    "Found 0 error(s)",
+    "Verified gamedata ltx files in <duration>",
+  ],
+}
+`;
+
+exports[`verify-gamedata ignore list should refuse to open when only system.ltx is ignored 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Execution of command 'verify-gamedata' failed, error: Invalid error: Ignored prefix 'configs/system.ltx' hides 'configs\\system.ltx', which every check needs",
+  ],
+  "stdout": [
+    "Opening gamedata project",
+    "Root: <resources>/gamedata, ignored: [configs/system.ltx]",
+  ],
+}
+`;
+
+exports[`verify-gamedata ignore list should refuse to open when the configs directory is ignored 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Execution of command 'verify-gamedata' failed, error: Invalid error: Ignored prefix 'configs' hides 'configs\\system.ltx', which every check needs",
+  ],
+  "stdout": [
+    "Opening gamedata project",
+    "Root: <resources>/gamedata, ignored: [configs]",
   ],
 }
 `;
