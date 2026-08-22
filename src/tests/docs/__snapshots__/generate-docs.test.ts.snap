@@ -34,11 +34,11 @@ exports[`generate-docs should reject pages that drifted 1`] = `
     "missing: ltx.md",
     "missing: ogf.md",
     "missing: omf.md",
-    "missing: particles.md",
+    "missing: particle.md",
     "missing: spawn.md",
-    "missing: textures.md",
+    "missing: texture.md",
     "missing: thm.md",
-    "missing: translations.md",
+    "missing: translation.md",
   ],
   "stdout": [],
 }
@@ -48,8 +48,8 @@ exports[`generate-docs should write the expected pages 1`] = `
 [
   {
     "path": "docs/README.md",
-    "sha256": "531cb2bf9b458aeac1f61879599c4ed96d7a786930faee37996423246de6a640",
-    "size": 2605,
+    "sha256": "5eba259446de187b6f8c75b3fae86f899f4b46b8f58496d1e47b017a72c2bff5",
+    "size": 2582,
   },
   {
     "path": "docs/archive.md",
@@ -92,9 +92,9 @@ exports[`generate-docs should write the expected pages 1`] = `
     "size": 3252,
   },
   {
-    "path": "docs/particles.md",
-    "sha256": "2a3823119bf3dc11f9f8f1708f09a86deeb8950c14f79a2aae482fc716bfd745",
-    "size": 2569,
+    "path": "docs/particle.md",
+    "sha256": "46beb5169441fac01c0f002c62dcc5d35bcaced4f29fce76b04a3694e7f6adc9",
+    "size": 2568,
   },
   {
     "path": "docs/spawn.md",
@@ -102,9 +102,9 @@ exports[`generate-docs should write the expected pages 1`] = `
     "size": 2393,
   },
   {
-    "path": "docs/textures.md",
-    "sha256": "0ee90d3fdf2fcba10e2c359a5aae4a276720f2a9b19ed707dda6b848e276ee2d",
-    "size": 4927,
+    "path": "docs/texture.md",
+    "sha256": "223ae6f7f5456ee1bf5e1b7f50566444e5f590a457588f0e870b0e8819f35a02",
+    "size": 4926,
   },
   {
     "path": "docs/thm.md",
@@ -112,9 +112,9 @@ exports[`generate-docs should write the expected pages 1`] = `
     "size": 946,
   },
   {
-    "path": "docs/translations.md",
-    "sha256": "56db77af1d7e74d1e0f1024660709fcbf9bb294fe9554ba58a1bd8b66ab32e7d",
-    "size": 2040,
+    "path": "docs/translation.md",
+    "sha256": "bc552503f6f8cc3f014c41592dd6509223b7e476df5ef1e62f747e7d3f5650b4",
+    "size": 2039,
   },
   {
     "path": "drifted/README.md",
