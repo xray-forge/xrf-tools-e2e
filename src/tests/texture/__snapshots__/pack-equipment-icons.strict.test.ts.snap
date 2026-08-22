@@ -22,7 +22,7 @@ exports[`pack-equipment-icons strict mode should refuse a missing icon under str
   "exitCode": 1,
   "stderr": [
     "Skip icon <sandbox>/icons/test_icon_b.dds / 'test_icon_b', reason: IO error: The system cannot find the file specified. (os error 2)",
-    "Execution of command 'pack-equipment-icons' failed, error: Texture processing error: Expected an icon to exist for each of the 1 sections declaring inv_grid_* fields, found none for: test_icon_b",
+    "Error: Texture processing error: Expected an icon to exist for each of the 1 sections declaring inv_grid_* fields, found none for: test_icon_b",
   ],
   "stdout": [
     "Starting packing DDS icons file, parallel",

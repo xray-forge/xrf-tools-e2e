@@ -2,7 +2,7 @@
 
 exports[`verify-gamedata meets a damaged tree should name a damaged asset and finish the sweep 1`] = `
 {
-  "exitCode": 1,
+  "exitCode": 3,
   "stderr": [
     "",
     "  - [meshes] meshes/ogf/dev_bolt_hud.ogf: Mesh references missing motion 'dynamics\\devices\\dev_bolt\\dev_bolt_hud_animation'",
@@ -14,6 +14,7 @@ exports[`verify-gamedata meets a damaged tree should name a damaged asset and fi
     "Cannot read OGF texture: item\\item_notes",
     "Cannot read OGF texture: wpn\\wpn_bolt",
     "Cannot read OGF texture: wpn\\wpn_pm",
+    "Check failed: 5 finding(s)",
     "Gamedata project checked in <duration>",
     "Mesh is not valid: meshes\\ogf\\dev_bolt_hud.ogf",
     "Mesh is not valid: meshes\\ogf\\notes_paper_1.ogf",

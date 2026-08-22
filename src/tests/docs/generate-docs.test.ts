@@ -17,7 +17,7 @@ describe("generate-docs", () => {
     check = box.run("generate-docs", ["--output", box.at("docs"), "--check"]);
 
     box.write("drifted/README.md", "# Not the generated docs\n");
-    drifted = box.run("generate-docs", ["--output", box.at("drifted"), "--check"], { expectExit: 1 });
+    drifted = box.run("generate-docs", ["--output", box.at("drifted"), "--check"], { expectExit: 3 });
   });
 
   it("should generate a page per command group", () => {

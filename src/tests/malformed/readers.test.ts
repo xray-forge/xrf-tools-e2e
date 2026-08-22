@@ -46,11 +46,13 @@ describe("readers reject damaged input", () => {
     empty = box.run("info-ogf", ["--path", box.write("empty.ogf", "")], fail);
     missing = box.run("info-ogf", ["--path", box.at("does-not-exist.ogf")], fail);
 
+    // The two verifiers below judge the damaged file rather than failing to run, so they answer
+    // the check verdict 3 where the readers above answer the operational 1.
     box.write("configs/broken.ltx", "[unterminated\nkey = value\n");
-    ltx = box.run("verify-ltx", ["--path", box.at("configs")], fail);
+    ltx = box.run("verify-ltx", ["--path", box.at("configs")], { expectExit: 3 });
 
     box.write("translations/broken.json", '{ "st_x": { "eng": }\n');
-    translation = box.run("verify-translation", ["--path", box.at("translations")], fail);
+    translation = box.run("verify-translation", ["--path", box.at("translations")], { expectExit: 3 });
   });
 
   it("should refuse a truncated visual", () => {

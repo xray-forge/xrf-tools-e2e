@@ -6,9 +6,9 @@ exports[`equipment icons roundtrip should describe the packed sheet 1`] = `
   "stderr": [],
   "stdout": [
     "Read dds file <sandbox>/repacked.dds",
-    "File size: 8052 (7kb)",
+    "File size: 8052 (7.86 KB)",
     "Metadata size: 148",
-    "Data size: 7904 (7kb)",
+    "Data size: 7904 (7.72 KB)",
     "Size: 152 x 52",
     "Mipmap: 1 - 16",
     "Linear size: 7904",

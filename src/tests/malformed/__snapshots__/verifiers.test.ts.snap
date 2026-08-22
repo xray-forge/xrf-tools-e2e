@@ -2,10 +2,10 @@
 
 exports[`verifiers meet damaged input should refuse a damaged particle container 1`] = `
 {
-  "exitCode": 1,
+  "exitCode": 3,
   "stderr": [
-    "[<timestamp> ERROR xrf_cli::commands::particle::verify_particles] Provided particle file is invalid: Invalid error: Chunk 0x00000003 at position 18 declares 1088704 bytes, beyond source end 500",
-    "Execution of command 'verify-particles' failed, error: Parsing error: Verification of particle file failed: Invalid error: Chunk 0x00000003 at position 18 declares 1088704 bytes, beyond source end 500",
+    "Provided particle file is invalid: Invalid error: Chunk 0x00000003 at position 18 declares 1088704 bytes, beyond source end 500",
+    "Check failed: 1 finding(s)",
   ],
   "stdout": [],
 }
@@ -13,10 +13,10 @@ exports[`verifiers meet damaged input should refuse a damaged particle container
 
 exports[`verifiers meet damaged input should refuse a damaged spawn 1`] = `
 {
-  "exitCode": 1,
+  "exitCode": 3,
   "stderr": [
-    "[<timestamp> ERROR xrf_cli::commands::spawn::verify_spawn] Provided spawn file is invalid: Invalid error: Chunk 0x00000001 at position 60 declares 66313 bytes, beyond source end 400",
-    "Execution of command 'verify-spawn' failed, error: Parsing error: Verification of spawn file failed: Invalid error: Chunk 0x00000001 at position 60 declares 66313 bytes, beyond source end 400",
+    "Provided spawn file is invalid: Invalid error: Chunk 0x00000001 at position 60 declares 66313 bytes, beyond source end 400",
+    "Check failed: 1 finding(s)",
   ],
   "stdout": [],
 }
@@ -24,9 +24,10 @@ exports[`verifiers meet damaged input should refuse a damaged spawn 1`] = `
 
 exports[`verifiers meet damaged input should refuse an unparseable icon configuration 1`] = `
 {
-  "exitCode": 1,
+  "exitCode": 3,
   "stderr": [
-    "Execution of command 'verify-equipment-icons' failed, error: Ltx parse error: 2:1 Failed to parse section statement without closing bracket ']'",
+    "Provided system ltx is invalid: Ltx parse error: 2:1 Failed to parse section statement without closing bracket ']'",
+    "Check failed: 1 finding(s)",
   ],
   "stdout": [],
 }
@@ -34,9 +35,9 @@ exports[`verifiers meet damaged input should refuse an unparseable icon configur
 
 exports[`verifiers meet damaged input should report a damaged visual as a failed verification 1`] = `
 {
-  "exitCode": 1,
+  "exitCode": 3,
   "stderr": [
-    "Verification failed, status: failed",
+    "Check failed: 1 finding(s)",
   ],
   "stdout": [
     "Verifying ogf visuals in <sandbox>/bad.ogf",

@@ -11,7 +11,8 @@ describe("verify-ogf", () => {
 
   beforeAll(() => {
     // The visuals reference textures the trimmed tree does not carry, so the texture check cannot
-    // complete and the command answers 1. Geometry is still fully verified.
+    // complete and the command answers the operational 1 rather than the check verdict 3. Geometry
+    // is still fully verified.
     single = box.run("verify-ogf", ["--path", gamedata("meshes/ogf/wpn_pm_lod.ogf")], { expectExit: 1 });
     sweep = box.run("verify-ogf", ["--path", gamedata("meshes/ogf"), "--report", box.at("report.json")], {
       expectExit: 1,

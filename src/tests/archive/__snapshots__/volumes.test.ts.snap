@@ -12,7 +12,7 @@ exports[`archive volumes should split a pack across volumes 1`] = `
     "Wrote <sandbox>/split/gamedata.db2",
     "Packed 22 file(s) into 3 volume(s), took <duration>",
     "Summary: 8 compressed, 14 stored, 0 aliased, 0 skipped",
-    "Size: 2.369 MB source, 2.365 MB written",
+    "Size: 2.37 MB source, 2.37 MB written",
   ],
 }
 `;
@@ -24,7 +24,7 @@ exports[`archive volumes should unpack a single volume on its own 1`] = `
   "stdout": [
     "Unpack source: <sandbox>/split/gamedata.db0",
     "Unpack destination: <sandbox>/from-first",
-    "Summary: 1 archive(s), 26 file(s), 1.163 MB compressed, 1.168 MB real",
+    "Summary: 1 archive(s), 26 file(s), 1.16 MB compressed, 1.17 MB real",
     "Unpacking files, parallel 32",
     "Unpacked archive, took <duration> (preparation <duration>, unpack <duration>)",
   ],
@@ -38,7 +38,7 @@ exports[`archive volumes should unpack a whole volume set 1`] = `
   "stdout": [
     "Unpack source: <sandbox>/split",
     "Unpack destination: <sandbox>/from-set",
-    "Summary: 3 archive(s), 32 file(s), 2.364 MB compressed, 2.369 MB real",
+    "Summary: 3 archive(s), 32 file(s), 2.36 MB compressed, 2.37 MB real",
     "Unpacking files, parallel 32",
     "Unpacked archive, took <duration> (preparation <duration>, unpack <duration>)",
   ],

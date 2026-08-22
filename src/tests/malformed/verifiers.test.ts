@@ -18,7 +18,8 @@ describe("verifiers meet damaged input", () => {
   let icons: CliResult;
 
   beforeAll(() => {
-    const fail = { expectExit: 1 };
+    // Damaged content is a judged verdict: every verifier answers 3 rather than the operational 1.
+    const fail = { expectExit: 3 };
 
     ogf = box.run(
       "verify-ogf",

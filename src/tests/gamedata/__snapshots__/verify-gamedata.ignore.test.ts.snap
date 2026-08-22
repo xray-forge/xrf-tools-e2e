@@ -4,7 +4,7 @@ exports[`verify-gamedata ignore list should abort a check that never reads the i
 {
   "exitCode": 1,
   "stderr": [
-    "Execution of command 'verify-gamedata' failed, error: Invalid error: Ignored prefix 'configs' hides 'configs\\system.ltx', which every check needs",
+    "Error: Invalid error: Ignored prefix 'configs' hides 'configs\\system.ltx', which every check needs",
   ],
   "stdout": [
     "Opening gamedata project",
@@ -35,7 +35,7 @@ exports[`verify-gamedata ignore list should empty a check whose subtree is ignor
 
 exports[`verify-gamedata ignore list should ignore a prefix that matches nothing 1`] = `
 {
-  "exitCode": 1,
+  "exitCode": 3,
   "stderr": [
     "Format issues with 7/7 files in <duration>",
     "",
@@ -49,6 +49,7 @@ exports[`verify-gamedata ignore list should ignore a prefix that matches nothing
     "  - [ltx] <resources>/gamedata/configs/misc/inventory_icons.ltx: LTX file needs formatting",
     "  - [ltx] <resources>/gamedata/configs/system.ltx: LTX file needs formatting",
     "Gamedata project checked in <duration>",
+    "Check failed: 7 finding(s)",
   ],
   "stdout": [
     "Opening gamedata project",
@@ -79,7 +80,7 @@ exports[`verify-gamedata ignore list should ignore a prefix that matches nothing
 
 exports[`verify-gamedata ignore list should leave a check alone when the prefix names another subtree 1`] = `
 {
-  "exitCode": 1,
+  "exitCode": 3,
   "stderr": [
     "Format issues with 7/7 files in <duration>",
     "",
@@ -93,6 +94,7 @@ exports[`verify-gamedata ignore list should leave a check alone when the prefix 
     "  - [ltx] <resources>/gamedata/configs/misc/inventory_icons.ltx: LTX file needs formatting",
     "  - [ltx] <resources>/gamedata/configs/system.ltx: LTX file needs formatting",
     "Gamedata project checked in <duration>",
+    "Check failed: 7 finding(s)",
   ],
   "stdout": [
     "Opening gamedata project",
@@ -123,7 +125,7 @@ exports[`verify-gamedata ignore list should leave a check alone when the prefix 
 
 exports[`verify-gamedata ignore list should narrow a check to the unignored part of a subtree 1`] = `
 {
-  "exitCode": 1,
+  "exitCode": 3,
   "stderr": [
     "Format issues with 6/6 files in <duration>",
     "",
@@ -136,6 +138,7 @@ exports[`verify-gamedata ignore list should narrow a check to the unignored part
     "  - [ltx] <resources>/gamedata/configs/game.ltx: LTX file needs formatting",
     "  - [ltx] <resources>/gamedata/configs/system.ltx: LTX file needs formatting",
     "Gamedata project checked in <duration>",
+    "Check failed: 6 finding(s)",
   ],
   "stdout": [
     "Opening gamedata project",
@@ -167,7 +170,7 @@ exports[`verify-gamedata ignore list should refuse to open when only system.ltx 
 {
   "exitCode": 1,
   "stderr": [
-    "Execution of command 'verify-gamedata' failed, error: Invalid error: Ignored prefix 'configs/system.ltx' hides 'configs\\system.ltx', which every check needs",
+    "Error: Invalid error: Ignored prefix 'configs/system.ltx' hides 'configs\\system.ltx', which every check needs",
   ],
   "stdout": [
     "Opening gamedata project",
@@ -180,7 +183,7 @@ exports[`verify-gamedata ignore list should refuse to open when the configs dire
 {
   "exitCode": 1,
   "stderr": [
-    "Execution of command 'verify-gamedata' failed, error: Invalid error: Ignored prefix 'configs' hides 'configs\\system.ltx', which every check needs",
+    "Error: Invalid error: Ignored prefix 'configs' hides 'configs\\system.ltx', which every check needs",
   ],
   "stdout": [
     "Opening gamedata project",

@@ -22,12 +22,15 @@ describe("verify-gamedata ignore list", () => {
   let nonEssential: CliResult;
 
   beforeAll(() => {
+    // A run that judged the content and found problems answers 3; one that could not even open
+    // the project answers 1.
+    const findings = { expectExit: 3 };
     const fatal = { expectExit: 1 };
 
     // Narrows the ltx check from seven config files to six; the project still opens because
     // system.ltx is outside the ignored subtree.
-    partial = box.run("verify-gamedata", [GAMEDATA, "--checks", "ltx", "--ignore", "configs/misc"], fatal);
-    partialBackslash = box.run("verify-gamedata", [GAMEDATA, "--checks", "ltx", "--ignore", "configs\\misc"], fatal);
+    partial = box.run("verify-gamedata", [GAMEDATA, "--checks", "ltx", "--ignore", "configs/misc"], findings);
+    partialBackslash = box.run("verify-gamedata", [GAMEDATA, "--checks", "ltx", "--ignore", "configs\\misc"], findings);
 
     // Ignoring the directory that holds system.ltx, or that one file, stops the project opening.
     essentialDirectory = box.run("verify-gamedata", [GAMEDATA, "--checks", "ltx", "--ignore", "configs"], fatal);
@@ -38,8 +41,8 @@ describe("verify-gamedata ignore list", () => {
 
     // A prefix pointing at a different subtree, and one matching nothing at all, both leave the
     // check with its full seven files.
-    otherSubtree = box.run("verify-gamedata", [GAMEDATA, "--checks", "ltx", "--ignore", "meshes/ogf"], fatal);
-    nothingMatched = box.run("verify-gamedata", [GAMEDATA, "--checks", "ltx", "--ignore", "nonexistent"], fatal);
+    otherSubtree = box.run("verify-gamedata", [GAMEDATA, "--checks", "ltx", "--ignore", "meshes/ogf"], findings);
+    nothingMatched = box.run("verify-gamedata", [GAMEDATA, "--checks", "ltx", "--ignore", "nonexistent"], findings);
 
     // The flag doing its job: a non-essential subtree is filtered out and the check finds nothing.
     nonEssential = box.run("verify-gamedata", [GAMEDATA, "--checks", "meshes", "--ignore", "meshes"]);

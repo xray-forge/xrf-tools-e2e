@@ -9,7 +9,7 @@ describe("verify-gamedata strict mode", () => {
   let strict: CliResult;
 
   beforeAll(() => {
-    strict = box.run("verify-gamedata", [gamedata(), "--checks", "meshes", "--strict"], { expectExit: 1 });
+    strict = box.run("verify-gamedata", [gamedata(), "--checks", "meshes", "--strict"], { expectExit: 3 });
   });
 
   // Recorded as current behaviour: strict is meant to validate expensive payloads fully, and on

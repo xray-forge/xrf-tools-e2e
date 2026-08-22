@@ -6,9 +6,9 @@ exports[`info-dds should report a compressed texture 1`] = `
   "stderr": [],
   "stdout": [
     "Read dds file <resources>/gamedata/textures/prop_lampa_g.dds",
-    "File size: 184 (0kb)",
+    "File size: 184 (184 B)",
     "Metadata size: 128",
-    "Data size: 56 (0kb)",
+    "Data size: 56 (56 B)",
     "Size: 8 x 8",
     "Mipmap: 4 - 8",
     "Linear size: 32",
@@ -24,9 +24,9 @@ exports[`info-dds should report a ui texture 1`] = `
   "stderr": [],
   "stdout": [
     "Read dds file <resources>/gamedata/textures/ui_empty.dds",
-    "File size: 144 (0kb)",
+    "File size: 144 (144 B)",
     "Metadata size: 128",
-    "Data size: 16 (0kb)",
+    "Data size: 16 (16 B)",
     "Size: 4 x 4",
     "Mipmap: 1 - 16",
     "Linear size: 16",

@@ -12,9 +12,10 @@ exports[`export-externs drift detection should accept an artifact that matches 1
 
 exports[`export-externs drift detection should reject an artifact that drifted 1`] = `
 {
-  "exitCode": 1,
+  "exitCode": 3,
   "stderr": [
-    "Execution of command 'export-externs' failed, error: Verify error: Extern JSON artifact '<sandbox>/drifted.json' does not match the parsed declaration manifest.",
+    "Verify error: Extern JSON artifact '<sandbox>/drifted.json' does not match the parsed declaration manifest.",
+    "Check failed: 1 finding(s)",
   ],
   "stdout": [],
 }

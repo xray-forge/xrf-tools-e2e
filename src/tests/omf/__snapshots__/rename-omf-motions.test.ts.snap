@@ -20,7 +20,7 @@ exports[`rename-omf-motions should reject an incomplete map under strict 1`] = `
 {
   "exitCode": 1,
   "stderr": [
-    "Execution of command 'rename-omf-motions' failed, error: Invalid error: Refused to rename <resources>/gamedata/meshes/omf/wpn_svd_hud_animation.omf in strict mode, 1 motions are missing from the map: svd_reload",
+    "Error: Invalid error: Refused to rename <resources>/gamedata/meshes/omf/wpn_svd_hud_animation.omf in strict mode, 1 motions are missing from the map: svd_reload",
   ],
   "stdout": [],
 }
