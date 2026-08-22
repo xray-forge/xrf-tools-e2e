@@ -15,7 +15,7 @@ exports[`verify-translation should fail under strict when translations are missi
     "Translation key missing: st_medkit_name spa in <resources>/translations/st_items.json",
     "Translation key missing: st_bread_name spa in <resources>/translations/st_items.json",
     "Translation key missing: st_medkit_name ukr in <resources>/translations/st_items.json",
-    "[<timestamp> ERROR xrf_cli::commands::translation::verify_translations] Failing with non-zero error code, missing translation found",
+    "[<timestamp> ERROR xrf_cli::commands::translation::verify_translation::command] Failing with non-zero error code, missing translation found",
   ],
   "stdout": [
     "Verifying translation <resources>/translations, language - all",
