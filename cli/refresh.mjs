@@ -7,7 +7,7 @@ const EXECUTABLE_NAME = process.platform === "win32" ? "xrf-cli.exe" : "xrf-cli"
 const DESTINATION = path.resolve(PROJECT_ROOT, "cli/app", EXECUTABLE_NAME);
 
 const source = path.resolve(
-  process.argv[2] ?? path.resolve(PROJECT_ROOT, "../stalker-xrf-tools/target/release", EXECUTABLE_NAME)
+  process.argv[2] ?? path.resolve(PROJECT_ROOT, "../xrf-tools/target/release", EXECUTABLE_NAME)
 );
 
 if (!fs.existsSync(source)) {

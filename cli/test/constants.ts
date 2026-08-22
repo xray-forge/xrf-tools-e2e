@@ -46,7 +46,7 @@ export const CLI_EXECUTABLE_NAME: string = process.platform === "win32" ? "xrf-c
  */
 export const CLI_EXECUTABLE: string = path.resolve(PROJECT_ROOT, "./cli/app", CLI_EXECUTABLE_NAME);
 
-export const TOOLS_ROOT: string = path.resolve(PROJECT_ROOT, "../stalker-xrf-tools");
+export const TOOLS_ROOT: string = path.resolve(PROJECT_ROOT, "../xrf-tools");
 
 /**
  * Refers to a file in the committed gamedata tree.
