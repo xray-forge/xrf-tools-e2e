@@ -19,7 +19,7 @@ describe("export-externs drift detection", () => {
 
     // A manifest that no longer matches the declarations is what --check exists to catch.
     drifted = box.run("export-externs", [DECLARATIONS, "--check", box.write("drifted.json", '{ "exports": {} }\n')], {
-      expectExit: 1,
+      expectExit: 3,
     });
   });
 

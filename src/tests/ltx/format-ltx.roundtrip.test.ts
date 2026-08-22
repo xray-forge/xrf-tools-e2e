@@ -16,7 +16,7 @@ describe("format-ltx roundtrip", () => {
     const configs = box.copyIn(gamedata("configs"), "configs");
 
     // Vanilla configs are not in the formatter's shape; rejecting them is the expected answer.
-    checkBefore = box.run("format-ltx", ["--path", configs, "--check"], { expectExit: 1 });
+    checkBefore = box.run("format-ltx", ["--path", configs, "--check"], { expectExit: 3 });
     format = box.run("format-ltx", ["--path", configs]);
     checkAfter = box.run("format-ltx", ["--path", configs, "--check"]);
     verify = box.run("verify-ltx", ["--path", configs]);

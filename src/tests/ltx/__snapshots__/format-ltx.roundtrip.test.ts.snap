@@ -27,10 +27,10 @@ exports[`format-ltx roundtrip should not change what the files mean 1`] = `
 
 exports[`format-ltx roundtrip should reject unformatted configs 1`] = `
 {
-  "exitCode": 1,
+  "exitCode": 3,
   "stderr": [
     "Format issues with 7/7 files in <duration>",
-    "Execution of command 'format-ltx' failed, error: Verify error: Project includes LTX files with invalid format",
+    "Check failed: 7 finding(s)",
   ],
   "stdout": [
     "Checking 7 ltx file(s) from 1 provided path(s)",

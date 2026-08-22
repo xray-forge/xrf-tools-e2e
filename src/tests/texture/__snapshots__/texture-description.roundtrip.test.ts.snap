@@ -6,9 +6,9 @@ exports[`texture description roundtrip should describe the repacked sheet the sa
   "stderr": [],
   "stdout": [
     "Read dds file <sandbox>/packed/ui/ui_test_sheet.dds",
-    "File size: 16532 (16kb)",
+    "File size: 16532 (16.1 KB)",
     "Metadata size: 148",
-    "Data size: 16384 (16kb)",
+    "Data size: 16384 (16 KB)",
     "Size: 256 x 64",
     "Mipmap: 1 - 16",
     "Linear size: 16384",
@@ -23,7 +23,7 @@ exports[`texture description roundtrip should fail when the output subdirectory 
 {
   "exitCode": 1,
   "stderr": [
-    "Execution of command 'pack-texture-description' failed, error: IO error: The system cannot find the path specified. (os error 3)",
+    "Error: IO error: The system cannot find the path specified. (os error 3)",
   ],
   "stdout": [
     "Packing for 1 files",

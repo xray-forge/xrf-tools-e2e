@@ -28,7 +28,7 @@ exports[`patch-ogf-texture-refs should refuse a reference the visual does not ca
 {
   "exitCode": 1,
   "stderr": [
-    "Execution of command 'patch-ogf-texture-refs' failed, error: Verify error: Refused to patch <resources>/gamedata/meshes/ogf/dev_bolt_hud.ogf, no texture reference matched 'wpn\\does_not_exist', found ["wpn\\\\wpn_bolt"]",
+    "Error: Verify error: Refused to patch <resources>/gamedata/meshes/ogf/dev_bolt_hud.ogf, no texture reference matched 'wpn\\does_not_exist', found ["wpn\\\\wpn_bolt"]",
   ],
   "stdout": [
     "Patch ogf texture refs <resources>/gamedata/meshes/ogf/dev_bolt_hud.ogf, 'wpn\\does_not_exist' -> 'wpn\\replacement', existing ["wpn\\\\wpn_bolt"]",

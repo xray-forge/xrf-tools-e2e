@@ -35,7 +35,7 @@ describe("verify-translation", () => {
 
   // Strict turns the same gaps into a non-zero answer, which is what a build pipeline would gate on.
   it("should fail under strict when translations are missing", () => {
-    expect(box.run("verify-translation", ["--path", SOURCE, "--strict"], { expectExit: 1 })).toMatchSnapshot();
+    expect(box.run("verify-translation", ["--path", SOURCE, "--strict"], { expectExit: 3 })).toMatchSnapshot();
   });
 
   it("should write only the report", () => {

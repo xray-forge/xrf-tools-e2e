@@ -11,7 +11,7 @@ exports[`pack-archive options should honour an xrCompress configuration 1`] = `
     "Wrote <sandbox>/configured/cfg.db",
     "Packed 7 file(s) into 1 volume(s), took <duration>",
     "Summary: 7 compressed, 0 stored, 0 aliased, 1 skipped",
-    "Size: 0.008 MB source, 0.004 MB written",
+    "Size: 8.33 KB source, 3.8 KB written",
   ],
 }
 `;
@@ -26,7 +26,7 @@ exports[`pack-archive options should keep them when the skip list is off 1`] = `
     "Wrote <sandbox>/kept/a.db",
     "Packed 9 file(s) into 1 volume(s), took <duration>",
     "Summary: 8 compressed, 1 stored, 0 aliased, 0 skipped",
-    "Size: 0.008 MB source, 0.004 MB written",
+    "Size: 8.69 KB source, 4 KB written",
   ],
 }
 `;
@@ -41,7 +41,7 @@ exports[`pack-archive options should skip editor leftovers by default 1`] = `
     "Wrote <sandbox>/skipped/a.db",
     "Packed 8 file(s) into 1 volume(s), took <duration>",
     "Summary: 8 compressed, 0 stored, 0 aliased, 1 skipped",
-    "Size: 0.008 MB source, 0.004 MB written",
+    "Size: 8.68 KB source, 3.98 KB written",
   ],
 }
 `;
@@ -56,7 +56,7 @@ exports[`pack-archive options should store instead of compressing and write an x
     "Wrote <sandbox>/stored/cfg.xdb",
     "Packed 8 file(s) into 1 volume(s), took <duration>",
     "Summary: 0 compressed, 8 stored, 0 aliased, 0 skipped",
-    "Size: 0.008 MB source, 0.009 MB written",
+    "Size: 8.68 KB source, 9 KB written",
   ],
 }
 `;

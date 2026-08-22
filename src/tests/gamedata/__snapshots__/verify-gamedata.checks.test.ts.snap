@@ -22,7 +22,7 @@ exports[`verify-gamedata check selection should pass a check with nothing to ins
 
 exports[`verify-gamedata check selection should report findings from one named check 1`] = `
 {
-  "exitCode": 1,
+  "exitCode": 3,
   "stderr": [
     "Format issues with 7/7 files in <duration>",
     "",
@@ -36,6 +36,7 @@ exports[`verify-gamedata check selection should report findings from one named c
     "  - [ltx] <resources>/gamedata/configs/misc/inventory_icons.ltx: LTX file needs formatting",
     "  - [ltx] <resources>/gamedata/configs/system.ltx: LTX file needs formatting",
     "Gamedata project checked in <duration>",
+    "Check failed: 7 finding(s)",
   ],
   "stdout": [
     "Opening gamedata project",
@@ -66,7 +67,7 @@ exports[`verify-gamedata check selection should report findings from one named c
 
 exports[`verify-gamedata check selection should run several named checks at once 1`] = `
 {
-  "exitCode": 1,
+  "exitCode": 3,
   "stderr": [
     "Format issues with 7/7 files in <duration>",
     "",
@@ -80,6 +81,7 @@ exports[`verify-gamedata check selection should run several named checks at once
     "  - [ltx] <resources>/gamedata/configs/misc/inventory_icons.ltx: LTX file needs formatting",
     "  - [ltx] <resources>/gamedata/configs/system.ltx: LTX file needs formatting",
     "Gamedata project checked in <duration>",
+    "Check failed: 7 finding(s)",
   ],
   "stdout": [
     "Opening gamedata project",
@@ -113,7 +115,7 @@ exports[`verify-gamedata check selection should run several named checks at once
 
 exports[`verify-gamedata check selection should verify meshes 1`] = `
 {
-  "exitCode": 1,
+  "exitCode": 3,
   "stderr": [
     "",
     "  - [meshes] meshes/ogf/dev_bolt_hud.ogf: Mesh references missing motion 'dynamics\\devices\\dev_bolt\\dev_bolt_hud_animation'",
@@ -126,6 +128,7 @@ exports[`verify-gamedata check selection should verify meshes 1`] = `
     "Cannot read OGF texture: item\\item_notes",
     "Cannot read OGF texture: wpn\\wpn_bolt",
     "Cannot read OGF texture: wpn\\wpn_pm",
+    "Check failed: 5 finding(s)",
     "Gamedata project checked in <duration>",
     "Mesh is not valid: meshes\\ogf\\dev_bolt_hud.ogf",
     "Mesh is not valid: meshes\\ogf\\notes_paper_1.ogf",

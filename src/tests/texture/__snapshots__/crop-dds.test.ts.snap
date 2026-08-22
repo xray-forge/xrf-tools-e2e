@@ -24,7 +24,7 @@ exports[`crop-dds should refuse a region that runs past the edge 1`] = `
 {
   "exitCode": 1,
   "stderr": [
-    "Execution of command 'crop-dds' failed, error: Texture processing error: Region 192:0 128x64 does not fit in source <resources>/gamedata/textures/ui/ui_test_sheet.dds which is 256x64",
+    "Error: Texture processing error: Region 192:0 128x64 does not fit in source <resources>/gamedata/textures/ui/ui_test_sheet.dds which is 256x64",
   ],
   "stdout": [],
 }
@@ -36,9 +36,9 @@ exports[`crop-dds should report the cropped dimensions 1`] = `
   "stderr": [],
   "stdout": [
     "Read dds file <sandbox>/corner.dds",
-    "File size: 4244 (4kb)",
+    "File size: 4244 (4.14 KB)",
     "Metadata size: 148",
-    "Data size: 4096 (4kb)",
+    "Data size: 4096 (4 KB)",
     "Size: 64 x 64",
     "Mipmap: 1 - 16",
     "Linear size: 4096",
@@ -55,9 +55,9 @@ exports[`crop-dds should report the fitted dimensions 1`] = `
   "stderr": [],
   "stdout": [
     "Read dds file <sandbox>/fitted.dds",
-    "File size: 1172 (1kb)",
+    "File size: 1172 (1.14 KB)",
     "Metadata size: 148",
-    "Data size: 1024 (1kb)",
+    "Data size: 1024 (1 KB)",
     "Size: 32 x 32",
     "Mipmap: 1 - 16",
     "Linear size: 1024",

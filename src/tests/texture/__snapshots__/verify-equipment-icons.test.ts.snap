@@ -12,10 +12,11 @@ exports[`verify-equipment-icons should accept a grid whose only sharing is ident
 
 exports[`verify-equipment-icons should reject a partial overlap 1`] = `
 {
-  "exitCode": 1,
+  "exitCode": 3,
   "stderr": [
     "Overlapping icon rects at 1:1, 1 cell(s) shared by 'icon_a' and 'icon_b'",
     "Found 1 overlapping icon rect pair(s)",
+    "Check failed: 1 finding(s)",
   ],
   "stdout": [],
 }

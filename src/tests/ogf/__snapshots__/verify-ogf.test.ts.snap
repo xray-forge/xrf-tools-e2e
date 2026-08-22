@@ -4,7 +4,7 @@ exports[`verify-ogf should sweep a directory 1`] = `
 {
   "exitCode": 1,
   "stderr": [
-    "Verification incomplete, status: incomplete",
+    "Error: Verify error: Verification of ogf visuals did not complete, status: incomplete",
   ],
   "stdout": [
     "Verifying ogf visuals in <resources>/gamedata/meshes/ogf",
@@ -30,7 +30,7 @@ exports[`verify-ogf should verify a standalone visual 1`] = `
 {
   "exitCode": 1,
   "stderr": [
-    "Verification incomplete, status: incomplete",
+    "Error: Verify error: Verification of ogf visuals did not complete, status: incomplete",
   ],
   "stdout": [
     "Verifying ogf visuals in <resources>/gamedata/meshes/ogf/wpn_pm_lod.ogf",

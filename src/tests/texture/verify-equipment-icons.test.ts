@@ -38,7 +38,7 @@ describe("verify-equipment-icons", () => {
     // Kept out of the committed tree: a deliberately broken config there would also show up in
     // every other test that walks the configs directory.
     overlapping = box.run("verify-equipment-icons", ["--system-ltx", box.write("overlapping.ltx", PARTIAL_OVERLAP)], {
-      expectExit: 1,
+      expectExit: 3,
     });
   });
 
