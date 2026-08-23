@@ -10,8 +10,8 @@ exports[`pack-archive options should honour an xrCompress configuration 1`] = `
     "Pack destination: <sandbox>/configured",
     "Wrote <sandbox>/configured/cfg.db",
     "Packed 7 file(s) into 1 volume(s), took <duration>",
-    "Summary: 7 compressed, 0 stored, 0 aliased, 1 skipped",
-    "Size: 8.33 KB source, 3.8 KB written",
+    "Summary: 7 compressed, 0 stored, 0 aliased, 3 skipped",
+    "Size: 8.33 KB source, 3.81 KB written",
   ],
 }
 `;
@@ -24,9 +24,9 @@ exports[`pack-archive options should keep them when the skip list is off 1`] = `
     "Pack source: <sandbox>/source",
     "Pack destination: <sandbox>/kept",
     "Wrote <sandbox>/kept/a.db",
-    "Packed 9 file(s) into 1 volume(s), took <duration>",
-    "Summary: 8 compressed, 1 stored, 0 aliased, 0 skipped",
-    "Size: 8.69 KB source, 4 KB written",
+    "Packed 11 file(s) into 1 volume(s), took <duration>",
+    "Summary: 10 compressed, 1 stored, 0 aliased, 0 skipped",
+    "Size: 10.9 KB source, 4.79 KB written",
   ],
 }
 `;
@@ -39,9 +39,9 @@ exports[`pack-archive options should skip editor leftovers by default 1`] = `
     "Pack source: <sandbox>/source",
     "Pack destination: <sandbox>/skipped",
     "Wrote <sandbox>/skipped/a.db",
-    "Packed 8 file(s) into 1 volume(s), took <duration>",
-    "Summary: 8 compressed, 0 stored, 0 aliased, 1 skipped",
-    "Size: 8.68 KB source, 3.98 KB written",
+    "Packed 10 file(s) into 1 volume(s), took <duration>",
+    "Summary: 10 compressed, 0 stored, 0 aliased, 1 skipped",
+    "Size: 10.8 KB source, 4.76 KB written",
   ],
 }
 `;
@@ -54,9 +54,9 @@ exports[`pack-archive options should store instead of compressing and write an x
     "Pack source: <resources>/gamedata/configs",
     "Pack destination: <sandbox>/stored",
     "Wrote <sandbox>/stored/cfg.xdb",
-    "Packed 8 file(s) into 1 volume(s), took <duration>",
-    "Summary: 0 compressed, 8 stored, 0 aliased, 0 skipped",
-    "Size: 8.68 KB source, 9 KB written",
+    "Packed 10 file(s) into 1 volume(s), took <duration>",
+    "Summary: 0 compressed, 10 stored, 0 aliased, 0 skipped",
+    "Size: 10.8 KB source, 11.2 KB written",
   ],
 }
 `;
@@ -70,18 +70,18 @@ exports[`pack-archive options should write the expected files 1`] = `
   },
   {
     "path": "configured/cfg.db",
-    "sha256": "cb430d8709d9476d434e16447072ac95d52a00ce4aee1da38b3cc67d4c6c945b",
-    "size": 3888,
+    "sha256": "94e6e60ac5ae1d817cbd1423d84682e659f2867916cdcc64a8c07cd707bd87b7",
+    "size": 3900,
   },
   {
     "path": "kept/a.db",
-    "sha256": "e9aff26176d275aceece5ba47272a0b3e24aaa1dcff7e13cedbdf9ea470c12e2",
-    "size": 4100,
+    "sha256": "fb6e31def20f43e751489b53a8cd52622b8c393970be841a4a044d04421a159a",
+    "size": 4901,
   },
   {
     "path": "skipped/a.db",
-    "sha256": "42b004762da3897ca1fa519616401bdb0b96ec5294cdb9eeda2a1ea4f260b6f6",
-    "size": 4071,
+    "sha256": "c6dc89e7ec12128e4f83ff27ebfe84b832a53091ec846cee53fb0bc9d68d8a77",
+    "size": 4874,
   },
   {
     "path": "source/alife.ltx",
@@ -109,6 +109,16 @@ exports[`pack-archive options should write the expected files 1`] = `
     "size": 218,
   },
   {
+    "path": "source/gameplay/dialogs.xml",
+    "sha256": "6583bab4e036cca053ce8c820639a39b80dc7bae71d4adba54d5ee2d865cc5b4",
+    "size": 1670,
+  },
+  {
+    "path": "source/gameplay/dialogs_zaton.xml",
+    "sha256": "aaaaff52afc3c50a3907ba992d7b73f69e90146421385d22f07d363131e474b9",
+    "size": 548,
+  },
+  {
     "path": "source/misc/inventory_icons.ltx",
     "sha256": "5c7b9ae42acbb5e29fe65dc0b14417681fbca966fafac096807a369e30779c2a",
     "size": 1126,
@@ -130,8 +140,8 @@ exports[`pack-archive options should write the expected files 1`] = `
   },
   {
     "path": "stored/cfg.xdb",
-    "sha256": "fb1be0ec37d2ce7e20fabc6d0321fd9f319f546a1d00b15f03ea247066c5215a",
-    "size": 9211,
+    "sha256": "f31e41946fa0aeecb5628ff99530f202f8897cebca01cedf77ad4b9bb69970ae",
+    "size": 11493,
   },
 ]
 `;

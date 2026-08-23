@@ -5,7 +5,7 @@ exports[`list-assets should limit a listing to one subtree 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Listing containing-installation <resources>/gamedata",
+    "Listing <resources>/gamedata",
     "  Directory <resources>/gamedata (gamedata)",
     "  meshes\\ogf\\dev_bolt_hud.ogf [<resources>/gamedata]",
     "  meshes\\ogf\\notes_paper_1.ogf [<resources>/gamedata]",
@@ -24,13 +24,15 @@ exports[`list-assets should resolve the whole tree 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Listing containing-installation <resources>/gamedata",
+    "Listing <resources>/gamedata",
     "  Directory <resources>/gamedata (gamedata)",
     "  configs\\alife.ltx [<resources>/gamedata]",
     "  configs\\defines.ltx [<resources>/gamedata]",
     "  configs\\evaluation.ltx [<resources>/gamedata]",
     "  configs\\fonts.ltx [<resources>/gamedata]",
     "  configs\\game.ltx [<resources>/gamedata]",
+    "  configs\\gameplay\\dialogs.xml [<resources>/gamedata]",
+    "  configs\\gameplay\\dialogs_zaton.xml [<resources>/gamedata]",
     "  configs\\misc\\inventory_icons.ltx [<resources>/gamedata]",
     "  configs\\system.ltx [<resources>/gamedata]",
     "  configs\\ui\\textures_descr\\ui_test_sheet.xml [<resources>/gamedata]",
@@ -48,7 +50,7 @@ exports[`list-assets should resolve the whole tree 1`] = `
     "  textures\\prop_lampa_g.dds [<resources>/gamedata]",
     "  textures\\ui\\ui_test_sheet.dds [<resources>/gamedata]",
     "  textures\\ui_empty.dds [<resources>/gamedata]",
-    "22 asset(s) across 1 mount(s) in <duration>",
+    "24 asset(s) across 1 mount(s) in <duration>",
   ],
 }
 `;

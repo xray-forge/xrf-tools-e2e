@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
 import { gamedata } from "#/test/constants";
-import { Sandbox, sortedOutput, type CliResult } from "#/test/sandbox";
+import { Sandbox, sortedFindings, type CliResult } from "#/test/sandbox";
 
 const GAMEDATA = gamedata();
 
@@ -11,6 +11,8 @@ describe("verify-gamedata check selection", () => {
   let ltx: CliResult;
   let scripts: CliResult;
   let meshes: CliResult;
+  let meshesAgain: CliResult;
+  let meshesThird: CliResult;
   let several: CliResult;
 
   beforeAll(() => {
@@ -22,7 +24,11 @@ describe("verify-gamedata check selection", () => {
     // time is what shows that a non-zero answer comes from a named check rather than the whole run.
     scripts = box.run("verify-gamedata", [GAMEDATA, "--checks", "scripts"]);
 
+    // Run three times because the check works in parallel: one run cannot show whether the finding
+    // set is stable, and repeating it is what turns a flaky snapshot into a stated expectation.
     meshes = box.run("verify-gamedata", [GAMEDATA, "--checks", "meshes"], { expectExit: 3 });
+    meshesAgain = box.run("verify-gamedata", [GAMEDATA, "--checks", "meshes"], { expectExit: 3 });
+    meshesThird = box.run("verify-gamedata", [GAMEDATA, "--checks", "meshes"], { expectExit: 3 });
 
     // Several checks after one flag, which is how a caller narrows a run to the part of the tree
     // they touched rather than running all thirteen.
@@ -37,9 +43,16 @@ describe("verify-gamedata check selection", () => {
     expect(scripts).toMatchSnapshot();
   });
 
-  // Sorted because the meshes check does not order its findings; see sortedOutput.
   it("should verify meshes", () => {
-    expect(sortedOutput(meshes)).toMatchSnapshot();
+    expect(sortedFindings(meshes)).toMatchSnapshot();
+  });
+
+  // The findings are the same set on every run, which is the part that carries meaning. The order
+  // they reach the console in is not: they are logged from the rayon workers as each finishes, so
+  // three runs of one binary print them three ways. See the `sortedFindings` remark.
+  it("should report the same findings across repeated runs", () => {
+    expect(sortedFindings(meshesAgain)).toEqual(sortedFindings(meshes));
+    expect(sortedFindings(meshesThird)).toEqual(sortedFindings(meshes));
   });
 
   it("should run several named checks at once", () => {

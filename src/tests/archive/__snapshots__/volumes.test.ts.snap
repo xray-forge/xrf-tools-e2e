@@ -10,8 +10,8 @@ exports[`archive volumes should split a pack across volumes 1`] = `
     "Wrote <sandbox>/split/gamedata.db0",
     "Wrote <sandbox>/split/gamedata.db1",
     "Wrote <sandbox>/split/gamedata.db2",
-    "Packed 22 file(s) into 3 volume(s), took <duration>",
-    "Summary: 8 compressed, 14 stored, 0 aliased, 0 skipped",
+    "Packed 24 file(s) into 3 volume(s), took <duration>",
+    "Summary: 10 compressed, 14 stored, 0 aliased, 0 skipped",
     "Size: 2.37 MB source, 2.37 MB written",
   ],
 }
@@ -24,7 +24,7 @@ exports[`archive volumes should unpack a single volume on its own 1`] = `
   "stdout": [
     "Unpack source: <sandbox>/split/gamedata.db0",
     "Unpack destination: <sandbox>/from-first",
-    "Summary: 1 archive(s), 26 file(s), 1.16 MB compressed, 1.17 MB real",
+    "Summary: 1 archive(s), 29 file(s), 1.16 MB compressed, 1.17 MB real",
     "Unpacking files, parallel 32",
     "Unpacked archive, took <duration> (preparation <duration>, unpack <duration>)",
   ],
@@ -38,7 +38,7 @@ exports[`archive volumes should unpack a whole volume set 1`] = `
   "stdout": [
     "Unpack source: <sandbox>/split",
     "Unpack destination: <sandbox>/from-set",
-    "Summary: 3 archive(s), 32 file(s), 2.36 MB compressed, 2.37 MB real",
+    "Summary: 3 archive(s), 35 file(s), 2.36 MB compressed, 2.37 MB real",
     "Unpacking files, parallel 32",
     "Unpacked archive, took <duration> (preparation <duration>, unpack <duration>)",
   ],
@@ -71,6 +71,16 @@ exports[`archive volumes should write the expected files 1`] = `
     "path": "from-first/gamedata/configs/game.ltx",
     "sha256": "c502a7d26aff39902fcd3631e65c37b732a8e85470aff4267cbb04f36a30184b",
     "size": 218,
+  },
+  {
+    "path": "from-first/gamedata/configs/gameplay/dialogs.xml",
+    "sha256": "6583bab4e036cca053ce8c820639a39b80dc7bae71d4adba54d5ee2d865cc5b4",
+    "size": 1670,
+  },
+  {
+    "path": "from-first/gamedata/configs/gameplay/dialogs_zaton.xml",
+    "sha256": "aaaaff52afc3c50a3907ba992d7b73f69e90146421385d22f07d363131e474b9",
+    "size": 548,
   },
   {
     "path": "from-first/gamedata/configs/misc/inventory_icons.ltx",
@@ -151,6 +161,16 @@ exports[`archive volumes should write the expected files 1`] = `
     "path": "from-set/gamedata/configs/game.ltx",
     "sha256": "c502a7d26aff39902fcd3631e65c37b732a8e85470aff4267cbb04f36a30184b",
     "size": 218,
+  },
+  {
+    "path": "from-set/gamedata/configs/gameplay/dialogs.xml",
+    "sha256": "6583bab4e036cca053ce8c820639a39b80dc7bae71d4adba54d5ee2d865cc5b4",
+    "size": 1670,
+  },
+  {
+    "path": "from-set/gamedata/configs/gameplay/dialogs_zaton.xml",
+    "sha256": "aaaaff52afc3c50a3907ba992d7b73f69e90146421385d22f07d363131e474b9",
+    "size": 548,
   },
   {
     "path": "from-set/gamedata/configs/misc/inventory_icons.ltx",
@@ -239,18 +259,18 @@ exports[`archive volumes should write the expected files 1`] = `
   },
   {
     "path": "split/gamedata.db0",
-    "sha256": "a01cf96c4cc2d4c4c427ae01aa9a0404b586e5cf94a4f9b357828c8433a7fb3a",
-    "size": 1220075,
+    "sha256": "2b19a0a145f8b6ac1947e279ccf246b3897c5ab82079570d2522125cd4e6eeab",
+    "size": 1220874,
   },
   {
     "path": "split/gamedata.db1",
-    "sha256": "cd8c6f0be9a72e6406b12132a1e7b2182d960de4e377b5d14f0a11d3f0093ee0",
-    "size": 1242807,
+    "sha256": "4f6c0da04b0c3afc02a3d9eb8fe85c52cff4cdc976f3cb7af6029a585b0c6028",
+    "size": 1242819,
   },
   {
     "path": "split/gamedata.db2",
-    "sha256": "0e1b2ff1aa08739a2cbbe1842618c2ee3fe2633d737d3eaec4c40c3266f49ed6",
-    "size": 17279,
+    "sha256": "bbb8c9a2687a58dc122cf7829f865432de43bffcab2be9d21ef68fd9f2ca6c0b",
+    "size": 17290,
   },
 ]
 `;

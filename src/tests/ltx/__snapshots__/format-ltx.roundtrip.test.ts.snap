@@ -93,6 +93,16 @@ exports[`format-ltx roundtrip should write the formatted bytes 1`] = `
     "size": 220,
   },
   {
+    "path": "configs/gameplay/dialogs.xml",
+    "sha256": "6583bab4e036cca053ce8c820639a39b80dc7bae71d4adba54d5ee2d865cc5b4",
+    "size": 1670,
+  },
+  {
+    "path": "configs/gameplay/dialogs_zaton.xml",
+    "sha256": "aaaaff52afc3c50a3907ba992d7b73f69e90146421385d22f07d363131e474b9",
+    "size": 548,
+  },
+  {
     "path": "configs/misc/inventory_icons.ltx",
     "sha256": "0bd10b9ebabf8026eed428a389a4b9ef475182a02dee46bb9a50875e19e991da",
     "size": 1168,

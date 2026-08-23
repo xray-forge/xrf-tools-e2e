@@ -7,7 +7,7 @@ exports[`unpack-archive parallelism should unpack on a single thread 1`] = `
   "stdout": [
     "Unpack source: <sandbox>/packed/cfg.db",
     "Unpack destination: <sandbox>/serial",
-    "Summary: 1 archive(s), 11 file(s), 3.65 KB compressed, 8.68 KB real",
+    "Summary: 1 archive(s), 14 file(s), 4.37 KB compressed, 10.8 KB real",
     "Unpacking files, parallel 1",
     "Unpacked archive, took <duration> (preparation <duration>, unpack <duration>)",
   ],
@@ -18,8 +18,8 @@ exports[`unpack-archive parallelism should write the expected files 1`] = `
 [
   {
     "path": "packed/cfg.db",
-    "sha256": "42b004762da3897ca1fa519616401bdb0b96ec5294cdb9eeda2a1ea4f260b6f6",
-    "size": 4071,
+    "sha256": "c6dc89e7ec12128e4f83ff27ebfe84b832a53091ec846cee53fb0bc9d68d8a77",
+    "size": 4874,
   },
   {
     "path": "serial/gamedata/alife.ltx",
@@ -45,6 +45,16 @@ exports[`unpack-archive parallelism should write the expected files 1`] = `
     "path": "serial/gamedata/game.ltx",
     "sha256": "c502a7d26aff39902fcd3631e65c37b732a8e85470aff4267cbb04f36a30184b",
     "size": 218,
+  },
+  {
+    "path": "serial/gamedata/gameplay/dialogs.xml",
+    "sha256": "6583bab4e036cca053ce8c820639a39b80dc7bae71d4adba54d5ee2d865cc5b4",
+    "size": 1670,
+  },
+  {
+    "path": "serial/gamedata/gameplay/dialogs_zaton.xml",
+    "sha256": "aaaaff52afc3c50a3907ba992d7b73f69e90146421385d22f07d363131e474b9",
+    "size": 548,
   },
   {
     "path": "serial/gamedata/misc/inventory_icons.ltx",

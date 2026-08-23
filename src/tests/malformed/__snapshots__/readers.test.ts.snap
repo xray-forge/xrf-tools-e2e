@@ -94,7 +94,7 @@ exports[`readers reject damaged input should refuse an unparseable ltx 1`] = `
   "stdout": [
     "Verify path: <sandbox>/configs",
     "Checked 1 files, 0 sections in <duration>",
-    "Verified NaN%, 1 files, 0 sections, 0 fields",
+    "No LTX sections were verified",
     "Found 1 error(s)",
   ],
 }

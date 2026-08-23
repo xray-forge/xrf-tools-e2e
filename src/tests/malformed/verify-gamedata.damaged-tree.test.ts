@@ -3,7 +3,7 @@ import * as fs from "node:fs";
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
 import { gamedata } from "#/test/constants";
-import { Sandbox, sortedOutput, type CliResult } from "#/test/sandbox";
+import { Sandbox, sortedFindings, type CliResult } from "#/test/sandbox";
 
 describe("verify-gamedata meets a damaged tree", () => {
   const box = new Sandbox(__filename);
@@ -24,10 +24,9 @@ describe("verify-gamedata meets a damaged tree", () => {
     swept = box.run("verify-gamedata", [root, "--checks", "meshes"], { expectExit: 3 });
   });
 
-  // Names the broken asset with the reason, and still reports on the visuals around it. Sorted
-  // because the meshes check does not order its findings.
+  // Names the broken asset with the reason, and still reports on the visuals around it.
   it("should name a damaged asset and finish the sweep", () => {
-    expect(sortedOutput(swept)).toMatchSnapshot();
+    expect(sortedFindings(swept)).toMatchSnapshot();
   });
 
   // The copied tree is what the manifest records; the point is that verifying added nothing to it.

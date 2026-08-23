@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="windows-1251" ?>
+<game_dialogs>
+    <dialog id="zat_b30_test_owl_about_stash">
+        <has_info>zat_b30_test_owl_stash_told</has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text>zat_b30_test_owl_about_stash_0</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>zat_b30_test_owl_about_stash_1</text>
+                <go_back>1</go_back>
+            </phrase>
+        </phrase_list>
+    </dialog>
+</game_dialogs>

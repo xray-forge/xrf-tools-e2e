@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
 import { gamedata } from "#/test/constants";
-import { Sandbox, type CliResult } from "#/test/sandbox";
+import { Sandbox, sortedFindings, type CliResult } from "#/test/sandbox";
 
 const GAMEDATA = gamedata();
 
@@ -22,22 +22,25 @@ describe("verify-gamedata ignore list", () => {
   let nonEssential: CliResult;
 
   beforeAll(() => {
-    // A run that judged the content and found problems answers 3; one that could not even open
-    // the project answers 1.
+    // A run that judged the content and found problems answers 3.
     const findings = { expectExit: 3 };
-    const fatal = { expectExit: 1 };
 
     // Narrows the ltx check from seven config files to six; the project still opens because
     // system.ltx is outside the ignored subtree.
     partial = box.run("verify-gamedata", [GAMEDATA, "--checks", "ltx", "--ignore", "configs/misc"], findings);
     partialBackslash = box.run("verify-gamedata", [GAMEDATA, "--checks", "ltx", "--ignore", "configs\\misc"], findings);
 
-    // Ignoring the directory that holds system.ltx, or that one file, stops the project opening.
-    essentialDirectory = box.run("verify-gamedata", [GAMEDATA, "--checks", "ltx", "--ignore", "configs"], fatal);
-    essentialFile = box.run("verify-gamedata", [GAMEDATA, "--checks", "ltx", "--ignore", "configs/system.ltx"], fatal);
+    // Project identity is decided before inspection filters apply. Ignoring configs empties the LTX check; ignoring
+    // system.ltx narrows it to the remaining six config files.
+    essentialDirectory = box.run("verify-gamedata", [GAMEDATA, "--checks", "ltx", "--ignore", "configs"]);
+    essentialFile = box.run(
+      "verify-gamedata",
+      [GAMEDATA, "--checks", "ltx", "--ignore", "configs/system.ltx"],
+      findings
+    );
 
-    // The defect: meshes never reads configs, and is aborted anyway. See issue 0001.
-    unrelatedCheck = box.run("verify-gamedata", [GAMEDATA, "--checks", "meshes", "--ignore", "configs"], fatal);
+    // Meshes never reads configs, so its usual findings must be reported despite the ignored config tree. See issue 0001.
+    unrelatedCheck = box.run("verify-gamedata", [GAMEDATA, "--checks", "meshes", "--ignore", "configs"], findings);
 
     // A prefix pointing at a different subtree, and one matching nothing at all, both leave the
     // check with its full seven files.
@@ -62,18 +65,16 @@ describe("verify-gamedata ignore list", () => {
     expect(withoutEcho(partialBackslash)).toEqual(withoutEcho(partial));
   });
 
-  it("should refuse to open when the configs directory is ignored", () => {
+  it("should empty the LTX check when the configs directory is ignored", () => {
     expect(essentialDirectory).toMatchSnapshot();
   });
 
-  it("should refuse to open when only system.ltx is ignored", () => {
+  it("should narrow the LTX check when only system.ltx is ignored", () => {
     expect(essentialFile).toMatchSnapshot();
   });
 
-  // Recorded as current behaviour, not accepted as correct: the meshes check does not read configs
-  // and should still have run.
-  it("should abort a check that never reads the ignored prefix", () => {
-    expect(unrelatedCheck).toMatchSnapshot();
+  it("should run a check that never reads the ignored prefix", () => {
+    expect(sortedFindings(unrelatedCheck)).toMatchSnapshot();
   });
 
   it("should leave a check alone when the prefix names another subtree", () => {

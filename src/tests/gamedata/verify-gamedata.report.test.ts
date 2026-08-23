@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
 import { gamedata } from "#/test/constants";
-import { Sandbox, sortedOutput, type CliResult } from "#/test/sandbox";
+import { Sandbox, sortedFindings, type CliResult } from "#/test/sandbox";
 
 describe("verify-gamedata full run", () => {
   const box = new Sandbox(__filename);
@@ -19,10 +19,9 @@ describe("verify-gamedata full run", () => {
   });
 
   // `--silent` mutes the progress story but never failures, so the run still reports its findings
-  // and the final verdict line. Sorted because the meshes check does not order its findings; see
-  // sortedOutput.
+  // and the final verdict line.
   it("should answer non-zero and report only the failure story", () => {
-    expect(sortedOutput(verify)).toMatchSnapshot();
+    expect(sortedFindings(verify)).toMatchSnapshot();
   });
 
   // The report carries every finding, so it is compared as a single hash over normalized content.

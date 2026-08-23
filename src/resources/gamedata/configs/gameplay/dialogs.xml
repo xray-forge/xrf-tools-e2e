@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<game_dialogs>
+    <dialog id="zat_test_trader_start">
+        <precondition>dialogs.npc_stalker</precondition>
+        <phrase_list>
+            <phrase id="0">
+                <text>zat_test_trader_start_0</text>
+                <next>1</next>
+                <next>2</next>
+            </phrase>
+            <phrase id="1">
+                <text>zat_test_trader_start_1</text>
+                <give_info>zat_test_trader_greeted</give_info>
+                <next>10</next>
+            </phrase>
+            <phrase id="2">
+                <text>zat_test_trader_start_2</text>
+                <has_info>zat_test_trader_greeted</has_info>
+                <action>dialogs.break_dialog</action>
+                <is_final>1</is_final>
+            </phrase>
+            <phrase id="10">
+                <script_text>dialog_manager.create_bye_phrase</script_text>
+                <is_final>1</is_final>
+            </phrase>
+        </phrase_list>
+    </dialog>
+    <dialog id="zat_test_guide_travel" priority="-5">
+        <dont_has_info>zat_test_guide_used</dont_has_info>
+        <phrase_list>
+            <phrase id="0">
+                <text />
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>zat_test_guide_travel_1</text>
+                <disable_info>zat_test_guide_offered</disable_info>
+                <is_final>1</is_final>
+            </phrase>
+        </phrase_list>
+    </dialog>
+    <dialog id="zat_test_hello_manager">
+        <init_func>dialog_manager.init_new_dialog</init_func>
+    </dialog>
+</game_dialogs>

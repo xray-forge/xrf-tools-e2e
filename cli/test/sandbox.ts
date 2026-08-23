@@ -56,22 +56,25 @@ export interface ManifestOptions {
 }
 
 /**
- * Sorts both captured streams so an unordered command can still be compared.
+ * Sorts the findings a command logged while working in parallel.
  *
  * @remarks
- * Only for output a command does not order deterministically. `verify-gamedata --checks meshes`
- * verifies in parallel and logs each finding to stderr as its worker finishes, so the same meshes
- * are reported in a different order between two runs of one binary. The set is stable and the json
- * report of the same run is byte-stable, so only the console path is affected.
+ * `verify-gamedata`'s meshes check verifies through rayon and logs each finding to stderr as its
+ * worker finishes, so two runs of one binary print the same findings in a different order. Only
+ * that leading block is unordered: the summary printed after the blank line is stable, and so is
+ * the json report of the same run, whose findings the tools repository sorts before writing them.
  *
- * todo: sort the meshes findings in the tools repository before logging them, then delete this and
- * snapshot the output in the order the command prints it.
+ * todo: order the mesh findings in the tools repository before logging them too, then delete this
+ * and snapshot the stream in the order the command prints it.
  *
- * @param result - Result whose output is unordered.
- * @returns The same result with both streams sorted.
+ * @param result - Result whose leading stderr block is unordered.
+ * @returns The same result with that block sorted.
  */
-export function sortedOutput(result: CliResult): CliResult {
-  return { ...result, stdout: [...result.stdout].sort(), stderr: [...result.stderr].sort() };
+export function sortedFindings(result: CliResult): CliResult {
+  const summaryAt: number = result.stderr.indexOf("");
+  const end: number = summaryAt === -1 ? result.stderr.length : summaryAt;
+
+  return { ...result, stderr: [...result.stderr.slice(0, end).sort(), ...result.stderr.slice(end)] };
 }
 
 /**

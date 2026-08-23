@@ -5,7 +5,7 @@ exports[`list-assets across mounts should list only loose files when asked 1`] =
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Listing containing-installation <sandbox>/install",
+    "Listing <sandbox>/install",
     "  Directory <sandbox>/install/gamedata (gamedata)",
     "  configs\\system.ltx [<sandbox>/install/gamedata]",
     "1 asset(s) across 1 mount(s) in <duration>",
@@ -18,7 +18,7 @@ exports[`list-assets across mounts should resolve an installation across both mo
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Listing containing-installation <sandbox>/install",
+    "Listing <sandbox>/install",
     "  Directory <sandbox>/install/gamedata (gamedata)",
     "  Archive   <sandbox>/install/database (database)",
     "  configs\\fonts.ltx [<sandbox>/install/database (archive)]",
@@ -36,7 +36,7 @@ exports[`list-assets across mounts should reveal the copy hidden by a higher-pri
     "  configs\\system.ltx hidden in [<sandbox>/install/database (archive)]",
   ],
   "stdout": [
-    "Listing containing-installation <sandbox>/install",
+    "Listing <sandbox>/install",
     "  Directory <sandbox>/install/gamedata (gamedata)",
     "  Archive   <sandbox>/install/database (database)",
     "  configs\\fonts.ltx [<sandbox>/install/database (archive)]",
