@@ -44,6 +44,7 @@ exports[`verifiers meet damaged input should report a damaged visual as a failed
     "Swept 1 visuals in <duration>",
     "Submeshes: 0 total, 0 packed, 0 unsupported, 0 malformed",
     "Progressive submeshes: 0, of which 0 draw only part of their index buffer",
+    "Skinned submeshes: 0, vertices whose weights do not sum to one: 0",
     "Unreadable files: 1, files with nothing drawable: 0, bounds disagreements: 0",
     "Texture references: 0 total, 0 resolved, 0 missing, 0 unreadable, 0 visuals with no root",
     "Distinct textures: 0, of which 0 carry no mip chain",

@@ -4,7 +4,7 @@ exports[`readers reject damaged input should refuse a path that does not exist 1
 {
   "exitCode": 1,
   "stderr": [
-    "Error: Not found error: OGF file was not read: <sandbox>/does-not-exist.ogf, error: The system cannot find the file specified. (os error 2)",
+    "Error: Not found error: OGF file was not read: <sandbox>/does-not-exist.ogf, error: <missing path>",
   ],
   "stdout": [
     "Read ogf file <sandbox>/does-not-exist.ogf",

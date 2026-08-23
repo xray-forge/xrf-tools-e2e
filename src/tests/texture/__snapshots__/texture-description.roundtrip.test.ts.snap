@@ -23,7 +23,7 @@ exports[`texture description roundtrip should fail when the output subdirectory 
 {
   "exitCode": 1,
   "stderr": [
-    "Error: IO error: The system cannot find the path specified. (os error 3)",
+    "Error: IO error: <missing path>",
   ],
   "stdout": [
     "Packing for 1 files",

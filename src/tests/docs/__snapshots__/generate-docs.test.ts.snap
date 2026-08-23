@@ -65,8 +65,8 @@ exports[`generate-docs should write the expected pages 1`] = `
   },
   {
     "path": "docs/dialog.md",
-    "sha256": "2b9ea03793083836e4586f927826bec7d52b5aae01586cbb38455ae97d8d98da",
-    "size": 1135,
+    "sha256": "7f397ee8a8ce05bc36e538e87f97f8842d1fab74772214525378fbb3daccdf93",
+    "size": 1134,
   },
   {
     "path": "docs/docs.md",
