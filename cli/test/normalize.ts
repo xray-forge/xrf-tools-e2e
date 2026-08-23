@@ -11,6 +11,12 @@ const DURATION_PATTERN = /\b\d+(\.\d+)?\s?(ms|milliseconds|seconds|secs|sec|minu
 const TIMESTAMP_PATTERN = /\b\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}:\d{2}(\.\d+)?Z?\b/g;
 
 /**
+ * OS wording and numeric codes for a missing filesystem entry differ by platform.
+ */
+const MISSING_PATH_PATTERN =
+  /(?:The system cannot find the (?:path|file) specified\.|No such file or directory) \(os error \d+\)/gi;
+
+/**
  * A timing field in a json report, carried as a bare number with the unit in the field name.
  *
  * @remarks
@@ -56,6 +62,7 @@ export function normalizeText(text: string, sandboxRoot: string): Array<string> 
 
   normalized = normalized.replace(TOKENIZED_PATH_PATTERN, (match) => match.split("\\").join("/"));
   normalized = normalized.replace(TIMESTAMP_PATTERN, "<timestamp>");
+  normalized = normalized.replace(MISSING_PATH_PATTERN, "<missing path>");
   normalized = normalized.replace(JSON_DURATION_PATTERN, '"$1": <duration>');
   normalized = normalized.replace(DURATION_PATTERN, "<duration>");
 
