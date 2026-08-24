@@ -76,7 +76,7 @@ exports[`CLI help tree should expose each domain's operations 1`] = `
     "exitCode": 0,
     "stderr": [],
     "stdout": [
-      "Assembled gamedata verification tools",
+      "Assembled gamedata tools",
       "",
       "Usage: xrf-cli gamedata [COMMAND]",
       "",
@@ -260,7 +260,7 @@ exports[`CLI help tree should expose every domain from root help 1`] = `
     "  dialog       Dialog parsing tools",
     "  docs         CLI documentation tools",
     "  externs      Script extern export tools",
-    "  gamedata     Assembled gamedata verification tools",
+    "  gamedata     Assembled gamedata tools",
     "  ltx          LTX configuration tools",
     "  ogf          OGF model tools",
     "  omf          OMF motion tools",
@@ -352,7 +352,7 @@ exports[`CLI help tree should show domain help when an operation is missing 1`] 
   "gamedata": {
     "exitCode": 2,
     "stderr": [
-      "Assembled gamedata verification tools",
+      "Assembled gamedata tools",
       "",
       "Usage: xrf-cli gamedata [COMMAND]",
       "",
