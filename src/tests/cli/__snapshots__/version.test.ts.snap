@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`CLI version reporting should describe the build through a stable set of fields 1`] = `
+[
+  "commit",
+  "built at",
+  "target",
+  "rustc",
+  "profile",
+  "optimization",
+]
+`;
