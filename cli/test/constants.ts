@@ -34,7 +34,18 @@ export const TIMINGS_ROOT: string = path.resolve(TARGET_ROOT, "./.timings");
  */
 export const TIMINGS_REPORT: string = path.resolve(TARGET_ROOT, "./timings.json");
 
-export const CLI_EXECUTABLE_NAME: string = process.platform === "win32" ? "xrf-cli.exe" : "xrf-cli";
+/**
+ * The name the CLI is recorded under, whatever the host calls the file.
+ *
+ * @remarks
+ * Clap prints the executable it was invoked as in every usage line, so help output carries the
+ * platform's file name. That is a property of the host, not of the tool, and snapshots are recorded
+ * under this stem on every platform — see `normalizeText`.
+ */
+export const CLI_EXECUTABLE_STEM: string = "xrf-cli";
+
+export const CLI_EXECUTABLE_NAME: string =
+  process.platform === "win32" ? `${CLI_EXECUTABLE_STEM}.exe` : CLI_EXECUTABLE_STEM;
 
 /**
  * The binary under test, committed so the suite runs without a Rust toolchain.
