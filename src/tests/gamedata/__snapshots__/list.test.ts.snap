@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`assets list should limit a listing to one subtree 1`] = `
+exports[`gamedata list should limit a listing to one subtree 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -19,7 +19,7 @@ exports[`assets list should limit a listing to one subtree 1`] = `
 }
 `;
 
-exports[`assets list should resolve the whole tree 1`] = `
+exports[`gamedata list should resolve the whole tree 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -55,4 +55,4 @@ exports[`assets list should resolve the whole tree 1`] = `
 }
 `;
 
-exports[`assets list should write nothing 1`] = `[]`;
+exports[`gamedata list should write nothing 1`] = `[]`;

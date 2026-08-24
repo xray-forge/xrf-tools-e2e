@@ -5,7 +5,7 @@ exports[`docs generate should accept pages it just wrote 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "CLI documentation in <sandbox>/docs is up to date (15 pages)",
+    "CLI documentation in <sandbox>/docs is up to date (14 pages)",
   ],
 }
 `;
@@ -15,7 +15,7 @@ exports[`docs generate should generate a page per command group 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Generated 15 documentation pages in <sandbox>/docs",
+    "Generated 14 documentation pages in <sandbox>/docs",
   ],
 }
 `;
@@ -27,7 +27,6 @@ exports[`docs generate should reject pages that drifted 1`] = `
     "CLI documentation in <sandbox>/drifted is stale, regenerate it with 'xrf-cli docs generate':",
     "  outdated: README.md",
     "  missing: archive.md",
-    "  missing: assets.md",
     "  missing: dialog.md",
     "  missing: docs.md",
     "  missing: externs.md",
@@ -40,7 +39,7 @@ exports[`docs generate should reject pages that drifted 1`] = `
     "  missing: texture.md",
     "  missing: thm.md",
     "  missing: translation.md",
-    "Check failed: 15 finding(s)",
+    "Check failed: 14 finding(s)",
   ],
   "stdout": [],
 }
@@ -50,18 +49,13 @@ exports[`docs generate should write the expected pages 1`] = `
 [
   {
     "path": "docs/README.md",
-    "sha256": "874271e2f174f97ffc1866996eec89e6c3db97139bb2e3fb40ab7eb8bccce21d",
-    "size": 2646,
+    "sha256": "03009edbe9bacd428cf303b797bc3a78afb66aaba2783d51e683b7370c72a8a3",
+    "size": 2625,
   },
   {
     "path": "docs/archive.md",
     "sha256": "de8812c24e854da33389850740e1f7a94b6feef175f9240e4b28f3787cdd008c",
     "size": 4697,
-  },
-  {
-    "path": "docs/assets.md",
-    "sha256": "b5766cd01cde2ebc3c37029257e737fb9316bf153558c3b2e5b259ddab349383",
-    "size": 1213,
   },
   {
     "path": "docs/dialog.md",
@@ -80,8 +74,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/gamedata.md",
-    "sha256": "e93e9a45b4190fd520b2a02684e0ca4eff2f81a377a1103a163e97e9ec0cfaac",
-    "size": 823,
+    "sha256": "baeef8e49ea7d2d00601ce6ba712a5499ac97c1420d9f6ba7a2dfd7252a22ac0",
+    "size": 1939,
   },
   {
     "path": "docs/ltx.md",

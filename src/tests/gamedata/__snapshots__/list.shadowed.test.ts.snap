@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`assets list across mounts should list only loose files when asked 1`] = `
+exports[`gamedata list across mounts should list only loose files when asked 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -13,7 +13,7 @@ exports[`assets list across mounts should list only loose files when asked 1`] =
 }
 `;
 
-exports[`assets list across mounts should resolve an installation across both mounts 1`] = `
+exports[`gamedata list across mounts should resolve an installation across both mounts 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -28,7 +28,7 @@ exports[`assets list across mounts should resolve an installation across both mo
 }
 `;
 
-exports[`assets list across mounts should reveal the copy hidden by a higher-priority mount 1`] = `
+exports[`gamedata list across mounts should reveal the copy hidden by a higher-priority mount 1`] = `
 {
   "exitCode": 0,
   "stderr": [
@@ -46,7 +46,7 @@ exports[`assets list across mounts should reveal the copy hidden by a higher-pri
 }
 `;
 
-exports[`assets list across mounts should write nothing of its own 1`] = `
+exports[`gamedata list across mounts should write nothing of its own 1`] = `
 [
   {
     "path": "install/database/gamedata.db",

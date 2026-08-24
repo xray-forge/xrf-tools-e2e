@@ -17,7 +17,7 @@ const FSGAME = [
   "",
 ].join("\n");
 
-describe("assets list across mounts", () => {
+describe("gamedata list across mounts", () => {
   const box = new Sandbox(__filename);
 
   let listed: CliResult;
@@ -37,9 +37,9 @@ describe("assets list across mounts", () => {
     box.copyIn(gamedata("configs/system.ltx"), "install/gamedata/configs/system.ltx");
     box.write("install/fsgame.ltx", FSGAME);
 
-    listed = box.run("assets list", ["--path", box.at("install")]);
-    shadowed = box.run("assets list", ["--path", box.at("install"), "--shadowed"]);
-    loose = box.run("assets list", ["--path", box.at("install"), "--loose"]);
+    listed = box.run("gamedata list", ["--path", box.at("install")]);
+    shadowed = box.run("gamedata list", ["--path", box.at("install"), "--shadowed"]);
+    loose = box.run("gamedata list", ["--path", box.at("install"), "--loose"]);
   });
 
   // Two mounts, and each asset reports which one answered for it.

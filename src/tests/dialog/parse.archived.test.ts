@@ -4,7 +4,7 @@ import { gamedata } from "#/test/constants";
 import { Sandbox, type CliResult } from "#/test/sandbox";
 
 /**
- * The six-field installation form the engine reads, as `assets list` stages it: `$game_data$`
+ * The six-field installation form the engine reads, as `gamedata list` stages it: `$game_data$`
  * becomes a directory mount and an alias whose directory holds `.db` volumes becomes an archive
  * mount.
  */

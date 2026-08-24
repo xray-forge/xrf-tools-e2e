@@ -3,7 +3,7 @@ import { beforeAll, describe, expect, it } from "@jest/globals";
 import { gamedata } from "#/test/constants";
 import { Sandbox, type CliResult } from "#/test/sandbox";
 
-describe("assets list", () => {
+describe("gamedata list", () => {
   const box = new Sandbox(__filename);
 
   let listed: CliResult;
@@ -11,9 +11,9 @@ describe("assets list", () => {
   let loose: CliResult;
 
   beforeAll(() => {
-    listed = box.run("assets list", ["--path", gamedata()]);
-    prefixed = box.run("assets list", ["--path", gamedata(), "--prefix", "meshes"]);
-    loose = box.run("assets list", ["--path", gamedata(), "--loose"]);
+    listed = box.run("gamedata list", ["--path", gamedata()]);
+    prefixed = box.run("gamedata list", ["--path", gamedata(), "--prefix", "meshes"]);
+    loose = box.run("gamedata list", ["--path", gamedata(), "--loose"]);
   });
 
   it("should resolve the whole tree", () => {
