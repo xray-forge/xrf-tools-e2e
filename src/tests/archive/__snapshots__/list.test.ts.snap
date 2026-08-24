@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive list should list directory records 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "gameplay",
+    "misc",
+    "ui",
+    "ui\\textures_descr",
+    "Listed 4 entries in <duration>",
+  ],
+}
+`;
+
+exports[`archive list should list logical files 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "alife.ltx",
+    "defines.ltx",
+    "evaluation.ltx",
+    "fonts.ltx",
+    "game.ltx",
+    "gameplay\\dialogs.xml",
+    "gameplay\\dialogs_zaton.xml",
+    "misc\\inventory_icons.ltx",
+    "system.ltx",
+    "ui\\textures_descr\\ui_test_sheet.xml",
+    "Listed 10 entries in <duration>",
+  ],
+}
+`;
+
+exports[`archive list should write the expected files 1`] = `
+[
+  {
+    "path": "packed/fixture.db",
+    "sha256": "c6dc89e7ec12128e4f83ff27ebfe84b832a53091ec846cee53fb0bc9d68d8a77",
+    "size": 4874,
+  },
+]
+`;

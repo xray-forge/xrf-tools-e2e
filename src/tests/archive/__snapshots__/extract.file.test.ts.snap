@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive extract file should extract the selected file byte for byte 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Extracted system.ltx (265 B) in <duration>",
+  ],
+}
+`;
+
+exports[`archive extract file should write the expected files 1`] = `
+[
+  {
+    "path": "packed/fixture.db",
+    "sha256": "c6dc89e7ec12128e4f83ff27ebfe84b832a53091ec846cee53fb0bc9d68d8a77",
+    "size": 4874,
+  },
+  {
+    "path": "system.ltx",
+    "sha256": "b4a4a566d26d645fbb86678c4c16dc9fd8b540b786b191c596801de49ff60da1",
+    "size": 265,
+  },
+]
+`;

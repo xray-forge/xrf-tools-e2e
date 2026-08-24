@@ -8,7 +8,7 @@ exports[`archive roundtrip should pack a directory into a volume 1`] = `
     "Pack source: <sandbox>/source",
     "Pack destination: <sandbox>/packed",
     "Wrote <sandbox>/packed/testdata.db",
-    "Packed 10 file(s) into 1 volume(s), took <duration>",
+    "Packed 10 file(s) into 1 volume(s) in <duration>",
     "Summary: 10 compressed, 0 stored, 0 aliased, 0 skipped",
     "Size: 10.8 KB source, 4.76 KB written",
   ],
@@ -38,7 +38,7 @@ exports[`archive roundtrip should unpack the volume 1`] = `
     "Unpack destination: <sandbox>/unpacked",
     "Summary: 1 archive(s), 14 file(s), 4.37 KB compressed, 10.8 KB real",
     "Unpacking files, parallel 32",
-    "Unpacked archive, took <duration> (preparation <duration>, unpack <duration>)",
+    "Unpacked archive in <duration> (preparation <duration>, unpack <duration>)",
   ],
 }
 `;

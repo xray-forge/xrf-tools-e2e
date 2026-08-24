@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive extract directory should extract the selected directory without its prefix 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Extracted 2 file(s) from gameplay (2.17 KB total) in <duration>",
+  ],
+}
+`;
+
+exports[`archive extract directory should write the expected files 1`] = `
+[
+  {
+    "path": "gameplay/dialogs.xml",
+    "sha256": "6583bab4e036cca053ce8c820639a39b80dc7bae71d4adba54d5ee2d865cc5b4",
+    "size": 1670,
+  },
+  {
+    "path": "gameplay/dialogs_zaton.xml",
+    "sha256": "aaaaff52afc3c50a3907ba992d7b73f69e90146421385d22f07d363131e474b9",
+    "size": 548,
+  },
+  {
+    "path": "packed/fixture.db",
+    "sha256": "c6dc89e7ec12128e4f83ff27ebfe84b832a53091ec846cee53fb0bc9d68d8a77",
+    "size": 4874,
+  },
+]
+`;

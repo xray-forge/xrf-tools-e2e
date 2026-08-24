@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive verify should read and validate every payload 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Verified 10 file(s) in <duration>",
+  ],
+}
+`;
+
+exports[`archive verify should write the expected files 1`] = `
+[
+  {
+    "path": "packed/fixture.db",
+    "sha256": "c6dc89e7ec12128e4f83ff27ebfe84b832a53091ec846cee53fb0bc9d68d8a77",
+    "size": 4874,
+  },
+]
+`;

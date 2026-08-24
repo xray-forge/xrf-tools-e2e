@@ -50,13 +50,13 @@ exports[`docs generate should write the expected pages 1`] = `
 [
   {
     "path": "docs/README.md",
-    "sha256": "5d8c2a2dbe0072e0d611b6e19a3c1b3ad633d2c86618ba9aa7460b45d403c255",
-    "size": 2461,
+    "sha256": "874271e2f174f97ffc1866996eec89e6c3db97139bb2e3fb40ab7eb8bccce21d",
+    "size": 2646,
   },
   {
     "path": "docs/archive.md",
-    "sha256": "82ee2c81149eac86c9f3254d030d6ea5e69a224a6258952cb42add2d78cb52ea",
-    "size": 1731,
+    "sha256": "de8812c24e854da33389850740e1f7a94b6feef175f9240e4b28f3787cdd008c",
+    "size": 4697,
   },
   {
     "path": "docs/assets.md",
