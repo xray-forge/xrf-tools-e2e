@@ -14,12 +14,12 @@ describe("spawn roundtrip", () => {
   let pack: CliResult;
 
   beforeAll(() => {
-    info = box.run("info-spawn", ["--path", ALL_SPAWN]);
-    verify = box.run("verify-spawn", ["--path", ALL_SPAWN]);
+    info = box.run("spawn info", ["--path", ALL_SPAWN]);
+    verify = box.run("spawn verify", ["--path", ALL_SPAWN]);
 
     // Produces twelve files: alife and artefact spawns, patrols, and the level graphs.
-    unpack = box.run("unpack-spawn", ["--path", ALL_SPAWN, "--dest", box.at("unpacked")]);
-    pack = box.run("pack-spawn", ["--path", box.at("unpacked"), "--dest", box.at("repacked.spawn")]);
+    unpack = box.run("spawn unpack", ["--path", ALL_SPAWN, "--dest", box.at("unpacked")]);
+    pack = box.run("spawn pack", ["--path", box.at("unpacked"), "--dest", box.at("repacked.spawn")]);
 
     // The repacked file is deliberately not verified again. The test below proves it is byte
     // identical to the source, which was already verified, so a second pass would spend two

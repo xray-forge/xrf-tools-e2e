@@ -18,15 +18,15 @@ describe("particles force", () => {
   let packForced: CliResult;
 
   beforeAll(() => {
-    box.run("unpack-particles", ["--path", SOURCE, "--dest", box.at("unpacked")]);
-    unpackRefused = box.run("unpack-particles", ["--path", SOURCE, "--dest", box.at("unpacked")], { expectExit: 1 });
-    unpackForced = box.run("unpack-particles", ["--path", SOURCE, "--dest", box.at("unpacked"), "--force"]);
+    box.run("particle unpack", ["--path", SOURCE, "--dest", box.at("unpacked")]);
+    unpackRefused = box.run("particle unpack", ["--path", SOURCE, "--dest", box.at("unpacked")], { expectExit: 1 });
+    unpackForced = box.run("particle unpack", ["--path", SOURCE, "--dest", box.at("unpacked"), "--force"]);
 
-    box.run("pack-particles", ["--path", box.at("unpacked"), "--dest", box.at("packed.xr")]);
-    packRefused = box.run("pack-particles", ["--path", box.at("unpacked"), "--dest", box.at("packed.xr")], {
+    box.run("particle pack", ["--path", box.at("unpacked"), "--dest", box.at("packed.xr")]);
+    packRefused = box.run("particle pack", ["--path", box.at("unpacked"), "--dest", box.at("packed.xr")], {
       expectExit: 1,
     });
-    packForced = box.run("pack-particles", ["--path", box.at("unpacked"), "--dest", box.at("packed.xr"), "--force"]);
+    packForced = box.run("particle pack", ["--path", box.at("unpacked"), "--dest", box.at("packed.xr"), "--force"]);
   });
 
   it("should refuse an existing unpack destination", () => {
@@ -48,7 +48,7 @@ describe("particles force", () => {
   // The packer is deterministic, so forcing a second pass over the same input has to land on the
   // same bytes the first pass wrote.
   it("should write the same container when forced", () => {
-    expect(box.run("info-particles", ["--path", box.at("packed.xr")])).toMatchSnapshot();
+    expect(box.run("particle info", ["--path", box.at("packed.xr")])).toMatchSnapshot();
   });
 
   it("should write the expected files", () => {

@@ -26,33 +26,33 @@ describe("readers reject damaged input", () => {
     const fail = { expectExit: 1 };
 
     ogf = box.run(
-      "info-ogf",
+      "ogf info",
       ["--path", box.copyTruncated(gamedata("meshes/ogf/part_none.ogf"), "bad.ogf", 200)],
       fail
     );
     omf = box.run(
-      "info-omf",
+      "omf info",
       ["--path", box.copyTruncated(gamedata("meshes/omf/wpn_svd_hud_animation.omf"), "bad.omf", 100)],
       fail
     );
-    particles = box.run("info-particles", ["--path", box.copyTruncated(gamedata("particles.xr"), "bad.xr", 500)], fail);
-    spawn = box.run("info-spawn", ["--path", box.copyTruncated(gamedata("spawns/all.spawn"), "bad.spawn", 400)], fail);
+    particles = box.run("particle info", ["--path", box.copyTruncated(gamedata("particles.xr"), "bad.xr", 500)], fail);
+    spawn = box.run("spawn info", ["--path", box.copyTruncated(gamedata("spawns/all.spawn"), "bad.spawn", 400)], fail);
     dds = box.run(
-      "info-dds",
+      "texture info-dds",
       ["--path", box.copyTruncated(gamedata("textures/ui/ui_test_sheet.dds"), "bad.dds", 60)],
       fail
     );
 
-    empty = box.run("info-ogf", ["--path", box.write("empty.ogf", "")], fail);
-    missing = box.run("info-ogf", ["--path", box.at("does-not-exist.ogf")], fail);
+    empty = box.run("ogf info", ["--path", box.write("empty.ogf", "")], fail);
+    missing = box.run("ogf info", ["--path", box.at("does-not-exist.ogf")], fail);
 
     // The two verifiers below judge the damaged file rather than failing to run, so they answer
     // the check verdict 3 where the readers above answer the operational 1.
     box.write("configs/broken.ltx", "[unterminated\nkey = value\n");
-    ltx = box.run("verify-ltx", ["--path", box.at("configs")], { expectExit: 3 });
+    ltx = box.run("ltx verify", ["--path", box.at("configs")], { expectExit: 3 });
 
     box.write("translations/broken.json", '{ "st_x": { "eng": }\n');
-    translation = box.run("verify-translation", ["--path", box.at("translations")], { expectExit: 3 });
+    translation = box.run("translation verify", ["--path", box.at("translations")], { expectExit: 3 });
   });
 
   it("should refuse a truncated visual", () => {

@@ -26,20 +26,24 @@ const PARTIAL_OVERLAP = [
   "",
 ].join("\n");
 
-describe("verify-equipment-icons", () => {
+describe("texture verify-equipment-icons", () => {
   const box = new Sandbox(__filename);
 
   let verified: CliResult;
   let overlapping: CliResult;
 
   beforeAll(() => {
-    verified = box.run("verify-equipment-icons", ["--system-ltx", SYSTEM_LTX]);
+    verified = box.run("texture verify-equipment-icons", ["--system-ltx", SYSTEM_LTX]);
 
     // Kept out of the committed tree: a deliberately broken config there would also show up in
     // every other test that walks the configs directory.
-    overlapping = box.run("verify-equipment-icons", ["--system-ltx", box.write("overlapping.ltx", PARTIAL_OVERLAP)], {
-      expectExit: 3,
-    });
+    overlapping = box.run(
+      "texture verify-equipment-icons",
+      ["--system-ltx", box.write("overlapping.ltx", PARTIAL_OVERLAP)],
+      {
+        expectExit: 3,
+      }
+    );
   });
 
   // The committed sections include a pair sharing one slot exactly. Identical rects are legitimate

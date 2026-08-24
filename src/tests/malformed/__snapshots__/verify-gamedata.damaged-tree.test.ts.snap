@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`verify-gamedata meets a damaged tree should name a damaged asset and finish the sweep 1`] = `
+exports[`gamedata verify meets a damaged tree should name a damaged asset and finish the sweep 1`] = `
 {
   "exitCode": 3,
   "stderr": [
@@ -36,7 +36,7 @@ exports[`verify-gamedata meets a damaged tree should name a damaged asset and fi
 }
 `;
 
-exports[`verify-gamedata meets a damaged tree should write nothing of its own 1`] = `
+exports[`gamedata verify meets a damaged tree should write nothing of its own 1`] = `
 [
   {
     "path": "gamedata/configs/alife.ltx",

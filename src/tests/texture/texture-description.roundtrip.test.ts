@@ -17,7 +17,7 @@ describe("texture description roundtrip", () => {
   beforeAll(() => {
     // The description names four 64x64 regions of a 256x64 sheet, so unpacking yields four files
     // under the sheet's own directory.
-    unpack = box.run("unpack-texture-description", [
+    unpack = box.run("texture unpack-texture-description", [
       "--description",
       DESCRIPTION,
       "--base",
@@ -30,13 +30,13 @@ describe("texture description roundtrip", () => {
     // without that subdirectory the command fails on a bare OS error. Creating it here is what the
     // caller has to do, and the test below records the failure when they do not.
     missingOutput = box.run(
-      "pack-texture-description",
+      "texture pack-texture-description",
       ["--description", DESCRIPTION, "--base", box.at("unpacked"), "--output", box.at("no-subdir")],
       { expectExit: 1 }
     );
 
     box.write("packed/ui/.keep", "");
-    pack = box.run("pack-texture-description", [
+    pack = box.run("texture pack-texture-description", [
       "--description",
       DESCRIPTION,
       "--base",
@@ -45,7 +45,7 @@ describe("texture description roundtrip", () => {
       box.at("packed"),
     ]);
 
-    info = box.run("info-dds", ["--path", box.at("packed/ui/ui_test_sheet.dds")]);
+    info = box.run("texture info-dds", ["--path", box.at("packed/ui/ui_test_sheet.dds")]);
   });
 
   it("should unpack every described region", () => {

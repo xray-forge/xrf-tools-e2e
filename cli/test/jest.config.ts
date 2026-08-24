@@ -21,7 +21,7 @@ module.exports = {
   // creation, both verified against this version. The flag therefore lives in the npm scripts and
   // in the committed IntelliJ run configuration, which is what gutter clicks inherit.
   //
-  // verify-gamedata sweeps the whole tree in about 35 seconds, and the work happens in beforeAll,
+  // gamedata verify sweeps the whole tree in about 35 seconds, and the work happens in beforeAll,
   // which is bound by this same timeout.
   testTimeout: 120000,
   globalSetup: path.resolve(__dirname, "./global-setup.ts"),

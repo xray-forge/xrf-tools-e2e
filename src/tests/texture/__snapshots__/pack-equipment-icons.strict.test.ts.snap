@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`pack-equipment-icons strict mode should pack what it has when an icon is missing 1`] = `
+exports[`texture pack-equipment-icons strict mode should pack what it has when an icon is missing 1`] = `
 {
   "exitCode": 0,
   "stderr": [
@@ -17,7 +17,7 @@ exports[`pack-equipment-icons strict mode should pack what it has when an icon i
 }
 `;
 
-exports[`pack-equipment-icons strict mode should refuse a missing icon under strict 1`] = `
+exports[`texture pack-equipment-icons strict mode should refuse a missing icon under strict 1`] = `
 {
   "exitCode": 1,
   "stderr": [
@@ -33,7 +33,7 @@ exports[`pack-equipment-icons strict mode should refuse a missing icon under str
 }
 `;
 
-exports[`pack-equipment-icons strict mode should write the expected files 1`] = `
+exports[`texture pack-equipment-icons strict mode should write the expected files 1`] = `
 [
   {
     "path": "icons/test_icon_a.dds",

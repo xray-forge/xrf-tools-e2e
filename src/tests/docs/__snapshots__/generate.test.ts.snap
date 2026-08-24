@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`docs generate should accept pages it just wrote 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "CLI documentation in <sandbox>/docs is up to date (15 pages)",
+  ],
+}
+`;
+
+exports[`docs generate should generate a page per command group 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Generated 15 documentation pages in <sandbox>/docs",
+  ],
+}
+`;
+
+exports[`docs generate should reject pages that drifted 1`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "CLI documentation in <sandbox>/drifted is stale, regenerate it with 'xrf-cli docs generate':",
+    "  outdated: README.md",
+    "  missing: archive.md",
+    "  missing: assets.md",
+    "  missing: dialog.md",
+    "  missing: docs.md",
+    "  missing: externs.md",
+    "  missing: gamedata.md",
+    "  missing: ltx.md",
+    "  missing: ogf.md",
+    "  missing: omf.md",
+    "  missing: particle.md",
+    "  missing: spawn.md",
+    "  missing: texture.md",
+    "  missing: thm.md",
+    "  missing: translation.md",
+    "Check failed: 15 finding(s)",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`docs generate should write the expected pages 1`] = `
+[
+  {
+    "path": "docs/README.md",
+    "sha256": "5d8c2a2dbe0072e0d611b6e19a3c1b3ad633d2c86618ba9aa7460b45d403c255",
+    "size": 2461,
+  },
+  {
+    "path": "docs/archive.md",
+    "sha256": "82ee2c81149eac86c9f3254d030d6ea5e69a224a6258952cb42add2d78cb52ea",
+    "size": 1731,
+  },
+  {
+    "path": "docs/assets.md",
+    "sha256": "b5766cd01cde2ebc3c37029257e737fb9316bf153558c3b2e5b259ddab349383",
+    "size": 1213,
+  },
+  {
+    "path": "docs/dialog.md",
+    "sha256": "151159151e7b60a544795f0b31c842e2360b0920b8ebfe2e6577cab0ab1ec03a",
+    "size": 1142,
+  },
+  {
+    "path": "docs/docs.md",
+    "sha256": "f42a202c03df817be31e4ffc173b727b2ae668bde23917f67555b351c1169f61",
+    "size": 621,
+  },
+  {
+    "path": "docs/externs.md",
+    "sha256": "56c0625fce40a8bd7a6d30f8d063dbcb6704853488c5e2cc8c1de3c786b43d86",
+    "size": 934,
+  },
+  {
+    "path": "docs/gamedata.md",
+    "sha256": "e93e9a45b4190fd520b2a02684e0ca4eff2f81a377a1103a163e97e9ec0cfaac",
+    "size": 823,
+  },
+  {
+    "path": "docs/ltx.md",
+    "sha256": "b294215a98c6838435616240a646d9eeefd7f3301c220b25fa6e9fc6b06052c6",
+    "size": 974,
+  },
+  {
+    "path": "docs/ogf.md",
+    "sha256": "8dea867599b09b7741bd531b3a48052a753d1f1fe2afeaf03c605b80ce2a600b",
+    "size": 2429,
+  },
+  {
+    "path": "docs/omf.md",
+    "sha256": "b651dcca82e542a2484474394420b892d5a1bdbb467c2aa1acded1553d3ac32b",
+    "size": 3292,
+  },
+  {
+    "path": "docs/particle.md",
+    "sha256": "375707d31729f20914d632105f8241c2481dcefcaafe5b2ac9a58225f8ed64ce",
+    "size": 2604,
+  },
+  {
+    "path": "docs/spawn.md",
+    "sha256": "5bc238d7fdc65d7e67705bfba383c21ffd388b1fd926af7eed8cceace10c3a36",
+    "size": 2433,
+  },
+  {
+    "path": "docs/texture.md",
+    "sha256": "d657a640cd13fd1420501ca4742d2425cd4b1804597aaf62654292322a351408",
+    "size": 5094,
+  },
+  {
+    "path": "docs/thm.md",
+    "sha256": "1d256cf84ada3ab05c9ba35cfb60543b43e2048390b4477d5c8b05c73c57b74c",
+    "size": 954,
+  },
+  {
+    "path": "docs/translation.md",
+    "sha256": "3c3dab3cc8210fd1882a1f394a6177a5cb4dc62b325b38fb47eff27400bc7554",
+    "size": 2071,
+  },
+  {
+    "path": "drifted/README.md",
+    "sha256": "35db1bffa5ee9c9e44e31d2688bf494f0087c6e21f4d2e39393914acd793cae4",
+    "size": 25,
+  },
+]
+`;

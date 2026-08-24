@@ -1,0 +1,80 @@
+import { beforeAll, describe, expect, it } from "@jest/globals";
+
+import { gamedata } from "#/test/constants";
+import { Sandbox, type CliResult } from "#/test/sandbox";
+
+const GAMEDATA = gamedata();
+
+/**
+ * The command reads dialog xml out of a world and reports what it holds, so the census is its
+ * output rather than a side effect. `configs/gameplay/` is shaped for it: one file in the shipped
+ * form, and one carrying a `go_back` phrase element the schema does not define, so the schema check
+ * has exactly one real finding and `--strict` has something to fail on.
+ */
+describe("dialog parse", () => {
+  const box = new Sandbox(__filename);
+
+  let swept: CliResult;
+  let prefixed: CliResult;
+  let detailed: CliResult;
+  let report: CliResult;
+  let silent: CliResult;
+  let elsewhere: CliResult;
+
+  beforeAll(() => {
+    swept = box.run("dialog parse", ["--path", GAMEDATA]);
+    prefixed = box.run("dialog parse", ["--path", GAMEDATA, "--prefix", "configs\\gameplay"]);
+    detailed = box.run("dialog parse", ["--path", GAMEDATA, "--verbose"]);
+    report = box.run("dialog parse", ["--path", GAMEDATA, "--report", box.at("report.json")]);
+
+    // Findings are chatter, so a silent run says nothing at all until the verdict is a failure.
+    silent = box.run("dialog parse", ["--path", GAMEDATA, "--silent"]);
+
+    // Only the subtree named by the prefix is searched, and no dialog lives under meshes. Nothing
+    // swept is not a pass: it answers the operational 1 rather than reporting a clean tree.
+    elsewhere = box.run("dialog parse", ["--path", GAMEDATA, "--prefix", "meshes"], { expectExit: 1 });
+  });
+
+  it("should count what the dialogs hold", () => {
+    expect(swept).toMatchSnapshot();
+  });
+
+  // The dialogs all live under the prefix, so narrowing to it must reach the same census. That is
+  // what separates a prefix that filters from one that is ignored.
+  it("should reach the same census when narrowed to the subtree holding them", () => {
+    expect(prefixed).toEqual(swept);
+  });
+
+  // The count of findings is reported at normal verbosity and the findings themselves are not: a
+  // sweep of a real tree produces more of them than a terminal is useful for.
+  it("should name each finding under verbose output", () => {
+    expect(detailed).toMatchSnapshot();
+  });
+
+  it("should write a structured report", () => {
+    expect(report).toMatchSnapshot();
+  });
+
+  it("should say nothing when silenced", () => {
+    expect(silent).toMatchSnapshot();
+  });
+
+  // Reporting is the default and answers success even with findings, so a tally can be run
+  // casually. Strict is the mode that judges, and it answers the check failure 3.
+  it("should fail under strict when a file is off schema", () => {
+    expect(box.run("dialog parse", ["--path", GAMEDATA, "--strict"], { expectExit: 3 })).toMatchSnapshot();
+  });
+
+  // A failure still reports its verdict at every verbosity, which is what a script reads.
+  it("should report the failure even when silenced", () => {
+    expect(box.run("dialog parse", ["--path", GAMEDATA, "--silent", "--strict"], { expectExit: 3 })).toMatchSnapshot();
+  });
+
+  it("should refuse a prefix holding no dialogs", () => {
+    expect(elsewhere).toMatchSnapshot();
+  });
+
+  it("should write only the report", () => {
+    expect(box.manifest({ normalized: ["report.json"] })).toMatchSnapshot();
+  });
+});

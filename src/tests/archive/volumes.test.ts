@@ -21,7 +21,7 @@ describe("archive volumes", () => {
   beforeAll(() => {
     // The whole tree is a couple of megabytes, so a one megabyte cap spans three volumes and the
     // <name>.db0 / .db1 / .db2 naming appears, which a single-volume pack never shows.
-    split = box.run("pack-archive", [
+    split = box.run("archive pack", [
       "--path",
       gamedata(),
       "--dest",
@@ -34,8 +34,8 @@ describe("archive volumes", () => {
 
     // Mounting the directory reads every volume; pointing at one volume reads only that volume,
     // because a volume is a standalone archive rather than a slice that knows about its siblings.
-    unpackedSet = box.run("unpack-archive", ["--path", box.at("split"), "--dest", box.at("from-set")]);
-    unpackedFirst = box.run("unpack-archive", ["--path", box.at("split/gamedata.db0"), "--dest", box.at("from-first")]);
+    unpackedSet = box.run("archive unpack", ["--path", box.at("split"), "--dest", box.at("from-set")]);
+    unpackedFirst = box.run("archive unpack", ["--path", box.at("split/gamedata.db0"), "--dest", box.at("from-first")]);
   });
 
   it("should split a pack across volumes", () => {

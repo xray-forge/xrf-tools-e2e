@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`omf rename-motions should read back the renamed motions 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read omf file <sandbox>/renamed.omf",
+    "Omf file information",
+    "Version: 4",
+    "Motions: 3 stand,fire,svd_reload",
+    "Bones total: 7",
+    "Parts: default",
+    "Part 'default' bones: wpn_body,body,trigger,wpn_scope,zatvor,lock,magazin",
+  ],
+}
+`;
+
+exports[`omf rename-motions should reject an incomplete map under strict 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: Refused to rename <resources>/gamedata/meshes/omf/wpn_svd_hud_animation.omf in strict mode, 1 motions are missing from the map: svd_reload",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`omf rename-motions should rename motions through a map 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Renamed omf motions <resources>/gamedata/meshes/omf/wpn_svd_hud_animation.omf, 2/3 renamed",
+    "Renamed omf file written into <sandbox>/renamed.omf",
+  ],
+}
+`;
+
+exports[`omf rename-motions should report a dry run without writing 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Renamed omf motions <resources>/gamedata/meshes/omf/wpn_svd_hud_animation.omf, 2/3 renamed",
+    "Dry run, nothing written, <sandbox>/never-renamed.omf would receive 2 renamed motions",
+  ],
+}
+`;
+
+exports[`omf rename-motions should write the expected files 1`] = `
+[
+  {
+    "path": "rename-map.json",
+    "sha256": "8677ebb7c1a27fbe3c916efd8814212cd998e3ce1db0aeeba2a718ffe5367400",
+    "size": 45,
+  },
+  {
+    "path": "renamed.omf",
+    "sha256": "eec0dbbd0288c692d3960bce4c56c6645be99210f73fa5a49116019b3cd03ba9",
+    "size": 3347,
+  },
+]
+`;

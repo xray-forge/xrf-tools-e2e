@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`crop-dds should crop an offset region 1`] = `
+exports[`texture crop-dds should crop an offset region 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -10,7 +10,7 @@ exports[`crop-dds should crop an offset region 1`] = `
 }
 `;
 
-exports[`crop-dds should crop the top left region 1`] = `
+exports[`texture crop-dds should crop the top left region 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -20,7 +20,7 @@ exports[`crop-dds should crop the top left region 1`] = `
 }
 `;
 
-exports[`crop-dds should refuse a region that runs past the edge 1`] = `
+exports[`texture crop-dds should refuse a region that runs past the edge 1`] = `
 {
   "exitCode": 1,
   "stderr": [
@@ -30,7 +30,7 @@ exports[`crop-dds should refuse a region that runs past the edge 1`] = `
 }
 `;
 
-exports[`crop-dds should report the cropped dimensions 1`] = `
+exports[`texture crop-dds should report the cropped dimensions 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -49,7 +49,7 @@ exports[`crop-dds should report the cropped dimensions 1`] = `
 }
 `;
 
-exports[`crop-dds should report the fitted dimensions 1`] = `
+exports[`texture crop-dds should report the fitted dimensions 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -68,7 +68,7 @@ exports[`crop-dds should report the fitted dimensions 1`] = `
 }
 `;
 
-exports[`crop-dds should scale a cropped region to fit 1`] = `
+exports[`texture crop-dds should scale a cropped region to fit 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -79,7 +79,7 @@ exports[`crop-dds should scale a cropped region to fit 1`] = `
 }
 `;
 
-exports[`crop-dds should write the expected files 1`] = `
+exports[`texture crop-dds should write the expected files 1`] = `
 [
   {
     "path": "corner.dds",

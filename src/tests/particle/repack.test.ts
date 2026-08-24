@@ -5,7 +5,7 @@ import { Sandbox, sha, type CliResult } from "#/test/sandbox";
 
 const SOURCE = gamedata("particles.xr");
 
-describe("repack-particles and re-unpack-particles", () => {
+describe("particle repack and particle re-unpack", () => {
   const box = new Sandbox(__filename);
 
   let repack: CliResult;
@@ -13,9 +13,9 @@ describe("repack-particles and re-unpack-particles", () => {
   let reUnpack: CliResult;
 
   beforeAll(() => {
-    repack = box.run("repack-particles", ["--path", SOURCE, "--dest", box.at("repacked.xr")]);
-    unpack = box.run("unpack-particles", ["--path", SOURCE, "--dest", box.at("unpacked")]);
-    reUnpack = box.run("re-unpack-particles", ["--path", box.at("unpacked"), "--dest", box.at("re-unpacked")]);
+    repack = box.run("particle repack", ["--path", SOURCE, "--dest", box.at("repacked.xr")]);
+    unpack = box.run("particle unpack", ["--path", SOURCE, "--dest", box.at("unpacked")]);
+    reUnpack = box.run("particle re-unpack", ["--path", box.at("unpacked"), "--dest", box.at("re-unpacked")]);
   });
 
   it("should repack a container in one step", () => {

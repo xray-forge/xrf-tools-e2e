@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`externs export drift detection should accept an artifact that matches 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Extern artifact '<sandbox>/externs.json' matches 3 declarations.",
+  ],
+}
+`;
+
+exports[`externs export drift detection should reject an artifact that drifted 1`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "Verify error: Extern JSON artifact '<sandbox>/drifted.json' does not match the parsed declaration manifest.",
+    "Check failed: 1 finding(s)",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`externs export drift detection should write the expected files 1`] = `
+[
+  {
+    "path": "drifted.json",
+    "sha256": "a36d06a9cbb07b6b0990fecda0b2202df62ff41d4d5bbd769dc3306e88ed2d77",
+    "size": 18,
+  },
+  {
+    "path": "externs.json",
+    "sha256": "cd73d87ff5474dcd2b790a191c1373a8cb5dfb7701b67acb9b5deebd8d872ce0",
+    "size": 805,
+  },
+]
+`;

@@ -63,7 +63,7 @@ export function gamedata(relative: string = ""): string {
  *
  * @remarks
  * For inputs a command consumes to produce gamedata rather than reads out of it, such as the
- * translation sources that `build-translation` compiles into per-language string tables.
+ * translation sources that `translation build` compiles into per-language string tables.
  *
  * @param relative - Path relative to the resources root, for example `translations`.
  * @returns Absolute path.

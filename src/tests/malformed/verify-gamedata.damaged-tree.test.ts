@@ -5,7 +5,7 @@ import { beforeAll, describe, expect, it } from "@jest/globals";
 import { gamedata } from "#/test/constants";
 import { Sandbox, sortedFindings, type CliResult } from "#/test/sandbox";
 
-describe("verify-gamedata meets a damaged tree", () => {
+describe("gamedata verify meets a damaged tree", () => {
   const box = new Sandbox(__filename);
 
   let swept: CliResult;
@@ -21,7 +21,7 @@ describe("verify-gamedata meets a damaged tree", () => {
       fs.readFileSync(gamedata("meshes/ogf/part_none.ogf")).subarray(0, 200)
     );
 
-    swept = box.run("verify-gamedata", [root, "--checks", "meshes"], { expectExit: 3 });
+    swept = box.run("gamedata verify", [root, "--checks", "meshes"], { expectExit: 3 });
   });
 
   // Names the broken asset with the reason, and still reports on the visuals around it.

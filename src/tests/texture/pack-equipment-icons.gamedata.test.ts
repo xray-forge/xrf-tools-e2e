@@ -30,7 +30,7 @@ const CUSTOM_SECTIONS = [
   "",
 ].join("\n");
 
-describe("pack-equipment-icons gamedata resolution", () => {
+describe("texture pack-equipment-icons gamedata resolution", () => {
   const box = new Sandbox(__filename);
 
   let withGamedata: CliResult;
@@ -38,7 +38,7 @@ describe("pack-equipment-icons gamedata resolution", () => {
 
   beforeAll(() => {
     // Unpacking supplies the ordinary icon; only the custom section needs the gamedata tree.
-    box.run("unpack-equipment-icons", [
+    box.run("texture unpack-equipment-icons", [
       "--system-ltx",
       gamedata("configs/system.ltx"),
       "--source",
@@ -49,7 +49,7 @@ describe("pack-equipment-icons gamedata resolution", () => {
 
     const config = box.write("custom.ltx", CUSTOM_SECTIONS);
 
-    withGamedata = box.run("pack-equipment-icons", [
+    withGamedata = box.run("texture pack-equipment-icons", [
       "--system-ltx",
       config,
       "--source",
@@ -60,7 +60,7 @@ describe("pack-equipment-icons gamedata resolution", () => {
       gamedata(),
     ]);
 
-    withoutGamedata = box.run("pack-equipment-icons", [
+    withoutGamedata = box.run("texture pack-equipment-icons", [
       "--system-ltx",
       config,
       "--source",

@@ -6,7 +6,7 @@ import { Sandbox, type CliResult } from "#/test/sandbox";
 // 256x64 DXT5.
 const SHEET = gamedata("textures/ui/ui_test_sheet.dds");
 
-describe("crop-dds", () => {
+describe("texture crop-dds", () => {
   const box = new Sandbox(__filename);
 
   let corner: CliResult;
@@ -15,7 +15,7 @@ describe("crop-dds", () => {
   let outOfBounds: CliResult;
 
   beforeAll(() => {
-    corner = box.run("crop-dds", [
+    corner = box.run("texture crop-dds", [
       "--source",
       SHEET,
       "--output",
@@ -30,7 +30,7 @@ describe("crop-dds", () => {
       "64",
     ]);
 
-    offset = box.run("crop-dds", [
+    offset = box.run("texture crop-dds", [
       "--source",
       SHEET,
       "--output",
@@ -46,7 +46,7 @@ describe("crop-dds", () => {
     ]);
 
     // Scaling letterboxes the region rather than stretching it, so the aspect survives.
-    fitted = box.run("crop-dds", [
+    fitted = box.run("texture crop-dds", [
       "--source",
       SHEET,
       "--output",
@@ -66,7 +66,7 @@ describe("crop-dds", () => {
     ]);
 
     outOfBounds = box.run(
-      "crop-dds",
+      "texture crop-dds",
       [
         "--source",
         SHEET,
@@ -108,11 +108,11 @@ describe("crop-dds", () => {
   });
 
   it("should report the cropped dimensions", () => {
-    expect(box.run("info-dds", ["--path", box.at("corner.dds")])).toMatchSnapshot();
+    expect(box.run("texture info-dds", ["--path", box.at("corner.dds")])).toMatchSnapshot();
   });
 
   it("should report the fitted dimensions", () => {
-    expect(box.run("info-dds", ["--path", box.at("fitted.dds")])).toMatchSnapshot();
+    expect(box.run("texture info-dds", ["--path", box.at("fitted.dds")])).toMatchSnapshot();
   });
 
   it("should write the expected files", () => {

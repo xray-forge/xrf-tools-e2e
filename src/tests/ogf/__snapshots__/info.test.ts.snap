@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ogf info should report a minimal visual 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read ogf file <resources>/gamedata/meshes/ogf/part_none.ogf",
+    "Ogf file information",
+    "Version: 4, model_type: 10, shader_id: 0, OgfBox { min: Vector3d { x: -0.003534583, y: 1.0833446e-10, z: -0.0035343007 }, max: Vector3d { x: 0.0035341342, y: 0.0035404172, z: 0.003534412 } } - OgfSphere { position: Vector3d { x: -2.2433233e-7, y: 0.0017702086, z: 5.5646524e-8 }, radius: 0.005302547 }",
+    "Boundaries box: OgfBox { min: Vector3d { x: -0.003534583, y: 1.0833446e-10, z: -0.0035343007 }, max: Vector3d { x: 0.0035341342, y: 0.0035404172, z: 0.003534412 } }",
+    "Boundaries sphere: OgfSphere { position: Vector3d { x: -2.2433233e-7, y: 0.0017702086, z: 5.5646524e-8 }, radius: 0.005302547 }",
+    "Description: OgfDescriptionChunk { source_file: "x:\\\\rawdata\\\\objects\\\\dynamics\\\\scenes_objects\\\\part\\\\part_none.object", convertor: "\\\\\\\\ZEXELL\\\\Zaytsev Evgeniy", built_at: 0, creator: "\\\\\\\\YURIY\\\\Yuriy", created_at: 1125504682, editor: "\\\\\\\\ZEXELL\\\\Zaytsev Evgeniy", edited_at: 1201009991 }",
+    "Bones: 1",
+    "[0] name: link",
+    "[0] parent:",
+    "OGF children (1):",
+    "[0] texture name: glow\\glow_ghost",
+    "[0] shader name: models\\model_aref",
+    "[0] progressive lods: 2",
+  ],
+}
+`;
+
+exports[`ogf info should report a static prop 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read ogf file <resources>/gamedata/meshes/ogf/notes_paper_1.ogf",
+    "Ogf file information",
+    "Version: 4, model_type: 10, shader_id: 0, OgfBox { min: Vector3d { x: -0.14615634, y: -4.942947e-17, z: -0.22745165 }, max: Vector3d { x: 0.14190349, y: 0.0100730155, z: 0.2177695 } } - OgfSphere { position: Vector3d { x: -0.0021264255, y: 0.0050365077, z: -0.0048410743 }, radius: 0.26518947 }",
+    "Boundaries box: OgfBox { min: Vector3d { x: -0.14615634, y: -4.942947e-17, z: -0.22745165 }, max: Vector3d { x: 0.14190349, y: 0.0100730155, z: 0.2177695 } }",
+    "Boundaries sphere: OgfSphere { position: Vector3d { x: -0.0021264255, y: 0.0050365077, z: -0.0048410743 }, radius: 0.26518947 }",
+    "Description: OgfDescriptionChunk { source_file: "x:\\\\rawdata\\\\objects\\\\dynamics\\\\equipments\\\\quest\\\\notes_paper_1.object", convertor: "\\\\\\\\ZEXELL\\\\Zaytsev Evgeniy", built_at: 0, creator: "\\\\\\\\ZEXELL\\\\Zaytsev Evgeniy", created_at: 1242134270, editor: "\\\\\\\\ZEXELL\\\\Zaytsev Evgeniy", edited_at: 1245915989 }",
+    "Bones: 1",
+    "[0] name: link",
+    "[0] parent:",
+    "OGF children (1):",
+    "[0] texture name: item\\item_notes",
+    "[0] shader name: models\\model",
+  ],
+}
+`;
+
+exports[`ogf info should report a weapon lod 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read ogf file <resources>/gamedata/meshes/ogf/wpn_pm_lod.ogf",
+    "Ogf file information",
+    "Version: 4, model_type: 10, shader_id: 0, OgfBox { min: Vector3d { x: -0.014848642, y: 0.00026218838, z: -0.05770045 }, max: Vector3d { x: 0.016226405, y: 0.13977794, z: 0.114246435 } } - OgfSphere { position: Vector3d { x: 0.0006888816, y: 0.070020065, z: 0.028272992 }, radius: 0.111798964 }",
+    "Boundaries box: OgfBox { min: Vector3d { x: -0.014848642, y: 0.00026218838, z: -0.05770045 }, max: Vector3d { x: 0.016226405, y: 0.13977794, z: 0.114246435 } }",
+    "Boundaries sphere: OgfSphere { position: Vector3d { x: 0.0006888816, y: 0.070020065, z: 0.028272992 }, radius: 0.111798964 }",
+    "Description: OgfDescriptionChunk { source_file: "convert", convertor: "\\\\\\\\DIEHARD\\\\Mr.DieHard", built_at: 0, creator: "\\\\\\\\YURIY\\\\YuriyN", created_at: 1196186094, editor: "", edited_at: 1543503872 }",
+    "Bones: 1",
+    "[0] name: lod",
+    "[0] parent:",
+    "OGF children (1):",
+    "[0] texture name: wpn\\wpn_pm",
+    "[0] shader name: models\\model",
+  ],
+}
+`;
+
+exports[`ogf info should write nothing 1`] = `[]`;

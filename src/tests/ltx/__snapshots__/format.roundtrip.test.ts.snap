@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ltx format roundtrip should accept what it just wrote 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Checking 7 ltx file(s) from 1 provided path(s)",
+    "Checking 7 file(s)",
+    "All 7 files are formatted, checked in <duration>",
+  ],
+}
+`;
+
+exports[`ltx format roundtrip should not change what the files mean 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Verify path: <sandbox>/configs",
+    "Checked 7 files, 32 sections in <duration>",
+    "Verified 0.00%, 2 files, 0 sections, 0 fields",
+    "Found 0 error(s)",
+  ],
+}
+`;
+
+exports[`ltx format roundtrip should reject unformatted configs 1`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "Format issues with 7/7 files in <duration>",
+    "Check failed: 7 finding(s)",
+  ],
+  "stdout": [
+    "Checking 7 ltx file(s) from 1 provided path(s)",
+    "Checking 7 file(s)",
+    "Not formatted: <sandbox>/configs/alife.ltx",
+    "Not formatted: <sandbox>/configs/defines.ltx",
+    "Not formatted: <sandbox>/configs/evaluation.ltx",
+    "Not formatted: <sandbox>/configs/fonts.ltx",
+    "Not formatted: <sandbox>/configs/game.ltx",
+    "Not formatted: <sandbox>/configs/misc/inventory_icons.ltx",
+    "Not formatted: <sandbox>/configs/system.ltx",
+  ],
+}
+`;
+
+exports[`ltx format roundtrip should rewrite them 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Formatting 7 ltx file(s) from 1 provided path(s)",
+    "Formatting 7 file(s)",
+    "Formatted: <sandbox>/configs/alife.ltx",
+    "Formatted: <sandbox>/configs/defines.ltx",
+    "Formatted: <sandbox>/configs/evaluation.ltx",
+    "Formatted: <sandbox>/configs/fonts.ltx",
+    "Formatted: <sandbox>/configs/game.ltx",
+    "Formatted: <sandbox>/configs/misc/inventory_icons.ltx",
+    "Formatted: <sandbox>/configs/system.ltx",
+    "Formatted 7/7 files in <duration>",
+  ],
+}
+`;
+
+exports[`ltx format roundtrip should write the formatted bytes 1`] = `
+[
+  {
+    "path": "configs/alife.ltx",
+    "sha256": "2c048ae4da7d986618a41ff5ed448da832bbf14168c86bcc43bf4e8b25ef3f41",
+    "size": 769,
+  },
+  {
+    "path": "configs/defines.ltx",
+    "sha256": "f36ed4c9ad846e6d45a01a30a2a0344d9a63623e48617b33de1522fe54003fc4",
+    "size": 4292,
+  },
+  {
+    "path": "configs/evaluation.ltx",
+    "sha256": "b783243013f3b4febbed4c7ca2b2dfcd1381451ae86ec3d8955408627d59b4bc",
+    "size": 283,
+  },
+  {
+    "path": "configs/fonts.ltx",
+    "sha256": "76af4dc2e8cc8b7281cae34f7a8e2f9ac5afc76edb2458c204d91efe3383755e",
+    "size": 1937,
+  },
+  {
+    "path": "configs/game.ltx",
+    "sha256": "5a019bb20e09a36d79616ff1d1c5815a15eadc9fc01a9778a3c4e895bcc823f6",
+    "size": 220,
+  },
+  {
+    "path": "configs/gameplay/dialogs.xml",
+    "sha256": "6583bab4e036cca053ce8c820639a39b80dc7bae71d4adba54d5ee2d865cc5b4",
+    "size": 1670,
+  },
+  {
+    "path": "configs/gameplay/dialogs_zaton.xml",
+    "sha256": "aaaaff52afc3c50a3907ba992d7b73f69e90146421385d22f07d363131e474b9",
+    "size": 548,
+  },
+  {
+    "path": "configs/misc/inventory_icons.ltx",
+    "sha256": "0bd10b9ebabf8026eed428a389a4b9ef475182a02dee46bb9a50875e19e991da",
+    "size": 1168,
+  },
+  {
+    "path": "configs/system.ltx",
+    "sha256": "42529752a2ce2f0816214ba1d67d633f2658750cf2948634dd1fe785af13652f",
+    "size": 263,
+  },
+  {
+    "path": "configs/ui/textures_descr/ui_test_sheet.xml",
+    "sha256": "44329d941bf367bbd107efb9eb255aa12752cb550d3b99d7b88a2d1d91090012",
+    "size": 352,
+  },
+]
+`;

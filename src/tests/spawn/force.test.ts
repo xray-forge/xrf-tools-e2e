@@ -20,15 +20,15 @@ describe("spawn force", () => {
   let packForced: CliResult;
 
   beforeAll(() => {
-    box.run("unpack-spawn", ["--path", ALL_SPAWN, "--dest", box.at("unpacked")]);
-    unpackRefused = box.run("unpack-spawn", ["--path", ALL_SPAWN, "--dest", box.at("unpacked")], { expectExit: 1 });
-    unpackForced = box.run("unpack-spawn", ["--path", ALL_SPAWN, "--dest", box.at("unpacked"), "--force"]);
+    box.run("spawn unpack", ["--path", ALL_SPAWN, "--dest", box.at("unpacked")]);
+    unpackRefused = box.run("spawn unpack", ["--path", ALL_SPAWN, "--dest", box.at("unpacked")], { expectExit: 1 });
+    unpackForced = box.run("spawn unpack", ["--path", ALL_SPAWN, "--dest", box.at("unpacked"), "--force"]);
 
-    box.run("pack-spawn", ["--path", box.at("unpacked"), "--dest", box.at("packed.spawn")]);
-    packRefused = box.run("pack-spawn", ["--path", box.at("unpacked"), "--dest", box.at("packed.spawn")], {
+    box.run("spawn pack", ["--path", box.at("unpacked"), "--dest", box.at("packed.spawn")]);
+    packRefused = box.run("spawn pack", ["--path", box.at("unpacked"), "--dest", box.at("packed.spawn")], {
       expectExit: 1,
     });
-    packForced = box.run("pack-spawn", ["--path", box.at("unpacked"), "--dest", box.at("packed.spawn"), "--force"]);
+    packForced = box.run("spawn pack", ["--path", box.at("unpacked"), "--dest", box.at("packed.spawn"), "--force"]);
   });
 
   it("should refuse an existing unpack destination", () => {

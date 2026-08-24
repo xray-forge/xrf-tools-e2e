@@ -14,7 +14,7 @@ describe("equipment icons roundtrip", () => {
   let info: CliResult;
 
   beforeAll(() => {
-    unpacked = box.run("unpack-equipment-icons", [
+    unpacked = box.run("texture unpack-equipment-icons", [
       "--system-ltx",
       SYSTEM_LTX,
       "--source",
@@ -23,7 +23,7 @@ describe("equipment icons roundtrip", () => {
       box.at("icons"),
     ]);
 
-    packed = box.run("pack-equipment-icons", [
+    packed = box.run("texture pack-equipment-icons", [
       "--system-ltx",
       SYSTEM_LTX,
       "--source",
@@ -32,7 +32,7 @@ describe("equipment icons roundtrip", () => {
       box.at("repacked.dds"),
     ]);
 
-    info = box.run("info-dds", ["--path", box.at("repacked.dds")]);
+    info = box.run("texture info-dds", ["--path", box.at("repacked.dds")]);
   });
 
   // Only the opted-in sections are cut, so the section carrying $inventory_icon = false produces no

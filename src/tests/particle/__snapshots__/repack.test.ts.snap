@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`repack-particles and re-unpack-particles should agree with unpacking the repacked container 1`] = `
+exports[`particle repack and particle re-unpack should agree with unpacking the repacked container 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -8,7 +8,7 @@ exports[`repack-particles and re-unpack-particles should agree with unpacking th
 }
 `;
 
-exports[`repack-particles and re-unpack-particles should re-unpack an unpacked directory 1`] = `
+exports[`particle repack and particle re-unpack should re-unpack an unpacked directory 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -16,7 +16,7 @@ exports[`repack-particles and re-unpack-particles should re-unpack an unpacked d
 }
 `;
 
-exports[`repack-particles and re-unpack-particles should repack a container in one step 1`] = `
+exports[`particle repack and particle re-unpack should repack a container in one step 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -24,7 +24,7 @@ exports[`repack-particles and re-unpack-particles should repack a container in o
 }
 `;
 
-exports[`repack-particles and re-unpack-particles should write the expected files 1`] = `
+exports[`particle repack and particle re-unpack should write the expected files 1`] = `
 [
   {
     "path": "re-unpacked/effects.ltx",

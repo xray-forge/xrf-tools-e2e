@@ -59,7 +59,7 @@ export interface ManifestOptions {
  * Sorts the findings a command logged while working in parallel.
  *
  * @remarks
- * `verify-gamedata`'s meshes check verifies through rayon and logs each finding to stderr as its
+ * `gamedata verify`'s meshes check verifies through rayon and logs each finding to stderr as its
  * worker finishes, so two runs of one binary print the same findings in a different order. Only
  * that leading block is unordered: the summary printed after the blank line is stable, and so is
  * the json report of the same run, whose findings the tools repository sorts before writing them.
@@ -228,7 +228,7 @@ export class Sandbox {
    * The environment is pinned because `RUST_LOG` and colour variables would otherwise let a shell
    * setting change recorded output.
    *
-   * @param command - Subcommand name, for example `info-ogf`.
+   * @param command - Two-level command path, for example `ogf info`; empty for root help.
    * @param args - Arguments, with absolute paths.
    * @param options - Expected exit code.
    * @returns Exit code and normalized streams.
@@ -241,7 +241,8 @@ export class Sandbox {
     delete environment.CLICOLOR_FORCE;
 
     const startedAt: bigint = process.hrtime.bigint();
-    const spawned: cp.SpawnSyncReturns<string> = cp.spawnSync(CLI_EXECUTABLE, [command, ...args], {
+    const commandPath: Array<string> = command === "" ? [] : command.split(" ");
+    const spawned: cp.SpawnSyncReturns<string> = cp.spawnSync(CLI_EXECUTABLE, [...commandPath, ...args], {
       cwd: this.root,
       encoding: "utf8",
       env: environment,

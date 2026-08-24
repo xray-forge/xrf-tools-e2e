@@ -16,9 +16,9 @@ describe("archive roundtrip", () => {
     const source = box.copyIn(gamedata("configs"), "source");
 
     // A single volume is written as testdata.db rather than testdata.db0.
-    pack = box.run("pack-archive", ["--path", source, "--dest", box.at("packed"), "--name", "testdata"]);
-    unpack = box.run("unpack-archive", ["--path", box.at("packed/testdata.db"), "--dest", box.at("unpacked")]);
-    dry = box.run("unpack-archive", ["--path", box.at("packed/testdata.db"), "--dest", box.at("dry"), "--dry"]);
+    pack = box.run("archive pack", ["--path", source, "--dest", box.at("packed"), "--name", "testdata"]);
+    unpack = box.run("archive unpack", ["--path", box.at("packed/testdata.db"), "--dest", box.at("unpacked")]);
+    dry = box.run("archive unpack", ["--path", box.at("packed/testdata.db"), "--dest", box.at("dry"), "--dry"]);
   });
 
   it("should pack a directory into a volume", () => {

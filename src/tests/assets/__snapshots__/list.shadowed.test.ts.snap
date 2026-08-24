@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`assets list across mounts should list only loose files when asked 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Listing <sandbox>/install",
+    "  Directory <sandbox>/install/gamedata (gamedata)",
+    "  configs\\system.ltx [<sandbox>/install/gamedata]",
+    "1 asset(s) across 1 mount(s) in <duration>",
+  ],
+}
+`;
+
+exports[`assets list across mounts should resolve an installation across both mounts 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Listing <sandbox>/install",
+    "  Directory <sandbox>/install/gamedata (gamedata)",
+    "  Archive   <sandbox>/install/database (database)",
+    "  configs\\fonts.ltx [<sandbox>/install/database (archive)]",
+    "  configs\\system.ltx [<sandbox>/install/gamedata]",
+    "2 asset(s) across 2 mount(s) in <duration>",
+  ],
+}
+`;
+
+exports[`assets list across mounts should reveal the copy hidden by a higher-priority mount 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [
+    "1 entry(ies) are shadowed:",
+    "  configs\\system.ltx hidden in [<sandbox>/install/database (archive)]",
+  ],
+  "stdout": [
+    "Listing <sandbox>/install",
+    "  Directory <sandbox>/install/gamedata (gamedata)",
+    "  Archive   <sandbox>/install/database (database)",
+    "  configs\\fonts.ltx [<sandbox>/install/database (archive)]",
+    "  configs\\system.ltx [<sandbox>/install/gamedata]",
+    "2 asset(s) across 2 mount(s) in <duration>",
+  ],
+}
+`;
+
+exports[`assets list across mounts should write nothing of its own 1`] = `
+[
+  {
+    "path": "install/database/gamedata.db",
+    "sha256": "0c7070a88ff7c9e868582534c5084a831d3757e59162c79faff441dea49733ff",
+    "size": 825,
+  },
+  {
+    "path": "install/fsgame.ltx",
+    "sha256": "4b7138c7180f66c160bf06a5f0b73927f1484d316b0558be67405307bda0875e",
+    "size": 122,
+  },
+  {
+    "path": "install/gamedata/configs/system.ltx",
+    "sha256": "b4a4a566d26d645fbb86678c4c16dc9fd8b540b786b191c596801de49ff60da1",
+    "size": 265,
+  },
+  {
+    "path": "stage/configs/fonts.ltx",
+    "sha256": "c68091a9f10ac4545cd0818f9e1a98194898f8fe3483e620328122353e50b93d",
+    "size": 2021,
+  },
+  {
+    "path": "stage/configs/system.ltx",
+    "sha256": "b4a4a566d26d645fbb86678c4c16dc9fd8b540b786b191c596801de49ff60da1",
+    "size": 265,
+  },
+]
+`;

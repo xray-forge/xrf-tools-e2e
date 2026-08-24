@@ -15,15 +15,15 @@ describe("particles roundtrip", () => {
   let pack: CliResult;
 
   beforeAll(() => {
-    info = box.run("info-particles", ["--path", SOURCE]);
-    verify = box.run("verify-particles", ["--path", SOURCE]);
+    info = box.run("particle info", ["--path", SOURCE]);
+    verify = box.run("particle verify", ["--path", SOURCE]);
 
     // Unpacks to header, effects, and groups ltx files.
-    unpack = box.run("unpack-particles", ["--path", SOURCE, "--dest", box.at("unpacked")]);
-    verifyUnpacked = box.run("verify-particles", ["--path", box.at("unpacked"), "--unpacked"]);
-    pack = box.run("pack-particles", ["--path", box.at("unpacked"), "--dest", box.at("repacked.xr")]);
+    unpack = box.run("particle unpack", ["--path", SOURCE, "--dest", box.at("unpacked")]);
+    verifyUnpacked = box.run("particle verify", ["--path", box.at("unpacked"), "--unpacked"]);
+    pack = box.run("particle pack", ["--path", box.at("unpacked"), "--dest", box.at("repacked.xr")]);
 
-    box.run("unpack-particles", ["--path", box.at("repacked.xr"), "--dest", box.at("unpacked-again")]);
+    box.run("particle unpack", ["--path", box.at("repacked.xr"), "--dest", box.at("unpacked-again")]);
   });
 
   it("should report effect and group counts", () => {
