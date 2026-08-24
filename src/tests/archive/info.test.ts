@@ -11,7 +11,7 @@ describe("archive info", () => {
   beforeAll(() => {
     box.run("archive pack", ["--path", gamedata("configs"), "--dest", box.at("packed"), "--name", "fixture"]);
 
-    result = box.run("archive info", ["--path", box.at("packed"), "--verbose"]);
+    result = box.run("archive info", ["--path", box.at("packed/fixture.db"), "--verbose"]);
   });
 
   it("should describe a volume set and its entries", () => {

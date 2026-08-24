@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive extract file from archive directory should extract a file from an archive below the directory root 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Extracted configs\\system.ltx (265 B) in <duration>",
+  ],
+}
+`;
+
+exports[`archive extract file from archive directory should write the expected files 1`] = `
+[
+  {
+    "path": "archives/configs/configs.db",
+    "sha256": "5bb585f8686804da870f314244afdc20f2d6b4a88a950973b3a36e3fdcbbbc0b",
+    "size": 4898,
+  },
+  {
+    "path": "archives/gameplay/gameplay.db",
+    "sha256": "a5d6cdd0d9044dcd21cbcb13477f991f103d176304f98127dbe178396d68d7c0",
+    "size": 887,
+  },
+  {
+    "path": "extracted/system.ltx",
+    "sha256": "b4a4a566d26d645fbb86678c4c16dc9fd8b540b786b191c596801de49ff60da1",
+    "size": 265,
+  },
+  {
+    "path": "source/configs/alife.ltx",
+    "sha256": "160920506a492754ff5c45ceb7f4d169e19e002dff25be0cfe03b1cc671b91cd",
+    "size": 781,
+  },
+  {
+    "path": "source/configs/defines.ltx",
+    "sha256": "3901c71e698c9be76fd7502c7837f9ee3176c592edcb120156788f1ad1957b7d",
+    "size": 3848,
+  },
+  {
+    "path": "source/configs/evaluation.ltx",
+    "sha256": "13b3971565375db44d091d58246aaf728df84d55f61adcd232f1351b621e81cc",
+    "size": 276,
+  },
+  {
+    "path": "source/configs/fonts.ltx",
+    "sha256": "c68091a9f10ac4545cd0818f9e1a98194898f8fe3483e620328122353e50b93d",
+    "size": 2021,
+  },
+  {
+    "path": "source/configs/game.ltx",
+    "sha256": "c502a7d26aff39902fcd3631e65c37b732a8e85470aff4267cbb04f36a30184b",
+    "size": 218,
+  },
+  {
+    "path": "source/configs/gameplay/dialogs.xml",
+    "sha256": "6583bab4e036cca053ce8c820639a39b80dc7bae71d4adba54d5ee2d865cc5b4",
+    "size": 1670,
+  },
+  {
+    "path": "source/configs/gameplay/dialogs_zaton.xml",
+    "sha256": "aaaaff52afc3c50a3907ba992d7b73f69e90146421385d22f07d363131e474b9",
+    "size": 548,
+  },
+  {
+    "path": "source/configs/misc/inventory_icons.ltx",
+    "sha256": "5c7b9ae42acbb5e29fe65dc0b14417681fbca966fafac096807a369e30779c2a",
+    "size": 1126,
+  },
+  {
+    "path": "source/configs/system.ltx",
+    "sha256": "b4a4a566d26d645fbb86678c4c16dc9fd8b540b786b191c596801de49ff60da1",
+    "size": 265,
+  },
+  {
+    "path": "source/configs/ui/textures_descr/ui_test_sheet.xml",
+    "sha256": "44329d941bf367bbd107efb9eb255aa12752cb550d3b99d7b88a2d1d91090012",
+    "size": 352,
+  },
+]
+`;

@@ -11,7 +11,7 @@ describe("archive verify", () => {
   beforeAll(() => {
     box.run("archive pack", ["--path", gamedata("configs"), "--dest", box.at("packed"), "--name", "fixture"]);
 
-    result = box.run("archive verify", ["--path", box.at("packed")]);
+    result = box.run("archive verify", ["--path", box.at("packed/fixture.db")]);
   });
 
   it("should read and validate every payload", () => {

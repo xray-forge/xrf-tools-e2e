@@ -13,7 +13,7 @@ describe("archive extract directory", () => {
 
     result = box.run("archive extract", [
       "--path",
-      box.at("packed"),
+      box.at("packed/fixture.db"),
       "--directory",
       "gameplay",
       "--dest",

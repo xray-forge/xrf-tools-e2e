@@ -13,7 +13,7 @@ describe("archive extract file", () => {
 
     result = box.run("archive extract", [
       "--path",
-      box.at("packed"),
+      box.at("packed/fixture.db"),
       "--file",
       "system.ltx",
       "--dest",
