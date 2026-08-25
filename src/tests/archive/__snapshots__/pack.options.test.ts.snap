@@ -26,7 +26,7 @@ exports[`archive pack options should keep them when the skip list is off 1`] = `
     "Wrote <sandbox>/kept/a.db",
     "Packed 11 file(s) into 1 volume(s) in <duration>",
     "Summary: 10 compressed, 1 stored, 0 aliased, 0 skipped",
-    "Size: 10.9 KB source, 4.79 KB written",
+    "Size: 10.9 KB source, 4.78 KB written",
   ],
 }
 `;
@@ -70,18 +70,18 @@ exports[`archive pack options should write the expected files 1`] = `
   },
   {
     "path": "configured/cfg.db",
-    "sha256": "94e6e60ac5ae1d817cbd1423d84682e659f2867916cdcc64a8c07cd707bd87b7",
+    "sha256": "19c2ebd37304da142dcb27fa0bc40deb44b0349b01d91dd61a7d203bcbb8d666",
     "size": 3900,
   },
   {
     "path": "kept/a.db",
-    "sha256": "fb6e31def20f43e751489b53a8cd52622b8c393970be841a4a044d04421a159a",
-    "size": 4901,
+    "sha256": "9b7a4b1f5cf187167348fd5fe4ad8d1f13be3501961d36929fca165b92478d54",
+    "size": 4899,
   },
   {
     "path": "skipped/a.db",
-    "sha256": "c6dc89e7ec12128e4f83ff27ebfe84b832a53091ec846cee53fb0bc9d68d8a77",
-    "size": 4874,
+    "sha256": "e9d0d24181f4f0536e7668b55ad730c7247badd9f07cd8fa04642b927d191ba8",
+    "size": 4872,
   },
   {
     "path": "source/alife.ltx",
@@ -140,8 +140,8 @@ exports[`archive pack options should write the expected files 1`] = `
   },
   {
     "path": "stored/cfg.xdb",
-    "sha256": "f31e41946fa0aeecb5628ff99530f202f8897cebca01cedf77ad4b9bb69970ae",
-    "size": 11493,
+    "sha256": "a648dc270e80457e9eda6503e12a05193765da98cf712399d3a152c0df8dfb78",
+    "size": 11488,
   },
 ]
 `;

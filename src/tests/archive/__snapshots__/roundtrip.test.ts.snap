@@ -8,9 +8,9 @@ exports[`archive roundtrip should pack a directory into a volume 1`] = `
     "Pack source: <sandbox>/source",
     "Pack destination: <sandbox>/packed",
     "Wrote <sandbox>/packed/testdata.db",
-    "Packed 10 file(s) into 1 volume(s) in <duration>",
-    "Summary: 10 compressed, 0 stored, 0 aliased, 0 skipped",
-    "Size: 10.8 KB source, 4.76 KB written",
+    "Packed 11 file(s) into 1 volume(s) in <duration>",
+    "Summary: 10 compressed, 1 stored, 0 aliased, 0 skipped",
+    "Size: 10.8 KB source, 4.77 KB written",
   ],
 }
 `;
@@ -23,7 +23,7 @@ exports[`archive roundtrip should report without writing in dry mode 1`] = `
     "Unpack in dry mode",
     "Unpack source: <sandbox>/packed/testdata.db",
     "Unpack destination: <sandbox>/dry",
-    "Summary: 1 archive(s), 14 file(s), 4.37 KB compressed, 10.8 KB real",
+    "Summary: 1 archive(s), 16 file(s), 4.37 KB compressed, 10.8 KB real",
     "Unpacking files, parallel 32",
   ],
 }
@@ -36,7 +36,7 @@ exports[`archive roundtrip should unpack the volume 1`] = `
   "stdout": [
     "Unpack source: <sandbox>/packed/testdata.db",
     "Unpack destination: <sandbox>/unpacked",
-    "Summary: 1 archive(s), 14 file(s), 4.37 KB compressed, 10.8 KB real",
+    "Summary: 1 archive(s), 16 file(s), 4.37 KB compressed, 10.8 KB real",
     "Unpacking files, parallel 32",
     "Unpacked archive in <duration> (preparation <duration>, unpack <duration>)",
   ],
@@ -47,8 +47,8 @@ exports[`archive roundtrip should write the expected files 1`] = `
 [
   {
     "path": "packed/testdata.db",
-    "sha256": "c6dc89e7ec12128e4f83ff27ebfe84b832a53091ec846cee53fb0bc9d68d8a77",
-    "size": 4874,
+    "sha256": "922f5694dec44fc4d75ec8faf71240cf2e7e7d818b58635a3806898314d4b43c",
+    "size": 4887,
   },
   {
     "path": "source/alife.ltx",
@@ -59,6 +59,11 @@ exports[`archive roundtrip should write the expected files 1`] = `
     "path": "source/defines.ltx",
     "sha256": "3901c71e698c9be76fd7502c7837f9ee3176c592edcb120156788f1ad1957b7d",
     "size": 3848,
+  },
+  {
+    "path": "source/empty.ltx",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
   },
   {
     "path": "source/evaluation.ltx",
@@ -109,6 +114,11 @@ exports[`archive roundtrip should write the expected files 1`] = `
     "path": "unpacked/gamedata/defines.ltx",
     "sha256": "3901c71e698c9be76fd7502c7837f9ee3176c592edcb120156788f1ad1957b7d",
     "size": 3848,
+  },
+  {
+    "path": "unpacked/gamedata/empty.ltx",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
   },
   {
     "path": "unpacked/gamedata/evaluation.ltx",

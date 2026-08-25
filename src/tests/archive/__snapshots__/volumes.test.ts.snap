@@ -259,18 +259,18 @@ exports[`archive volumes should write the expected files 1`] = `
   },
   {
     "path": "split/gamedata.db0",
-    "sha256": "2b19a0a145f8b6ac1947e279ccf246b3897c5ab82079570d2522125cd4e6eeab",
-    "size": 1220874,
+    "sha256": "33dd7b68b2a11a50473c432ee9e5b3f6c7a8cf8bdafc72b1327d8290fafbcefe",
+    "size": 1220870,
   },
   {
     "path": "split/gamedata.db1",
-    "sha256": "4f6c0da04b0c3afc02a3d9eb8fe85c52cff4cdc976f3cb7af6029a585b0c6028",
-    "size": 1242819,
+    "sha256": "f6e077ea9fc5c8907697318956e7c8f5a3c7ba1ea2e5ae155e22e114458cc11e",
+    "size": 1242817,
   },
   {
     "path": "split/gamedata.db2",
-    "sha256": "bbb8c9a2687a58dc122cf7829f865432de43bffcab2be9d21ef68fd9f2ca6c0b",
-    "size": 17290,
+    "sha256": "8521f974fd4c41deb46b704d7552235ae36400a2580dff736e62a192444a73ae",
+    "size": 17291,
   },
 ]
 `;

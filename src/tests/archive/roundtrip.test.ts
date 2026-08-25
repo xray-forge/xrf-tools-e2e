@@ -1,3 +1,5 @@
+import * as fs from "node:fs";
+
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
 import { gamedata } from "#/test/constants";
@@ -14,6 +16,10 @@ describe("archive roundtrip", () => {
 
   beforeAll(() => {
     const source = box.copyIn(gamedata("configs"), "source");
+
+    // The engine writes both forms of zero-length entry: an empty file and a separator-marked directory.
+    box.write("source/empty.ltx", "");
+    fs.mkdirSync(box.at("source/empty"), { recursive: true });
 
     // A single volume is written as testdata.db rather than testdata.db0.
     pack = box.run("archive pack", ["--path", source, "--dest", box.at("packed"), "--name", "testdata"]);
@@ -35,6 +41,9 @@ describe("archive roundtrip", () => {
     for (const name of PACKED_FILES) {
       expect(box.sha(`unpacked/gamedata/${name}`)).toBe(sha(gamedata(`configs/${name}`)));
     }
+
+    expect(box.sha("unpacked/gamedata/empty.ltx")).toBe(box.sha("source/empty.ltx"));
+    expect(fs.statSync(box.at("unpacked/gamedata/empty")).isDirectory()).toBe(true);
   });
 
   it("should report without writing in dry mode", () => {

@@ -26,8 +26,8 @@ exports[`archive list directory should write the expected files 1`] = `
 [
   {
     "path": "archives/configs/configs.db",
-    "sha256": "5bb585f8686804da870f314244afdc20f2d6b4a88a950973b3a36e3fdcbbbc0b",
-    "size": 4898,
+    "sha256": "c49a1c2fe18f470102504185159f7ea3e915183c3bf919231e3af0c861a157e6",
+    "size": 4895,
   },
   {
     "path": "archives/gameplay/gameplay.db",

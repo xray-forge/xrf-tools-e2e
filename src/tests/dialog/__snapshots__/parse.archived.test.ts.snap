@@ -24,8 +24,8 @@ exports[`dialog parse over an installation should write only the archive it pack
 [
   {
     "path": "install/database/gamedata.db",
-    "sha256": "568122a7cfcc3d83da58f98ea762e4b54b2b8298f645ee6f1df7b89bb6f3e7ac",
-    "size": 647,
+    "sha256": "12db0adc9fcea51b02f5f74c28078702194806f70eca17dfac5b15ecb3094273",
+    "size": 646,
   },
   {
     "path": "install/fsgame.ltx",

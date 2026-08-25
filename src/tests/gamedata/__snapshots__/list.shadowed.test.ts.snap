@@ -50,8 +50,8 @@ exports[`gamedata list across mounts should write nothing of its own 1`] = `
 [
   {
     "path": "install/database/gamedata.db",
-    "sha256": "0c7070a88ff7c9e868582534c5084a831d3757e59162c79faff441dea49733ff",
-    "size": 825,
+    "sha256": "f20b216afd1be2e15cfb06f4ce2f0245602f4f9b7e43ac4d4edbcf1adc7e4a9c",
+    "size": 824,
   },
   {
     "path": "install/fsgame.ltx",

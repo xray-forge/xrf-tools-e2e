@@ -14,8 +14,8 @@ exports[`archive verify should write the expected files 1`] = `
 [
   {
     "path": "packed/fixture.db",
-    "sha256": "c6dc89e7ec12128e4f83ff27ebfe84b832a53091ec846cee53fb0bc9d68d8a77",
-    "size": 4874,
+    "sha256": "e9d0d24181f4f0536e7668b55ad730c7247badd9f07cd8fa04642b927d191ba8",
+    "size": 4872,
   },
 ]
 `;
