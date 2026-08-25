@@ -84,8 +84,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/ogf.md",
-    "sha256": "8dea867599b09b7741bd531b3a48052a753d1f1fe2afeaf03c605b80ce2a600b",
-    "size": 2429,
+    "sha256": "124fea58df003726e4a64ecbdce6cb842fb988c11cd2beef8fa5cd6016c80634",
+    "size": 2538,
   },
   {
     "path": "docs/omf.md",

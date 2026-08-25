@@ -1,6 +1,6 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { gamedata } from "#/test/constants";
+import { gamedata, resource } from "#/test/constants";
 import { Sandbox, type CliResult } from "#/test/sandbox";
 
 describe("ogf verify", () => {
@@ -8,6 +8,7 @@ describe("ogf verify", () => {
 
   let single: CliResult;
   let sweep: CliResult;
+  let layered: CliResult;
 
   beforeAll(() => {
     // The visuals reference textures the trimmed tree does not carry, so the texture check cannot
@@ -17,6 +18,9 @@ describe("ogf verify", () => {
     sweep = box.run("ogf verify", ["--path", gamedata("meshes/ogf"), "--report", box.at("report.json")], {
       expectExit: 1,
     });
+    // A tree of meshes over a tree that carries one of the textures they name, which is how a mod overlay is read: the
+    // sweep above measures the same visuals against nothing and calls every reference missing.
+    layered = box.run("ogf verify", ["--path", gamedata("meshes/ogf"), "--root", resource("base")], { expectExit: 1 });
   });
 
   it("should verify a standalone visual", () => {
@@ -25,6 +29,12 @@ describe("ogf verify", () => {
 
   it("should sweep a directory", () => {
     expect(sweep).toMatchSnapshot();
+  });
+
+  // The census has to say which root answered, or a sweep of an overlay reports its base game's textures as missing
+  // and reads as a defect in the resolver rather than as a tree measured without the tree it layers over.
+  it("should resolve textures from a layered root", () => {
+    expect(layered).toMatchSnapshot();
   });
 
   // The report records how long the sweep took, so its raw bytes differ every run for reasons that

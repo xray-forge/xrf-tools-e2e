@@ -1,5 +1,33 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`ogf verify should resolve textures from a layered root 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Verify error: Verification of ogf visuals did not complete, status: incomplete",
+  ],
+  "stdout": [
+    "Verifying ogf visuals in <resources>/gamedata/meshes/ogf",
+    "Searching textures in <resources>/base as well",
+    "Swept 4 visuals in <duration>",
+    "Submeshes: 4 total, 4 packed, 0 unsupported, 0 malformed",
+    "Progressive submeshes: 1, of which 1 draw only part of their index buffer",
+    "Skinned submeshes: 4, vertices whose weights do not sum to one: 0",
+    "Unreadable files: 0, files with nothing drawable: 0, bounds disagreements: 0",
+    "Texture references: 4 total, 1 resolved, 3 missing, 0 unreadable, 0 visuals with no root",
+    "Distinct textures: 1, of which 1 carry no mip chain; 0 references resolved inside archives and were not read",
+    "Header versions: 4: 4",
+    "Root model types: MT_SKELETON_ANIM: 1, MT_SKELETON_RIGID: 3",
+    "Submesh model types: MT_SKELETON_GEOMDEF_PM: 1, MT_SKELETON_GEOMDEF_ST: 3",
+    "Vertex formats: 0x00000001: 4",
+    "Texture formats: DXT5: 1",
+    "Textures resolved by: <resources>/base: 1",
+    "Texture sizes: 4x4: 1",
+    "Check 'textures' is incomplete with 3 findings",
+  ],
+}
+`;
+
 exports[`ogf verify should sweep a directory 1`] = `
 {
   "exitCode": 1,
@@ -14,13 +42,11 @@ exports[`ogf verify should sweep a directory 1`] = `
     "Skinned submeshes: 4, vertices whose weights do not sum to one: 0",
     "Unreadable files: 0, files with nothing drawable: 0, bounds disagreements: 0",
     "Texture references: 4 total, 0 resolved, 4 missing, 0 unreadable, 0 visuals with no root",
-    "Distinct textures: 0, of which 0 carry no mip chain",
+    "Distinct textures: 0, of which 0 carry no mip chain; 0 references resolved inside archives and were not read",
     "Header versions: 4: 4",
     "Root model types: MT_SKELETON_ANIM: 1, MT_SKELETON_RIGID: 3",
     "Submesh model types: MT_SKELETON_GEOMDEF_PM: 1, MT_SKELETON_GEOMDEF_ST: 3",
     "Vertex formats: 0x00000001: 4",
-    "Texture formats:",
-    "Texture sizes:",
     "Check 'textures' is incomplete with 4 findings",
     "Wrote report to <sandbox>/report.json",
   ],
@@ -41,13 +67,11 @@ exports[`ogf verify should verify a standalone visual 1`] = `
     "Skinned submeshes: 1, vertices whose weights do not sum to one: 0",
     "Unreadable files: 0, files with nothing drawable: 0, bounds disagreements: 0",
     "Texture references: 1 total, 0 resolved, 1 missing, 0 unreadable, 0 visuals with no root",
-    "Distinct textures: 0, of which 0 carry no mip chain",
+    "Distinct textures: 0, of which 0 carry no mip chain; 0 references resolved inside archives and were not read",
     "Header versions: 4: 1",
     "Root model types: MT_SKELETON_RIGID: 1",
     "Submesh model types: MT_SKELETON_GEOMDEF_ST: 1",
     "Vertex formats: 0x00000001: 1",
-    "Texture formats:",
-    "Texture sizes:",
     "Check 'textures' is incomplete with 1 findings",
   ],
 }
