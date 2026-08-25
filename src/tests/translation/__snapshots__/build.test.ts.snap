@@ -61,7 +61,7 @@ exports[`translation build should write the expected files 1`] = `
     "size": 144,
   },
   {
-    "path": "all/eng/st_ui.eng.xml",
+    "path": "all/eng/st_ui.xml",
     "sha256": "0c255423896df871d95248f74dc35a2a1deed5ffc0d192614a3b9cdc0f02ef14",
     "size": 147,
   },
@@ -116,7 +116,7 @@ exports[`translation build should write the expected files 1`] = `
     "size": 144,
   },
   {
-    "path": "all/rus/st_ui.rus.xml",
+    "path": "all/rus/st_ui.xml",
     "sha256": "8db1cd4d626e2b472c3a2f6a7dda2d918d2e9cf85797d2e78140681787d02a44",
     "size": 148,
   },
@@ -151,7 +151,7 @@ exports[`translation build should write the expected files 1`] = `
     "size": 144,
   },
   {
-    "path": "eng/eng/st_ui.eng.xml",
+    "path": "eng/eng/st_ui.xml",
     "sha256": "0c255423896df871d95248f74dc35a2a1deed5ffc0d192614a3b9cdc0f02ef14",
     "size": 147,
   },
@@ -166,7 +166,7 @@ exports[`translation build should write the expected files 1`] = `
     "size": 144,
   },
   {
-    "path": "unsorted/eng/st_ui.eng.xml",
+    "path": "unsorted/eng/st_ui.xml",
     "sha256": "0c255423896df871d95248f74dc35a2a1deed5ffc0d192614a3b9cdc0f02ef14",
     "size": 147,
   },
@@ -221,7 +221,7 @@ exports[`translation build should write the expected files 1`] = `
     "size": 144,
   },
   {
-    "path": "unsorted/rus/st_ui.rus.xml",
+    "path": "unsorted/rus/st_ui.xml",
     "sha256": "8db1cd4d626e2b472c3a2f6a7dda2d918d2e9cf85797d2e78140681787d02a44",
     "size": 148,
   },

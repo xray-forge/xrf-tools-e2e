@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
 import { resource } from "#/test/constants";
-import { Sandbox, type CliResult } from "#/test/sandbox";
+import { Sandbox, sha, type CliResult } from "#/test/sandbox";
 
 const SOURCE = resource("translations");
 
@@ -42,6 +42,11 @@ describe("translation build", () => {
   // A neutral source carries no language of its own, so every language gets the same bytes.
   it("should copy a neutral source identically into every language", () => {
     expect(box.sha("all/rus/st_shared.xml")).toBe(box.sha("all/eng/st_shared.xml"));
+  });
+
+  it("should remove source language suffixes from built XML file names", () => {
+    expect(box.sha("all/eng/st_ui.xml")).toBe(sha(resource("translations/st_ui.eng.xml")));
+    expect(box.sha("all/rus/st_ui.xml")).toBe(sha(resource("translations/st_ui.rus.xml")));
   });
 
   it("should write the expected files", () => {
