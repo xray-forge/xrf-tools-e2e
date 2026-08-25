@@ -19,18 +19,6 @@ exports[`texture description roundtrip should describe the repacked sheet the sa
 }
 `;
 
-exports[`texture description roundtrip should fail when the output subdirectory does not exist 1`] = `
-{
-  "exitCode": 1,
-  "stderr": [
-    "Error: IO error: <missing path>",
-  ],
-  "stdout": [
-    "Packing for 1 files",
-  ],
-}
-`;
-
 exports[`texture description roundtrip should pack the regions back into a sheet 1`] = `
 {
   "exitCode": 0,
@@ -56,11 +44,6 @@ exports[`texture description roundtrip should unpack every described region 1`] 
 
 exports[`texture description roundtrip should write the expected files 1`] = `
 [
-  {
-    "path": "packed/ui/.keep",
-    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "size": 0,
-  },
   {
     "path": "packed/ui/ui_test_sheet.dds",
     "sha256": "6e47e1aa4712a7800af1290b2063f6a5cdb367976701034a4b9f8e2efdfddb04",
