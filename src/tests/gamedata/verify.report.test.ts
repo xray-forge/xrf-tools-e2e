@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
 import { gamedata } from "#/test/constants";
-import { Sandbox, sortedFindings, type CliResult } from "#/test/sandbox";
+import { Sandbox, type CliResult } from "#/test/sandbox";
 
 describe("gamedata verify full run", () => {
   const box = new Sandbox(__filename);
@@ -21,7 +21,7 @@ describe("gamedata verify full run", () => {
   // `--silent` mutes the progress story but never failures, so the run still reports its findings
   // and the final verdict line.
   it("should answer non-zero and report only the failure story", () => {
-    expect(sortedFindings(verify)).toMatchSnapshot();
+    expect(verify).toMatchSnapshot();
   });
 
   // The report carries every finding, so it is compared as a single hash over normalized content.

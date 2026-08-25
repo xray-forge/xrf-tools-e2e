@@ -56,28 +56,6 @@ export interface ManifestOptions {
 }
 
 /**
- * Sorts the findings a command logged while working in parallel.
- *
- * @remarks
- * `gamedata verify`'s meshes check verifies through rayon and logs each finding to stderr as its
- * worker finishes, so two runs of one binary print the same findings in a different order. Only
- * that leading block is unordered: the summary printed after the blank line is stable, and so is
- * the json report of the same run, whose findings the tools repository sorts before writing them.
- *
- * todo: order the mesh findings in the tools repository before logging them too, then delete this
- * and snapshot the stream in the order the command prints it.
- *
- * @param result - Result whose leading stderr block is unordered.
- * @returns The same result with that block sorted.
- */
-export function sortedFindings(result: CliResult): CliResult {
-  const summaryAt: number = result.stderr.indexOf("");
-  const end: number = summaryAt === -1 ? result.stderr.length : summaryAt;
-
-  return { ...result, stderr: [...result.stderr.slice(0, end).sort(), ...result.stderr.slice(end)] };
-}
-
-/**
  * Hashes the exact bytes of a file.
  *
  * @param filePath - Absolute path to read.

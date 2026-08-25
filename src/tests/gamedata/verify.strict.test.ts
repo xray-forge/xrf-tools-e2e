@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
 import { gamedata } from "#/test/constants";
-import { Sandbox, sortedFindings, type CliResult } from "#/test/sandbox";
+import { Sandbox, type CliResult } from "#/test/sandbox";
 
 describe("gamedata verify strict mode", () => {
   const box = new Sandbox(__filename);
@@ -15,7 +15,7 @@ describe("gamedata verify strict mode", () => {
   // Recorded as current behaviour: strict is meant to validate expensive payloads fully, and on
   // this tree it reaches the same conclusion as the ordinary run does.
   it("should reach the same conclusion under strict", () => {
-    expect(sortedFindings(strict)).toMatchSnapshot();
+    expect(strict).toMatchSnapshot();
   });
 
   it("should write nothing", () => {

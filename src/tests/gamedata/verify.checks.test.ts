@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
 import { gamedata } from "#/test/constants";
-import { Sandbox, sortedFindings, type CliResult } from "#/test/sandbox";
+import { Sandbox, type CliResult } from "#/test/sandbox";
 
 const GAMEDATA = gamedata();
 
@@ -24,8 +24,8 @@ describe("gamedata verify check selection", () => {
     // time is what shows that a non-zero answer comes from a named check rather than the whole run.
     scripts = box.run("gamedata verify", [GAMEDATA, "--checks", "scripts"]);
 
-    // Run three times because the check works in parallel: one run cannot show whether the finding
-    // set is stable, and repeating it is what turns a flaky snapshot into a stated expectation.
+    // Run three times because the check works in parallel: one run cannot show whether the output
+    // is stable, and repeating it is what turns a flaky snapshot into a stated expectation.
     meshes = box.run("gamedata verify", [GAMEDATA, "--checks", "meshes"], { expectExit: 3 });
     meshesAgain = box.run("gamedata verify", [GAMEDATA, "--checks", "meshes"], { expectExit: 3 });
     meshesThird = box.run("gamedata verify", [GAMEDATA, "--checks", "meshes"], { expectExit: 3 });
@@ -44,15 +44,15 @@ describe("gamedata verify check selection", () => {
   });
 
   it("should verify meshes", () => {
-    expect(sortedFindings(meshes)).toMatchSnapshot();
+    expect(meshes).toMatchSnapshot();
   });
 
-  // The findings are the same set on every run, which is the part that carries meaning. The order
-  // they reach the console in is not: they are logged from the rayon workers as each finishes, so
-  // three runs of one binary print them three ways. See the `sortedFindings` remark.
-  it("should report the same findings across repeated runs", () => {
-    expect(sortedFindings(meshesAgain)).toEqual(sortedFindings(meshes));
-    expect(sortedFindings(meshesThird)).toEqual(sortedFindings(meshes));
+  // Byte for byte, not merely the same set: the check verifies through rayon, and each worker logs
+  // into its listed position rather than as it finishes, so what the command prints is decided by
+  // the tree and not by which mesh happened to be read first.
+  it("should print an identical run every time", () => {
+    expect(meshesAgain).toEqual(meshes);
+    expect(meshesThird).toEqual(meshes);
   });
 
   it("should run several named checks at once", () => {

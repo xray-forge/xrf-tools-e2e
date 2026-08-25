@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
 import { gamedata } from "#/test/constants";
-import { Sandbox, sortedFindings, type CliResult } from "#/test/sandbox";
+import { Sandbox, type CliResult } from "#/test/sandbox";
 
 const GAMEDATA = gamedata();
 
@@ -74,7 +74,7 @@ describe("gamedata verify ignore list", () => {
   });
 
   it("should run a check that never reads the ignored prefix", () => {
-    expect(sortedFindings(unrelatedCheck)).toMatchSnapshot();
+    expect(unrelatedCheck).toMatchSnapshot();
   });
 
   it("should leave a check alone when the prefix names another subtree", () => {
