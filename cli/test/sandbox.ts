@@ -283,6 +283,26 @@ export class Sandbox {
   }
 
   /**
+   * Reads a json artifact the command wrote, normalized and parsed.
+   *
+   * @remarks
+   * For comparing a machine contract as a document rather than as a hash. A hash answers only
+   * whether the output moved; the parsed value puts every field, name and nesting level into the
+   * diff, which is what a report is judged on. Normalization is what makes that comparable across
+   * machines - absolute paths and timings differ between two correct runs - and it leaves the
+   * document parseable on purpose, timings included as the quoted `"<duration>"`.
+   *
+   * Prefer this over hashing through `manifest` for anything the tool authors as json. Hashing is
+   * still right for a document too large to read in a diff, and for asset bytes.
+   *
+   * @param relative - Sandbox-relative path to a json file.
+   * @returns The parsed, normalized document.
+   */
+  public json(relative: string): unknown {
+    return JSON.parse(normalizeText(fs.readFileSync(this.at(relative), "utf8"), this.root).join("\n"));
+  }
+
+  /**
    * Records everything the test left in the sandbox.
    *
    * @remarks

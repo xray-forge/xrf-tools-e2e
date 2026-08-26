@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`spawn info report should report the identity and census of a spawn file 1`] = `
+{
+  "command": [
+    "spawn",
+    "info",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "artefactSpawnPoints": 256,
+    "graph": {
+      "edges": 2568,
+      "points": 512,
+      "version": 10,
+      "vertices": 934,
+    },
+    "guid": "a117405b-0a2e-a781-4ab5-f7aa88ae759c",
+    "levels": 5,
+    "objects": 256,
+    "patrols": 4634,
+    "version": 10,
+  },
+}
+`;

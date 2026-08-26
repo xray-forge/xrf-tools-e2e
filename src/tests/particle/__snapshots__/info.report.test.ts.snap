@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`particle info report should report the effect and group counts of a library 1`] = `
+{
+  "command": [
+    "particle",
+    "info",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "effects": 921,
+    "groups": 350,
+    "version": 1,
+  },
+}
+`;

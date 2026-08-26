@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ogf info report should report a lod visual, which carries no motion refs 1`] = `
+{
+  "command": [
+    "ogf",
+    "info",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "bones": [
+      {
+        "name": "lod",
+        "parent": "",
+      },
+    ],
+    "bounds": {
+      "maximum": [
+        0.016226405277848244,
+        0.13977794349193573,
+        0.1142464354634285,
+      ],
+      "minimum": [
+        -0.01484864205121994,
+        0.0002621883759275079,
+        -0.05770045146346092,
+      ],
+      "radius": 0.1117989644408226,
+      "sphere": [
+        0.0006888816133141518,
+        0.07002006471157074,
+        0.028272991999983788,
+      ],
+    },
+    "children": [
+      {
+        "shader": "models\\model",
+        "texture": "wpn\\wpn_pm",
+      },
+    ],
+    "description": "OgfDescriptionChunk { source_file: "convert", convertor: "\\\\\\\\DIEHARD\\\\Mr.DieHard", built_at: 0, creator: "\\\\\\\\YURIY\\\\YuriyN", created_at: 1196186094, editor: "", edited_at: 1543503872 }",
+    "material": null,
+    "modelType": 10,
+    "motionRefs": [],
+    "progressiveLods": 0,
+    "shaderId": 0,
+    "unknownChunks": [],
+    "version": 4,
+  },
+}
+`;
+
+exports[`ogf info report should report a visual's bones, bounds and material 1`] = `
+{
+  "command": [
+    "ogf",
+    "info",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "bones": [
+      {
+        "name": "link",
+        "parent": "",
+      },
+    ],
+    "bounds": {
+      "maximum": [
+        0.003534134244546294,
+        0.003540417179465294,
+        0.0035344120115041733,
+      ],
+      "minimum": [
+        -0.0035345829091966152,
+        1.0833445945879205e-10,
+        -0.0035343007184565067,
+      ],
+      "radius": 0.005302547011524439,
+      "sphere": [
+        -2.243323251605034e-7,
+        0.001770208589732647,
+        5.564652383327484e-8,
+      ],
+    },
+    "children": [
+      {
+        "shader": "models\\model_aref",
+        "texture": "glow\\glow_ghost",
+      },
+    ],
+    "description": "OgfDescriptionChunk { source_file: "x:\\\\rawdata\\\\objects\\\\dynamics\\\\scenes_objects\\\\part\\\\part_none.object", convertor: "\\\\\\\\ZEXELL\\\\Zaytsev Evgeniy", built_at: 0, creator: "\\\\\\\\YURIY\\\\Yuriy", created_at: 1125504682, editor: "\\\\\\\\ZEXELL\\\\Zaytsev Evgeniy", edited_at: 1201009991 }",
+    "material": null,
+    "modelType": 10,
+    "motionRefs": [],
+    "progressiveLods": 0,
+    "shaderId": 0,
+    "unknownChunks": [],
+    "version": 4,
+  },
+}
+`;

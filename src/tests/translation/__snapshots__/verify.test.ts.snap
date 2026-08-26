@@ -70,6 +70,89 @@ exports[`translation verify should report gaps across every language 1`] = `
 }
 `;
 
+exports[`translation verify should report the gaps it found 1`] = `
+{
+  "command": [
+    "translation",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "checkedTranslationsCount": 2,
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "Missing translation for key 'st_bread_name' in language 'fra'",
+            "ruleId": "translations.missing",
+            "subject": "<resources>/translations/st_items.json",
+          },
+          {
+            "message": "Missing translation for key 'st_bread_name' in language 'ger'",
+            "ruleId": "translations.missing",
+            "subject": "<resources>/translations/st_items.json",
+          },
+          {
+            "message": "Missing translation for key 'st_bread_name' in language 'ita'",
+            "ruleId": "translations.missing",
+            "subject": "<resources>/translations/st_items.json",
+          },
+          {
+            "message": "Missing translation for key 'st_bread_name' in language 'pol'",
+            "ruleId": "translations.missing",
+            "subject": "<resources>/translations/st_items.json",
+          },
+          {
+            "message": "Missing translation for key 'st_bread_name' in language 'spa'",
+            "ruleId": "translations.missing",
+            "subject": "<resources>/translations/st_items.json",
+          },
+          {
+            "message": "Missing translation for key 'st_medkit_name' in language 'fra'",
+            "ruleId": "translations.missing",
+            "subject": "<resources>/translations/st_items.json",
+          },
+          {
+            "message": "Missing translation for key 'st_medkit_name' in language 'ger'",
+            "ruleId": "translations.missing",
+            "subject": "<resources>/translations/st_items.json",
+          },
+          {
+            "message": "Missing translation for key 'st_medkit_name' in language 'ita'",
+            "ruleId": "translations.missing",
+            "subject": "<resources>/translations/st_items.json",
+          },
+          {
+            "message": "Missing translation for key 'st_medkit_name' in language 'pol'",
+            "ruleId": "translations.missing",
+            "subject": "<resources>/translations/st_items.json",
+          },
+          {
+            "message": "Missing translation for key 'st_medkit_name' in language 'spa'",
+            "ruleId": "translations.missing",
+            "subject": "<resources>/translations/st_items.json",
+          },
+          {
+            "message": "Missing translation for key 'st_medkit_name' in language 'ukr'",
+            "ruleId": "translations.missing",
+            "subject": "<resources>/translations/st_items.json",
+          },
+        ],
+        "id": "translations",
+        "status": "failed",
+      },
+    ],
+    "duration": "<duration>",
+    "missingTranslationsCount": 11,
+    "status": "failed",
+  },
+}
+`;
+
 exports[`translation verify should write a structured report 1`] = `
 {
   "exitCode": 0,
@@ -101,8 +184,8 @@ exports[`translation verify should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "737a9b92c71f928ba6ca76b2ee9428b16c34491c3d27e0d4baf530304dbb48b9",
-    "size": 2908,
+    "sha256": "dbc3ffa5b54e7b4ea0a14d33474fc9ed728c0d3c5190c694319f8e789a3ab954",
+    "size": 2904,
   },
 ]
 `;

@@ -17,6 +17,10 @@ describe("gamedata verify full run", () => {
     verify = box.run("gamedata verify", [gamedata(), "--silent", "--report", box.at("report.json")], {
       expectExit: 3,
     });
+
+    // One check's worth of the same document, small enough to read. The tree ships no scripts, so
+    // this one passes with nothing to say and the shape is all that is left.
+    box.run("gamedata verify", [gamedata(), "--checks", "scripts", "--silent", "--report", box.at("scripts.json")]);
   });
 
   // `--silent` mutes the progress story but never failures, so the run still reports its findings
@@ -25,10 +29,18 @@ describe("gamedata verify full run", () => {
     expect(verify).toMatchSnapshot();
   });
 
-  // The report carries every finding, so it is compared as a single hash over normalized content.
-  // When it moves, the report in target/ is what to read.
+  // The full run's report is thousands of lines, too large to read in a diff, so its completeness is
+  // held by one hash over normalized content: when it moves, the report in target/ is what to read.
+  // The document's shape is pinned separately, below, where it can be read.
   it("should write a findings report", () => {
-    expect(box.manifest({ normalized: ["report.json"] })).toMatchSnapshot();
+    expect(box.manifest({ normalized: ["report.json", "scripts.json"] })).toMatchSnapshot();
+  });
+
+  // The same document at a size a reviewer can hold: every field, name and nesting level of the
+  // report reaches the diff, so a change to the reported shape is readable rather than merely
+  // detected. What the full run adds is volume, not structure.
+  it("should report one check as a readable document", () => {
+    expect(box.json("scripts.json")).toMatchSnapshot();
   });
 
   // A failing check still reports the findings that explain its verdict, which is the requirement

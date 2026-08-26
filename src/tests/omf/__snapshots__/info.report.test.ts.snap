@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`omf info report should report every motion, part and bone count of a container 1`] = `
+{
+  "command": [
+    "omf",
+    "info",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "bones": 2,
+    "motions": [
+      {
+        "accrue": 2,
+        "falloff": 2,
+        "flags": 0,
+        "keyframes": 1,
+        "name": "idle",
+        "power": 1,
+        "speed": 1,
+      },
+    ],
+    "parts": [
+      {
+        "bones": [
+          "wpn_body",
+          "knife",
+        ],
+        "name": "default",
+      },
+    ],
+    "version": 4,
+  },
+}
+`;

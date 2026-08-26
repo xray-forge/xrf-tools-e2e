@@ -1016,12 +1016,43 @@ exports[`gamedata verify full run should answer non-zero and report only the fai
 }
 `;
 
+exports[`gamedata verify full run should report one check as a readable document 1`] = `
+{
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "passed",
+        "summary": "0/0 scripts valid",
+        "verificationType": "scripts",
+      },
+    ],
+    "duration": "<duration>",
+    "status": "passed",
+  },
+}
+`;
+
 exports[`gamedata verify full run should write a findings report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "e94ca3b2fe44fab1239ecd5ace3ca74ee52ca1e45457b8984e6b4db0752b6a79",
-    "size": 238263,
+    "sha256": "4202b6567c39239b34569cf70df1b499a59ddf6fe20d7d4a23d9221a20b3e10b",
+    "size": 238235,
+  },
+  {
+    "path": "scripts.json",
+    "sha256": "1c9c92bb2dfacd920a4ecf2ed972a3737a70a6099289b7c159f2760136b67ba9",
+    "size": 412,
   },
 ]
 `;

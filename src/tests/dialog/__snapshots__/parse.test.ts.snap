@@ -77,6 +77,42 @@ exports[`dialog parse should refuse a prefix holding no dialogs 1`] = `
 }
 `;
 
+exports[`dialog parse should report the census and checks it found 1`] = `
+{
+  "command": [
+    "dialog",
+    "parse",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "dialog.read",
+        "status": "passed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "zat_b30_test_owl_about_stash#1: unknown element 'go_back'",
+            "ruleId": "dialog.unknown-element",
+            "subject": "configs\\gameplay\\dialogs_zaton.xml",
+          },
+        ],
+        "id": "dialog.schema",
+        "status": "failed",
+      },
+    ],
+    "status": "failed",
+  },
+}
+`;
+
 exports[`dialog parse should report the failure even when silenced 1`] = `
 {
   "exitCode": 3,
@@ -118,8 +154,8 @@ exports[`dialog parse should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "e44b17f80dd2ffe9678db3c6fbf70aadac75d4e02eb0ce91e4f594432bb503e4",
-    "size": 815,
+    "sha256": "ae4bae1159f5133fef9b9f03d06dd01cd3a86ae18a524bc8cf732579f0c088cd",
+    "size": 689,
   },
 ]
 `;

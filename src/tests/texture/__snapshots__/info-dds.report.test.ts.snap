@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`texture info-dds report should report a compressed texture's format and mip chain 1`] = `
+{
+  "command": [
+    "texture",
+    "info-dds",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "bitsPerPixel": null,
+    "blockSize": 8,
+    "dataSize": 56,
+    "declaredMipmapLevels": 4,
+    "depth": null,
+    "fileSize": 184,
+    "format": "DXT1",
+    "fourCc": null,
+    "hasDataFormat": true,
+    "height": 8,
+    "linearSize": 32,
+    "metadataSize": 128,
+    "minimumMipmapSize": 8,
+    "mipmapLevels": 4,
+    "pitch": null,
+    "width": 8,
+  },
+}
+`;
+
+exports[`texture info-dds report should report an uncompressed ui texture 1`] = `
+{
+  "command": [
+    "texture",
+    "info-dds",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "bitsPerPixel": null,
+    "blockSize": 16,
+    "dataSize": 16,
+    "declaredMipmapLevels": null,
+    "depth": null,
+    "fileSize": 144,
+    "format": "DXT5",
+    "fourCc": null,
+    "hasDataFormat": true,
+    "height": 4,
+    "linearSize": 16,
+    "metadataSize": 128,
+    "minimumMipmapSize": 16,
+    "mipmapLevels": 1,
+    "pitch": null,
+    "width": 4,
+  },
+}
+`;

@@ -85,6 +85,12 @@ describe("dialog parse", () => {
     expect(elsewhere).toMatchSnapshot();
   });
 
+  // The document itself, not a hash of it: every field, name and nesting level reaches the diff, so
+  // a change to the reported shape is readable rather than merely detected.
+  it("should report the census and checks it found", () => {
+    expect(box.json("report.json")).toMatchSnapshot();
+  });
+
   it("should write only the report", () => {
     expect(box.manifest({ normalized: ["report.json"] })).toMatchSnapshot();
   });

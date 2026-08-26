@@ -231,12 +231,13 @@ describe("CLI reporting contract", () => {
     });
   });
 
-  // Reporting is generic: a command answers the contract whether or not a payload has been designed
-  // for it yet, and one that has none says so with a null result rather than by rejecting the flag.
-  it("should reach a command that has no payload of its own yet", () => {
-    const envelope: CommandEnvelope = envelopeOf(box.run("ltx verify", ["--path", gamedata("configs"), "--json"]));
+  /**
+   * Reporting is generic, not a per-command feature.
+   */
+  it("should reach a command that reports no payload of its own", () => {
+    const envelope: CommandEnvelope = envelopeOf(box.run("docs generate", ["--output", box.at("docs"), "--json"]));
 
-    expect(envelope.command).toEqual(["ltx", "verify"]);
+    expect(envelope.command).toEqual(["docs", "generate"]);
     expect(envelope.outcome).toBe("success");
     expect(envelope.result).toBeNull();
   });

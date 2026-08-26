@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ltx verify report should report the coverage a verification reached 1`] = `
+{
+  "command": [
+    "ltx",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "checkedFields": 0,
+    "checkedSections": 0,
+    "duration": "<duration>",
+    "errors": [],
+    "invalidSections": 0,
+    "skippedSections": 32,
+    "totalFiles": 2,
+    "totalSections": 32,
+    "validSections": 0,
+  },
+}
+`;

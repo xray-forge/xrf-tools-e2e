@@ -50,6 +50,12 @@ describe("ogf verify", () => {
   // The report records how long the sweep took, so its raw bytes differ every run for reasons that
   // say nothing about behavior. Comparing normalized content keeps every finding under comparison.
 
+  // The document itself, not a hash of it: every field, name and nesting level reaches the diff,
+  // so a change to the reported shape is readable rather than merely detected.
+  it("should report the census and findings of the sweep", () => {
+    expect(box.json("report.json")).toMatchSnapshot();
+  });
+
   it("should write a report", () => {
     expect(box.manifest({ normalized: ["report.json"] })).toMatchSnapshot();
   });
