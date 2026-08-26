@@ -5,7 +5,7 @@ exports[`archive info should describe a volume set and its entries 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Archive root: <sandbox>/packed",
+    "Archive root: <sandbox>/packed/fixture.db",
     "Volumes: 1",
     "Entries: 10 file(s), 4 directory record(s)",
     "Size: 4.37 KB compressed, 10.8 KB unpacked",

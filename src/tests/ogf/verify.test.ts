@@ -1,6 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
 import { gamedata, resource } from "#/test/constants";
+import { envelopeAt, type CommandEnvelope } from "#/test/envelope";
 import { Sandbox, type CliResult } from "#/test/sandbox";
 
 describe("ogf verify", () => {
@@ -37,8 +38,18 @@ describe("ogf verify", () => {
     expect(layered).toMatchSnapshot();
   });
 
+  // The sweep's own census and findings reach a caller under the shared envelope's `result`, which
+  // is what moved when reporting became generic. The envelope itself is pinned in `cli/reporting`.
+  it("should carry its checks under the envelope result", () => {
+    const envelope: CommandEnvelope = envelopeAt(box.at("report.json"));
+
+    expect(envelope.command).toEqual(["ogf", "verify"]);
+    expect(envelope.result).not.toBeNull();
+  });
+
   // The report records how long the sweep took, so its raw bytes differ every run for reasons that
   // say nothing about behavior. Comparing normalized content keeps every finding under comparison.
+
   it("should write a report", () => {
     expect(box.manifest({ normalized: ["report.json"] })).toMatchSnapshot();
   });

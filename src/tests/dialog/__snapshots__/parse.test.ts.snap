@@ -109,7 +109,6 @@ exports[`dialog parse should write a structured report 1`] = `
     "Dialog elements: dont_has_info: 1, has_info: 1, init_func: 1, precondition: 1",
     "Phrase elements: action: 1, disable_info: 1, give_info: 1, go_back: 1, has_info: 1, is_final: 3, next: 5, script_text: 1, text: 7",
     "Check 'dialog.schema' is failed with 1 findings",
-    "Wrote report to <sandbox>/report.json",
     "Read 2 files, status: failed",
   ],
 }
@@ -119,8 +118,8 @@ exports[`dialog parse should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "ef730b4d280bdd8d1a48e4d44c759d8dfe399ca1dd73004a97a3424f58e35d0d",
-    "size": 603,
+    "sha256": "e44b17f80dd2ffe9678db3c6fbf70aadac75d4e02eb0ce91e4f594432bb503e4",
+    "size": 815,
   },
 ]
 `;

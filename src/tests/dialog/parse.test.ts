@@ -1,6 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
 import { gamedata } from "#/test/constants";
+import { envelopeAt, type CommandEnvelope } from "#/test/envelope";
 import { Sandbox, type CliResult } from "#/test/sandbox";
 
 const GAMEDATA = gamedata();
@@ -53,6 +54,16 @@ describe("dialog parse", () => {
 
   it("should write a structured report", () => {
     expect(report).toMatchSnapshot();
+  });
+
+  // The command's own census and checks reach a caller under the shared envelope's `result`, which
+  // is what moved when reporting became generic. The envelope itself is pinned in `cli/reporting`.
+  it("should carry its checks under the envelope result", () => {
+    const envelope: CommandEnvelope = envelopeAt(box.at("report.json"));
+
+    expect(envelope.command).toEqual(["dialog", "parse"]);
+    expect(envelope.outcome).toBe("success");
+    expect(JSON.stringify(envelope.result)).toContain("dialog.schema");
   });
 
   it("should say nothing when silenced", () => {

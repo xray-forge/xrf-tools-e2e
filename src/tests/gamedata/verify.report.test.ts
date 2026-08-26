@@ -1,6 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
 import { gamedata } from "#/test/constants";
+import { envelopeAt, type CommandEnvelope } from "#/test/envelope";
 import { Sandbox, type CliResult } from "#/test/sandbox";
 
 describe("gamedata verify full run", () => {
@@ -28,5 +29,16 @@ describe("gamedata verify full run", () => {
   // When it moves, the report in target/ is what to read.
   it("should write a findings report", () => {
     expect(box.manifest({ normalized: ["report.json"] })).toMatchSnapshot();
+  });
+
+  // A failing check still reports the findings that explain its verdict, which is the requirement
+  // the generic contract exists for. The envelope itself is pinned in `cli/reporting`.
+  it("should carry its findings under the envelope result even though the check failed", () => {
+    const envelope: CommandEnvelope = envelopeAt(box.at("report.json"));
+
+    expect(envelope.command).toEqual(["gamedata", "verify"]);
+    expect(envelope.outcome).toBe("checkFailed");
+    expect(envelope.exitCode).toBe(3);
+    expect(JSON.stringify(envelope.result)).toContain("checks");
   });
 });

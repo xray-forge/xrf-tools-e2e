@@ -48,7 +48,6 @@ exports[`ogf verify should sweep a directory 1`] = `
     "Submesh model types: MT_SKELETON_GEOMDEF_PM: 1, MT_SKELETON_GEOMDEF_ST: 3",
     "Vertex formats: 0x00000001: 4",
     "Check 'textures' is incomplete with 4 findings",
-    "Wrote report to <sandbox>/report.json",
   ],
 }
 `;
@@ -81,8 +80,8 @@ exports[`ogf verify should write a report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "9285c42b2afdc55f1318ca94faa38ca51c7a28c806e8f1136536c2322f6990b2",
-    "size": 1506,
+    "sha256": "4d4e48995543a750564a243c95d844b6809f0808d76a0dac1623157171b30fb7",
+    "size": 1874,
   },
 ]
 `;

@@ -1,6 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
 import { resource } from "#/test/constants";
+import { envelopeAt, type CommandEnvelope } from "#/test/envelope";
 import { Sandbox, type CliResult } from "#/test/sandbox";
 
 const SOURCE = resource("translations");
@@ -36,6 +37,16 @@ describe("translation verify", () => {
   // Strict turns the same gaps into a non-zero answer, which is what a build pipeline would gate on.
   it("should fail under strict when translations are missing", () => {
     expect(box.run("translation verify", ["--path", SOURCE, "--strict"], { expectExit: 3 })).toMatchSnapshot();
+  });
+
+  // The command's own counts and findings reach a caller under the shared envelope's `result`,
+  // which is what moved when reporting became generic. The envelope itself is pinned in
+  // `cli/reporting`.
+  it("should carry its findings under the envelope result", () => {
+    const envelope: CommandEnvelope = envelopeAt(box.at("report.json"));
+
+    expect(envelope.command).toEqual(["translation", "verify"]);
+    expect(JSON.stringify(envelope.result)).toContain("translations.missing");
   });
 
   it("should write only the report", () => {

@@ -93,7 +93,7 @@ export function normalizeText(text: string, sandboxRoot: string): Array<string> 
   normalized = normalized.replace(EXECUTABLE_PATTERN, CLI_EXECUTABLE_STEM);
   normalized = normalized.replace(TIMESTAMP_PATTERN, "<timestamp>");
   normalized = normalized.replace(MISSING_PATH_PATTERN, "<missing path>");
-  normalized = normalized.replace(JSON_DURATION_PATTERN, '"$1": <duration>');
+  normalized = normalized.replace(JSON_DURATION_PATTERN, '"$1": "<duration>"');
   normalized = normalized.replace(DURATION_PATTERN, "<duration>");
 
   const lines: Array<string> = normalized.split(/\r?\n/).map((line) => line.trimEnd());

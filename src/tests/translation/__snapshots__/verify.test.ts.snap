@@ -101,8 +101,8 @@ exports[`translation verify should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "bc23405018d852b6b857dd6438ccef0dca3ec744e5182732d87b2e9737e02e3c",
-    "size": 2612,
+    "sha256": "737a9b92c71f928ba6ca76b2ee9428b16c34491c3d27e0d4baf530304dbb48b9",
+    "size": 2908,
   },
 ]
 `;
