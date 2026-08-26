@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`spawn reports should report a verdict on the source 1`] = `
+{
+  "command": [
+    "spawn",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "findings": [],
+    "status": "passed",
+    "subject": "<resources>/gamedata/spawns/all.spawn",
+  },
+}
+`;
+
+exports[`spawn reports should report what packing read and wrote 1`] = `
+{
+  "command": [
+    "spawn",
+    "pack",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "destination": "<sandbox>/repacked.spawn",
+    "readDuration": "<duration>",
+    "source": "<sandbox>/unpacked",
+    "writeDuration": "<duration>",
+  },
+}
+`;
+
+exports[`spawn reports should report what repacking read and wrote 1`] = `
+{
+  "command": [
+    "spawn",
+    "repack",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "destination": "<sandbox>/again.spawn",
+    "readDuration": "<duration>",
+    "source": "<resources>/gamedata/spawns/all.spawn",
+    "writeDuration": "<duration>",
+  },
+}
+`;
+
+exports[`spawn reports should report what unpacking read and wrote 1`] = `
+{
+  "command": [
+    "spawn",
+    "unpack",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "destination": "<sandbox>/unpacked",
+    "readDuration": "<duration>",
+    "source": "<resources>/gamedata/spawns/all.spawn",
+    "writeDuration": "<duration>",
+  },
+}
+`;

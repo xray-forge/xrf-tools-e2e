@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`texture reports should report the region a crop produced 1`] = `
+{
+  "command": [
+    "texture",
+    "crop-dds",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "destination": "<sandbox>/corner.dds",
+    "height": 64,
+    "regionHeight": 64,
+    "regionWidth": 64,
+    "regionX": 0,
+    "regionY": 0,
+    "source": "<resources>/gamedata/textures/ui/ui_test_sheet.dds",
+    "width": 64,
+  },
+}
+`;
+
+exports[`texture reports should report the verdict on the icon grid 1`] = `
+{
+  "command": [
+    "texture",
+    "verify-equipment-icons",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "findings": [],
+    "status": "passed",
+    "subject": "<resources>/gamedata/configs/system.ltx",
+  },
+}
+`;
+
+exports[`texture reports should report what packing the icons produced 1`] = `
+{
+  "command": [
+    "texture",
+    "pack-equipment-icons",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "duration": "<duration>",
+    "packedCount": 4,
+    "savedAt": "<sandbox>/repacked.dds",
+    "savedHeight": 52,
+    "savedWidth": 152,
+    "skippedCount": 0,
+  },
+}
+`;
+
+exports[`texture reports should report what slicing the sheet produced 1`] = `
+{
+  "command": [
+    "texture",
+    "unpack-equipment-icons",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "declaredMipmapLevels": null,
+    "destination": "<sandbox>/icons",
+    "format": "DXT5",
+    "height": 64,
+    "source": "<resources>/gamedata/textures/ui/ui_test_sheet.dds",
+    "systemLtx": "<resources>/gamedata/configs/system.ltx",
+    "width": 256,
+  },
+}
+`;

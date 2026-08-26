@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`thm patch-bump report should report a dry run as one that wrote nothing 1`] = `
+{
+  "command": [
+    "thm",
+    "patch-bump",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "isDryRun": true,
+    "originalSize": 138,
+    "patchedSize": 160,
+    "previousMode": 1,
+    "previousName": "",
+  },
+}
+`;
+
+exports[`thm patch-bump report should report clearing a bump 1`] = `
+{
+  "command": [
+    "thm",
+    "patch-bump",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "isDryRun": false,
+    "originalSize": 138,
+    "patchedSize": 138,
+    "previousMode": 1,
+    "previousName": "",
+  },
+}
+`;
+
+exports[`thm patch-bump report should report the bump it replaced 1`] = `
+{
+  "command": [
+    "thm",
+    "patch-bump",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "isDryRun": false,
+    "originalSize": 138,
+    "patchedSize": 160,
+    "previousMode": 1,
+    "previousName": "",
+  },
+}
+`;

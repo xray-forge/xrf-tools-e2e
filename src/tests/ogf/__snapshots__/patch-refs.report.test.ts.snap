@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ogf patch reports should report a dry run as one that wrote nothing 1`] = `
+{
+  "command": [
+    "ogf",
+    "patch-motion-refs",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "isDryRun": true,
+    "originalSize": 13841,
+    "patchedCount": 1,
+    "patchedSize": 13839,
+  },
+}
+`;
+
+exports[`ogf patch reports should report what a motion-refs patch rewrote 1`] = `
+{
+  "command": [
+    "ogf",
+    "patch-motion-refs",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "isDryRun": false,
+    "originalSize": 13841,
+    "patchedCount": 1,
+    "patchedSize": 13839,
+  },
+}
+`;
+
+exports[`ogf patch reports should report what a texture-refs patch rewrote 1`] = `
+{
+  "command": [
+    "ogf",
+    "patch-texture-refs",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "isDryRun": false,
+    "originalSize": 13841,
+    "patchedCount": 1,
+    "patchedSize": 13849,
+  },
+}
+`;

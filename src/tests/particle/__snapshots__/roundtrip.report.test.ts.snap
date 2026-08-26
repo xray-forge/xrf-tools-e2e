@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`particle reports should report a verdict on the source 1`] = `
+{
+  "command": [
+    "particle",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "findings": [],
+    "status": "passed",
+    "subject": "<resources>/gamedata/particles.xr",
+  },
+}
+`;
+
+exports[`particle reports should report what packing read and wrote 1`] = `
+{
+  "command": [
+    "particle",
+    "pack",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "destination": "<sandbox>/repacked.xr",
+    "readDuration": "<duration>",
+    "source": "<sandbox>/unpacked",
+    "writeDuration": "<duration>",
+  },
+}
+`;
+
+exports[`particle reports should report what re-unpacking read and wrote 1`] = `
+{
+  "command": [
+    "particle",
+    "re-unpack",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "destination": "<sandbox>/unpacked-again",
+    "readDuration": "<duration>",
+    "source": "<sandbox>/unpacked",
+    "writeDuration": "<duration>",
+  },
+}
+`;
+
+exports[`particle reports should report what repacking read and wrote 1`] = `
+{
+  "command": [
+    "particle",
+    "repack",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "destination": "<sandbox>/again.xr",
+    "readDuration": "<duration>",
+    "source": "<resources>/gamedata/particles.xr",
+    "writeDuration": "<duration>",
+  },
+}
+`;
+
+exports[`particle reports should report what unpacking read and wrote 1`] = `
+{
+  "command": [
+    "particle",
+    "unpack",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "destination": "<sandbox>/unpacked",
+    "readDuration": "<duration>",
+    "source": "<resources>/gamedata/particles.xr",
+    "writeDuration": "<duration>",
+  },
+}
+`;
