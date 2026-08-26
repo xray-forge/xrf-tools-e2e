@@ -1,3 +1,5 @@
+import * as fs from "node:fs";
+
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
 import { gamedata } from "#/test/constants";
@@ -203,6 +205,29 @@ describe("CLI reporting contract", () => {
       const result: CliResult = succeeding(["--silent", "--verbose"], { expectExit: 2 });
 
       expect(result.stderr.join("\n")).toMatch(/cannot be used with/);
+    });
+
+    /**
+     * The flags are global, so a caller may write one before the command and the other after it.
+     */
+    it("should refuse a contradictory pair written at two levels", () => {
+      const quiet: CliResult = box.run("", ["--verbose", "archive", "info", "--path", archive, "--silent"], {
+        expectExit: 2,
+      });
+      const both: CliResult = box.run(
+        "",
+        ["--json", "archive", "info", "--path", archive, "--report", box.at("unused.json")],
+        { expectExit: 2 }
+      );
+
+      expect(quiet.stderr.join("\n")).toMatch(/cannot be used with/);
+      expect(both.stderr.join("\n")).toMatch(/cannot be used with/);
+    });
+
+    it("should still accept a global flag written before the command", () => {
+      const result: CliResult = box.run("", ["--verbose", "archive", "info", "--path", archive]);
+
+      expect(result.stdout.length).toBeGreaterThan(0);
     });
   });
 
