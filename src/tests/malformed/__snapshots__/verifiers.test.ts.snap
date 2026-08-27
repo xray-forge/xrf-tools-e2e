@@ -15,7 +15,7 @@ exports[`verifiers meet damaged input should refuse a damaged spawn 1`] = `
 {
   "exitCode": 3,
   "stderr": [
-    "Provided spawn file is invalid: Invalid error: Chunk 0x00000001 at position 60 declares 66313 bytes, beyond source end 400",
+    "Provided spawn file is invalid: Invalid error: Chunk 0x00000001 at position 60 declares 67940 bytes, beyond source end 400",
     "Check failed: 1 finding(s)",
   ],
   "stdout": [],
@@ -62,7 +62,7 @@ exports[`verifiers meet damaged input should write nothing beyond the damaged in
   },
   {
     "path": "bad.spawn",
-    "sha256": "9c376d5246bfd135df1478a08f993fd12ad24ed991a959d71573671ce6c33c22",
+    "sha256": "9cddce7d1333dca704eb6434be487985c58ed0bcd2ff1cb50441f1dd5153ed3b",
     "size": 400,
   },
   {

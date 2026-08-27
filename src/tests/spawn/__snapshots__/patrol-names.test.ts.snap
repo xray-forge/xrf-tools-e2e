@@ -1,56 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`spawn roundtrip should pack it back 1`] = `
-{
-  "exitCode": 0,
-  "stderr": [],
-  "stdout": [],
-}
-`;
-
-exports[`spawn roundtrip should report object, patrol, and graph counts 1`] = `
-{
-  "exitCode": 0,
-  "stderr": [],
-  "stdout": [
-    "Read spawn file <resources>/gamedata/spawns/all.spawn",
-    "Spawn file information:",
-    "Version: 10",
-    "GUID: a117405b-0a2e-a781-4ab5-f7aa88ae759c",
-    "Levels count: 5",
-    "Objects count: 262",
-    "Artefact spawn points: 256",
-    "Patrols: 4636",
-    "Level version: 10",
-    "Level graph vertices: 934",
-    "Level graph points: 512",
-    "Level graph edges: 2568",
-  ],
-}
-`;
-
-exports[`spawn roundtrip should unpack the whole game spawn 1`] = `
-{
-  "exitCode": 0,
-  "stderr": [],
-  "stdout": [
-    "Starting parsing spawn file: <resources>/gamedata/spawns/all.spawn",
-    "Unpack destination: <sandbox>/unpacked",
-    "Read spawn file took: <duration>",
-    "Export spawn file took: <duration>",
-  ],
-}
-`;
-
-exports[`spawn roundtrip should verify the source 1`] = `
-{
-  "exitCode": 0,
-  "stderr": [],
-  "stdout": [],
-}
-`;
-
-exports[`spawn roundtrip should write the expected files 1`] = `
+exports[`spawn patrol names should write the expected files 1`] = `
 [
   {
     "path": "repacked.spawn",

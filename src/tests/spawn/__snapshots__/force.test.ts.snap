@@ -48,13 +48,13 @@ exports[`spawn force should write the expected files 1`] = `
 [
   {
     "path": "packed.spawn",
-    "sha256": "a976f8f3741e4f6befcc246b49bfe9477b97b6514b89a12c932fc366fe4c1002",
-    "size": 1051254,
+    "sha256": "273c85c97dcf2a9351d81e389a483ab0bad207314ec3a05c081fe2caf3916105",
+    "size": 1053148,
   },
   {
     "path": "unpacked/alife_spawns.ltx",
-    "sha256": "a7ddf15fd295dfc06b4549b3bf9a13297d4a92754698706bd3fa5c46dea3f4db",
-    "size": 271627,
+    "sha256": "84a7a747aae92bc5e70bfda79b9636bec90907a2f380799325bff4ac4755d9bb",
+    "size": 278730,
   },
   {
     "path": "unpacked/artefact_spawns.ltx",
@@ -93,7 +93,7 @@ exports[`spawn force should write the expected files 1`] = `
   },
   {
     "path": "unpacked/header.ltx",
-    "sha256": "4464cfb127cf9c527771be251d8c1e811d22e1414548b50380a945ad6aa7860f",
+    "sha256": "d3f2f2aad94d24ab79954b2dad922479e4e2c5caae16bcf957d8d278004a4284",
     "size": 152,
   },
   {
@@ -103,13 +103,13 @@ exports[`spawn force should write the expected files 1`] = `
   },
   {
     "path": "unpacked/patrol_points.ltx",
-    "sha256": "5c6c8e318e0f311eba2c5a8cc614a74b773857538fc6649ab1124a3cbc793ebd",
-    "size": 1245808,
+    "sha256": "532adc68c91e0c2f220fbacb53b308d55fd2a0932bf0cd53ca502fe7ebf02a71",
+    "size": 1246106,
   },
   {
     "path": "unpacked/patrols.ltx",
-    "sha256": "1d35278418743518bc9064657e3ae316da4b3ed4e9a5270f38a46d366aff94b3",
-    "size": 518486,
+    "sha256": "d05598e321601c1907300b8aa08209c3641621d1eb48542071f365b174989cfb",
+    "size": 518672,
   },
 ]
 `;

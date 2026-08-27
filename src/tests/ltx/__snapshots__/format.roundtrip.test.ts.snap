@@ -69,13 +69,13 @@ exports[`ltx format roundtrip should write the formatted bytes 1`] = `
 [
   {
     "path": "configs/alife.ltx",
-    "sha256": "2c048ae4da7d986618a41ff5ed448da832bbf14168c86bcc43bf4e8b25ef3f41",
-    "size": 769,
+    "sha256": "3812342e11bbb707cfc9c54a8ed5fbd8668b20f696540882d36ddda410bb3a15",
+    "size": 649,
   },
   {
     "path": "configs/defines.ltx",
-    "sha256": "f36ed4c9ad846e6d45a01a30a2a0344d9a63623e48617b33de1522fe54003fc4",
-    "size": 4292,
+    "sha256": "db2a6eca4d521343368e6ded22e1d00fa2ec8f4d32644f9a496fdf7b3850a9b9",
+    "size": 3604,
   },
   {
     "path": "configs/evaluation.ltx",

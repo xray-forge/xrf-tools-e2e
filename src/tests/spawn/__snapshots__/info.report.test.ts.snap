@@ -20,8 +20,8 @@ exports[`spawn info report should report the identity and census of a spawn file
     },
     "guid": "a117405b-0a2e-a781-4ab5-f7aa88ae759c",
     "levels": 5,
-    "objects": 256,
-    "patrols": 4634,
+    "objects": 262,
+    "patrols": 4636,
     "version": 10,
   },
 }

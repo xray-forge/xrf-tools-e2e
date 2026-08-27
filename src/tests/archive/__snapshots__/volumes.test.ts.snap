@@ -274,8 +274,8 @@ exports[`archive volumes should write the expected files 1`] = `
   },
   {
     "path": "from-set/gamedata/spawns/all.spawn",
-    "sha256": "a976f8f3741e4f6befcc246b49bfe9477b97b6514b89a12c932fc366fe4c1002",
-    "size": 1051254,
+    "sha256": "273c85c97dcf2a9351d81e389a483ab0bad207314ec3a05c081fe2caf3916105",
+    "size": 1053148,
   },
   {
     "path": "from-set/gamedata/textures/act_cat_bump.thm",
@@ -304,8 +304,8 @@ exports[`archive volumes should write the expected files 1`] = `
   },
   {
     "path": "split/gamedata.db1",
-    "sha256": "e125f8b6197aacee57839b7e59ceb39824bd34df1f348d5ac3963129d57435cd",
-    "size": 1242832,
+    "sha256": "d340169533ffd1a6341addec68e4bbf53767ce6a6a4d016ce0a1e5d7e23d45d6",
+    "size": 1244727,
   },
   {
     "path": "split/gamedata.db2",

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`spawn fork payloads should read a car as visual, skeleton and health 1`] = `
+[
+  "dynamic_visual.visual_name = dynamics\\weapons\\wpn_mounted\\wpn_mounted_pkm_cover",
+  "dynamic_visual.visual_flags = 0",
+  "skeleton.name = $editor",
+  "skeleton.flags = 0",
+  "skeleton.source_id = 65535",
+  "car.health = 1",
+]
+`;
+
+exports[`spawn fork payloads should read a trader as visual and trader abstract 1`] = `
+[
+  "dynamic_visual.visual_name = actors\\stalker_trader\\stalker_trader_1",
+  "dynamic_visual.visual_flags = 0",
+  "trader.money = 1000000",
+  "trader.specific_character =",
+  "trader.trader_flags = 0",
+  "trader.character_profile = esc_2_12_stalker_trader",
+  "trader.community_index = 4294967295",
+  "trader.rank = 2147483649",
+  "trader.reputation = 2147483649",
+  "trader.character_name =",
+  "trader.dead_body_can_take = 1",
+  "trader.dead_body_closed = 0",
+]
+`;
+
+exports[`spawn fork payloads should read a visual zone whose script tail is present 1`] = `
+[
+  "zone_visual.idle_animation = idle_bottom",
+  "zone_visual.attack_animation = idle_bottom",
+  "zone_visual.last_spawn_time = nil",
+]
+`;
