@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`omf commands meet scrambled motion labels should filter motions and leave the survivors readable 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read omf file <sandbox>/filtered.omf",
+    "Omf file information",
+    "Version: 4",
+    "Motions: 1 idle",
+    "Payload labels differing from motion names: 1 of 1",
+    "Bones total: 7",
+    "Parts: default",
+    "Part 'default' bones: wpn_body,body,trigger,wpn_scope,zatvor,lock,magazin",
+  ],
+}
+`;
+
+exports[`omf commands meet scrambled motion labels should keep the clean bank free of divergence 1`] = `
+{
+  "command": [
+    "omf",
+    "info",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "bones": 7,
+    "motions": [
+      {
+        "accrue": 2,
+        "falloff": 2,
+        "flags": 0,
+        "keyframes": 1,
+        "labelDiverges": false,
+        "name": "idle",
+        "power": 1,
+        "speed": 1,
+      },
+      {
+        "accrue": 0,
+        "falloff": 0,
+        "flags": 2,
+        "keyframes": 12,
+        "labelDiverges": false,
+        "name": "svd_shoot",
+        "power": 1,
+        "speed": 1,
+      },
+      {
+        "accrue": 2,
+        "falloff": 2,
+        "flags": 2,
+        "keyframes": 109,
+        "labelDiverges": false,
+        "name": "svd_reload",
+        "power": 1,
+        "speed": 1,
+      },
+    ],
+    "parts": [
+      {
+        "bones": [
+          "wpn_body",
+          "body",
+          "trigger",
+          "wpn_scope",
+          "zatvor",
+          "lock",
+          "magazin",
+        ],
+        "name": "default",
+      },
+    ],
+    "version": 4,
+  },
+}
+`;
+
+exports[`omf commands meet scrambled motion labels should name every motion from its definition and say how many labels diverge 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read omf file <sandbox>/scrambled.omf",
+    "Omf file information",
+    "Version: 4",
+    "Motions: 3 idle,svd_shoot,svd_reload",
+    "Payload labels differing from motion names: 3 of 3",
+    "Motion 'idle': keyframes 1, flags 0b00, speed 1, power 1, accrue 2, falloff 2, payload label differs",
+    "Motion 'svd_shoot': keyframes 12, flags 0b10, speed 1, power 1, accrue 0, falloff 0, payload label differs",
+    "Motion 'svd_reload': keyframes 109, flags 0b10, speed 1, power 1, accrue 2, falloff 2, payload label differs",
+    "Bones total: 7",
+    "Parts: default",
+    "Part 'default' bones: wpn_body,body,trigger,wpn_scope,zatvor,lock,magazin",
+  ],
+}
+`;
+
+exports[`omf commands meet scrambled motion labels should rename motions without inventing labels for them 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read omf file <sandbox>/renamed.omf",
+    "Omf file information",
+    "Version: 4",
+    "Motions: 3 stand,svd_shoot,svd_reload",
+    "Payload labels differing from motion names: 3 of 3",
+    "Bones total: 7",
+    "Parts: default",
+    "Part 'default' bones: wpn_body,body,trigger,wpn_scope,zatvor,lock,magazin",
+  ],
+}
+`;
+
+exports[`omf commands meet scrambled motion labels should repack a scrambled bank byte for byte 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "{"command":["omf","repack"],"duration": "<duration>","error":null,"exitCode":0,"outcome":"success","result":{"checked":1,"failed":0,"findings":[],"identical":1,"mismatched":0,"status":"passed"}}",
+  ],
+}
+`;

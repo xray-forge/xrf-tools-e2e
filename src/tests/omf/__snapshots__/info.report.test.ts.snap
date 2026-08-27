@@ -18,6 +18,7 @@ exports[`omf info report should report every motion, part and bone count of a co
         "falloff": 2,
         "flags": 0,
         "keyframes": 1,
+        "labelDiverges": false,
         "name": "idle",
         "power": 1,
         "speed": 1,
