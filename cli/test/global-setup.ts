@@ -36,6 +36,8 @@ export default function globalSetup(): void {
   const revision: Optional<string> = readToolsRevision();
   const mtime: string = fs.statSync(CLI_EXECUTABLE).mtime.toISOString();
 
+  console.log();
   console.log(`xrf-cli  sha256 ${sha(CLI_EXECUTABLE).slice(0, 12)}  built ${mtime}`);
   console.log(`tools    ${revision ? `${revision} (working tree)` : "revision unknown"}`);
+  console.log();
 }
