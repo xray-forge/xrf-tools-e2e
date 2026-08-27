@@ -2,6 +2,25 @@ import { beforeAll, describe, expect, it } from "@jest/globals";
 
 import { Sandbox, type CliResult } from "#/test/sandbox";
 
+/**
+ * One page per command group, as the generator names them.
+ */
+const PAGES: ReadonlyArray<string> = [
+  "archive.md",
+  "dialog.md",
+  "docs.md",
+  "externs.md",
+  "gamedata.md",
+  "ltx.md",
+  "ogf.md",
+  "omf.md",
+  "particle.md",
+  "spawn.md",
+  "texture.md",
+  "thm.md",
+  "translation.md",
+];
+
 describe("docs generate", () => {
   const box = new Sandbox(__filename);
 
@@ -32,8 +51,21 @@ describe("docs generate", () => {
     expect(drifted).toMatchSnapshot();
   });
 
-  // Recorded by hash rather than content: the pages restate every command's help text, which the
-  // per-command tests already cover in the form callers actually see.
+  // The pages themselves, not hashes of them. They are a published artifact - `xrf-book` includes
+  // this directory verbatim - so a change to a table, an anchor, or the wording of an option belongs
+  // in the diff where it can be read. The manifest below still hashes everything, which is what
+  // catches a page appearing or disappearing.
+  it.each(PAGES)("should render %s", (page: string) => {
+    expect(box.text(`docs/${page}`)).toMatchSnapshot();
+  });
+
+  // The index is generated too, and it is the one page whose content is a claim about the others:
+  // every group and every command, linked. A command added to the registry and not reaching here
+  // would leave the reference quietly incomplete.
+  it("should list every group and command in the index", () => {
+    expect(box.text("docs/README.md")).toMatchSnapshot();
+  });
+
   it("should write the expected pages", () => {
     expect(box.manifest()).toMatchSnapshot();
   });

@@ -303,6 +303,25 @@ export class Sandbox {
   }
 
   /**
+   * Reads a text artifact the tool authored, as normalized lines.
+   *
+   * @remarks
+   * The counterpart to `json` for documents that are prose rather than a contract - a generated
+   * markdown page, say. Lines rather than one string so a snapshot diffs by line, which is what makes
+   * a wording or table change readable instead of a wall of red and green.
+   *
+   * Same rule as `json`: prefer this over hashing through `manifest` for anything the tool writes as
+   * text, because a hash says only that the document moved. Hashing stays right for asset bytes and
+   * for a document too large to read in a diff.
+   *
+   * @param relative - Sandbox-relative path to a text file.
+   * @returns The file's normalized lines.
+   */
+  public text(relative: string): Array<string> {
+    return normalizeText(fs.readFileSync(this.at(relative), "utf8"), this.root);
+  }
+
+  /**
    * Records everything the test left in the sandbox.
    *
    * @remarks
