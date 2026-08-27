@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
 import { resource } from "#/test/constants";
-import { envelopeAt, type CommandEnvelope } from "#/test/envelope";
+import { envelopeAt, envelopeOf, type CommandEnvelope } from "#/test/envelope";
 import { Sandbox, type CliResult } from "#/test/sandbox";
 
 const SOURCE = resource("translations");
@@ -12,6 +12,7 @@ describe("translation verify", () => {
   let all: CliResult;
   let english: CliResult;
   let report: CliResult;
+  let piped: CliResult;
 
   beforeAll(() => {
     // The json source deliberately translates only some languages, so a full check reports the
@@ -19,6 +20,10 @@ describe("translation verify", () => {
     all = box.run("translation verify", ["--path", SOURCE]);
     english = box.run("translation verify", ["--path", SOURCE, "--language", "eng"]);
     report = box.run("translation verify", ["--path", SOURCE, "--report", box.at("report.json")]);
+
+    // The same payload the other way out: one compact envelope on stdout, human output on stderr, so
+    // a caller can pipe the document into a tool without the log lines corrupting it.
+    piped = box.run("translation verify", ["--path", SOURCE, "--json"]);
   });
 
   it("should report gaps across every language", () => {
@@ -53,6 +58,33 @@ describe("translation verify", () => {
   // so a change to the reported shape is readable rather than merely detected.
   it("should report the gaps it found", () => {
     expect(box.json("report.json")).toMatchSnapshot();
+  });
+
+  it("should write the same envelope to stdout under --json", () => {
+    const envelope: CommandEnvelope = envelopeOf(piped);
+
+    expect(envelope.command).toEqual(["translation", "verify"]);
+    expect(envelope.outcome).toBe("success");
+    expect(JSON.stringify(envelope.result)).toContain("translations.missing");
+  });
+
+  // stdout carries the document and nothing else; every human line moved to stderr.
+  it("should keep human output off stdout under --json", () => {
+    expect(piped.stdout).toHaveLength(1);
+    expect(piped.stderr.join(" ")).toContain("Verifying");
+  });
+
+  // The aggregate is what makes the report readable at scale - checking a two-language import against
+  // all eight languages is 149,979 findings and the same answer is 1,072 rows.
+  it("should carry a row per file and language", () => {
+    const result = envelopeOf(piped).result as {
+      languages: Array<{ file: string; language: string; checked: number; missing: number }>;
+    };
+
+    // Two sources times eight languages, and English is complete in both.
+    expect(result.languages).toHaveLength(16);
+    expect(result.languages.filter((row) => row.language === "eng").every((row) => row.missing === 0)).toBe(true);
+    expect(result.languages.some((row) => row.missing > 0)).toBe(true);
   });
 
   it("should write only the report", () => {

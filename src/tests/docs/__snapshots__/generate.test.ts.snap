@@ -114,8 +114,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/translation.md",
-    "sha256": "ecbcef069918bc92e0d7d6d21cc8ed81e7b738e54609da2e8f62a0323b687e71",
-    "size": 4441,
+    "sha256": "5370622a38fa337fae4061e545defa288bea4dd01c467b92cc661144dbbd6546",
+    "size": 4947,
   },
   {
     "path": "drifted/README.md",

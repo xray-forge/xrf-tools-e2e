@@ -5,10 +5,8 @@ exports[`translation build should build every language 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Building translation <resources>/translations, language - all, sorted - true",
-    "Building dir <resources>/translations",
-    "Building JSON based translations <resources>/translations/st_items.json",
-    "Building JSON based translations <resources>/translations/st_ui.json",
+    "Building translations in <resources>/translations (ContainingInstallation), language - all, sorted - true",
+    "Building 2 translation source(s)",
     "Built translation files in <duration>",
   ],
 }
@@ -19,10 +17,8 @@ exports[`translation build should build one language when asked 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Building translation <resources>/translations, language - eng, sorted - true",
-    "Building dir <resources>/translations",
-    "Building JSON based translations <resources>/translations/st_items.json",
-    "Building JSON based translations <resources>/translations/st_ui.json",
+    "Building translations in <resources>/translations (ContainingInstallation), language - eng, sorted - true",
+    "Building 2 translation source(s)",
     "Built translation files in <duration>",
   ],
 }
@@ -33,10 +29,80 @@ exports[`translation build should build without sorting 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Building translation <resources>/translations, language - all, sorted - false",
-    "Building dir <resources>/translations",
-    "Building JSON based translations <resources>/translations/st_items.json",
-    "Building JSON based translations <resources>/translations/st_ui.json",
+    "Building translations in <resources>/translations (ContainingInstallation), language - all, sorted - false",
+    "Building 2 translation source(s)",
+    "Built translation files in <duration>",
+  ],
+}
+`;
+
+exports[`translation build should report the build it ran 1`] = `
+{
+  "command": [
+    "translation",
+    "build",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "duration": "<duration>",
+    "files": 16,
+    "languages": [
+      {
+        "entries": 4,
+        "files": 2,
+        "language": "eng",
+      },
+      {
+        "entries": 4,
+        "files": 2,
+        "language": "fra",
+      },
+      {
+        "entries": 4,
+        "files": 2,
+        "language": "ger",
+      },
+      {
+        "entries": 4,
+        "files": 2,
+        "language": "ita",
+      },
+      {
+        "entries": 4,
+        "files": 2,
+        "language": "pol",
+      },
+      {
+        "entries": 4,
+        "files": 2,
+        "language": "rus",
+      },
+      {
+        "entries": 4,
+        "files": 2,
+        "language": "spa",
+      },
+      {
+        "entries": 4,
+        "files": 2,
+        "language": "ukr",
+      },
+    ],
+    "sources": 2,
+  },
+}
+`;
+
+exports[`translation build should write a structured report 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Building translations in <resources>/translations (ContainingInstallation), language - all, sorted - true",
+    "Building 2 translation source(s)",
     "Built translation files in <duration>",
   ],
 }
@@ -133,6 +199,171 @@ exports[`translation build should write the expected files 1`] = `
     "path": "eng/eng/st_ui.xml",
     "sha256": "034b0c3d26679feaa1727519ac9eea9eb04a9d3693814f13c23411ccb9ae99b0",
     "size": 207,
+  },
+  {
+    "path": "piped/eng/st_items.xml",
+    "sha256": "daa924e9eb3b36bdd9a4d38914e20d150673cd00cfe9cafc1bc2a4a2cfc7e47c",
+    "size": 210,
+  },
+  {
+    "path": "piped/eng/st_ui.xml",
+    "sha256": "034b0c3d26679feaa1727519ac9eea9eb04a9d3693814f13c23411ccb9ae99b0",
+    "size": 207,
+  },
+  {
+    "path": "piped/fra/st_items.xml",
+    "sha256": "adb25f43b57f121d59c01c9ae25d75e8c91c2b45cb83116184049945b290b038",
+    "size": 226,
+  },
+  {
+    "path": "piped/fra/st_ui.xml",
+    "sha256": "5739dba84948027055ea0e12477e5e255af0af300bb73fdf3734f6551233c6e1",
+    "size": 214,
+  },
+  {
+    "path": "piped/ger/st_items.xml",
+    "sha256": "ea3d9202daf832cb1dd5f46f16f40ef0661396207747dbbb77afce40e647e0f5",
+    "size": 226,
+  },
+  {
+    "path": "piped/ger/st_ui.xml",
+    "sha256": "c4085931823bfb6a8e9babc066093a9328b21d75e29592eb965640a2d56b0223",
+    "size": 214,
+  },
+  {
+    "path": "piped/ita/st_items.xml",
+    "sha256": "adb25f43b57f121d59c01c9ae25d75e8c91c2b45cb83116184049945b290b038",
+    "size": 226,
+  },
+  {
+    "path": "piped/ita/st_ui.xml",
+    "sha256": "5739dba84948027055ea0e12477e5e255af0af300bb73fdf3734f6551233c6e1",
+    "size": 214,
+  },
+  {
+    "path": "piped/pol/st_items.xml",
+    "sha256": "ea3d9202daf832cb1dd5f46f16f40ef0661396207747dbbb77afce40e647e0f5",
+    "size": 226,
+  },
+  {
+    "path": "piped/pol/st_ui.xml",
+    "sha256": "c4085931823bfb6a8e9babc066093a9328b21d75e29592eb965640a2d56b0223",
+    "size": 214,
+  },
+  {
+    "path": "piped/rus/st_items.xml",
+    "sha256": "22f42fefe077568f4f36b8c633477c106d52d2a54adff429eda2e942e4f689db",
+    "size": 210,
+  },
+  {
+    "path": "piped/rus/st_ui.xml",
+    "sha256": "a9bdc3a5ea28180f86b0f22006a7e9d775c446f1af3407a18e062910ea7816f5",
+    "size": 214,
+  },
+  {
+    "path": "piped/spa/st_items.xml",
+    "sha256": "adb25f43b57f121d59c01c9ae25d75e8c91c2b45cb83116184049945b290b038",
+    "size": 226,
+  },
+  {
+    "path": "piped/spa/st_ui.xml",
+    "sha256": "5739dba84948027055ea0e12477e5e255af0af300bb73fdf3734f6551233c6e1",
+    "size": 214,
+  },
+  {
+    "path": "piped/ukr/st_items.xml",
+    "sha256": "85ab0dbf93d19c60a2ef9bef413488cda024ff20da8d9b4973a023419f5243d4",
+    "size": 217,
+  },
+  {
+    "path": "piped/ukr/st_ui.xml",
+    "sha256": "2b8cf22e7ecd772a5d9f79c5e611adc340625b7298c38249f013542137dc0999",
+    "size": 213,
+  },
+  {
+    "path": "report.json",
+    "sha256": "cdd9d87e9b8cadf61e53a9a9a8ae08b47eb70a0326cee19debc64b83b6ed3b73",
+    "size": 927,
+  },
+  {
+    "path": "reported/eng/st_items.xml",
+    "sha256": "daa924e9eb3b36bdd9a4d38914e20d150673cd00cfe9cafc1bc2a4a2cfc7e47c",
+    "size": 210,
+  },
+  {
+    "path": "reported/eng/st_ui.xml",
+    "sha256": "034b0c3d26679feaa1727519ac9eea9eb04a9d3693814f13c23411ccb9ae99b0",
+    "size": 207,
+  },
+  {
+    "path": "reported/fra/st_items.xml",
+    "sha256": "adb25f43b57f121d59c01c9ae25d75e8c91c2b45cb83116184049945b290b038",
+    "size": 226,
+  },
+  {
+    "path": "reported/fra/st_ui.xml",
+    "sha256": "5739dba84948027055ea0e12477e5e255af0af300bb73fdf3734f6551233c6e1",
+    "size": 214,
+  },
+  {
+    "path": "reported/ger/st_items.xml",
+    "sha256": "ea3d9202daf832cb1dd5f46f16f40ef0661396207747dbbb77afce40e647e0f5",
+    "size": 226,
+  },
+  {
+    "path": "reported/ger/st_ui.xml",
+    "sha256": "c4085931823bfb6a8e9babc066093a9328b21d75e29592eb965640a2d56b0223",
+    "size": 214,
+  },
+  {
+    "path": "reported/ita/st_items.xml",
+    "sha256": "adb25f43b57f121d59c01c9ae25d75e8c91c2b45cb83116184049945b290b038",
+    "size": 226,
+  },
+  {
+    "path": "reported/ita/st_ui.xml",
+    "sha256": "5739dba84948027055ea0e12477e5e255af0af300bb73fdf3734f6551233c6e1",
+    "size": 214,
+  },
+  {
+    "path": "reported/pol/st_items.xml",
+    "sha256": "ea3d9202daf832cb1dd5f46f16f40ef0661396207747dbbb77afce40e647e0f5",
+    "size": 226,
+  },
+  {
+    "path": "reported/pol/st_ui.xml",
+    "sha256": "c4085931823bfb6a8e9babc066093a9328b21d75e29592eb965640a2d56b0223",
+    "size": 214,
+  },
+  {
+    "path": "reported/rus/st_items.xml",
+    "sha256": "22f42fefe077568f4f36b8c633477c106d52d2a54adff429eda2e942e4f689db",
+    "size": 210,
+  },
+  {
+    "path": "reported/rus/st_ui.xml",
+    "sha256": "a9bdc3a5ea28180f86b0f22006a7e9d775c446f1af3407a18e062910ea7816f5",
+    "size": 214,
+  },
+  {
+    "path": "reported/spa/st_items.xml",
+    "sha256": "adb25f43b57f121d59c01c9ae25d75e8c91c2b45cb83116184049945b290b038",
+    "size": 226,
+  },
+  {
+    "path": "reported/spa/st_ui.xml",
+    "sha256": "5739dba84948027055ea0e12477e5e255af0af300bb73fdf3734f6551233c6e1",
+    "size": 214,
+  },
+  {
+    "path": "reported/ukr/st_items.xml",
+    "sha256": "85ab0dbf93d19c60a2ef9bef413488cda024ff20da8d9b4973a023419f5243d4",
+    "size": 217,
+  },
+  {
+    "path": "reported/ukr/st_ui.xml",
+    "sha256": "2b8cf22e7ecd772a5d9f79c5e611adc340625b7298c38249f013542137dc0999",
+    "size": 213,
   },
   {
     "path": "unsorted/eng/st_items.xml",
