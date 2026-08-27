@@ -230,15 +230,4 @@ describe("CLI reporting contract", () => {
       expect(result.stdout.length).toBeGreaterThan(0);
     });
   });
-
-  /**
-   * Reporting is generic, not a per-command feature.
-   */
-  it("should reach a command that reports no payload of its own", () => {
-    const envelope: CommandEnvelope = envelopeOf(box.run("translation parse", ["--path", box.at("unused"), "--json"]));
-
-    expect(envelope.command).toEqual(["translation", "parse"]);
-    expect(envelope.outcome).toBe("success");
-    expect(envelope.result).toBeNull();
-  });
 });

@@ -7,9 +7,6 @@ exports[`translation initialize should leave an already initialized project alon
   "stdout": [
     "Verifying translation <sandbox>/translations",
     "Initializing dir <sandbox>/translations",
-    "Skip file <sandbox>/translations/st_shared.xml",
-    "Skip file <sandbox>/translations/st_ui.eng.xml",
-    "Skip file <sandbox>/translations/st_ui.rus.xml",
     "Initialized translation files in <duration>",
   ],
 }
@@ -33,9 +30,18 @@ exports[`translation initialize should scaffold the missing languages 1`] = `
     "Initializing missing key: st_bread_name - ita",
     "Initializing missing key: st_bread_name - pol",
     "Initializing missing key: st_bread_name - spa",
-    "Skip file <sandbox>/translations/st_shared.xml",
-    "Skip file <sandbox>/translations/st_ui.eng.xml",
-    "Skip file <sandbox>/translations/st_ui.rus.xml",
+    "Initializing missing key: st_ui_start - fra",
+    "Initializing missing key: st_ui_start - ger",
+    "Initializing missing key: st_ui_start - ita",
+    "Initializing missing key: st_ui_start - pol",
+    "Initializing missing key: st_ui_start - rus",
+    "Initializing missing key: st_ui_start - spa",
+    "Initializing missing key: st_ui_quit - fra",
+    "Initializing missing key: st_ui_quit - ger",
+    "Initializing missing key: st_ui_quit - ita",
+    "Initializing missing key: st_ui_quit - pol",
+    "Initializing missing key: st_ui_quit - rus",
+    "Initializing missing key: st_ui_quit - spa",
     "Initialized translation files in <duration>",
   ],
 }
@@ -49,19 +55,9 @@ exports[`translation initialize should write the expected files 1`] = `
     "size": 356,
   },
   {
-    "path": "translations/st_shared.xml",
-    "sha256": "6f6a8ad26c80dcb9ea7d65263f3cfd148ec6f65806b85aeb0b504697de00fa6e",
-    "size": 144,
-  },
-  {
-    "path": "translations/st_ui.eng.xml",
-    "sha256": "0c255423896df871d95248f74dc35a2a1deed5ffc0d192614a3b9cdc0f02ef14",
-    "size": 147,
-  },
-  {
-    "path": "translations/st_ui.rus.xml",
-    "sha256": "8db1cd4d626e2b472c3a2f6a7dda2d918d2e9cf85797d2e78140681787d02a44",
-    "size": 148,
+    "path": "translations/st_ui.json",
+    "sha256": "ec5ba3b9d6977473b88c86a17948d1e9617d034bf7095dad08f31959ce964711",
+    "size": 346,
   },
 ]
 `;

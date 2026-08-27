@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 
 <string_table>
-  <string id="st_ui_start">
-    <text>Start game</text>
-  </string>
+	<string id="st_ui_start">
+		<text>Start game</text>
+	</string>
 </string_table>

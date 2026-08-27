@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`translation parse guards the language it was given should refuse a scope still holding other languages 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: Translations at 'configs\\text' hold other languages (eng, ukr), so reading them all as 'pol' would file them under the wrong language. Name one language's directory with --prefix, or run once per language.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`translation parse guards the language it was given should refuse the all language 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Unknown language: Unexpected language 'all' provided'",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`translation parse guards the language it was given should write nothing when it refuses 1`] = `[]`;

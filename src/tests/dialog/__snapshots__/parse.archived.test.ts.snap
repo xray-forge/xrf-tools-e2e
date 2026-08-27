@@ -8,7 +8,7 @@ exports[`dialog parse over an installation should sweep an installation across b
     "Reading dialogs in <sandbox>/install (ContainingInstallation)",
     "Swept 2 files in <duration>, 0 unreadable, 1 archived",
     "Dialogs: 4 total, 1 with no phrases, 1 with a priority",
-    "Phrases: 8 total, 5 links, 3 final, 1 without text, 0 outside a phrase list",
+    "Phrases: 8 total, 5 links, 3 final, 2 without text, 0 outside a phrase list",
     "Largest dialog: zat_test_trader_start with 4 phrases",
     "Encodings: UTF-8: 1, windows-1251: 1",
     "Dialog elements: dont_has_info: 1, has_info: 1, init_func: 1, precondition: 1",

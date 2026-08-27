@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`translation parse reads a gamedata tree should import from a gamedata root 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Parsing translations at configs\\text\\ukr as 'ukr'",
+    "Creating <sandbox>/sources/st_items.json",
+    "Creating <sandbox>/sources/st_ui.json",
+    "Read 2 file(s), 3 entries as 'ukr' in <duration>",
+    "Sources: 2 created, 0 updated, 0 unchanged, 0 skipped",
+    "Entries: 3 inserted, 0 filled, 0 unchanged, 0 placeholder(s) added",
+  ],
+}
+`;
+
+exports[`translation parse reads a gamedata tree should write the expected files 1`] = `
+[
+  {
+    "path": "sources/st_items.json",
+    "sha256": "35b65531b44e7cbc1f68424726fa5db77961843fc5601af7e30a101461310b3e",
+    "size": 106,
+  },
+  {
+    "path": "sources/st_ui.json",
+    "sha256": "5034294a91771a5e06f0c6d916dc65d47b5d556e156cda406f9220a051fd75fa",
+    "size": 60,
+  },
+]
+`;

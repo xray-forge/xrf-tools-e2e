@@ -15,15 +15,25 @@ exports[`translation verify should fail under strict when translations are missi
     "Translation key missing: st_medkit_name spa in <resources>/translations/st_items.json",
     "Translation key missing: st_bread_name spa in <resources>/translations/st_items.json",
     "Translation key missing: st_medkit_name ukr in <resources>/translations/st_items.json",
-    "Check failed: 11 finding(s)",
+    "Translation key missing: st_ui_start fra in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_quit fra in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_start ger in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_quit ger in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_start ita in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_quit ita in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_start pol in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_quit pol in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_start rus in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_quit rus in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_start spa in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_quit spa in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_quit ukr in <resources>/translations/st_ui.json",
+    "Check failed: 24 finding(s)",
   ],
   "stdout": [
     "Verifying translation <resources>/translations, language - all",
     "Verifying dir <resources>/translations",
-    "Skip file <resources>/translations/st_shared.xml",
-    "Skip file <resources>/translations/st_ui.eng.xml",
-    "Skip file <resources>/translations/st_ui.rus.xml",
-    "Verified translation files in <duration>, 2 checked, 11 missing",
+    "Verified translation files in <duration>, 4 checked, 24 missing",
   ],
 }
 `;
@@ -35,10 +45,7 @@ exports[`translation verify should find nothing missing in a complete language 1
   "stdout": [
     "Verifying translation <resources>/translations, language - eng",
     "Verifying dir <resources>/translations",
-    "Skip file <resources>/translations/st_shared.xml",
-    "Skip file <resources>/translations/st_ui.eng.xml",
-    "Skip file <resources>/translations/st_ui.rus.xml",
-    "Verified translation files in <duration>, 2 checked, 0 missing",
+    "Verified translation files in <duration>, 4 checked, 0 missing",
   ],
 }
 `;
@@ -58,14 +65,24 @@ exports[`translation verify should report gaps across every language 1`] = `
     "Translation key missing: st_medkit_name spa in <resources>/translations/st_items.json",
     "Translation key missing: st_bread_name spa in <resources>/translations/st_items.json",
     "Translation key missing: st_medkit_name ukr in <resources>/translations/st_items.json",
+    "Translation key missing: st_ui_start fra in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_quit fra in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_start ger in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_quit ger in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_start ita in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_quit ita in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_start pol in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_quit pol in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_start rus in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_quit rus in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_start spa in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_quit spa in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_quit ukr in <resources>/translations/st_ui.json",
   ],
   "stdout": [
     "Verifying translation <resources>/translations, language - all",
     "Verifying dir <resources>/translations",
-    "Skip file <resources>/translations/st_shared.xml",
-    "Skip file <resources>/translations/st_ui.eng.xml",
-    "Skip file <resources>/translations/st_ui.rus.xml",
-    "Verified translation files in <duration>, 2 checked, 11 missing",
+    "Verified translation files in <duration>, 4 checked, 24 missing",
   ],
 }
 `;
@@ -81,7 +98,7 @@ exports[`translation verify should report the gaps it found 1`] = `
   "exitCode": 0,
   "outcome": "success",
   "result": {
-    "checkedTranslationsCount": 2,
+    "checkedTranslationsCount": 4,
     "checks": [
       {
         "duration": "<duration>",
@@ -141,13 +158,78 @@ exports[`translation verify should report the gaps it found 1`] = `
             "ruleId": "translations.missing",
             "subject": "<resources>/translations/st_items.json",
           },
+          {
+            "message": "Missing translation for key 'st_ui_quit' in language 'fra'",
+            "ruleId": "translations.missing",
+            "subject": "<resources>/translations/st_ui.json",
+          },
+          {
+            "message": "Missing translation for key 'st_ui_quit' in language 'ger'",
+            "ruleId": "translations.missing",
+            "subject": "<resources>/translations/st_ui.json",
+          },
+          {
+            "message": "Missing translation for key 'st_ui_quit' in language 'ita'",
+            "ruleId": "translations.missing",
+            "subject": "<resources>/translations/st_ui.json",
+          },
+          {
+            "message": "Missing translation for key 'st_ui_quit' in language 'pol'",
+            "ruleId": "translations.missing",
+            "subject": "<resources>/translations/st_ui.json",
+          },
+          {
+            "message": "Missing translation for key 'st_ui_quit' in language 'rus'",
+            "ruleId": "translations.missing",
+            "subject": "<resources>/translations/st_ui.json",
+          },
+          {
+            "message": "Missing translation for key 'st_ui_quit' in language 'spa'",
+            "ruleId": "translations.missing",
+            "subject": "<resources>/translations/st_ui.json",
+          },
+          {
+            "message": "Missing translation for key 'st_ui_quit' in language 'ukr'",
+            "ruleId": "translations.missing",
+            "subject": "<resources>/translations/st_ui.json",
+          },
+          {
+            "message": "Missing translation for key 'st_ui_start' in language 'fra'",
+            "ruleId": "translations.missing",
+            "subject": "<resources>/translations/st_ui.json",
+          },
+          {
+            "message": "Missing translation for key 'st_ui_start' in language 'ger'",
+            "ruleId": "translations.missing",
+            "subject": "<resources>/translations/st_ui.json",
+          },
+          {
+            "message": "Missing translation for key 'st_ui_start' in language 'ita'",
+            "ruleId": "translations.missing",
+            "subject": "<resources>/translations/st_ui.json",
+          },
+          {
+            "message": "Missing translation for key 'st_ui_start' in language 'pol'",
+            "ruleId": "translations.missing",
+            "subject": "<resources>/translations/st_ui.json",
+          },
+          {
+            "message": "Missing translation for key 'st_ui_start' in language 'rus'",
+            "ruleId": "translations.missing",
+            "subject": "<resources>/translations/st_ui.json",
+          },
+          {
+            "message": "Missing translation for key 'st_ui_start' in language 'spa'",
+            "ruleId": "translations.missing",
+            "subject": "<resources>/translations/st_ui.json",
+          },
         ],
         "id": "translations",
         "status": "failed",
       },
     ],
     "duration": "<duration>",
-    "missingTranslationsCount": 11,
+    "missingTranslationsCount": 24,
     "status": "failed",
   },
 }
@@ -168,14 +250,24 @@ exports[`translation verify should write a structured report 1`] = `
     "Translation key missing: st_medkit_name spa in <resources>/translations/st_items.json",
     "Translation key missing: st_bread_name spa in <resources>/translations/st_items.json",
     "Translation key missing: st_medkit_name ukr in <resources>/translations/st_items.json",
+    "Translation key missing: st_ui_start fra in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_quit fra in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_start ger in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_quit ger in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_start ita in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_quit ita in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_start pol in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_quit pol in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_start rus in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_quit rus in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_start spa in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_quit spa in <resources>/translations/st_ui.json",
+    "Translation key missing: st_ui_quit ukr in <resources>/translations/st_ui.json",
   ],
   "stdout": [
     "Verifying translation <resources>/translations, language - all",
     "Verifying dir <resources>/translations",
-    "Skip file <resources>/translations/st_shared.xml",
-    "Skip file <resources>/translations/st_ui.eng.xml",
-    "Skip file <resources>/translations/st_ui.rus.xml",
-    "Verified translation files in <duration>, 2 checked, 11 missing",
+    "Verified translation files in <duration>, 4 checked, 24 missing",
   ],
 }
 `;
@@ -184,8 +276,8 @@ exports[`translation verify should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "dbc3ffa5b54e7b4ea0a14d33474fc9ed728c0d3c5190c694319f8e789a3ab954",
-    "size": 2904,
+    "sha256": "ecd6620051f64e813868da1dd411c6506c52627ace69aefac2626da7c07967db",
+    "size": 5731,
   },
 ]
 `;

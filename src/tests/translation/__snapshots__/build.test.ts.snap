@@ -8,9 +8,7 @@ exports[`translation build should build every language 1`] = `
     "Building translation <resources>/translations, language - all, sorted - true",
     "Building dir <resources>/translations",
     "Building JSON based translations <resources>/translations/st_items.json",
-    "Copy static XML translations <resources>/translations/st_shared.xml",
-    "Building XML based translations <resources>/translations/st_ui.eng.xml",
-    "Building XML based translations <resources>/translations/st_ui.rus.xml",
+    "Building JSON based translations <resources>/translations/st_ui.json",
     "Built translation files in <duration>",
   ],
 }
@@ -24,9 +22,7 @@ exports[`translation build should build one language when asked 1`] = `
     "Building translation <resources>/translations, language - eng, sorted - true",
     "Building dir <resources>/translations",
     "Building JSON based translations <resources>/translations/st_items.json",
-    "Copy static XML translations <resources>/translations/st_shared.xml",
-    "Building XML based translations <resources>/translations/st_ui.eng.xml",
-    "Building XML based translations <resources>/translations/st_ui.rus.xml",
+    "Building JSON based translations <resources>/translations/st_ui.json",
     "Built translation files in <duration>",
   ],
 }
@@ -40,9 +36,7 @@ exports[`translation build should build without sorting 1`] = `
     "Building translation <resources>/translations, language - all, sorted - false",
     "Building dir <resources>/translations",
     "Building JSON based translations <resources>/translations/st_items.json",
-    "Copy static XML translations <resources>/translations/st_shared.xml",
-    "Building XML based translations <resources>/translations/st_ui.eng.xml",
-    "Building XML based translations <resources>/translations/st_ui.rus.xml",
+    "Building JSON based translations <resources>/translations/st_ui.json",
     "Built translation files in <duration>",
   ],
 }
@@ -56,14 +50,9 @@ exports[`translation build should write the expected files 1`] = `
     "size": 210,
   },
   {
-    "path": "all/eng/st_shared.xml",
-    "sha256": "6f6a8ad26c80dcb9ea7d65263f3cfd148ec6f65806b85aeb0b504697de00fa6e",
-    "size": 144,
-  },
-  {
     "path": "all/eng/st_ui.xml",
-    "sha256": "0c255423896df871d95248f74dc35a2a1deed5ffc0d192614a3b9cdc0f02ef14",
-    "size": 147,
+    "sha256": "034b0c3d26679feaa1727519ac9eea9eb04a9d3693814f13c23411ccb9ae99b0",
+    "size": 207,
   },
   {
     "path": "all/fra/st_items.xml",
@@ -71,9 +60,9 @@ exports[`translation build should write the expected files 1`] = `
     "size": 226,
   },
   {
-    "path": "all/fra/st_shared.xml",
-    "sha256": "6f6a8ad26c80dcb9ea7d65263f3cfd148ec6f65806b85aeb0b504697de00fa6e",
-    "size": 144,
+    "path": "all/fra/st_ui.xml",
+    "sha256": "5739dba84948027055ea0e12477e5e255af0af300bb73fdf3734f6551233c6e1",
+    "size": 214,
   },
   {
     "path": "all/ger/st_items.xml",
@@ -81,9 +70,9 @@ exports[`translation build should write the expected files 1`] = `
     "size": 226,
   },
   {
-    "path": "all/ger/st_shared.xml",
-    "sha256": "6f6a8ad26c80dcb9ea7d65263f3cfd148ec6f65806b85aeb0b504697de00fa6e",
-    "size": 144,
+    "path": "all/ger/st_ui.xml",
+    "sha256": "c4085931823bfb6a8e9babc066093a9328b21d75e29592eb965640a2d56b0223",
+    "size": 214,
   },
   {
     "path": "all/ita/st_items.xml",
@@ -91,9 +80,9 @@ exports[`translation build should write the expected files 1`] = `
     "size": 226,
   },
   {
-    "path": "all/ita/st_shared.xml",
-    "sha256": "6f6a8ad26c80dcb9ea7d65263f3cfd148ec6f65806b85aeb0b504697de00fa6e",
-    "size": 144,
+    "path": "all/ita/st_ui.xml",
+    "sha256": "5739dba84948027055ea0e12477e5e255af0af300bb73fdf3734f6551233c6e1",
+    "size": 214,
   },
   {
     "path": "all/pol/st_items.xml",
@@ -101,9 +90,9 @@ exports[`translation build should write the expected files 1`] = `
     "size": 226,
   },
   {
-    "path": "all/pol/st_shared.xml",
-    "sha256": "6f6a8ad26c80dcb9ea7d65263f3cfd148ec6f65806b85aeb0b504697de00fa6e",
-    "size": 144,
+    "path": "all/pol/st_ui.xml",
+    "sha256": "c4085931823bfb6a8e9babc066093a9328b21d75e29592eb965640a2d56b0223",
+    "size": 214,
   },
   {
     "path": "all/rus/st_items.xml",
@@ -111,14 +100,9 @@ exports[`translation build should write the expected files 1`] = `
     "size": 210,
   },
   {
-    "path": "all/rus/st_shared.xml",
-    "sha256": "6f6a8ad26c80dcb9ea7d65263f3cfd148ec6f65806b85aeb0b504697de00fa6e",
-    "size": 144,
-  },
-  {
     "path": "all/rus/st_ui.xml",
-    "sha256": "8db1cd4d626e2b472c3a2f6a7dda2d918d2e9cf85797d2e78140681787d02a44",
-    "size": 148,
+    "sha256": "a9bdc3a5ea28180f86b0f22006a7e9d775c446f1af3407a18e062910ea7816f5",
+    "size": 214,
   },
   {
     "path": "all/spa/st_items.xml",
@@ -126,9 +110,9 @@ exports[`translation build should write the expected files 1`] = `
     "size": 226,
   },
   {
-    "path": "all/spa/st_shared.xml",
-    "sha256": "6f6a8ad26c80dcb9ea7d65263f3cfd148ec6f65806b85aeb0b504697de00fa6e",
-    "size": 144,
+    "path": "all/spa/st_ui.xml",
+    "sha256": "5739dba84948027055ea0e12477e5e255af0af300bb73fdf3734f6551233c6e1",
+    "size": 214,
   },
   {
     "path": "all/ukr/st_items.xml",
@@ -136,9 +120,9 @@ exports[`translation build should write the expected files 1`] = `
     "size": 217,
   },
   {
-    "path": "all/ukr/st_shared.xml",
-    "sha256": "6f6a8ad26c80dcb9ea7d65263f3cfd148ec6f65806b85aeb0b504697de00fa6e",
-    "size": 144,
+    "path": "all/ukr/st_ui.xml",
+    "sha256": "2b8cf22e7ecd772a5d9f79c5e611adc340625b7298c38249f013542137dc0999",
+    "size": 213,
   },
   {
     "path": "eng/eng/st_items.xml",
@@ -146,14 +130,9 @@ exports[`translation build should write the expected files 1`] = `
     "size": 210,
   },
   {
-    "path": "eng/eng/st_shared.xml",
-    "sha256": "6f6a8ad26c80dcb9ea7d65263f3cfd148ec6f65806b85aeb0b504697de00fa6e",
-    "size": 144,
-  },
-  {
     "path": "eng/eng/st_ui.xml",
-    "sha256": "0c255423896df871d95248f74dc35a2a1deed5ffc0d192614a3b9cdc0f02ef14",
-    "size": 147,
+    "sha256": "034b0c3d26679feaa1727519ac9eea9eb04a9d3693814f13c23411ccb9ae99b0",
+    "size": 207,
   },
   {
     "path": "unsorted/eng/st_items.xml",
@@ -161,14 +140,9 @@ exports[`translation build should write the expected files 1`] = `
     "size": 210,
   },
   {
-    "path": "unsorted/eng/st_shared.xml",
-    "sha256": "6f6a8ad26c80dcb9ea7d65263f3cfd148ec6f65806b85aeb0b504697de00fa6e",
-    "size": 144,
-  },
-  {
     "path": "unsorted/eng/st_ui.xml",
-    "sha256": "0c255423896df871d95248f74dc35a2a1deed5ffc0d192614a3b9cdc0f02ef14",
-    "size": 147,
+    "sha256": "523d07c96ecf48c7ba073c8565d864ea4618e30eabd4d2335f90ed5c081473e7",
+    "size": 207,
   },
   {
     "path": "unsorted/fra/st_items.xml",
@@ -176,9 +150,9 @@ exports[`translation build should write the expected files 1`] = `
     "size": 226,
   },
   {
-    "path": "unsorted/fra/st_shared.xml",
-    "sha256": "6f6a8ad26c80dcb9ea7d65263f3cfd148ec6f65806b85aeb0b504697de00fa6e",
-    "size": 144,
+    "path": "unsorted/fra/st_ui.xml",
+    "sha256": "fa369c71ee75a53c06942c734efff99ca6314871265e1540324a5cd4de917d9e",
+    "size": 214,
   },
   {
     "path": "unsorted/ger/st_items.xml",
@@ -186,9 +160,9 @@ exports[`translation build should write the expected files 1`] = `
     "size": 226,
   },
   {
-    "path": "unsorted/ger/st_shared.xml",
-    "sha256": "6f6a8ad26c80dcb9ea7d65263f3cfd148ec6f65806b85aeb0b504697de00fa6e",
-    "size": 144,
+    "path": "unsorted/ger/st_ui.xml",
+    "sha256": "ed3fc32802744d1751d72777206002c28f87590cc18e8d4eaca784f5ea4a0760",
+    "size": 214,
   },
   {
     "path": "unsorted/ita/st_items.xml",
@@ -196,9 +170,9 @@ exports[`translation build should write the expected files 1`] = `
     "size": 226,
   },
   {
-    "path": "unsorted/ita/st_shared.xml",
-    "sha256": "6f6a8ad26c80dcb9ea7d65263f3cfd148ec6f65806b85aeb0b504697de00fa6e",
-    "size": 144,
+    "path": "unsorted/ita/st_ui.xml",
+    "sha256": "fa369c71ee75a53c06942c734efff99ca6314871265e1540324a5cd4de917d9e",
+    "size": 214,
   },
   {
     "path": "unsorted/pol/st_items.xml",
@@ -206,9 +180,9 @@ exports[`translation build should write the expected files 1`] = `
     "size": 226,
   },
   {
-    "path": "unsorted/pol/st_shared.xml",
-    "sha256": "6f6a8ad26c80dcb9ea7d65263f3cfd148ec6f65806b85aeb0b504697de00fa6e",
-    "size": 144,
+    "path": "unsorted/pol/st_ui.xml",
+    "sha256": "ed3fc32802744d1751d72777206002c28f87590cc18e8d4eaca784f5ea4a0760",
+    "size": 214,
   },
   {
     "path": "unsorted/rus/st_items.xml",
@@ -216,14 +190,9 @@ exports[`translation build should write the expected files 1`] = `
     "size": 210,
   },
   {
-    "path": "unsorted/rus/st_shared.xml",
-    "sha256": "6f6a8ad26c80dcb9ea7d65263f3cfd148ec6f65806b85aeb0b504697de00fa6e",
-    "size": 144,
-  },
-  {
     "path": "unsorted/rus/st_ui.xml",
-    "sha256": "8db1cd4d626e2b472c3a2f6a7dda2d918d2e9cf85797d2e78140681787d02a44",
-    "size": 148,
+    "sha256": "1a92aa4d8f1120dbaa524efd1e713bfa3012ed732dd3720a84354d3d6d273ce2",
+    "size": 214,
   },
   {
     "path": "unsorted/spa/st_items.xml",
@@ -231,9 +200,9 @@ exports[`translation build should write the expected files 1`] = `
     "size": 226,
   },
   {
-    "path": "unsorted/spa/st_shared.xml",
-    "sha256": "6f6a8ad26c80dcb9ea7d65263f3cfd148ec6f65806b85aeb0b504697de00fa6e",
-    "size": 144,
+    "path": "unsorted/spa/st_ui.xml",
+    "sha256": "fa369c71ee75a53c06942c734efff99ca6314871265e1540324a5cd4de917d9e",
+    "size": 214,
   },
   {
     "path": "unsorted/ukr/st_items.xml",
@@ -241,9 +210,9 @@ exports[`translation build should write the expected files 1`] = `
     "size": 217,
   },
   {
-    "path": "unsorted/ukr/st_shared.xml",
-    "sha256": "6f6a8ad26c80dcb9ea7d65263f3cfd148ec6f65806b85aeb0b504697de00fa6e",
-    "size": 144,
+    "path": "unsorted/ukr/st_ui.xml",
+    "sha256": "f4759e5cbd40bd853544696716add4242a8e956d18b2401b94a98d9ceae79fb6",
+    "size": 213,
   },
 ]
 `;

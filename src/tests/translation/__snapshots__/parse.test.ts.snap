@@ -1,34 +1,139 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`translation parse should currently do nothing 1`] = `
+exports[`translation parse should fill a language gap with an explicit null 1`] = `
 {
-  "exitCode": 0,
-  "stderr": [],
-  "stdout": [],
+  "st_ui_quit": {
+    "eng": "Quit",
+    "ukr": null,
+  },
+  "st_ui_start": {
+    "eng": "Start game",
+    "ukr": "Почати гру",
+  },
 }
 `;
 
-exports[`translation parse should leave the sources untouched 1`] = `
+exports[`translation parse should import the first language 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Parsing translations at configs\\text\\eng as 'eng'",
+    "Creating <sandbox>/merged/nested/st_items.json",
+    "Creating <sandbox>/merged/st_dupes.json",
+    "Creating <sandbox>/merged/st_items.json",
+    "Creating <sandbox>/merged/st_ui.json",
+    "Read 4 file(s), 7 entries as 'eng' in <duration>",
+    "Sources: 4 created, 0 updated, 0 unchanged, 2 skipped",
+    "Entries: 6 inserted, 0 filled, 0 unchanged, 0 placeholder(s) added",
+  ],
+}
+`;
+
+exports[`translation parse should keep nested tables apart 1`] = `
+{
+  "st_nested_only": {
+    "eng": "Nested",
+  },
+}
+`;
+
+exports[`translation parse should keep the last of a repeated id 1`] = `
+{
+  "st_dupe": {
+    "eng": "second",
+  },
+}
+`;
+
+exports[`translation parse should merge both languages into one document 1`] = `
+{
+  "st_medkit_descr": {
+    "eng": [
+      "A standard field kit.",
+      "Restores health over time.",
+    ],
+    "ukr": [
+      "Стандартна аптечка.",
+      "Відновлює здоров'я.",
+    ],
+  },
+  "st_medkit_name": {
+    "eng": "Medkit",
+    "ukr": "Аптечка",
+  },
+}
+`;
+
+exports[`translation parse should merge the second language into the same sources 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Parsing translations at configs\\text\\ukr as 'ukr'",
+    "Updating <sandbox>/merged/st_items.json",
+    "Updating <sandbox>/merged/st_ui.json",
+    "Read 2 file(s), 3 entries as 'ukr' in <duration>",
+    "Sources: 0 created, 2 updated, 0 unchanged, 0 skipped",
+    "Entries: 3 inserted, 0 filled, 0 unchanged, 1 placeholder(s) added",
+  ],
+}
+`;
+
+exports[`translation parse should write nothing when re-run 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Parsing translations at configs\\text\\eng as 'eng'",
+    "Read 4 file(s), 7 entries as 'eng' in <duration>",
+    "Sources: 0 created, 0 updated, 4 unchanged, 2 skipped",
+    "Entries: 0 inserted, 0 filled, 6 unchanged, 0 placeholder(s) added",
+  ],
+}
+`;
+
+exports[`translation parse should write the expected files 1`] = `
 [
   {
-    "path": "translations/st_items.json",
-    "sha256": "2f2c8f9384c61222c2a6e0ba4888ab57ebbd1a3c8011ee8ef6aecd65c6c83bbf",
-    "size": 146,
+    "path": "merged/nested/st_items.json",
+    "sha256": "5a2f0e3b4fe27ff034d1aad9cb8715699ece0392b95177e8e8140a676a0284a0",
+    "size": 50,
   },
   {
-    "path": "translations/st_shared.xml",
-    "sha256": "6f6a8ad26c80dcb9ea7d65263f3cfd148ec6f65806b85aeb0b504697de00fa6e",
-    "size": 144,
+    "path": "merged/st_dupes.json",
+    "sha256": "7e90dec68bc02fad1f23ce0b935364f5fed72b4662397b923557665f9658bd62",
+    "size": 43,
   },
   {
-    "path": "translations/st_ui.eng.xml",
-    "sha256": "0c255423896df871d95248f74dc35a2a1deed5ffc0d192614a3b9cdc0f02ef14",
-    "size": 147,
+    "path": "merged/st_items.json",
+    "sha256": "d6aed370d257c4aa72f99d18deef5edce516ed77afc3362c11569faa1a441f96",
+    "size": 302,
   },
   {
-    "path": "translations/st_ui.rus.xml",
-    "sha256": "8db1cd4d626e2b472c3a2f6a7dda2d918d2e9cf85797d2e78140681787d02a44",
-    "size": 148,
+    "path": "merged/st_ui.json",
+    "sha256": "d22d15184078feb051eb577fb870f395f39a46e7aea63fb295f306bbbfbd9460",
+    "size": 143,
+  },
+  {
+    "path": "reversed/nested/st_items.json",
+    "sha256": "5a2f0e3b4fe27ff034d1aad9cb8715699ece0392b95177e8e8140a676a0284a0",
+    "size": 50,
+  },
+  {
+    "path": "reversed/st_dupes.json",
+    "sha256": "7e90dec68bc02fad1f23ce0b935364f5fed72b4662397b923557665f9658bd62",
+    "size": 43,
+  },
+  {
+    "path": "reversed/st_items.json",
+    "sha256": "d6aed370d257c4aa72f99d18deef5edce516ed77afc3362c11569faa1a441f96",
+    "size": 302,
+  },
+  {
+    "path": "reversed/st_ui.json",
+    "sha256": "d22d15184078feb051eb577fb870f395f39a46e7aea63fb295f306bbbfbd9460",
+    "size": 143,
   },
 ]
 `;

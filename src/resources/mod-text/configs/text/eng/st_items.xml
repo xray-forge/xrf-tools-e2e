@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+
+<string_table>
+	<string id="st_medkit_name">
+		<text>Medkit</text>
+	</string>
+	<string id="st_medkit_descr">
+		<text>A standard field kit.\nRestores health over time.</text>
+	</string>
+</string_table>

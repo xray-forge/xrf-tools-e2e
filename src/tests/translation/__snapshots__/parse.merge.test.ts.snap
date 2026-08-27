@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`translation parse merges into authored sources should end with the imported text 1`] = `
+{
+  "st_ui_quit": {
+    "eng": "Quit",
+  },
+  "st_ui_start": {
+    "eng": "Start game",
+  },
+}
+`;
+
+exports[`translation parse merges into authored sources should keep the existing text by default 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Parsing translations at configs\\text\\eng as 'eng'",
+    "Updating <sandbox>/sources/st_ui.json",
+    "Read 1 file(s), 2 entries as 'eng' in <duration>",
+    "Sources: 0 created, 1 updated, 0 unchanged, 0 skipped",
+    "Entries: 1 inserted, 0 filled, 0 unchanged, 0 placeholder(s) added",
+    "1 entry differed from existing text",
+  ],
+}
+`;
+
+exports[`translation parse merges into authored sources should replace it only when asked 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Parsing translations at configs\\text\\eng as 'eng'",
+    "Updating <sandbox>/sources/st_ui.json",
+    "Read 1 file(s), 2 entries as 'eng' in <duration>",
+    "Sources: 0 created, 1 updated, 0 unchanged, 0 skipped",
+    "Entries: 0 inserted, 0 filled, 1 unchanged, 0 placeholder(s) added",
+    "1 entry differed from existing text",
+  ],
+}
+`;
+
+exports[`translation parse merges into authored sources should write the expected files 1`] = `
+[
+  {
+    "path": "sources/st_ui.json",
+    "sha256": "1fdc094595a5b41bf7dce9efd01f6a355499dc04cf2d2b0a8d699a5e2914280f",
+    "size": 92,
+  },
+]
+`;

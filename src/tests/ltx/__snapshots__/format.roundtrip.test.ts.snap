@@ -113,6 +113,26 @@ exports[`ltx format roundtrip should write the formatted bytes 1`] = `
     "size": 263,
   },
   {
+    "path": "configs/text/eng/st_items.xml",
+    "sha256": "c0b041ad4bbb98e0578a0d2e7a2cf84cf10271919fad252b7cb79c62b605b89d",
+    "size": 203,
+  },
+  {
+    "path": "configs/text/eng/st_ui.xml",
+    "sha256": "6eb95635b812a217ea18561f4aab2c1dea34da97683264abf1346a404358fbb3",
+    "size": 143,
+  },
+  {
+    "path": "configs/text/ukr/st_items.xml",
+    "sha256": "be9f8767ee5af7d6e2f9378733b862fb52eae569d9dfd2e3686dafe3d6566ec4",
+    "size": 203,
+  },
+  {
+    "path": "configs/text/ukr/st_ui.xml",
+    "sha256": "d35cba9d839aafedf40bb61b4cebfe0c5fda810499ad49e154ed577eed5f7f61",
+    "size": 143,
+  },
+  {
     "path": "configs/ui/textures_descr/ui_test_sheet.xml",
     "sha256": "44329d941bf367bbd107efb9eb255aa12752cb550d3b99d7b88a2d1d91090012",
     "size": 352,

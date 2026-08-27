@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`translation parse previews without writing should report what it would have written 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Parsing translations at configs\\text\\eng as 'eng' (dry run)",
+    "Would write <sandbox>/sources/nested/st_items.json",
+    "Would write <sandbox>/sources/st_dupes.json",
+    "Would write <sandbox>/sources/st_items.json",
+    "Would write <sandbox>/sources/st_ui.json",
+    "Read 4 file(s), 7 entries as 'eng' in <duration>",
+    "Would have: 4 created, 0 updated, 0 unchanged, 2 skipped",
+    "Entries: 6 inserted, 0 filled, 0 unchanged, 0 placeholder(s) added",
+  ],
+}
+`;
+
+exports[`translation parse previews without writing should write the expected files 1`] = `[]`;

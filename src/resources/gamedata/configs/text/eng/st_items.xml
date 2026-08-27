@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+
+<string_table>
+	<string id="st_medkit_name">
+		<text>Medkit</text>
+	</string>
+	<string id="st_bread_name">
+		<text>Bread</text>
+	</string>
+</string_table>

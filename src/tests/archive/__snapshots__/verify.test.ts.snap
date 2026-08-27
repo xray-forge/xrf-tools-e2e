@@ -5,7 +5,7 @@ exports[`archive verify should read and validate every payload 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Verified 10 file(s) in <duration>",
+    "Verified 14 file(s) in <duration>",
   ],
 }
 `;
@@ -14,8 +14,8 @@ exports[`archive verify should write the expected files 1`] = `
 [
   {
     "path": "packed/fixture.db",
-    "sha256": "e9d0d24181f4f0536e7668b55ad730c7247badd9f07cd8fa04642b927d191ba8",
-    "size": 4872,
+    "sha256": "bd5e46067436b520a9f801d177a7204c8834e7a60185a8aff4af226d32ae038c",
+    "size": 5491,
   },
 ]
 `;

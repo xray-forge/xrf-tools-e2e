@@ -62,6 +62,26 @@ exports[`gamedata list report should report every asset the tree resolves 1`] = 
       {
         "container": "<resources>/gamedata",
         "isArchived": false,
+        "logicalPath": "configs\\text\\eng\\st_items.xml",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "configs\\text\\eng\\st_ui.xml",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "configs\\text\\ukr\\st_items.xml",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "configs\\text\\ukr\\st_ui.xml",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
         "logicalPath": "configs\\ui\\textures_descr\\ui_test_sheet.xml",
       },
       {
@@ -142,7 +162,7 @@ exports[`gamedata list report should report every asset the tree resolves 1`] = 
     "origin": "<resources>/gamedata",
     "shadowed": [],
     "skipped": [],
-    "total": 24,
+    "total": 28,
   },
 }
 `;

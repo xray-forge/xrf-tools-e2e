@@ -10,8 +10,8 @@ exports[`archive volumes should split a pack across volumes 1`] = `
     "Wrote <sandbox>/split/gamedata.db0",
     "Wrote <sandbox>/split/gamedata.db1",
     "Wrote <sandbox>/split/gamedata.db2",
-    "Packed 24 file(s) into 3 volume(s) in <duration>",
-    "Summary: 10 compressed, 14 stored, 0 aliased, 0 skipped",
+    "Packed 28 file(s) into 3 volume(s) in <duration>",
+    "Summary: 14 compressed, 14 stored, 0 aliased, 0 skipped",
     "Size: 2.37 MB source, 2.37 MB written",
   ],
 }
@@ -24,7 +24,7 @@ exports[`archive volumes should unpack a single volume on its own 1`] = `
   "stdout": [
     "Unpack source: <sandbox>/split/gamedata.db0",
     "Unpack destination: <sandbox>/from-first",
-    "Summary: 1 archive(s), 29 file(s), 1.16 MB compressed, 1.17 MB real",
+    "Summary: 1 archive(s), 36 file(s), 1.16 MB compressed, 1.17 MB real",
     "Unpacking files, parallel 32",
     "Unpacked archive in <duration> (preparation <duration>, unpack <duration>)",
   ],
@@ -38,7 +38,7 @@ exports[`archive volumes should unpack a whole volume set 1`] = `
   "stdout": [
     "Unpack source: <sandbox>/split",
     "Unpack destination: <sandbox>/from-set",
-    "Summary: 3 archive(s), 35 file(s), 2.36 MB compressed, 2.37 MB real",
+    "Summary: 3 archive(s), 42 file(s), 2.37 MB compressed, 2.37 MB real",
     "Unpacking files, parallel 32",
     "Unpacked archive in <duration> (preparation <duration>, unpack <duration>)",
   ],
@@ -91,6 +91,26 @@ exports[`archive volumes should write the expected files 1`] = `
     "path": "from-first/gamedata/configs/system.ltx",
     "sha256": "b4a4a566d26d645fbb86678c4c16dc9fd8b540b786b191c596801de49ff60da1",
     "size": 265,
+  },
+  {
+    "path": "from-first/gamedata/configs/text/eng/st_items.xml",
+    "sha256": "c0b041ad4bbb98e0578a0d2e7a2cf84cf10271919fad252b7cb79c62b605b89d",
+    "size": 203,
+  },
+  {
+    "path": "from-first/gamedata/configs/text/eng/st_ui.xml",
+    "sha256": "6eb95635b812a217ea18561f4aab2c1dea34da97683264abf1346a404358fbb3",
+    "size": 143,
+  },
+  {
+    "path": "from-first/gamedata/configs/text/ukr/st_items.xml",
+    "sha256": "be9f8767ee5af7d6e2f9378733b862fb52eae569d9dfd2e3686dafe3d6566ec4",
+    "size": 203,
+  },
+  {
+    "path": "from-first/gamedata/configs/text/ukr/st_ui.xml",
+    "sha256": "d35cba9d839aafedf40bb61b4cebfe0c5fda810499ad49e154ed577eed5f7f61",
+    "size": 143,
   },
   {
     "path": "from-first/gamedata/configs/ui/textures_descr/ui_test_sheet.xml",
@@ -183,6 +203,26 @@ exports[`archive volumes should write the expected files 1`] = `
     "size": 265,
   },
   {
+    "path": "from-set/gamedata/configs/text/eng/st_items.xml",
+    "sha256": "c0b041ad4bbb98e0578a0d2e7a2cf84cf10271919fad252b7cb79c62b605b89d",
+    "size": 203,
+  },
+  {
+    "path": "from-set/gamedata/configs/text/eng/st_ui.xml",
+    "sha256": "6eb95635b812a217ea18561f4aab2c1dea34da97683264abf1346a404358fbb3",
+    "size": 143,
+  },
+  {
+    "path": "from-set/gamedata/configs/text/ukr/st_items.xml",
+    "sha256": "be9f8767ee5af7d6e2f9378733b862fb52eae569d9dfd2e3686dafe3d6566ec4",
+    "size": 203,
+  },
+  {
+    "path": "from-set/gamedata/configs/text/ukr/st_ui.xml",
+    "sha256": "d35cba9d839aafedf40bb61b4cebfe0c5fda810499ad49e154ed577eed5f7f61",
+    "size": 143,
+  },
+  {
     "path": "from-set/gamedata/configs/ui/textures_descr/ui_test_sheet.xml",
     "sha256": "44329d941bf367bbd107efb9eb255aa12752cb550d3b99d7b88a2d1d91090012",
     "size": 352,
@@ -259,18 +299,18 @@ exports[`archive volumes should write the expected files 1`] = `
   },
   {
     "path": "split/gamedata.db0",
-    "sha256": "33dd7b68b2a11a50473c432ee9e5b3f6c7a8cf8bdafc72b1327d8290fafbcefe",
-    "size": 1220870,
+    "sha256": "9d090dd57369af6776002cfc3e8985d16a94966399af5a98719b9e00768b775e",
+    "size": 1221491,
   },
   {
     "path": "split/gamedata.db1",
-    "sha256": "f6e077ea9fc5c8907697318956e7c8f5a3c7ba1ea2e5ae155e22e114458cc11e",
-    "size": 1242817,
+    "sha256": "e125f8b6197aacee57839b7e59ceb39824bd34df1f348d5ac3963129d57435cd",
+    "size": 1242832,
   },
   {
     "path": "split/gamedata.db2",
-    "sha256": "8521f974fd4c41deb46b704d7552235ae36400a2580dff736e62a192444a73ae",
-    "size": 17291,
+    "sha256": "d61f1504b761118910c319cf2e4f4a0f69c6d06e7338dfe51ada3c1ae3b2e677",
+    "size": 17306,
   },
 ]
 `;

@@ -7,9 +7,12 @@ exports[`archive list should list directory records 1`] = `
   "stdout": [
     "gameplay\\",
     "misc\\",
+    "text\\",
+    "text\\eng\\",
+    "text\\ukr\\",
     "ui\\",
     "ui\\textures_descr\\",
-    "Listed 4 entries in <duration>",
+    "Listed 7 entries in <duration>",
   ],
 }
 `;
@@ -28,8 +31,12 @@ exports[`archive list should list logical files 1`] = `
     "gameplay\\dialogs_zaton.xml",
     "misc\\inventory_icons.ltx",
     "system.ltx",
+    "text\\eng\\st_items.xml",
+    "text\\eng\\st_ui.xml",
+    "text\\ukr\\st_items.xml",
+    "text\\ukr\\st_ui.xml",
     "ui\\textures_descr\\ui_test_sheet.xml",
-    "Listed 10 entries in <duration>",
+    "Listed 14 entries in <duration>",
   ],
 }
 `;
@@ -38,8 +45,8 @@ exports[`archive list should write the expected files 1`] = `
 [
   {
     "path": "packed/fixture.db",
-    "sha256": "e9d0d24181f4f0536e7668b55ad730c7247badd9f07cd8fa04642b927d191ba8",
-    "size": 4872,
+    "sha256": "bd5e46067436b520a9f801d177a7204c8834e7a60185a8aff4af226d32ae038c",
+    "size": 5491,
   },
 ]
 `;

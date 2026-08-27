@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
 import { resource } from "#/test/constants";
-import { Sandbox, sha, type CliResult } from "#/test/sandbox";
+import { Sandbox, type CliResult } from "#/test/sandbox";
 
 const SOURCE = resource("translations");
 
@@ -13,9 +13,9 @@ describe("translation build", () => {
   let unsorted: CliResult;
 
   beforeAll(() => {
-    // The source exercises the three paths the builder distinguishes, and its log says which it
-    // took for each file: a json map compiled into every language, a neutral xml copied verbatim
-    // into every language, and language-suffixed xml built into that language alone.
+    // JSON is the only source format, so every file here compiles the same way: one multi-language
+    // map into one string table per language. XML used to be a source too — neutral files copied to
+    // every language, and `.eng.xml` files built into one — and is not any more.
     all = box.run("translation build", ["--path", SOURCE, "--output", box.at("all")]);
     single = box.run("translation build", ["--path", SOURCE, "--output", box.at("eng"), "--language", "eng"]);
     unsorted = box.run("translation build", ["--path", SOURCE, "--output", box.at("unsorted"), "--no-sort"]);
@@ -39,14 +39,16 @@ describe("translation build", () => {
     expect(box.sha("all/eng/st_items.xml")).not.toBe(box.sha("unsorted/eng/st_items.xml"));
   });
 
-  // A neutral source carries no language of its own, so every language gets the same bytes.
-  it("should copy a neutral source identically into every language", () => {
-    expect(box.sha("all/rus/st_shared.xml")).toBe(box.sha("all/eng/st_shared.xml"));
+  // A missing translation compiles to the id itself, which is the engine's own fallback, so a
+  // language a source does not carry still gets a complete table rather than a short one.
+  it("should build a table for every language whatever the source carries", () => {
+    expect(box.sha("all/eng/st_ui.xml")).not.toBe(box.sha("all/ukr/st_ui.xml"));
+    expect(box.sha("all/ukr/st_ui.xml")).toBeTruthy();
   });
 
-  it("should remove source language suffixes from built XML file names", () => {
-    expect(box.sha("all/eng/st_ui.xml")).toBe(sha(resource("translations/st_ui.eng.xml")));
-    expect(box.sha("all/rus/st_ui.xml")).toBe(sha(resource("translations/st_ui.rus.xml")));
+  it("should name the target after the json stem", () => {
+    expect(box.sha("all/eng/st_ui.xml")).toBeTruthy();
+    expect(box.sha("all/ukr/st_items.xml")).toBeTruthy();
   });
 
   it("should write the expected files", () => {

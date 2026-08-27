@@ -7,7 +7,7 @@ exports[`archive unpack parallelism should unpack on a single thread 1`] = `
   "stdout": [
     "Unpack source: <sandbox>/packed/cfg.db",
     "Unpack destination: <sandbox>/serial",
-    "Summary: 1 archive(s), 14 file(s), 4.37 KB compressed, 10.8 KB real",
+    "Summary: 1 archive(s), 21 file(s), 4.88 KB compressed, 11.5 KB real",
     "Unpacking files, parallel 1",
     "Unpacked archive in <duration> (preparation <duration>, unpack <duration>)",
   ],
@@ -18,8 +18,8 @@ exports[`archive unpack parallelism should write the expected files 1`] = `
 [
   {
     "path": "packed/cfg.db",
-    "sha256": "e9d0d24181f4f0536e7668b55ad730c7247badd9f07cd8fa04642b927d191ba8",
-    "size": 4872,
+    "sha256": "bd5e46067436b520a9f801d177a7204c8834e7a60185a8aff4af226d32ae038c",
+    "size": 5491,
   },
   {
     "path": "serial/gamedata/alife.ltx",
@@ -65,6 +65,26 @@ exports[`archive unpack parallelism should write the expected files 1`] = `
     "path": "serial/gamedata/system.ltx",
     "sha256": "b4a4a566d26d645fbb86678c4c16dc9fd8b540b786b191c596801de49ff60da1",
     "size": 265,
+  },
+  {
+    "path": "serial/gamedata/text/eng/st_items.xml",
+    "sha256": "c0b041ad4bbb98e0578a0d2e7a2cf84cf10271919fad252b7cb79c62b605b89d",
+    "size": 203,
+  },
+  {
+    "path": "serial/gamedata/text/eng/st_ui.xml",
+    "sha256": "6eb95635b812a217ea18561f4aab2c1dea34da97683264abf1346a404358fbb3",
+    "size": 143,
+  },
+  {
+    "path": "serial/gamedata/text/ukr/st_items.xml",
+    "sha256": "be9f8767ee5af7d6e2f9378733b862fb52eae569d9dfd2e3686dafe3d6566ec4",
+    "size": 203,
+  },
+  {
+    "path": "serial/gamedata/text/ukr/st_ui.xml",
+    "sha256": "d35cba9d839aafedf40bb61b4cebfe0c5fda810499ad49e154ed577eed5f7f61",
+    "size": 143,
   },
   {
     "path": "serial/gamedata/ui/textures_descr/ui_test_sheet.xml",

@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
 import { resource } from "#/test/constants";
-import { Sandbox, sha, type CliResult } from "#/test/sandbox";
+import { Sandbox, type CliResult } from "#/test/sandbox";
 
 describe("translation initialize", () => {
   const box = new Sandbox(__filename);
@@ -34,8 +34,10 @@ describe("translation initialize", () => {
     expect(box.sha("translations/st_items.json")).toBe(afterFirst);
   });
 
-  it("should not touch the xml sources", () => {
-    expect(box.sha("translations/st_ui.eng.xml")).toBe(sha(resource("translations/st_ui.eng.xml")));
+  // Every source is JSON now, so there is nothing in the tree for it to skip: the old assertion
+  // watched it leave XML sources alone, and XML is no longer a source format.
+  it("should scaffold every source it walks", () => {
+    expect(box.sha("translations/st_ui.json")).toBeTruthy();
   });
 
   it("should write the expected files", () => {

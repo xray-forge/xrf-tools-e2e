@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251" ?>
 
 <string_table>
-  <string id="st_ui_start">
-    <text>Novaya igra</text>
-  </string>
+	<string id="st_ui_start">
+		<text>Почати гру</text>
+	</string>
 </string_table>

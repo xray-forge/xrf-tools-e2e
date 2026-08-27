@@ -14,8 +14,8 @@ exports[`archive extract file from archive directory should write the expected f
 [
   {
     "path": "archives/configs/configs.db",
-    "sha256": "c49a1c2fe18f470102504185159f7ea3e915183c3bf919231e3af0c861a157e6",
-    "size": 4895,
+    "sha256": "affadd45ee4b3e9bd516750ad4c4eb5663a5d202c8cab78d3eadfca38779cbf3",
+    "size": 5516,
   },
   {
     "path": "archives/gameplay/gameplay.db",
@@ -71,6 +71,26 @@ exports[`archive extract file from archive directory should write the expected f
     "path": "source/configs/system.ltx",
     "sha256": "b4a4a566d26d645fbb86678c4c16dc9fd8b540b786b191c596801de49ff60da1",
     "size": 265,
+  },
+  {
+    "path": "source/configs/text/eng/st_items.xml",
+    "sha256": "c0b041ad4bbb98e0578a0d2e7a2cf84cf10271919fad252b7cb79c62b605b89d",
+    "size": 203,
+  },
+  {
+    "path": "source/configs/text/eng/st_ui.xml",
+    "sha256": "6eb95635b812a217ea18561f4aab2c1dea34da97683264abf1346a404358fbb3",
+    "size": 143,
+  },
+  {
+    "path": "source/configs/text/ukr/st_items.xml",
+    "sha256": "be9f8767ee5af7d6e2f9378733b862fb52eae569d9dfd2e3686dafe3d6566ec4",
+    "size": 203,
+  },
+  {
+    "path": "source/configs/text/ukr/st_ui.xml",
+    "sha256": "d35cba9d839aafedf40bb61b4cebfe0c5fda810499ad49e154ed577eed5f7f61",
+    "size": 143,
   },
   {
     "path": "source/configs/ui/textures_descr/ui_test_sheet.xml",

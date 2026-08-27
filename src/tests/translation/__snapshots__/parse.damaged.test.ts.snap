@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`translation parse meets damaged input should fail under strict 1`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "Check failed: 3 finding(s)",
+  ],
+  "stdout": [
+    "Parsing translations at configs\\text\\eng as 'eng'",
+    "Creating <sandbox>/strict/nested/st_items.json",
+    "Creating <sandbox>/strict/st_dupes.json",
+    "Creating <sandbox>/strict/st_items.json",
+    "Creating <sandbox>/strict/st_ui.json",
+    "Read 4 file(s), 7 entries as 'eng' in <duration>",
+    "Sources: 4 created, 0 updated, 0 unchanged, 2 skipped",
+    "Entries: 6 inserted, 0 filled, 0 unchanged, 0 placeholder(s) added",
+  ],
+}
+`;
+
+exports[`translation parse meets damaged input should keep going and report what it could not read 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Parsing translations at configs\\text\\eng as 'eng'",
+    "Creating <sandbox>/sources/nested/st_items.json",
+    "Creating <sandbox>/sources/st_dupes.json",
+    "Creating <sandbox>/sources/st_items.json",
+    "Creating <sandbox>/sources/st_ui.json",
+    "Read 4 file(s), 7 entries as 'eng' in <duration>",
+    "Sources: 4 created, 0 updated, 0 unchanged, 2 skipped",
+    "Entries: 6 inserted, 0 filled, 0 unchanged, 0 placeholder(s) added",
+  ],
+}
+`;
+
+exports[`translation parse meets damaged input should report what it read and changed 1`] = `
+{
+  "command": [
+    "translation",
+    "parse",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "census": {
+      "entriesConflicted": 0,
+      "entriesFilled": 0,
+      "entriesInserted": 6,
+      "entriesRead": 7,
+      "entriesUnchanged": 0,
+      "filesCreated": 4,
+      "filesRead": 4,
+      "filesSkipped": 2,
+      "filesUnchanged": 0,
+      "filesUpdated": 0,
+      "placeholdersAdded": 0,
+    },
+    "duration": "<duration>",
+    "isDryRun": false,
+    "language": "eng",
+    "report": {
+      "checks": [
+        {
+          "duration": "<duration>",
+          "findings": [
+            {
+              "message": "Could not read this file, so its strings were not imported: Invalid error: Expected a 'string_table' document, found 'openxray'",
+              "ruleId": "translations.unreadable",
+              "subject": "configs\\text\\eng\\openxray.xml",
+            },
+            {
+              "message": "Could not read this file, so its strings were not imported: Parsing error: Failed to parse XML: unexpected end of stream",
+              "ruleId": "translations.unreadable",
+              "subject": "configs\\text\\eng\\st_broken.xml",
+            },
+            {
+              "message": "'st_dupe' appears more than once; the game uses the last one and the others are ignored",
+              "ruleId": "translations.duplicate",
+              "subject": "configs\\text\\eng\\st_dupes.xml",
+            },
+          ],
+          "id": "translations",
+          "status": "failed",
+        },
+      ],
+      "status": "failed",
+    },
+  },
+}
+`;
+
+exports[`translation parse meets damaged input should write the expected files 1`] = `
+[
+  {
+    "path": "piped/nested/st_items.json",
+    "sha256": "5a2f0e3b4fe27ff034d1aad9cb8715699ece0392b95177e8e8140a676a0284a0",
+    "size": 50,
+  },
+  {
+    "path": "piped/st_dupes.json",
+    "sha256": "7e90dec68bc02fad1f23ce0b935364f5fed72b4662397b923557665f9658bd62",
+    "size": 43,
+  },
+  {
+    "path": "piped/st_items.json",
+    "sha256": "2a665257e170a091cb1277a78dac934b0d79d79fb7eb5f51ad0f5d7ad7c4cda5",
+    "size": 163,
+  },
+  {
+    "path": "piped/st_ui.json",
+    "sha256": "1fdc094595a5b41bf7dce9efd01f6a355499dc04cf2d2b0a8d699a5e2914280f",
+    "size": 92,
+  },
+  {
+    "path": "report.json",
+    "sha256": "c8bb3f559c902167f03c11a4c94fc0e95420917bd151d96a80e96cd5be8ba3e9",
+    "size": 1615,
+  },
+  {
+    "path": "sources/nested/st_items.json",
+    "sha256": "5a2f0e3b4fe27ff034d1aad9cb8715699ece0392b95177e8e8140a676a0284a0",
+    "size": 50,
+  },
+  {
+    "path": "sources/st_dupes.json",
+    "sha256": "7e90dec68bc02fad1f23ce0b935364f5fed72b4662397b923557665f9658bd62",
+    "size": 43,
+  },
+  {
+    "path": "sources/st_items.json",
+    "sha256": "2a665257e170a091cb1277a78dac934b0d79d79fb7eb5f51ad0f5d7ad7c4cda5",
+    "size": 163,
+  },
+  {
+    "path": "sources/st_ui.json",
+    "sha256": "1fdc094595a5b41bf7dce9efd01f6a355499dc04cf2d2b0a8d699a5e2914280f",
+    "size": 92,
+  },
+  {
+    "path": "strict/nested/st_items.json",
+    "sha256": "5a2f0e3b4fe27ff034d1aad9cb8715699ece0392b95177e8e8140a676a0284a0",
+    "size": 50,
+  },
+  {
+    "path": "strict/st_dupes.json",
+    "sha256": "7e90dec68bc02fad1f23ce0b935364f5fed72b4662397b923557665f9658bd62",
+    "size": 43,
+  },
+  {
+    "path": "strict/st_items.json",
+    "sha256": "2a665257e170a091cb1277a78dac934b0d79d79fb7eb5f51ad0f5d7ad7c4cda5",
+    "size": 163,
+  },
+  {
+    "path": "strict/st_ui.json",
+    "sha256": "1fdc094595a5b41bf7dce9efd01f6a355499dc04cf2d2b0a8d699a5e2914280f",
+    "size": 92,
+  },
+]
+`;
