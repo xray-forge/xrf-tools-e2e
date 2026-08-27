@@ -104,12 +104,12 @@ exports[`readers reject damaged input should refuse an unparseable translation s
 {
   "exitCode": 3,
   "stderr": [
-    "Provided translations are invalid: Parsing error: Failed to parse translation JSON '<sandbox>/translations/broken.json': expected value at line 1 column 20",
+    "Provided translations are invalid: Parsing error: Failed to parse translation JSON 'broken.json': expected value at line 1 column 20",
     "Check failed: 1 finding(s)",
   ],
   "stdout": [
-    "Verifying translation <sandbox>/translations, language - all",
-    "Verifying dir <sandbox>/translations",
+    "Verifying translations in <sandbox>/translations (ContainingInstallation), language - all",
+    "Verifying 1 translation source(s)",
   ],
 }
 `;
