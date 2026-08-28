@@ -5,7 +5,7 @@ exports[`docs generate should accept pages it just wrote 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "CLI documentation in <sandbox>/docs is up to date (14 pages)",
+    "CLI documentation in <sandbox>/docs is up to date (15 pages)",
   ],
 }
 `;
@@ -15,7 +15,7 @@ exports[`docs generate should generate a page per command group 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Generated 14 documentation pages in <sandbox>/docs",
+    "Generated 15 documentation pages in <sandbox>/docs",
   ],
 }
 `;
@@ -41,6 +41,7 @@ exports[`docs generate should list every group and command in the index 1`] = `
   "| [OGF](ogf.md) | [\`ogf info\`](ogf.md#info), [\`ogf patch-motion-refs\`](ogf.md#patch-motion-refs), [\`ogf patch-texture-refs\`](ogf.md#patch-texture-refs), [\`ogf verify\`](ogf.md#verify) |",
   "| [OMF](omf.md) | [\`omf duplicate-motion\`](omf.md#duplicate-motion), [\`omf filter-motions\`](omf.md#filter-motions), [\`omf info\`](omf.md#info), [\`omf rename-motions\`](omf.md#rename-motions), [\`omf repack\`](omf.md#repack) |",
   "| [Particle](particle.md) | [\`particle info\`](particle.md#info), [\`particle pack\`](particle.md#pack), [\`particle repack\`](particle.md#repack), [\`particle re-unpack\`](particle.md#re-unpack), [\`particle unpack\`](particle.md#unpack), [\`particle verify\`](particle.md#verify) |",
+  "| [Profile](profile.md) | [\`profile run\`](profile.md#run) |",
   "| [Spawn](spawn.md) | [\`spawn info\`](spawn.md#info), [\`spawn pack\`](spawn.md#pack), [\`spawn repack\`](spawn.md#repack), [\`spawn unpack\`](spawn.md#unpack), [\`spawn verify\`](spawn.md#verify) |",
   "| [Texture](texture.md) | [\`texture crop-dds\`](texture.md#crop-dds), [\`texture info-dds\`](texture.md#info-dds), [\`texture pack-equipment-icons\`](texture.md#pack-equipment-icons), [\`texture pack-texture-description\`](texture.md#pack-texture-description), [\`texture unpack-equipment-icons\`](texture.md#unpack-equipment-icons), [\`texture unpack-texture-description\`](texture.md#unpack-texture-description), [\`texture verify-equipment-icons\`](texture.md#verify-equipment-icons) |",
   "| [THM](thm.md) | [\`thm patch-bump\`](thm.md#patch-bump) |",
@@ -65,11 +66,12 @@ exports[`docs generate should reject pages that drifted 1`] = `
     "  missing: ogf.md",
     "  missing: omf.md",
     "  missing: particle.md",
+    "  missing: profile.md",
     "  missing: spawn.md",
     "  missing: texture.md",
     "  missing: thm.md",
     "  missing: translation.md",
-    "Check failed: 14 finding(s)",
+    "Check failed: 15 finding(s)",
   ],
   "stdout": [],
 }
@@ -1085,8 +1087,8 @@ exports[`docs generate should write the expected pages 1`] = `
 [
   {
     "path": "docs/README.md",
-    "sha256": "bc36b41a2694612924c265ac109fe53184f8e3b12a4230877e90bbf91b29473b",
-    "size": 2679,
+    "sha256": "7b953bf9a749e0f6b5f99ec46471142ee67bd5e076a38a549726800d6451a5fe",
+    "size": 2739,
   },
   {
     "path": "docs/archive.md",
@@ -1132,6 +1134,11 @@ exports[`docs generate should write the expected pages 1`] = `
     "path": "docs/particle.md",
     "sha256": "4600f089a99cd6b4295520d366d8b384261547762d5a7c41544f050e5af46092",
     "size": 4107,
+  },
+  {
+    "path": "docs/profile.md",
+    "sha256": "b679dcaf5c3b67a523e3e7fe954ccff8dcf0e4aedb40df0fa1b6e8bd29121d69",
+    "size": 1024,
   },
   {
     "path": "docs/spawn.md",

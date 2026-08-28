@@ -317,6 +317,7 @@ exports[`CLI help tree should expose every domain from root help 1`] = `
     "  ogf          OGF model tools",
     "  omf          OMF motion tools",
     "  particle     Particle library tools",
+    "  profile      Performance measurement tools",
     "  spawn        Spawn file tools",
     "  texture      Texture asset tools",
     "  thm          THM texture metadata tools",

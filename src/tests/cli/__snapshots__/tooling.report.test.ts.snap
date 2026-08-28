@@ -26,7 +26,7 @@ exports[`tooling reports should report a check that found no drift 1`] = `
   "result": {
     "directory": "<sandbox>/docs",
     "isCheck": true,
-    "pages": 14,
+    "pages": 15,
     "removed": [],
     "stale": [],
     "status": "passed",
@@ -130,7 +130,7 @@ exports[`tooling reports should report the pages a generation wrote 1`] = `
   "result": {
     "directory": "<sandbox>/docs",
     "isCheck": false,
-    "pages": 14,
+    "pages": 15,
     "removed": [],
     "stale": [],
     "status": "passed",
@@ -158,13 +158,13 @@ exports[`tooling reports should report what drifted when the check fails 1`] = `
     "generate",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 14 finding(s)",
+  "error": "Check failed: 15 finding(s)",
   "exitCode": 3,
   "outcome": "checkFailed",
   "result": {
     "directory": "<sandbox>/drifted",
     "isCheck": true,
-    "pages": 14,
+    "pages": 15,
     "removed": [],
     "stale": [
       "outdated: README.md",
@@ -177,6 +177,7 @@ exports[`tooling reports should report what drifted when the check fails 1`] = `
       "missing: ogf.md",
       "missing: omf.md",
       "missing: particle.md",
+      "missing: profile.md",
       "missing: spawn.md",
       "missing: texture.md",
       "missing: thm.md",
