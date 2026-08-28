@@ -2,6 +2,19 @@
 
 exports[`gamedata list report should report every asset the tree resolves 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "gamedata",
     "list",
@@ -169,6 +182,19 @@ exports[`gamedata list report should report every asset the tree resolves 1`] = 
 
 exports[`gamedata list report should report only the subtree a prefix names 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "gamedata",
     "list",

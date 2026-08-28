@@ -79,6 +79,19 @@ exports[`dialog parse should refuse a prefix holding no dialogs 1`] = `
 
 exports[`dialog parse should report the census and checks it found 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "dialog",
     "parse",
@@ -154,8 +167,8 @@ exports[`dialog parse should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "ae4bae1159f5133fef9b9f03d06dd01cd3a86ae18a524bc8cf732579f0c088cd",
-    "size": 689,
+    "sha256": "416c457090e3f6fb4201c120145f59935f930fc24de88ad5dab9316aac2ee712",
+    "size": 990,
   },
 ]
 `;

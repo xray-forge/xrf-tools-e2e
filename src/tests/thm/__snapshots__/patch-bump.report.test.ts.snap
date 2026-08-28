@@ -2,6 +2,19 @@
 
 exports[`thm patch-bump report should report a dry run as one that wrote nothing 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "thm",
     "patch-bump",
@@ -22,6 +35,19 @@ exports[`thm patch-bump report should report a dry run as one that wrote nothing
 
 exports[`thm patch-bump report should report clearing a bump 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "thm",
     "patch-bump",
@@ -42,6 +68,19 @@ exports[`thm patch-bump report should report clearing a bump 1`] = `
 
 exports[`thm patch-bump report should report the bump it replaced 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "thm",
     "patch-bump",

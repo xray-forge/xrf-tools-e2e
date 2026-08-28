@@ -2,6 +2,19 @@
 
 exports[`particle reports should report a verdict on the source 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "particle",
     "verify",
@@ -20,6 +33,19 @@ exports[`particle reports should report a verdict on the source 1`] = `
 
 exports[`particle reports should report what packing read and wrote 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "particle",
     "pack",
@@ -39,6 +65,19 @@ exports[`particle reports should report what packing read and wrote 1`] = `
 
 exports[`particle reports should report what re-unpacking read and wrote 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "particle",
     "re-unpack",
@@ -58,6 +97,19 @@ exports[`particle reports should report what re-unpacking read and wrote 1`] = `
 
 exports[`particle reports should report what repacking read and wrote 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "particle",
     "repack",
@@ -77,6 +129,19 @@ exports[`particle reports should report what repacking read and wrote 1`] = `
 
 exports[`particle reports should report what unpacking read and wrote 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "particle",
     "unpack",

@@ -352,6 +352,7 @@ exports[`docs generate should render gamedata.md 1`] = `
   "| \`-i, --ignore <ignore>...\` |  |  | Ignored assets in the gamedata root. Accepts multiple values separated by \`,\`. |",
   "| \`--checks <checks>...\` |  |  | List of checks to perform. Accepts multiple values separated by \`,\`. |",
   "| \`--strict\` |  |  | Fully validate expensive asset payloads |",
+  "| \`--trace-reads\` |  |  | Account for every asset read, reporting redundancy against unique paths |",
   "| \`-s, --silent\` |  |  | Turn off logging |",
   "| \`-v, --verbose\` |  |  | Turn on verbose logging |",
   "| \`--json\` |  |  | Write the run's JSON report to stdout, moving human output to stderr |",
@@ -1109,8 +1110,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/gamedata.md",
-    "sha256": "bdd171a2d7bcb2529125cd5cf52b57fddb1170c2c22c75ec1b742476923111bb",
-    "size": 2231,
+    "sha256": "47ab930cb56879938caf65723b5e7958bf96cc248fb1f4e59e2a5a48a1c18d1d",
+    "size": 2331,
   },
   {
     "path": "docs/ltx.md",

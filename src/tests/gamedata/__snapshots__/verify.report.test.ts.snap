@@ -1018,6 +1018,19 @@ exports[`gamedata verify full run should answer non-zero and report only the fai
 
 exports[`gamedata verify full run should report one check as a readable document 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "gamedata",
     "verify",
@@ -1027,6 +1040,13 @@ exports[`gamedata verify full run should report one check as a readable document
   "exitCode": 0,
   "outcome": "success",
   "result": {
+    "cache": {
+      "bytes": 0,
+      "entries": 0,
+      "hits": 0,
+      "misses": 0,
+      "refused": 0,
+    },
     "checks": [
       {
         "duration": "<duration>",
@@ -1046,13 +1066,13 @@ exports[`gamedata verify full run should write a findings report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "4202b6567c39239b34569cf70df1b499a59ddf6fe20d7d4a23d9221a20b3e10b",
-    "size": 238235,
+    "sha256": "e26ce7306a4845f00e4283a8d2567558ac9b5ed37e1b999658e7532527d638a6",
+    "size": 238652,
   },
   {
     "path": "scripts.json",
-    "sha256": "1c9c92bb2dfacd920a4ecf2ed972a3737a70a6099289b7c159f2760136b67ba9",
-    "size": 412,
+    "sha256": "6f659585ee8a93ee9e345317c52abb192297ee4b34d973b9cb2236874c7e4f09",
+    "size": 828,
   },
 ]
 `;

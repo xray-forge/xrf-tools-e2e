@@ -2,6 +2,19 @@
 
 exports[`ogf patch reports should report a dry run as one that wrote nothing 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "ogf",
     "patch-motion-refs",
@@ -21,6 +34,19 @@ exports[`ogf patch reports should report a dry run as one that wrote nothing 1`]
 
 exports[`ogf patch reports should report what a motion-refs patch rewrote 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "ogf",
     "patch-motion-refs",
@@ -40,6 +66,19 @@ exports[`ogf patch reports should report what a motion-refs patch rewrote 1`] = 
 
 exports[`ogf patch reports should report what a texture-refs patch rewrote 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "ogf",
     "patch-texture-refs",

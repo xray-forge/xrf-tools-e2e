@@ -36,6 +36,30 @@ const EXECUTABLE_PATTERN = new RegExp(`\\b${CLI_EXECUTABLE_NAME.split(".").join(
  */
 const JSON_DURATION_PATTERN = /"([a-zA-Z_]*(?:duration|elapsed|nanos|secs)[a-zA-Z_]*)":\s*[\d.]+/gi;
 
+/**
+ * The `build` block of a report envelope, in both the pretty and the compact encoding.
+ *
+ * @remarks
+ * `BuildInfo` is flat, so refusing nested braces is enough to bound the block — and is deliberate: if it
+ * ever gains a nested member this stops matching and the snapshots fail loudly, rather than scrubbing
+ * half a block and looking correct. Volatile members are rewritten only inside what this matches,
+ * because `version` is also a format field elsewhere — OGF 4, spawn 10 — that must stay asserted.
+ */
+const JSON_BUILD_BLOCK_PATTERN = /"build":\s*{[^{}]*}/g;
+
+/**
+ * Every member of a `build` block, whose values all differ between two builds of the same source.
+ *
+ * @remarks
+ * Values are tokenized and the field names left standing, which is how `version.test.ts` already
+ * records this surface: a recording moves when the reported set of fields changes, not when someone
+ * rebuilds. `kind` is included for the same reason it is matched rather than recorded there — it says
+ * where `cli/app` was refreshed from, `local` for a developer's `target/release` and `development`
+ * for a workflow artifact, so keeping it would make one golden describe one refresh.
+ */
+const JSON_BUILD_MEMBER_PATTERN =
+  /"(version|kind|commit|reference|isDirty|builtAt|target|rustc|profile|optimization|runId)":\s*(?:"(?:[^"\\]|\\.)*"|true|false|null)/g;
+
 const TOKENIZED_PATH_PATTERN = /<(?:resources|sandbox)>[^\s'"]*/g;
 
 function escapeForRegExp(value: string): string {
@@ -94,6 +118,9 @@ export function normalizeText(text: string, sandboxRoot: string): Array<string> 
   normalized = normalized.replace(TIMESTAMP_PATTERN, "<timestamp>");
   normalized = normalized.replace(MISSING_PATH_PATTERN, "<missing path>");
   normalized = normalized.replace(JSON_DURATION_PATTERN, '"$1": "<duration>"');
+  normalized = normalized.replace(JSON_BUILD_BLOCK_PATTERN, (block) =>
+    block.replace(JSON_BUILD_MEMBER_PATTERN, '"$1": "<build>"')
+  );
   normalized = normalized.replace(DURATION_PATTERN, "<duration>");
 
   const lines: Array<string> = normalized.split(/\r?\n/).map((line) => line.trimEnd());

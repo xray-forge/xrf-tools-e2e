@@ -38,6 +38,19 @@ exports[`translation build should build without sorting 1`] = `
 
 exports[`translation build should report the build it ran 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "translation",
     "build",
@@ -282,8 +295,8 @@ exports[`translation build should write the expected files 1`] = `
   },
   {
     "path": "report.json",
-    "sha256": "cdd9d87e9b8cadf61e53a9a9a8ae08b47eb70a0326cee19debc64b83b6ed3b73",
-    "size": 927,
+    "sha256": "c7553794db62e10c7fd7855ad4ded9666629ff93821d507175c70f3b418f4e05",
+    "size": 1228,
   },
   {
     "path": "reported/eng/st_items.xml",

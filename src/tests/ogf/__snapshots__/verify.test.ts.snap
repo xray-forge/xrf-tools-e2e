@@ -2,6 +2,19 @@
 
 exports[`ogf verify should report the census and findings of the sweep 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "ogf",
     "verify",
@@ -143,8 +156,8 @@ exports[`ogf verify should write a report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "2b9f1c3568dfbf89b7b6358104bbf8e6077270064c0a13f09805ad5b839324f1",
-    "size": 1622,
+    "sha256": "ce6c1a8e9152199d2109d0239c8ba334307a8fe4bb5db7f92d47b4b9f1e7db20",
+    "size": 1923,
   },
 ]
 `;

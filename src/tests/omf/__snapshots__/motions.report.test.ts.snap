@@ -2,6 +2,19 @@
 
 exports[`omf motion reports should report a duplicated motion 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "omf",
     "duplicate-motion",
@@ -23,6 +36,19 @@ exports[`omf motion reports should report a duplicated motion 1`] = `
 
 exports[`omf motion reports should report a filter dry run as one that wrote nothing 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "omf",
     "filter-motions",
@@ -45,6 +71,19 @@ exports[`omf motion reports should report a filter dry run as one that wrote not
 
 exports[`omf motion reports should report a repack 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "omf",
     "repack",
@@ -64,6 +103,19 @@ exports[`omf motion reports should report a repack 1`] = `
 
 exports[`omf motion reports should report renamed motions 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "omf",
     "rename-motions",
@@ -88,6 +140,19 @@ exports[`omf motion reports should report renamed motions 1`] = `
 
 exports[`omf motion reports should report which motions a filter kept 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "omf",
     "filter-motions",

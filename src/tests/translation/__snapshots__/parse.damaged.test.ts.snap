@@ -38,6 +38,19 @@ exports[`translation parse meets damaged input should keep going and report what
 
 exports[`translation parse meets damaged input should report what it read and changed 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "translation",
     "parse",
@@ -118,8 +131,8 @@ exports[`translation parse meets damaged input should write the expected files 1
   },
   {
     "path": "report.json",
-    "sha256": "c8bb3f559c902167f03c11a4c94fc0e95420917bd151d96a80e96cd5be8ba3e9",
-    "size": 1615,
+    "sha256": "69571bf25e55d87a43fdfed72b28741612ac643e12f4a8ddc0fece270b9f874d",
+    "size": 1916,
   },
   {
     "path": "sources/nested/st_items.json",

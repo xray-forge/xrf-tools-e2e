@@ -2,6 +2,19 @@
 
 exports[`texture reports should report the region a crop produced 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "texture",
     "crop-dds",
@@ -25,6 +38,19 @@ exports[`texture reports should report the region a crop produced 1`] = `
 
 exports[`texture reports should report the verdict on the icon grid 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "texture",
     "verify-equipment-icons",
@@ -43,6 +69,19 @@ exports[`texture reports should report the verdict on the icon grid 1`] = `
 
 exports[`texture reports should report what packing the icons produced 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "texture",
     "pack-equipment-icons",
@@ -64,6 +103,19 @@ exports[`texture reports should report what packing the icons produced 1`] = `
 
 exports[`texture reports should report what slicing the sheet produced 1`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
   "command": [
     "texture",
     "unpack-equipment-icons",
