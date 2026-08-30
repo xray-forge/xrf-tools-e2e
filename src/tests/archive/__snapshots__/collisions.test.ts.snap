@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`volume set reachability should report the same collision from the listing 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "list",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "collisions": [
+      {
+        "kept": "<sandbox>/db/patch.db::Textures/Wpn/WPN_AK74.DDS",
+        "logicalPath": "textures\\wpn\\wpn_ak74.dds",
+        "unreachable": "<sandbox>/db/base.db::textures/wpn/wpn_ak74.dds",
+      },
+    ],
+    "duration": "<duration>",
+    "entries": [
+      {
+        "container": "<sandbox>/db",
+        "isArchived": true,
+        "logicalPath": "textures\\wpn\\wpn_ak74.dds",
+      },
+    ],
+    "isShadowedIncluded": false,
+    "mounts": [
+      "Archive   <sandbox>/db (db)",
+    ],
+    "origin": "<sandbox>/db",
+    "shadowed": [],
+    "skipped": [],
+    "total": 1,
+  },
+}
+`;
+
+exports[`volume set reachability should report the unreachable entry beside the verdict 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "archive",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "checked": 2,
+    "collisions": [
+      {
+        "kept": "<sandbox>/db/patch.db::Textures/Wpn/WPN_AK74.DDS",
+        "logicalPath": "textures\\wpn\\wpn_ak74.dds",
+        "unreachable": "<sandbox>/db/base.db::textures/wpn/wpn_ak74.dds",
+      },
+    ],
+    "findings": [],
+    "status": "passed",
+  },
+}
+`;
+
+exports[`volume set reachability should verify clean and still name what no lookup can reach 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [
+    "1 file(s) cannot be reached, another file claims their path:",
+    "  <sandbox>/db/base.db::textures/wpn/wpn_ak74.dds is unreachable, <sandbox>/db/patch.db::Textures/Wpn/WPN_AK74.DDS answers 'textures\\wpn\\wpn_ak74.dds'",
+  ],
+  "stdout": [
+    "Verified 2 file(s) in <duration>",
+  ],
+}
+`;
+
+exports[`volume set reachability should write the expected files 1`] = `
+[
+  {
+    "path": "base/textures/wpn/wpn_ak74.dds",
+    "sha256": "456a250f8b263cb6d99cebbe5bea43b2b04f3ec7e41ce33657ae18aa31d0bc49",
+    "size": 12,
+  },
+  {
+    "path": "db/base.db",
+    "sha256": "4b38062f440701c3cae5ee42347284746139734080bb727bd48012168771e2f8",
+    "size": 157,
+  },
+  {
+    "path": "db/patch.db",
+    "sha256": "b57450d000118d97dab0f4d9e41dadf6088f981046be61828bc12e409a9d6ea6",
+    "size": 162,
+  },
+  {
+    "path": "listing.json",
+    "sha256": "3093a74d9791db3c86f2dde3da32add20a8d95c3c1925e852a2b0f449821bfc7",
+    "size": 1057,
+  },
+  {
+    "path": "patch/Textures/Wpn/WPN_AK74.DDS",
+    "sha256": "f3e0f673b0cc4f6c0c3e4103514975f3ebf8830f9ac58532d682f6c92edec1bd",
+    "size": 15,
+  },
+  {
+    "path": "verify.json",
+    "sha256": "2399df30260b3eb9295eb2bb5929d767ca0e36b8332d710603ab80124ae0d523",
+    "size": 755,
+  },
+]
+`;
