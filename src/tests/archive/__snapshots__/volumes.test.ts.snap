@@ -1,5 +1,18 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`archive volumes should refuse a cap no volume could fit one of the files under 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: File 'particles.xr' needs a volume of 1185323 bytes to itself, past the configured maximum volume size of 1048576 bytes",
+  ],
+  "stdout": [
+    "Pack source: <resources>/gamedata",
+    "Pack destination: <sandbox>/refused",
+  ],
+}
+`;
+
 exports[`archive volumes should split a pack across volumes 1`] = `
 {
   "exitCode": 0,
@@ -9,8 +22,7 @@ exports[`archive volumes should split a pack across volumes 1`] = `
     "Pack destination: <sandbox>/split",
     "Wrote <sandbox>/split/gamedata.db0",
     "Wrote <sandbox>/split/gamedata.db1",
-    "Wrote <sandbox>/split/gamedata.db2",
-    "Packed 29 file(s) into 3 volume(s) in <duration>",
+    "Packed 29 file(s) into 2 volume(s) in <duration>",
     "Summary: 14 compressed, 15 stored, 0 aliased, 0 skipped",
     "Size: 2.37 MB source, 2.37 MB written",
   ],
@@ -24,7 +36,7 @@ exports[`archive volumes should unpack a single volume on its own 1`] = `
   "stdout": [
     "Unpack source: <sandbox>/split/gamedata.db0",
     "Unpack destination: <sandbox>/from-first",
-    "Summary: 1 archive(s), 37 file(s), 1.16 MB compressed, 1.17 MB real",
+    "Summary: 1 archive(s), 38 file(s), 1.35 MB compressed, 1.35 MB real",
     "Unpacking files, parallel 32",
     "Unpacked archive in <duration> (preparation <duration>, unpack <duration>)",
   ],
@@ -38,7 +50,7 @@ exports[`archive volumes should unpack a whole volume set 1`] = `
   "stdout": [
     "Unpack source: <sandbox>/split",
     "Unpack destination: <sandbox>/from-set",
-    "Summary: 3 archive(s), 43 file(s), 2.37 MB compressed, 2.37 MB real",
+    "Summary: 2 archive(s), 43 file(s), 2.37 MB compressed, 2.37 MB real",
     "Unpacking files, parallel 32",
     "Unpacked archive in <duration> (preparation <duration>, unpack <duration>)",
   ],
@@ -161,6 +173,11 @@ exports[`archive volumes should write the expected files 1`] = `
     "path": "from-first/gamedata/particles.xr",
     "sha256": "0786f7746df643a37b6420b652744270d1fdc15787740bad1c1c33b222a81037",
     "size": 1184775,
+  },
+  {
+    "path": "from-first/gamedata/shaders.xr",
+    "sha256": "526e9363e42764c56a39bae72de854d89d65dfc1fe9aca0231e576456b8720c9",
+    "size": 191315,
   },
   {
     "path": "from-set/gamedata/configs/alife.ltx",
@@ -308,19 +325,24 @@ exports[`archive volumes should write the expected files 1`] = `
     "size": 144,
   },
   {
+    "path": "refused/gamedata.db0",
+    "sha256": "37ef77722430f96c60891653edb751b75bc09c6c1f1f4fed7dab2ada12e46b13",
+    "size": 36944,
+  },
+  {
+    "path": "refused/gamedata.db1",
+    "sha256": "6b524a292f14b669798c6bdf081fb7e898942bd1f161f87cc33d49ec5cd5e2da",
+    "size": 79,
+  },
+  {
     "path": "split/gamedata.db0",
-    "sha256": "e735c325013d6bf2a2956c1e2b33e8ce8e4b05b7dbf613c47b31180a05cd461e",
-    "size": 1221742,
+    "sha256": "e09379c0218650568c3023631b976fa81b524f7ee6adeab56fced782fe409561",
+    "size": 1413079,
   },
   {
     "path": "split/gamedata.db1",
-    "sha256": "d340169533ffd1a6341addec68e4bbf53767ce6a6a4d016ce0a1e5d7e23d45d6",
-    "size": 1244727,
-  },
-  {
-    "path": "split/gamedata.db2",
-    "sha256": "d61f1504b761118910c319cf2e4f4a0f69c6d06e7338dfe51ada3c1ae3b2e677",
-    "size": 17306,
+    "sha256": "d3635e11fbe37fa44c67bdec491bc18e3ffe99b7348a5752b42c6ce43c7b35f4",
+    "size": 1070478,
   },
 ]
 `;
