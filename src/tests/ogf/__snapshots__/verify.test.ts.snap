@@ -33,9 +33,15 @@ exports[`ogf verify should report the census and findings of the sweep 1`] = `
       },
       {
         "duration": "<duration>",
-        "findings": [],
+        "findings": [
+          {
+            "message": "Carries no geometry chunk",
+            "ruleId": "visuals.geometry.unsupported",
+            "subject": "residue_split_motion_ref.ogf#0",
+          },
+        ],
         "id": "geometry",
-        "status": "passed",
+        "status": "incomplete",
       },
       {
         "duration": "<duration>",
@@ -85,20 +91,21 @@ exports[`ogf verify should resolve textures from a layered root 1`] = `
   "stdout": [
     "Verifying ogf visuals in <resources>/gamedata/meshes/ogf",
     "Searching textures in <resources>/base as well",
-    "Swept 4 visuals in <duration>",
-    "Submeshes: 4 total, 4 packed, 0 unsupported, 0 malformed",
+    "Swept 5 visuals in <duration>",
+    "Submeshes: 5 total, 4 packed, 1 unsupported, 0 malformed",
     "Progressive submeshes: 1, of which 1 draw only part of their index buffer",
     "Skinned submeshes: 4, vertices whose weights do not sum to one: 0",
-    "Unreadable files: 0, files with nothing drawable: 0, bounds disagreements: 0",
+    "Unreadable files: 0, files with nothing drawable: 1, bounds disagreements: 0",
     "Texture references: 4 total, 1 resolved, 3 missing, 0 unreadable, 0 visuals with no root",
     "Distinct textures: 1, of which 1 carry no mip chain; 0 references resolved inside archives and were not read",
-    "Header versions: 4: 4",
-    "Root model types: MT_SKELETON_ANIM: 1, MT_SKELETON_RIGID: 3",
-    "Submesh model types: MT_SKELETON_GEOMDEF_PM: 1, MT_SKELETON_GEOMDEF_ST: 3",
-    "Vertex formats: 0x00000001: 4",
+    "Header versions: 4: 5",
+    "Root model types: MT_SKELETON_ANIM: 2, MT_SKELETON_RIGID: 3",
+    "Submesh model types: MT_SKELETON_ANIM: 1, MT_SKELETON_GEOMDEF_PM: 1, MT_SKELETON_GEOMDEF_ST: 3",
+    "Vertex formats: 0x00000001: 4, none: 1",
     "Texture formats: DXT5: 1",
     "Textures resolved by: <resources>/base: 1",
     "Texture sizes: 4x4: 1",
+    "Check 'geometry' is incomplete with 1 findings",
     "Check 'textures' is incomplete with 3 findings",
   ],
 }
@@ -112,17 +119,18 @@ exports[`ogf verify should sweep a directory 1`] = `
   ],
   "stdout": [
     "Verifying ogf visuals in <resources>/gamedata/meshes/ogf",
-    "Swept 4 visuals in <duration>",
-    "Submeshes: 4 total, 4 packed, 0 unsupported, 0 malformed",
+    "Swept 5 visuals in <duration>",
+    "Submeshes: 5 total, 4 packed, 1 unsupported, 0 malformed",
     "Progressive submeshes: 1, of which 1 draw only part of their index buffer",
     "Skinned submeshes: 4, vertices whose weights do not sum to one: 0",
-    "Unreadable files: 0, files with nothing drawable: 0, bounds disagreements: 0",
+    "Unreadable files: 0, files with nothing drawable: 1, bounds disagreements: 0",
     "Texture references: 4 total, 0 resolved, 4 missing, 0 unreadable, 0 visuals with no root",
     "Distinct textures: 0, of which 0 carry no mip chain; 0 references resolved inside archives and were not read",
-    "Header versions: 4: 4",
-    "Root model types: MT_SKELETON_ANIM: 1, MT_SKELETON_RIGID: 3",
-    "Submesh model types: MT_SKELETON_GEOMDEF_PM: 1, MT_SKELETON_GEOMDEF_ST: 3",
-    "Vertex formats: 0x00000001: 4",
+    "Header versions: 4: 5",
+    "Root model types: MT_SKELETON_ANIM: 2, MT_SKELETON_RIGID: 3",
+    "Submesh model types: MT_SKELETON_ANIM: 1, MT_SKELETON_GEOMDEF_PM: 1, MT_SKELETON_GEOMDEF_ST: 3",
+    "Vertex formats: 0x00000001: 4, none: 1",
+    "Check 'geometry' is incomplete with 1 findings",
     "Check 'textures' is incomplete with 4 findings",
   ],
 }
@@ -156,8 +164,8 @@ exports[`ogf verify should write a report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "ce6c1a8e9152199d2109d0239c8ba334307a8fe4bb5db7f92d47b4b9f1e7db20",
-    "size": 1923,
+    "sha256": "1651aa88ca7c3f2881abe096f9a3e28e5f5fba7f0fa5b67b1df8cd29ec27ce9a",
+    "size": 2122,
   },
 ]
 `;

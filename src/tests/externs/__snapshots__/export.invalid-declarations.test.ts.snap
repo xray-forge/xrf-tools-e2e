@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`externs export invalid declarations should refuse a missing declarations root as an execution failure 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: IO error: Extern source root '<sandbox>/absent' is not a directory.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`externs export invalid declarations should reject a duplicate declaration as a check failure 1`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "Invalid error: Duplicate extern 'xr_effects.give_item' declared in 'externs.ts' and 'externs.ts'.",
+    "Check failed: 1 finding(s)",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`externs export invalid declarations should reject malformed declarations as a check failure 1`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "Parsing error: Failed to parse TypeScript <sandbox>/malformed/externs.ts:1:55: Expression expected.",
+    "Check failed: 1 finding(s)",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`externs export invalid declarations should report what the declarations were judged on 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "externs",
+    "export",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 1 finding(s)",
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "destination": "<sandbox>/externs.json",
+    "externs": 0,
+    "findings": [
+      "Invalid error: Duplicate extern 'xr_effects.give_item' declared in 'externs.ts' and 'externs.ts'.",
+    ],
+    "format": "json",
+    "isCheck": true,
+    "source": "<sandbox>/duplicate",
+    "status": "failed",
+  },
+}
+`;
+
+exports[`externs export invalid declarations should write the expected files 1`] = `
+[
+  {
+    "path": "duplicate.json",
+    "sha256": "6187caf4b670795804c3b46e39f13bf8755384521e390bc9137c5889f190fc2a",
+    "size": 781,
+  },
+  {
+    "path": "duplicate/externs.ts",
+    "sha256": "aefddee338a63457392e4ef9b1a388bdb84373dec92f08997504b0f9532b6966",
+    "size": 138,
+  },
+  {
+    "path": "externs.json",
+    "sha256": "a36d06a9cbb07b6b0990fecda0b2202df62ff41d4d5bbd769dc3306e88ed2d77",
+    "size": 18,
+  },
+  {
+    "path": "malformed/externs.ts",
+    "sha256": "085718794ff0de2f2f8624c275542f6cdb7b2b8af6fdbb2696bf3483c21a30cb",
+    "size": 57,
+  },
+]
+`;

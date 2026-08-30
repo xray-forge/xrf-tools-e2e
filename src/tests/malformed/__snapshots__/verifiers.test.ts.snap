@@ -4,7 +4,7 @@ exports[`verifiers meet damaged input should refuse a damaged particle container
 {
   "exitCode": 3,
   "stderr": [
-    "Provided particle file is invalid: Invalid error: Chunk 0x00000003 at position 18 declares 1088704 bytes, beyond source end 500",
+    "Provided particle file is invalid: Invalid error: Chunk 0x00000003 at position 18 declares 1088704 bytes, 482 remain before source end 500",
     "Check failed: 1 finding(s)",
   ],
   "stdout": [],
@@ -15,7 +15,7 @@ exports[`verifiers meet damaged input should refuse a damaged spawn 1`] = `
 {
   "exitCode": 3,
   "stderr": [
-    "Provided spawn file is invalid: Invalid error: Chunk 0x00000001 at position 60 declares 67940 bytes, beyond source end 400",
+    "Provided spawn file is invalid: Invalid error: Chunk 0x00000001 at position 60 declares 67940 bytes, 340 remain before source end 400",
     "Check failed: 1 finding(s)",
   ],
   "stdout": [],

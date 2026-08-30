@@ -24,6 +24,7 @@ exports[`ogf patch reports should report a dry run as one that wrote nothing 1`]
   "exitCode": 0,
   "outcome": "success",
   "result": {
+    "discardedSize": 0,
     "isDryRun": true,
     "originalSize": 13841,
     "patchedCount": 1,
@@ -56,6 +57,7 @@ exports[`ogf patch reports should report what a motion-refs patch rewrote 1`] = 
   "exitCode": 0,
   "outcome": "success",
   "result": {
+    "discardedSize": 0,
     "isDryRun": false,
     "originalSize": 13841,
     "patchedCount": 1,
@@ -88,6 +90,7 @@ exports[`ogf patch reports should report what a texture-refs patch rewrote 1`] =
   "exitCode": 0,
   "outcome": "success",
   "result": {
+    "discardedSize": 0,
     "isDryRun": false,
     "originalSize": 13841,
     "patchedCount": 1,

@@ -115,6 +115,11 @@ exports[`gamedata list report should report every asset the tree resolves 1`] = 
       {
         "container": "<resources>/gamedata",
         "isArchived": false,
+        "logicalPath": "meshes\\ogf\\residue_split_motion_ref.ogf",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
         "logicalPath": "meshes\\ogf\\wpn_pm_lod.ogf",
       },
       {
@@ -175,7 +180,7 @@ exports[`gamedata list report should report every asset the tree resolves 1`] = 
     "origin": "<resources>/gamedata",
     "shadowed": [],
     "skipped": [],
-    "total": 28,
+    "total": 29,
   },
 }
 `;
@@ -225,6 +230,11 @@ exports[`gamedata list report should report only the subtree a prefix names 1`] 
       {
         "container": "<resources>/gamedata",
         "isArchived": false,
+        "logicalPath": "meshes\\ogf\\residue_split_motion_ref.ogf",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
         "logicalPath": "meshes\\ogf\\wpn_pm_lod.ogf",
       },
       {
@@ -250,7 +260,7 @@ exports[`gamedata list report should report only the subtree a prefix names 1`] 
     "origin": "<resources>/gamedata",
     "shadowed": [],
     "skipped": [],
-    "total": 7,
+    "total": 8,
   },
 }
 `;

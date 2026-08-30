@@ -1,3 +1,5 @@
+import * as fs from "node:fs";
+
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
 import { gamedata } from "#/test/constants";
@@ -5,9 +7,9 @@ import { Sandbox, type CliResult } from "#/test/sandbox";
 
 /**
  * Refusing damaged input is part of a reader's contract, and the message it refuses with is the
- * only thing telling a modder which file is broken and where. Every case here truncates a real
- * asset rather than inventing random bytes, so the reader gets a plausible header followed by
- * nothing, which is what a failed export or a half-copied file looks like.
+ * only thing telling a modder which file is broken and where. Cases derive their damage from real
+ * or synthetic committed assets rather than inventing a whole file of random bytes, so the reader
+ * reaches the malformed boundary through a valid format prefix.
  */
 describe("readers reject damaged input", () => {
   const box = new Sandbox(__filename);
@@ -21,6 +23,7 @@ describe("readers reject damaged input", () => {
   let missing: CliResult;
   let ltx: CliResult;
   let translation: CliResult;
+  let unaccountableResidue: CliResult;
 
   beforeAll(() => {
     const fail = { expectExit: 1 };
@@ -30,6 +33,17 @@ describe("readers reject damaged input", () => {
       ["--path", box.copyTruncated(gamedata("meshes/ogf/part_none.ogf"), "bad.ogf", 200)],
       fail
     );
+
+    const unaccountable: string = box.copyIn(
+      gamedata("meshes/ogf/residue_split_motion_ref.ogf"),
+      "unaccountable-residue.ogf"
+    );
+
+    // The source's tail is accepted only because it completes exactly one split motion ref. Bytes
+    // after its terminator make that explanation impossible, so the strict chunk error must stay.
+    fs.appendFileSync(unaccountable, "unaccounted");
+    unaccountableResidue = box.run("ogf info", ["--path", unaccountable], fail);
+
     omf = box.run(
       "omf info",
       ["--path", box.copyTruncated(gamedata("meshes/omf/wpn_svd_hud_animation.omf"), "bad.omf", 100)],
@@ -57,6 +71,10 @@ describe("readers reject damaged input", () => {
 
   it("should refuse a truncated visual", () => {
     expect(ogf).toMatchSnapshot();
+  });
+
+  it("should refuse unaccountable visual residue", () => {
+    expect(unaccountableResidue).toMatchSnapshot();
   });
 
   it("should refuse a truncated animation container", () => {

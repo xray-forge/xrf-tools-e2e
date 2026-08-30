@@ -192,7 +192,7 @@ exports[`docs generate should render archive.md 1`] = `
   "| ------ | -------- | ------- | ----------- |",
   "| \`-p, --path <path>\` | yes |  | Path to *.db file |",
   "| \`-d, --dest <dest>\` |  | \`unpacked\` | Path to folder for exporting |",
-  "| \`--parallel <parallel>\` |  | \`32\` | Count of parallel threads for unpack |",
+  "| \`--parallel <parallel>\` |  |  | Count of parallel threads for unpack, defaulting to the host's available parallelism |",
   "| \`--dry\` |  |  | Run in dry mode without actually unpacking to disk |",
   "| \`-s, --silent\` |  |  | Turn off logging |",
   "| \`-v, --verbose\` |  |  | Turn on verbose logging |",
@@ -1092,8 +1092,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/archive.md",
-    "sha256": "42413070d5b39963e8c4c17d0c69079609e90cef340e106a0785258ac94709ed",
-    "size": 5775,
+    "sha256": "a67a22aa7954ce5992a8401da64dd7b637e02f1f37c6e671135e862fe9e16810",
+    "size": 5819,
   },
   {
     "path": "docs/dialog.md",

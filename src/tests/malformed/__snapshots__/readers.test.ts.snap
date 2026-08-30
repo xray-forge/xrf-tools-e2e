@@ -16,7 +16,7 @@ exports[`readers reject damaged input should refuse a truncated animation contai
 {
   "exitCode": 1,
   "stderr": [
-    "Error: Invalid error: Chunk 0x0000000e at position 8 declares 3133 bytes, beyond source end 100",
+    "Error: Invalid error: Chunk 0x0000000e at position 8 declares 3133 bytes, 92 remain before source end 100",
   ],
   "stdout": [
     "Read omf file <sandbox>/bad.omf",
@@ -28,7 +28,7 @@ exports[`readers reject damaged input should refuse a truncated particle contain
 {
   "exitCode": 1,
   "stderr": [
-    "Error: Invalid error: Chunk 0x00000003 at position 18 declares 1088704 bytes, beyond source end 500",
+    "Error: Invalid error: Chunk 0x00000003 at position 18 declares 1088704 bytes, 482 remain before source end 500",
   ],
   "stdout": [
     "Read particle file <sandbox>/bad.xr",
@@ -40,7 +40,7 @@ exports[`readers reject damaged input should refuse a truncated spawn 1`] = `
 {
   "exitCode": 1,
   "stderr": [
-    "Error: Invalid error: Chunk 0x00000001 at position 60 declares 67940 bytes, beyond source end 400",
+    "Error: Invalid error: Chunk 0x00000001 at position 60 declares 67940 bytes, 340 remain before source end 400",
   ],
   "stdout": [
     "Read spawn file <sandbox>/bad.spawn",
@@ -64,7 +64,7 @@ exports[`readers reject damaged input should refuse a truncated visual 1`] = `
 {
   "exitCode": 1,
   "stderr": [
-    "Error: Invalid error: Chunk 0x00000012 at position 60 declares 141 bytes, beyond source end 200",
+    "Error: Invalid error: Chunk 0x00000012 at position 60 declares 141 bytes, 140 remain before source end 200",
   ],
   "stdout": [
     "Read ogf file <sandbox>/bad.ogf",
@@ -114,6 +114,18 @@ exports[`readers reject damaged input should refuse an unparseable translation s
 }
 `;
 
+exports[`readers reject damaged input should refuse unaccountable visual residue 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: Chunk 0x656b6c61 at position 201 declares 1668505458 bytes, 28 remain before source end 229",
+  ],
+  "stdout": [
+    "Read ogf file <sandbox>/unaccountable-residue.ogf",
+  ],
+}
+`;
+
 exports[`readers reject damaged input should write nothing beyond the damaged inputs 1`] = `
 [
   {
@@ -155,6 +167,11 @@ exports[`readers reject damaged input should write nothing beyond the damaged in
     "path": "translations/broken.json",
     "sha256": "93824b8be3037b3b714f7ecd7d3e81fdbccc41deb8ef47db68811be6d0d82de8",
     "size": 21,
+  },
+  {
+    "path": "unaccountable-residue.ogf",
+    "sha256": "bb84762a85b8963b78b96e0a1fa34fc8f91f34a27aa3421a491508aa5ecc9662",
+    "size": 229,
   },
 ]
 `;

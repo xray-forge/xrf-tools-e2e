@@ -1,0 +1,273 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ogf residue should explain accepted residue and still succeed 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read ogf file <resources>/gamedata/meshes/ogf/residue_split_motion_ref.ogf",
+    "Ogf file information",
+    "Version: 4, model_type: 3, shader_id: 0, OgfBox { min: Vector3d { x: 0.0, y: 0.0, z: 0.0 }, max: Vector3d { x: 1.0, y: 1.0, z: 1.0 } } - OgfSphere { position: Vector3d { x: 0.0, y: 0.0, z: 0.0 }, radius: 1.0 }",
+    "Boundaries box: OgfBox { min: Vector3d { x: 0.0, y: 0.0, z: 0.0 }, max: Vector3d { x: 1.0, y: 1.0, z: 1.0 } }",
+    "Boundaries sphere: OgfSphere { position: Vector3d { x: 0.0, y: 0.0, z: 0.0 }, radius: 1.0 }",
+    "Motion refs: ["actors\\\\stalker_animation", "actors\\\\stalker_scripts_animation", "actors\\\\zombied_animation", "actors\\\\stalker_smart_cover_animation"]",
+    "Residue: 34 bytes from offset 193 the engine never reads, SplitMotionRef { path: "actors\\\\stalker_scenario_animation" }",
+  ],
+}
+`;
+
+exports[`ogf residue should identify the chunk residue rule in the verification report 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 5 finding(s)",
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "cache": {
+      "bytes": 0,
+      "entries": 0,
+      "hits": 0,
+      "misses": 2,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "assetPath": "meshes/ogf/residue_split_motion_ref.ogf",
+            "message": "Mesh carries 34 bytes the engine never reads, an uncounted motion reference 'actors\\stalker_scenario_animation' split across the declared bounds of the motion refs chunk",
+            "ruleId": "meshes.chunk-residue",
+          },
+          {
+            "assetPath": "meshes/ogf/residue_split_motion_ref.ogf",
+            "message": "Mesh references missing motion 'actors\\stalker_animation'",
+            "ruleId": "meshes.motion-validation",
+          },
+          {
+            "assetPath": "meshes/ogf/residue_split_motion_ref.ogf",
+            "message": "Mesh references missing motion 'actors\\stalker_scripts_animation'",
+            "ruleId": "meshes.motion-validation",
+          },
+          {
+            "assetPath": "meshes/ogf/residue_split_motion_ref.ogf",
+            "message": "Mesh references missing motion 'actors\\stalker_smart_cover_animation'",
+            "ruleId": "meshes.motion-validation",
+          },
+          {
+            "assetPath": "meshes/ogf/residue_split_motion_ref.ogf",
+            "message": "Mesh references missing motion 'actors\\zombied_animation'",
+            "ruleId": "meshes.motion-validation",
+          },
+        ],
+        "status": "failed",
+        "summary": "1/1 shader libraries valid, 205 blender definitions; 0/1 meshes valid",
+        "verificationType": "meshes",
+      },
+    ],
+    "duration": "<duration>",
+    "status": "failed",
+  },
+}
+`;
+
+exports[`ogf residue should patch successfully after dropping the residue 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Patch ogf motion refs <resources>/gamedata/meshes/ogf/residue_split_motion_ref.ogf, ["actors\\\\stalker_animation", "actors\\\\stalker_scripts_animation", "actors\\\\zombied_animation", "actors\\\\stalker_smart_cover_animation"] -> ["actors\\\\replacement_animation"]",
+    "Ogf motion refs written into <sandbox>/patched.ogf",
+  ],
+}
+`;
+
+exports[`ogf residue should report chunk residue as a verification finding 1`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "Mesh motion refs not found by path: actors\\stalker_animation",
+    "Mesh motion refs not found by path: actors\\stalker_scripts_animation",
+    "Mesh motion refs not found by path: actors\\zombied_animation",
+    "Mesh motion refs not found by path: actors\\stalker_smart_cover_animation",
+    "Mesh is not valid: meshes\\ogf\\residue_split_motion_ref.ogf",
+    "",
+    "Project gamedata is invalid",
+    "- 1/1 shader libraries valid, 205 blender definitions; 0/1 meshes valid",
+    "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh carries 34 bytes the engine never reads, an uncounted motion reference 'actors\\stalker_scenario_animation' split across the declared bounds of the motion refs chunk",
+    "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh references missing motion 'actors\\stalker_animation'",
+    "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh references missing motion 'actors\\stalker_scripts_animation'",
+    "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh references missing motion 'actors\\stalker_smart_cover_animation'",
+    "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh references missing motion 'actors\\zombied_animation'",
+    "Gamedata project checked in <duration>",
+    "Check failed: 5 finding(s)",
+  ],
+  "stdout": [
+    "Opening gamedata project",
+    "Root: <sandbox>/gamedata, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
+    "Verifying gamedata project: <sandbox>/gamedata",
+    "Verifying modules:",
+    "  -meshes",
+    "",
+    "Verify meshes:",
+    "Verified gamedata meshes in <duration>, 1/1 shader libraries valid, 205 blender definitions; 0/1 meshes valid",
+  ],
+}
+`;
+
+exports[`ogf residue should report how many bytes the patch dropped 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "ogf",
+    "patch-motion-refs",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "discardedSize": 34,
+    "isDryRun": false,
+    "originalSize": 218,
+    "patchedCount": 1,
+    "patchedSize": 93,
+  },
+}
+`;
+
+exports[`ogf residue should report the residue cause and discarded reference 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "ogf",
+    "info",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "bones": [],
+    "bounds": {
+      "maximum": [
+        1,
+        1,
+        1,
+      ],
+      "minimum": [
+        0,
+        0,
+        0,
+      ],
+      "radius": 1,
+      "sphere": [
+        0,
+        0,
+        0,
+      ],
+    },
+    "children": [],
+    "description": null,
+    "material": null,
+    "modelType": 3,
+    "motionRefs": [
+      "actors\\stalker_animation",
+      "actors\\stalker_scripts_animation",
+      "actors\\zombied_animation",
+      "actors\\stalker_smart_cover_animation",
+    ],
+    "progressiveLods": 0,
+    "residue": {
+      "cause": "split-motion-ref",
+      "discardedReference": "actors\\stalker_scenario_animation",
+      "position": 193,
+      "size": 34,
+    },
+    "shaderId": 0,
+    "unknownChunks": [],
+    "version": 4,
+  },
+}
+`;
+
+exports[`ogf residue should write only the staged tree, reports and normalized visual 1`] = `
+[
+  {
+    "path": "gamedata/configs/system.ltx",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+  },
+  {
+    "path": "gamedata/meshes/ogf/residue_split_motion_ref.ogf",
+    "sha256": "753cda47355b9db1c1267a93554b09b064e786a5e7e0b59d2522c649dac0d60b",
+    "size": 218,
+  },
+  {
+    "path": "gamedata/shaders.xr",
+    "sha256": "526e9363e42764c56a39bae72de854d89d65dfc1fe9aca0231e576456b8720c9",
+    "size": 191315,
+  },
+  {
+    "path": "info.json",
+    "sha256": "2398d4930d51be389cdfa6c88d3012c2d620d8e6cf349ead56018e5fe414c65f",
+    "size": 1232,
+  },
+  {
+    "path": "patch.json",
+    "sha256": "b7ee811c9adff80c6275fff4c06d19949e32ab55516c898d6b6e5efb9ad0d432",
+    "size": 581,
+  },
+  {
+    "path": "patched.ogf",
+    "sha256": "60a393455b068a558f74524a1d9bbc0e1c5bf6d7e1ee9f7d0218a26ce2f37fbe",
+    "size": 93,
+  },
+  {
+    "path": "verify.json",
+    "sha256": "2de0df881778d3222e09f512a5f5e1b049c6053c47d356f4f59c53db30e9521a",
+    "size": 2178,
+  },
+]
+`;

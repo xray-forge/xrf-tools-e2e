@@ -10,8 +10,8 @@ exports[`archive volumes should split a pack across volumes 1`] = `
     "Wrote <sandbox>/split/gamedata.db0",
     "Wrote <sandbox>/split/gamedata.db1",
     "Wrote <sandbox>/split/gamedata.db2",
-    "Packed 28 file(s) into 3 volume(s) in <duration>",
-    "Summary: 14 compressed, 14 stored, 0 aliased, 0 skipped",
+    "Packed 29 file(s) into 3 volume(s) in <duration>",
+    "Summary: 14 compressed, 15 stored, 0 aliased, 0 skipped",
     "Size: 2.37 MB source, 2.37 MB written",
   ],
 }
@@ -24,7 +24,7 @@ exports[`archive volumes should unpack a single volume on its own 1`] = `
   "stdout": [
     "Unpack source: <sandbox>/split/gamedata.db0",
     "Unpack destination: <sandbox>/from-first",
-    "Summary: 1 archive(s), 36 file(s), 1.16 MB compressed, 1.17 MB real",
+    "Summary: 1 archive(s), 37 file(s), 1.16 MB compressed, 1.17 MB real",
     "Unpacking files, parallel 32",
     "Unpacked archive in <duration> (preparation <duration>, unpack <duration>)",
   ],
@@ -38,7 +38,7 @@ exports[`archive volumes should unpack a whole volume set 1`] = `
   "stdout": [
     "Unpack source: <sandbox>/split",
     "Unpack destination: <sandbox>/from-set",
-    "Summary: 3 archive(s), 42 file(s), 2.37 MB compressed, 2.37 MB real",
+    "Summary: 3 archive(s), 43 file(s), 2.37 MB compressed, 2.37 MB real",
     "Unpacking files, parallel 32",
     "Unpacked archive in <duration> (preparation <duration>, unpack <duration>)",
   ],
@@ -131,6 +131,11 @@ exports[`archive volumes should write the expected files 1`] = `
     "path": "from-first/gamedata/meshes/ogf/part_none.ogf",
     "sha256": "221cb7d7f667253d87e3eae93350aff3ae9c5f0f5ed178f035a43310b35956fd",
     "size": 1069,
+  },
+  {
+    "path": "from-first/gamedata/meshes/ogf/residue_split_motion_ref.ogf",
+    "sha256": "753cda47355b9db1c1267a93554b09b064e786a5e7e0b59d2522c649dac0d60b",
+    "size": 218,
   },
   {
     "path": "from-first/gamedata/meshes/ogf/wpn_pm_lod.ogf",
@@ -243,6 +248,11 @@ exports[`archive volumes should write the expected files 1`] = `
     "size": 1069,
   },
   {
+    "path": "from-set/gamedata/meshes/ogf/residue_split_motion_ref.ogf",
+    "sha256": "753cda47355b9db1c1267a93554b09b064e786a5e7e0b59d2522c649dac0d60b",
+    "size": 218,
+  },
+  {
     "path": "from-set/gamedata/meshes/ogf/wpn_pm_lod.ogf",
     "sha256": "bf41871ea019632e506b5efa4d748ab2d18240c8c8840a8e0e3a1d921694ff2e",
     "size": 7321,
@@ -299,8 +309,8 @@ exports[`archive volumes should write the expected files 1`] = `
   },
   {
     "path": "split/gamedata.db0",
-    "sha256": "9d090dd57369af6776002cfc3e8985d16a94966399af5a98719b9e00768b775e",
-    "size": 1221491,
+    "sha256": "e735c325013d6bf2a2956c1e2b33e8ce8e4b05b7dbf613c47b31180a05cd461e",
+    "size": 1221742,
   },
   {
     "path": "split/gamedata.db1",
