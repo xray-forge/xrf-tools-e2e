@@ -14,8 +14,3 @@ src/resources/**/*.omf filter=lfs diff=lfs merge=lfs -text
 src/resources/**/*.spawn filter=lfs diff=lfs merge=lfs -text
 src/resources/**/*.thm filter=lfs diff=lfs merge=lfs -text
 src/resources/**/*.xr filter=lfs diff=lfs merge=lfs -text
-
-# The binary under test is committed so the suite runs without a Rust toolchain.
-cli/app/** -text
-cli/app/xrf-cli filter=lfs diff=lfs merge=lfs -text
-cli/app/xrf-cli.exe filter=lfs diff=lfs merge=lfs -text

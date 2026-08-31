@@ -1,0 +1,62 @@
+name: E2E
+
+on:
+  workflow_call:
+    inputs:
+      e2e_ref:
+        description: xrf-tools-e2e revision to test
+        required: true
+        type: string
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  e2e:
+    name: E2E (${{ matrix.name }})
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: Linux
+            runner: ubuntu-latest
+            asset: xrf-cli-dev
+            executable: xrf-cli
+          - name: Windows
+            runner: windows-latest
+            asset: xrf-cli-dev.exe
+            executable: xrf-cli.exe
+    runs-on: ${{ matrix.runner }}
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          repository: xray-forge/xrf-tools-e2e
+          ref: ${{ inputs.e2e_ref || github.sha }}
+
+      - name: Use Node.js 24.x
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24.x
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download nightly CLI
+        shell: bash
+        env:
+          ASSET: ${{ matrix.asset }}
+          EXECUTABLE: ${{ matrix.executable }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p target
+          gh release download nightly --repo xray-forge/xrf-tools --pattern "$ASSET" --dir target --clobber
+          mv "target/$ASSET" "target/$EXECUTABLE"
+          if [[ "$RUNNER_OS" != "Windows" ]]; then
+            chmod +x "target/$EXECUTABLE"
+          fi
+
+      - name: Run E2E suite
+        run: npm run e2e

@@ -4,8 +4,7 @@ import { fileURLToPath } from "node:url";
 
 const PROJECT_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const EXECUTABLE_NAME = process.platform === "win32" ? "xrf-cli.exe" : "xrf-cli";
-const DESTINATION = path.resolve(PROJECT_ROOT, "cli/app", EXECUTABLE_NAME);
-
+const DESTINATION = path.resolve(PROJECT_ROOT, "target", EXECUTABLE_NAME);
 const source = path.resolve(
   process.argv[2] ?? path.resolve(PROJECT_ROOT, "../xrf-tools/target/release", EXECUTABLE_NAME)
 );
@@ -25,4 +24,3 @@ fs.mkdirSync(path.dirname(DESTINATION), { recursive: true });
 fs.copyFileSync(source, DESTINATION);
 
 console.log(`Copied ${source}\n    to ${DESTINATION}`);
-console.log("The working tree is now dirty on purpose: commit it together with re-recorded snapshots.");

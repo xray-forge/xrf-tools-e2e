@@ -54,8 +54,8 @@ const JSON_BUILD_BLOCK_PATTERN = /"build":\s*{[^{}]*}/g;
  * Values are tokenized and the field names left standing, which is how `version.test.ts` already
  * records this surface: a recording moves when the reported set of fields changes, not when someone
  * rebuilds. `kind` is included for the same reason it is matched rather than recorded there — it says
- * where `cli/app` was refreshed from, `local` for a developer's `target/release` and `development`
- * for a workflow artifact, so keeping it would make one golden describe one refresh.
+ * whether the target executable is a local build or a workflow artifact, so keeping it would make
+ * one golden describe one source.
  */
 const JSON_BUILD_MEMBER_PATTERN =
   /"(version|kind|commit|reference|isDirty|builtAt|target|rustc|profile|optimization|runId)":\s*(?:"(?:[^"\\]|\\.)*"|true|false|null)/g;

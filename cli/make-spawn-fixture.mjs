@@ -6,7 +6,7 @@
  * extra objects live beside this script as ltx text lifted verbatim from a Call of Chernobyl unpack, and are appended
  * through the tool's own importer rather than by writing spawn bytes in JavaScript.
  *
- * Run it against the committed cli, then re-record the suite with `node cli/make-spawn-fixture.mjs` followed by
+ * Run it against the target cli, then re-record the suite with `node cli/make-spawn-fixture.mjs` followed by
  * `npm run e2e:update`. Running it twice is a no-op: the additions replace their own previous entries.
  */
 import { execFileSync } from "node:child_process";
@@ -17,7 +17,7 @@ import { fileURLToPath } from "node:url";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = path.resolve(HERE, "..");
-const EXECUTABLE = path.resolve(PROJECT_ROOT, "cli/app", process.platform === "win32" ? "xrf-cli.exe" : "xrf-cli");
+const EXECUTABLE = path.resolve(PROJECT_ROOT, "target", process.platform === "win32" ? "xrf-cli.exe" : "xrf-cli");
 const FIXTURE = path.resolve(PROJECT_ROOT, "src/resources/gamedata/spawns/all.spawn");
 const ADDITIONS = path.resolve(HERE, "spawn-fixture");
 
@@ -28,7 +28,7 @@ const CRLF = "\r\n";
 const BYTEWISE = "latin1";
 
 /**
- * Invoke the committed cli.
+ * Invoke the target cli.
  *
  * @param {string} command - Space separated command and subcommand, such as `spawn pack`.
  * @param {string[]} args - Arguments to append.

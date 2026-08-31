@@ -18,21 +18,25 @@ export const TESTS_ROOT: string = path.resolve(PROJECT_ROOT, "./src/tests");
 
 export const TARGET_ROOT: string = path.resolve(PROJECT_ROOT, "./target");
 
+/** Generated state from one E2E run, deleted before any test suite starts. */
+export const E2E_OUTPUT_ROOT: string = path.resolve(TARGET_ROOT, "./e2e");
+
+/** Isolated working directories for test suites. */
+export const SANDBOXES_ROOT: string = path.resolve(E2E_OUTPUT_ROOT, "./sandboxes");
+
 /**
  * Where each test worker drops the timings it measured.
  *
  * @remarks
- * Deliberately outside every sandbox, which lives at `target/<test name>/`. A timing file written
- * inside one would be picked up by `manifest()` and snapshotted, and since durations differ on
- * every run that would make the suite fail constantly. The leading dot also keeps it from ever
- * colliding with a directory named after a test.
+ * Deliberately outside every sandbox so `manifest()` cannot snapshot durations that differ on every
+ * run.
  */
-export const TIMINGS_ROOT: string = path.resolve(TARGET_ROOT, "./.timings");
+export const TIMINGS_ROOT: string = path.resolve(E2E_OUTPUT_ROOT, "./timings");
 
 /**
  * Aggregated report written once every run has finished.
  */
-export const TIMINGS_REPORT: string = path.resolve(TARGET_ROOT, "./timings.json");
+export const TIMINGS_REPORT: string = path.resolve(E2E_OUTPUT_ROOT, "./timings.json");
 
 /**
  * The name the CLI is recorded under, whatever the host calls the file.
@@ -48,16 +52,13 @@ export const CLI_EXECUTABLE_NAME: string =
   process.platform === "win32" ? `${CLI_EXECUTABLE_STEM}.exe` : CLI_EXECUTABLE_STEM;
 
 /**
- * The binary under test, committed so the suite runs without a Rust toolchain.
+ * The ignored binary under test.
  *
  * @remarks
- * Refreshed from a sibling build with `npm run cli:refresh`, which leaves the working tree dirty on
- * purpose: `git status` is then the answer to whether the run used the committed reference binary
- * or a local build.
+ * CI downloads the current nightly asset here. `npm run cli:refresh` copies a local build to the same
+ * path, so every test and fixture script uses one location.
  */
-export const CLI_EXECUTABLE: string = path.resolve(PROJECT_ROOT, "./cli/app", CLI_EXECUTABLE_NAME);
-
-export const TOOLS_ROOT: string = path.resolve(PROJECT_ROOT, "../xrf-tools");
+export const CLI_EXECUTABLE: string = path.resolve(TARGET_ROOT, CLI_EXECUTABLE_NAME);
 
 /**
  * Refers to a file in the committed gamedata tree.

@@ -3,7 +3,7 @@ import * as crypto from "node:crypto";
 import * as fs from "node:fs";
 import * as path from "node:path";
 
-import { CLI_EXECUTABLE, TARGET_ROOT, TESTS_ROOT, TIMINGS_ROOT } from "./constants";
+import { CLI_EXECUTABLE, SANDBOXES_ROOT, TESTS_ROOT, TIMINGS_ROOT } from "./constants";
 import { normalizeText } from "./normalize";
 
 export interface CliResult {
@@ -90,9 +90,9 @@ function collectFiles(root: string): Array<string> {
  *
  * @remarks
  * Constructed once per test file as `new Sandbox(__filename)`, which names the directory after the
- * test and wipes whatever a previous run left there. It is also the working directory for every
- * command, so one invoked with a default relative destination writes inside it rather than into
- * the repository.
+ * test. Global setup wipes the shared output root first. The sandbox is also the working directory
+ * for every command, so one invoked with a default relative destination writes inside it rather
+ * than into the repository.
  */
 export class Sandbox {
   public readonly name: string;
@@ -109,9 +109,8 @@ export class Sandbox {
       .replace(/\.test\.ts$/, "")
       .split(path.sep)
       .join("/");
-    this.root = path.join(TARGET_ROOT, ...this.name.split("/"));
+    this.root = path.join(SANDBOXES_ROOT, ...this.name.split("/"));
 
-    fs.rmSync(this.root, { recursive: true, force: true });
     fs.mkdirSync(this.root, { recursive: true });
   }
 

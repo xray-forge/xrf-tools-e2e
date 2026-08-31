@@ -59,8 +59,8 @@ function summarize(timings: Array<CommandTiming>): Array<CommandSummary> {
  *
  * @remarks
  * Runs once in the main process after every worker has finished, which is the only point where all
- * the measurements exist together. The report is written under `target/` and never committed, so
- * it can record durations without any of it reaching a snapshot.
+ * the measurements exist together. The report is written under `target/e2e/` and never committed,
+ * so it can record durations without any of it reaching a snapshot.
  */
 export default function globalTeardown(): void {
   const timings: Array<CommandTiming> = readRecordedTimings();

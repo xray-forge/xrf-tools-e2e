@@ -4,6 +4,9 @@ node_modules/
 # Scenario sandboxes, wiped and rewritten on every run.
 target/
 
+# Preserve former local executable copies after removing them from Git.
+cli/app/
+
 # Editor and OS state
 /.idea/
 .DS_Store

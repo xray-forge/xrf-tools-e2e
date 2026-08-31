@@ -12,12 +12,17 @@ single test, the debugger, `--watch`, and `-t` filtering all work the way they d
 
 ```bash
 npm install
+npm run cli:refresh
 npm run e2e
 ```
 
-| Command                 | Purpose                                          |
-| ----------------------- | ------------------------------------------------ |
-| `npm run e2e`           | Run every test against the committed binary.     |
-| `npm run e2e -- -t ogf` | Run tests matching a name.                       |
-| `npm run e2e:update`    | Record current behavior as the new snapshots.    |
-| `npm run cli:refresh`   | Copy a freshly built CLI over the committed one. |
+The executable stays at ignored `target/xrf-cli` or `target/xrf-cli.exe`. The E2E workflow downloads the current
+nightly development asset there; `cli:refresh` copies a local build to the same path. Generated sandboxes, timing files,
+the aggregate timing report, and Jest cache live under `target/e2e/`, which is deleted before every run.
+
+| Command                         | Purpose                                             |
+| ------------------------------- | --------------------------------------------------- |
+| `npm run cli:refresh -- [path]` | Copy a local build to the ignored target path.      |
+| `npm run e2e`                   | Run every test against the target executable.       |
+| `npm run e2e -- -t ogf`         | Run tests matching a name.                          |
+| `npm run e2e:update`            | Record target executable behavior as new snapshots. |

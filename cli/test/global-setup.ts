@@ -1,43 +1,33 @@
 import * as cp from "node:child_process";
 import * as fs from "node:fs";
 
-import { CLI_EXECUTABLE, TIMINGS_REPORT, TIMINGS_ROOT, TOOLS_ROOT } from "./constants";
-import { sha } from "./sandbox";
-import { type Optional } from "./types";
-
-function readToolsRevision(): Optional<string> {
-  const spawned: cp.SpawnSyncReturns<string> = cp.spawnSync(
-    "git",
-    ["-c", "safe.directory=*", "-C", TOOLS_ROOT, "rev-parse", "--short", "HEAD"],
-    { encoding: "utf8", windowsHide: true }
-  );
-
-  return spawned.status === 0 ? spawned.stdout.trim() : undefined;
-}
+import { CLI_EXECUTABLE, E2E_OUTPUT_ROOT } from "./constants";
 
 /**
  * States which binary the run is about to exercise.
  *
  * @remarks
- * The suite deliberately does not build; the executable is committed and refreshed on demand. That
- * makes its identity something to report rather than assume, so a run that is quietly exercising
- * last month's binary is visible instead of silent.
+ * The suite deliberately does not build. The executable describes the source and workflow that
+ * produced it before any scenario starts.
  */
 export default function globalSetup(): void {
+  fs.rmSync(E2E_OUTPUT_ROOT, { recursive: true, force: true });
+  fs.mkdirSync(E2E_OUTPUT_ROOT, { recursive: true });
+
   if (!fs.existsSync(CLI_EXECUTABLE)) {
-    throw new Error(`No executable at '${CLI_EXECUTABLE}'.\nRun 'npm run cli:refresh' to copy one from ${TOOLS_ROOT}.`);
+    throw new Error(`No executable at '${CLI_EXECUTABLE}'.\nRun 'npm run cli:refresh' or use the E2E workflow.`);
   }
 
-  // Cleared here rather than appended to, so the report describes this run only and a test that was
-  // renamed or deleted cannot leave its measurements behind.
-  fs.rmSync(TIMINGS_ROOT, { recursive: true, force: true });
-  fs.rmSync(TIMINGS_REPORT, { force: true });
+  const version: string = cp.execFileSync(CLI_EXECUTABLE, ["--version"], {
+    encoding: "utf8",
+    windowsHide: true,
+  });
 
-  const revision: Optional<string> = readToolsRevision();
-  const mtime: string = fs.statSync(CLI_EXECUTABLE).mtime.toISOString();
+  if (!version.trim()) {
+    throw new Error(`Executable at '${CLI_EXECUTABLE}' returned an empty version.`);
+  }
 
   console.log();
-  console.log(`xrf-cli  sha256 ${sha(CLI_EXECUTABLE).slice(0, 12)}  built ${mtime}`);
-  console.log(`tools    ${revision ? `${revision} (working tree)` : "revision unknown"}`);
+  console.log(version.trim());
   console.log();
 }

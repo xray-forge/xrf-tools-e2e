@@ -30,7 +30,7 @@ describe("gamedata verify full run", () => {
   });
 
   // The full run's report is thousands of lines, too large to read in a diff, so its completeness is
-  // held by one hash over normalized content: when it moves, the report in target/ is what to read.
+  // held by one hash over normalized content: when it moves, the sandbox under target/e2e/ is what to read.
   // The document's shape is pinned separately, below, where it can be read.
   it("should write a findings report", () => {
     expect(box.manifest({ normalized: ["report.json", "scripts.json"] })).toMatchSnapshot();
