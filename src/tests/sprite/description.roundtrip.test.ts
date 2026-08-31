@@ -6,7 +6,7 @@ import { Sandbox, sha, type CliResult } from "#/test/sandbox";
 const DESCRIPTION = gamedata("configs/ui/textures_descr/ui_test_sheet.xml");
 const SHEET = gamedata("textures/ui/ui_test_sheet.dds");
 
-describe("texture description roundtrip", () => {
+describe("description sprite roundtrip", () => {
   const box = new Sandbox(__filename);
 
   let unpack: CliResult;
@@ -16,7 +16,7 @@ describe("texture description roundtrip", () => {
   beforeAll(() => {
     // The description names four 64x64 regions of a 256x64 sheet, so unpacking yields four files
     // under the sheet's own directory.
-    unpack = box.run("texture unpack-texture-description", [
+    unpack = box.run("sprite unpack-description", [
       "--description",
       DESCRIPTION,
       "--base",
@@ -26,7 +26,7 @@ describe("texture description roundtrip", () => {
     ]);
 
     // The description names the sheet under ui/, so packing must create that output subdirectory.
-    pack = box.run("texture pack-texture-description", [
+    pack = box.run("sprite pack-description", [
       "--description",
       DESCRIPTION,
       "--base",
@@ -35,7 +35,7 @@ describe("texture description roundtrip", () => {
       box.at("packed"),
     ]);
 
-    info = box.run("texture info-dds", ["--path", box.at("packed/ui/ui_test_sheet.dds")]);
+    info = box.run("dds info", ["--path", box.at("packed/ui/ui_test_sheet.dds")]);
   });
 
   it("should unpack every described region", () => {

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`ltx verify report should report the coverage a verification reached 1`] = `
+exports[`dds crop reports should report the region a crop produced 1`] = `
 {
   "build": {
     "builtAt": "<build>",
@@ -16,25 +16,22 @@ exports[`ltx verify report should report the coverage a verification reached 1`]
     "version": "<build>",
   },
   "command": [
-    "ltx",
-    "verify",
+    "dds",
+    "crop",
   ],
   "duration": "<duration>",
   "error": null,
   "exitCode": 0,
   "outcome": "success",
   "result": {
-    "checkedFields": 0,
-    "checkedSections": 0,
-    "duration": "<duration>",
-    "errors": [],
-    "invalidSections": 0,
-    "outcome": "completed",
-    "skippedSections": 32,
-    "startupDuration": "<duration>",
-    "totalFiles": 2,
-    "totalSections": 32,
-    "validSections": 0,
+    "destination": "<sandbox>/corner.dds",
+    "height": 64,
+    "regionHeight": 64,
+    "regionWidth": 64,
+    "regionX": 0,
+    "regionY": 0,
+    "source": "<resources>/gamedata/textures/ui/ui_test_sheet.dds",
+    "width": 64,
   },
 }
 `;

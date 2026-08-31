@@ -104,6 +104,7 @@ exports[`translation build should report the build it ran 1`] = `
         "language": "ukr",
       },
     ],
+    "outcome": "completed",
     "sources": 2,
   },
 }
@@ -295,8 +296,8 @@ exports[`translation build should write the expected files 1`] = `
   },
   {
     "path": "report.json",
-    "sha256": "c7553794db62e10c7fd7855ad4ded9666629ff93821d507175c70f3b418f4e05",
-    "size": 1228,
+    "sha256": "88da25323b058f24815aa3cf5de9aa057a0ceb4e85ab8f414136c163b5e4d7c6",
+    "size": 1256,
   },
   {
     "path": "reported/eng/st_items.xml",

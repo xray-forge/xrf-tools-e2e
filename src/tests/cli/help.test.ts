@@ -4,6 +4,7 @@ import { Sandbox, type CliResult } from "#/test/sandbox";
 
 const DOMAINS = [
   "archive",
+  "dds",
   "dialog",
   "docs",
   "externs",
@@ -13,7 +14,7 @@ const DOMAINS = [
   "omf",
   "particle",
   "spawn",
-  "texture",
+  "sprite",
   "thm",
   "translation",
 ];

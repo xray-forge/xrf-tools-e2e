@@ -38,7 +38,7 @@ describe("verifiers meet damaged input", () => {
     );
 
     icons = box.run(
-      "texture verify-equipment-icons",
+      "sprite verify-equipment",
       ["--system-ltx", box.write("broken.ltx", "[unterminated\n$inventory_icon = true\n")],
       fail
     );

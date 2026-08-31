@@ -3,15 +3,15 @@ import { beforeAll, describe, expect, it } from "@jest/globals";
 import { gamedata } from "#/test/constants";
 import { Sandbox, type CliResult } from "#/test/sandbox";
 
-describe("texture info-dds", () => {
+describe("dds info", () => {
   const box = new Sandbox(__filename);
 
   let compressed: CliResult;
   let ui: CliResult;
 
   beforeAll(() => {
-    compressed = box.run("texture info-dds", ["--path", gamedata("textures/prop_lampa_g.dds")]);
-    ui = box.run("texture info-dds", ["--path", gamedata("textures/ui_empty.dds")]);
+    compressed = box.run("dds info", ["--path", gamedata("textures/prop_lampa_g.dds")]);
+    ui = box.run("dds info", ["--path", gamedata("textures/ui_empty.dds")]);
   });
 
   // DXT1 with a mip chain.

@@ -7,6 +7,7 @@ import { Sandbox, type CliResult } from "#/test/sandbox";
  */
 const PAGES: ReadonlyArray<string> = [
   "archive.md",
+  "dds.md",
   "dialog.md",
   "docs.md",
   "externs.md",
@@ -16,7 +17,7 @@ const PAGES: ReadonlyArray<string> = [
   "omf.md",
   "particle.md",
   "spawn.md",
-  "texture.md",
+  "sprite.md",
   "thm.md",
   "translation.md",
 ];

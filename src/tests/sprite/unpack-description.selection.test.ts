@@ -5,7 +5,7 @@ import { Sandbox, type CliResult } from "#/test/sandbox";
 
 const DESCRIPTION = gamedata("configs/ui/textures_descr/ui_test_sheet.xml");
 
-describe("texture unpack-texture-description file selection", () => {
+describe("sprite unpack-description file selection", () => {
   const box = new Sandbox(__filename);
 
   let all: CliResult;
@@ -15,7 +15,7 @@ describe("texture unpack-texture-description file selection", () => {
   beforeAll(() => {
     // Unpacked twice on purpose: selecting the only described file has to produce what unpacking
     // everything produces, and the comparison is the point of this file.
-    all = box.run("texture unpack-texture-description", [
+    all = box.run("sprite unpack-description", [
       "--description",
       DESCRIPTION,
       "--base",
@@ -24,7 +24,7 @@ describe("texture unpack-texture-description file selection", () => {
       box.at("all"),
     ]);
 
-    selected = box.run("texture unpack-texture-description", [
+    selected = box.run("sprite unpack-description", [
       "--description",
       DESCRIPTION,
       "--base",
@@ -39,7 +39,7 @@ describe("texture unpack-texture-description file selection", () => {
     // A name the description does not carry is refused with the names it does, rather than
     // producing an empty run that looks like success.
     unknown = box.run(
-      "texture unpack-texture-description",
+      "sprite unpack-description",
       [
         "--description",
         DESCRIPTION,

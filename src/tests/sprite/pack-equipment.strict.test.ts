@@ -7,7 +7,7 @@ import { Sandbox, type CliResult } from "#/test/sandbox";
 
 const SYSTEM_LTX = gamedata("configs/system.ltx");
 
-describe("texture pack-equipment-icons strict mode", () => {
+describe("sprite pack-equipment strict mode", () => {
   const box = new Sandbox(__filename);
 
   let lenient: CliResult;
@@ -16,7 +16,7 @@ describe("texture pack-equipment-icons strict mode", () => {
   beforeAll(() => {
     // Unpacking is how the icon files come to exist; this file then removes one so both packing
     // modes meet a set with a hole in it.
-    box.run("texture unpack-equipment-icons", [
+    box.run("sprite unpack-equipment", [
       "--system-ltx",
       SYSTEM_LTX,
       "--source",
@@ -30,7 +30,7 @@ describe("texture pack-equipment-icons strict mode", () => {
     // By default the sheet is still produced from what is there; strict refuses instead and names
     // what is missing, which is what a build should gate on rather than shipping a sheet with a
     // hole in it.
-    lenient = box.run("texture pack-equipment-icons", [
+    lenient = box.run("sprite pack-equipment", [
       "--system-ltx",
       SYSTEM_LTX,
       "--source",
@@ -40,7 +40,7 @@ describe("texture pack-equipment-icons strict mode", () => {
     ]);
 
     strict = box.run(
-      "texture pack-equipment-icons",
+      "sprite pack-equipment",
       ["--system-ltx", SYSTEM_LTX, "--source", box.at("icons"), "--output", box.at("strict.dds"), "--strict"],
       { expectExit: 1 }
     );

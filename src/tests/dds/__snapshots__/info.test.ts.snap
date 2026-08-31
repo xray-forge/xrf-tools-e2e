@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`texture info-dds should report a compressed texture 1`] = `
+exports[`dds info should report a compressed texture 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -18,7 +18,7 @@ exports[`texture info-dds should report a compressed texture 1`] = `
 }
 `;
 
-exports[`texture info-dds should report a ui texture 1`] = `
+exports[`dds info should report a ui texture 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -36,4 +36,4 @@ exports[`texture info-dds should report a ui texture 1`] = `
 }
 `;
 
-exports[`texture info-dds should write nothing 1`] = `[]`;
+exports[`dds info should write nothing 1`] = `[]`;

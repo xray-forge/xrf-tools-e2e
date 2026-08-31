@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`texture reports should report the region a crop produced 1`] = `
+exports[`sprite reports should report the verdict on the icon grid 1`] = `
 {
   "build": {
     "builtAt": "<build>",
@@ -16,44 +16,8 @@ exports[`texture reports should report the region a crop produced 1`] = `
     "version": "<build>",
   },
   "command": [
-    "texture",
-    "crop-dds",
-  ],
-  "duration": "<duration>",
-  "error": null,
-  "exitCode": 0,
-  "outcome": "success",
-  "result": {
-    "destination": "<sandbox>/corner.dds",
-    "height": 64,
-    "regionHeight": 64,
-    "regionWidth": 64,
-    "regionX": 0,
-    "regionY": 0,
-    "source": "<resources>/gamedata/textures/ui/ui_test_sheet.dds",
-    "width": 64,
-  },
-}
-`;
-
-exports[`texture reports should report the verdict on the icon grid 1`] = `
-{
-  "build": {
-    "builtAt": "<build>",
-    "commit": "<build>",
-    "isDirty": "<build>",
-    "kind": "<build>",
-    "optimization": "<build>",
-    "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
-    "version": "<build>",
-  },
-  "command": [
-    "texture",
-    "verify-equipment-icons",
+    "sprite",
+    "verify-equipment",
   ],
   "duration": "<duration>",
   "error": null,
@@ -67,7 +31,7 @@ exports[`texture reports should report the verdict on the icon grid 1`] = `
 }
 `;
 
-exports[`texture reports should report what packing the icons produced 1`] = `
+exports[`sprite reports should report what packing the icons produced 1`] = `
 {
   "build": {
     "builtAt": "<build>",
@@ -83,8 +47,8 @@ exports[`texture reports should report what packing the icons produced 1`] = `
     "version": "<build>",
   },
   "command": [
-    "texture",
-    "pack-equipment-icons",
+    "sprite",
+    "pack-equipment",
   ],
   "duration": "<duration>",
   "error": null,
@@ -92,6 +56,7 @@ exports[`texture reports should report what packing the icons produced 1`] = `
   "outcome": "success",
   "result": {
     "duration": "<duration>",
+    "outcome": "completed",
     "packedCount": 4,
     "savedAt": "<sandbox>/repacked.dds",
     "savedHeight": 52,
@@ -101,7 +66,7 @@ exports[`texture reports should report what packing the icons produced 1`] = `
 }
 `;
 
-exports[`texture reports should report what slicing the sheet produced 1`] = `
+exports[`sprite reports should report what slicing the sprite produced 1`] = `
 {
   "build": {
     "builtAt": "<build>",
@@ -117,8 +82,8 @@ exports[`texture reports should report what slicing the sheet produced 1`] = `
     "version": "<build>",
   },
   "command": [
-    "texture",
-    "unpack-equipment-icons",
+    "sprite",
+    "unpack-equipment",
   ],
   "duration": "<duration>",
   "error": null,

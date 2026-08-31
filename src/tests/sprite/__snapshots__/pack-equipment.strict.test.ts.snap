@@ -1,23 +1,23 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`texture pack-equipment-icons strict mode should pack what it has when an icon is missing 1`] = `
+exports[`sprite pack-equipment strict mode should pack what it has when an icon is missing 1`] = `
 {
   "exitCode": 0,
   "stderr": [
     "Skip icon <sandbox>/icons/test_icon_b.dds / 'test_icon_b', reason: IO error: <missing path>",
   ],
   "stdout": [
-    "Starting packing DDS icons file, parallel",
+    "Starting packing the equipment sprite, parallel",
     "System ltx: <resources>/gamedata/configs/system.ltx",
     "Source icons dir: <sandbox>/icons",
     "Output dir: <sandbox>/lenient.dds",
     "Packed 3 icons in BC3RgbaUnorm format",
-    "Saved resulting file with combined icons <sandbox>/lenient.dds",
+    "Saved the packed equipment sprite <sandbox>/lenient.dds",
   ],
 }
 `;
 
-exports[`texture pack-equipment-icons strict mode should refuse a missing icon under strict 1`] = `
+exports[`sprite pack-equipment strict mode should refuse a missing icon under strict 1`] = `
 {
   "exitCode": 1,
   "stderr": [
@@ -25,7 +25,7 @@ exports[`texture pack-equipment-icons strict mode should refuse a missing icon u
     "Error: Texture processing error: Expected an icon to exist for each of the 1 sections declaring inv_grid_* fields, found none for: test_icon_b",
   ],
   "stdout": [
-    "Starting packing DDS icons file, parallel",
+    "Starting packing the equipment sprite, parallel",
     "System ltx: <resources>/gamedata/configs/system.ltx",
     "Source icons dir: <sandbox>/icons",
     "Output dir: <sandbox>/strict.dds",
@@ -33,7 +33,7 @@ exports[`texture pack-equipment-icons strict mode should refuse a missing icon u
 }
 `;
 
-exports[`texture pack-equipment-icons strict mode should write the expected files 1`] = `
+exports[`sprite pack-equipment strict mode should write the expected files 1`] = `
 [
   {
     "path": "icons/test_icon_a.dds",

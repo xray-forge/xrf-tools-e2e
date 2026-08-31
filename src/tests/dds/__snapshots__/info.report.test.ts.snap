@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`texture info-dds report should report a compressed texture's format and mip chain 1`] = `
+exports[`dds info report should report a compressed texture's format and mip chain 1`] = `
 {
   "build": {
     "builtAt": "<build>",
@@ -16,8 +16,8 @@ exports[`texture info-dds report should report a compressed texture's format and
     "version": "<build>",
   },
   "command": [
-    "texture",
-    "info-dds",
+    "dds",
+    "info",
   ],
   "duration": "<duration>",
   "error": null,
@@ -44,7 +44,7 @@ exports[`texture info-dds report should report a compressed texture's format and
 }
 `;
 
-exports[`texture info-dds report should report an uncompressed ui texture 1`] = `
+exports[`dds info report should report an uncompressed ui texture 1`] = `
 {
   "build": {
     "builtAt": "<build>",
@@ -60,8 +60,8 @@ exports[`texture info-dds report should report an uncompressed ui texture 1`] = 
     "version": "<build>",
   },
   "command": [
-    "texture",
-    "info-dds",
+    "dds",
+    "info",
   ],
   "duration": "<duration>",
   "error": null,

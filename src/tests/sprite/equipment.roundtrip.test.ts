@@ -6,7 +6,7 @@ import { Sandbox, type CliResult } from "#/test/sandbox";
 const SYSTEM_LTX = gamedata("configs/system.ltx");
 const SHEET = gamedata("textures/ui/ui_test_sheet.dds");
 
-describe("equipment icons roundtrip", () => {
+describe("equipment sprite roundtrip", () => {
   const box = new Sandbox(__filename);
 
   let unpacked: CliResult;
@@ -14,7 +14,7 @@ describe("equipment icons roundtrip", () => {
   let info: CliResult;
 
   beforeAll(() => {
-    unpacked = box.run("texture unpack-equipment-icons", [
+    unpacked = box.run("sprite unpack-equipment", [
       "--system-ltx",
       SYSTEM_LTX,
       "--source",
@@ -23,7 +23,7 @@ describe("equipment icons roundtrip", () => {
       box.at("icons"),
     ]);
 
-    packed = box.run("texture pack-equipment-icons", [
+    packed = box.run("sprite pack-equipment", [
       "--system-ltx",
       SYSTEM_LTX,
       "--source",
@@ -32,7 +32,7 @@ describe("equipment icons roundtrip", () => {
       box.at("repacked.dds"),
     ]);
 
-    info = box.run("texture info-dds", ["--path", box.at("repacked.dds")]);
+    info = box.run("dds info", ["--path", box.at("repacked.dds")]);
   });
 
   // Only the opted-in sections are cut, so the section carrying $inventory_icon = false produces no

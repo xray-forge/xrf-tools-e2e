@@ -52,7 +52,7 @@ describe("readers reject damaged input", () => {
     particles = box.run("particle info", ["--path", box.copyTruncated(gamedata("particles.xr"), "bad.xr", 500)], fail);
     spawn = box.run("spawn info", ["--path", box.copyTruncated(gamedata("spawns/all.spawn"), "bad.spawn", 400)], fail);
     dds = box.run(
-      "texture info-dds",
+      "dds info",
       ["--path", box.copyTruncated(gamedata("textures/ui/ui_test_sheet.dds"), "bad.dds", 60)],
       fail
     );

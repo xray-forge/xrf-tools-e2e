@@ -76,6 +76,7 @@ exports[`translation parse meets damaged input should report what it read and ch
     "duration": "<duration>",
     "isDryRun": false,
     "language": "eng",
+    "outcome": "completed",
     "report": {
       "checks": [
         {
@@ -131,8 +132,8 @@ exports[`translation parse meets damaged input should write the expected files 1
   },
   {
     "path": "report.json",
-    "sha256": "69571bf25e55d87a43fdfed72b28741612ac643e12f4a8ddc0fece270b9f874d",
-    "size": 1916,
+    "sha256": "97be7a7317b1539cf97da7861aeb96f64b1c3a951c32568f0c004e4fe16e715d",
+    "size": 1944,
   },
   {
     "path": "sources/nested/st_items.json",

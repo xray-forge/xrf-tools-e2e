@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`texture unpack-texture-description file selection should refuse a name the description does not carry 1`] = `
+exports[`sprite unpack-description file selection should refuse a name the description does not carry 1`] = `
 {
   "exitCode": 1,
   "stderr": [
@@ -12,7 +12,7 @@ exports[`texture unpack-texture-description file selection should refuse a name 
 }
 `;
 
-exports[`texture unpack-texture-description file selection should unpack every described file 1`] = `
+exports[`sprite unpack-description file selection should unpack every described file 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -24,7 +24,7 @@ exports[`texture unpack-texture-description file selection should unpack every d
 }
 `;
 
-exports[`texture unpack-texture-description file selection should unpack only the named file, in parallel 1`] = `
+exports[`sprite unpack-description file selection should unpack only the named file, in parallel 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -36,7 +36,7 @@ exports[`texture unpack-texture-description file selection should unpack only th
 }
 `;
 
-exports[`texture unpack-texture-description file selection should write the expected files 1`] = `
+exports[`sprite unpack-description file selection should write the expected files 1`] = `
 [
   {
     "path": "all/ui/ui_test_sheet/ui_test_end.dds",

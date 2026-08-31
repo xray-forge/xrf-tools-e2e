@@ -8,30 +8,13 @@ const SYSTEM_LTX = gamedata("configs/system.ltx");
 const SHEET = gamedata("textures/ui/ui_test_sheet.dds");
 
 /**
- * What the texture commands report to a machine.
+ * What the sprite commands report to a machine.
  */
-describe("texture reports", () => {
+describe("sprite reports", () => {
   const box = new Sandbox(__filename);
 
   beforeAll(() => {
-    box.run("texture crop-dds", [
-      "--source",
-      SHEET,
-      "--output",
-      box.at("corner.dds"),
-      "--x",
-      "0",
-      "--y",
-      "0",
-      "--width",
-      "64",
-      "--height",
-      "64",
-      "--silent",
-      "--report",
-      box.at("crop.json"),
-    ]);
-    box.run("texture unpack-equipment-icons", [
+    box.run("sprite unpack-equipment", [
       "--system-ltx",
       SYSTEM_LTX,
       "--source",
@@ -42,7 +25,7 @@ describe("texture reports", () => {
       "--report",
       box.at("unpack-icons.json"),
     ]);
-    box.run("texture pack-equipment-icons", [
+    box.run("sprite pack-equipment", [
       "--system-ltx",
       SYSTEM_LTX,
       "--source",
@@ -53,7 +36,7 @@ describe("texture reports", () => {
       "--report",
       box.at("pack-icons.json"),
     ]);
-    box.run("texture verify-equipment-icons", [
+    box.run("sprite verify-equipment", [
       "--system-ltx",
       SYSTEM_LTX,
       "--silent",
@@ -62,11 +45,7 @@ describe("texture reports", () => {
     ]);
   });
 
-  it("should report the region a crop produced", () => {
-    expect(box.json("crop.json")).toMatchSnapshot();
-  });
-
-  it("should report what slicing the sheet produced", () => {
+  it("should report what slicing the sprite produced", () => {
     expect(box.json("unpack-icons.json")).toMatchSnapshot();
   });
 
