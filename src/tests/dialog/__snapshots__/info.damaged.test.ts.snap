@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`dialog parse meets damaged input should record an unparseable file and read the rest 1`] = `
+exports[`dialog info meets damaged input should record an unparseable file and read the rest 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -20,7 +20,7 @@ exports[`dialog parse meets damaged input should record an unparseable file and 
 }
 `;
 
-exports[`dialog parse meets damaged input should refuse a path that does not exist 1`] = `
+exports[`dialog info meets damaged input should refuse a path that does not exist 1`] = `
 {
   "exitCode": 1,
   "stderr": [
@@ -38,7 +38,7 @@ exports[`dialog parse meets damaged input should refuse a path that does not exi
 }
 `;
 
-exports[`dialog parse meets damaged input should refuse a tree holding no dialog files 1`] = `
+exports[`dialog info meets damaged input should refuse a tree holding no dialog files 1`] = `
 {
   "exitCode": 1,
   "stderr": [
@@ -56,7 +56,7 @@ exports[`dialog parse meets damaged input should refuse a tree holding no dialog
 }
 `;
 
-exports[`dialog parse meets damaged input should turn the same damage into a check failure under strict 1`] = `
+exports[`dialog info meets damaged input should turn the same damage into a check failure under strict 1`] = `
 {
   "exitCode": 3,
   "stderr": [
@@ -76,7 +76,7 @@ exports[`dialog parse meets damaged input should turn the same damage into a che
 }
 `;
 
-exports[`dialog parse meets damaged input should write nothing beyond the authored inputs 1`] = `
+exports[`dialog info meets damaged input should write nothing beyond the authored inputs 1`] = `
 [
   {
     "path": "portions/info_test.xml",

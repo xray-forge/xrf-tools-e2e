@@ -12,7 +12,7 @@ const READABLE =
  * and stopping at the first unparseable file would never produce one. The inputs are authored here
  * because a damaged file in the committed tree would follow every other command around.
  */
-describe("dialog parse meets damaged input", () => {
+describe("dialog info meets damaged input", () => {
   const box = new Sandbox(__filename);
 
   let swept: CliResult;
@@ -24,18 +24,18 @@ describe("dialog parse meets damaged input", () => {
     box.write("tree/dialogs_broken.xml", BROKEN);
     box.write("tree/dialogs_readable.xml", READABLE);
 
-    swept = box.run("dialog parse", ["--path", box.at("tree"), "--source", "directory", "--verbose"]);
-    strict = box.run("dialog parse", ["--path", box.at("tree"), "--source", "directory", "--strict"], {
+    swept = box.run("dialog info", ["--path", box.at("tree"), "--source", "directory", "--verbose"]);
+    strict = box.run("dialog info", ["--path", box.at("tree"), "--source", "directory", "--strict"], {
       expectExit: 3,
     });
 
     // Dialog files are named by convention, so a gameplay xml that is not one is not swept.
     box.write("portions/info_test.xml", "<game_information_portions/>");
-    unrelated = box.run("dialog parse", ["--path", box.at("portions"), "--source", "directory"], { expectExit: 1 });
+    unrelated = box.run("dialog info", ["--path", box.at("portions"), "--source", "directory"], { expectExit: 1 });
 
     // A mistyped path mounts an empty world rather than failing outright, and a sweep that read
     // nothing must not report success: that is how a check gets wired into CI and checks nothing.
-    missing = box.run("dialog parse", ["--path", box.at("absent"), "--source", "directory"], { expectExit: 1 });
+    missing = box.run("dialog info", ["--path", box.at("absent"), "--source", "directory"], { expectExit: 1 });
   });
 
   // The readable file is still counted, and the damaged one is named with the reason it failed.

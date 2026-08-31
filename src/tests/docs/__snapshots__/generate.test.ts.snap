@@ -34,7 +34,7 @@ exports[`docs generate should list every group and command in the index 1`] = `
   "| ----- | -------- |",
   "| [Archive](archive.md) | [\`archive extract\`](archive.md#extract), [\`archive find\`](archive.md#find), [\`archive info\`](archive.md#info), [\`archive list\`](archive.md#list), [\`archive pack\`](archive.md#pack), [\`archive unpack\`](archive.md#unpack), [\`archive verify\`](archive.md#verify) |",
   "| [DDS](dds.md) | [\`dds crop\`](dds.md#crop), [\`dds info\`](dds.md#info) |",
-  "| [Dialog](dialog.md) | [\`dialog parse\`](dialog.md#parse) |",
+  "| [Dialog](dialog.md) | [\`dialog info\`](dialog.md#info) |",
   "| [Docs](docs.md) | [\`docs generate\`](docs.md#generate) |",
   "| [Externs](externs.md) | [\`externs export\`](externs.md#export) |",
   "| [Gamedata](gamedata.md) | [\`gamedata list\`](gamedata.md#list), [\`gamedata verify\`](gamedata.md#verify) |",
@@ -281,12 +281,12 @@ exports[`docs generate should render dialog.md 1`] = `
   "",
   "<!-- ANCHOR: commands -->",
   "",
-  "## \`xrf-cli dialog parse\`",
+  "## \`xrf-cli dialog info\`",
   "",
   "Command to read dialog xml and report what it holds",
   "",
   "\`\`\`txt",
-  "xrf-cli dialog parse [OPTIONS] --path <path>...",
+  "xrf-cli dialog info [OPTIONS] --path <path>...",
   "\`\`\`",
   "",
   "| Option | Required | Default | Description |",
@@ -1102,8 +1102,8 @@ exports[`docs generate should write the expected pages 1`] = `
 [
   {
     "path": "docs/README.md",
-    "sha256": "b9c5bbbdb2cf6af3af984c8b64d3e983e67b7fe18058b9a01e7971f64c8a097b",
-    "size": 2646,
+    "sha256": "9a6fb5592f62d6901e15b9e180df6267753713650cc6365fedf1a5e994d7dd3b",
+    "size": 2644,
   },
   {
     "path": "docs/archive.md",
@@ -1117,8 +1117,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/dialog.md",
-    "sha256": "90d5dd26b684e4cc93624c68b27069d865978ef68f67efb2127b2b9a7b2d69cb",
-    "size": 1339,
+    "sha256": "87c3273c09a01e31b35fb45d669adb87b4761190f5fa6dd36e9e938a810b4852",
+    "size": 1337,
   },
   {
     "path": "docs/docs.md",

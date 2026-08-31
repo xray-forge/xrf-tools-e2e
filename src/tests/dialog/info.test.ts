@@ -12,7 +12,7 @@ const GAMEDATA = gamedata();
  * form, and one carrying a `go_back` phrase element the schema does not define, so the schema check
  * has exactly one real finding and `--strict` has something to fail on.
  */
-describe("dialog parse", () => {
+describe("dialog info", () => {
   const box = new Sandbox(__filename);
 
   let swept: CliResult;
@@ -23,17 +23,17 @@ describe("dialog parse", () => {
   let elsewhere: CliResult;
 
   beforeAll(() => {
-    swept = box.run("dialog parse", ["--path", GAMEDATA]);
-    prefixed = box.run("dialog parse", ["--path", GAMEDATA, "--prefix", "configs\\gameplay"]);
-    detailed = box.run("dialog parse", ["--path", GAMEDATA, "--verbose"]);
-    report = box.run("dialog parse", ["--path", GAMEDATA, "--report", box.at("report.json")]);
+    swept = box.run("dialog info", ["--path", GAMEDATA]);
+    prefixed = box.run("dialog info", ["--path", GAMEDATA, "--prefix", "configs\\gameplay"]);
+    detailed = box.run("dialog info", ["--path", GAMEDATA, "--verbose"]);
+    report = box.run("dialog info", ["--path", GAMEDATA, "--report", box.at("report.json")]);
 
     // Findings are chatter, so a silent run says nothing at all until the verdict is a failure.
-    silent = box.run("dialog parse", ["--path", GAMEDATA, "--silent"]);
+    silent = box.run("dialog info", ["--path", GAMEDATA, "--silent"]);
 
     // Only the subtree named by the prefix is searched, and no dialog lives under meshes. Nothing
     // swept is not a pass: it answers the operational 1 rather than reporting a clean tree.
-    elsewhere = box.run("dialog parse", ["--path", GAMEDATA, "--prefix", "meshes"], { expectExit: 1 });
+    elsewhere = box.run("dialog info", ["--path", GAMEDATA, "--prefix", "meshes"], { expectExit: 1 });
   });
 
   it("should count what the dialogs hold", () => {
@@ -61,7 +61,7 @@ describe("dialog parse", () => {
   it("should carry its checks under the envelope result", () => {
     const envelope: CommandEnvelope = envelopeAt(box.at("report.json"));
 
-    expect(envelope.command).toEqual(["dialog", "parse"]);
+    expect(envelope.command).toEqual(["dialog", "info"]);
     expect(envelope.outcome).toBe("success");
     expect(JSON.stringify(envelope.result)).toContain("dialog.schema");
   });
@@ -73,12 +73,12 @@ describe("dialog parse", () => {
   // Reporting is the default and answers success even with findings, so a tally can be run
   // casually. Strict is the mode that judges, and it answers the check failure 3.
   it("should fail under strict when a file is off schema", () => {
-    expect(box.run("dialog parse", ["--path", GAMEDATA, "--strict"], { expectExit: 3 })).toMatchSnapshot();
+    expect(box.run("dialog info", ["--path", GAMEDATA, "--strict"], { expectExit: 3 })).toMatchSnapshot();
   });
 
   // A failure still reports its verdict at every verbosity, which is what a script reads.
   it("should report the failure even when silenced", () => {
-    expect(box.run("dialog parse", ["--path", GAMEDATA, "--silent", "--strict"], { expectExit: 3 })).toMatchSnapshot();
+    expect(box.run("dialog info", ["--path", GAMEDATA, "--silent", "--strict"], { expectExit: 3 })).toMatchSnapshot();
   });
 
   it("should refuse a prefix holding no dialogs", () => {

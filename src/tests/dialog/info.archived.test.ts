@@ -3,11 +3,6 @@ import { beforeAll, describe, expect, it } from "@jest/globals";
 import { gamedata } from "#/test/constants";
 import { Sandbox, type CliResult } from "#/test/sandbox";
 
-/**
- * The six-field installation form the engine reads, as `gamedata list` stages it: `$game_data$`
- * becomes a directory mount and an alias whose directory holds `.db` volumes becomes an archive
- * mount.
- */
 const FSGAME = [
   "$arch_dir$              = false| false| $fs_root$| database\\",
   "$game_data$             = true|  true|  $fs_root$| gamedata\\",
@@ -19,7 +14,7 @@ const FSGAME = [
  * would report a full installation as empty. Splitting the two committed files across an archive
  * and a loose tree is what shows the sweep reads through the VFS rather than walking directories.
  */
-describe("dialog parse over an installation", () => {
+describe("dialog info over an installation", () => {
   const box = new Sandbox(__filename);
 
   let installation: CliResult;
@@ -34,8 +29,8 @@ describe("dialog parse over an installation", () => {
     box.copyIn(gamedata("configs/gameplay/dialogs_zaton.xml"), "install/gamedata/configs/gameplay/dialogs_zaton.xml");
     box.write("install/fsgame.ltx", FSGAME);
 
-    installation = box.run("dialog parse", ["--path", box.at("install"), "--verbose"]);
-    loose = box.run("dialog parse", ["--path", gamedata(), "--verbose"]);
+    installation = box.run("dialog info", ["--path", box.at("install"), "--verbose"]);
+    loose = box.run("dialog info", ["--path", gamedata(), "--verbose"]);
   });
 
   it("should sweep an installation across both mounts", () => {

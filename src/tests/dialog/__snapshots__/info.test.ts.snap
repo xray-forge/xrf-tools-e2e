@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`dialog parse should count what the dialogs hold 1`] = `
+exports[`dialog info should count what the dialogs hold 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -19,7 +19,7 @@ exports[`dialog parse should count what the dialogs hold 1`] = `
 }
 `;
 
-exports[`dialog parse should fail under strict when a file is off schema 1`] = `
+exports[`dialog info should fail under strict when a file is off schema 1`] = `
 {
   "exitCode": 3,
   "stderr": [
@@ -39,7 +39,7 @@ exports[`dialog parse should fail under strict when a file is off schema 1`] = `
 }
 `;
 
-exports[`dialog parse should name each finding under verbose output 1`] = `
+exports[`dialog info should name each finding under verbose output 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -59,7 +59,7 @@ exports[`dialog parse should name each finding under verbose output 1`] = `
 }
 `;
 
-exports[`dialog parse should refuse a prefix holding no dialogs 1`] = `
+exports[`dialog info should refuse a prefix holding no dialogs 1`] = `
 {
   "exitCode": 1,
   "stderr": [
@@ -77,7 +77,7 @@ exports[`dialog parse should refuse a prefix holding no dialogs 1`] = `
 }
 `;
 
-exports[`dialog parse should report the census and checks it found 1`] = `
+exports[`dialog info should report the census and checks it found 1`] = `
 {
   "build": {
     "builtAt": "<build>",
@@ -94,7 +94,7 @@ exports[`dialog parse should report the census and checks it found 1`] = `
   },
   "command": [
     "dialog",
-    "parse",
+    "info",
   ],
   "duration": "<duration>",
   "error": null,
@@ -126,7 +126,7 @@ exports[`dialog parse should report the census and checks it found 1`] = `
 }
 `;
 
-exports[`dialog parse should report the failure even when silenced 1`] = `
+exports[`dialog info should report the failure even when silenced 1`] = `
 {
   "exitCode": 3,
   "stderr": [
@@ -136,7 +136,7 @@ exports[`dialog parse should report the failure even when silenced 1`] = `
 }
 `;
 
-exports[`dialog parse should say nothing when silenced 1`] = `
+exports[`dialog info should say nothing when silenced 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -144,7 +144,7 @@ exports[`dialog parse should say nothing when silenced 1`] = `
 }
 `;
 
-exports[`dialog parse should write a structured report 1`] = `
+exports[`dialog info should write a structured report 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -163,12 +163,12 @@ exports[`dialog parse should write a structured report 1`] = `
 }
 `;
 
-exports[`dialog parse should write only the report 1`] = `
+exports[`dialog info should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "416c457090e3f6fb4201c120145f59935f930fc24de88ad5dab9316aac2ee712",
-    "size": 990,
+    "sha256": "6fff27511ac3e421bddf2753f62a7295cc728215ef3052bd156e34ab1477e4e4",
+    "size": 989,
   },
 ]
 `;

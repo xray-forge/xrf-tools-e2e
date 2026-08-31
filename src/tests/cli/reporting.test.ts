@@ -42,7 +42,7 @@ describe("CLI reporting contract", () => {
    * @returns Completed invocation, expected to exit 3.
    */
   function failingCheck(args: Array<string> = []): CliResult {
-    return box.run("dialog parse", ["--path", dialogs, "--source", "directory", "--strict", ...args], {
+    return box.run("dialog info", ["--path", dialogs, "--source", "directory", "--strict", ...args], {
       expectExit: 3,
     });
   }
@@ -110,7 +110,7 @@ describe("CLI reporting contract", () => {
     it("should answer a failing check with an envelope carrying its findings", () => {
       const envelope: CommandEnvelope = envelopeOf(failingCheck(["--json"]));
 
-      expect(envelope.command).toEqual(["dialog", "parse"]);
+      expect(envelope.command).toEqual(["dialog", "info"]);
       expect(envelope.outcome).toBe("checkFailed");
       expect(envelope.exitCode).toBe(3);
       expect(envelope.error).toMatch(/finding/);
@@ -182,7 +182,7 @@ describe("CLI reporting contract", () => {
      */
     it("should answer an undeliverable report with 1 even when the check itself failed", () => {
       const result: CliResult = box.run(
-        "dialog parse",
+        "dialog info",
         ["--path", dialogs, "--source", "directory", "--strict", "--report", box.at("missing/failed.json")],
         { expectExit: 1 }
       );

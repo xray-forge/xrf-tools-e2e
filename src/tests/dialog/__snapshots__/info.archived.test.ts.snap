@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`dialog parse over an installation should sweep an installation across both mounts 1`] = `
+exports[`dialog info over an installation should sweep an installation across both mounts 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -20,7 +20,7 @@ exports[`dialog parse over an installation should sweep an installation across b
 }
 `;
 
-exports[`dialog parse over an installation should write only the archive it packed 1`] = `
+exports[`dialog info over an installation should write only the archive it packed 1`] = `
 [
   {
     "path": "install/database/gamedata.db",
