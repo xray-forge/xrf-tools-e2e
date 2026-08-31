@@ -40,8 +40,8 @@ describe("archive volumes", () => {
     ]);
 
     // The same corpus under a cap one of its files cannot fit, so a volume past the advertised cap is refused rather
-    // than published. The refusal is not atomic: the manifest below records the partial volumes it leaves in the
-    // destination, which is the residue a failed pack is known to leave and is recorded here rather than hidden.
+    // than published. The destination held no set of this name, so every volume the run made was its own and is
+    // removed with it: the manifest below records nothing under `refused/`.
     refused = box.run(
       "archive pack",
       ["--path", gamedata(), "--dest", box.at("refused"), "--name", "gamedata", "--max-size", "1"],

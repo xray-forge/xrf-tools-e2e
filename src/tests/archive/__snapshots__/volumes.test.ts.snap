@@ -325,16 +325,6 @@ exports[`archive volumes should write the expected files 1`] = `
     "size": 144,
   },
   {
-    "path": "refused/gamedata.db0",
-    "sha256": "37ef77722430f96c60891653edb751b75bc09c6c1f1f4fed7dab2ada12e46b13",
-    "size": 36944,
-  },
-  {
-    "path": "refused/gamedata.db1",
-    "sha256": "6b524a292f14b669798c6bdf081fb7e898942bd1f161f87cc33d49ec5cd5e2da",
-    "size": 79,
-  },
-  {
     "path": "split/gamedata.db0",
     "sha256": "e09379c0218650568c3023631b976fa81b524f7ee6adeab56fced782fe409561",
     "size": 1413079,

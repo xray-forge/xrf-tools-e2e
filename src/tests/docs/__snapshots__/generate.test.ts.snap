@@ -177,6 +177,7 @@ exports[`docs generate should render archive.md 1`] = `
   "| \`--max-size <max-size>\` |  |  | Maximum volume size in megabytes |",
   "| \`--xdb\` |  |  | Write volumes with the xdb extension |",
   "| \`--no-skip-list\` |  |  | Keep editor and source leftovers the engine build normally drops |",
+  "| \`-f, --force\` |  |  | Replace volumes of the same set the destination already holds |",
   "| \`-s, --silent\` |  |  | Turn off logging |",
   "| \`-v, --verbose\` |  |  | Turn on verbose logging |",
   "| \`--json\` |  |  | Write the run's JSON report to stdout, moving human output to stderr |",
@@ -1106,8 +1107,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/archive.md",
-    "sha256": "a67a22aa7954ce5992a8401da64dd7b637e02f1f37c6e671135e862fe9e16810",
-    "size": 5819,
+    "sha256": "ac6b288554740cbd90a30f401af622d6a799fbcd2aad63f86c652a54f909deaa",
+    "size": 5907,
   },
   {
     "path": "docs/dds.md",

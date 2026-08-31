@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive pack overwrite should publish a differently named set into the same directory 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Pack source: <resources>/gamedata/textures",
+    "Pack destination: <sandbox>/out",
+    "Wrote <sandbox>/out/tex.db",
+    "Packed 4 file(s) into 1 volume(s) in <duration>",
+    "Summary: 0 compressed, 4 stored, 0 aliased, 0 skipped",
+    "Size: 16.6 KB source, 16.8 KB written",
+  ],
+}
+`;
+
+exports[`archive pack overwrite should publish into an empty destination 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Pack source: <resources>/gamedata/configs",
+    "Pack destination: <sandbox>/out",
+    "Wrote <sandbox>/out/cfg.db",
+    "Packed 14 file(s) into 1 volume(s) in <duration>",
+    "Summary: 14 compressed, 0 stored, 0 aliased, 0 skipped",
+    "Size: 11.5 KB source, 5.36 KB written",
+  ],
+}
+`;
+
+exports[`archive pack overwrite should refuse a destination that already holds the set 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: Destination '<sandbox>/out' already holds 1 volume(s) of 'cfg.db'. Packing replaces them and cannot put them back if it fails partway: move them aside, or pass --force to overwrite them.",
+  ],
+  "stdout": [
+    "Pack source: <resources>/gamedata/textures",
+    "Pack destination: <sandbox>/out",
+  ],
+}
+`;
+
+exports[`archive pack overwrite should replace the set when told to 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Pack source: <resources>/gamedata/textures",
+    "Pack destination: <sandbox>/out",
+    "Wrote <sandbox>/out/cfg.db",
+    "Packed 4 file(s) into 1 volume(s) in <duration>",
+    "Summary: 0 compressed, 4 stored, 0 aliased, 0 skipped",
+    "Size: 16.6 KB source, 16.8 KB written",
+  ],
+}
+`;
+
+exports[`archive pack overwrite should write the expected files 1`] = `
+[
+  {
+    "path": "out/cfg.db",
+    "sha256": "e5651fbbee91e98fb5c10b839ec354661d5ab6a606ca6b5525015bf9372b3c20",
+    "size": 17192,
+  },
+  {
+    "path": "out/tex.db",
+    "sha256": "e5651fbbee91e98fb5c10b839ec354661d5ab6a606ca6b5525015bf9372b3c20",
+    "size": 17192,
+  },
+]
+`;
