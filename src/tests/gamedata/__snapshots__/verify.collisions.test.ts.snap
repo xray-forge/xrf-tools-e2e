@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata verify meets unreachable files should answer non-zero and name both files 1`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "",
+    "Project gamedata is invalid",
+    "- 1 file(s) cannot be reached, another file claims their path",
+    "  - [collisions] textures/k.dds: File '<sandbox>/gamedata/textures/K.dds' cannot be reached, '<sandbox>/gamedata/textures/k.dds' claims this path",
+    "Gamedata project checked in <duration>",
+    "Check failed: 1 finding(s)",
+  ],
+  "stdout": [
+    "Opening gamedata project",
+    "Root: <sandbox>/gamedata, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
+    "Verifying gamedata project: <sandbox>/gamedata",
+    "Verifying modules:",
+    "  -ltx",
+    "",
+    "Verify path collisions:",
+    "File cannot be reached: <sandbox>/gamedata/textures/K.dds, <sandbox>/gamedata/textures/k.dds answers 'textures\\k.dds'",
+    "Verified gamedata path collisions in <duration>, 1 unreachable file(s)",
+    "Verify LTX files",
+    "Verify LTX files formatting",
+    "Checking 1 file(s)",
+    "All 1 files are formatted, checked in <duration>",
+    "Verify LTX schemas",
+    "Verify path: <sandbox>/gamedata/configs",
+    "Checked 1 files, 1 sections in <duration>",
+    "Verified 0.00%, 1 files, 0 sections, 0 fields",
+    "Found 0 error(s)",
+    "Verified gamedata ltx files in <duration>",
+  ],
+}
+`;
+
+exports[`gamedata verify meets unreachable files should carry the collision as its own check 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 1 finding(s)",
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "cache": {
+      "bytes": 0,
+      "entries": 0,
+      "hits": 0,
+      "misses": 0,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "assetPath": "textures/k.dds",
+            "message": "File '<sandbox>/gamedata/textures/K.dds' cannot be reached, '<sandbox>/gamedata/textures/k.dds' claims this path",
+            "ruleId": "collisions.unreachable",
+          },
+        ],
+        "status": "failed",
+        "summary": "1 file(s) cannot be reached, another file claims their path",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "passed",
+        "summary": "1/1 LTX files formatted; 0/1 sections valid",
+        "verificationType": "ltx",
+      },
+    ],
+    "duration": "<duration>",
+    "status": "failed",
+  },
+}
+`;
+
+exports[`gamedata verify meets unreachable files should write only its report 1`] = `
+[
+  {
+    "path": "gamedata/configs/system.ltx",
+    "sha256": "5cac9f20c4fbb6af5a0d925326f9f25b1f740554698bed99cab1fe6166d19b61",
+    "size": 22,
+  },
+  {
+    "path": "gamedata/textures/k.dds",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+  },
+  {
+    "path": "gamedata/textures/K.dds",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+  },
+  {
+    "path": "report.json",
+    "sha256": "1e1aad3e6f92d520a6b3f3585aebd6e8270c1793658a1eaeb39d818789e4cf1d",
+    "size": 1368,
+  },
+]
+`;

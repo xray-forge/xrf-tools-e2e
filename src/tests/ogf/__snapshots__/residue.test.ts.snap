@@ -50,6 +50,13 @@ exports[`ogf residue should identify the chunk residue rule in the verification 
     "checks": [
       {
         "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
         "findings": [
           {
             "assetPath": "meshes/ogf/residue_split_motion_ref.ogf",
@@ -126,6 +133,8 @@ exports[`ogf residue should report chunk residue as a verification finding 1`] =
     "Verifying modules:",
     "  -meshes",
     "",
+    "Verify path collisions:",
+    "Verified gamedata path collisions in <duration>, 0 unreachable file(s)",
     "Verify meshes:",
     "Verified gamedata meshes in <duration>, 1/1 shader libraries valid, 205 blender definitions; 0/1 meshes valid",
   ],
@@ -266,8 +275,8 @@ exports[`ogf residue should write only the staged tree, reports and normalized v
   },
   {
     "path": "verify.json",
-    "sha256": "2de0df881778d3222e09f512a5f5e1b049c6053c47d356f4f59c53db30e9521a",
-    "size": 2178,
+    "sha256": "397b9f500fa103187aee467fdeb5e6a0c89fb3460a62159be66a6496d56662f7",
+    "size": 2366,
   },
 ]
 `;

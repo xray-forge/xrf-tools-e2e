@@ -1061,6 +1061,13 @@ exports[`gamedata verify full run should report one check as a readable document
       {
         "duration": "<duration>",
         "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
         "status": "passed",
         "summary": "0/0 scripts valid",
         "verificationType": "scripts",
@@ -1076,13 +1083,13 @@ exports[`gamedata verify full run should write a findings report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "8bcb1b6b0e0ef04331c1237a46c40ceb719b7da8d8a35c1cdcda1674e6c1f2a1",
-    "size": 239915,
+    "sha256": "dbcdb8bb75f340c8bb95f0ec35a84d0a4b5a71ee7de1227ef708dcb6be0a554e",
+    "size": 240103,
   },
   {
     "path": "scripts.json",
-    "sha256": "6f659585ee8a93ee9e345317c52abb192297ee4b34d973b9cb2236874c7e4f09",
-    "size": 828,
+    "sha256": "18893bf32c4de9342c7719f918cc5f47cf4117e7151282f2ba3f0426f2fe5f5c",
+    "size": 1016,
   },
 ]
 `;
