@@ -52,6 +52,13 @@ exports[`ogf residue should identify the chunk residue rule in the verification 
         "duration": "<duration>",
         "findings": [],
         "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
         "summary": "No unreachable files",
         "verificationType": "collisions",
       },
@@ -90,6 +97,7 @@ exports[`ogf residue should identify the chunk residue rule in the verification 
       },
     ],
     "duration": "<duration>",
+    "skippedMounts": [],
     "status": "failed",
   },
 }
@@ -133,6 +141,8 @@ exports[`ogf residue should report chunk residue as a verification finding 1`] =
     "Verifying modules:",
     "  -meshes",
     "",
+    "Verify declared source coverage:",
+    "Verified declared source coverage in <duration>, 0 unopened source(s)",
     "Verify path collisions:",
     "Verified gamedata path collisions in <duration>, 0 unreachable file(s)",
     "Verify meshes:",
@@ -275,8 +285,8 @@ exports[`ogf residue should write only the staged tree, reports and normalized v
   },
   {
     "path": "verify.json",
-    "sha256": "397b9f500fa103187aee467fdeb5e6a0c89fb3460a62159be66a6496d56662f7",
-    "size": 2366,
+    "sha256": "996ecc9b524a8114e7d72f9a403b9155faf625a51a95c6ba2402c1e326437b5b",
+    "size": 2585,
   },
 ]
 `;

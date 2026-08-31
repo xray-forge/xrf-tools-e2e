@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata verify meets a declared source it cannot open should carry the lost coverage as its own check and as a stable record 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Verify error: Project gamedata verification is incomplete",
+  "exitCode": 1,
+  "outcome": "executionFailed",
+  "result": {
+    "cache": {
+      "bytes": 0,
+      "entries": 0,
+      "hits": 0,
+      "misses": 0,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "assetPath": "db",
+            "message": "Declared source '$arch_dir$' could not be opened, so no result covers it: Read error: archive <sandbox>/install/db/files.db0 declares a 1629515361-byte chunk at 8, beyond its 21-byte end",
+            "ruleId": "coverage.skipped-mount",
+          },
+        ],
+        "status": "incomplete",
+        "summary": "1 declared source(s) could not be opened, so no result covers them",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "passed",
+        "summary": "1/1 LTX files formatted; 0/1 sections valid",
+        "verificationType": "ltx",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [
+      {
+        "origin": "$arch_dir$",
+        "path": "<sandbox>/install/db",
+        "reason": "Read error: archive <sandbox>/install/db/files.db0 declares a 1629515361-byte chunk at 8, beyond its 21-byte end",
+      },
+    ],
+    "status": "incomplete",
+  },
+}
+`;
+
+exports[`gamedata verify meets a declared source it cannot open should warn which declared source went unread and answer non-zero 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Declared source could not be opened: $arch_dir$ at <sandbox>/install/db: Read error: archive <sandbox>/install/db/files.db0 declares a 1629515361-byte chunk at 8, beyond its 21-byte end",
+    "",
+    "Project gamedata verification is incomplete",
+    "- 1 declared source(s) could not be opened, so no result covers them",
+    "  - [coverage] <sandbox>/install/db: Declared source '$arch_dir$' could not be opened, so no result covers it: Read error: archive <sandbox>/install/db/files.db0 declares a 1629515361-byte chunk at 8, beyond its 21-byte end",
+    "Gamedata project checked in <duration>",
+    "Error: Verify error: Project gamedata verification is incomplete",
+  ],
+  "stdout": [
+    "Opening gamedata project",
+    "Root: <sandbox>/install, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
+    "Verifying gamedata project: <sandbox>/install",
+    "Verifying modules:",
+    "  -ltx",
+    "",
+    "Verify declared source coverage:",
+    "Verified declared source coverage in <duration>, 1 unopened source(s)",
+    "Verify path collisions:",
+    "Verified gamedata path collisions in <duration>, 0 unreachable file(s)",
+    "Verify LTX files",
+    "Verify LTX files formatting",
+    "Checking 1 file(s)",
+    "All 1 files are formatted, checked in <duration>",
+    "Verify LTX schemas",
+    "Verify path: <sandbox>/install/configs",
+    "Checked 1 files, 1 sections in <duration>",
+    "Verified 0.00%, 1 files, 0 sections, 0 fields",
+    "Found 0 error(s)",
+    "Verified gamedata ltx files in <duration>",
+  ],
+}
+`;
+
+exports[`gamedata verify meets a declared source it cannot open should write only its reports 1`] = `
+[
+  {
+    "path": "install/db/files.db0",
+    "sha256": "46c16d807e5b386ffed5fc3d8bcbbdcf281590014d787d64e21d9a275c8fc421",
+    "size": 21,
+  },
+  {
+    "path": "install/fsgame.ltx",
+    "sha256": "d31945cf01c50ec21c79d3dfd311a0c9f5e52c01ff63018d4e18785cb1dd3ece",
+    "size": 156,
+  },
+  {
+    "path": "install/gamedata/configs/system.ltx",
+    "sha256": "5cac9f20c4fbb6af5a0d925326f9f25b1f740554698bed99cab1fe6166d19b61",
+    "size": 22,
+  },
+  {
+    "path": "report.json",
+    "sha256": "b20775eb157cb5919b5b60e4002ddcdceb70a78d18c02be84e6960720d0ca21f",
+    "size": 1915,
+  },
+  {
+    "path": "silent.json",
+    "sha256": "b20775eb157cb5919b5b60e4002ddcdceb70a78d18c02be84e6960720d0ca21f",
+    "size": 1915,
+  },
+]
+`;

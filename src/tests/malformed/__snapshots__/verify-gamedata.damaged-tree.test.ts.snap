@@ -40,6 +40,8 @@ exports[`gamedata verify meets a damaged tree should name a damaged asset and fi
     "Verifying modules:",
     "  -meshes",
     "",
+    "Verify declared source coverage:",
+    "Verified declared source coverage in <duration>, 0 unopened source(s)",
     "Verify path collisions:",
     "Verified gamedata path collisions in <duration>, 0 unreachable file(s)",
     "Verify meshes:",

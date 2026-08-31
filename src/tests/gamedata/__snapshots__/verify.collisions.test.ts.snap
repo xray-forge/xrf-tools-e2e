@@ -18,6 +18,8 @@ exports[`gamedata verify meets unreachable files should answer non-zero and name
     "Verifying modules:",
     "  -ltx",
     "",
+    "Verify declared source coverage:",
+    "Verified declared source coverage in <duration>, 0 unopened source(s)",
     "Verify path collisions:",
     "File cannot be reached: <sandbox>/gamedata/textures/K.dds, <sandbox>/gamedata/textures/k.dds answers 'textures\\k.dds'",
     "Verified gamedata path collisions in <duration>, 1 unreachable file(s)",
@@ -69,6 +71,13 @@ exports[`gamedata verify meets unreachable files should carry the collision as i
     "checks": [
       {
         "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
         "findings": [
           {
             "assetPath": "textures/k.dds",
@@ -89,6 +98,7 @@ exports[`gamedata verify meets unreachable files should carry the collision as i
       },
     ],
     "duration": "<duration>",
+    "skippedMounts": [],
     "status": "failed",
   },
 }
@@ -113,8 +123,8 @@ exports[`gamedata verify meets unreachable files should write only its report 1`
   },
   {
     "path": "report.json",
-    "sha256": "1e1aad3e6f92d520a6b3f3585aebd6e8270c1793658a1eaeb39d818789e4cf1d",
-    "size": 1368,
+    "sha256": "8baef10a61513c86a73839105e5fe2d73bc9cd9d3e90315e988b569452c50fb2",
+    "size": 1587,
   },
 ]
 `;
