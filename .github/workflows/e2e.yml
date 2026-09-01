@@ -30,6 +30,7 @@ jobs:
         with:
           repository: xray-forge/xrf-tools-e2e
           ref: ${{ inputs.e2e_ref || github.sha }}
+          lfs: true
 
       - name: Use Node.js 24.x
         uses: actions/setup-node@v6
