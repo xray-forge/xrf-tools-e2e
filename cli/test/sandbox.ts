@@ -149,7 +149,7 @@ export class Sandbox {
    * @remarks
    * For small inputs that belong to one test rather than to the corpus, such as a motion rename map
    * or a deliberately malformed file a command is expected to reject. Anything reused across tests
-   * belongs in `src/resources/` instead.
+   * belongs in `src/xrf-cli/resources/` instead.
    *
    * @param relative - Sandbox-relative destination.
    * @param content - File content.

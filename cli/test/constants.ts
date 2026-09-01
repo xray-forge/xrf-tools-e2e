@@ -10,11 +10,11 @@ export const PROJECT_ROOT: string = path.resolve(__dirname, "../..");
  * suite identically on any machine and no test can pass or fail because of what happens to sit
  * beside the checkout.
  */
-export const RESOURCES_ROOT: string = path.resolve(PROJECT_ROOT, "./src/resources");
+export const RESOURCES_ROOT: string = path.resolve(PROJECT_ROOT, "./src/xrf-cli/resources");
 
 export const GAMEDATA_ROOT: string = path.resolve(RESOURCES_ROOT, "./gamedata");
 
-export const TESTS_ROOT: string = path.resolve(PROJECT_ROOT, "./src/tests");
+export const TESTS_ROOT: string = path.resolve(PROJECT_ROOT, "./src/xrf-cli/tests");
 
 export const TARGET_ROOT: string = path.resolve(PROJECT_ROOT, "./target");
 

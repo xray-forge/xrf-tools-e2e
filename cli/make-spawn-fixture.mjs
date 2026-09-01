@@ -1,5 +1,5 @@
 /**
- * Rebuild `src/resources/gamedata/spawns/all.spawn` from itself plus the shapes the base fixture cannot supply.
+ * Rebuild `src/xrf-cli/resources/gamedata/spawns/all.spawn` from itself plus the shapes the base fixture cannot supply.
  *
  * The committed fixture is reduced from Call of Pripyat, which ships no cars, no traders, and no zone whose script tail
  * is absent. Those exist only in the forks, whose spawns are 96 MB installation files that cannot be committed. So the
@@ -18,7 +18,7 @@ import { fileURLToPath } from "node:url";
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = path.resolve(HERE, "..");
 const EXECUTABLE = path.resolve(PROJECT_ROOT, "target", process.platform === "win32" ? "xrf-cli.exe" : "xrf-cli");
-const FIXTURE = path.resolve(PROJECT_ROOT, "src/resources/gamedata/spawns/all.spawn");
+const FIXTURE = path.resolve(PROJECT_ROOT, "src/xrf-cli/resources/gamedata/spawns/all.spawn");
 const ADDITIONS = path.resolve(HERE, "spawn-fixture");
 
 const CRLF = "\r\n";

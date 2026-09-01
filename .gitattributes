@@ -3,14 +3,14 @@
 
 # Test resources are evidence: git must never touch a byte of them, including line endings inside
 # text-shaped resources such as ltx and xml. Snapshot hashes are taken over these exact bytes.
-src/resources/** -text
+src/*/resources/** -text
 
 # Binary resources are stored in LFS. Text-shaped ones (ltx, xml, ini) stay in plain git so their
 # diffs remain reviewable; they are small and rarely change.
-src/resources/**/*.db* filter=lfs diff=lfs merge=lfs -text
-src/resources/**/*.dds filter=lfs diff=lfs merge=lfs -text
-src/resources/**/*.ogf filter=lfs diff=lfs merge=lfs -text
-src/resources/**/*.omf filter=lfs diff=lfs merge=lfs -text
-src/resources/**/*.spawn filter=lfs diff=lfs merge=lfs -text
-src/resources/**/*.thm filter=lfs diff=lfs merge=lfs -text
-src/resources/**/*.xr filter=lfs diff=lfs merge=lfs -text
+src/*/resources/**/*.db* filter=lfs diff=lfs merge=lfs -text
+src/*/resources/**/*.dds filter=lfs diff=lfs merge=lfs -text
+src/*/resources/**/*.ogf filter=lfs diff=lfs merge=lfs -text
+src/*/resources/**/*.omf filter=lfs diff=lfs merge=lfs -text
+src/*/resources/**/*.spawn filter=lfs diff=lfs merge=lfs -text
+src/*/resources/**/*.thm filter=lfs diff=lfs merge=lfs -text
+src/*/resources/**/*.xr filter=lfs diff=lfs merge=lfs -text

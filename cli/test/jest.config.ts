@@ -13,7 +13,7 @@ module.exports = {
   preset: "ts-jest",
   testEnvironment: "node",
   rootDir: ROOT_DIR,
-  roots: ["<rootDir>/src/tests"],
+  roots: ["<rootDir>/src/xrf-cli/tests"],
   testMatch: ["**/*.test.ts"],
   cacheDirectory: path.resolve(E2E_OUTPUT_ROOT, "jest-cache"),
   moduleNameMapper: {

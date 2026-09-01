@@ -16,9 +16,11 @@ npm run cli:refresh
 npm run e2e
 ```
 
-The executable stays at ignored `target/xrf-cli` or `target/xrf-cli.exe`. The E2E workflow downloads the current
-nightly development asset there; `cli:refresh` copies a local build to the same path. Generated sandboxes, timing files,
-the aggregate timing report, and Jest cache live under `target/e2e/`, which is deleted before every run.
+CLI tests and fixtures live under `src/xrf-cli/tests/` and `src/xrf-cli/resources/`; future application tests and
+fixtures belong under matching `src/xrf-app/` directories. The executable
+stays at ignored `target/xrf-cli` or `target/xrf-cli.exe`. The E2E workflow downloads the current nightly development
+asset there; `cli:refresh` copies a local build to the same path. Generated sandboxes, timing files, the aggregate timing
+report, and Jest cache live under `target/e2e/`, which is deleted before every run.
 
 | Command                         | Purpose                                             |
 | ------------------------------- | --------------------------------------------------- |

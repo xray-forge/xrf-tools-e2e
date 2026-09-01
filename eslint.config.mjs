@@ -8,7 +8,7 @@ import tsPlugin from "typescript-eslint";
 
 export default [
   {
-    ignores: ["src/resources/**/*", "node_modules/**/*", "target/**/*"],
+    ignores: ["src/*/resources/**/*", "node_modules/**/*", "target/**/*"],
   },
   jsdocPlugin.configs["flat/recommended"],
   jsPlugin.configs.recommended,
