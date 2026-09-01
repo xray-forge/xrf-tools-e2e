@@ -21,12 +21,8 @@ jobs:
         include:
           - name: Linux
             runner: ubuntu-latest
-            asset: xrf-cli-dev
-            executable: xrf-cli
           - name: Windows
             runner: windows-latest
-            asset: xrf-cli-dev.exe
-            executable: xrf-cli.exe
     runs-on: ${{ matrix.runner }}
 
     steps:
@@ -45,18 +41,7 @@ jobs:
         run: npm ci
 
       - name: Download nightly CLI
-        shell: bash
-        env:
-          ASSET: ${{ matrix.asset }}
-          EXECUTABLE: ${{ matrix.executable }}
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          mkdir -p target
-          gh release download nightly --repo xray-forge/xrf-tools --pattern "$ASSET" --dir target --clobber
-          mv "target/$ASSET" "target/$EXECUTABLE"
-          if [[ "$RUNNER_OS" != "Windows" ]]; then
-            chmod +x "target/$EXECUTABLE"
-          fi
+        run: npm run cli:download
 
       - name: Run E2E suite
         run: npm run e2e

@@ -9,6 +9,7 @@
   "scripts": {
     "e2e": "jest --ci",
     "e2e:update": "jest --updateSnapshot",
+    "cli:download": "node cli/download.mjs",
     "cli:refresh": "node cli/refresh.mjs",
     "prepare": "husky cli/.husky",
     "format": "prettier --write \"**/*.(js|mjs|ts|md|json)\" && eslint . --fix",
