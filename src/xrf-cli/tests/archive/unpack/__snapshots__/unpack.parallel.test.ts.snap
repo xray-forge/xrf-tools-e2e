@@ -8,7 +8,7 @@ exports[`archive unpack parallelism should unpack on a single thread 1`] = `
     "Unpack source: <sandbox>/packed/cfg.db",
     "Unpack destination: <sandbox>/serial",
     "Summary: 1 archive(s), 21 file(s), 4.88 KB compressed, 11.5 KB real",
-    "Unpacking files, parallel 1",
+    "Unpacking files, parallel <parallelism>",
     "Unpacked archive in <duration> (preparation <duration>, unpack <duration>)",
   ],
 }

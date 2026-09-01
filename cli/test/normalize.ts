@@ -8,6 +8,12 @@ const ANSI_PATTERN = /\u001b\[[0-9;]*m/g;
  */
 const DURATION_PATTERN = /\b\d+(\.\d+)?\s?(ms|milliseconds|seconds|secs|sec|minutes|mins|min|hours|s|m|h)\b/gi;
 
+/**
+ * Archive unpack defaults to the host's available parallelism.
+ * Todo: Revisit once parallelism is standardized across CLI.
+ */
+const UNPACK_PARALLELISM_PATTERN = /\b(Unpacking files, parallel )\d+\b/g;
+
 const TIMESTAMP_PATTERN = /\b\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}:\d{2}(\.\d+)?Z?\b/g;
 
 /**
@@ -91,10 +97,10 @@ function replaceRoot(value: string, root: string, token: string): string {
  * Makes captured text comparable across machines, platforms and runs.
  *
  * @remarks
- * Absolute paths, timings, and colour codes differ between two correct runs of the same binary;
- * separator style, the executable's file name and the wording of an OS error differ between two
- * correct platforms. Both classes are normalized away, so one recording is the golden everywhere.
- * Anything else that differs is a real change and must reach the diff.
+ * Absolute paths, timings, archive unpack parallelism, and colour codes differ between two correct
+ * runs of the same binary; separator style, the executable's file name and the wording of an OS
+ * error differ between two correct platforms. Those differences are normalized away, so one recording
+ * is the golden everywhere. Anything else that differs is a real change and must reach the diff.
  *
  * @param text - Raw output or file content.
  * @param sandboxRoot - Sandbox whose path becomes the `<sandbox>` token.
@@ -117,6 +123,7 @@ export function normalizeText(text: string, sandboxRoot: string): Array<string> 
   normalized = normalized.replace(EXECUTABLE_PATTERN, CLI_EXECUTABLE_STEM);
   normalized = normalized.replace(TIMESTAMP_PATTERN, "<timestamp>");
   normalized = normalized.replace(MISSING_PATH_PATTERN, "<missing path>");
+  normalized = normalized.replace(UNPACK_PARALLELISM_PATTERN, "$1<parallelism>");
   normalized = normalized.replace(JSON_DURATION_PATTERN, '"$1": "<duration>"');
   normalized = normalized.replace(JSON_BUILD_BLOCK_PATTERN, (block) =>
     block.replace(JSON_BUILD_MEMBER_PATTERN, '"$1": "<build>"')

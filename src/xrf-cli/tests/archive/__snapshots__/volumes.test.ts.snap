@@ -37,7 +37,7 @@ exports[`archive volumes should unpack a single volume on its own 1`] = `
     "Unpack source: <sandbox>/split/gamedata.db0",
     "Unpack destination: <sandbox>/from-first",
     "Summary: 1 archive(s), 38 file(s), 1.35 MB compressed, 1.35 MB real",
-    "Unpacking files, parallel 32",
+    "Unpacking files, parallel <parallelism>",
     "Unpacked archive in <duration> (preparation <duration>, unpack <duration>)",
   ],
 }
@@ -51,7 +51,7 @@ exports[`archive volumes should unpack a whole volume set 1`] = `
     "Unpack source: <sandbox>/split",
     "Unpack destination: <sandbox>/from-set",
     "Summary: 2 archive(s), 43 file(s), 2.37 MB compressed, 2.37 MB real",
-    "Unpacking files, parallel 32",
+    "Unpacking files, parallel <parallelism>",
     "Unpacked archive in <duration> (preparation <duration>, unpack <duration>)",
   ],
 }

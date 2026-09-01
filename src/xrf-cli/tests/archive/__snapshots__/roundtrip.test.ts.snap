@@ -24,7 +24,7 @@ exports[`archive roundtrip should report without writing in dry mode 1`] = `
     "Unpack source: <sandbox>/packed/testdata.db",
     "Unpack destination: <sandbox>/dry",
     "Summary: 1 archive(s), 23 file(s), 4.88 KB compressed, 11.5 KB real",
-    "Unpacking files, parallel 32",
+    "Unpacking files, parallel <parallelism>",
   ],
 }
 `;
@@ -37,7 +37,7 @@ exports[`archive roundtrip should unpack the volume 1`] = `
     "Unpack source: <sandbox>/packed/testdata.db",
     "Unpack destination: <sandbox>/unpacked",
     "Summary: 1 archive(s), 23 file(s), 4.88 KB compressed, 11.5 KB real",
-    "Unpacking files, parallel 32",
+    "Unpacking files, parallel <parallelism>",
     "Unpacked archive in <duration> (preparation <duration>, unpack <duration>)",
   ],
 }
