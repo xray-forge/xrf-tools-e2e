@@ -5,9 +5,9 @@ exports[`translation initialize should leave an already initialized project alon
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Verifying translation <sandbox>/translations",
+    "Initializing translations at <sandbox>/translations",
     "Initializing dir <sandbox>/translations",
-    "Initialized translation files in <duration>",
+    "Initialized 0/2 translation source(s) in <duration>, 0 key(s) added",
   ],
 }
 `;
@@ -17,7 +17,7 @@ exports[`translation initialize should scaffold the missing languages 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Verifying translation <sandbox>/translations",
+    "Initializing translations at <sandbox>/translations",
     "Initializing dir <sandbox>/translations",
     "Initializing missing key: st_medkit_name - fra",
     "Initializing missing key: st_medkit_name - ita",
@@ -42,7 +42,7 @@ exports[`translation initialize should scaffold the missing languages 1`] = `
     "Initializing missing key: st_ui_quit - pol",
     "Initializing missing key: st_ui_quit - rus",
     "Initializing missing key: st_ui_quit - spa",
-    "Initialized translation files in <duration>",
+    "Initialized 2/2 translation source(s) in <duration>, 23 key(s) added",
   ],
 }
 `;

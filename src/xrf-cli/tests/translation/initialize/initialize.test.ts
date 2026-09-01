@@ -1,6 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
 import { resource } from "#/test/constants";
+import { envelopeOf } from "#/test/envelope";
 import { Sandbox, type CliResult } from "#/test/sandbox";
 
 describe("translation initialize", () => {
@@ -8,6 +9,7 @@ describe("translation initialize", () => {
 
   let first: CliResult;
   let second: CliResult;
+  let piped: CliResult;
   let afterFirst: string;
 
   beforeAll(() => {
@@ -17,6 +19,7 @@ describe("translation initialize", () => {
     first = box.run("translation initialize", ["--path", sources]);
     afterFirst = box.sha("translations/st_items.json");
     second = box.run("translation initialize", ["--path", sources]);
+    piped = box.run("translation initialize", ["--path", sources, "--json"]);
   });
 
   // Every language the project knows about gains a null entry, which is what turns a silent gap
@@ -38,6 +41,22 @@ describe("translation initialize", () => {
   // watched it leave XML sources alone, and XML is no longer a source format.
   it("should scaffold every source it walks", () => {
     expect(box.sha("translations/st_ui.json")).toBeTruthy();
+  });
+
+  // The run reports what it scaffolded rather than only how long it took, which is the one question a caller has.
+  it("should report what it scanned and scaffolded", () => {
+    const result = envelopeOf(piped).result as {
+      filesRead: number;
+      filesInitialized: number;
+      filesSkipped: number;
+      keysAdded: number;
+    };
+
+    // The third run over an already complete project reads both sources and changes neither.
+    expect(result.filesRead).toBe(2);
+    expect(result.filesInitialized).toBe(0);
+    expect(result.keysAdded).toBe(0);
+    expect(result.filesSkipped).toBe(0);
   });
 
   it("should write the expected files", () => {
