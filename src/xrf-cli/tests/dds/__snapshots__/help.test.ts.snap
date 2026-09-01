@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`dds command help should keep each leaf command's help stable 1`] = `
+{
+  "crop": {
+    "exitCode": 0,
+    "stderr": [],
+    "stdout": [
+      "Command to crop a rectangular region out of a dds file into a new dds file",
+      "",
+      "Usage: xrf-cli dds crop [OPTIONS] --source <source> --output <output> --x <x> --y <y> --width <width> --height <height>",
+      "",
+      "Options:",
+      "  -s, --silent                   Turn off logging",
+      "      --source <source>          Path to the dds file to read the region from",
+      "      --output <output>          Path of the dds file to write",
+      "  -v, --verbose                  Turn on verbose logging",
+      "      --json                     Write the run's JSON report to stdout, moving human output to stderr",
+      "      --x <x>                    Left edge of the region, in pixels",
+      "      --report <PATH>            Write the run's JSON report to a file",
+      "      --y <y>                    Top edge of the region, in pixels",
+      "      --width <width>            Width of the region, in pixels",
+      "      --height <height>          Height of the region, in pixels",
+      "      --fit-width <fit-width>    Scale the cropped region to this width, preserving aspect and letterboxing",
+      "      --fit-height <fit-height>  Scale the cropped region to this height, preserving aspect and letterboxing",
+      "  -h, --help                     Print help",
+    ],
+  },
+  "info": {
+    "exitCode": 0,
+    "stderr": [],
+    "stdout": [
+      "Command to print information about provided dds file",
+      "",
+      "Usage: xrf-cli dds info [OPTIONS] --path <path>",
+      "",
+      "Options:",
+      "  -p, --path <path>    Path to dds file",
+      "  -s, --silent         Turn off logging",
+      "  -v, --verbose        Turn on verbose logging",
+      "      --json           Write the run's JSON report to stdout, moving human output to stderr",
+      "      --report <PATH>  Write the run's JSON report to a file",
+      "  -h, --help           Print help",
+    ],
+  },
+}
+`;

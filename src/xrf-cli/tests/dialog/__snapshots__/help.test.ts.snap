@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`dialog command help should keep each leaf command's help stable 1`] = `
+{
+  "info": {
+    "exitCode": 0,
+    "stderr": [],
+    "stdout": [
+      "Command to read dialog xml and report what it holds",
+      "",
+      "Usage: xrf-cli dialog info [OPTIONS] --path <path>...",
+      "",
+      "Options:",
+      "  -p, --path <path>...   Root holding dialog xml. Repeat to layer roots, highest priority first",
+      "  -s, --silent           Turn off logging",
+      "      --source <source>  How to read the path: auto treats it as an installation only when it declares one, directory ignores any declaration, volumes mounts every archive volume beneath it, installation requires one, containing-installation searches parent directories for one [default: containing-installation] [possible values: auto, directory, volumes, installation, containing-installation]",
+      "  -v, --verbose          Turn on verbose logging",
+      "      --json             Write the run's JSON report to stdout, moving human output to stderr",
+      "      --prefix <prefix>  Limit to one logical subtree, such as configs\\gameplay",
+      "      --report <PATH>    Write the run's JSON report to a file",
+      "      --strict           Answer with a check failure when anything was unreadable or off schema",
+      "  -h, --help             Print help",
+    ],
+  },
+}
+`;

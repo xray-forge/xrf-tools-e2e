@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`profile command help should keep each leaf command's help stable 1`] = `
+{
+  "run": {
+    "exitCode": 0,
+    "stderr": [],
+    "stdout": [
+      "Command to measure one invocation across builds, interleaved",
+      "",
+      "Usage: xrf-cli profile run [OPTIONS] --binary <binary> -- <arguments>...",
+      "",
+      "Arguments:",
+      "  <arguments>...  Arguments passed to every binary, after --",
+      "",
+      "Options:",
+      "  -b, --binary <binary>  Binary to measure; repeat to compare builds, baseline first",
+      "  -s, --silent           Turn off logging",
+      "      --rounds <rounds>  Measured rounds per binary [default: 5]",
+      "  -v, --verbose          Turn on verbose logging",
+      "      --json             Write the run's JSON report to stdout, moving human output to stderr",
+      "      --warmup <warmup>  Rounds run and discarded before measuring, so a cold file cache is not measured [default: 1]",
+      "      --report <PATH>    Write the run's JSON report to a file",
+      "  -h, --help             Print help",
+    ],
+  },
+}
+`;

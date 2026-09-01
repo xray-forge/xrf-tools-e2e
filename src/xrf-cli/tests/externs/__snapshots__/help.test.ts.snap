@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`externs command help should keep each leaf command's help stable 1`] = `
+{
+  "export": {
+    "exitCode": 0,
+    "stderr": [],
+    "stdout": [
+      "Export TypeScript extern declarations as JSON, XML, or HTML",
+      "",
+      "Usage: xrf-cli externs export [OPTIONS] <declarations-root>",
+      "",
+      "Arguments:",
+      "  <declarations-root>  Root directory containing TypeScript declaration sources",
+      "",
+      "Options:",
+      "      --format <format>              Output format; required with --output and inferred from --check when omitted [possible values: json, xml, html]",
+      "  -s, --silent                       Turn off logging",
+      "      --output <output>              Artifact to create or replace",
+      "  -v, --verbose                      Turn on verbose logging",
+      "      --check <check>                Existing artifact to verify without writing",
+      "      --json                         Write the run's JSON report to stdout, moving human output to stderr",
+      "      --line-endings <line-endings>  Override generated line endings [possible values: lf, crlf]",
+      "      --report <PATH>                Write the run's JSON report to a file",
+      "  -h, --help                         Print help",
+    ],
+  },
+}
+`;

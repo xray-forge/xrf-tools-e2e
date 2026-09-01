@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata command help should keep each leaf command's help stable 1`] = `
+{
+  "list": {
+    "exitCode": 0,
+    "stderr": [],
+    "stdout": [
+      "List assets resolved by an installation or gamedata tree",
+      "",
+      "Usage: xrf-cli gamedata list [OPTIONS] --path <path>...",
+      "",
+      "Options:",
+      "  -p, --path <path>...      Path to a game installation or a gamedata tree",
+      "  -s, --silent              Turn off logging",
+      "      --source <source>     How to read the path: auto treats it as an installation only when it declares one, directory ignores any declaration, volumes mounts every archive volume beneath it, installation requires one, containing-installation searches parent directories for one [default: containing-installation] [possible values: auto, directory, volumes, installation, containing-installation]",
+      "  -v, --verbose             Turn on verbose logging",
+      "      --json                Write the run's JSON report to stdout, moving human output to stderr",
+      "      --prefix <prefix>     Limit to one logical subtree, such as configs or textures\\wpn",
+      "  -i, --ignore <ignore>...  Logical prefixes the directory mounts omit, such as textures\\wip",
+      "      --report <PATH>       Write the run's JSON report to a file",
+      "      --loose               List only loose files, ignoring archived entries",
+      "      --shadowed            Also report entries hidden by a higher-priority mount",
+      "  -h, --help                Print help",
+    ],
+  },
+  "verify": {
+    "exitCode": 0,
+    "stderr": [],
+    "stdout": [
+      "Command to verify gamedata",
+      "",
+      "Usage: xrf-cli gamedata verify [OPTIONS] <ROOT>",
+      "",
+      "Arguments:",
+      "  <ROOT>  Path to assembled gamedata root",
+      "",
+      "Options:",
+      "  -i, --ignore <ignore>...  Ignored assets in the gamedata root",
+      "  -s, --silent              Turn off logging",
+      "      --checks <checks>...  List of checks to perform",
+      "  -v, --verbose             Turn on verbose logging",
+      "      --json                Write the run's JSON report to stdout, moving human output to stderr",
+      "      --strict              Fully validate expensive asset payloads",
+      "      --report <PATH>       Write the run's JSON report to a file",
+      "      --trace-reads         Account for every asset read, reporting redundancy against unique paths",
+      "  -h, --help                Print help",
+    ],
+  },
+}
+`;

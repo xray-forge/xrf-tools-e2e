@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`thm command help should keep each leaf command's help stable 1`] = `
+{
+  "patch-bump": {
+    "exitCode": 0,
+    "stderr": [],
+    "stdout": [
+      "Command to repoint the bump texture reference of provided thm file",
+      "",
+      "Usage: xrf-cli thm patch-bump [OPTIONS] --path <path>",
+      "",
+      "Options:",
+      "  -p, --path <path>    Path to thm file",
+      "  -s, --silent         Turn off logging",
+      "  -d, --dest <dest>    Path to resulting thm file, defaults to in place rewrite of the source file",
+      "  -v, --verbose        Turn on verbose logging",
+      "      --json           Write the run's JSON report to stdout, moving human output to stderr",
+      "      --to <to>        Bump texture reference to write, engine style without extension, for example 'wpn\\wpn_pm\\wpn_pm_bump'",
+      "      --off            Declare no bump at all, clearing the mode and the name; use for a bump that does not exist and is not going to",
+      "      --report <PATH>  Write the run's JSON report to a file",
+      "      --dry-run        Validate the change and report the result without writing any file",
+      "  -h, --help           Print help",
+    ],
+  },
+}
+`;
