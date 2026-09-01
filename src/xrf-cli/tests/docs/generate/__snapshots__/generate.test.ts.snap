@@ -174,7 +174,8 @@ exports[`docs generate should render archive.md 1`] = `
   "| \`-n, --name <name>\` |  | \`gamedata\` | Base name of the volumes, written as &lt;name&gt;.db0, &lt;name&gt;.db1 and so on |",
   "| \`--ltx <ltx>\` |  |  | Path to an xrCompress configuration LTX describing what to include |",
   "| \`--store\` |  |  | Store every file instead of compressing what the engine expects compressed |",
-  "| \`--max-size <max-size>\` |  |  | Maximum volume size in megabytes |",
+  "| \`--max-size <max-size>\` |  |  | Maximum volume size in megabytes, from 1 to 1900 |",
+  "| \`--oversized-volumes\` |  |  | Let --max-size exceed 1900 MB, which only an engine fork that raised XRP_MAX_SIZE can mount |",
   "| \`--xdb\` |  |  | Write volumes with the xdb extension |",
   "| \`--no-skip-list\` |  |  | Keep editor and source leftovers the engine build normally drops |",
   "| \`-f, --force\` |  |  | Replace volumes of the same set the destination already holds |",
@@ -1107,8 +1108,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/archive.md",
-    "sha256": "ac6b288554740cbd90a30f401af622d6a799fbcd2aad63f86c652a54f909deaa",
-    "size": 5907,
+    "sha256": "32087ef1ffacf62367cfe0de41f0a5f40f49f09fb4a1d2eaf03c30d151d440b7",
+    "size": 6049,
   },
   {
     "path": "docs/dds.md",

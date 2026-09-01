@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive pack volume size should pack past that cap when the flag lifts it 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [
+    "Volumes are capped at 1.95 GB, past the 1900 MB no unmodified engine mounts. These volumes load only in a fork that raised XRP_MAX_SIZE.",
+  ],
+  "stdout": [
+    "Pack source: <resources>/gamedata/configs",
+    "Pack destination: <sandbox>/allowed",
+    "Wrote <sandbox>/allowed/cfg.db",
+    "Packed 14 file(s) into 1 volume(s) in <duration>",
+    "Summary: 14 compressed, 0 stored, 0 aliased, 0 skipped",
+    "Size: 11.5 KB source, 5.36 KB written",
+  ],
+}
+`;
+
+exports[`archive pack volume size should refuse a cap past what the engine mounts 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: Volume size 1.95 GB is past the 1900 MB the engine mounts. Pass --oversized-volumes to publish volumes only a fork that raised XRP_MAX_SIZE can open.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`archive pack volume size should refuse a mistyped cap even with the flag 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: Archive volume size must not exceed 34359738368 bytes, got 41943040000. Nothing lifts this bound; check the number for a stray digit.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`archive pack volume size should reject a size below the unit it is entered in 1`] = `
+{
+  "exitCode": 2,
+  "stderr": [
+    "error: invalid value '0' for '--max-size <max-size>': 0 is not in 1..18446744073709551615",
+    "",
+    "For more information, try '--help'.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`archive pack volume size should write the expected files 1`] = `
+[
+  {
+    "path": "allowed/cfg.db",
+    "sha256": "bd5e46067436b520a9f801d177a7204c8834e7a60185a8aff4af226d32ae038c",
+    "size": 5491,
+  },
+]
+`;
