@@ -20,15 +20,15 @@ exports[`translation initialize should scaffold the missing languages 1`] = `
     "Verifying translation <sandbox>/translations",
     "Initializing dir <sandbox>/translations",
     "Initializing missing key: st_medkit_name - fra",
-    "Initializing missing key: st_medkit_name - ger",
     "Initializing missing key: st_medkit_name - ita",
     "Initializing missing key: st_medkit_name - pol",
+    "Initializing missing key: st_medkit_name - rus",
     "Initializing missing key: st_medkit_name - spa",
     "Initializing missing key: st_medkit_name - ukr",
     "Initializing missing key: st_bread_name - fra",
-    "Initializing missing key: st_bread_name - ger",
     "Initializing missing key: st_bread_name - ita",
     "Initializing missing key: st_bread_name - pol",
+    "Initializing missing key: st_bread_name - rus",
     "Initializing missing key: st_bread_name - spa",
     "Initializing missing key: st_ui_start - fra",
     "Initializing missing key: st_ui_start - ger",
@@ -51,13 +51,13 @@ exports[`translation initialize should write the expected files 1`] = `
 [
   {
     "path": "translations/st_items.json",
-    "sha256": "feea3d894f3d204258ad78b7c6c8426a82ac6657fb143f716fb6b59dd9e5134e",
-    "size": 356,
+    "sha256": "a9a9f29e52967df22b85431220cab73b66b65d9bac6ca5be9676b9a39e68ac3e",
+    "size": 353,
   },
   {
     "path": "translations/st_ui.json",
-    "sha256": "ec5ba3b9d6977473b88c86a17948d1e9617d034bf7095dad08f31959ce964711",
-    "size": 346,
+    "sha256": "1c5fc2e0524fbe446ad570160db71fe1f26c05460597e87f895e6af91f3ab4b5",
+    "size": 347,
   },
 ]
 `;

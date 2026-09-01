@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`translation format refusals should judge line endings only when they are asserted 1`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "Format issues with 2/2 translation source(s) in <duration>",
+    "Check failed: 2 finding(s)",
+  ],
+  "stdout": [
+    "Checking 2 translation source(s)",
+    "Not formatted: <sandbox>/translations/st_items.json",
+    "Not formatted: <sandbox>/translations/st_ui.json",
+  ],
+}
+`;
+
+exports[`translation format refusals should refuse a path that does not exist 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Not found error: Failed to format translations, provided path does not exist: <sandbox>/no-such-directory",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`translation format refusals should refuse a tree holding no sources 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: No translation sources to format at '<sandbox>/nothing'. Check the path.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`translation format refusals should stop on a source it cannot parse 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Parsing error: Failed to parse translation JSON '<sandbox>/broken/st_broken.json': key must be a string at line 1 column 3",
+  ],
+  "stdout": [
+    "Formatting 1 translation source(s)",
+  ],
+}
+`;

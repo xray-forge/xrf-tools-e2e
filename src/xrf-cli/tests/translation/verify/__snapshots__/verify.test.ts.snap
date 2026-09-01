@@ -6,12 +6,12 @@ exports[`translation verify should fail under strict when translations are missi
   "stderr": [
     "Translation key missing: st_medkit_name fra in st_items.json",
     "Translation key missing: st_bread_name fra in st_items.json",
-    "Translation key missing: st_medkit_name ger in st_items.json",
-    "Translation key missing: st_bread_name ger in st_items.json",
     "Translation key missing: st_medkit_name ita in st_items.json",
     "Translation key missing: st_bread_name ita in st_items.json",
     "Translation key missing: st_medkit_name pol in st_items.json",
     "Translation key missing: st_bread_name pol in st_items.json",
+    "Translation key missing: st_medkit_name rus in st_items.json",
+    "Translation key missing: st_bread_name rus in st_items.json",
     "Translation key missing: st_medkit_name spa in st_items.json",
     "Translation key missing: st_bread_name spa in st_items.json",
     "Translation key missing: st_medkit_name ukr in st_items.json",
@@ -56,12 +56,12 @@ exports[`translation verify should report gaps across every language 1`] = `
   "stderr": [
     "Translation key missing: st_medkit_name fra in st_items.json",
     "Translation key missing: st_bread_name fra in st_items.json",
-    "Translation key missing: st_medkit_name ger in st_items.json",
-    "Translation key missing: st_bread_name ger in st_items.json",
     "Translation key missing: st_medkit_name ita in st_items.json",
     "Translation key missing: st_bread_name ita in st_items.json",
     "Translation key missing: st_medkit_name pol in st_items.json",
     "Translation key missing: st_bread_name pol in st_items.json",
+    "Translation key missing: st_medkit_name rus in st_items.json",
+    "Translation key missing: st_bread_name rus in st_items.json",
     "Translation key missing: st_medkit_name spa in st_items.json",
     "Translation key missing: st_bread_name spa in st_items.json",
     "Translation key missing: st_medkit_name ukr in st_items.json",
@@ -122,17 +122,17 @@ exports[`translation verify should report the gaps it found 1`] = `
             "subject": "st_items.json",
           },
           {
-            "message": "Missing translation for key 'st_bread_name' in language 'ger'",
-            "ruleId": "translations.missing",
-            "subject": "st_items.json",
-          },
-          {
             "message": "Missing translation for key 'st_bread_name' in language 'ita'",
             "ruleId": "translations.missing",
             "subject": "st_items.json",
           },
           {
             "message": "Missing translation for key 'st_bread_name' in language 'pol'",
+            "ruleId": "translations.missing",
+            "subject": "st_items.json",
+          },
+          {
+            "message": "Missing translation for key 'st_bread_name' in language 'rus'",
             "ruleId": "translations.missing",
             "subject": "st_items.json",
           },
@@ -147,17 +147,17 @@ exports[`translation verify should report the gaps it found 1`] = `
             "subject": "st_items.json",
           },
           {
-            "message": "Missing translation for key 'st_medkit_name' in language 'ger'",
-            "ruleId": "translations.missing",
-            "subject": "st_items.json",
-          },
-          {
             "message": "Missing translation for key 'st_medkit_name' in language 'ita'",
             "ruleId": "translations.missing",
             "subject": "st_items.json",
           },
           {
             "message": "Missing translation for key 'st_medkit_name' in language 'pol'",
+            "ruleId": "translations.missing",
+            "subject": "st_items.json",
+          },
+          {
+            "message": "Missing translation for key 'st_medkit_name' in language 'rus'",
             "ruleId": "translations.missing",
             "subject": "st_items.json",
           },
@@ -259,7 +259,7 @@ exports[`translation verify should report the gaps it found 1`] = `
         "checked": 2,
         "file": "st_items.json",
         "language": "ger",
-        "missing": 2,
+        "missing": 0,
       },
       {
         "checked": 2,
@@ -277,7 +277,7 @@ exports[`translation verify should report the gaps it found 1`] = `
         "checked": 2,
         "file": "st_items.json",
         "language": "rus",
-        "missing": 0,
+        "missing": 2,
       },
       {
         "checked": 2,
@@ -352,12 +352,12 @@ exports[`translation verify should write a structured report 1`] = `
   "stderr": [
     "Translation key missing: st_medkit_name fra in st_items.json",
     "Translation key missing: st_bread_name fra in st_items.json",
-    "Translation key missing: st_medkit_name ger in st_items.json",
-    "Translation key missing: st_bread_name ger in st_items.json",
     "Translation key missing: st_medkit_name ita in st_items.json",
     "Translation key missing: st_bread_name ita in st_items.json",
     "Translation key missing: st_medkit_name pol in st_items.json",
     "Translation key missing: st_bread_name pol in st_items.json",
+    "Translation key missing: st_medkit_name rus in st_items.json",
+    "Translation key missing: st_bread_name rus in st_items.json",
     "Translation key missing: st_medkit_name spa in st_items.json",
     "Translation key missing: st_bread_name spa in st_items.json",
     "Translation key missing: st_medkit_name ukr in st_items.json",
@@ -387,7 +387,7 @@ exports[`translation verify should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "c66fef335a2e1eb573f4420da93120d9874368345ee59870c81ce78397f60b60",
+    "sha256": "78902fd0410b45ee6b5d6b344ad05587b796c91f9cc99a1c77bd861c3f0f2df5",
     "size": 7353,
   },
 ]

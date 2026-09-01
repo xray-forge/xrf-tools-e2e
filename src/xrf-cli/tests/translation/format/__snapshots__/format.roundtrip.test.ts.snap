@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`translation format roundtrip should accept what it just wrote 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Checking 2 translation source(s)",
+    "All 2 translation source(s) are formatted, checked in <duration>",
+  ],
+}
+`;
+
+exports[`translation format roundtrip should be idempotent 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Formatting 2 translation source(s)",
+    "Formatted 0/2 translation source(s) in <duration>",
+  ],
+}
+`;
+
+exports[`translation format roundtrip should not change what the sources mean 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Verifying translations in <sandbox>/translations (ContainingInstallation), language - eng",
+    "Verifying 2 translation source(s)",
+    "Verified translation files in <duration>, 4 checked, 0 missing",
+  ],
+}
+`;
+
+exports[`translation format roundtrip should reject unformatted sources 1`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "Format issues with 2/2 translation source(s) in <duration>",
+    "Check failed: 2 finding(s)",
+  ],
+  "stdout": [
+    "Checking 2 translation source(s)",
+    "Not formatted: <sandbox>/translations/st_items.json",
+    "Not formatted: <sandbox>/translations/st_ui.json",
+  ],
+}
+`;
+
+exports[`translation format roundtrip should rewrite them 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Formatting 2 translation source(s)",
+    "Formatted: <sandbox>/translations/st_items.json",
+    "Formatted: <sandbox>/translations/st_ui.json",
+    "Formatted 2/2 translation source(s) in <duration>",
+  ],
+}
+`;
+
+exports[`translation format roundtrip should write the formatted bytes 1`] = `
+{
+  "st_bread_name": {
+    "eng": "Bread",
+    "ger": "Brot",
+    "ukr": "Хліб",
+  },
+  "st_medkit_name": {
+    "eng": "Medkit",
+    "ger": "Verbandskasten",
+  },
+}
+`;
+
+exports[`translation format roundtrip should write the formatted bytes 2`] = `
+[
+  {
+    "path": "translations/st_items.json",
+    "sha256": "23502d001fb270172c58ca0c0a442c84bb297a0418d07af284e1da761291259e",
+    "size": 166,
+  },
+  {
+    "path": "translations/st_ui.json",
+    "sha256": "d22d15184078feb051eb577fb870f395f39a46e7aea63fb295f306bbbfbd9460",
+    "size": 143,
+  },
+]
+`;

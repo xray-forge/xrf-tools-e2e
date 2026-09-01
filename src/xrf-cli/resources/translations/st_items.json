@@ -1,4 +1,4 @@
 {
-  "st_medkit_name": { "eng": "Medkit", "rus": "Аптечка" },
-  "st_bread_name": { "eng": "Bread", "rus": "Хлеб", "ukr": "Хліб" }
+  "st_medkit_name": { "eng": "Medkit", "ger": "Verbandskasten" },
+  "st_bread_name": { "eng": "Bread", "ger": "Brot", "ukr": "Хліб" }
 }
