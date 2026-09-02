@@ -16,6 +16,22 @@ exports[`archive pack options should honour an xrCompress configuration 1`] = `
 }
 `;
 
+exports[`archive pack options should honour the same configuration written as a document 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Pack config: <sandbox>/compress.json",
+    "Pack source: <resources>/gamedata/configs",
+    "Pack destination: <sandbox>/configured-json",
+    "Wrote <sandbox>/configured-json/cfg.db",
+    "Packed 7 file(s) into 1 volume(s) in <duration>",
+    "Summary: 7 compressed, 0 stored, 0 aliased, 7 skipped",
+    "Size: 8.33 KB source, 3.83 KB written",
+  ],
+}
+`;
+
 exports[`archive pack options should keep them when the skip list is off 1`] = `
 {
   "exitCode": 0,
@@ -27,6 +43,18 @@ exports[`archive pack options should keep them when the skip list is off 1`] = `
     "Packed 15 file(s) into 1 volume(s) in <duration>",
     "Summary: 14 compressed, 1 stored, 0 aliased, 0 skipped",
     "Size: 11.5 KB source, 5.39 KB written",
+  ],
+}
+`;
+
+exports[`archive pack options should refuse a configuration whose extension names no format 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: Cannot read '<sandbox>/compress.txt' as a packing configuration: '.txt' is not one. Name it '.ltx' for the xrCompress dialect or '.json' for a portable configuration document.",
+  ],
+  "stdout": [
+    "Pack config: <sandbox>/compress.txt",
   ],
 }
 `;
@@ -64,9 +92,24 @@ exports[`archive pack options should store instead of compressing and write an x
 exports[`archive pack options should write the expected files 1`] = `
 [
   {
+    "path": "compress.json",
+    "sha256": "a1bdd9e83146fb056d3ae63fec02e813c780bf8fa4b205a75d0f08c1bac9e8a3",
+    "size": 136,
+  },
+  {
     "path": "compress.ltx",
     "sha256": "42efa649cb57f4f152ac3ca2329b1b07e247d87f5584153ad3e25327d36e6b63",
     "size": 55,
+  },
+  {
+    "path": "compress.txt",
+    "sha256": "548e0f5ef02131247b1b50485ab93db4bef53e143eced53f6b428e4c3265ce8d",
+    "size": 31,
+  },
+  {
+    "path": "configured-json/cfg.db",
+    "sha256": "c54c4162a2c7a29efaaf21a56214dc4819e06b2d5a8996aebd889ebf2a86a76b",
+    "size": 3921,
   },
   {
     "path": "configured/cfg.db",
