@@ -146,8 +146,8 @@ exports[`archive volumes should write the expected files 1`] = `
   },
   {
     "path": "from-first/gamedata/meshes/ogf/residue_split_motion_ref.ogf",
-    "sha256": "433033159f338d374cd6f3db373f26327432ef6b4db8accac92fb6bbab0b5fb0",
-    "size": 210,
+    "sha256": "1d695f872cdfab5f4881db5ab3173f938854044fb6e423bcc9a9464ea3130bd8",
+    "size": 244,
   },
   {
     "path": "from-first/gamedata/meshes/ogf/wpn_pm_lod.ogf",
@@ -266,8 +266,8 @@ exports[`archive volumes should write the expected files 1`] = `
   },
   {
     "path": "from-set/gamedata/meshes/ogf/residue_split_motion_ref.ogf",
-    "sha256": "433033159f338d374cd6f3db373f26327432ef6b4db8accac92fb6bbab0b5fb0",
-    "size": 210,
+    "sha256": "1d695f872cdfab5f4881db5ab3173f938854044fb6e423bcc9a9464ea3130bd8",
+    "size": 244,
   },
   {
     "path": "from-set/gamedata/meshes/ogf/wpn_pm_lod.ogf",
@@ -326,8 +326,8 @@ exports[`archive volumes should write the expected files 1`] = `
   },
   {
     "path": "split/gamedata.db0",
-    "sha256": "16ee29d11023684f107d047d8f85258acfde5dd51de94396b4bac26db1fc5cc0",
-    "size": 1413099,
+    "sha256": "86ed8ecc7ad2c72bb685ead804df1cd7f691a3ae6afa56b7afb52c27e14cfcda",
+    "size": 1413132,
   },
   {
     "path": "split/gamedata.db1",

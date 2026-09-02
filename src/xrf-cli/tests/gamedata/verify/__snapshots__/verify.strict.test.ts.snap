@@ -26,6 +26,7 @@ exports[`gamedata verify strict mode should reach the same conclusion under stri
     "  - [meshes] meshes/ogf/dev_bolt_hud.ogf: Mesh references missing texture 'wpn\\wpn_bolt'",
     "  - [meshes] meshes/ogf/notes_paper_1.ogf: Mesh references missing texture 'item\\item_notes'",
     "  - [meshes] meshes/ogf/part_none.ogf: Mesh references missing texture 'glow\\glow_ghost'",
+    "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh carries 34 bytes the engine never reads, an uncounted motion reference 'actors\\stalker_scenario_animation' split across the declared bounds of the motion refs chunk",
     "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh references missing motion 'actors\\stalker_animation'",
     "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh references missing motion 'actors\\stalker_scripts_animation'",
     "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh references missing motion 'actors\\stalker_smart_cover_animation'",
@@ -33,7 +34,7 @@ exports[`gamedata verify strict mode should reach the same conclusion under stri
     "  - [meshes] meshes/ogf/wpn_pm_lod.ogf: Mesh references missing texture 'wpn\\wpn_pm'",
     "  - [meshes] meshes/omf/wpn_mp5_hud_animation.omf: Motion bone count does not match mesh: 2 mesh bones, 7 motion bones",
     "Gamedata project checked in <duration>",
-    "Check failed: 10 finding(s)",
+    "Check failed: 11 finding(s)",
   ],
   "stdout": [
     "Workers: <workers> (auto)",

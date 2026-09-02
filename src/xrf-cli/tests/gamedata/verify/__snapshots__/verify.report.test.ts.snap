@@ -48,6 +48,7 @@ exports[`gamedata verify full run should answer non-zero and report only the fai
     "  - [meshes] meshes/ogf/dev_bolt_hud.ogf: Mesh references missing texture 'wpn\\wpn_bolt'",
     "  - [meshes] meshes/ogf/notes_paper_1.ogf: Mesh references missing texture 'item\\item_notes'",
     "  - [meshes] meshes/ogf/part_none.ogf: Mesh references missing texture 'glow\\glow_ghost'",
+    "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh carries 34 bytes the engine never reads, an uncounted motion reference 'actors\\stalker_scenario_animation' split across the declared bounds of the motion refs chunk",
     "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh references missing motion 'actors\\stalker_animation'",
     "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh references missing motion 'actors\\stalker_scripts_animation'",
     "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh references missing motion 'actors\\stalker_smart_cover_animation'",
@@ -1021,7 +1022,7 @@ exports[`gamedata verify full run should answer non-zero and report only the fai
     "  - [shaders] shaders/r3: DirectX 11 renderer shader root is missing",
     "  - [weathers] No weather files found",
     "Gamedata project checked in <duration>",
-    "Check failed: 993 finding(s)",
+    "Check failed: 994 finding(s)",
   ],
   "stdout": [],
 }
@@ -1096,8 +1097,8 @@ exports[`gamedata verify full run should write a findings report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "a074c7f06e4f4591f8406d115551dc4c929f839f022e0f8e59be247db644768b",
-    "size": 240294,
+    "sha256": "4c393139a0563a32064fd3ecbcc47ab2901829872574fed864804f87caee7806",
+    "size": 240629,
   },
   {
     "path": "scripts.json",

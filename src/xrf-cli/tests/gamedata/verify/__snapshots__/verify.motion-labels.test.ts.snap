@@ -27,6 +27,7 @@ exports[`gamedata verify meets diverging motion labels should report the divergi
     "  - [meshes] meshes/ogf/dev_bolt_hud.ogf: Mesh references missing texture 'wpn\\wpn_bolt'",
     "  - [meshes] meshes/ogf/notes_paper_1.ogf: Mesh references missing texture 'item\\item_notes'",
     "  - [meshes] meshes/ogf/part_none.ogf: Mesh references missing texture 'glow\\glow_ghost'",
+    "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh carries 34 bytes the engine never reads, an uncounted motion reference 'actors\\stalker_scenario_animation' split across the declared bounds of the motion refs chunk",
     "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh references missing motion 'actors\\stalker_animation'",
     "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh references missing motion 'actors\\stalker_scripts_animation'",
     "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh references missing motion 'actors\\stalker_smart_cover_animation'",
@@ -34,7 +35,7 @@ exports[`gamedata verify meets diverging motion labels should report the divergi
     "  - [meshes] meshes/ogf/wpn_pm_lod.ogf: Mesh references missing texture 'wpn\\wpn_pm'",
     "  - [meshes] meshes/omf/wpn_mp5_hud_animation.omf: Motion bone count does not match mesh: 2 mesh bones, 7 motion bones",
     "Gamedata project checked in <duration>",
-    "Check failed: 11 finding(s)",
+    "Check failed: 12 finding(s)",
   ],
   "stdout": [
     "Workers: <workers> (auto)",
@@ -148,8 +149,8 @@ exports[`gamedata verify meets diverging motion labels should write nothing of i
   },
   {
     "path": "gamedata/meshes/ogf/residue_split_motion_ref.ogf",
-    "sha256": "433033159f338d374cd6f3db373f26327432ef6b4db8accac92fb6bbab0b5fb0",
-    "size": 210,
+    "sha256": "1d695f872cdfab5f4881db5ab3173f938854044fb6e423bcc9a9464ea3130bd8",
+    "size": 244,
   },
   {
     "path": "gamedata/meshes/ogf/wpn_pm_lod.ogf",
