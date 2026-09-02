@@ -33,7 +33,6 @@ describe("sprite unpack-description file selection", () => {
       box.at("selected"),
       "--file",
       "ui_test_sheet",
-      "--parallel",
     ]);
 
     // A name the description does not carry is refused with the names it does, rather than
@@ -58,7 +57,7 @@ describe("sprite unpack-description file selection", () => {
     expect(all).toMatchSnapshot();
   });
 
-  it("should unpack only the named file, in parallel", () => {
+  it("should unpack only the named file", () => {
     expect(selected).toMatchSnapshot();
   });
 

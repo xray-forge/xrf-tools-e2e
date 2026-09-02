@@ -21,6 +21,10 @@ exports[`dds info report should report a compressed texture's format and mip cha
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {
@@ -65,6 +69,10 @@ exports[`dds info report should report an uncompressed ui texture 1`] = `
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {

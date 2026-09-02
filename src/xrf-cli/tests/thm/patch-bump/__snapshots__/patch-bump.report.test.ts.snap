@@ -21,6 +21,10 @@ exports[`thm patch-bump report should report a dry run as one that wrote nothing
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {
@@ -54,6 +58,10 @@ exports[`thm patch-bump report should report clearing a bump 1`] = `
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {
@@ -87,6 +95,10 @@ exports[`thm patch-bump report should report the bump it replaced 1`] = `
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {

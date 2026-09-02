@@ -53,8 +53,8 @@ exports[`ogf patch-motion-refs should report a dry run without writing 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Patch ogf motion refs <resources>/gamedata/meshes/ogf/dev_bolt_hud.ogf, ["dynamics\\\\devices\\\\dev_bolt\\\\dev_bolt_hud_animation"] -> ["dynamics\\\\devices\\\\dev_bolt\\\\dev_bolt_replacement"]",
-    "Dry run, nothing written, <sandbox>/never-written.ogf would receive 13839 bytes instead of 13841",
+    "Patch ogf motion refs <resources>/gamedata/meshes/ogf/dev_bolt_hud.ogf, ["dynamics\\\\devices\\\\dev_bolt\\\\dev_bolt_hud_animation", "omf\\\\wpn_mp5_hud_animation"] -> ["dynamics\\\\devices\\\\dev_bolt\\\\dev_bolt_replacement"]",
+    "Dry run, nothing written, <sandbox>/never-written.ogf would receive 13839 bytes instead of 13867",
   ],
 }
 `;
@@ -64,7 +64,7 @@ exports[`ogf patch-motion-refs should rewrite in place when given no destination
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Patch ogf motion refs <sandbox>/in-place.ogf, ["dynamics\\\\devices\\\\dev_bolt\\\\dev_bolt_hud_animation"] -> ["dynamics\\\\devices\\\\dev_bolt\\\\dev_bolt_replacement"]",
+    "Patch ogf motion refs <sandbox>/in-place.ogf, ["dynamics\\\\devices\\\\dev_bolt\\\\dev_bolt_hud_animation", "omf\\\\wpn_mp5_hud_animation"] -> ["dynamics\\\\devices\\\\dev_bolt\\\\dev_bolt_replacement"]",
     "Ogf motion refs written into <sandbox>/in-place.ogf",
   ],
 }
@@ -75,7 +75,7 @@ exports[`ogf patch-motion-refs should store motion refs 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Patch ogf motion refs <resources>/gamedata/meshes/ogf/dev_bolt_hud.ogf, ["dynamics\\\\devices\\\\dev_bolt\\\\dev_bolt_hud_animation"] -> ["dynamics\\\\devices\\\\dev_bolt\\\\dev_bolt_replacement"]",
+    "Patch ogf motion refs <resources>/gamedata/meshes/ogf/dev_bolt_hud.ogf, ["dynamics\\\\devices\\\\dev_bolt\\\\dev_bolt_hud_animation", "omf\\\\wpn_mp5_hud_animation"] -> ["dynamics\\\\devices\\\\dev_bolt\\\\dev_bolt_replacement"]",
     "Ogf motion refs written into <sandbox>/repointed.ogf",
   ],
 }
@@ -86,7 +86,7 @@ exports[`ogf patch-motion-refs should store several refs at once 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Patch ogf motion refs <resources>/gamedata/meshes/ogf/dev_bolt_hud.ogf, ["dynamics\\\\devices\\\\dev_bolt\\\\dev_bolt_hud_animation"] -> ["dynamics\\\\devices\\\\dev_bolt\\\\first", "dynamics\\\\devices\\\\dev_bolt\\\\second"]",
+    "Patch ogf motion refs <resources>/gamedata/meshes/ogf/dev_bolt_hud.ogf, ["dynamics\\\\devices\\\\dev_bolt\\\\dev_bolt_hud_animation", "omf\\\\wpn_mp5_hud_animation"] -> ["dynamics\\\\devices\\\\dev_bolt\\\\first", "dynamics\\\\devices\\\\dev_bolt\\\\second"]",
     "Ogf motion refs written into <sandbox>/several.ogf",
   ],
 }

@@ -21,6 +21,10 @@ exports[`omf motion reports should report a duplicated motion 1`] = `
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {
@@ -55,6 +59,10 @@ exports[`omf motion reports should report a filter dry run as one that wrote not
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {
@@ -90,6 +98,10 @@ exports[`omf motion reports should report a repack 1`] = `
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {
@@ -122,6 +134,10 @@ exports[`omf motion reports should report renamed motions 1`] = `
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {
@@ -159,6 +175,10 @@ exports[`omf motion reports should report which motions a filter kept 1`] = `
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {

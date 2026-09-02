@@ -21,6 +21,10 @@ exports[`ltx verify report should report the coverage a verification reached 1`]
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {

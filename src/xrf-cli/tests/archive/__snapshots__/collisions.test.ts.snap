@@ -21,6 +21,10 @@ exports[`volume set reachability should report the same collision from the listi
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {
@@ -72,6 +76,10 @@ exports[`volume set reachability should report the unreachable entry beside the 
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {
@@ -121,8 +129,8 @@ exports[`volume set reachability should write the expected files 1`] = `
   },
   {
     "path": "listing.json",
-    "sha256": "3093a74d9791db3c86f2dde3da32add20a8d95c3c1925e852a2b0f449821bfc7",
-    "size": 1057,
+    "sha256": "33a3682edf190f0b0b137432e35ae8b2fdd29dd9e932b1fb29ab578ab6df2691",
+    "size": 1128,
   },
   {
     "path": "patch/Textures/Wpn/WPN_AK74.DDS",
@@ -131,8 +139,8 @@ exports[`volume set reachability should write the expected files 1`] = `
   },
   {
     "path": "verify.json",
-    "sha256": "2399df30260b3eb9295eb2bb5929d767ca0e36b8332d710603ab80124ae0d523",
-    "size": 755,
+    "sha256": "d3d0a9af132c750de0c8f499df22ae937bb97fea355b7aace57f98339c2fd87c",
+    "size": 826,
   },
 ]
 `;

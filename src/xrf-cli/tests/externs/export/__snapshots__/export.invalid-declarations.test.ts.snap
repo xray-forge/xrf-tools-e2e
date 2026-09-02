@@ -53,6 +53,10 @@ exports[`externs export invalid declarations should report what the declarations
   ],
   "duration": "<duration>",
   "error": "Check failed: 1 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 3,
   "outcome": "checkFailed",
   "result": {
@@ -73,8 +77,8 @@ exports[`externs export invalid declarations should write the expected files 1`]
 [
   {
     "path": "duplicate.json",
-    "sha256": "6187caf4b670795804c3b46e39f13bf8755384521e390bc9137c5889f190fc2a",
-    "size": 781,
+    "sha256": "7ee6f649e54dd00539f383071370c6b9da9942fa7994c57be7710e959d4294a7",
+    "size": 852,
   },
   {
     "path": "duplicate/externs.ts",

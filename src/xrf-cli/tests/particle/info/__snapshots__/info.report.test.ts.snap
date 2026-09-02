@@ -21,6 +21,10 @@ exports[`particle info report should report the effect and group counts of a lib
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {

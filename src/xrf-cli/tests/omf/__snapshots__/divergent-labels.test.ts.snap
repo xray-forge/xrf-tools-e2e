@@ -38,6 +38,10 @@ exports[`omf commands meet scrambled motion labels should keep the clean bank fr
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {
@@ -135,7 +139,7 @@ exports[`omf commands meet scrambled motion labels should repack a scrambled ban
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "{"build":{"version": "<build>","kind": "<build>","commit": "<build>","reference": "<build>","isDirty": "<build>","builtAt": "<build>","target": "<build>","rustc": "<build>","profile": "<build>","optimization": "<build>","runId": "<build>"},"command":["omf","repack"],"duration": "<duration>","error":null,"exitCode":0,"outcome":"success","result":{"checked":1,"failed":0,"findings":[],"identical":1,"mismatched":0,"status":"passed"}}",
+    "{"build":{"version": "<build>","kind": "<build>","commit": "<build>","reference": "<build>","isDirty": "<build>","builtAt": "<build>","target": "<build>","rustc": "<build>","profile": "<build>","optimization": "<build>","runId": "<build>"},"command":["omf","repack"],"duration": "<duration>","error":null,"execution":{"workers": "<workers>","origin":"auto"},"exitCode":0,"outcome":"success","result":{"checked":1,"failed":0,"findings":[],"identical":1,"mismatched":0,"status":"passed"}}",
   ],
 }
 `;

@@ -21,6 +21,10 @@ exports[`gamedata list report should report every asset the tree resolves 1`] = 
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {
@@ -206,6 +210,10 @@ exports[`gamedata list report should report only the subtree a prefix names 1`] 
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {

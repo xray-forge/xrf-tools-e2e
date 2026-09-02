@@ -118,7 +118,7 @@ exports[`readers reject damaged input should refuse unaccountable visual residue
 {
   "exitCode": 1,
   "stderr": [
-    "Error: Invalid error: Chunk 0x656b6c61 at position 201 declares 1668505458 bytes, 28 remain before source end 229",
+    "Error: Invalid error: Chunk 0x63616e75 at position 218 declares 1853189987 bytes, 3 remain before source end 221",
   ],
   "stdout": [
     "Read ogf file <sandbox>/unaccountable-residue.ogf",
@@ -170,8 +170,8 @@ exports[`readers reject damaged input should write nothing beyond the damaged in
   },
   {
     "path": "unaccountable-residue.ogf",
-    "sha256": "bb84762a85b8963b78b96e0a1fa34fc8f91f34a27aa3421a491508aa5ecc9662",
-    "size": 229,
+    "sha256": "b3b094f0274879e3f0f2b0b573be5ca8a4f14d3c0905ba62d0529c9ad30976c3",
+    "size": 221,
   },
 ]
 `;

@@ -21,6 +21,10 @@ exports[`omf info report should report every motion, part and bone count of a co
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {

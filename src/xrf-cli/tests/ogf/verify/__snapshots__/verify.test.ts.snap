@@ -21,6 +21,10 @@ exports[`ogf verify should report the census and findings of the sweep 1`] = `
   ],
   "duration": "<duration>",
   "error": "Verify error: Verification of ogf visuals did not complete, status: incomplete",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 1,
   "outcome": "executionFailed",
   "result": {
@@ -164,8 +168,8 @@ exports[`ogf verify should write a report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "1651aa88ca7c3f2881abe096f9a3e28e5f5fba7f0fa5b67b1df8cd29ec27ce9a",
-    "size": 2122,
+    "sha256": "4e021fc50da1e2d3962cc296fdac5b18f0aee2228c3f27b4a8304bb195946f45",
+    "size": 2193,
   },
 ]
 `;

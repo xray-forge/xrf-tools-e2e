@@ -21,6 +21,10 @@ exports[`ogf info report should report a lod visual, which carries no motion ref
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {
@@ -88,6 +92,10 @@ exports[`ogf info report should report a visual's bones, bounds and material 1`]
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {

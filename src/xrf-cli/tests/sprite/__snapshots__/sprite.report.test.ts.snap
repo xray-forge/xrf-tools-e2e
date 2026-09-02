@@ -21,6 +21,10 @@ exports[`sprite reports should report the verdict on the icon grid 1`] = `
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {
@@ -52,6 +56,10 @@ exports[`sprite reports should report what packing the icons produced 1`] = `
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {
@@ -87,6 +95,10 @@ exports[`sprite reports should report what slicing the sprite produced 1`] = `
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {

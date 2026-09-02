@@ -98,6 +98,10 @@ exports[`dialog info should report the census and checks it found 1`] = `
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {
@@ -167,8 +171,8 @@ exports[`dialog info should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "6fff27511ac3e421bddf2753f62a7295cc728215ef3052bd156e34ab1477e4e4",
-    "size": 989,
+    "sha256": "ac461831548ed081a7a305a087f463a72616e2b9470d732398c306a8d8664083",
+    "size": 1060,
   },
 ]
 `;

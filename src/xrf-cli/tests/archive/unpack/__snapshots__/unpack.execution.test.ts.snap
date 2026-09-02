@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`archive unpack parallelism should unpack on a single thread 1`] = `
+exports[`archive unpack execution width should unpack on a single worker 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
   "stdout": [
+    "Workers: <workers> (requested)",
     "Unpack source: <sandbox>/packed/cfg.db",
     "Unpack destination: <sandbox>/serial",
     "Summary: 1 archive(s), 21 file(s), 4.88 KB compressed, 11.5 KB real",
-    "Unpacking files, parallel <parallelism>",
     "Unpacked archive in <duration> (preparation <duration>, unpack <duration>)",
   ],
 }
 `;
 
-exports[`archive unpack parallelism should write the expected files 1`] = `
+exports[`archive unpack execution width should write the expected files 1`] = `
 [
   {
     "path": "packed/cfg.db",

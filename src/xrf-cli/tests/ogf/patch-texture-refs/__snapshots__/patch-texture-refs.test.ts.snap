@@ -16,7 +16,7 @@ exports[`ogf patch-texture-refs should read back the renamed texture reference 1
     "[0] parent:",
     "[1] name: body",
     "[1] parent: wpn_body",
-    "Motion refs: ["dynamics\\\\devices\\\\dev_bolt\\\\dev_bolt_hud_animation"]",
+    "Motion refs: ["dynamics\\\\devices\\\\dev_bolt\\\\dev_bolt_hud_animation", "omf\\\\wpn_mp5_hud_animation"]",
     "OGF children (1):",
     "[0] texture name: wpn\\wpn_bolt_renamed",
     "[0] shader name: models\\model",
@@ -53,7 +53,7 @@ exports[`ogf patch-texture-refs should report a dry run without writing 1`] = `
   "stderr": [],
   "stdout": [
     "Patch ogf texture refs <resources>/gamedata/meshes/ogf/dev_bolt_hud.ogf, 'wpn\\wpn_bolt' -> 'wpn\\wpn_bolt_renamed', existing ["wpn\\\\wpn_bolt"]",
-    "Dry run, nothing written, 1 references would be renamed and <sandbox>/never-renamed.ogf would receive 13849 bytes instead of 13841",
+    "Dry run, nothing written, 1 references would be renamed and <sandbox>/never-renamed.ogf would receive 13875 bytes instead of 13867",
   ],
 }
 `;
@@ -73,13 +73,13 @@ exports[`ogf patch-texture-refs should write the expected files 1`] = `
 [
   {
     "path": "in-place.ogf",
-    "sha256": "a5146eb6c1a2617462bd6f7d43b99348c1bea45f3f2c55cacf2c0cdd829ac482",
-    "size": 13849,
+    "sha256": "7c7a069c7950b9f11eb53815b64de9303a97b78e66f842033e895c69d2a3d64c",
+    "size": 13875,
   },
   {
     "path": "renamed.ogf",
-    "sha256": "a5146eb6c1a2617462bd6f7d43b99348c1bea45f3f2c55cacf2c0cdd829ac482",
-    "size": 13849,
+    "sha256": "7c7a069c7950b9f11eb53815b64de9303a97b78e66f842033e895c69d2a3d64c",
+    "size": 13875,
   },
 ]
 `;

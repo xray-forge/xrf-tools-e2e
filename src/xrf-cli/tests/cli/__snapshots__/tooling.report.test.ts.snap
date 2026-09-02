@@ -21,6 +21,10 @@ exports[`tooling reports should report a check that found no drift 1`] = `
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {
@@ -55,6 +59,10 @@ exports[`tooling reports should report an extern check 1`] = `
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {
@@ -90,6 +98,10 @@ exports[`tooling reports should report an extern export 1`] = `
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {
@@ -125,6 +137,10 @@ exports[`tooling reports should report the pages a generation wrote 1`] = `
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {
@@ -159,6 +175,10 @@ exports[`tooling reports should report what drifted when the check fails 1`] = `
   ],
   "duration": "<duration>",
   "error": "Check failed: 16 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 3,
   "outcome": "checkFailed",
   "result": {

@@ -18,10 +18,24 @@ export type CommandOutcome = "success" | "checkFailed" | "executionFailed";
  * contract. What a command wants to say beyond that lives in `result`, which is that command's own
  * shape and is pinned beside it rather than here.
  */
+/**
+ * How much of the machine a run was bounded to, and whether anybody chose it.
+ *
+ * @remarks
+ * Carried by every run, including the commands that declare no `--jobs`: every command runs inside a
+ * pool whether or not it offers a say in how wide that pool is. `workers` is normalized out of
+ * recordings because it describes the host; `origin` is not, because it describes the command line.
+ */
+export interface ExecutionPlan {
+  workers: number;
+  origin: "auto" | "requested";
+}
+
 export interface CommandEnvelope {
   command: Array<string>;
   duration: number;
   error: Nullable<string>;
+  execution: ExecutionPlan;
   exitCode: number;
   outcome: CommandOutcome;
   result: unknown;

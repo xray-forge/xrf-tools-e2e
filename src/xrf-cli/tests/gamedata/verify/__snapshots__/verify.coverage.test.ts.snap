@@ -21,6 +21,10 @@ exports[`gamedata verify meets a declared source it cannot open should carry the
   ],
   "duration": "<duration>",
   "error": "Verify error: Project gamedata verification is incomplete",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 1,
   "outcome": "executionFailed",
   "result": {
@@ -86,6 +90,7 @@ exports[`gamedata verify meets a declared source it cannot open should warn whic
     "Error: Verify error: Project gamedata verification is incomplete",
   ],
   "stdout": [
+    "Workers: <workers> (auto)",
     "Opening gamedata project",
     "Root: <sandbox>/install, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
     "Verifying gamedata project: <sandbox>/install",
@@ -129,13 +134,13 @@ exports[`gamedata verify meets a declared source it cannot open should write onl
   },
   {
     "path": "report.json",
-    "sha256": "b20775eb157cb5919b5b60e4002ddcdceb70a78d18c02be84e6960720d0ca21f",
-    "size": 1915,
+    "sha256": "c285e1ddd5a60578a6ed9f238fc4859967bfed6dc17aa5295da28cfcaf9b819b",
+    "size": 1986,
   },
   {
     "path": "silent.json",
-    "sha256": "b20775eb157cb5919b5b60e4002ddcdceb70a78d18c02be84e6960720d0ca21f",
-    "size": 1915,
+    "sha256": "c285e1ddd5a60578a6ed9f238fc4859967bfed6dc17aa5295da28cfcaf9b819b",
+    "size": 1986,
   },
 ]
 `;

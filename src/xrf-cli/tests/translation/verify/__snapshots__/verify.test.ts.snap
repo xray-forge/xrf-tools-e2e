@@ -108,6 +108,10 @@ exports[`translation verify should report the gaps it found 1`] = `
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {
@@ -387,8 +391,8 @@ exports[`translation verify should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "78902fd0410b45ee6b5d6b344ad05587b796c91f9cc99a1c77bd861c3f0f2df5",
-    "size": 7353,
+    "sha256": "a6214f8e25d4959085025c08929ccb09d14fd76da916ff46f2812dc0193cfc28",
+    "size": 7424,
   },
 ]
 `;

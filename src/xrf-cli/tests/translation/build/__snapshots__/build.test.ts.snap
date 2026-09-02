@@ -57,6 +57,10 @@ exports[`translation build should report the build it ran 1`] = `
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {
@@ -296,8 +300,8 @@ exports[`translation build should write the expected files 1`] = `
   },
   {
     "path": "report.json",
-    "sha256": "88da25323b058f24815aa3cf5de9aa057a0ceb4e85ab8f414136c163b5e4d7c6",
-    "size": 1256,
+    "sha256": "14c88abac976adf8764ebbeb9611063da3e3e108fd161070adc4c6446c4df251",
+    "size": 1327,
   },
   {
     "path": "reported/eng/st_items.xml",

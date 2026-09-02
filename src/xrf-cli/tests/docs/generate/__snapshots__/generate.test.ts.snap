@@ -196,8 +196,8 @@ exports[`docs generate should render archive.md 1`] = `
   "| ------ | -------- | ------- | ----------- |",
   "| \`-p, --path <path>\` | yes |  | Path to *.db file |",
   "| \`-d, --dest <dest>\` |  | \`unpacked\` | Path to folder for exporting |",
-  "| \`--parallel <parallel>\` |  |  | Count of parallel threads for unpack, defaulting to the host's available parallelism |",
   "| \`--dry\` |  |  | Run in dry mode without actually unpacking to disk |",
+  "| \`-j, --jobs <JOBS>\` |  | \`auto\` | How much of the machine to use: 'auto', a worker count, or a share such as '50%' |",
   "| \`-s, --silent\` |  |  | Turn off logging |",
   "| \`-v, --verbose\` |  |  | Turn on verbose logging |",
   "| \`--json\` |  |  | Write the run's JSON report to stdout, moving human output to stderr |",
@@ -410,6 +410,7 @@ exports[`docs generate should render gamedata.md 1`] = `
   "| \`--checks <checks>...\` |  |  | List of checks to perform. Accepts multiple values separated by \`,\`. |",
   "| \`--strict\` |  |  | Fully validate expensive asset payloads |",
   "| \`--trace-reads\` |  |  | Account for every asset read, reporting redundancy against unique paths |",
+  "| \`-j, --jobs <JOBS>\` |  | \`auto\` | How much of the machine to use: 'auto', a worker count, or a share such as '50%' |",
   "| \`-s, --silent\` |  |  | Turn off logging |",
   "| \`-v, --verbose\` |  |  | Turn on verbose logging |",
   "| \`--json\` |  |  | Write the run's JSON report to stdout, moving human output to stderr |",
@@ -889,7 +890,6 @@ exports[`docs generate should render sprite.md 1`] = `
   "| \`--output <output>\` |  |  | Path to directory where output dds files |",
   "| \`--file <file>...\` |  |  | Name of a described file to pack, repeatable; packs every described file if omitted |",
   "| \`--strict\` |  |  | Turn on strict unpack mode |",
-  "| \`--parallel\` |  |  | Turn on parallel mode for pack operations |",
   "| \`-s, --silent\` |  |  | Turn off logging |",
   "| \`-v, --verbose\` |  |  | Turn on verbose logging |",
   "| \`--json\` |  |  | Write the run's JSON report to stdout, moving human output to stderr |",
@@ -930,7 +930,7 @@ exports[`docs generate should render sprite.md 1`] = `
   "| \`--output <output>\` |  |  | Path to output folder for icons |",
   "| \`--file <file>...\` |  |  | Name of a described file to unpack, repeatable; unpacks every described file if omitted |",
   "| \`--strict\` |  |  | Turn on strict unpack mode |",
-  "| \`--parallel\` |  |  | Turn on parallel unpack mode |",
+  "| \`-j, --jobs <JOBS>\` |  | \`auto\` | How much of the machine to use: 'auto', a worker count, or a share such as '50%' |",
   "| \`-s, --silent\` |  |  | Turn off logging |",
   "| \`-v, --verbose\` |  |  | Turn on verbose logging |",
   "| \`--json\` |  |  | Write the run's JSON report to stdout, moving human output to stderr |",
@@ -1126,8 +1126,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/archive.md",
-    "sha256": "32087ef1ffacf62367cfe0de41f0a5f40f49f09fb4a1d2eaf03c30d151d440b7",
-    "size": 6049,
+    "sha256": "c8896504c139d6cf939a1e6c2cf00739ff653a183305733bf29d5eb77b75d96d",
+    "size": 6047,
   },
   {
     "path": "docs/dds.md",
@@ -1151,8 +1151,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/gamedata.md",
-    "sha256": "13a477dac978ea176a0ec86f44a4d69f7aacd68197838eb3114290d0144d761e",
-    "size": 2390,
+    "sha256": "4f722701fc6ba662e288beaee41109d1651e2f244e94f0a155ff0424081a8189",
+    "size": 2509,
   },
   {
     "path": "docs/ltx.md",
@@ -1186,8 +1186,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/sprite.md",
-    "sha256": "356cf8c8c168908a8ce540b5c03d7729a8e4157cabf3990fd360d096d7ac1562",
-    "size": 4519,
+    "sha256": "78a0c7f0f43e75777f04dce50e8853da40cb983b764c451aba4a7bb407009876",
+    "size": 4517,
   },
   {
     "path": "docs/thm.md",

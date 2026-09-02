@@ -34,10 +34,10 @@ exports[`archive volumes should unpack a single volume on its own 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
+    "Workers: <workers> (auto)",
     "Unpack source: <sandbox>/split/gamedata.db0",
     "Unpack destination: <sandbox>/from-first",
     "Summary: 1 archive(s), 38 file(s), 1.35 MB compressed, 1.35 MB real",
-    "Unpacking files, parallel <parallelism>",
     "Unpacked archive in <duration> (preparation <duration>, unpack <duration>)",
   ],
 }
@@ -48,10 +48,10 @@ exports[`archive volumes should unpack a whole volume set 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
+    "Workers: <workers> (auto)",
     "Unpack source: <sandbox>/split",
     "Unpack destination: <sandbox>/from-set",
     "Summary: 2 archive(s), 43 file(s), 2.37 MB compressed, 2.37 MB real",
-    "Unpacking files, parallel <parallelism>",
     "Unpacked archive in <duration> (preparation <duration>, unpack <duration>)",
   ],
 }
@@ -131,8 +131,8 @@ exports[`archive volumes should write the expected files 1`] = `
   },
   {
     "path": "from-first/gamedata/meshes/ogf/dev_bolt_hud.ogf",
-    "sha256": "5d0f5f542199b99ccef02648b12a189b0bb8d6b17adb4223712c72f2303b50a1",
-    "size": 13841,
+    "sha256": "2c41c8c88a51e20277009d457b479083e7b3719b959d1576d1e2e3208c2cd224",
+    "size": 13867,
   },
   {
     "path": "from-first/gamedata/meshes/ogf/notes_paper_1.ogf",
@@ -146,8 +146,8 @@ exports[`archive volumes should write the expected files 1`] = `
   },
   {
     "path": "from-first/gamedata/meshes/ogf/residue_split_motion_ref.ogf",
-    "sha256": "753cda47355b9db1c1267a93554b09b064e786a5e7e0b59d2522c649dac0d60b",
-    "size": 218,
+    "sha256": "433033159f338d374cd6f3db373f26327432ef6b4db8accac92fb6bbab0b5fb0",
+    "size": 210,
   },
   {
     "path": "from-first/gamedata/meshes/ogf/wpn_pm_lod.ogf",
@@ -251,8 +251,8 @@ exports[`archive volumes should write the expected files 1`] = `
   },
   {
     "path": "from-set/gamedata/meshes/ogf/dev_bolt_hud.ogf",
-    "sha256": "5d0f5f542199b99ccef02648b12a189b0bb8d6b17adb4223712c72f2303b50a1",
-    "size": 13841,
+    "sha256": "2c41c8c88a51e20277009d457b479083e7b3719b959d1576d1e2e3208c2cd224",
+    "size": 13867,
   },
   {
     "path": "from-set/gamedata/meshes/ogf/notes_paper_1.ogf",
@@ -266,8 +266,8 @@ exports[`archive volumes should write the expected files 1`] = `
   },
   {
     "path": "from-set/gamedata/meshes/ogf/residue_split_motion_ref.ogf",
-    "sha256": "753cda47355b9db1c1267a93554b09b064e786a5e7e0b59d2522c649dac0d60b",
-    "size": 218,
+    "sha256": "433033159f338d374cd6f3db373f26327432ef6b4db8accac92fb6bbab0b5fb0",
+    "size": 210,
   },
   {
     "path": "from-set/gamedata/meshes/ogf/wpn_pm_lod.ogf",
@@ -326,8 +326,8 @@ exports[`archive volumes should write the expected files 1`] = `
   },
   {
     "path": "split/gamedata.db0",
-    "sha256": "e09379c0218650568c3023631b976fa81b524f7ee6adeab56fced782fe409561",
-    "size": 1413079,
+    "sha256": "16ee29d11023684f107d047d8f85258acfde5dd51de94396b4bac26db1fc5cc0",
+    "size": 1413099,
   },
   {
     "path": "split/gamedata.db1",

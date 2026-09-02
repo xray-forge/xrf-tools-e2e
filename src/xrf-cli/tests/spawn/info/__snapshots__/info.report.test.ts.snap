@@ -21,6 +21,10 @@ exports[`spawn info report should report the identity and census of a spawn file
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {

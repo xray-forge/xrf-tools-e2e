@@ -9,10 +9,14 @@ const ANSI_PATTERN = /\u001b\[[0-9;]*m/g;
 const DURATION_PATTERN = /\b\d+(\.\d+)?\s?(ms|milliseconds|seconds|secs|sec|minutes|mins|min|hours|s|m|h)\b/gi;
 
 /**
- * Archive unpack defaults to the host's available parallelism.
- * Todo: Revisit once parallelism is standardized across CLI.
+ * The resolved width a command states before it starts, on the commands that let a caller change it.
+ *
+ * @remarks
+ * The number is whatever the host offered, so it differs between two correct runs on two machines. The origin beside
+ * it is left standing: `auto` or `requested` follows from the command line rather than from the host, and it is the
+ * part that says whether a `-j` reached the run at all.
  */
-const UNPACK_PARALLELISM_PATTERN = /\b(Unpacking files, parallel )\d+\b/g;
+const WORKERS_PATTERN = /\b(Workers: )\d+\b/g;
 
 const TIMESTAMP_PATTERN = /\b\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}:\d{2}(\.\d+)?Z?\b/g;
 
@@ -66,6 +70,25 @@ const JSON_BUILD_BLOCK_PATTERN = /"build":\s*{[^{}]*}/g;
 const JSON_BUILD_MEMBER_PATTERN =
   /"(version|kind|commit|reference|isDirty|builtAt|target|rustc|profile|optimization|runId)":\s*(?:"(?:[^"\\]|\\.)*"|true|false|null)/g;
 
+/**
+ * The `execution` block of a report envelope, carried by every run whether or not it declared `--jobs`.
+ *
+ * @remarks
+ * Bounded by refusing nested braces for the same reason the build block is: a member that grows a shape of its own
+ * stops this matching and fails the recordings loudly, rather than scrubbing half a block and looking correct.
+ */
+const JSON_EXECUTION_BLOCK_PATTERN = /"execution":\s*{[^{}]*}/g;
+
+/**
+ * The one member of an `execution` block that describes the host rather than the run.
+ *
+ * @remarks
+ * `workers` is whatever this machine offered, so a recording carrying it would describe one machine. `origin` stays
+ * asserted: it is decided by the command line, and losing it would stop the recordings noticing that a requested
+ * width silently became an automatic one.
+ */
+const JSON_WORKERS_MEMBER_PATTERN = /"(workers)":\s*\d+/g;
+
 const TOKENIZED_PATH_PATTERN = /<(?:resources|sandbox)>[^\s'"]*/g;
 
 function escapeForRegExp(value: string): string {
@@ -97,7 +120,7 @@ function replaceRoot(value: string, root: string, token: string): string {
  * Makes captured text comparable across machines, platforms and runs.
  *
  * @remarks
- * Absolute paths, timings, archive unpack parallelism, and colour codes differ between two correct
+ * Absolute paths, timings, the resolved worker count, and colour codes differ between two correct
  * runs of the same binary; separator style, the executable's file name and the wording of an OS
  * error differ between two correct platforms. Those differences are normalized away, so one recording
  * is the golden everywhere. Anything else that differs is a real change and must reach the diff.
@@ -123,10 +146,13 @@ export function normalizeText(text: string, sandboxRoot: string): Array<string> 
   normalized = normalized.replace(EXECUTABLE_PATTERN, CLI_EXECUTABLE_STEM);
   normalized = normalized.replace(TIMESTAMP_PATTERN, "<timestamp>");
   normalized = normalized.replace(MISSING_PATH_PATTERN, "<missing path>");
-  normalized = normalized.replace(UNPACK_PARALLELISM_PATTERN, "$1<parallelism>");
+  normalized = normalized.replace(WORKERS_PATTERN, "$1<workers>");
   normalized = normalized.replace(JSON_DURATION_PATTERN, '"$1": "<duration>"');
   normalized = normalized.replace(JSON_BUILD_BLOCK_PATTERN, (block) =>
     block.replace(JSON_BUILD_MEMBER_PATTERN, '"$1": "<build>"')
+  );
+  normalized = normalized.replace(JSON_EXECUTION_BLOCK_PATTERN, (block) =>
+    block.replace(JSON_WORKERS_MEMBER_PATTERN, '"$1": "<workers>"')
   );
   normalized = normalized.replace(DURATION_PATTERN, "<duration>");
 

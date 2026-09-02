@@ -6,6 +6,7 @@ exports[`gamedata verify meets diverging motion labels should report the divergi
   "stderr": [
     "Cannot read OGF texture: wpn\\wpn_bolt",
     "Missing bones in OMF file for OGF mesh: wpn_body,body <-> wpn_body,knife",
+    "Not matching bones count in ogf and reference omf: 2 <-> 7 : wpn_body,body <-> wpn_body,body,trigger,zatvor,lock,wpn_silencer,magazin",
     "Mesh is not valid: meshes\\ogf\\dev_bolt_hud.ogf",
     "Cannot read OGF texture: item\\item_notes",
     "Mesh is not valid: meshes\\ogf\\notes_paper_1.ogf",
@@ -26,16 +27,17 @@ exports[`gamedata verify meets diverging motion labels should report the divergi
     "  - [meshes] meshes/ogf/dev_bolt_hud.ogf: Mesh references missing texture 'wpn\\wpn_bolt'",
     "  - [meshes] meshes/ogf/notes_paper_1.ogf: Mesh references missing texture 'item\\item_notes'",
     "  - [meshes] meshes/ogf/part_none.ogf: Mesh references missing texture 'glow\\glow_ghost'",
-    "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh carries 34 bytes the engine never reads, an uncounted motion reference 'actors\\stalker_scenario_animation' split across the declared bounds of the motion refs chunk",
     "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh references missing motion 'actors\\stalker_animation'",
     "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh references missing motion 'actors\\stalker_scripts_animation'",
     "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh references missing motion 'actors\\stalker_smart_cover_animation'",
     "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh references missing motion 'actors\\zombied_animation'",
     "  - [meshes] meshes/ogf/wpn_pm_lod.ogf: Mesh references missing texture 'wpn\\wpn_pm'",
+    "  - [meshes] meshes/omf/wpn_mp5_hud_animation.omf: Motion bone count does not match mesh: 2 mesh bones, 7 motion bones",
     "Gamedata project checked in <duration>",
     "Check failed: 11 finding(s)",
   ],
   "stdout": [
+    "Workers: <workers> (auto)",
     "Opening gamedata project",
     "Root: <sandbox>/gamedata, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
     "Verifying gamedata project: <sandbox>/gamedata",
@@ -131,8 +133,8 @@ exports[`gamedata verify meets diverging motion labels should write nothing of i
   },
   {
     "path": "gamedata/meshes/ogf/dev_bolt_hud.ogf",
-    "sha256": "5d0f5f542199b99ccef02648b12a189b0bb8d6b17adb4223712c72f2303b50a1",
-    "size": 13841,
+    "sha256": "2c41c8c88a51e20277009d457b479083e7b3719b959d1576d1e2e3208c2cd224",
+    "size": 13867,
   },
   {
     "path": "gamedata/meshes/ogf/notes_paper_1.ogf",
@@ -146,8 +148,8 @@ exports[`gamedata verify meets diverging motion labels should write nothing of i
   },
   {
     "path": "gamedata/meshes/ogf/residue_split_motion_ref.ogf",
-    "sha256": "753cda47355b9db1c1267a93554b09b064e786a5e7e0b59d2522c649dac0d60b",
-    "size": 218,
+    "sha256": "433033159f338d374cd6f3db373f26327432ef6b4db8accac92fb6bbab0b5fb0",
+    "size": 210,
   },
   {
     "path": "gamedata/meshes/ogf/wpn_pm_lod.ogf",

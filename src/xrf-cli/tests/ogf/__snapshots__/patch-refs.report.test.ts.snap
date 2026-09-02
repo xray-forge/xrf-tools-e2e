@@ -21,12 +21,16 @@ exports[`ogf patch reports should report a dry run as one that wrote nothing 1`]
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {
     "discardedSize": 0,
     "isDryRun": true,
-    "originalSize": 13841,
+    "originalSize": 13867,
     "patchedCount": 1,
     "patchedSize": 13839,
   },
@@ -54,12 +58,16 @@ exports[`ogf patch reports should report what a motion-refs patch rewrote 1`] = 
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {
     "discardedSize": 0,
     "isDryRun": false,
-    "originalSize": 13841,
+    "originalSize": 13867,
     "patchedCount": 1,
     "patchedSize": 13839,
   },
@@ -87,14 +95,18 @@ exports[`ogf patch reports should report what a texture-refs patch rewrote 1`] =
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {
     "discardedSize": 0,
     "isDryRun": false,
-    "originalSize": 13841,
+    "originalSize": 13867,
     "patchedCount": 1,
-    "patchedSize": 13849,
+    "patchedSize": 13875,
   },
 }
 `;

@@ -10,8 +10,7 @@ exports[`ogf residue should explain accepted residue and still succeed 1`] = `
     "Version: 4, model_type: 3, shader_id: 0, OgfBox { min: Vector3d { x: 0.0, y: 0.0, z: 0.0 }, max: Vector3d { x: 1.0, y: 1.0, z: 1.0 } } - OgfSphere { position: Vector3d { x: 0.0, y: 0.0, z: 0.0 }, radius: 1.0 }",
     "Boundaries box: OgfBox { min: Vector3d { x: 0.0, y: 0.0, z: 0.0 }, max: Vector3d { x: 1.0, y: 1.0, z: 1.0 } }",
     "Boundaries sphere: OgfSphere { position: Vector3d { x: 0.0, y: 0.0, z: 0.0 }, radius: 1.0 }",
-    "Motion refs: ["actors\\\\stalker_animation", "actors\\\\stalker_scripts_animation", "actors\\\\zombied_animation", "actors\\\\stalker_smart_cover_animation"]",
-    "Residue: 34 bytes from offset 193 the engine never reads, SplitMotionRef { path: "actors\\\\stalker_scenario_animation" }",
+    "Motion refs: ["actors\\\\stalker_animation", "actors\\\\stalker_scripts_animation", "actors\\\\zombied_animation", "actors\\\\stalker_smart_cover_animation", "omf\\\\wpn_mp5_hud_animation"]",
   ],
 }
 `;
@@ -37,6 +36,10 @@ exports[`ogf residue should identify the chunk residue rule in the verification 
   ],
   "duration": "<duration>",
   "error": "Check failed: 5 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 3,
   "outcome": "checkFailed",
   "result": {
@@ -67,11 +70,6 @@ exports[`ogf residue should identify the chunk residue rule in the verification 
         "findings": [
           {
             "assetPath": "meshes/ogf/residue_split_motion_ref.ogf",
-            "message": "Mesh carries 34 bytes the engine never reads, an uncounted motion reference 'actors\\stalker_scenario_animation' split across the declared bounds of the motion refs chunk",
-            "ruleId": "meshes.chunk-residue",
-          },
-          {
-            "assetPath": "meshes/ogf/residue_split_motion_ref.ogf",
             "message": "Mesh references missing motion 'actors\\stalker_animation'",
             "ruleId": "meshes.motion-validation",
           },
@@ -88,6 +86,11 @@ exports[`ogf residue should identify the chunk residue rule in the verification 
           {
             "assetPath": "meshes/ogf/residue_split_motion_ref.ogf",
             "message": "Mesh references missing motion 'actors\\zombied_animation'",
+            "ruleId": "meshes.motion-validation",
+          },
+          {
+            "assetPath": "meshes/ogf/residue_split_motion_ref.ogf",
+            "message": "Mesh references missing motion 'omf\\wpn_mp5_hud_animation'",
             "ruleId": "meshes.motion-validation",
           },
         ],
@@ -108,7 +111,7 @@ exports[`ogf residue should patch successfully after dropping the residue 1`] = 
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Patch ogf motion refs <resources>/gamedata/meshes/ogf/residue_split_motion_ref.ogf, ["actors\\\\stalker_animation", "actors\\\\stalker_scripts_animation", "actors\\\\zombied_animation", "actors\\\\stalker_smart_cover_animation"] -> ["actors\\\\replacement_animation"]",
+    "Patch ogf motion refs <resources>/gamedata/meshes/ogf/residue_split_motion_ref.ogf, ["actors\\\\stalker_animation", "actors\\\\stalker_scripts_animation", "actors\\\\zombied_animation", "actors\\\\stalker_smart_cover_animation", "omf\\\\wpn_mp5_hud_animation"] -> ["actors\\\\replacement_animation"]",
     "Ogf motion refs written into <sandbox>/patched.ogf",
   ],
 }
@@ -122,19 +125,21 @@ exports[`ogf residue should report chunk residue as a verification finding 1`] =
     "Mesh motion refs not found by path: actors\\stalker_scripts_animation",
     "Mesh motion refs not found by path: actors\\zombied_animation",
     "Mesh motion refs not found by path: actors\\stalker_smart_cover_animation",
+    "Mesh motion refs not found by path: omf\\wpn_mp5_hud_animation",
     "Mesh is not valid: meshes\\ogf\\residue_split_motion_ref.ogf",
     "",
     "Project gamedata is invalid",
     "- 1/1 shader libraries valid, 205 blender definitions; 0/1 meshes valid",
-    "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh carries 34 bytes the engine never reads, an uncounted motion reference 'actors\\stalker_scenario_animation' split across the declared bounds of the motion refs chunk",
     "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh references missing motion 'actors\\stalker_animation'",
     "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh references missing motion 'actors\\stalker_scripts_animation'",
     "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh references missing motion 'actors\\stalker_smart_cover_animation'",
     "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh references missing motion 'actors\\zombied_animation'",
+    "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh references missing motion 'omf\\wpn_mp5_hud_animation'",
     "Gamedata project checked in <duration>",
     "Check failed: 5 finding(s)",
   ],
   "stdout": [
+    "Workers: <workers> (auto)",
     "Opening gamedata project",
     "Root: <sandbox>/gamedata, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
     "Verifying gamedata project: <sandbox>/gamedata",
@@ -172,12 +177,16 @@ exports[`ogf residue should report how many bytes the patch dropped 1`] = `
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {
-    "discardedSize": 34,
+    "discardedSize": 0,
     "isDryRun": false,
-    "originalSize": 218,
+    "originalSize": 210,
     "patchedCount": 1,
     "patchedSize": 93,
   },
@@ -205,6 +214,10 @@ exports[`ogf residue should report the residue cause and discarded reference 1`]
   ],
   "duration": "<duration>",
   "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
   "outcome": "success",
   "result": {
@@ -236,14 +249,10 @@ exports[`ogf residue should report the residue cause and discarded reference 1`]
       "actors\\stalker_scripts_animation",
       "actors\\zombied_animation",
       "actors\\stalker_smart_cover_animation",
+      "omf\\wpn_mp5_hud_animation",
     ],
     "progressiveLods": 0,
-    "residue": {
-      "cause": "split-motion-ref",
-      "discardedReference": "actors\\stalker_scenario_animation",
-      "position": 193,
-      "size": 34,
-    },
+    "residue": null,
     "shaderId": 0,
     "unknownChunks": [],
     "version": 4,
@@ -260,8 +269,8 @@ exports[`ogf residue should write only the staged tree, reports and normalized v
   },
   {
     "path": "gamedata/meshes/ogf/residue_split_motion_ref.ogf",
-    "sha256": "753cda47355b9db1c1267a93554b09b064e786a5e7e0b59d2522c649dac0d60b",
-    "size": 218,
+    "sha256": "433033159f338d374cd6f3db373f26327432ef6b4db8accac92fb6bbab0b5fb0",
+    "size": 210,
   },
   {
     "path": "gamedata/shaders.xr",
@@ -270,13 +279,13 @@ exports[`ogf residue should write only the staged tree, reports and normalized v
   },
   {
     "path": "info.json",
-    "sha256": "2398d4930d51be389cdfa6c88d3012c2d620d8e6cf349ead56018e5fe414c65f",
-    "size": 1232,
+    "sha256": "60a13ba7820b87f57a47a5b541b327c17096bc9d074c56788d044d9e34c58e08",
+    "size": 1195,
   },
   {
     "path": "patch.json",
-    "sha256": "b7ee811c9adff80c6275fff4c06d19949e32ab55516c898d6b6e5efb9ad0d432",
-    "size": 581,
+    "sha256": "345ab1d4a80e5897a0715ffc70754f191e92d57e8be64f82f8303af6786fdfe0",
+    "size": 651,
   },
   {
     "path": "patched.ogf",
@@ -285,8 +294,8 @@ exports[`ogf residue should write only the staged tree, reports and normalized v
   },
   {
     "path": "verify.json",
-    "sha256": "996ecc9b524a8114e7d72f9a403b9155faf625a51a95c6ba2402c1e326437b5b",
-    "size": 2585,
+    "sha256": "ed8c4760e23ceaa78cd103567439c1c0e3dedcd9e5ed5f16b832e5ecf2b0919a",
+    "size": 2549,
   },
 ]
 `;
