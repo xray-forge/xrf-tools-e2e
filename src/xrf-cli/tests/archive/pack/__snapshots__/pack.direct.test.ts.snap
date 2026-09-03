@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive pack direct configuration should pack from options alone 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Pack source: <resources>/gamedata/configs",
+    "Pack destination: <sandbox>/via-arguments",
+    "Wrote <sandbox>/via-arguments/cfg.db",
+    "Packed 1 file(s) into 1 volume(s) in <duration>",
+    "Summary: 1 compressed, 0 stored, 0 aliased, 0 skipped",
+    "Size: 1.1 KB source, 0.71 KB written",
+  ],
+}
+`;
+
+exports[`archive pack direct configuration should refuse a configuration file beside a direct selection 1`] = `
+{
+  "exitCode": 2,
+  "stderr": [
+    "error: the argument '--config <config>' cannot be used with '--include-directory <include-directory>'",
+    "",
+    "Usage: xrf-cli archive pack --path <path> --dest <dest> --name <name> --config <config>",
+    "",
+    "For more information, try '--help'.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`archive pack direct configuration should refuse a header entry that names no key 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: Header entry 'auto_load' is not a <key>=<value> pair. Write it as --header auto_load=true.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`archive pack direct configuration should write the expected files 1`] = `
+[
+  {
+    "path": "compress.ltx",
+    "sha256": "17235b0b553e80ac70d8054f49d7c2ef6720e0b3e99ac736b3b29d07a66e0e95",
+    "size": 122,
+  },
+  {
+    "path": "via-arguments/cfg.db",
+    "sha256": "f45ffed25003f6abcc026c36c18c6b4050040aab9925f23e5fabd7ebbc8e643e",
+    "size": 725,
+  },
+  {
+    "path": "via-config/cfg.db",
+    "sha256": "f45ffed25003f6abcc026c36c18c6b4050040aab9925f23e5fabd7ebbc8e643e",
+    "size": 725,
+  },
+]
+`;

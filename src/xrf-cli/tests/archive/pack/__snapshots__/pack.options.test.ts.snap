@@ -51,7 +51,7 @@ exports[`archive pack options should refuse a configuration whose extension name
 {
   "exitCode": 1,
   "stderr": [
-    "Error: Invalid error: Cannot read '<sandbox>/compress.txt' as a packing configuration: '.txt' is not one. Name it '.ltx' for the xrCompress dialect or '.json' for a portable configuration document.",
+    "Error: Invalid error: Cannot read '<sandbox>/compress.txt' as a packing configuration: '.txt' is not a supported format. Name it '.ltx' or '.json'.",
   ],
   "stdout": [
     "Pack config: <sandbox>/compress.txt",
