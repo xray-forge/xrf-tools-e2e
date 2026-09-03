@@ -1,0 +1,286 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive list shared payloads should name a match's sharers even when the query left them out 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "configs\\system_copy.ltx [265 B, 208 B stored, 265 B unpacked, <sandbox>/packed/fixture.db, same payload as configs\\system.ltx]",
+    "Found 1 match in <duration>",
+  ],
+}
+`;
+
+exports[`archive list shared payloads should report every entry's sharers as derived from the descriptors 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "archive",
+    "list",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "entries": [
+      {
+        "isDirectory": false,
+        "name": "configs\\alife.ltx",
+        "sharedWith": [],
+        "sizeCompressed": 502,
+        "sizeReal": 781,
+        "source": "<sandbox>/packed/fixture.db",
+      },
+      {
+        "isDirectory": false,
+        "name": "configs\\defines.ltx",
+        "sharedWith": [],
+        "sizeCompressed": 1514,
+        "sizeReal": 3848,
+        "source": "<sandbox>/packed/fixture.db",
+      },
+      {
+        "isDirectory": false,
+        "name": "configs\\evaluation.ltx",
+        "sharedWith": [],
+        "sizeCompressed": 238,
+        "sizeReal": 276,
+        "source": "<sandbox>/packed/fixture.db",
+      },
+      {
+        "isDirectory": false,
+        "name": "configs\\fonts.ltx",
+        "sharedWith": [],
+        "sizeCompressed": 455,
+        "sizeReal": 2021,
+        "source": "<sandbox>/packed/fixture.db",
+      },
+      {
+        "isDirectory": false,
+        "name": "configs\\game.ltx",
+        "sharedWith": [],
+        "sizeCompressed": 93,
+        "sizeReal": 218,
+        "source": "<sandbox>/packed/fixture.db",
+      },
+      {
+        "isDirectory": false,
+        "name": "configs\\gameplay\\dialogs.xml",
+        "sharedWith": [],
+        "sizeCompressed": 495,
+        "sizeReal": 1670,
+        "source": "<sandbox>/packed/fixture.db",
+      },
+      {
+        "isDirectory": false,
+        "name": "configs\\gameplay\\dialogs_zaton.xml",
+        "sharedWith": [],
+        "sizeCompressed": 244,
+        "sizeReal": 548,
+        "source": "<sandbox>/packed/fixture.db",
+      },
+      {
+        "isDirectory": false,
+        "name": "configs\\misc\\inventory_icons.ltx",
+        "sharedWith": [],
+        "sizeCompressed": 583,
+        "sizeReal": 1126,
+        "source": "<sandbox>/packed/fixture.db",
+      },
+      {
+        "isDirectory": false,
+        "name": "configs\\system.ltx",
+        "sharedWith": [
+          "configs\\system_copy.ltx",
+        ],
+        "sizeCompressed": 208,
+        "sizeReal": 265,
+        "source": "<sandbox>/packed/fixture.db",
+      },
+      {
+        "isDirectory": false,
+        "name": "configs\\system_copy.ltx",
+        "sharedWith": [
+          "configs\\system.ltx",
+        ],
+        "sizeCompressed": 208,
+        "sizeReal": 265,
+        "source": "<sandbox>/packed/fixture.db",
+      },
+      {
+        "isDirectory": false,
+        "name": "configs\\text\\eng\\st_items.xml",
+        "sharedWith": [],
+        "sizeCompressed": 135,
+        "sizeReal": 203,
+        "source": "<sandbox>/packed/fixture.db",
+      },
+      {
+        "isDirectory": false,
+        "name": "configs\\text\\eng\\st_ui.xml",
+        "sharedWith": [],
+        "sizeCompressed": 123,
+        "sizeReal": 143,
+        "source": "<sandbox>/packed/fixture.db",
+      },
+      {
+        "isDirectory": false,
+        "name": "configs\\text\\ukr\\st_items.xml",
+        "sharedWith": [],
+        "sizeCompressed": 141,
+        "sizeReal": 203,
+        "source": "<sandbox>/packed/fixture.db",
+      },
+      {
+        "isDirectory": false,
+        "name": "configs\\text\\ukr\\st_ui.xml",
+        "sharedWith": [],
+        "sizeCompressed": 125,
+        "sizeReal": 143,
+        "source": "<sandbox>/packed/fixture.db",
+      },
+      {
+        "isDirectory": false,
+        "name": "configs\\ui\\textures_descr\\ui_test_sheet.xml",
+        "sharedWith": [],
+        "sizeCompressed": 144,
+        "sizeReal": 352,
+        "source": "<sandbox>/packed/fixture.db",
+      },
+    ],
+    "total": 15,
+  },
+}
+`;
+
+exports[`archive list shared payloads should say which entries read the same bytes 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "configs\\alife.ltx [502 B stored, 781 B unpacked, <sandbox>/packed/fixture.db]",
+    "configs\\defines.ltx [1.48 KB stored, 3.76 KB unpacked, <sandbox>/packed/fixture.db]",
+    "configs\\evaluation.ltx [238 B stored, 276 B unpacked, <sandbox>/packed/fixture.db]",
+    "configs\\fonts.ltx [0.44 KB stored, 1.97 KB unpacked, <sandbox>/packed/fixture.db]",
+    "configs\\game.ltx [93 B stored, 218 B unpacked, <sandbox>/packed/fixture.db]",
+    "configs\\gameplay\\dialogs.xml [0.48 KB stored, 1.63 KB unpacked, <sandbox>/packed/fixture.db]",
+    "configs\\gameplay\\dialogs_zaton.xml [244 B stored, 548 B unpacked, <sandbox>/packed/fixture.db]",
+    "configs\\misc\\inventory_icons.ltx [0.57 KB stored, 1.1 KB unpacked, <sandbox>/packed/fixture.db]",
+    "configs\\system.ltx [208 B stored, 265 B unpacked, <sandbox>/packed/fixture.db, same payload as configs\\system_copy.ltx]",
+    "configs\\system_copy.ltx [208 B stored, 265 B unpacked, <sandbox>/packed/fixture.db, same payload as configs\\system.ltx]",
+    "configs\\text\\eng\\st_items.xml [135 B stored, 203 B unpacked, <sandbox>/packed/fixture.db]",
+    "configs\\text\\eng\\st_ui.xml [123 B stored, 143 B unpacked, <sandbox>/packed/fixture.db]",
+    "configs\\text\\ukr\\st_items.xml [141 B stored, 203 B unpacked, <sandbox>/packed/fixture.db]",
+    "configs\\text\\ukr\\st_ui.xml [125 B stored, 143 B unpacked, <sandbox>/packed/fixture.db]",
+    "configs\\ui\\textures_descr\\ui_test_sheet.xml [144 B stored, 352 B unpacked, <sandbox>/packed/fixture.db]",
+    "Listed 15 entries in <duration>",
+  ],
+}
+`;
+
+exports[`archive list shared payloads should write the expected files 1`] = `
+[
+  {
+    "path": "listing.json",
+    "sha256": "06db36bcff2ff3267d83a07a4560ab0cc132418cc45dfd0cab0f30ea84dffb88",
+    "size": 4017,
+  },
+  {
+    "path": "packed/fixture.db",
+    "sha256": "ded2b05e1e031c325e561a5f875c4e05ed27fd92557c14e8652be5070c141744",
+    "size": 5526,
+  },
+  {
+    "path": "source/configs/alife.ltx",
+    "sha256": "160920506a492754ff5c45ceb7f4d169e19e002dff25be0cfe03b1cc671b91cd",
+    "size": 781,
+  },
+  {
+    "path": "source/configs/defines.ltx",
+    "sha256": "3901c71e698c9be76fd7502c7837f9ee3176c592edcb120156788f1ad1957b7d",
+    "size": 3848,
+  },
+  {
+    "path": "source/configs/evaluation.ltx",
+    "sha256": "13b3971565375db44d091d58246aaf728df84d55f61adcd232f1351b621e81cc",
+    "size": 276,
+  },
+  {
+    "path": "source/configs/fonts.ltx",
+    "sha256": "c68091a9f10ac4545cd0818f9e1a98194898f8fe3483e620328122353e50b93d",
+    "size": 2021,
+  },
+  {
+    "path": "source/configs/game.ltx",
+    "sha256": "c502a7d26aff39902fcd3631e65c37b732a8e85470aff4267cbb04f36a30184b",
+    "size": 218,
+  },
+  {
+    "path": "source/configs/gameplay/dialogs.xml",
+    "sha256": "6583bab4e036cca053ce8c820639a39b80dc7bae71d4adba54d5ee2d865cc5b4",
+    "size": 1670,
+  },
+  {
+    "path": "source/configs/gameplay/dialogs_zaton.xml",
+    "sha256": "aaaaff52afc3c50a3907ba992d7b73f69e90146421385d22f07d363131e474b9",
+    "size": 548,
+  },
+  {
+    "path": "source/configs/misc/inventory_icons.ltx",
+    "sha256": "5c7b9ae42acbb5e29fe65dc0b14417681fbca966fafac096807a369e30779c2a",
+    "size": 1126,
+  },
+  {
+    "path": "source/configs/system.ltx",
+    "sha256": "b4a4a566d26d645fbb86678c4c16dc9fd8b540b786b191c596801de49ff60da1",
+    "size": 265,
+  },
+  {
+    "path": "source/configs/system_copy.ltx",
+    "sha256": "b4a4a566d26d645fbb86678c4c16dc9fd8b540b786b191c596801de49ff60da1",
+    "size": 265,
+  },
+  {
+    "path": "source/configs/text/eng/st_items.xml",
+    "sha256": "c0b041ad4bbb98e0578a0d2e7a2cf84cf10271919fad252b7cb79c62b605b89d",
+    "size": 203,
+  },
+  {
+    "path": "source/configs/text/eng/st_ui.xml",
+    "sha256": "6eb95635b812a217ea18561f4aab2c1dea34da97683264abf1346a404358fbb3",
+    "size": 143,
+  },
+  {
+    "path": "source/configs/text/ukr/st_items.xml",
+    "sha256": "be9f8767ee5af7d6e2f9378733b862fb52eae569d9dfd2e3686dafe3d6566ec4",
+    "size": 203,
+  },
+  {
+    "path": "source/configs/text/ukr/st_ui.xml",
+    "sha256": "d35cba9d839aafedf40bb61b4cebfe0c5fda810499ad49e154ed577eed5f7f61",
+    "size": 143,
+  },
+  {
+    "path": "source/configs/ui/textures_descr/ui_test_sheet.xml",
+    "sha256": "44329d941bf367bbd107efb9eb255aa12752cb550d3b99d7b88a2d1d91090012",
+    "size": 352,
+  },
+]
+`;
