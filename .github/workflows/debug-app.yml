@@ -1,0 +1,215 @@
+# Temporary diagnostic for the application E2E.
+name: Debug application lane
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  EVIDENCE: ${{ github.workspace }}\target\debug-app
+  RUST_BACKTRACE: "1"
+  RUST_LOG: debug
+
+jobs:
+  debug-app:
+    name: Debug App (Windows)
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Use Node.js 24.x
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24.x
+
+      - name: Download nightly application
+        run: npm run app:download
+
+      - name: Environment facts
+        shell: pwsh
+        continue-on-error: true
+        run: |
+          $ErrorActionPreference = 'Continue'
+          New-Item -ItemType Directory -Force $env:EVIDENCE | Out-Null
+
+          "== OS"
+          (Get-CimInstance Win32_OperatingSystem) | Select-Object Caption, Version, BuildNumber | Format-List
+
+          "== Session"
+          "user: $(whoami)"
+          "pid session id: $((Get-Process -Id $PID).SessionId)"
+          "UserInteractive: $([Environment]::UserInteractive)"
+          try { query session } catch { "query session failed: $_" }
+          "dwm running: $([bool](Get-Process dwm -ErrorAction SilentlyContinue))"
+
+          "== Display"
+          Get-CimInstance Win32_VideoController | Select-Object Name, DriverVersion, CurrentHorizontalResolution, CurrentVerticalResolution | Format-List
+          try {
+            Add-Type -AssemblyName System.Windows.Forms
+            [System.Windows.Forms.Screen]::AllScreens | Select-Object DeviceName, Primary, Bounds | Format-List
+          } catch { "screen enumeration failed: $_" }
+
+          "== WebView2 runtime (registry)"
+          foreach ($key in @(
+            'HKLM\SOFTWARE\WOW6432Node\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}',
+            'HKLM\SOFTWARE\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}',
+            'HKCU\SOFTWARE\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}'
+          )) {
+            "-- $key"
+            reg query $key 2>&1
+          }
+          "== WebView2 runtime (files)"
+          Get-ChildItem 'C:\Program Files (x86)\Microsoft\EdgeWebView\Application' -ErrorAction SilentlyContinue | Select-Object Name
+          Get-ChildItem 'C:\Program Files (x86)\Microsoft\EdgeWebView\Application\*\msedgewebview2.exe' -ErrorAction SilentlyContinue | Select-Object FullName
+
+          "== Edge"
+          Get-ChildItem 'C:\Program Files (x86)\Microsoft\Edge\Application' -ErrorAction SilentlyContinue | Select-Object Name
+
+          "== msedgedriver"
+          "EDGEWEBDRIVER=$env:EDGEWEBDRIVER"
+          where.exe msedgedriver.exe 2>&1
+          & "$env:EDGEWEBDRIVER\msedgedriver.exe" --version
+
+          "== Application"
+          Get-Item target\xrf-app.exe | Select-Object FullName, Length, LastWriteTime | Format-List
+          Get-AuthenticodeSignature target\xrf-app.exe | Select-Object Status | Format-List
+          Get-Item -Stream * target\xrf-app.exe -ErrorAction SilentlyContinue | Select-Object Stream, Length
+          exit 0
+
+      - name: Probe 1, plain launch
+        shell: pwsh
+        continue-on-error: true
+        run: |
+          $ErrorActionPreference = 'Continue'
+          $out = "$env:EVIDENCE\probe1"
+          New-Item -ItemType Directory -Force $out | Out-Null
+
+          $app = Start-Process -FilePath target\xrf-app.exe -PassThru `
+            -RedirectStandardError "$out\stderr.txt" -RedirectStandardOutput "$out\stdout.txt"
+          Start-Sleep -Seconds 15
+
+          if ($app.HasExited) { "xrf-app EXITED with code $($app.ExitCode)" } else { "xrf-app ALIVE, pid $($app.Id)" }
+
+          "== windows owned by the app"
+          Get-Process -Id $app.Id -ErrorAction SilentlyContinue | Select-Object Id, MainWindowTitle, MainWindowHandle | Format-List
+
+          "== WebView2 processes"
+          Get-Process msedgewebview2 -ErrorAction SilentlyContinue | Select-Object Id, StartTime, Path | Format-Table -AutoSize
+
+          "== default WebView2 user data folder"
+          Get-ChildItem "$env:LOCALAPPDATA\com.xrf.tools" -Recurse -Depth 1 -ErrorAction SilentlyContinue | Select-Object FullName
+
+          "== screenshot"
+          try {
+            Add-Type -AssemblyName System.Windows.Forms, System.Drawing
+            $bounds = [System.Windows.Forms.Screen]::PrimaryScreen.Bounds
+            $bitmap = New-Object System.Drawing.Bitmap $bounds.Width, $bounds.Height
+            $graphics = [System.Drawing.Graphics]::FromImage($bitmap)
+            $graphics.CopyFromScreen($bounds.Location, [System.Drawing.Point]::Empty, $bounds.Size)
+            $bitmap.Save("$out\desktop.png")
+            "saved $out\desktop.png"
+          } catch { "screenshot failed: $_" }
+
+          "== stderr"
+          Get-Content "$out\stderr.txt" -ErrorAction SilentlyContinue
+          "== stdout"
+          Get-Content "$out\stdout.txt" -ErrorAction SilentlyContinue
+
+          if (-not $app.HasExited) { Stop-Process -Id $app.Id -Force }
+          Get-Process msedgewebview2 -ErrorAction SilentlyContinue | Stop-Process -Force
+          exit 0
+
+      - name: Probe 2, launch with the WebView2 environment msedgedriver injects
+        shell: pwsh
+        continue-on-error: true
+        run: |
+          $ErrorActionPreference = 'Continue'
+          $out = "$env:EVIDENCE\probe2"
+          New-Item -ItemType Directory -Force $out | Out-Null
+
+          $env:WEBVIEW2_USER_DATA_FOLDER = "$out\user-data"
+          $env:WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS = '--remote-debugging-port=9333'
+
+          $app = Start-Process -FilePath target\xrf-app.exe -PassThru `
+            -RedirectStandardError "$out\stderr.txt" -RedirectStandardOutput "$out\stdout.txt"
+          Start-Sleep -Seconds 15
+
+          if ($app.HasExited) { "xrf-app EXITED with code $($app.ExitCode)" } else { "xrf-app ALIVE, pid $($app.Id)" }
+
+          "== WebView2 processes"
+          Get-Process msedgewebview2 -ErrorAction SilentlyContinue | Select-Object Id, StartTime | Format-Table -AutoSize
+
+          "== injected user data folder"
+          Get-ChildItem $env:WEBVIEW2_USER_DATA_FOLDER -ErrorAction SilentlyContinue | Select-Object Name
+          "DevToolsActivePort present: $(Test-Path "$env:WEBVIEW2_USER_DATA_FOLDER\DevToolsActivePort")"
+          Get-Content "$env:WEBVIEW2_USER_DATA_FOLDER\DevToolsActivePort" -ErrorAction SilentlyContinue
+
+          "== DevTools endpoint"
+          try { (Invoke-WebRequest -UseBasicParsing http://127.0.0.1:9333/json/version).Content } catch { "no DevTools endpoint: $_" }
+
+          "== stderr"
+          Get-Content "$out\stderr.txt" -ErrorAction SilentlyContinue
+
+          if (-not $app.HasExited) { Stop-Process -Id $app.Id -Force }
+          Get-Process msedgewebview2 -ErrorAction SilentlyContinue | Stop-Process -Force
+          exit 0
+
+      - name: Probe 3, msedgedriver session without tauri-driver
+        shell: pwsh
+        continue-on-error: true
+        run: |
+          $ErrorActionPreference = 'Continue'
+          $out = "$env:EVIDENCE\probe3"
+          New-Item -ItemType Directory -Force $out | Out-Null
+
+          $driver = Start-Process -FilePath "$env:EDGEWEBDRIVER\msedgedriver.exe" -PassThru `
+            -ArgumentList '--port=9515', '--verbose', "--log-path=$out\msedgedriver.log"
+
+          $deadline = (Get-Date).AddSeconds(20)
+          do { Start-Sleep -Milliseconds 250; $ready = Test-NetConnection 127.0.0.1 -Port 9515 -InformationLevel Quiet -WarningAction SilentlyContinue } until ($ready -or (Get-Date) -gt $deadline)
+          "msedgedriver listening: $ready"
+
+          $body = @{
+            capabilities = @{
+              alwaysMatch = @{
+                browserName = 'webview2'
+                'ms:edgeOptions' = @{
+                  binary = (Resolve-Path target\xrf-app.exe).Path
+                  webviewOptions = @{}
+                }
+              }
+            }
+          } | ConvertTo-Json -Depth 6
+          "== request"
+          $body
+
+          "== response"
+          try {
+            $response = Invoke-RestMethod -Method Post -Uri http://127.0.0.1:9515/session -Body $body -ContentType 'application/json' -TimeoutSec 150
+            $response | ConvertTo-Json -Depth 6
+            if ($response.value.sessionId) {
+              Invoke-RestMethod -Method Delete -Uri "http://127.0.0.1:9515/session/$($response.value.sessionId)" | Out-Null
+            }
+          } catch {
+            "session request failed: $_"
+            if ($_.ErrorDetails.Message) { $_.ErrorDetails.Message }
+          }
+
+          "== msedgedriver.log (tail)"
+          Get-Content "$out\msedgedriver.log" -Tail 80 -ErrorAction SilentlyContinue
+
+          Stop-Process -Id $driver.Id -Force -ErrorAction SilentlyContinue
+          Get-Process xrf-app, msedgewebview2 -ErrorAction SilentlyContinue | Stop-Process -Force
+          exit 0
+
+      - name: Upload evidence
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: debug-app
+          path: target/debug-app
+          if-no-files-found: warn
+          retention-days: 3

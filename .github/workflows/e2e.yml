@@ -106,7 +106,7 @@ jobs:
         if: ${{ failure() }}
         uses: actions/upload-artifact@v7
         with:
-          name: e2e-app-evidence
+          name: e2e-app-windows
           path: target/e2e-app
           if-no-files-found: ignore
           retention-days: 7
