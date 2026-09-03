@@ -213,7 +213,7 @@ export class Sandbox {
   public run(command: string, args: Array<string> = [], options: RunOptions = {}): CliResult {
     const environment: NodeJS.ProcessEnv = { ...process.env, NO_COLOR: "1" };
 
-    delete environment.RUST_LOG;
+    environment.RUST_LOG = "error";
     delete environment.RUST_LOG_STYLE;
     delete environment.CLICOLOR_FORCE;
 

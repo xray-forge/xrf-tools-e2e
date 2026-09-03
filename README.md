@@ -1,6 +1,6 @@
 <img src="https://xray-forge.github.io/xrf-book/images/xrf-tools-e2e-banner%400.5x.png" alt="XRF Tools">
 
-# XRF Tooles E2E
+# XRF Tools E2E
 
 End-to-end suite for the `xrf-cli` command line application and the `xrf-app` desktop application from
 [xrf-tools](https://github.com/xray-forge/xrf-tools). CLI tests run real commands against a real gamedata
