@@ -7,14 +7,30 @@ on:
         description: xrf-tools-e2e revision to test
         required: true
         type: string
+      lane:
+        description: Which suites to run (cli, app, or all)
+        required: false
+        default: all
+        type: string
   workflow_dispatch:
+    inputs:
+      lane:
+        description: Which suites to run
+        required: true
+        default: all
+        type: choice
+        options: [all, cli, app]
 
 permissions:
   contents: read
 
+env:
+  TAURI_DRIVER_VERSION: 2.0.6
+
 jobs:
-  e2e:
-    name: E2E (${{ matrix.name }})
+  e2e-cli:
+    name: E2E CLI (${{ matrix.name }})
+    if: ${{ inputs.lane != 'app' }}
     strategy:
       fail-fast: false
       matrix:
@@ -44,5 +60,53 @@ jobs:
       - name: Download nightly CLI
         run: npm run cli:download
 
-      - name: Run E2E suite
+      - name: Run CLI E2E suite
         run: npm run e2e:cli
+
+  e2e-app:
+    name: E2E App (Windows)
+    if: ${{ inputs.lane != 'cli' }}
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          repository: xray-forge/xrf-tools-e2e
+          ref: ${{ inputs.e2e_ref || github.sha }}
+
+      - name: Use Node.js 24.x
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24.x
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # The application is driven through Tauri's external WebDriver bridge; the matching Edge WebDriver is
+      # downloaded by the WebdriverIO Tauri service on demand, so only tauri-driver itself needs installing.
+      - name: Restore tauri-driver
+        id: tauri-driver
+        uses: actions/cache@v6
+        with:
+          path: ~/.cargo/bin/tauri-driver.exe
+          key: tauri-driver-${{ env.TAURI_DRIVER_VERSION }}-${{ runner.os }}
+
+      - name: Install tauri-driver
+        if: ${{ steps.tauri-driver.outputs.cache-hit != 'true' }}
+        run: cargo install tauri-driver --version ${{ env.TAURI_DRIVER_VERSION }} --locked
+
+      - name: Download nightly application
+        run: npm run app:download
+
+      - name: Run application E2E suite
+        run: npm run e2e:app
+
+      - name: Upload driver logs and screenshots
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: e2e-app-evidence
+          path: target/e2e-app
+          if-no-files-found: ignore
+          retention-days: 7
