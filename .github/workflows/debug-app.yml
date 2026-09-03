@@ -8,8 +8,8 @@ permissions:
 
 env:
   EVIDENCE: ${{ github.workspace }}\target\debug-app
-  RUST_BACKTRACE: "1"
-  RUST_LOG: debug
+  TAURI_DRIVER_VERSION: 2.0.6
+  WEBVIEW2_POLICY_KEY: HKLM\SOFTWARE\Policies\Microsoft\Edge\WebView2\AdditionalBrowserArguments
 
 jobs:
   debug-app:
@@ -23,60 +23,41 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: 24.x
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Restore tauri-driver
+        id: tauri-driver
+        uses: actions/cache@v6
+        with:
+          path: ~/.cargo/bin/tauri-driver.exe
+          key: tauri-driver-${{ env.TAURI_DRIVER_VERSION }}-${{ runner.os }}
+
+      - name: Install tauri-driver
+        if: ${{ steps.tauri-driver.outputs.cache-hit != 'true' }}
+        run: cargo install tauri-driver --version ${{ env.TAURI_DRIVER_VERSION }} --locked
 
       - name: Download nightly application
         run: npm run app:download
 
-      - name: Environment facts
+      # Every probe ends with `exit 0`: the runner's pwsh wrapper otherwise fails the step on the exit code of the
+      # last native command, and a refused connection is the evidence, not the failure.
+      - name: Probe D, registry switch with a fixed port
         shell: pwsh
         continue-on-error: true
         run: |
           $ErrorActionPreference = 'Continue'
-          New-Item -ItemType Directory -Force $env:EVIDENCE | Out-Null
-
-          "== OS"
-          (Get-CimInstance Win32_OperatingSystem) | Select-Object Caption, Version, BuildNumber | Format-List
-
-          "== Token"
-          "user: $(whoami)"
-          whoami /groups | Select-String 'Mandatory Label'
-          "IsAdmin: $(([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator))"
-          "pid session id: $((Get-Process -Id $PID).SessionId)"
-          "UserInteractive: $([Environment]::UserInteractive)"
-          "UAC EnableLUA: $((Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System').EnableLUA)"
-          "UAC ConsentPromptBehaviorAdmin: $((Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System').ConsentPromptBehaviorAdmin)"
-
-          "== Edge and WebView2 policies (any hit here matters)"
-          foreach ($key in @(
-            'HKLM\SOFTWARE\Policies\Microsoft\Edge',
-            'HKLM\SOFTWARE\Policies\Microsoft\Edge\WebView2',
-            'HKCU\SOFTWARE\Policies\Microsoft\Edge',
-            'HKCU\SOFTWARE\Policies\Microsoft\Edge\WebView2',
-            'HKLM\SOFTWARE\WOW6432Node\Policies\Microsoft\Edge'
-          )) {
-            "-- $key"
-            reg query $key /s 2>&1
-          }
-
-          "== WebView2 runtime"
-          reg query 'HKLM\SOFTWARE\WOW6432Node\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}' /v pv 2>&1
-          Get-ChildItem 'C:\Program Files (x86)\Microsoft\EdgeWebView\Application' -ErrorAction SilentlyContinue | Select-Object Name
-
-          "== Edge"
-          Get-ChildItem 'C:\Program Files (x86)\Microsoft\Edge\Application' -ErrorAction SilentlyContinue | Select-Object Name
-          & "$env:EDGEWEBDRIVER\msedgedriver.exe" --version
-          exit 0
-
-      - name: Probe A, elevated launch with Chromium logging
-        shell: pwsh
-        continue-on-error: true
-        run: |
-          $ErrorActionPreference = 'Continue'
-          $out = "$env:EVIDENCE\probeA"
+          $out = "$env:EVIDENCE\probeD"
           New-Item -ItemType Directory -Force $out | Out-Null
 
+          reg add $env:WEBVIEW2_POLICY_KEY /v '*' /t REG_SZ /d '--remote-debugging-port=9377 --enable-logging --log-level=0' /f
+          reg query $env:WEBVIEW2_POLICY_KEY
+
+          # msedgedriver always sets this variable; it must not stop the registry value from being read.
           $env:WEBVIEW2_USER_DATA_FOLDER = "$out\user-data"
-          $env:WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS = '--remote-debugging-port=9333 --enable-logging --log-level=0 --v=1'
+          $env:WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS = '--remote-debugging-port=9333'
 
           $app = Start-Process -FilePath target\xrf-app.exe -PassThru `
             -RedirectStandardError "$out\stderr.txt" -RedirectStandardOutput "$out\stdout.txt"
@@ -84,115 +65,91 @@ jobs:
 
           if ($app.HasExited) { "xrf-app EXITED with code $($app.ExitCode)" } else { "xrf-app ALIVE, pid $($app.Id)" }
 
-          "== browser process command lines"
-          Get-CimInstance Win32_Process -Filter "Name='msedgewebview2.exe'" | ForEach-Object { "[$($_.ProcessId)] $($_.CommandLine)"; "" }
+          "== browser process command line"
+          Get-CimInstance Win32_Process -Filter "Name='msedgewebview2.exe'" | Where-Object { $_.CommandLine -notmatch '--type=' } | ForEach-Object { "[$($_.ProcessId)] $($_.CommandLine)" }
 
-          "== listening sockets owned by the app tree"
-          $pids = @($app.Id) + @(Get-Process msedgewebview2 -ErrorAction SilentlyContinue | ForEach-Object Id)
-          Get-NetTCPConnection -State Listen -ErrorAction SilentlyContinue | Where-Object { $pids -contains $_.OwningProcess } | Select-Object LocalAddress, LocalPort, OwningProcess | Format-Table -AutoSize
-
-          "== DevToolsActivePort (WebView2 nests the folder under EBWebView)"
+          "== DevToolsActivePort"
           $port = "$out\user-data\EBWebView\DevToolsActivePort"
           "present: $(Test-Path $port)"
           Get-Content $port -ErrorAction SilentlyContinue
 
-          "== DevTools endpoint"
+          "== DevTools endpoint on the registry port 9377"
+          try { (Invoke-WebRequest -UseBasicParsing http://127.0.0.1:9377/json/version).Content } catch { "no DevTools endpoint: $($_.Exception.Message)" }
+          "== DevTools endpoint on the environment port 9333 (expected refused)"
           try { (Invoke-WebRequest -UseBasicParsing http://127.0.0.1:9333/json/version).Content } catch { "no DevTools endpoint: $($_.Exception.Message)" }
 
-          "== chrome_debug.log lines about remote debugging, devtools, policy"
-          $log = "$out\user-data\EBWebView\chrome_debug.log"
-          "present: $(Test-Path $log)"
-          Select-String -Path $log -Pattern 'remote|devtools|debugging|policy|user.data|ERROR' -ErrorAction SilentlyContinue | Select-Object -First 60 | ForEach-Object Line
-
-          "== app stderr"
-          Get-Content "$out\stderr.txt" -ErrorAction SilentlyContinue
+          "== chrome_debug.log lines about remote debugging"
+          Select-String -Path "$out\user-data\EBWebView\chrome_debug.log" -Pattern 'remote|devtools|debugging' -ErrorAction SilentlyContinue | Select-Object -First 20 | ForEach-Object Line
 
           if (-not $app.HasExited) { Stop-Process -Id $app.Id -Force }
           Get-Process msedgewebview2 -ErrorAction SilentlyContinue | Stop-Process -Force
           Start-Sleep -Seconds 2
           exit 0
 
-      - name: Probe B, Edge browser with the same switch
+      - name: Probe E, raw msedgedriver session with the registry switch
         shell: pwsh
         continue-on-error: true
         run: |
           $ErrorActionPreference = 'Continue'
-          $out = "$env:EVIDENCE\probeB"
+          $out = "$env:EVIDENCE\probeE"
           New-Item -ItemType Directory -Force $out | Out-Null
 
-          $edge = Get-ChildItem 'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe', 'C:\Program Files\Microsoft\Edge\Application\msedge.exe' -ErrorAction SilentlyContinue | Select-Object -First 1
-          "edge: $($edge.FullName)"
+          reg add $env:WEBVIEW2_POLICY_KEY /v '*' /t REG_SZ /d '--remote-debugging-port=0 --enable-automation --no-first-run --test-type=webdriver' /f
 
-          $browser = Start-Process -FilePath $edge.FullName -PassThru -ArgumentList `
-            "--user-data-dir=$out\edge-data", '--remote-debugging-port=9444', '--headless=new', '--no-first-run', '--enable-logging', '--log-level=0', 'about:blank'
-          Start-Sleep -Seconds 10
+          $driver = Start-Process -FilePath "$env:EDGEWEBDRIVER\msedgedriver.exe" -PassThru `
+            -ArgumentList '--port=9515', '--verbose', "--log-path=$out\msedgedriver.log"
+          $deadline = (Get-Date).AddSeconds(20)
+          do { Start-Sleep -Milliseconds 250; $ready = Test-NetConnection 127.0.0.1 -Port 9515 -InformationLevel Quiet -WarningAction SilentlyContinue } until ($ready -or (Get-Date) -gt $deadline)
+          "msedgedriver listening: $ready"
 
-          "== browser process command lines"
-          Get-CimInstance Win32_Process -Filter "Name='msedge.exe'" | Select-Object -First 3 | ForEach-Object { "[$($_.ProcessId)] $($_.CommandLine)"; "" }
+          $body = @{
+            capabilities = @{
+              alwaysMatch = @{
+                browserName = 'webview2'
+                'ms:edgeOptions' = @{
+                  binary = (Resolve-Path target\xrf-app.exe).Path
+                  webviewOptions = @{}
+                }
+              }
+            }
+          } | ConvertTo-Json -Depth 6
 
-          "DevToolsActivePort present: $(Test-Path "$out\edge-data\DevToolsActivePort")"
-          try { (Invoke-WebRequest -UseBasicParsing http://127.0.0.1:9444/json/version).Content } catch { "no DevTools endpoint: $($_.Exception.Message)" }
+          "== response"
+          try {
+            $response = Invoke-RestMethod -Method Post -Uri http://127.0.0.1:9515/session -Body $body -ContentType 'application/json' -TimeoutSec 150
+            $response | ConvertTo-Json -Depth 6
+            if ($response.value.sessionId) {
+              "== title through the session"
+              (Invoke-RestMethod -Uri "http://127.0.0.1:9515/session/$($response.value.sessionId)/title").value
+              Invoke-RestMethod -Method Delete -Uri "http://127.0.0.1:9515/session/$($response.value.sessionId)" | Out-Null
+            }
+          } catch {
+            "session request failed: $($_.Exception.Message)"
+            if ($_.ErrorDetails.Message) { $_.ErrorDetails.Message }
+          }
 
-          "== chrome_debug.log lines about remote debugging"
-          Select-String -Path "$out\edge-data\chrome_debug.log" -Pattern 'remote|devtools|debugging|policy|ERROR' -ErrorAction SilentlyContinue | Select-Object -First 40 | ForEach-Object Line
+          "== msedgedriver.log launch and connect lines"
+          Select-String -Path "$out\msedgedriver.log" -Pattern 'Launching|WEBVIEW2_|DevTools|Failed|connect|RESPONSE InitSession' -ErrorAction SilentlyContinue | Select-Object -First 20 | ForEach-Object Line
 
-          Get-Process msedge -ErrorAction SilentlyContinue | Stop-Process -Force
+          Stop-Process -Id $driver.Id -Force -ErrorAction SilentlyContinue
+          Get-Process xrf-app, msedgewebview2 -ErrorAction SilentlyContinue | Stop-Process -Force
           Start-Sleep -Seconds 2
           exit 0
 
-      - name: Probe C, application under a non-elevated token
+      - name: Probe F, the real suite with the registry switch
         shell: pwsh
         continue-on-error: true
         run: |
-          $ErrorActionPreference = 'Continue'
-          $out = "$env:EVIDENCE\probeC"
-          New-Item -ItemType Directory -Force $out | Out-Null
+          reg add $env:WEBVIEW2_POLICY_KEY /v '*' /t REG_SZ /d '--remote-debugging-port=0 --enable-automation --no-first-run --test-type=webdriver' /f
+          npm run e2e:app
+          "e2e:app exit code: $LASTEXITCODE"
+          exit 0
 
-          $exe = (Resolve-Path target\xrf-app.exe).Path
-
-          # A .cmd wrapper carries the environment, since neither runas nor schtasks forwards ours.
-          $wrapper = "$out\launch.cmd"
-          @"
-          @echo off
-          set WEBVIEW2_USER_DATA_FOLDER=$out\user-data
-          set WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS=--remote-debugging-port=9355 --enable-logging --log-level=0
-          set RUST_LOG=debug
-          whoami /groups | findstr /i "Mandatory Label" > "$out\token.txt"
-          start "" "$exe"
-          "@ -replace '^\s+', '' | Set-Content -Path $wrapper -Encoding ascii
-          Get-Content $wrapper
-
-          "== attempt 1: runas /trustlevel (basic user token)"
-          runas /trustlevel:0x20000 "cmd /c `"$wrapper`"" 2>&1
-          Start-Sleep -Seconds 15
-          $launched = Get-Process xrf-app -ErrorAction SilentlyContinue
-          "xrf-app running: $([bool]$launched)"
-
-          if (-not $launched) {
-            "== attempt 2: scheduled task at limited run level"
-            schtasks /create /tn xrf-probe /tr "cmd /c `"$wrapper`"" /sc once /st 23:59 /rl LIMITED /f 2>&1
-            schtasks /run /tn xrf-probe 2>&1
-            Start-Sleep -Seconds 15
-            $launched = Get-Process xrf-app -ErrorAction SilentlyContinue
-            "xrf-app running: $([bool]$launched)"
-            schtasks /delete /tn xrf-probe /f 2>&1
-          }
-
-          "== token the wrapper ran under"
-          Get-Content "$out\token.txt" -ErrorAction SilentlyContinue
-
-          "== browser process command lines"
-          Get-CimInstance Win32_Process -Filter "Name='msedgewebview2.exe'" | ForEach-Object { "[$($_.ProcessId)] $($_.CommandLine)"; "" }
-
-          $port = "$out\user-data\EBWebView\DevToolsActivePort"
-          "DevToolsActivePort present: $(Test-Path $port)"
-          Get-Content $port -ErrorAction SilentlyContinue
-          try { (Invoke-WebRequest -UseBasicParsing http://127.0.0.1:9355/json/version).Content } catch { "no DevTools endpoint: $($_.Exception.Message)" }
-
-          "== chrome_debug.log lines about remote debugging"
-          Select-String -Path "$out\user-data\EBWebView\chrome_debug.log" -Pattern 'remote|devtools|debugging|policy|ERROR' -ErrorAction SilentlyContinue | Select-Object -First 40 | ForEach-Object Line
-
-          Get-Process xrf-app, msedgewebview2 -ErrorAction SilentlyContinue | Stop-Process -Force
+      - name: Remove the registry switch
+        if: ${{ always() }}
+        shell: pwsh
+        run: |
+          reg delete $env:WEBVIEW2_POLICY_KEY /f 2>&1
           exit 0
 
       - name: Upload evidence
@@ -200,6 +157,8 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: debug-app-evidence
-          path: target/debug-app
+          path: |
+            target/debug-app
+            target/e2e-app
           if-no-files-found: warn
           retention-days: 3
