@@ -11,6 +11,7 @@ exports[`archive roundtrip should pack a directory into a volume 1`] = `
     "Packed 15 file(s) into 1 volume(s) in <duration>",
     "Summary: 14 compressed, 1 stored, 0 aliased, 0 skipped",
     "Size: 11.5 KB source, 5.38 KB written",
+    "Speed: <speed>",
   ],
 }
 `;

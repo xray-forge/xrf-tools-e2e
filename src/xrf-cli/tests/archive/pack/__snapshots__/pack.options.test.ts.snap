@@ -12,6 +12,7 @@ exports[`archive pack options should honour an xrCompress configuration 1`] = `
     "Packed 7 file(s) into 1 volume(s) in <duration>",
     "Summary: 7 compressed, 0 stored, 0 aliased, 7 skipped",
     "Size: 8.33 KB source, 3.83 KB written",
+    "Speed: <speed>",
   ],
 }
 `;
@@ -28,6 +29,7 @@ exports[`archive pack options should honour the same configuration written as a 
     "Packed 7 file(s) into 1 volume(s) in <duration>",
     "Summary: 7 compressed, 0 stored, 0 aliased, 7 skipped",
     "Size: 8.33 KB source, 3.83 KB written",
+    "Speed: <speed>",
   ],
 }
 `;
@@ -43,6 +45,7 @@ exports[`archive pack options should keep them when the skip list is off 1`] = `
     "Packed 15 file(s) into 1 volume(s) in <duration>",
     "Summary: 14 compressed, 1 stored, 0 aliased, 0 skipped",
     "Size: 11.5 KB source, 5.39 KB written",
+    "Speed: <speed>",
   ],
 }
 `;
@@ -70,6 +73,7 @@ exports[`archive pack options should skip editor leftovers by default 1`] = `
     "Packed 14 file(s) into 1 volume(s) in <duration>",
     "Summary: 14 compressed, 0 stored, 0 aliased, 1 skipped",
     "Size: 11.5 KB source, 5.36 KB written",
+    "Speed: <speed>",
   ],
 }
 `;
@@ -85,6 +89,7 @@ exports[`archive pack options should store instead of compressing and write an x
     "Packed 14 file(s) into 1 volume(s) in <duration>",
     "Summary: 0 compressed, 14 stored, 0 aliased, 0 skipped",
     "Size: 11.5 KB source, 12 KB written",
+    "Speed: <speed>",
   ],
 }
 `;

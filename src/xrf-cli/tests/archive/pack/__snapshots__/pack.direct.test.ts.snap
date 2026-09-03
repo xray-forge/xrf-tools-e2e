@@ -11,6 +11,7 @@ exports[`archive pack direct configuration should pack from options alone 1`] = 
     "Packed 1 file(s) into 1 volume(s) in <duration>",
     "Summary: 1 compressed, 0 stored, 0 aliased, 0 skipped",
     "Size: 1.1 KB source, 0.71 KB written",
+    "Speed: <speed>",
   ],
 }
 `;

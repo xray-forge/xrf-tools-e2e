@@ -47,6 +47,27 @@ const EXECUTABLE_PATTERN = new RegExp(`\\b${CLI_EXECUTABLE_NAME.split(".").join(
 const JSON_DURATION_PATTERN = /"([a-zA-Z_]*(?:duration|elapsed|nanos|secs)[a-zA-Z_]*)":\s*[\d.]+/gi;
 
 /**
+ * The throughput field of an archive pack report, bytes per second as a bare number.
+ *
+ * @remarks
+ * Derived from a duration, so it differs on every run for the same reason a duration does. Anchored
+ * on the member the pack result writes just before it — `sizeWritten` while the envelope sorts its
+ * keys, `duration` (already tokenized by the rule above) should it ever keep declaration order —
+ * because `speed` is not this field's name alone: an OMF motion has a `speed` too, and that one is a
+ * real measurement that must stay asserted.
+ */
+const JSON_SPEED_PATTERN = /("(?:sizeWritten|duration)":\s*(?:\d+|"<duration>"),\s*)"speed":\s*\d+/g;
+
+/**
+ * A throughput in human output, a scaled byte count over one second.
+ *
+ * @remarks
+ * `Speed: 42.3 MB/s` in an archive pack summary. The unit is asserted by the token's shape; the value
+ * is what moves between two correct runs.
+ */
+const SPEED_PATTERN = /\b\d+(?:\.\d+)? (?:B|KB|MB|GB|TB)\/s\b/g;
+
+/**
  * The `build` block of a report envelope, in both the pretty and the compact encoding.
  *
  * @remarks
@@ -148,6 +169,8 @@ export function normalizeText(text: string, sandboxRoot: string): Array<string> 
   normalized = normalized.replace(MISSING_PATH_PATTERN, "<missing path>");
   normalized = normalized.replace(WORKERS_PATTERN, "$1<workers>");
   normalized = normalized.replace(JSON_DURATION_PATTERN, '"$1": "<duration>"');
+  normalized = normalized.replace(JSON_SPEED_PATTERN, '$1"speed": "<speed>"');
+  normalized = normalized.replace(SPEED_PATTERN, "<speed>");
   normalized = normalized.replace(JSON_BUILD_BLOCK_PATTERN, (block) =>
     block.replace(JSON_BUILD_MEMBER_PATTERN, '"$1": "<build>"')
   );

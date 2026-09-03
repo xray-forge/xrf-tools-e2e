@@ -13,6 +13,7 @@ exports[`archive pack volume size should pack past that cap when the flag lifts 
     "Packed 14 file(s) into 1 volume(s) in <duration>",
     "Summary: 14 compressed, 0 stored, 0 aliased, 0 skipped",
     "Size: 11.5 KB source, 5.36 KB written",
+    "Speed: <speed>",
   ],
 }
 `;
