@@ -1,4 +1,3 @@
-# Temporary diagnostic for the application E2E.
 name: Debug application lane
 
 on:
@@ -38,100 +37,46 @@ jobs:
           "== OS"
           (Get-CimInstance Win32_OperatingSystem) | Select-Object Caption, Version, BuildNumber | Format-List
 
-          "== Session"
+          "== Token"
           "user: $(whoami)"
+          whoami /groups | Select-String 'Mandatory Label'
+          "IsAdmin: $(([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator))"
           "pid session id: $((Get-Process -Id $PID).SessionId)"
           "UserInteractive: $([Environment]::UserInteractive)"
-          try { query session } catch { "query session failed: $_" }
-          "dwm running: $([bool](Get-Process dwm -ErrorAction SilentlyContinue))"
+          "UAC EnableLUA: $((Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System').EnableLUA)"
+          "UAC ConsentPromptBehaviorAdmin: $((Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System').ConsentPromptBehaviorAdmin)"
 
-          "== Display"
-          Get-CimInstance Win32_VideoController | Select-Object Name, DriverVersion, CurrentHorizontalResolution, CurrentVerticalResolution | Format-List
-          try {
-            Add-Type -AssemblyName System.Windows.Forms
-            [System.Windows.Forms.Screen]::AllScreens | Select-Object DeviceName, Primary, Bounds | Format-List
-          } catch { "screen enumeration failed: $_" }
-
-          "== WebView2 runtime (registry)"
+          "== Edge and WebView2 policies (any hit here matters)"
           foreach ($key in @(
-            'HKLM\SOFTWARE\WOW6432Node\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}',
-            'HKLM\SOFTWARE\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}',
-            'HKCU\SOFTWARE\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}'
+            'HKLM\SOFTWARE\Policies\Microsoft\Edge',
+            'HKLM\SOFTWARE\Policies\Microsoft\Edge\WebView2',
+            'HKCU\SOFTWARE\Policies\Microsoft\Edge',
+            'HKCU\SOFTWARE\Policies\Microsoft\Edge\WebView2',
+            'HKLM\SOFTWARE\WOW6432Node\Policies\Microsoft\Edge'
           )) {
             "-- $key"
-            reg query $key 2>&1
+            reg query $key /s 2>&1
           }
-          "== WebView2 runtime (files)"
+
+          "== WebView2 runtime"
+          reg query 'HKLM\SOFTWARE\WOW6432Node\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}' /v pv 2>&1
           Get-ChildItem 'C:\Program Files (x86)\Microsoft\EdgeWebView\Application' -ErrorAction SilentlyContinue | Select-Object Name
-          Get-ChildItem 'C:\Program Files (x86)\Microsoft\EdgeWebView\Application\*\msedgewebview2.exe' -ErrorAction SilentlyContinue | Select-Object FullName
 
           "== Edge"
           Get-ChildItem 'C:\Program Files (x86)\Microsoft\Edge\Application' -ErrorAction SilentlyContinue | Select-Object Name
-
-          "== msedgedriver"
-          "EDGEWEBDRIVER=$env:EDGEWEBDRIVER"
-          where.exe msedgedriver.exe 2>&1
           & "$env:EDGEWEBDRIVER\msedgedriver.exe" --version
-
-          "== Application"
-          Get-Item target\xrf-app.exe | Select-Object FullName, Length, LastWriteTime | Format-List
-          Get-AuthenticodeSignature target\xrf-app.exe | Select-Object Status | Format-List
-          Get-Item -Stream * target\xrf-app.exe -ErrorAction SilentlyContinue | Select-Object Stream, Length
           exit 0
 
-      - name: Probe 1, plain launch
+      - name: Probe A, elevated launch with Chromium logging
         shell: pwsh
         continue-on-error: true
         run: |
           $ErrorActionPreference = 'Continue'
-          $out = "$env:EVIDENCE\probe1"
-          New-Item -ItemType Directory -Force $out | Out-Null
-
-          $app = Start-Process -FilePath target\xrf-app.exe -PassThru `
-            -RedirectStandardError "$out\stderr.txt" -RedirectStandardOutput "$out\stdout.txt"
-          Start-Sleep -Seconds 15
-
-          if ($app.HasExited) { "xrf-app EXITED with code $($app.ExitCode)" } else { "xrf-app ALIVE, pid $($app.Id)" }
-
-          "== windows owned by the app"
-          Get-Process -Id $app.Id -ErrorAction SilentlyContinue | Select-Object Id, MainWindowTitle, MainWindowHandle | Format-List
-
-          "== WebView2 processes"
-          Get-Process msedgewebview2 -ErrorAction SilentlyContinue | Select-Object Id, StartTime, Path | Format-Table -AutoSize
-
-          "== default WebView2 user data folder"
-          Get-ChildItem "$env:LOCALAPPDATA\com.xrf.tools" -Recurse -Depth 1 -ErrorAction SilentlyContinue | Select-Object FullName
-
-          "== screenshot"
-          try {
-            Add-Type -AssemblyName System.Windows.Forms, System.Drawing
-            $bounds = [System.Windows.Forms.Screen]::PrimaryScreen.Bounds
-            $bitmap = New-Object System.Drawing.Bitmap $bounds.Width, $bounds.Height
-            $graphics = [System.Drawing.Graphics]::FromImage($bitmap)
-            $graphics.CopyFromScreen($bounds.Location, [System.Drawing.Point]::Empty, $bounds.Size)
-            $bitmap.Save("$out\desktop.png")
-            "saved $out\desktop.png"
-          } catch { "screenshot failed: $_" }
-
-          "== stderr"
-          Get-Content "$out\stderr.txt" -ErrorAction SilentlyContinue
-          "== stdout"
-          Get-Content "$out\stdout.txt" -ErrorAction SilentlyContinue
-
-          if (-not $app.HasExited) { Stop-Process -Id $app.Id -Force }
-          Get-Process msedgewebview2 -ErrorAction SilentlyContinue | Stop-Process -Force
-          exit 0
-
-      - name: Probe 2, launch with the WebView2 environment msedgedriver injects
-        shell: pwsh
-        continue-on-error: true
-        run: |
-          $ErrorActionPreference = 'Continue'
-          $out = "$env:EVIDENCE\probe2"
+          $out = "$env:EVIDENCE\probeA"
           New-Item -ItemType Directory -Force $out | Out-Null
 
           $env:WEBVIEW2_USER_DATA_FOLDER = "$out\user-data"
-          $env:WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS = '--remote-debugging-port=9333'
+          $env:WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS = '--remote-debugging-port=9333 --enable-logging --log-level=0 --v=1'
 
           $app = Start-Process -FilePath target\xrf-app.exe -PassThru `
             -RedirectStandardError "$out\stderr.txt" -RedirectStandardOutput "$out\stdout.txt"
@@ -139,69 +84,114 @@ jobs:
 
           if ($app.HasExited) { "xrf-app EXITED with code $($app.ExitCode)" } else { "xrf-app ALIVE, pid $($app.Id)" }
 
-          "== WebView2 processes"
-          Get-Process msedgewebview2 -ErrorAction SilentlyContinue | Select-Object Id, StartTime | Format-Table -AutoSize
+          "== browser process command lines"
+          Get-CimInstance Win32_Process -Filter "Name='msedgewebview2.exe'" | ForEach-Object { "[$($_.ProcessId)] $($_.CommandLine)"; "" }
 
-          "== injected user data folder"
-          Get-ChildItem $env:WEBVIEW2_USER_DATA_FOLDER -ErrorAction SilentlyContinue | Select-Object Name
-          "DevToolsActivePort present: $(Test-Path "$env:WEBVIEW2_USER_DATA_FOLDER\DevToolsActivePort")"
-          Get-Content "$env:WEBVIEW2_USER_DATA_FOLDER\DevToolsActivePort" -ErrorAction SilentlyContinue
+          "== listening sockets owned by the app tree"
+          $pids = @($app.Id) + @(Get-Process msedgewebview2 -ErrorAction SilentlyContinue | ForEach-Object Id)
+          Get-NetTCPConnection -State Listen -ErrorAction SilentlyContinue | Where-Object { $pids -contains $_.OwningProcess } | Select-Object LocalAddress, LocalPort, OwningProcess | Format-Table -AutoSize
+
+          "== DevToolsActivePort (WebView2 nests the folder under EBWebView)"
+          $port = "$out\user-data\EBWebView\DevToolsActivePort"
+          "present: $(Test-Path $port)"
+          Get-Content $port -ErrorAction SilentlyContinue
 
           "== DevTools endpoint"
-          try { (Invoke-WebRequest -UseBasicParsing http://127.0.0.1:9333/json/version).Content } catch { "no DevTools endpoint: $_" }
+          try { (Invoke-WebRequest -UseBasicParsing http://127.0.0.1:9333/json/version).Content } catch { "no DevTools endpoint: $($_.Exception.Message)" }
 
-          "== stderr"
+          "== chrome_debug.log lines about remote debugging, devtools, policy"
+          $log = "$out\user-data\EBWebView\chrome_debug.log"
+          "present: $(Test-Path $log)"
+          Select-String -Path $log -Pattern 'remote|devtools|debugging|policy|user.data|ERROR' -ErrorAction SilentlyContinue | Select-Object -First 60 | ForEach-Object Line
+
+          "== app stderr"
           Get-Content "$out\stderr.txt" -ErrorAction SilentlyContinue
 
           if (-not $app.HasExited) { Stop-Process -Id $app.Id -Force }
           Get-Process msedgewebview2 -ErrorAction SilentlyContinue | Stop-Process -Force
+          Start-Sleep -Seconds 2
           exit 0
 
-      - name: Probe 3, msedgedriver session without tauri-driver
+      - name: Probe B, Edge browser with the same switch
         shell: pwsh
         continue-on-error: true
         run: |
           $ErrorActionPreference = 'Continue'
-          $out = "$env:EVIDENCE\probe3"
+          $out = "$env:EVIDENCE\probeB"
           New-Item -ItemType Directory -Force $out | Out-Null
 
-          $driver = Start-Process -FilePath "$env:EDGEWEBDRIVER\msedgedriver.exe" -PassThru `
-            -ArgumentList '--port=9515', '--verbose', "--log-path=$out\msedgedriver.log"
+          $edge = Get-ChildItem 'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe', 'C:\Program Files\Microsoft\Edge\Application\msedge.exe' -ErrorAction SilentlyContinue | Select-Object -First 1
+          "edge: $($edge.FullName)"
 
-          $deadline = (Get-Date).AddSeconds(20)
-          do { Start-Sleep -Milliseconds 250; $ready = Test-NetConnection 127.0.0.1 -Port 9515 -InformationLevel Quiet -WarningAction SilentlyContinue } until ($ready -or (Get-Date) -gt $deadline)
-          "msedgedriver listening: $ready"
+          $browser = Start-Process -FilePath $edge.FullName -PassThru -ArgumentList `
+            "--user-data-dir=$out\edge-data", '--remote-debugging-port=9444', '--headless=new', '--no-first-run', '--enable-logging', '--log-level=0', 'about:blank'
+          Start-Sleep -Seconds 10
 
-          $body = @{
-            capabilities = @{
-              alwaysMatch = @{
-                browserName = 'webview2'
-                'ms:edgeOptions' = @{
-                  binary = (Resolve-Path target\xrf-app.exe).Path
-                  webviewOptions = @{}
-                }
-              }
-            }
-          } | ConvertTo-Json -Depth 6
-          "== request"
-          $body
+          "== browser process command lines"
+          Get-CimInstance Win32_Process -Filter "Name='msedge.exe'" | Select-Object -First 3 | ForEach-Object { "[$($_.ProcessId)] $($_.CommandLine)"; "" }
 
-          "== response"
-          try {
-            $response = Invoke-RestMethod -Method Post -Uri http://127.0.0.1:9515/session -Body $body -ContentType 'application/json' -TimeoutSec 150
-            $response | ConvertTo-Json -Depth 6
-            if ($response.value.sessionId) {
-              Invoke-RestMethod -Method Delete -Uri "http://127.0.0.1:9515/session/$($response.value.sessionId)" | Out-Null
-            }
-          } catch {
-            "session request failed: $_"
-            if ($_.ErrorDetails.Message) { $_.ErrorDetails.Message }
+          "DevToolsActivePort present: $(Test-Path "$out\edge-data\DevToolsActivePort")"
+          try { (Invoke-WebRequest -UseBasicParsing http://127.0.0.1:9444/json/version).Content } catch { "no DevTools endpoint: $($_.Exception.Message)" }
+
+          "== chrome_debug.log lines about remote debugging"
+          Select-String -Path "$out\edge-data\chrome_debug.log" -Pattern 'remote|devtools|debugging|policy|ERROR' -ErrorAction SilentlyContinue | Select-Object -First 40 | ForEach-Object Line
+
+          Get-Process msedge -ErrorAction SilentlyContinue | Stop-Process -Force
+          Start-Sleep -Seconds 2
+          exit 0
+
+      - name: Probe C, application under a non-elevated token
+        shell: pwsh
+        continue-on-error: true
+        run: |
+          $ErrorActionPreference = 'Continue'
+          $out = "$env:EVIDENCE\probeC"
+          New-Item -ItemType Directory -Force $out | Out-Null
+
+          $exe = (Resolve-Path target\xrf-app.exe).Path
+
+          # A .cmd wrapper carries the environment, since neither runas nor schtasks forwards ours.
+          $wrapper = "$out\launch.cmd"
+          @"
+          @echo off
+          set WEBVIEW2_USER_DATA_FOLDER=$out\user-data
+          set WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS=--remote-debugging-port=9355 --enable-logging --log-level=0
+          set RUST_LOG=debug
+          whoami /groups | findstr /i "Mandatory Label" > "$out\token.txt"
+          start "" "$exe"
+          "@ -replace '^\s+', '' | Set-Content -Path $wrapper -Encoding ascii
+          Get-Content $wrapper
+
+          "== attempt 1: runas /trustlevel (basic user token)"
+          runas /trustlevel:0x20000 "cmd /c `"$wrapper`"" 2>&1
+          Start-Sleep -Seconds 15
+          $launched = Get-Process xrf-app -ErrorAction SilentlyContinue
+          "xrf-app running: $([bool]$launched)"
+
+          if (-not $launched) {
+            "== attempt 2: scheduled task at limited run level"
+            schtasks /create /tn xrf-probe /tr "cmd /c `"$wrapper`"" /sc once /st 23:59 /rl LIMITED /f 2>&1
+            schtasks /run /tn xrf-probe 2>&1
+            Start-Sleep -Seconds 15
+            $launched = Get-Process xrf-app -ErrorAction SilentlyContinue
+            "xrf-app running: $([bool]$launched)"
+            schtasks /delete /tn xrf-probe /f 2>&1
           }
 
-          "== msedgedriver.log (tail)"
-          Get-Content "$out\msedgedriver.log" -Tail 80 -ErrorAction SilentlyContinue
+          "== token the wrapper ran under"
+          Get-Content "$out\token.txt" -ErrorAction SilentlyContinue
 
-          Stop-Process -Id $driver.Id -Force -ErrorAction SilentlyContinue
+          "== browser process command lines"
+          Get-CimInstance Win32_Process -Filter "Name='msedgewebview2.exe'" | ForEach-Object { "[$($_.ProcessId)] $($_.CommandLine)"; "" }
+
+          $port = "$out\user-data\EBWebView\DevToolsActivePort"
+          "DevToolsActivePort present: $(Test-Path $port)"
+          Get-Content $port -ErrorAction SilentlyContinue
+          try { (Invoke-WebRequest -UseBasicParsing http://127.0.0.1:9355/json/version).Content } catch { "no DevTools endpoint: $($_.Exception.Message)" }
+
+          "== chrome_debug.log lines about remote debugging"
+          Select-String -Path "$out\user-data\EBWebView\chrome_debug.log" -Pattern 'remote|devtools|debugging|policy|ERROR' -ErrorAction SilentlyContinue | Select-Object -First 40 | ForEach-Object Line
+
           Get-Process xrf-app, msedgewebview2 -ErrorAction SilentlyContinue | Stop-Process -Force
           exit 0
 
@@ -209,7 +199,7 @@ jobs:
         if: ${{ always() }}
         uses: actions/upload-artifact@v7
         with:
-          name: debug-app
+          name: debug-app-evidence
           path: target/debug-app
           if-no-files-found: warn
           retention-days: 3
