@@ -2,9 +2,9 @@ import * as fs from "node:fs";
 
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { gamedata } from "#/test/constants";
-import { envelopeAt } from "#/test/envelope";
-import { Sandbox, type CliResult } from "#/test/sandbox";
+import { gamedata } from "#/xrf-cli/test/constants";
+import { envelopeAt } from "#/xrf-cli/test/envelope";
+import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
 /**
  * The pack result, as far as this suite reads it back.

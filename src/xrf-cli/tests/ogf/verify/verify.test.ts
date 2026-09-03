@@ -1,8 +1,8 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { gamedata, resource } from "#/test/constants";
-import { envelopeAt, type CommandEnvelope } from "#/test/envelope";
-import { Sandbox, type CliResult } from "#/test/sandbox";
+import { gamedata, resource } from "#/xrf-cli/test/constants";
+import { envelopeAt, type CommandEnvelope } from "#/xrf-cli/test/envelope";
+import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
 describe("ogf verify", () => {
   const box = new Sandbox(__filename);

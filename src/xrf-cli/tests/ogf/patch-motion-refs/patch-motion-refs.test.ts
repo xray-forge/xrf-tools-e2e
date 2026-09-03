@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { gamedata } from "#/test/constants";
-import { Sandbox, sha, type CliResult } from "#/test/sandbox";
+import { gamedata } from "#/xrf-cli/test/constants";
+import { Sandbox, sha, type CliResult } from "#/xrf-cli/test/sandbox";
 
 // A hud visual: the lod visuals in the corpus carry no motion refs chunk, and this command needs
 // one to exist. It already references dynamics\devices\dev_bolt\dev_bolt_hud_animation.

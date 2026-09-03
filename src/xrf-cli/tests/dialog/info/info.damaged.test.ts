@@ -1,6 +1,6 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { Sandbox, type CliResult } from "#/test/sandbox";
+import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
 const BROKEN = '<game_dialogs><dialog id="d">';
 const READABLE =

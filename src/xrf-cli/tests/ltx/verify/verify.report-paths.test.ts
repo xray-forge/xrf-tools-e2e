@@ -3,8 +3,8 @@ import * as path from "node:path";
 
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { Sandbox } from "#/test/sandbox";
-import { type Optional } from "#/test/types";
+import { type Optional } from "#/types";
+import { Sandbox } from "#/xrf-cli/test/sandbox";
 
 interface ISchemeFinding {
   LtxScheme: { at: string };

@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { gamedata } from "#/test/constants";
-import { Sandbox, type CliResult } from "#/test/sandbox";
+import { gamedata } from "#/xrf-cli/test/constants";
+import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
 describe("archive info directory", () => {
   const box = new Sandbox(__filename);

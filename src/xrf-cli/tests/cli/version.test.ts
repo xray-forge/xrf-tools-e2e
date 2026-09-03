@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { Sandbox, type CliResult } from "#/test/sandbox";
-import type { Nullable } from "#/test/types";
+import type { Nullable } from "#/types";
+import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
 /**
  * A `label: value` line of the long form, which is every line after the first.

@@ -1,8 +1,8 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { gamedata } from "#/test/constants";
-import { envelopeAt, type CommandEnvelope } from "#/test/envelope";
-import { Sandbox, type CliResult } from "#/test/sandbox";
+import { gamedata } from "#/xrf-cli/test/constants";
+import { envelopeAt, type CommandEnvelope } from "#/xrf-cli/test/envelope";
+import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
 const GAMEDATA = gamedata();
 

@@ -1,6 +1,6 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { Sandbox, type CliResult } from "#/test/sandbox";
+import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
 /**
  * What a person is told when a volume set holds entries the engine cannot reach.

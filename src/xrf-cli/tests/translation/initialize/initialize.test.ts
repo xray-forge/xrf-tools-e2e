@@ -1,8 +1,8 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { resource } from "#/test/constants";
-import { envelopeOf } from "#/test/envelope";
-import { Sandbox, type CliResult } from "#/test/sandbox";
+import { resource } from "#/xrf-cli/test/constants";
+import { envelopeOf } from "#/xrf-cli/test/envelope";
+import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
 describe("translation initialize", () => {
   const box = new Sandbox(__filename);

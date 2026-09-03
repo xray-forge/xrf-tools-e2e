@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { gamedata } from "#/test/constants";
-import { Sandbox, type CliResult } from "#/test/sandbox";
+import { gamedata } from "#/xrf-cli/test/constants";
+import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
 /**
  * A section may point at its own icon with `$inventory_icon_path` instead of taking

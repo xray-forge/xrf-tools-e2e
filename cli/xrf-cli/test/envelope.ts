@@ -2,8 +2,9 @@ import * as fs from "node:fs";
 
 import { expect } from "@jest/globals";
 
+import type { Nullable } from "../../types";
+
 import type { CliResult } from "./sandbox";
-import type { Nullable } from "./types";
 
 /**
  * How a run ended, in the words the machine contract uses.

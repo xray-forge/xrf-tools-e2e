@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { gamedata } from "#/test/constants";
-import { Sandbox } from "#/test/sandbox";
+import { gamedata } from "#/xrf-cli/test/constants";
+import { Sandbox } from "#/xrf-cli/test/sandbox";
 
 const ALL_SPAWN = gamedata("spawns/all.spawn");
 
@@ -60,7 +60,7 @@ function payload(objects: Map<string, Array<string>>, section: string, prefixes:
 }
 
 // Shapes that exist only in Call of Chernobyl and Anomaly. The fixture carries one of each, added by
-// `cli/make-spawn-fixture.mjs`, because a fork spawn is a 96 MB installation file.
+// `cli/xrf-cli/make-spawn-fixture.mjs`, because a fork spawn is a 96 MB installation file.
 describe("spawn fork payloads", () => {
   const box = new Sandbox(__filename);
 

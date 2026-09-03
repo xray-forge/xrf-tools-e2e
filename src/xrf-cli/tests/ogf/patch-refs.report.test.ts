@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { gamedata } from "#/test/constants";
-import { Sandbox } from "#/test/sandbox";
+import { gamedata } from "#/xrf-cli/test/constants";
+import { Sandbox } from "#/xrf-cli/test/sandbox";
 
 const SOURCE = gamedata("meshes/ogf/dev_bolt_hud.ogf");
 

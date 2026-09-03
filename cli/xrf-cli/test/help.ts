@@ -1,6 +1,6 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { Sandbox, type CliResult } from "#/test/sandbox";
+import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
 /**
  * Extracts the real subcommand names listed by clap help.

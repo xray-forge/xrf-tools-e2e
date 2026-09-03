@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { gamedata } from "#/test/constants";
-import { Sandbox, sha, type CliResult, type ManifestFile } from "#/test/sandbox";
+import { gamedata } from "#/xrf-cli/test/constants";
+import { Sandbox, sha, type CliResult, type ManifestFile } from "#/xrf-cli/test/sandbox";
 
 /**
  * Smallest cap the corpus can be packed under, in megabytes.

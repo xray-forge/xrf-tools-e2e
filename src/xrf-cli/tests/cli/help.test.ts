@@ -3,9 +3,9 @@ import * as path from "node:path";
 
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { TESTS_ROOT } from "#/test/constants";
-import { commandNamesFromHelp } from "#/test/help";
-import { Sandbox, type CliResult } from "#/test/sandbox";
+import { TESTS_ROOT } from "#/xrf-cli/test/constants";
+import { commandNamesFromHelp } from "#/xrf-cli/test/help";
+import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
 describe("CLI help tree", () => {
   const box = new Sandbox(__filename);

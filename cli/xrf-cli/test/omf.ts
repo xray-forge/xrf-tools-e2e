@@ -11,7 +11,7 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
 
-import type { Optional } from "./types";
+import type { Optional } from "#/types";
 
 /** Container chunk holding motion payloads, one nested chunk per motion after the count. */
 const MOTIONS_CHUNK_ID = 14;

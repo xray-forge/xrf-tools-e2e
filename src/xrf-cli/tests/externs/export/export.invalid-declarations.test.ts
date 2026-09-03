@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { envelopeAt, type CommandEnvelope } from "#/test/envelope";
-import { Sandbox, type CliResult } from "#/test/sandbox";
+import { envelopeAt, type CommandEnvelope } from "#/xrf-cli/test/envelope";
+import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
 const DUPLICATE_DECLARATIONS: string = [
   "export {};",

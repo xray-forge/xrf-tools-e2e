@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { resource } from "#/test/constants";
-import { Sandbox, type CliResult } from "#/test/sandbox";
+import { resource } from "#/xrf-cli/test/constants";
+import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
 describe("translation parse previews without writing", () => {
   const box = new Sandbox(__filename);

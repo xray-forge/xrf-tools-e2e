@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { gamedata } from "#/test/constants";
-import { Sandbox, type CliResult } from "#/test/sandbox";
+import { gamedata } from "#/xrf-cli/test/constants";
+import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
 // Three motions: idle, svd_shoot, svd_reload. The map below covers two of them on purpose.
 const SOURCE = gamedata("meshes/omf/wpn_svd_hud_animation.omf");

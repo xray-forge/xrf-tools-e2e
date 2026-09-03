@@ -2,9 +2,9 @@ import * as fs from "node:fs";
 
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { gamedata } from "#/test/constants";
-import { envelopeAt, envelopeOf, type CommandEnvelope } from "#/test/envelope";
-import { Sandbox, type CliResult, type RunOptions } from "#/test/sandbox";
+import { gamedata } from "#/xrf-cli/test/constants";
+import { envelopeAt, envelopeOf, type CommandEnvelope } from "#/xrf-cli/test/envelope";
+import { Sandbox, type CliResult, type RunOptions } from "#/xrf-cli/test/sandbox";
 
 /**
  * The reporting contract itself, rather than any one command's payload.

@@ -137,7 +137,7 @@ export default [
   },
   {
     // The alias definitions are the one place inline `| null` / `| undefined` is intended.
-    files: ["cli/test/types.ts"],
+    files: ["cli/types.ts"],
     rules: {
       "no-restricted-syntax": "off",
     },

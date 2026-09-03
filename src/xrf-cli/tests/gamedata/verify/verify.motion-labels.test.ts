@@ -1,8 +1,8 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { gamedata } from "#/test/constants";
-import { writeScrambledMotionLabels } from "#/test/omf";
-import { Sandbox, type CliResult } from "#/test/sandbox";
+import { gamedata } from "#/xrf-cli/test/constants";
+import { writeScrambledMotionLabels } from "#/xrf-cli/test/omf";
+import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
 /**
  * The meshes sweep reports a bank whose payload labels no longer name its motions.

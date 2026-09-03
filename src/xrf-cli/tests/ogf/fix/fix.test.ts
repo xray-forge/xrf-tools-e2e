@@ -2,8 +2,8 @@ import * as fs from "node:fs";
 
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { gamedata } from "#/test/constants";
-import { Sandbox, sha, type CliResult } from "#/test/sandbox";
+import { gamedata } from "#/xrf-cli/test/constants";
+import { Sandbox, sha, type CliResult } from "#/xrf-cli/test/sandbox";
 
 const RESIDUE = gamedata("meshes/ogf/residue_split_motion_ref.ogf");
 const CLEAN = gamedata("meshes/ogf/dev_bolt_hud.ogf");

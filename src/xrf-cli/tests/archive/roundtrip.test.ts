@@ -2,8 +2,8 @@ import * as fs from "node:fs";
 
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { gamedata } from "#/test/constants";
-import { Sandbox, sha, type CliResult } from "#/test/sandbox";
+import { gamedata } from "#/xrf-cli/test/constants";
+import { Sandbox, sha, type CliResult } from "#/xrf-cli/test/sandbox";
 
 const PACKED_FILES = ["alife.ltx", "defines.ltx", "evaluation.ltx", "fonts.ltx", "game.ltx", "system.ltx"];
 

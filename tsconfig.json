@@ -18,6 +18,6 @@
     "types": ["node", "jest"],
     "verbatimModuleSyntax": false
   },
-  "exclude": ["node_modules", "src/*/resources", "target"],
+  "exclude": ["node_modules", "src/*/resources", "target", "cli/xrf-app", "src/xrf-app"],
   "include": ["cli/", "src/"]
 }

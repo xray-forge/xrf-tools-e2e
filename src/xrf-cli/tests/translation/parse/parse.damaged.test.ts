@@ -1,8 +1,8 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { resource } from "#/test/constants";
-import { envelopeAt, envelopeOf, type CommandEnvelope } from "#/test/envelope";
-import { Sandbox, type CliResult } from "#/test/sandbox";
+import { resource } from "#/xrf-cli/test/constants";
+import { envelopeAt, envelopeOf, type CommandEnvelope } from "#/xrf-cli/test/envelope";
+import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
 const MOD_ARGS: Array<string> = ["--path", resource("mod-text"), "--source", "directory"];
 

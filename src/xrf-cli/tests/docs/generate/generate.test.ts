@@ -1,6 +1,6 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { Sandbox, type CliResult } from "#/test/sandbox";
+import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
 /**
  * One page per command group, as the generator names them.

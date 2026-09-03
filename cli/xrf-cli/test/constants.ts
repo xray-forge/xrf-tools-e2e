@@ -1,6 +1,6 @@
 import * as path from "node:path";
 
-export const PROJECT_ROOT: string = path.resolve(__dirname, "../..");
+export const PROJECT_ROOT: string = path.resolve(__dirname, "../../..");
 
 /**
  * Root of the committed gamedata tree every test reads from.

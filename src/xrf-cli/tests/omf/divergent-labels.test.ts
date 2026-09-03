@@ -1,9 +1,9 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { gamedata } from "#/test/constants";
-import { envelopeAt } from "#/test/envelope";
-import { writeScrambledMotionLabels } from "#/test/omf";
-import { Sandbox, type CliResult } from "#/test/sandbox";
+import { gamedata } from "#/xrf-cli/test/constants";
+import { envelopeAt } from "#/xrf-cli/test/envelope";
+import { writeScrambledMotionLabels } from "#/xrf-cli/test/omf";
+import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
 /**
  * A bank whose payload labels and motion ids mean nothing, which is what a few third-party banks carry.

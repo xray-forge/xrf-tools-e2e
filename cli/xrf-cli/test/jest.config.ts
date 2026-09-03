@@ -1,7 +1,7 @@
 const os = require("node:os");
 const path = require("node:path");
 
-const ROOT_DIR = path.resolve(__dirname, "../../");
+const ROOT_DIR = path.resolve(__dirname, "../../../");
 const E2E_OUTPUT_ROOT = path.resolve(ROOT_DIR, "target/e2e");
 
 const MAX_WORKERS = Math.max(1, Math.min(8, Math.floor(os.availableParallelism() / 2)));

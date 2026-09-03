@@ -2,8 +2,8 @@ import * as fs from "node:fs";
 
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { gamedata } from "#/test/constants";
-import { Sandbox, sha } from "#/test/sandbox";
+import { gamedata } from "#/xrf-cli/test/constants";
+import { Sandbox, sha } from "#/xrf-cli/test/sandbox";
 
 const ALL_SPAWN = gamedata("spawns/all.spawn");
 
