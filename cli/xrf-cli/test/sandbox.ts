@@ -3,7 +3,7 @@ import * as crypto from "node:crypto";
 import * as fs from "node:fs";
 import * as path from "node:path";
 
-import { CLI_EXECUTABLE, SANDBOXES_ROOT, TESTS_ROOT, TIMINGS_ROOT } from "./constants";
+import { CLI_EXECUTABLE, CLI_SANDBOXES_ROOT, CLI_TESTS_ROOT, CLI_TIMINGS_ROOT } from "./constants";
 import { normalizeText } from "./normalize";
 
 export interface CliResult {
@@ -105,11 +105,11 @@ export class Sandbox {
    */
   public constructor(testFile: string) {
     this.name = path
-      .relative(TESTS_ROOT, testFile)
+      .relative(CLI_TESTS_ROOT, testFile)
       .replace(/\.test\.ts$/, "")
       .split(path.sep)
       .join("/");
-    this.root = path.join(SANDBOXES_ROOT, ...this.name.split("/"));
+    this.root = path.join(CLI_SANDBOXES_ROOT, ...this.name.split("/"));
 
     fs.mkdirSync(this.root, { recursive: true });
   }
@@ -273,9 +273,9 @@ export class Sandbox {
       exitCode,
     });
 
-    fs.mkdirSync(TIMINGS_ROOT, { recursive: true });
+    fs.mkdirSync(CLI_TIMINGS_ROOT, { recursive: true });
     fs.writeFileSync(
-      path.join(TIMINGS_ROOT, `${this.name.split("/").join("__")}.json`),
+      path.join(CLI_TIMINGS_ROOT, `${this.name.split("/").join("__")}.json`),
       `${JSON.stringify(this.timings, undefined, 2)}\n`,
       "utf8"
     );

@@ -7,7 +7,7 @@
  * through the tool's own importer rather than by writing spawn bytes in JavaScript.
  *
  * Run it against the target cli, then re-record the suite with `node cli/xrf-cli/make-spawn-fixture.mjs` followed by
- * `npm run e2e:update`. Running it twice is a no-op: the additions replace their own previous entries.
+ * `npm run e2e:cli:update`. Running it twice is a no-op: the additions replace their own previous entries.
  */
 import { execFileSync } from "node:child_process";
 import * as fs from "node:fs";
@@ -122,7 +122,7 @@ try {
 
   console.log(`Rebuilt ${FIXTURE}`);
   console.log(`  added ${added.length} objects, ${objects.length} in total`);
-  console.log("Re-record the suite with 'npm run e2e:update'.");
+  console.log("Re-record the suite with 'npm run e2e:cli:update'.");
 } finally {
   fs.rmSync(workspace, { force: true, recursive: true });
 }

@@ -3,7 +3,7 @@ import * as path from "node:path";
 
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { TESTS_ROOT } from "#/xrf-cli/test/constants";
+import { CLI_TESTS_ROOT } from "#/xrf-cli/test/constants";
 import { commandNamesFromHelp } from "#/xrf-cli/test/help";
 import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
@@ -28,7 +28,7 @@ describe("CLI help tree", () => {
 
   it("should give every domain an owning leaf-help suite", () => {
     const withoutSuite: Array<string> = domainNames.filter(
-      (domain) => !fs.existsSync(path.join(TESTS_ROOT, domain, "help.test.ts"))
+      (domain) => !fs.existsSync(path.join(CLI_TESTS_ROOT, domain, "help.test.ts"))
     );
 
     expect(withoutSuite).toEqual([]);

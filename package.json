@@ -7,8 +7,8 @@
   "license": "MIT",
   "type": "commonjs",
   "scripts": {
-    "e2e": "jest --ci",
-    "e2e:update": "jest --updateSnapshot",
+    "e2e:cli": "jest --ci",
+    "e2e:cli:update": "jest --updateSnapshot",
     "e2e:app": "wdio run cli/xrf-app/test/wdio.conf.ts",
     "cli:download": "node cli/xrf-cli/download.mjs",
     "cli:refresh": "node cli/xrf-cli/refresh.mjs",

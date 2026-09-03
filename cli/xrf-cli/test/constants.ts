@@ -1,6 +1,7 @@
 import * as path from "node:path";
 
 export const PROJECT_ROOT: string = path.resolve(__dirname, "../../..");
+export const TARGET_ROOT: string = path.resolve(PROJECT_ROOT, "./target");
 
 /**
  * Root of the committed gamedata tree every test reads from.
@@ -10,19 +11,17 @@ export const PROJECT_ROOT: string = path.resolve(__dirname, "../../..");
  * suite identically on any machine and no test can pass or fail because of what happens to sit
  * beside the checkout.
  */
-export const RESOURCES_ROOT: string = path.resolve(PROJECT_ROOT, "./src/xrf-cli/resources");
+export const CLI_RESOURCES_ROOT: string = path.resolve(PROJECT_ROOT, "./src/xrf-cli/resources");
 
-export const GAMEDATA_ROOT: string = path.resolve(RESOURCES_ROOT, "./gamedata");
+export const CLI_GAMEDATA_ROOT: string = path.resolve(CLI_RESOURCES_ROOT, "./gamedata");
 
-export const TESTS_ROOT: string = path.resolve(PROJECT_ROOT, "./src/xrf-cli/tests");
-
-export const TARGET_ROOT: string = path.resolve(PROJECT_ROOT, "./target");
+export const CLI_TESTS_ROOT: string = path.resolve(PROJECT_ROOT, "./src/xrf-cli/tests");
 
 /** Generated state from one E2E run, deleted before any test suite starts. */
-export const E2E_OUTPUT_ROOT: string = path.resolve(TARGET_ROOT, "./e2e");
+export const CLI_E2E_OUTPUT_ROOT: string = path.resolve(TARGET_ROOT, "./e2e-cli");
 
 /** Isolated working directories for test suites. */
-export const SANDBOXES_ROOT: string = path.resolve(E2E_OUTPUT_ROOT, "./sandboxes");
+export const CLI_SANDBOXES_ROOT: string = path.resolve(CLI_E2E_OUTPUT_ROOT, "./sandboxes");
 
 /**
  * Where each test worker drops the timings it measured.
@@ -31,12 +30,12 @@ export const SANDBOXES_ROOT: string = path.resolve(E2E_OUTPUT_ROOT, "./sandboxes
  * Deliberately outside every sandbox so `manifest()` cannot snapshot durations that differ on every
  * run.
  */
-export const TIMINGS_ROOT: string = path.resolve(E2E_OUTPUT_ROOT, "./timings");
+export const CLI_TIMINGS_ROOT: string = path.resolve(CLI_E2E_OUTPUT_ROOT, "./timings");
 
 /**
  * Aggregated report written once every run has finished.
  */
-export const TIMINGS_REPORT: string = path.resolve(E2E_OUTPUT_ROOT, "./timings.json");
+export const CLI_TIMINGS_REPORT: string = path.resolve(CLI_E2E_OUTPUT_ROOT, "./timings.json");
 
 /**
  * The name the CLI is recorded under, whatever the host calls the file.
@@ -67,7 +66,7 @@ export const CLI_EXECUTABLE: string = path.resolve(TARGET_ROOT, CLI_EXECUTABLE_N
  * @returns Absolute path.
  */
 export function gamedata(relative: string = ""): string {
-  return relative ? path.resolve(GAMEDATA_ROOT, relative) : GAMEDATA_ROOT;
+  return relative ? path.resolve(CLI_GAMEDATA_ROOT, relative) : CLI_GAMEDATA_ROOT;
 }
 
 /**
@@ -81,5 +80,5 @@ export function gamedata(relative: string = ""): string {
  * @returns Absolute path.
  */
 export function resource(relative: string = ""): string {
-  return relative ? path.resolve(RESOURCES_ROOT, relative) : RESOURCES_ROOT;
+  return relative ? path.resolve(CLI_RESOURCES_ROOT, relative) : CLI_RESOURCES_ROOT;
 }

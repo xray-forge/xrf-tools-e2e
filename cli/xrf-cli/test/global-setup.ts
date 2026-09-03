@@ -1,7 +1,7 @@
 import * as cp from "node:child_process";
 import * as fs from "node:fs";
 
-import { CLI_EXECUTABLE, E2E_OUTPUT_ROOT } from "./constants";
+import { CLI_EXECUTABLE, CLI_E2E_OUTPUT_ROOT } from "./constants";
 
 /**
  * States which binary the run is about to exercise.
@@ -11,8 +11,8 @@ import { CLI_EXECUTABLE, E2E_OUTPUT_ROOT } from "./constants";
  * produced it before any scenario starts.
  */
 export default function globalSetup(): void {
-  fs.rmSync(E2E_OUTPUT_ROOT, { recursive: true, force: true });
-  fs.mkdirSync(E2E_OUTPUT_ROOT, { recursive: true });
+  fs.rmSync(CLI_E2E_OUTPUT_ROOT, { recursive: true, force: true });
+  fs.mkdirSync(CLI_E2E_OUTPUT_ROOT, { recursive: true });
 
   if (!fs.existsSync(CLI_EXECUTABLE)) {
     throw new Error(`No executable at '${CLI_EXECUTABLE}'.\nRun 'npm run cli:refresh' or use the E2E workflow.`);

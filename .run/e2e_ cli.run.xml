@@ -1,9 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="e2e: update snapshots" type="js.build_tools.npm" folderName="check">
+  <configuration default="false" name="e2e: cli" type="js.build_tools.npm" folderName="check" nameIsGenerated="true">
     <package-json value="$PROJECT_DIR$/package.json" />
     <command value="run" />
     <scripts>
-      <script value="e2e:update" />
+      <script value="e2e:cli" />
     </scripts>
     <node-interpreter value="project" />
     <envs />

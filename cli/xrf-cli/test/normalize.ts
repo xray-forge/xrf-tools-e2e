@@ -1,4 +1,4 @@
-import { CLI_EXECUTABLE_NAME, CLI_EXECUTABLE_STEM, RESOURCES_ROOT } from "./constants";
+import { CLI_EXECUTABLE_NAME, CLI_EXECUTABLE_STEM, CLI_RESOURCES_ROOT } from "./constants";
 
 // eslint-disable-next-line no-control-regex -- matching the escape character is the point.
 const ANSI_PATTERN = /\u001b\[[0-9;]*m/g;
@@ -154,7 +154,7 @@ export function normalizeText(text: string, sandboxRoot: string): Array<string> 
   let normalized: string = text.replace(ANSI_PATTERN, "");
 
   normalized = replaceRoot(normalized, sandboxRoot, "<sandbox>");
-  normalized = replaceRoot(normalized, RESOURCES_ROOT, "<resources>");
+  normalized = replaceRoot(normalized, CLI_RESOURCES_ROOT, "<resources>");
 
   // Separators inside a token become `/`, and repeats collapse: a path that reached us JSON-escaped
   // leaves a doubled separator behind, which would otherwise read differently on each platform.

@@ -1,7 +1,7 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
 
-import { TIMINGS_REPORT, TIMINGS_ROOT } from "./constants";
+import { CLI_TIMINGS_REPORT, CLI_TIMINGS_ROOT } from "./constants";
 import { type CommandTiming } from "./sandbox";
 
 interface CommandSummary {
@@ -13,14 +13,16 @@ interface CommandSummary {
 }
 
 function readRecordedTimings(): Array<CommandTiming> {
-  if (!fs.existsSync(TIMINGS_ROOT)) {
+  if (!fs.existsSync(CLI_TIMINGS_ROOT)) {
     return [];
   }
 
   return fs
-    .readdirSync(TIMINGS_ROOT)
+    .readdirSync(CLI_TIMINGS_ROOT)
     .filter((entry) => entry.endsWith(".json"))
-    .flatMap((entry) => JSON.parse(fs.readFileSync(path.join(TIMINGS_ROOT, entry), "utf8")) as Array<CommandTiming>);
+    .flatMap(
+      (entry) => JSON.parse(fs.readFileSync(path.join(CLI_TIMINGS_ROOT, entry), "utf8")) as Array<CommandTiming>
+    );
 }
 
 /**
@@ -59,7 +61,7 @@ function summarize(timings: Array<CommandTiming>): Array<CommandSummary> {
  *
  * @remarks
  * Runs once in the main process after every worker has finished, which is the only point where all
- * the measurements exist together. The report is written under `target/e2e/` and never committed,
+ * the measurements exist together. The report is written under `target/e2e-cli/` and never committed,
  * so it can record durations without any of it reaching a snapshot.
  */
 export default function globalTeardown(): void {
@@ -73,7 +75,7 @@ export default function globalTeardown(): void {
   const totalMs: number = commands.reduce((total, command) => total + command.totalMs, 0);
 
   fs.writeFileSync(
-    TIMINGS_REPORT,
+    CLI_TIMINGS_REPORT,
     `${JSON.stringify({ totalMs, invocations: timings.length, commands, runs: timings }, undefined, 2)}\n`,
     "utf8"
   );
@@ -82,6 +84,6 @@ export default function globalTeardown(): void {
 
   console.log(
     `\ncli time ${totalMs}ms across ${timings.length} invocations; slowest ${slowest.join(", ")}` +
-      `\ntimings: ${TIMINGS_REPORT}`
+      `\ntimings: ${CLI_TIMINGS_REPORT}`
   );
 }
