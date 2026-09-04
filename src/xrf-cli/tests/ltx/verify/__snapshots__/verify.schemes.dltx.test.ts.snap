@@ -21,7 +21,7 @@ exports[`ltx verify schemes --dltx should refuse the patch file and judge the se
 {
   "exitCode": 3,
   "stderr": [
-    "Verify error: Cannot read <resources>/ltx-schemes-dltx/configs/mod_system_zzz.ltx: Ltx parse error: 4:1 Found DLTX section '![wpn_ak74]', which needs the dltx dialect; rerun with --dltx to evaluate patch files",
+    "Verify error: Cannot read <resources>/ltx-schemes-dltx/configs/mod_system_xxx.ltx: Ltx parse error: 4:1 Found DLTX section '![wpn_ak74]', which needs the dltx dialect; rerun with --dltx to evaluate patch files",
     "Check failed: 1 finding(s)",
   ],
   "stdout": [

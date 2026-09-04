@@ -56,7 +56,7 @@ describe("ltx verify schemes --dltx", () => {
     // neither the file declaring the section nor the file breaking it is named.
     expect(said).toContain("in '<resources>/ltx-schemes-dltx/configs/system.ltx' [wpn_ak74]");
     expect(said).not.toContain("w_ak74.ltx");
-    expect(said).not.toContain("mod_system_zzz.ltx");
+    expect(said).not.toContain("mod_system_xxx.ltx");
   });
 
   it("should write nothing in either mode", () => {
