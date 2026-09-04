@@ -67,10 +67,10 @@ exports[`gamedata verify meets unreachable files should carry the collision as i
   "outcome": "checkFailed",
   "result": {
     "cache": {
-      "bytes": 0,
-      "entries": 0,
-      "hits": 0,
-      "misses": 0,
+      "bytes": 22,
+      "entries": 1,
+      "hits": 2,
+      "misses": 1,
       "refused": 0,
     },
     "checks": [
@@ -128,8 +128,8 @@ exports[`gamedata verify meets unreachable files should write only its report 1`
   },
   {
     "path": "report.json",
-    "sha256": "ebd06fb595a205d86a719e660c3eb343c855343b572e0870d176bb123dd39fad",
-    "size": 1658,
+    "sha256": "7641204eef91a117dd512fa646189f55eef9eadc9607f188188ec2f3bb767baa",
+    "size": 1659,
   },
 ]
 `;

@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ltx format on patch files should judge patch files without being told the dialect 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Checking 6 ltx file(s) from 1 provided path(s)",
+    "Checking 6 file(s)",
+    "All 6 files are formatted, checked in <duration>",
+  ],
+}
+`;
+
+exports[`ltx format on patch files should leave every file untouched when only checking 1`] = `
+[
+  {
+    "path": "configs/items/w_ak74.ltx",
+    "sha256": "e32c0c1d31c661975bc01cfb54fe4a433ff939418a622789cb3109ba1f6a1549",
+    "size": 69,
+  },
+  {
+    "path": "configs/items/w_base.ltx",
+    "sha256": "25e6fe74bfc03d8780ff8c1ed48d0ad8f88e364fa28f936f9f20352a04a9da74",
+    "size": 53,
+  },
+  {
+    "path": "configs/mod_system_aaa.ltx",
+    "sha256": "17eb06cd725eff32bfa832ce6e88d3305d88a26357926b9adc5757e11f97aa49",
+    "size": 127,
+  },
+  {
+    "path": "configs/mod_system_xxx.ltx",
+    "sha256": "89f55269dc5a6032cd0d005f73a7c7e36dbc42dd9343ece8e616a26d1fa54a3f",
+    "size": 145,
+  },
+  {
+    "path": "configs/system.ltx",
+    "sha256": "9c316a6521c725a5b9241d6bc26a934117bf663bbd40b640c7eb5fafd2b0f4b2",
+    "size": 194,
+  },
+  {
+    "path": "configs/weapons.scheme.ltx",
+    "sha256": "c3fbc5709e50966a9371dd5bf7e63ce31f8de98472faa39daf995acf81ef69f7",
+    "size": 358,
+  },
+]
+`;

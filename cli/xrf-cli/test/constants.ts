@@ -15,6 +15,16 @@ export const CLI_RESOURCES_ROOT: string = path.resolve(PROJECT_ROOT, "./src/xrf-
 
 export const CLI_GAMEDATA_ROOT: string = path.resolve(CLI_RESOURCES_ROOT, "./gamedata");
 
+/**
+ * Root of the committed config tree that exercises the DLTX patch dialect.
+ *
+ * @remarks
+ * Its `mod_system_*.ltx` files are Monolith/Anomaly
+ * patch files, which standard LTX refuses outright, so mixing them into the tree every other test
+ * reads would make those tests fail for a reason that has nothing to do with what they check.
+ */
+export const CLI_GAMEDATA_DLTX_ROOT: string = path.resolve(CLI_RESOURCES_ROOT, "./gamedata-dltx");
+
 export const CLI_TESTS_ROOT: string = path.resolve(PROJECT_ROOT, "./src/xrf-cli/tests");
 
 /** Generated state from one E2E run, deleted before any test suite starts. */
@@ -67,6 +77,16 @@ export const CLI_EXECUTABLE: string = path.resolve(TARGET_ROOT, CLI_EXECUTABLE_N
  */
 export function gamedata(relative: string = ""): string {
   return relative ? path.resolve(CLI_GAMEDATA_ROOT, relative) : CLI_GAMEDATA_ROOT;
+}
+
+/**
+ * Refers to a file in the committed DLTX config tree.
+ *
+ * @param relative - Path relative to that tree's root, for example `configs`.
+ * @returns Absolute path.
+ */
+export function gamedataDltx(relative: string = ""): string {
+  return relative ? path.resolve(CLI_GAMEDATA_DLTX_ROOT, relative) : CLI_GAMEDATA_DLTX_ROOT;
 }
 
 /**

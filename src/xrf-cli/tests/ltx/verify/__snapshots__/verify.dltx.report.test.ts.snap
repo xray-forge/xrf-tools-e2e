@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ltx verify --dltx report should report a clean verification under the dialect 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "ltx",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "checkedFields": 3,
+    "checkedSections": 1,
+    "duration": "<duration>",
+    "errors": [],
+    "invalidSections": 0,
+    "outcome": "completed",
+    "skippedSections": 2,
+    "startupDuration": "<duration>",
+    "totalFiles": 1,
+    "totalSections": 3,
+    "validSections": 1,
+  },
+}
+`;
+
+exports[`ltx verify --dltx report should report the errors standard rules find in patch files 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "ltx",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 2 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "checkedFields": 2,
+    "checkedSections": 1,
+    "duration": "<duration>",
+    "errors": [
+      {
+        "Verify": {
+          "message": "Cannot read <resources>/gamedata-dltx/configs/mod_system_aaa.ltx: Ltx parse error: 3:1 Found DLTX section '![wpn_ak74]', which needs the dltx dialect; rerun with --dltx to evaluate patch files",
+        },
+      },
+      {
+        "Verify": {
+          "message": "Cannot read <resources>/gamedata-dltx/configs/mod_system_xxx.ltx: Ltx parse error: 3:1 Found DLTX section '![wpn_ak74]', which needs the dltx dialect; rerun with --dltx to evaluate patch files",
+        },
+      },
+    ],
+    "invalidSections": 0,
+    "outcome": "completed",
+    "skippedSections": 2,
+    "startupDuration": "<duration>",
+    "totalFiles": 3,
+    "totalSections": 3,
+    "validSections": 1,
+  },
+}
+`;

@@ -1,0 +1,9 @@
+; Scheme for the patched weapon section.
+;
+; `patched_by` is supplied only by the patch file, and a declared field that is absent is tolerated
+; rather than refused. So the count of fields this scheme verifies is the observable difference: three
+; under the dialect, two if the patch were not applied.
+
+[$wpn_patched]
+cost = u32
+patched_by = string

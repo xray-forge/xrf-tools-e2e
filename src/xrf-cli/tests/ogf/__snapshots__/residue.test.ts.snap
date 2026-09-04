@@ -46,9 +46,9 @@ exports[`ogf residue should identify the chunk residue rule in the verification 
   "result": {
     "cache": {
       "bytes": 0,
-      "entries": 0,
+      "entries": 1,
       "hits": 0,
-      "misses": 2,
+      "misses": 3,
       "refused": 0,
     },
     "checks": [
@@ -306,7 +306,7 @@ exports[`ogf residue should write only the staged tree, reports and normalized v
   },
   {
     "path": "verify.json",
-    "sha256": "7612bea7b471170c1f31af1f14a841f3bbac433b422981b00eb943c60dd3a2b9",
+    "sha256": "73d47f46fffcef5ef7f412b361f0968ecab2134d8b252a8a73676fafc5e78f46",
     "size": 2884,
   },
 ]

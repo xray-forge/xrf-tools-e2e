@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ltx verify --dltx should accept the same tree with the flag 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Verify path: <resources>/gamedata-dltx/configs",
+    "Checked 6 files, 3 sections in <duration>",
+    "Verified 33.33%, 1 files, 1 sections, 3 fields",
+    "Found 0 error(s)",
+  ],
+}
+`;
+
+exports[`ltx verify --dltx should refuse patch files without the flag 1`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "Verify error: Cannot read <resources>/gamedata-dltx/configs/mod_system_aaa.ltx: Ltx parse error: 3:1 Found DLTX section '![wpn_ak74]', which needs the dltx dialect; rerun with --dltx to evaluate patch files",
+    "Verify error: Cannot read <resources>/gamedata-dltx/configs/mod_system_xxx.ltx: Ltx parse error: 3:1 Found DLTX section '![wpn_ak74]', which needs the dltx dialect; rerun with --dltx to evaluate patch files",
+    "Check failed: 2 finding(s)",
+  ],
+  "stdout": [
+    "Verify path: <resources>/gamedata-dltx/configs",
+    "Checked 6 files, 3 sections in <duration>",
+    "Verified 33.33%, 3 files, 1 sections, 2 fields",
+    "Found 2 error(s)",
+  ],
+}
+`;
+
+exports[`ltx verify --dltx should write nothing in either mode 1`] = `[]`;

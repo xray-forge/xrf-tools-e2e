@@ -29,10 +29,10 @@ exports[`gamedata verify meets a declared source it cannot open should carry the
   "outcome": "executionFailed",
   "result": {
     "cache": {
-      "bytes": 0,
-      "entries": 0,
-      "hits": 0,
-      "misses": 0,
+      "bytes": 22,
+      "entries": 1,
+      "hits": 2,
+      "misses": 1,
       "refused": 0,
     },
     "checks": [
@@ -134,13 +134,13 @@ exports[`gamedata verify meets a declared source it cannot open should write onl
   },
   {
     "path": "report.json",
-    "sha256": "c285e1ddd5a60578a6ed9f238fc4859967bfed6dc17aa5295da28cfcaf9b819b",
-    "size": 1986,
+    "sha256": "3485b4e6491e730632db57e1331c2e123d6db1f252ec3352bdc1e84ba6049bc4",
+    "size": 1987,
   },
   {
     "path": "silent.json",
-    "sha256": "c285e1ddd5a60578a6ed9f238fc4859967bfed6dc17aa5295da28cfcaf9b819b",
-    "size": 1986,
+    "sha256": "3485b4e6491e730632db57e1331c2e123d6db1f252ec3352bdc1e84ba6049bc4",
+    "size": 1987,
   },
 ]
 `;

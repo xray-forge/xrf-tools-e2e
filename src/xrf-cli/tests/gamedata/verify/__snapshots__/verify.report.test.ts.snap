@@ -1057,10 +1057,10 @@ exports[`gamedata verify full run should report one check as a readable document
   "outcome": "success",
   "result": {
     "cache": {
-      "bytes": 0,
-      "entries": 0,
+      "bytes": 8535,
+      "entries": 7,
       "hits": 0,
-      "misses": 0,
+      "misses": 7,
       "refused": 0,
     },
     "checks": [
@@ -1097,13 +1097,13 @@ exports[`gamedata verify full run should write a findings report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "4c393139a0563a32064fd3ecbcc47ab2901829872574fed864804f87caee7806",
-    "size": 240629,
+    "sha256": "9e029e1f1975aa96fa562b8d986e70fbca255d5d39c01b8b68f230255c67dda7",
+    "size": 240631,
   },
   {
     "path": "scripts.json",
-    "sha256": "24ee4f227b219e402e99e3beadc077bae769f78032b5199269547e0d6eebafc0",
-    "size": 1306,
+    "sha256": "6a0b3d192fb572c18eeb947db5607318231ffe2db5e55da78f1ad15efb606e20",
+    "size": 1309,
   },
 ]
 `;

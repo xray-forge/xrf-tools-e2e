@@ -31,6 +31,7 @@ exports[`ltx command help should keep each leaf command's help stable 1`] = `
       "Options:",
       "  -p, --path <path>    Path to a folder with ltx files, or to a game installation root holding fsgame.ltx",
       "  -s, --silent         Turn off logging",
+      "      --dltx           Resolve configs with the Monolith/Anomaly DLTX patch dialect, applying mod_<base>_*.ltx files",
       "  -v, --verbose        Turn on verbose logging",
       "      --json           Write the run's JSON report to stdout, moving human output to stderr",
       "      --report <PATH>  Write the run's JSON report to a file",
