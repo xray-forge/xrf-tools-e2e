@@ -1,0 +1,22 @@
+; Scheme declarations for the configs beside this file.
+;
+; Kept in one file so a finding can be read against the rule that raised it: [$weapon] is strict and
+; therefore refuses an undeclared field and demands every non-optional one, [$ammo] is not and only
+; judges the fields it names, and [$upgrade_grid] declares `*` so a section of arbitrary keys is still
+; typed.
+
+[$weapon]
+$strict = true
+cost = u32
+ammo_class = string[]
+kind = enum:pistol,rifle,shotgun
+upgrade_scheme = ?section
+description = ?string
+
+[$ammo]
+cost = u32
+box_size = u8
+
+[$upgrade_grid]
+$strict = true
+* = u32

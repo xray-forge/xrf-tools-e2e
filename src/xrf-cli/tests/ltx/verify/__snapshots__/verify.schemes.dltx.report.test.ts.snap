@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ltx verify schemes --dltx report should report a valid section and an unreadable patch under standard rules 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "ltx",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 1 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "checkedFields": 3,
+    "checkedSections": 1,
+    "duration": "<duration>",
+    "errors": [
+      {
+        "Verify": {
+          "message": "Cannot read <resources>/ltx-schemes-dltx/configs/mod_system_zzz.ltx: Ltx parse error: 4:1 Found DLTX section '![wpn_ak74]', which needs the dltx dialect; rerun with --dltx to evaluate patch files",
+        },
+      },
+    ],
+    "invalidSections": 0,
+    "outcome": "completed",
+    "skippedSections": 1,
+    "startupDuration": "<duration>",
+    "totalFiles": 2,
+    "totalSections": 2,
+    "validSections": 1,
+  },
+}
+`;
+
+exports[`ltx verify schemes --dltx report should report the scheme findings the dialect uncovered 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "ltx",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 2 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "checkedFields": 2,
+    "checkedSections": 1,
+    "duration": "<duration>",
+    "errors": [
+      {
+        "LtxScheme": {
+          "at": "<resources>/ltx-schemes-dltx/configs/system.ltx",
+          "field": "cost",
+          "message": "Invalid value, unsigned 32 bit number is expected, got 'expensive'",
+          "section": "wpn_ak74",
+        },
+      },
+      {
+        "LtxScheme": {
+          "at": "<resources>/ltx-schemes-dltx/configs/system.ltx",
+          "field": "rpm",
+          "message": "Required field was not provided",
+          "section": "wpn_ak74",
+        },
+      },
+    ],
+    "invalidSections": 1,
+    "outcome": "completed",
+    "skippedSections": 1,
+    "startupDuration": "<duration>",
+    "totalFiles": 1,
+    "totalSections": 2,
+    "validSections": 0,
+  },
+}
+`;

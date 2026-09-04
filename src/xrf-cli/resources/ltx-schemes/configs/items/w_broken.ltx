@@ -1,0 +1,16 @@
+; Nothing in this file is valid, and it is reached through an #include, so the findings it raises
+; name the entry point rather than this path.
+
+[wpn_broken]
+$scheme = $weapon
+cost = expensive
+kind = launcher
+unexpected_field = 1
+
+[wpn_incomplete]
+$scheme = $weapon
+cost = 500
+
+[wpn_undeclared_scheme]
+$scheme = $no_such_scheme
+cost = 1

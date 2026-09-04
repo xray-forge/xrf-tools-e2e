@@ -321,6 +321,31 @@ export class Sandbox {
   }
 
   /**
+   * Reads a text artifact exactly as its bytes were written, one entry per line.
+   *
+   * @remarks
+   * For a file whose whitespace is the thing under test - what a formatter rewrote, above all. `text`
+   * cannot answer that question: it normalizes and trims each line, so line endings, tabs and trailing
+   * spaces are gone before the snapshot sees them, and a formatting change would record as no change
+   * at all. Only the invisible characters are escaped, so a carriage return, a tab and a trailing space
+   * all reach the diff while the line itself stays readable.
+   *
+   * Nothing is normalized, so this is only for content the tool derives from committed bytes rather
+   * than from a path on this machine.
+   *
+   * @param relative - Sandbox-relative path to a text file.
+   * @returns One entry per line, each keeping its own terminator.
+   */
+  public raw(relative: string): Array<string> {
+    // Windows-1251 in, Windows-1251 out: `latin1` is a byte-preserving decode, so no character can be
+    // lost or replaced on the way into the snapshot.
+    return fs
+      .readFileSync(this.at(relative), "latin1")
+      .split(/(?<=\n)/)
+      .map((line) => line.replace(/\t/g, "\\t").replace(/\r/g, "\\r").replace(/\n/g, "\\n"));
+  }
+
+  /**
    * Records everything the test left in the sandbox.
    *
    * @remarks

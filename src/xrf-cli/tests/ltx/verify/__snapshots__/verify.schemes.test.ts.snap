@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ltx verify schemes should report every finding with its section, field and rule 1`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "Ltx scheme error in '<resources>/ltx-schemes/configs/standalone.ltx' [ammo_9x18] cost : Invalid value, unsigned 32 bit number is expected, got 'free'",
+    "Ltx scheme error in '<resources>/ltx-schemes/configs/standalone.ltx' [ammo_9x18] box_size : Invalid value, unsigned 8 bit number is expected, got '300'",
+    "Ltx scheme error in '<resources>/ltx-schemes/configs/system.ltx' [wpn_broken] cost : Invalid value, unsigned 32 bit number is expected, got 'expensive'",
+    "Ltx scheme error in '<resources>/ltx-schemes/configs/system.ltx' [wpn_broken] kind : Invalid value, one of possible values [pistol,rifle,shotgun] expected, got 'launcher'",
+    "Ltx scheme error in '<resources>/ltx-schemes/configs/system.ltx' [wpn_broken] unexpected_field : Unexpected field, definition is required in strict mode",
+    "Ltx scheme error in '<resources>/ltx-schemes/configs/system.ltx' [wpn_broken] ammo_class : Required field was not provided",
+    "Ltx scheme error in '<resources>/ltx-schemes/configs/system.ltx' [wpn_incomplete] ammo_class : Required field was not provided",
+    "Ltx scheme error in '<resources>/ltx-schemes/configs/system.ltx' [wpn_incomplete] kind : Required field was not provided",
+    "Ltx scheme error in '<resources>/ltx-schemes/configs/system.ltx' [wpn_undeclared_scheme] * : Required schema '$no_such_scheme' definition is not found",
+    "Check failed: 9 finding(s)",
+  ],
+  "stdout": [
+    "Verify path: <resources>/ltx-schemes/configs",
+    "Checked 5 files, 8 sections in <duration>",
+    "Verified 87.50%, 2 files, 7 sections, 21 fields",
+    "Found 9 error(s)",
+  ],
+}
+`;
+
+exports[`ltx verify schemes should write nothing 1`] = `[]`;

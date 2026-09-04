@@ -25,6 +25,21 @@ export const CLI_GAMEDATA_ROOT: string = path.resolve(CLI_RESOURCES_ROOT, "./gam
  */
 export const CLI_GAMEDATA_DLTX_ROOT: string = path.resolve(CLI_RESOURCES_ROOT, "./gamedata-dltx");
 
+/**
+ * Root of the committed LTX samples the formatter is judged against.
+ */
+export const CLI_LTX_UNFORMATTED_ROOT: string = path.resolve(CLI_RESOURCES_ROOT, "./ltx-unformatted");
+
+/**
+ * Root of the committed config tree that declares LTX schemes and fails them.
+ */
+export const CLI_LTX_SCHEMES_ROOT: string = path.resolve(CLI_RESOURCES_ROOT, "./ltx-schemes");
+
+/**
+ * Root of the committed config tree where a DLTX patch breaks a section the scheme accepts on disk.
+ */
+export const CLI_LTX_SCHEMES_DLTX_ROOT: string = path.resolve(CLI_RESOURCES_ROOT, "./ltx-schemes-dltx");
+
 export const CLI_TESTS_ROOT: string = path.resolve(PROJECT_ROOT, "./src/xrf-cli/tests");
 
 /** Generated state from one E2E run, deleted before any test suite starts. */
@@ -101,4 +116,34 @@ export function gamedataDltx(relative: string = ""): string {
  */
 export function resource(relative: string = ""): string {
   return relative ? path.resolve(CLI_RESOURCES_ROOT, relative) : CLI_RESOURCES_ROOT;
+}
+
+/**
+ * Refers to a file in the committed unformatted LTX samples.
+ *
+ * @param relative - Path relative to that tree's root, for example `spacing.ltx`.
+ * @returns Absolute path.
+ */
+export function ltxUnformatted(relative: string = ""): string {
+  return relative ? path.resolve(CLI_LTX_UNFORMATTED_ROOT, relative) : CLI_LTX_UNFORMATTED_ROOT;
+}
+
+/**
+ * Refers to a file in the committed scheme-declaring config tree.
+ *
+ * @param relative - Path relative to that tree's root, for example `configs`.
+ * @returns Absolute path.
+ */
+export function ltxSchemes(relative: string = ""): string {
+  return relative ? path.resolve(CLI_LTX_SCHEMES_ROOT, relative) : CLI_LTX_SCHEMES_ROOT;
+}
+
+/**
+ * Refers to a file in the committed scheme tree a DLTX patch breaks.
+ *
+ * @param relative - Path relative to that tree's root, for example `configs`.
+ * @returns Absolute path.
+ */
+export function ltxSchemesDltx(relative: string = ""): string {
+  return relative ? path.resolve(CLI_LTX_SCHEMES_DLTX_ROOT, relative) : CLI_LTX_SCHEMES_DLTX_ROOT;
 }

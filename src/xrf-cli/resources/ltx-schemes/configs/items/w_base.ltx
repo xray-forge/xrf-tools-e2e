@@ -1,0 +1,20 @@
+; Every section here passes. [wpn_child] declares no $scheme of its own - it inherits one, together
+; with the fields it does not restate, which is what makes an inherited section verifiable at all.
+
+[wpn_base]
+$scheme = $weapon
+cost = 100
+ammo_class = ammo_9x18
+kind = pistol
+
+[wpn_child]:wpn_base
+cost = 4000
+kind = rifle
+ammo_class = ammo_545x39, ammo_545x39_ap
+upgrade_scheme = wpn_child_upgrades
+description = inherits the scheme it never declares
+
+[wpn_child_upgrades]
+$scheme = $upgrade_grid
+level_1 = 1
+level_2 = 2

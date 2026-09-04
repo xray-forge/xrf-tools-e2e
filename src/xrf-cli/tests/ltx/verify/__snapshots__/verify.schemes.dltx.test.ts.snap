@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ltx verify schemes --dltx should fail the resolved section with the flag 1`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "Ltx scheme error in '<resources>/ltx-schemes-dltx/configs/system.ltx' [wpn_ak74] cost : Invalid value, unsigned 32 bit number is expected, got 'expensive'",
+    "Ltx scheme error in '<resources>/ltx-schemes-dltx/configs/system.ltx' [wpn_ak74] rpm : Required field was not provided",
+    "Check failed: 2 finding(s)",
+  ],
+  "stdout": [
+    "Verify path: <resources>/ltx-schemes-dltx/configs",
+    "Checked 4 files, 2 sections in <duration>",
+    "Verified 50.00%, 1 files, 1 sections, 2 fields",
+    "Found 2 error(s)",
+  ],
+}
+`;
+
+exports[`ltx verify schemes --dltx should refuse the patch file and judge the section unpatched without the flag 1`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "Verify error: Cannot read <resources>/ltx-schemes-dltx/configs/mod_system_zzz.ltx: Ltx parse error: 4:1 Found DLTX section '![wpn_ak74]', which needs the dltx dialect; rerun with --dltx to evaluate patch files",
+    "Check failed: 1 finding(s)",
+  ],
+  "stdout": [
+    "Verify path: <resources>/ltx-schemes-dltx/configs",
+    "Checked 4 files, 2 sections in <duration>",
+    "Verified 50.00%, 2 files, 1 sections, 3 fields",
+    "Found 1 error(s)",
+  ],
+}
+`;
+
+exports[`ltx verify schemes --dltx should write nothing in either mode 1`] = `[]`;

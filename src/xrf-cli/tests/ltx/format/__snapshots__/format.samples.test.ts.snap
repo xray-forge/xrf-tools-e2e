@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ltx format samples should accept what it just wrote 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Checking 3 ltx file(s) from 1 provided path(s)",
+    "Checking 3 file(s)",
+    "All 3 files are formatted, checked in <duration>",
+  ],
+}
+`;
+
+exports[`ltx format samples should be idempotent 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Formatting 3 ltx file(s) from 1 provided path(s)",
+    "Formatting 3 file(s)",
+    "Formatted 0/3 files in <duration>",
+  ],
+}
+`;
+
+exports[`ltx format samples should read the samples as they were authored 1`] = `
+{
+  "formatted.ltx": [
+    "; Already in the shape the formatter writes.\\r\\n",
+    "\\r\\n",
+    "[wpn_formatted]\\r\\n",
+    "cost = 100\\r\\n",
+  ],
+  "spacing.ltx": [
+    "[wpn_spacing]\\n",
+    "cost=100\\n",
+    "   ammo_class   =   ammo_a,   ammo_b   \\n",
+    "rpm = 600\\t\\n",
+    "empty_value =\\n",
+    "bare_key\\n",
+    "description = keeps  inner   spacing",
+  ],
+  "structure.ltx": [
+    ";A comment written without the space\\n",
+    ";\\n",
+    "\\n",
+    "\\n",
+    "   ;    an over-indented comment\\n",
+    "\\n",
+    "\\n",
+    "#include "items\\w_extra.ltx"\\n",
+    "[wpn_base]\\n",
+    "cost = 100\\n",
+    "[wpn_child]:  wpn_base ,   wpn_extra   ;   what this section is for\\n",
+    "rpm=600\\n",
+    "   ; a comment indented inside a section\\n",
+    "[  wpn_padded  ]\\n",
+    "x=1\\n",
+  ],
+}
+`;
+
+exports[`ltx format samples should reject the two that are not formatted 1`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "Format issues with 2/3 files in <duration>",
+    "Check failed: 2 finding(s)",
+  ],
+  "stdout": [
+    "Checking 3 ltx file(s) from 1 provided path(s)",
+    "Checking 3 file(s)",
+    "Not formatted: <sandbox>/samples/spacing.ltx",
+    "Not formatted: <sandbox>/samples/structure.ltx",
+  ],
+}
+`;
+
+exports[`ltx format samples should rewrite only those two 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Formatting 3 ltx file(s) from 1 provided path(s)",
+    "Formatting 3 file(s)",
+    "Formatted: <sandbox>/samples/spacing.ltx",
+    "Formatted: <sandbox>/samples/structure.ltx",
+    "Formatted 2/3 files in <duration>",
+  ],
+}
+`;
+
+exports[`ltx format samples should write no file beside the samples it was given 1`] = `
+[
+  {
+    "path": "samples/formatted.ltx",
+    "sha256": "7c5441a6be6ed5eb749467d44b8ef3884181aa1aae2c2cf75ec087ee3a6625e9",
+    "size": 77,
+  },
+  {
+    "path": "samples/spacing.ltx",
+    "sha256": "6255070567bea3f137a341162b68f293824620d8bbaaefbd507879d08c703b84",
+    "size": 132,
+  },
+  {
+    "path": "samples/structure.ltx",
+    "sha256": "78d9bc25a3540bb70a04d55c2877eb0c2319429c333759d0d9fac727955ca0bb",
+    "size": 264,
+  },
+]
+`;
+
+exports[`ltx format samples should write the canonical shape 1`] = `
+{
+  "formatted.ltx": [
+    "; Already in the shape the formatter writes.\\r\\n",
+    "\\r\\n",
+    "[wpn_formatted]\\r\\n",
+    "cost = 100\\r\\n",
+  ],
+  "spacing.ltx": [
+    "[wpn_spacing]\\r\\n",
+    "cost = 100\\r\\n",
+    "ammo_class = ammo_a,   ammo_b\\r\\n",
+    "rpm = 600\\r\\n",
+    "empty_value =\\r\\n",
+    "bare_key\\r\\n",
+    "description = keeps  inner   spacing\\r\\n",
+  ],
+  "structure.ltx": [
+    "; A comment written without the space\\r\\n",
+    ";\\r\\n",
+    "; an over-indented comment\\r\\n",
+    "#include "items\\w_extra.ltx"\\r\\n",
+    "\\r\\n",
+    "[wpn_base]\\r\\n",
+    "cost = 100\\r\\n",
+    "\\r\\n",
+    "[wpn_child]:wpn_base,wpn_extra ; what this section is for\\r\\n",
+    "rpm = 600\\r\\n",
+    "; a comment indented inside a section\\r\\n",
+    "\\r\\n",
+    "[  wpn_padded  ]\\r\\n",
+    "x = 1\\r\\n",
+  ],
+}
+`;

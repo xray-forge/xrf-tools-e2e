@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ltx verify schemes report should report every finding and the coverage it reached 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "ltx",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 9 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "checkedFields": 21,
+    "checkedSections": 7,
+    "duration": "<duration>",
+    "errors": [
+      {
+        "LtxScheme": {
+          "at": "<resources>/ltx-schemes/configs/standalone.ltx",
+          "field": "cost",
+          "message": "Invalid value, unsigned 32 bit number is expected, got 'free'",
+          "section": "ammo_9x18",
+        },
+      },
+      {
+        "LtxScheme": {
+          "at": "<resources>/ltx-schemes/configs/standalone.ltx",
+          "field": "box_size",
+          "message": "Invalid value, unsigned 8 bit number is expected, got '300'",
+          "section": "ammo_9x18",
+        },
+      },
+      {
+        "LtxScheme": {
+          "at": "<resources>/ltx-schemes/configs/system.ltx",
+          "field": "cost",
+          "message": "Invalid value, unsigned 32 bit number is expected, got 'expensive'",
+          "section": "wpn_broken",
+        },
+      },
+      {
+        "LtxScheme": {
+          "at": "<resources>/ltx-schemes/configs/system.ltx",
+          "field": "kind",
+          "message": "Invalid value, one of possible values [pistol,rifle,shotgun] expected, got 'launcher'",
+          "section": "wpn_broken",
+        },
+      },
+      {
+        "LtxScheme": {
+          "at": "<resources>/ltx-schemes/configs/system.ltx",
+          "field": "unexpected_field",
+          "message": "Unexpected field, definition is required in strict mode",
+          "section": "wpn_broken",
+        },
+      },
+      {
+        "LtxScheme": {
+          "at": "<resources>/ltx-schemes/configs/system.ltx",
+          "field": "ammo_class",
+          "message": "Required field was not provided",
+          "section": "wpn_broken",
+        },
+      },
+      {
+        "LtxScheme": {
+          "at": "<resources>/ltx-schemes/configs/system.ltx",
+          "field": "ammo_class",
+          "message": "Required field was not provided",
+          "section": "wpn_incomplete",
+        },
+      },
+      {
+        "LtxScheme": {
+          "at": "<resources>/ltx-schemes/configs/system.ltx",
+          "field": "kind",
+          "message": "Required field was not provided",
+          "section": "wpn_incomplete",
+        },
+      },
+      {
+        "LtxScheme": {
+          "at": "<resources>/ltx-schemes/configs/system.ltx",
+          "field": "*",
+          "message": "Required schema '$no_such_scheme' definition is not found",
+          "section": "wpn_undeclared_scheme",
+        },
+      },
+    ],
+    "invalidSections": 4,
+    "outcome": "completed",
+    "skippedSections": 1,
+    "startupDuration": "<duration>",
+    "totalFiles": 2,
+    "totalSections": 8,
+    "validSections": 3,
+  },
+}
+`;
