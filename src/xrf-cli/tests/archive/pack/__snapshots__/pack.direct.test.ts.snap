@@ -9,6 +9,7 @@ exports[`archive pack direct configuration should pack from options alone 1`] = 
     "Pack destination: <sandbox>/via-arguments",
     "Wrote <sandbox>/via-arguments/cfg.db",
     "Packed 1 file(s) into 1 volume(s) in <duration>",
+    "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
     "Summary: 1 compressed, 0 stored, 0 aliased, 0 skipped",
     "Size: 1.1 KB source, 0.71 KB written",
     "Speed: <speed>",

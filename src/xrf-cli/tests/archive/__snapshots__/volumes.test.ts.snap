@@ -23,6 +23,7 @@ exports[`archive volumes should split a pack across volumes 1`] = `
     "Wrote <sandbox>/split/gamedata.db0",
     "Wrote <sandbox>/split/gamedata.db1",
     "Packed 29 file(s) into 2 volume(s) in <duration>",
+    "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
     "Summary: 14 compressed, 15 stored, 0 aliased, 0 skipped",
     "Size: 2.37 MB source, 2.37 MB written",
     "Speed: <speed>",

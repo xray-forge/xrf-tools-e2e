@@ -37,6 +37,7 @@ exports[`archive pack verbose output should add one deterministic line per decis
     "Closed volume: a.db0, 4.79 KB, 16 entries",
     "Wrote <sandbox>/verbose/a.db",
     "Packed 16 file(s) into 1 volume(s) in <duration>",
+    "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
     "Summary: 13 compressed, 2 stored, 1 aliased, 2 skipped",
     "Size: 10.7 KB source, 4.79 KB written",
     "Speed: <speed>",
@@ -53,6 +54,7 @@ exports[`archive pack verbose output should keep the normal summary compact 1`] 
     "Pack destination: <sandbox>/plain",
     "Wrote <sandbox>/plain/a.db",
     "Packed 16 file(s) into 1 volume(s) in <duration>",
+    "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
     "Summary: 13 compressed, 2 stored, 1 aliased, 2 skipped",
     "Size: 10.7 KB source, 4.79 KB written",
     "Speed: <speed>",
@@ -99,6 +101,57 @@ exports[`archive pack verbose output should leave a log naming the opened volume
     "Closed volume: a.db0, 4.79 KB, 16 entries",
     "Opened volume: a.db1",
   ],
+}
+`;
+
+exports[`archive pack verbose output should report the run as a readable document 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "archive",
+    "pack",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "collectDuration": "<duration>",
+    "duration": "<duration>",
+    "filesAliased": 1,
+    "filesCompressed": 13,
+    "filesSkipped": 2,
+    "filesStored": 2,
+    "filesTotal": 16,
+    "finalizeDuration": "<duration>",
+    "outcome": "completed",
+    "sizeSource": 10940,
+    "sizeWritten": 4907,
+    "speed": "<speed>",
+    "volumes": [
+      "<sandbox>/reported/a.db",
+    ],
+    "volumesOpened": [
+      "<sandbox>/reported/a.db",
+    ],
+    "writeDuration": "<duration>",
+  },
 }
 `;
 
@@ -211,8 +264,8 @@ exports[`archive pack verbose output should write the expected files 1`] = `
   },
   {
     "path": "reported.json",
-    "sha256": "e4165f270551ed81cf1a07b6622d40dcb985570f18360cbf39177321053f2351",
-    "size": 891,
+    "sha256": "db500cdb7a28fa8ad5c4e12365a5f8536c267e69cdab4525fe17bdfa211420b1",
+    "size": 1001,
   },
   {
     "path": "reported/a.db",

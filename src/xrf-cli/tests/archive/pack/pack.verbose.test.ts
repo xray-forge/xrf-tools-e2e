@@ -16,6 +16,10 @@ interface IPackResult {
   filesStored: number;
   filesAliased: number;
   speed: number;
+  duration: number;
+  collectDuration: number;
+  writeDuration: number;
+  finalizeDuration: number;
 }
 
 /**
@@ -140,6 +144,14 @@ describe("archive pack verbose output", () => {
     expect(result.speed).toBeGreaterThan(0);
   });
 
+  it("should divide the reported duration between the reported phases", () => {
+    const result: IPackResult = envelopeAt(box.at("reported.json")).result as IPackResult;
+    const phases: number = result.collectDuration + result.writeDuration + result.finalizeDuration;
+
+    expect(phases).toBeLessThanOrEqual(result.duration);
+    expect(phases).toBeGreaterThanOrEqual(result.duration - 2);
+  });
+
   // Saying more may not change what is written.
   it("should write identical archives with and without verbose output or a report", () => {
     expect(box.sha("reported/a.db")).toBe(box.sha("plain/a.db"));
@@ -152,6 +164,12 @@ describe("archive pack verbose output", () => {
     expect(failing).toMatchSnapshot();
     expect(failing.stdout).toContain("Opened volume: a.db0");
     expect(failing.stderr.join("\n")).toMatch(/zz_big\.bin/);
+  });
+
+  // Recorded as a document rather than only as the manifest's hash of one: the payload is what the engine build reads
+  // back, so a renamed or dropped member has to reach the diff as its own line instead of as a moved digest.
+  it("should report the run as a readable document", () => {
+    expect(box.json("reported.json")).toMatchSnapshot();
   });
 
   it("should write the expected files", () => {
