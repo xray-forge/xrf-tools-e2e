@@ -26,6 +26,8 @@ permissions:
 
 env:
   TAURI_DRIVER_VERSION: 2.0.6
+  npm_config_audit: "false"
+  npm_config_fund: "false"
 
 jobs:
   e2e-cli:
@@ -55,7 +57,7 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm ci --no-audit --no-fund
+        run: npm ci
 
       - name: Download nightly CLI
         run: npm run cli:download
@@ -81,7 +83,7 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm ci --no-audit --no-fund
+        run: npm ci
 
       # The application is driven through Tauri's external WebDriver bridge; the matching Edge WebDriver is
       # downloaded by the WebdriverIO Tauri service on demand, so only tauri-driver itself needs installing.

@@ -11,6 +11,10 @@ concurrency:
   group: checks-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  npm_config_audit: "false"
+  npm_config_fund: "false"
+
 jobs:
   checks:
     name: Checks
@@ -26,7 +30,7 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm ci --no-audit --no-fund
+        run: npm ci
 
       - name: Check formatting
         run: npm run format:check
