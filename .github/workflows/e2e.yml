@@ -99,6 +99,10 @@ jobs:
       - name: Download nightly application
         run: npm run app:download
 
+      # https://github.com/MicrosoftEdge/WebView2Feedback/issues/5640
+      - name: Allow WebView2 remote debugging for the elevated runner session
+        run: reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge\WebView2\AdditionalBrowserArguments" /v "*" /t REG_SZ /d "--remote-debugging-port=0 --enable-automation --no-first-run --test-type=webdriver" /f
+
       - name: Run application E2E suite
         run: npm run e2e:app
 
