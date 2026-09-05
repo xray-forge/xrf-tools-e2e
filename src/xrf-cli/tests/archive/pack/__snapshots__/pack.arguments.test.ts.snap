@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive pack arguments should refuse a configuration file beside a direct selection 1`] = `
+{
+  "exitCode": 2,
+  "stderr": [
+    "error: the argument '--config <config>' cannot be used with '--include-directory <include-directory>'",
+    "",
+    "Usage: xrf-cli archive pack --path <path> --dest <dest> --name <name> --config <config>",
+    "",
+    "For more information, try '--help'.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`archive pack arguments should refuse a header entry that names no key 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: Header entry 'auto_load' is not a <key>=<value> pair. Write it as --header auto_load=true.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`archive pack arguments should write the expected files 1`] = `
+[
+  {
+    "path": "compress.ltx",
+    "sha256": "0ce5687f392681ae6e686c4d373215ceae9912f5a0a8126380a36f9918b2b70e",
+    "size": 30,
+  },
+]
+`;

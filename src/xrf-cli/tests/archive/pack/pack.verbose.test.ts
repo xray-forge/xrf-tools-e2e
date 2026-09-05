@@ -23,11 +23,6 @@ interface IPackResult {
 }
 
 /**
- * Bytes a one megabyte volume cannot hold, as a stored payload that compression never touches.
- */
-const OVERSIZED_PAYLOAD_BYTES = 1_536 * 1_024;
-
-/**
  * What a pack says about each decision.
  *
  * Normal output is the compact summary. Verbose output adds one line per directory, excluded directory, skipped file,
@@ -49,7 +44,6 @@ describe("archive pack verbose output", () => {
   let plain: CliResult;
   let reported: CliResult;
   let verbose: CliResult;
-  let failing: CliResult;
 
   beforeAll(() => {
     const source: string = box.copyIn(gamedata("configs"), "source");
@@ -87,30 +81,6 @@ describe("archive pack verbose output", () => {
       ...selection,
       "--verbose",
     ]);
-
-    // A stored payload no volume of the requested size can hold, named so it sorts after every other entry: the
-    // refusal then comes after the volume was opened and every other file was placed, which is what a log of a
-    // failed run has to show.
-    const failingSource: string = box.copyIn(source, "failing-source");
-
-    fs.writeFileSync(box.at("failing-source/zz_big.bin"), Buffer.alloc(OVERSIZED_PAYLOAD_BYTES, 0x5a));
-
-    failing = box.run(
-      "archive pack",
-      [
-        "--path",
-        failingSource,
-        "--dest",
-        box.at("failing"),
-        "--name",
-        "a",
-        ...selection,
-        "--max-size",
-        "1",
-        "--verbose",
-      ],
-      { expectExit: 1 }
-    );
   });
 
   it("should keep the normal summary compact", () => {
@@ -156,14 +126,6 @@ describe("archive pack verbose output", () => {
   it("should write identical archives with and without verbose output or a report", () => {
     expect(box.sha("reported/a.db")).toBe(box.sha("plain/a.db"));
     expect(box.sha("verbose/a.db")).toBe(box.sha("plain/a.db"));
-  });
-
-  // A run that stops inside a volume has already named the volume and every entry it placed, so the log says where it
-  // got to without any file surviving to inspect: the unforced run takes back what it wrote.
-  it("should leave a log naming the opened volume and the last entry before a failure", () => {
-    expect(failing).toMatchSnapshot();
-    expect(failing.stdout).toContain("Opened volume: a.db0");
-    expect(failing.stderr.join("\n")).toMatch(/zz_big\.bin/);
   });
 
   // Recorded as a document rather than only as the manifest's hash of one: the payload is what the engine build reads

@@ -1,0 +1,212 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive verify damaged volume should record the readable archive reports 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "archive",
+    "list",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "entries": [
+      {
+        "isDirectory": false,
+        "name": "payload.ltx",
+        "sharedWith": [],
+        "sizeCompressed": 188,
+        "sizeReal": 32768,
+        "source": "<sandbox>/packed/fixture.db",
+      },
+    ],
+    "total": 1,
+  },
+}
+`;
+
+exports[`archive verify damaged volume should record the readable archive reports 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "archive",
+    "info",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "directories": 0,
+    "files": 1,
+    "root": "<sandbox>/damaged/payload.db",
+    "sizeCompressed": 188,
+    "sizeReal": 32768,
+    "volumes": [
+      {
+        "entries": 1,
+        "path": "<sandbox>/damaged/payload.db",
+        "root": "gamedata/",
+        "sizeCompressed": 188,
+        "sizeReal": 32768,
+      },
+    ],
+  },
+}
+`;
+
+exports[`archive verify damaged volume should record the readable archive reports 3`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "archive",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "checked": 1,
+    "collisions": [],
+    "findings": [],
+    "status": "passed",
+  },
+}
+`;
+
+exports[`archive verify damaged volume should record the readable archive reports 4`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "archive",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 1 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "checked": 1,
+    "collisions": [],
+    "findings": [
+      {
+        "message": "Read error: Failed to decompress 'payload.ltx' from '<sandbox>/damaged/payload.db': input overrun.",
+        "name": "payload.ltx",
+      },
+    ],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`archive verify damaged volume should write the expected files 1`] = `
+[
+  {
+    "path": "damaged/payload.db",
+    "sha256": "cc18b3a87cf6383b1f4850f1587dfbdfc51694816153ae0b6cab73d246ecd0a0",
+    "size": 304,
+  },
+  {
+    "path": "damaged/truncated.db",
+    "sha256": "b96ba0008516e08fd1f06cb587c834b38e3ea8ef31e97261ab62f349318972de",
+    "size": 303,
+  },
+  {
+    "path": "intact.json",
+    "sha256": "c09fc9c49703f3967eba98aac81b9b90ab02bacd871522f3055857b0bdfe2459",
+    "size": 610,
+  },
+  {
+    "path": "listing.json",
+    "sha256": "b78843fd482ec5376e046220cad47eda6bfd3aca0fcd26e155feed7be96fc5d6",
+    "size": 773,
+  },
+  {
+    "path": "opened.json",
+    "sha256": "da285c580fb8db4eeb18e988e9ab08031bfcfc2e968fd5dcbd11fa4d51114439",
+    "size": 852,
+  },
+  {
+    "path": "packed/fixture.db",
+    "sha256": "8424b34d026c235668902b7715b25c615439a4fa0424f46f8516cb7856160206",
+    "size": 304,
+  },
+  {
+    "path": "source/payload.ltx",
+    "sha256": "40ccc69ef86444e2d9489c5380d9c6e9367f5d28384b40600d8ee40985b67f85",
+    "size": 32768,
+  },
+  {
+    "path": "verify.json",
+    "sha256": "0967cc0a44970372140c1c3f3b532acdc6bdc4db56552d0249158416bc83738c",
+    "size": 810,
+  },
+]
+`;

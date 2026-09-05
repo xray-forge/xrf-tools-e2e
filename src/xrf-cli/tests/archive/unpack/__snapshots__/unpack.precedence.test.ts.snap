@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive unpack precedence should write the expected files 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "archive",
+    "unpack",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "requested",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "archives": [
+      "<sandbox>/archives/base.db",
+      "<sandbox>/archives/patch.db",
+    ],
+    "destination": "<sandbox>/serial",
+    "duration": "<duration>",
+    "filesTotal": 2,
+    "filesUnpacked": 1,
+    "outcome": "completed",
+    "prepareDuration": "<duration>",
+    "unpackDuration": "<duration>",
+    "unpackedSize": 17,
+  },
+}
+`;
+
+exports[`archive unpack precedence should write the expected files 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "archive",
+    "unpack",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "requested",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "archives": [
+      "<sandbox>/archives/base.db",
+      "<sandbox>/archives/patch.db",
+    ],
+    "destination": "<sandbox>/parallel",
+    "duration": "<duration>",
+    "filesTotal": 2,
+    "filesUnpacked": 1,
+    "outcome": "completed",
+    "prepareDuration": "<duration>",
+    "unpackDuration": "<duration>",
+    "unpackedSize": 17,
+  },
+}
+`;
+
+exports[`archive unpack precedence should write the expected files 3`] = `
+[
+  {
+    "path": "archives/base.db",
+    "sha256": "8c4838fcead0bf3846d2866cf533c3802e391f25f84f480451f7e066bded2532",
+    "size": 150,
+  },
+  {
+    "path": "archives/patch.db",
+    "sha256": "bd0293691df1713484b5034dd8232f719b6cde2145f742aa0df9d3285bb484ee",
+    "size": 151,
+  },
+  {
+    "path": "base/configs/system.ltx",
+    "sha256": "700507904d66d17d53d4a7f250f8b02350405cf6c1ee7eccdf0021965dcf4867",
+    "size": 16,
+  },
+  {
+    "path": "parallel-report.json",
+    "sha256": "96157c9bb20e67db2cced5dac71de4b0b32606cb4f5120984840cb2a47c9ad3f",
+    "size": 869,
+  },
+  {
+    "path": "parallel/gamedata/configs/system.ltx",
+    "sha256": "f792d02bb79cc05bb6b65e09a852d8891c7eed1cab2643475aef76898a39931c",
+    "size": 17,
+  },
+  {
+    "path": "patch/configs/system.ltx",
+    "sha256": "f792d02bb79cc05bb6b65e09a852d8891c7eed1cab2643475aef76898a39931c",
+    "size": 17,
+  },
+  {
+    "path": "serial-report.json",
+    "sha256": "bd2ef4ea47650b06e7dcb9f18543ec4118ee64fb2da9e24cefb31e735503b82c",
+    "size": 867,
+  },
+  {
+    "path": "serial/gamedata/configs/system.ltx",
+    "sha256": "f792d02bb79cc05bb6b65e09a852d8891c7eed1cab2643475aef76898a39931c",
+    "size": 17,
+  },
+]
+`;

@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive pack LTX selection spellings should normalize separators, trailing separators, and case in xrCompress configuration 1`] = `
+[
+  {
+    "exitCode": 0,
+    "stderr": [],
+    "stdout": [
+      "Pack config: <sandbox>/forward.ltx",
+      "Pack source: <sandbox>/source",
+      "Pack destination: <sandbox>/forward",
+      "Wrote <sandbox>/forward/fixture.db",
+      "Packed 2 file(s) into 1 volume(s) in <duration>",
+      "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
+      "Summary: 0 compressed, 2 stored, 0 aliased, 0 skipped",
+      "Size: 17 B source, 206 B written",
+      "Speed: <speed>",
+    ],
+  },
+  {
+    "exitCode": 0,
+    "stderr": [],
+    "stdout": [
+      "Pack config: <sandbox>/trailing.ltx",
+      "Pack source: <sandbox>/source",
+      "Pack destination: <sandbox>/trailing",
+      "Wrote <sandbox>/trailing/fixture.db",
+      "Packed 2 file(s) into 1 volume(s) in <duration>",
+      "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
+      "Summary: 0 compressed, 2 stored, 0 aliased, 0 skipped",
+      "Size: 17 B source, 206 B written",
+      "Speed: <speed>",
+    ],
+  },
+  {
+    "exitCode": 0,
+    "stderr": [],
+    "stdout": [
+      "Pack config: <sandbox>/case.ltx",
+      "Pack source: <sandbox>/source",
+      "Pack destination: <sandbox>/case",
+      "Wrote <sandbox>/case/fixture.db",
+      "Packed 2 file(s) into 1 volume(s) in <duration>",
+      "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
+      "Summary: 0 compressed, 2 stored, 0 aliased, 0 skipped",
+      "Size: 17 B source, 206 B written",
+      "Speed: <speed>",
+    ],
+  },
+]
+`;
+
+exports[`archive pack LTX selection spellings should write the expected files 1`] = `
+[
+  {
+    "path": "case.ltx",
+    "sha256": "a722df01cca8bb8287cbab8426bcb2d417615f61458576f14cd17b9eac7b764f",
+    "size": 41,
+  },
+  {
+    "path": "case/fixture.db",
+    "sha256": "bf14428023a00ac7e1c45ab0ca35c230031fbfc389178c287c76404e0d008277",
+    "size": 206,
+  },
+  {
+    "path": "forward.ltx",
+    "sha256": "51b744b8e6fd087bd9a035fc49e6b6e71b5acdd6e841f500460d0262e60e18b4",
+    "size": 41,
+  },
+  {
+    "path": "forward/fixture.db",
+    "sha256": "bf14428023a00ac7e1c45ab0ca35c230031fbfc389178c287c76404e0d008277",
+    "size": 206,
+  },
+  {
+    "path": "source/configs/private-neighbor/keep.ltx",
+    "sha256": "efada34372b0f05dd42e68072da69e91d7421e03fb5bf0a9a4f194ceb1099d55",
+    "size": 9,
+  },
+  {
+    "path": "source/configs/private/draft.ltx",
+    "sha256": "7eb2ca55b87a4d45d66a63f76db11f9b4aa9106472a62b5865060f9fd8eadaaa",
+    "size": 6,
+  },
+  {
+    "path": "source/configs/public/release.ltx",
+    "sha256": "3933e3274b63dc01fd286d6d939a626867c83a4603fc4347e0f8b8856f1b98fd",
+    "size": 8,
+  },
+  {
+    "path": "trailing.ltx",
+    "sha256": "b077a2771e41a54a37d7fe939bad392da045274582fb8b157c98c896e3ea5176",
+    "size": 42,
+  },
+  {
+    "path": "trailing/fixture.db",
+    "sha256": "bf14428023a00ac7e1c45ab0ca35c230031fbfc389178c287c76404e0d008277",
+    "size": 206,
+  },
+]
+`;

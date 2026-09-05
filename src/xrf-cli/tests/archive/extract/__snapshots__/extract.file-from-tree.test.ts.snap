@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`archive extract directory from archive directory should extract a directory from an archive below the directory root 1`] = `
+exports[`archive extract file from archive tree should extract a file from an archive below the directory root 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Extracted 2 file(s) from configs\\gameplay (2.17 KB total) in <duration>",
+    "Extracted configs\\system.ltx (265 B) in <duration>",
   ],
 }
 `;
 
-exports[`archive extract directory from archive directory should write the expected files 1`] = `
+exports[`archive extract file from archive tree should write the expected files 1`] = `
 [
   {
     "path": "archives/configs/configs.db",
@@ -23,14 +23,9 @@ exports[`archive extract directory from archive directory should write the expec
     "size": 887,
   },
   {
-    "path": "extracted/dialogs.xml",
-    "sha256": "6583bab4e036cca053ce8c820639a39b80dc7bae71d4adba54d5ee2d865cc5b4",
-    "size": 1670,
-  },
-  {
-    "path": "extracted/dialogs_zaton.xml",
-    "sha256": "aaaaff52afc3c50a3907ba992d7b73f69e90146421385d22f07d363131e474b9",
-    "size": 548,
+    "path": "extracted/system.ltx",
+    "sha256": "b4a4a566d26d645fbb86678c4c16dc9fd8b540b786b191c596801de49ff60da1",
+    "size": 265,
   },
   {
     "path": "source/configs/alife.ltx",

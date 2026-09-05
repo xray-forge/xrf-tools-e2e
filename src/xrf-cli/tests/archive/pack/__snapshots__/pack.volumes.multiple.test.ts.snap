@@ -1,0 +1,214 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive pack multiple indexed volumes should write the expected files and reports 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "archive",
+    "pack",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "collectDuration": "<duration>",
+    "duration": "<duration>",
+    "filesAliased": 0,
+    "filesCompressed": 0,
+    "filesSkipped": 0,
+    "filesStored": 3,
+    "filesTotal": 3,
+    "finalizeDuration": "<duration>",
+    "outcome": "completed",
+    "sizeSource": 1843200,
+    "sizeWritten": 1843554,
+    "speed": "<speed>",
+    "volumes": [
+      "<sandbox>/packed/fixture.db0",
+      "<sandbox>/packed/fixture.db1",
+      "<sandbox>/packed/fixture.db2",
+    ],
+    "volumesOpened": [
+      "<sandbox>/packed/fixture.db0",
+      "<sandbox>/packed/fixture.db1",
+      "<sandbox>/packed/fixture.db2",
+    ],
+    "writeDuration": "<duration>",
+  },
+}
+`;
+
+exports[`archive pack multiple indexed volumes should write the expected files and reports 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "archive",
+    "unpack",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "archives": [
+      "<sandbox>/packed/fixture.db0",
+      "<sandbox>/packed/fixture.db1",
+      "<sandbox>/packed/fixture.db2",
+    ],
+    "destination": "<sandbox>/from-set",
+    "duration": "<duration>",
+    "filesTotal": 3,
+    "filesUnpacked": 3,
+    "outcome": "completed",
+    "prepareDuration": "<duration>",
+    "unpackDuration": "<duration>",
+    "unpackedSize": 1843200,
+  },
+}
+`;
+
+exports[`archive pack multiple indexed volumes should write the expected files and reports 3`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "archive",
+    "unpack",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "archives": [
+      "<sandbox>/packed/fixture.db2",
+    ],
+    "destination": "<sandbox>/from-last",
+    "duration": "<duration>",
+    "filesTotal": 1,
+    "filesUnpacked": 1,
+    "outcome": "completed",
+    "prepareDuration": "<duration>",
+    "unpackDuration": "<duration>",
+    "unpackedSize": 614400,
+  },
+}
+`;
+
+exports[`archive pack multiple indexed volumes should write the expected files and reports 4`] = `
+[
+  {
+    "path": "from-last/gamedata/payload-c.bin",
+    "sha256": "8559927a9b6ac9418adcca052b60c45e693d8bab6d605e8713e5d9561a158c71",
+    "size": 614400,
+  },
+  {
+    "path": "from-set/gamedata/payload-a.bin",
+    "sha256": "e7a9df3b96c36fd8f06d216d4b51db40544340dca82a5841c7def9d7768047b4",
+    "size": 614400,
+  },
+  {
+    "path": "from-set/gamedata/payload-b.bin",
+    "sha256": "5d2021dcfb3fcf87ac92bebec9cf4d79f4fca90b94931477f6f366f64af6b28c",
+    "size": 614400,
+  },
+  {
+    "path": "from-set/gamedata/payload-c.bin",
+    "sha256": "8559927a9b6ac9418adcca052b60c45e693d8bab6d605e8713e5d9561a158c71",
+    "size": 614400,
+  },
+  {
+    "path": "last-report.json",
+    "sha256": "6b4cadb772c53a160bf57136c62502701b8b2dae0836f0d56e4f9f9d925a5ea4",
+    "size": 834,
+  },
+  {
+    "path": "pack-report.json",
+    "sha256": "4921dd4d883b20a527bafab71d100c5d2cb1f9e46600aa83793acc74346555d0",
+    "size": 1166,
+  },
+  {
+    "path": "packed/fixture.db0",
+    "sha256": "5303d6bca7899db6d47cc143097da8618aa8829783da7197ded0f71f8558f425",
+    "size": 614518,
+  },
+  {
+    "path": "packed/fixture.db1",
+    "sha256": "f5d44a4e7210d826c83588adf6baa52386d96bf1e97dd6d6b87e7d6527165a34",
+    "size": 614518,
+  },
+  {
+    "path": "packed/fixture.db2",
+    "sha256": "741413c4a8f340872e3dc84885b9f6946f4ef5696c08e15d1e891acf71d18772",
+    "size": 614518,
+  },
+  {
+    "path": "set-report.json",
+    "sha256": "a117c541189e1769640304b31b363883c7d596e657eaae49abc0c352b7ea1b8b",
+    "size": 910,
+  },
+  {
+    "path": "source/payload-a.bin",
+    "sha256": "e7a9df3b96c36fd8f06d216d4b51db40544340dca82a5841c7def9d7768047b4",
+    "size": 614400,
+  },
+  {
+    "path": "source/payload-b.bin",
+    "sha256": "5d2021dcfb3fcf87ac92bebec9cf4d79f4fca90b94931477f6f366f64af6b28c",
+    "size": 614400,
+  },
+  {
+    "path": "source/payload-c.bin",
+    "sha256": "8559927a9b6ac9418adcca052b60c45e693d8bab6d605e8713e5d9561a158c71",
+    "size": 614400,
+  },
+]
+`;

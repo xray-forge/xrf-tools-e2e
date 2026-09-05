@@ -1,37 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`archive volumes should refuse a cap no volume could fit one of the files under 1`] = `
-{
-  "exitCode": 1,
-  "stderr": [
-    "Error: Invalid error: File 'particles.xr' needs a volume of 1185323 bytes to itself, past the configured maximum volume size of 1048576 bytes",
-  ],
-  "stdout": [
-    "Pack source: <resources>/gamedata",
-    "Pack destination: <sandbox>/refused",
-  ],
-}
-`;
-
-exports[`archive volumes should split a pack across volumes 1`] = `
-{
-  "exitCode": 0,
-  "stderr": [],
-  "stdout": [
-    "Pack source: <resources>/gamedata",
-    "Pack destination: <sandbox>/split",
-    "Wrote <sandbox>/split/gamedata.db0",
-    "Wrote <sandbox>/split/gamedata.db1",
-    "Packed 29 file(s) into 2 volume(s) in <duration>",
-    "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
-    "Summary: 14 compressed, 15 stored, 0 aliased, 0 skipped",
-    "Size: 2.37 MB source, 2.37 MB written",
-    "Speed: <speed>",
-  ],
-}
-`;
-
-exports[`archive volumes should unpack a single volume on its own 1`] = `
+exports[`archive unpack volumes should unpack a single volume on its own 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -45,7 +14,7 @@ exports[`archive volumes should unpack a single volume on its own 1`] = `
 }
 `;
 
-exports[`archive volumes should unpack a whole volume set 1`] = `
+exports[`archive unpack volumes should unpack a whole volume set 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -59,7 +28,7 @@ exports[`archive volumes should unpack a whole volume set 1`] = `
 }
 `;
 
-exports[`archive volumes should write the expected files 1`] = `
+exports[`archive unpack volumes should write the expected files 1`] = `
 [
   {
     "path": "from-first/gamedata/configs/alife.ltx",

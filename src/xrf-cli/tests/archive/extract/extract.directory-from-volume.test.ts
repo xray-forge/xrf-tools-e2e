@@ -3,7 +3,7 @@ import { beforeAll, describe, expect, it } from "@jest/globals";
 import { gamedata } from "#/xrf-cli/test/constants";
 import { Sandbox, sha, type CliResult } from "#/xrf-cli/test/sandbox";
 
-describe("archive extract directory", () => {
+describe("archive extract directory from one volume", () => {
   const box = new Sandbox(__filename);
 
   let result: CliResult;

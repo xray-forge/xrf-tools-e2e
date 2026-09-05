@@ -1,0 +1,235 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive find selection should record each machine-readable selection 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "archive",
+    "find",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "entries": [
+      {
+        "isDirectory": false,
+        "name": "nested\\system_copy.ltx",
+        "sharedWith": [
+          "nested\\System_Alpha.ltx",
+        ],
+        "sizeCompressed": 6,
+        "sizeReal": 6,
+        "source": "<sandbox>/packed/fixture.db",
+      },
+    ],
+    "query": "copy",
+    "total": 1,
+  },
+}
+`;
+
+exports[`archive find selection should record each machine-readable selection 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "archive",
+    "find",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "entries": [],
+    "query": "absent",
+    "total": 0,
+  },
+}
+`;
+
+exports[`archive find selection should record each machine-readable selection 3`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "archive",
+    "find",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "entries": [
+      {
+        "isDirectory": false,
+        "name": "nested\\System_Alpha.ltx",
+        "sharedWith": [
+          "nested\\system_copy.ltx",
+        ],
+        "sizeCompressed": 6,
+        "sizeReal": 6,
+        "source": "<sandbox>/packed/fixture.db",
+      },
+      {
+        "isDirectory": false,
+        "name": "nested\\system_copy.ltx",
+        "sharedWith": [
+          "nested\\System_Alpha.ltx",
+        ],
+        "sizeCompressed": 6,
+        "sizeReal": 6,
+        "source": "<sandbox>/packed/fixture.db",
+      },
+      {
+        "isDirectory": false,
+        "name": "zeta.ltx",
+        "sharedWith": [],
+        "sizeCompressed": 5,
+        "sizeReal": 5,
+        "source": "<sandbox>/packed/fixture.db",
+      },
+    ],
+    "query": ".ltx",
+    "total": 3,
+  },
+}
+`;
+
+exports[`archive find selection should record each machine-readable selection 4`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "archive",
+    "find",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "entries": [
+      {
+        "isDirectory": true,
+        "name": "nested\\",
+        "sharedWith": [],
+        "sizeCompressed": 0,
+        "sizeReal": 0,
+        "source": "<sandbox>/packed/fixture.db",
+      },
+    ],
+    "query": "nested",
+    "total": 1,
+  },
+}
+`;
+
+exports[`archive find selection should write the expected files 1`] = `
+[
+  {
+    "path": "absent.json",
+    "sha256": "3a496ef8de3f3f010c47e662043b2fd8fe51382dce6f99106838cfc3f1172295",
+    "size": 582,
+  },
+  {
+    "path": "case.json",
+    "sha256": "6d8f818a35a06c53893e2ef9158069e94dda25c38b949a4b6263b5cd0824f8ff",
+    "size": 846,
+  },
+  {
+    "path": "directories.json",
+    "sha256": "6e3461baf663bc3d25e7aed3f1aaa74e700973484c75d4f99531fdf196133ab3",
+    "size": 786,
+  },
+  {
+    "path": "ordered.json",
+    "sha256": "48dfd56c7d35841bf03825f15b2d5111abdda2ee86f7102e574fbd0e5587c7b9",
+    "size": 1309,
+  },
+  {
+    "path": "packed/fixture.db",
+    "sha256": "be31c182c6a42469c39f489dcdf2d6e32962f09835aa3a18dc50b4d359ef1289",
+    "size": 182,
+  },
+  {
+    "path": "source/nested/System_Alpha.ltx",
+    "sha256": "b6a98d9ce9a2d9149288fa3df42d377c3e42737afdcdaf714e33c0a100b51060",
+    "size": 6,
+  },
+  {
+    "path": "source/nested/system_copy.ltx",
+    "sha256": "b6a98d9ce9a2d9149288fa3df42d377c3e42737afdcdaf714e33c0a100b51060",
+    "size": 6,
+  },
+  {
+    "path": "source/zeta.ltx",
+    "sha256": "2088d0c4b41022d90f663fa8d8156cb525241b55d30ecdf922c38f94f7efda4c",
+    "size": 5,
+  },
+]
+`;

@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive extract refusals should write the expected files 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "archive",
+    "extract",
+  ],
+  "duration": "<duration>",
+  "error": "Not found error: Cannot extract 'configs\\missing.ltx' - no such file in the archive.",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 1,
+  "outcome": "executionFailed",
+  "result": null,
+}
+`;
+
+exports[`archive extract refusals should write the expected files 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "archive",
+    "extract",
+  ],
+  "duration": "<duration>",
+  "error": Any<String>,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 1,
+  "outcome": "executionFailed",
+  "result": null,
+}
+`;
+
+exports[`archive extract refusals should write the expected files 3`] = `
+[
+  {
+    "path": "blocked-report.json",
+  },
+  {
+    "path": "control.ltx",
+    "sha256": "6cf907744d42396351b640ecfbc691eb16a6664e71f1f96955dcc19142272c30",
+    "size": 14,
+  },
+  {
+    "path": "destination/blocked/sentinel.ltx",
+    "sha256": "fc99fc57b474002b5c01d6afe27b93ffe517a0e2e572a0034014abb6eb875c69",
+    "size": 16,
+  },
+  {
+    "path": "destination/missing.ltx",
+    "sha256": "a563beee27d0dc208197f3f29412bee5496b12ebf02b5f884dada5075e7814c9",
+    "size": 16,
+  },
+  {
+    "path": "destination/selectors.ltx",
+    "sha256": "8fd07e5b1e690b42c4b22a7903118e622d222ffcb5d3c0dd46019ed0c3828117",
+    "size": 17,
+  },
+  {
+    "path": "missing-report.json",
+    "sha256": "d2b8aaa42888204bb8131ebc4f580d4cf8eea0f61a2eaa0fe501890debbf8610",
+    "size": 618,
+  },
+  {
+    "path": "packed/fixture.db",
+    "sha256": "b024159ca68c6c73775d76a7155604e36d3003fcbdc44344b3814aa7acb9a602",
+    "size": 145,
+  },
+  {
+    "path": "source/configs/one.ltx",
+    "sha256": "6cf907744d42396351b640ecfbc691eb16a6664e71f1f96955dcc19142272c30",
+    "size": 14,
+  },
+]
+`;

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive pack storage should store instead of compressing and write an xdb 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Pack source: <resources>/gamedata/configs",
+    "Pack destination: <sandbox>/stored",
+    "Wrote <sandbox>/stored/cfg.xdb",
+    "Packed 14 file(s) into 1 volume(s) in <duration>",
+    "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
+    "Summary: 0 compressed, 14 stored, 0 aliased, 0 skipped",
+    "Size: 11.5 KB source, 12 KB written",
+    "Speed: <speed>",
+  ],
+}
+`;
+
+exports[`archive pack storage should write the expected files 1`] = `
+[
+  {
+    "path": "stored/cfg.xdb",
+    "sha256": "900185dcc78394b0764b652dac506cb23a31388de9e5455f5e72886937541aa9",
+    "size": 12266,
+  },
+]
+`;

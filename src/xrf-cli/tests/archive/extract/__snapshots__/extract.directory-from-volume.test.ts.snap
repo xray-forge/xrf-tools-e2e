@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`archive extract directory should extract the selected directory without its prefix 1`] = `
+exports[`archive extract directory from one volume should extract the selected directory without its prefix 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -10,7 +10,7 @@ exports[`archive extract directory should extract the selected directory without
 }
 `;
 
-exports[`archive extract directory should write the expected files 1`] = `
+exports[`archive extract directory from one volume should write the expected files 1`] = `
 [
   {
     "path": "gameplay/dialogs.xml",

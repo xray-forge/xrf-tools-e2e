@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive pack volumes should remove partial output when one file cannot fit the cap 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: File 'particles.xr' needs a volume of 1185323 bytes to itself, past the configured maximum volume size of 1048576 bytes",
+  ],
+  "stdout": [
+    "Pack source: <resources>/gamedata",
+    "Pack destination: <sandbox>/refused",
+  ],
+}
+`;
+
+exports[`archive pack volumes should split a pack across volumes 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Pack source: <resources>/gamedata",
+    "Pack destination: <sandbox>/split",
+    "Wrote <sandbox>/split/gamedata.db0",
+    "Wrote <sandbox>/split/gamedata.db1",
+    "Packed 29 file(s) into 2 volume(s) in <duration>",
+    "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
+    "Summary: 14 compressed, 15 stored, 0 aliased, 0 skipped",
+    "Size: 2.37 MB source, 2.37 MB written",
+    "Speed: <speed>",
+  ],
+}
+`;
+
+exports[`archive pack volumes should write the expected files 1`] = `
+[
+  {
+    "path": "split/gamedata.db0",
+    "sha256": "86ed8ecc7ad2c72bb685ead804df1cd7f691a3ae6afa56b7afb52c27e14cfcda",
+    "size": 1413132,
+  },
+  {
+    "path": "split/gamedata.db1",
+    "sha256": "d3635e11fbe37fa44c67bdec491bc18e3ffe99b7348a5752b42c6ce43c7b35f4",
+    "size": 1070478,
+  },
+]
+`;

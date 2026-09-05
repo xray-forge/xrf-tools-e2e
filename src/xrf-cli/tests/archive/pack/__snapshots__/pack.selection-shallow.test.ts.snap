@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive pack shallow selection should select only a shallow include's own files through direct, LTX, and JSON configuration 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Pack source: <sandbox>/source",
+    "Pack destination: <sandbox>/direct",
+    "Wrote <sandbox>/direct/fixture.db",
+    "Packed 1 file(s) into 1 volume(s) in <duration>",
+    "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
+    "Summary: 0 compressed, 1 stored, 0 aliased, 0 skipped",
+    "Size: 4 B source, 152 B written",
+    "Speed: <speed>",
+  ],
+}
+`;
+
+exports[`archive pack shallow selection should select only a shallow include's own files through direct, LTX, and JSON configuration 2`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Pack config: <sandbox>/selection.ltx",
+    "Pack source: <sandbox>/source",
+    "Pack destination: <sandbox>/ltx",
+    "Wrote <sandbox>/ltx/fixture.db",
+    "Packed 1 file(s) into 1 volume(s) in <duration>",
+    "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
+    "Summary: 0 compressed, 1 stored, 0 aliased, 0 skipped",
+    "Size: 4 B source, 152 B written",
+    "Speed: <speed>",
+  ],
+}
+`;
+
+exports[`archive pack shallow selection should select only a shallow include's own files through direct, LTX, and JSON configuration 3`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Pack config: <sandbox>/selection.json",
+    "Pack source: <sandbox>/source",
+    "Pack destination: <sandbox>/json",
+    "Wrote <sandbox>/json/fixture.db",
+    "Packed 1 file(s) into 1 volume(s) in <duration>",
+    "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
+    "Summary: 0 compressed, 1 stored, 0 aliased, 0 skipped",
+    "Size: 4 B source, 152 B written",
+    "Speed: <speed>",
+  ],
+}
+`;
+
+exports[`archive pack shallow selection should write the expected files 1`] = `
+[
+  {
+    "path": "direct/fixture.db",
+    "sha256": "a3b5f42c3503bbb3560ed29724c5cdac8097b424b1fa3a48a8306e46188d8d86",
+    "size": 152,
+  },
+  {
+    "path": "json/fixture.db",
+    "sha256": "a3b5f42c3503bbb3560ed29724c5cdac8097b424b1fa3a48a8306e46188d8d86",
+    "size": 152,
+  },
+  {
+    "path": "ltx/fixture.db",
+    "sha256": "a3b5f42c3503bbb3560ed29724c5cdac8097b424b1fa3a48a8306e46188d8d86",
+    "size": 152,
+  },
+  {
+    "path": "selection.json",
+    "sha256": "a81f1da7045fcc977468bff4d85119f6bff7cf558be0a580f937a6ef9557e6d2",
+    "size": 105,
+  },
+  {
+    "path": "selection.ltx",
+    "sha256": "722d8927556bb88dcb1adf162e6e49405d2c3f7ae628581e0f8ab7fd24b0f253",
+    "size": 42,
+  },
+  {
+    "path": "source/shallow-include/nested/child.ltx",
+    "sha256": "370a8c04b8a65bb4494275eec227f1b694db04c76da6b0b8ae88ed1ab19790a3",
+    "size": 7,
+  },
+  {
+    "path": "source/shallow-include/own.ltx",
+    "sha256": "7e6518373b1a8cf5eed9717076284744ba44ace422c7877442aebcceecc42a23",
+    "size": 4,
+  },
+]
+`;

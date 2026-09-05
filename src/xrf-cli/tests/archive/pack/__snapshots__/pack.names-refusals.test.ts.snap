@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive pack name refusals should refuse a volume basename that leaves its destination 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: Archive name '..\\outside' must be a single file name, without a separator, a drive, or a traversal",
+  ],
+  "stdout": [
+    "Pack source: <sandbox>/source",
+    "Pack destination: <sandbox>/invalid-name",
+  ],
+}
+`;
+
+exports[`archive pack name refusals should refuse source-escaping include names without publishing 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: Packing source entry '..\\outside.ltx' is not a name the engine can address: Asset error: invalid X-Ray logical path: ..\\outside.ltx",
+  ],
+  "stdout": [
+    "Pack source: <sandbox>/source",
+    "Pack destination: <sandbox>/escaping",
+  ],
+}
+`;
+
+exports[`archive pack name refusals should write the expected files 1`] = `
+[
+  {
+    "path": "outside.ltx",
+    "sha256": "92a214fa61579091222f97eaf8e9bf11c1a728af5a077a3b5568231b6dc5be43",
+    "size": 8,
+  },
+  {
+    "path": "source/known.ltx",
+    "sha256": "7cd8a27a42d4b0084bb6c6a6c47ee7a03e7aa22d64e950d676f9a7c7a68f04d9",
+    "size": 6,
+  },
+]
+`;

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive pack configuration refusals should refuse a configuration whose extension names no format 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: Cannot read '<sandbox>/compress.txt' as a packing configuration: '.txt' is not a supported format. Name it '.ltx' or '.json'.",
+  ],
+  "stdout": [
+    "Pack config: <sandbox>/compress.txt",
+  ],
+}
+`;
+
+exports[`archive pack configuration refusals should write the expected files 1`] = `
+[
+  {
+    "path": "compress.txt",
+    "sha256": "548e0f5ef02131247b1b50485ab93db4bef53e143eced53f6b428e4c3265ce8d",
+    "size": 31,
+  },
+]
+`;

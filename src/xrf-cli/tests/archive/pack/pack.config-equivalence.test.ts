@@ -3,36 +3,15 @@ import { beforeAll, describe, expect, it } from "@jest/globals";
 import { gamedata } from "#/xrf-cli/test/constants";
 import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
-describe("archive pack options", () => {
+describe("archive pack configuration equivalence", () => {
   const box = new Sandbox(__filename);
 
-  let stored: CliResult;
-  let skipped: CliResult;
-  let kept: CliResult;
   let configured: CliResult;
   let configuredJson: CliResult;
-  let unsupported: CliResult;
+  let viaConfig: CliResult;
+  let viaArguments: CliResult;
 
   beforeAll(() => {
-    stored = box.run("archive pack", [
-      "--path",
-      gamedata("configs"),
-      "--dest",
-      box.at("stored"),
-      "--name",
-      "cfg",
-      "--xdb",
-      "--store",
-    ]);
-
-    // readme.txt is on the built-in skip list of editor and source leftovers.
-    const source = box.copyIn(gamedata("configs"), "source");
-
-    box.write("source/readme.txt", "leftover\n");
-
-    skipped = box.run("archive pack", ["--path", source, "--dest", box.at("skipped"), "--name", "a"]);
-    kept = box.run("archive pack", ["--path", source, "--dest", box.at("kept"), "--name", "a", "--no-skip-list"]);
-
     // A packing configuration narrows what is packed: this one drops xml by extension and the misc
     // directory by name, so the configs tree packs one file short of its full contents.
     const config = box.write(
@@ -75,33 +54,49 @@ describe("archive pack options", () => {
       configJson,
     ]);
 
-    // The format is taken from the extension and never from the contents, so a valid configuration under a
-    // name that spells no format is refused rather than read by the wrong reader.
-    const misnamed = box.write("compress.txt", ["[options]", "exclude_exts = *.xml", ""].join("\n"));
-
-    unsupported = box.run(
-      "archive pack",
-      ["--path", gamedata("configs"), "--dest", box.at("unsupported"), "--name", "cfg", "--config", misnamed],
-      { expectExit: 1 }
+    const directConfig = box.write(
+      "direct.ltx",
+      [
+        "[options]",
+        "exclude_exts = *.xml",
+        "",
+        "[include_folders]",
+        "misc = true",
+        "",
+        "[header]",
+        "auto_load = true",
+        "entry_point = $fs_root$gamedata\\",
+        "",
+      ].join("\n")
     );
-  });
 
-  it("should store instead of compressing and write an xdb", () => {
-    expect(stored).toMatchSnapshot();
-  });
-
-  it("should skip editor leftovers by default", () => {
-    expect(skipped).toMatchSnapshot();
-  });
-
-  it("should keep them when the skip list is off", () => {
-    expect(kept).toMatchSnapshot();
-  });
-
-  // Keeping one more file has to change the archive, which is what proves the flag did something
-  // rather than being accepted and ignored.
-  it("should produce a different archive with the skip list off", () => {
-    expect(box.sha("kept/a.db")).not.toBe(box.sha("skipped/a.db"));
+    viaConfig = box.run("archive pack", [
+      "--path",
+      gamedata("configs"),
+      "--dest",
+      box.at("via-config"),
+      "--name",
+      "cfg",
+      "--config",
+      directConfig,
+    ]);
+    // The same selection named on the command line, which is how xrf-engine compresses without writing a file.
+    viaArguments = box.run("archive pack", [
+      "--path",
+      gamedata("configs"),
+      "--dest",
+      box.at("via-arguments"),
+      "--name",
+      "cfg",
+      "--include-directory",
+      "misc",
+      "--exclude-extension",
+      "*.xml",
+      "--header",
+      "auto_load=true",
+      "--header",
+      "entry_point=$fs_root$gamedata\\",
+    ]);
   });
 
   it("should honour an xrCompress configuration", () => {
@@ -117,8 +112,14 @@ describe("archive pack options", () => {
     expect(box.sha("configured-json/cfg.db")).toBe(box.sha("configured/cfg.db"));
   });
 
-  it("should refuse a configuration whose extension names no format", () => {
-    expect(unsupported).toMatchSnapshot();
+  it("should pack from direct options alone", () => {
+    expect(viaConfig).toMatchSnapshot();
+    expect(viaArguments).toMatchSnapshot();
+  });
+
+  // The two selection spellings must select one archive, which identical bytes are the only proof of.
+  it("should produce the same archive from direct arguments as from the equivalent configuration", () => {
+    expect(box.sha("via-arguments/cfg.db")).toBe(box.sha("via-config/cfg.db"));
   });
 
   it("should write the expected files", () => {

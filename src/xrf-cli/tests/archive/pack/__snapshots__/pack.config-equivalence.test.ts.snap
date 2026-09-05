@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive pack configuration equivalence should honour an xrCompress configuration 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Pack config: <sandbox>/compress.ltx",
+    "Pack source: <resources>/gamedata/configs",
+    "Pack destination: <sandbox>/configured",
+    "Wrote <sandbox>/configured/cfg.db",
+    "Packed 7 file(s) into 1 volume(s) in <duration>",
+    "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
+    "Summary: 7 compressed, 0 stored, 0 aliased, 7 skipped",
+    "Size: 8.33 KB source, 3.83 KB written",
+    "Speed: <speed>",
+  ],
+}
+`;
+
+exports[`archive pack configuration equivalence should honour the same configuration written as a document 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Pack config: <sandbox>/compress.json",
+    "Pack source: <resources>/gamedata/configs",
+    "Pack destination: <sandbox>/configured-json",
+    "Wrote <sandbox>/configured-json/cfg.db",
+    "Packed 7 file(s) into 1 volume(s) in <duration>",
+    "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
+    "Summary: 7 compressed, 0 stored, 0 aliased, 7 skipped",
+    "Size: 8.33 KB source, 3.83 KB written",
+    "Speed: <speed>",
+  ],
+}
+`;
+
+exports[`archive pack configuration equivalence should pack from direct options alone 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Pack config: <sandbox>/direct.ltx",
+    "Pack source: <resources>/gamedata/configs",
+    "Pack destination: <sandbox>/via-config",
+    "Wrote <sandbox>/via-config/cfg.db",
+    "Packed 1 file(s) into 1 volume(s) in <duration>",
+    "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
+    "Summary: 1 compressed, 0 stored, 0 aliased, 0 skipped",
+    "Size: 1.1 KB source, 0.71 KB written",
+    "Speed: <speed>",
+  ],
+}
+`;
+
+exports[`archive pack configuration equivalence should pack from direct options alone 2`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Pack source: <resources>/gamedata/configs",
+    "Pack destination: <sandbox>/via-arguments",
+    "Wrote <sandbox>/via-arguments/cfg.db",
+    "Packed 1 file(s) into 1 volume(s) in <duration>",
+    "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
+    "Summary: 1 compressed, 0 stored, 0 aliased, 0 skipped",
+    "Size: 1.1 KB source, 0.71 KB written",
+    "Speed: <speed>",
+  ],
+}
+`;
+
+exports[`archive pack configuration equivalence should write the expected files 1`] = `
+[
+  {
+    "path": "compress.json",
+    "sha256": "a1bdd9e83146fb056d3ae63fec02e813c780bf8fa4b205a75d0f08c1bac9e8a3",
+    "size": 136,
+  },
+  {
+    "path": "compress.ltx",
+    "sha256": "42efa649cb57f4f152ac3ca2329b1b07e247d87f5584153ad3e25327d36e6b63",
+    "size": 55,
+  },
+  {
+    "path": "configured-json/cfg.db",
+    "sha256": "c54c4162a2c7a29efaaf21a56214dc4819e06b2d5a8996aebd889ebf2a86a76b",
+    "size": 3921,
+  },
+  {
+    "path": "configured/cfg.db",
+    "sha256": "c54c4162a2c7a29efaaf21a56214dc4819e06b2d5a8996aebd889ebf2a86a76b",
+    "size": 3921,
+  },
+  {
+    "path": "direct.ltx",
+    "sha256": "17235b0b553e80ac70d8054f49d7c2ef6720e0b3e99ac736b3b29d07a66e0e95",
+    "size": 122,
+  },
+  {
+    "path": "via-arguments/cfg.db",
+    "sha256": "f45ffed25003f6abcc026c36c18c6b4050040aab9925f23e5fabd7ebbc8e643e",
+    "size": 725,
+  },
+  {
+    "path": "via-config/cfg.db",
+    "sha256": "f45ffed25003f6abcc026c36c18c6b4050040aab9925f23e5fabd7ebbc8e643e",
+    "size": 725,
+  },
+]
+`;

@@ -12,6 +12,11 @@ import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
  */
 describe("volume set reachability", () => {
   const box = new Sandbox(__filename);
+  const collision = {
+    kept: "<sandbox>/db/patch.db::Textures/Wpn/WPN_AK74.DDS",
+    logicalPath: "textures\\wpn\\wpn_ak74.dds",
+    unreachable: "<sandbox>/db/base.db::textures/wpn/wpn_ak74.dds",
+  };
 
   let verified: CliResult;
   let listed: CliResult;
@@ -38,12 +43,23 @@ describe("volume set reachability", () => {
   });
 
   it("should report the unreachable entry beside the verdict", () => {
+    expect(box.json("verify.json")).toMatchObject({
+      outcome: "success",
+      result: { checked: 2, collisions: [collision], findings: [], status: "passed" },
+    });
     expect(box.json("verify.json")).toMatchSnapshot();
   });
 
   it("should report the same collision from the listing", () => {
     // One record, one shape, whichever surface answers: the listing and the verdict report the same entry with the
     // same fields.
+    expect(box.json("listing.json")).toMatchObject({
+      result: {
+        collisions: [collision],
+        entries: [{ isArchived: true, logicalPath: collision.logicalPath }],
+        total: 1,
+      },
+    });
     expect(box.json("listing.json")).toMatchSnapshot();
     expect(listed.stderr).toEqual(expect.arrayContaining(verified.stderr));
   });

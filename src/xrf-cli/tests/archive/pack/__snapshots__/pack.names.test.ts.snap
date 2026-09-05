@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive pack names and aliases should preserve an empty nested file and repeated payload aliases 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Pack source: <sandbox>/source",
+    "Pack destination: <sandbox>/packed",
+    "Pack mode: compress, volume cap 1.86 GB, skip list on, 0 excluded extension(s)",
+    "Directory: nested",
+    "Opened volume: fixture.db0",
+    "Empty: nested\\empty.ltx",
+    "Reverted: nested\\payload.ltx, 13 B (compression saved nothing)",
+    "Aliased: nested\\payload_copy.ltx -> nested\\payload.ltx",
+    "Closed volume: fixture.db0, 167 B, 3 entries",
+    "Wrote <sandbox>/packed/fixture.db",
+    "Packed 3 file(s) into 1 volume(s) in <duration>",
+    "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
+    "Summary: 0 compressed, 2 stored, 1 aliased, 0 skipped",
+    "Size: 26 B source, 167 B written",
+    "Speed: <speed>",
+  ],
+}
+`;
+
+exports[`archive pack names and aliases should preserve an empty nested file and repeated payload aliases 2`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Workers: <workers> (auto)",
+    "Unpack source: <sandbox>/packed/fixture.db",
+    "Unpack destination: <sandbox>/unpacked",
+    "Summary: 1 archive(s), 4 file(s), 26 B compressed, 26 B real",
+    "Unpacked archive in <duration> (preparation <duration>, unpack <duration>)",
+  ],
+}
+`;
+
+exports[`archive pack names and aliases should record the report as a readable document 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "archive",
+    "pack",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "collectDuration": "<duration>",
+    "duration": "<duration>",
+    "filesAliased": 1,
+    "filesCompressed": 0,
+    "filesSkipped": 0,
+    "filesStored": 2,
+    "filesTotal": 3,
+    "finalizeDuration": "<duration>",
+    "outcome": "completed",
+    "sizeSource": 26,
+    "sizeWritten": 167,
+    "speed": "<speed>",
+    "volumes": [
+      "<sandbox>/packed/fixture.db",
+    ],
+    "volumesOpened": [
+      "<sandbox>/packed/fixture.db",
+    ],
+    "writeDuration": "<duration>",
+  },
+}
+`;
+
+exports[`archive pack names and aliases should write the expected files 1`] = `
+[
+  {
+    "path": "pack.json",
+    "sha256": "6eabaea6d44444cb7f570b462dcc93ea6f9defc053e18a7a7a00b68b4dd85496",
+    "size": 1003,
+  },
+  {
+    "path": "packed/fixture.db",
+    "sha256": "8c64561d0c990e632873546ecb38b9038132dd0588a8b7ac830686ddca27e62e",
+    "size": 167,
+  },
+  {
+    "path": "source/nested/empty.ltx",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+  },
+  {
+    "path": "source/nested/payload.ltx",
+    "sha256": "91ff8a9a5b8c94501fa71ffb7c3a566cb032f33fdb4444d6bc06b5dfbc04f193",
+    "size": 13,
+  },
+  {
+    "path": "source/nested/payload_copy.ltx",
+    "sha256": "91ff8a9a5b8c94501fa71ffb7c3a566cb032f33fdb4444d6bc06b5dfbc04f193",
+    "size": 13,
+  },
+  {
+    "path": "unpacked/gamedata/nested/empty.ltx",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+  },
+  {
+    "path": "unpacked/gamedata/nested/payload.ltx",
+    "sha256": "91ff8a9a5b8c94501fa71ffb7c3a566cb032f33fdb4444d6bc06b5dfbc04f193",
+    "size": 13,
+  },
+  {
+    "path": "unpacked/gamedata/nested/payload_copy.ltx",
+    "sha256": "91ff8a9a5b8c94501fa71ffb7c3a566cb032f33fdb4444d6bc06b5dfbc04f193",
+    "size": 13,
+  },
+]
+`;

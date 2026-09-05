@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive extract precedence should write the expected files 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "archive",
+    "extract",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "destination": "<sandbox>/exact.dds",
+    "name": "textures\\wpn\\exact.dds",
+    "size": 17,
+  },
+}
+`;
+
+exports[`archive extract precedence should write the expected files 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "archive",
+    "extract",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "destination": "<sandbox>/base-case.dds",
+    "name": "textures\\wpn\\case-only.dds",
+    "size": 15,
+  },
+}
+`;
+
+exports[`archive extract precedence should write the expected files 3`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "archive",
+    "extract",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "destination": "<sandbox>/patch-case.dds",
+    "name": "textures\\wpn\\CASE-ONLY.DDS",
+    "size": 16,
+  },
+}
+`;
+
+exports[`archive extract precedence should write the expected files 4`] = `
+[
+  {
+    "path": "archives/base.db",
+    "sha256": "bfc4cf860a8b48f438177d379e0478d484f3dabaef34963a0c58253636510698",
+    "size": 200,
+  },
+  {
+    "path": "archives/patch.db",
+    "sha256": "b5e491865b91c480853517cf430b44e85e45910299d3ce8fbfe4b312b00be0b0",
+    "size": 206,
+  },
+  {
+    "path": "base-case-report.json",
+    "sha256": "98d850ea64592581e9557e49d52c6ec05428e6b399f78c272b3c0c9c337ffccd",
+    "size": 633,
+  },
+  {
+    "path": "base-case.dds",
+    "sha256": "43a59deda70b165fa7eb62148ef24624e97edd808f5d96ba188b2618b5d7a5d3",
+    "size": 15,
+  },
+  {
+    "path": "base/textures/wpn/case-only.dds",
+    "sha256": "43a59deda70b165fa7eb62148ef24624e97edd808f5d96ba188b2618b5d7a5d3",
+    "size": 15,
+  },
+  {
+    "path": "base/textures/wpn/exact.dds",
+    "sha256": "700507904d66d17d53d4a7f250f8b02350405cf6c1ee7eccdf0021965dcf4867",
+    "size": 16,
+  },
+  {
+    "path": "exact-report.json",
+    "sha256": "292168ee29928cce983df49d5ada4d486936785107c061cbcc6de1481963ca02",
+    "size": 625,
+  },
+  {
+    "path": "exact.dds",
+    "sha256": "f792d02bb79cc05bb6b65e09a852d8891c7eed1cab2643475aef76898a39931c",
+    "size": 17,
+  },
+  {
+    "path": "patch-case-report.json",
+    "sha256": "6a419cbb734f30bf3bcb6d991c374e9be47add4b9ff904332f3b3e1db40e0b30",
+    "size": 634,
+  },
+  {
+    "path": "patch-case.dds",
+    "sha256": "e76bc4850e43dbb7eb535746ad0d78e8b56f6c4a8984ad29bc51b7038cec8eaf",
+    "size": 16,
+  },
+  {
+    "path": "patch/textures/wpn/CASE-ONLY.DDS",
+    "sha256": "e76bc4850e43dbb7eb535746ad0d78e8b56f6c4a8984ad29bc51b7038cec8eaf",
+    "size": 16,
+  },
+  {
+    "path": "patch/textures/wpn/exact.dds",
+    "sha256": "f792d02bb79cc05bb6b65e09a852d8891c7eed1cab2643475aef76898a39931c",
+    "size": 17,
+  },
+]
+`;

@@ -17,20 +17,6 @@ exports[`archive roundtrip should pack a directory into a volume 1`] = `
 }
 `;
 
-exports[`archive roundtrip should report without writing in dry mode 1`] = `
-{
-  "exitCode": 0,
-  "stderr": [],
-  "stdout": [
-    "Workers: <workers> (auto)",
-    "Unpack in dry mode",
-    "Unpack source: <sandbox>/packed/testdata.db",
-    "Unpack destination: <sandbox>/dry",
-    "Summary: 1 archive(s), 23 file(s), 4.88 KB compressed, 11.5 KB real",
-  ],
-}
-`;
-
 exports[`archive roundtrip should unpack the volume 1`] = `
 {
   "exitCode": 0,

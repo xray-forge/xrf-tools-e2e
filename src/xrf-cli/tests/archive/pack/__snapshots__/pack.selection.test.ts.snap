@@ -1,0 +1,203 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive pack selection should restore every selected byte 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Workers: <workers> (auto)",
+    "Unpack source: <sandbox>/direct/selection.db",
+    "Unpack destination: <sandbox>/unpacked",
+    "Summary: 1 archive(s), 10 file(s), 43 B compressed, 43 B real",
+    "Unpacked archive in <duration> (preparation <duration>, unpack <duration>)",
+  ],
+}
+`;
+
+exports[`archive pack selection should select the direct flag matrix 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Pack source: <sandbox>/source",
+    "Pack destination: <sandbox>/direct",
+    "Wrote <sandbox>/direct/selection.db",
+    "Packed 6 file(s) into 1 volume(s) in <duration>",
+    "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
+    "Summary: 0 compressed, 6 stored, 0 aliased, 1 skipped",
+    "Size: 43 B source, 335 B written",
+    "Speed: <speed>",
+  ],
+}
+`;
+
+exports[`archive pack selection should select the direct flag matrix 2`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "configs\\ordinary.dat",
+    "configs\\private-neighbor\\keep.ltx",
+    "configs\\public\\release.ltx",
+    "configs\\shallow\\child\\kept.ltx",
+    "configs\\shallow\\own.ltx",
+    "docs\\picked.ltx",
+    "Listed 6 entries in <duration>",
+  ],
+}
+`;
+
+exports[`archive pack selection should select the direct flag matrix 3`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "configs\\",
+    "configs\\private-neighbor\\",
+    "configs\\public\\",
+    "configs\\shallow\\child\\",
+    "Listed 4 entries in <duration>",
+  ],
+}
+`;
+
+exports[`archive pack selection should select the same logical files through LTX and JSON 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Pack config: <sandbox>/selection.ltx",
+    "Pack source: <sandbox>/source",
+    "Pack destination: <sandbox>/ltx",
+    "Wrote <sandbox>/ltx/selection.db",
+    "Packed 6 file(s) into 1 volume(s) in <duration>",
+    "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
+    "Summary: 0 compressed, 6 stored, 0 aliased, 1 skipped",
+    "Size: 43 B source, 335 B written",
+    "Speed: <speed>",
+  ],
+}
+`;
+
+exports[`archive pack selection should select the same logical files through LTX and JSON 2`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Pack config: <sandbox>/selection.json",
+    "Pack source: <sandbox>/source",
+    "Pack destination: <sandbox>/json",
+    "Wrote <sandbox>/json/selection.db",
+    "Packed 6 file(s) into 1 volume(s) in <duration>",
+    "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
+    "Summary: 0 compressed, 6 stored, 0 aliased, 1 skipped",
+    "Size: 43 B source, 335 B written",
+    "Speed: <speed>",
+  ],
+}
+`;
+
+exports[`archive pack selection should write the expected files 1`] = `
+[
+  {
+    "path": "direct/selection.db",
+    "sha256": "e223e9278bcc0339aefeadbe2f1e457ce35ef67d1082a3ec2ecf56c4c5ffd876",
+    "size": 335,
+  },
+  {
+    "path": "json/selection.db",
+    "sha256": "e223e9278bcc0339aefeadbe2f1e457ce35ef67d1082a3ec2ecf56c4c5ffd876",
+    "size": 335,
+  },
+  {
+    "path": "ltx/selection.db",
+    "sha256": "e223e9278bcc0339aefeadbe2f1e457ce35ef67d1082a3ec2ecf56c4c5ffd876",
+    "size": 335,
+  },
+  {
+    "path": "selection.json",
+    "sha256": "3f6ee7ce1bc675e5a55d21788c205fda4b7356c9ece02d587a2cccac8e6a2bb8",
+    "size": 363,
+  },
+  {
+    "path": "selection.ltx",
+    "sha256": "d18c9663bdbbad04480b218ea5023471bf86f789e3ce2b37579b882bb24d80a2",
+    "size": 164,
+  },
+  {
+    "path": "source/configs/ordinary.dat",
+    "sha256": "5851c12c0f86669211a8c56f41c43922327f5e6a035a9943c99a77e3ae5554eb",
+    "size": 9,
+  },
+  {
+    "path": "source/configs/private-neighbor/keep.ltx",
+    "sha256": "efada34372b0f05dd42e68072da69e91d7421e03fb5bf0a9a4f194ceb1099d55",
+    "size": 9,
+  },
+  {
+    "path": "source/configs/private/deeper/secret.ltx",
+    "sha256": "b37e50cedcd3e3f1ff64f4afc0422084ae694253cf399326868e07a35f4a45fb",
+    "size": 7,
+  },
+  {
+    "path": "source/configs/private/draft.ltx",
+    "sha256": "7eb2ca55b87a4d45d66a63f76db11f9b4aa9106472a62b5865060f9fd8eadaaa",
+    "size": 6,
+  },
+  {
+    "path": "source/configs/public/release.ltx",
+    "sha256": "3933e3274b63dc01fd286d6d939a626867c83a4603fc4347e0f8b8856f1b98fd",
+    "size": 8,
+  },
+  {
+    "path": "source/configs/shallow/child/kept.ltx",
+    "sha256": "2fa14f53e6b15cac9ac77846c7be87862c2a7e9ec0c6cea319db939317f126ed",
+    "size": 6,
+  },
+  {
+    "path": "source/configs/shallow/own.ltx",
+    "sha256": "7e6518373b1a8cf5eed9717076284744ba44ace422c7877442aebcceecc42a23",
+    "size": 4,
+  },
+  {
+    "path": "source/configs/unwanted.xml",
+    "sha256": "6e57080703d4e248eea0dbf9d46339cc692255f544ac230a3364d464fdaf2950",
+    "size": 9,
+  },
+  {
+    "path": "source/docs/picked.ltx",
+    "sha256": "cc6a312e9114e7acbdfcbe34e7197f1957ce1748fa5dce4f04057cd53b3bddca",
+    "size": 7,
+  },
+  {
+    "path": "unpacked/gamedata/configs/ordinary.dat",
+    "sha256": "5851c12c0f86669211a8c56f41c43922327f5e6a035a9943c99a77e3ae5554eb",
+    "size": 9,
+  },
+  {
+    "path": "unpacked/gamedata/configs/private-neighbor/keep.ltx",
+    "sha256": "efada34372b0f05dd42e68072da69e91d7421e03fb5bf0a9a4f194ceb1099d55",
+    "size": 9,
+  },
+  {
+    "path": "unpacked/gamedata/configs/public/release.ltx",
+    "sha256": "3933e3274b63dc01fd286d6d939a626867c83a4603fc4347e0f8b8856f1b98fd",
+    "size": 8,
+  },
+  {
+    "path": "unpacked/gamedata/configs/shallow/child/kept.ltx",
+    "sha256": "2fa14f53e6b15cac9ac77846c7be87862c2a7e9ec0c6cea319db939317f126ed",
+    "size": 6,
+  },
+  {
+    "path": "unpacked/gamedata/configs/shallow/own.ltx",
+    "sha256": "7e6518373b1a8cf5eed9717076284744ba44ace422c7877442aebcceecc42a23",
+    "size": 4,
+  },
+  {
+    "path": "unpacked/gamedata/docs/picked.ltx",
+    "sha256": "cc6a312e9114e7acbdfcbe34e7197f1957ce1748fa5dce4f04057cd53b3bddca",
+    "size": 7,
+  },
+]
+`;

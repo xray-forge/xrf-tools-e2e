@@ -1,42 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`archive pack options should honour an xrCompress configuration 1`] = `
-{
-  "exitCode": 0,
-  "stderr": [],
-  "stdout": [
-    "Pack config: <sandbox>/compress.ltx",
-    "Pack source: <resources>/gamedata/configs",
-    "Pack destination: <sandbox>/configured",
-    "Wrote <sandbox>/configured/cfg.db",
-    "Packed 7 file(s) into 1 volume(s) in <duration>",
-    "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
-    "Summary: 7 compressed, 0 stored, 0 aliased, 7 skipped",
-    "Size: 8.33 KB source, 3.83 KB written",
-    "Speed: <speed>",
-  ],
-}
-`;
-
-exports[`archive pack options should honour the same configuration written as a document 1`] = `
-{
-  "exitCode": 0,
-  "stderr": [],
-  "stdout": [
-    "Pack config: <sandbox>/compress.json",
-    "Pack source: <resources>/gamedata/configs",
-    "Pack destination: <sandbox>/configured-json",
-    "Wrote <sandbox>/configured-json/cfg.db",
-    "Packed 7 file(s) into 1 volume(s) in <duration>",
-    "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
-    "Summary: 7 compressed, 0 stored, 0 aliased, 7 skipped",
-    "Size: 8.33 KB source, 3.83 KB written",
-    "Speed: <speed>",
-  ],
-}
-`;
-
-exports[`archive pack options should keep them when the skip list is off 1`] = `
+exports[`archive pack skip list should keep them when the skip list is off 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -53,19 +17,7 @@ exports[`archive pack options should keep them when the skip list is off 1`] = `
 }
 `;
 
-exports[`archive pack options should refuse a configuration whose extension names no format 1`] = `
-{
-  "exitCode": 1,
-  "stderr": [
-    "Error: Invalid error: Cannot read '<sandbox>/compress.txt' as a packing configuration: '.txt' is not a supported format. Name it '.ltx' or '.json'.",
-  ],
-  "stdout": [
-    "Pack config: <sandbox>/compress.txt",
-  ],
-}
-`;
-
-exports[`archive pack options should skip editor leftovers by default 1`] = `
+exports[`archive pack skip list should skip editor leftovers by default 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -82,50 +34,8 @@ exports[`archive pack options should skip editor leftovers by default 1`] = `
 }
 `;
 
-exports[`archive pack options should store instead of compressing and write an xdb 1`] = `
-{
-  "exitCode": 0,
-  "stderr": [],
-  "stdout": [
-    "Pack source: <resources>/gamedata/configs",
-    "Pack destination: <sandbox>/stored",
-    "Wrote <sandbox>/stored/cfg.xdb",
-    "Packed 14 file(s) into 1 volume(s) in <duration>",
-    "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
-    "Summary: 0 compressed, 14 stored, 0 aliased, 0 skipped",
-    "Size: 11.5 KB source, 12 KB written",
-    "Speed: <speed>",
-  ],
-}
-`;
-
-exports[`archive pack options should write the expected files 1`] = `
+exports[`archive pack skip list should write the expected files 1`] = `
 [
-  {
-    "path": "compress.json",
-    "sha256": "a1bdd9e83146fb056d3ae63fec02e813c780bf8fa4b205a75d0f08c1bac9e8a3",
-    "size": 136,
-  },
-  {
-    "path": "compress.ltx",
-    "sha256": "42efa649cb57f4f152ac3ca2329b1b07e247d87f5584153ad3e25327d36e6b63",
-    "size": 55,
-  },
-  {
-    "path": "compress.txt",
-    "sha256": "548e0f5ef02131247b1b50485ab93db4bef53e143eced53f6b428e4c3265ce8d",
-    "size": 31,
-  },
-  {
-    "path": "configured-json/cfg.db",
-    "sha256": "c54c4162a2c7a29efaaf21a56214dc4819e06b2d5a8996aebd889ebf2a86a76b",
-    "size": 3921,
-  },
-  {
-    "path": "configured/cfg.db",
-    "sha256": "c54c4162a2c7a29efaaf21a56214dc4819e06b2d5a8996aebd889ebf2a86a76b",
-    "size": 3921,
-  },
   {
     "path": "kept/a.db",
     "sha256": "e3fd14aa47e9aaf0c4a5a58c4c34b28bac08705a5ecffa2a91381b41b0f4ce3e",
@@ -210,11 +120,6 @@ exports[`archive pack options should write the expected files 1`] = `
     "path": "source/ui/textures_descr/ui_test_sheet.xml",
     "sha256": "44329d941bf367bbd107efb9eb255aa12752cb550d3b99d7b88a2d1d91090012",
     "size": 352,
-  },
-  {
-    "path": "stored/cfg.xdb",
-    "sha256": "900185dcc78394b0764b652dac506cb23a31388de9e5455f5e72886937541aa9",
-    "size": 12266,
   },
 ]
 `;

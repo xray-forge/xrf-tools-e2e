@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive unpack dry run should report the unpack it would perform 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Workers: <workers> (auto)",
+    "Unpack in dry mode",
+    "Unpack source: <sandbox>/packed/fixture.db",
+    "Unpack destination: <sandbox>/destination",
+    "Summary: 1 archive(s), 3 file(s), 14 B compressed, 14 B real",
+  ],
+}
+`;
+
+exports[`archive unpack dry run should report the unpack it would perform 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "archive",
+    "unpack",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "archives": 1,
+    "destination": "<sandbox>/destination",
+    "entries": 3,
+    "isDry": true,
+    "sizeCompressed": 14,
+    "sizeReal": 14,
+    "source": "<sandbox>/packed/fixture.db",
+  },
+}
+`;
+
+exports[`archive unpack dry run should write the expected files 1`] = `
+[
+  {
+    "path": "destination/gamedata/configs/nested/system.ltx",
+    "sha256": "c0a08332fb64dec66ddc3bdbacfcc45b34bdaca9403ed710de914fb17b232936",
+    "size": 30,
+  },
+  {
+    "path": "destination/sentinel.ltx",
+    "sha256": "1ef45427d790ce1e90a5a7d7a19dbfe5db71fbe7a642f8696a299d3663808c37",
+    "size": 20,
+  },
+  {
+    "path": "dry-report.json",
+    "sha256": "d3cd473da8b37e32dce5f6d9b906d34bcb5a992d129a2698e666a2c1959f4888",
+    "size": 717,
+  },
+  {
+    "path": "packed/fixture.db",
+    "sha256": "1d73d7f7b96b8a375d52632f9e43a88abaac6b0f960c9027c02318d7433be736",
+    "size": 159,
+  },
+  {
+    "path": "restored/gamedata/configs/nested/system.ltx",
+    "sha256": "6cf907744d42396351b640ecfbc691eb16a6664e71f1f96955dcc19142272c30",
+    "size": 14,
+  },
+  {
+    "path": "source/configs/nested/system.ltx",
+    "sha256": "6cf907744d42396351b640ecfbc691eb16a6664e71f1f96955dcc19142272c30",
+    "size": 14,
+  },
+]
+`;

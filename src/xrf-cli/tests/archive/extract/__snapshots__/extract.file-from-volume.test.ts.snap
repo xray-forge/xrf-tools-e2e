@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`archive extract file should extract the selected file byte for byte 1`] = `
+exports[`archive extract file from one volume should extract the selected file byte for byte 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -10,7 +10,7 @@ exports[`archive extract file should extract the selected file byte for byte 1`]
 }
 `;
 
-exports[`archive extract file should write the expected files 1`] = `
+exports[`archive extract file from one volume should write the expected files 1`] = `
 [
   {
     "path": "packed/fixture.db",

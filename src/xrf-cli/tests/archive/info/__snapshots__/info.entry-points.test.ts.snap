@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive info entry points should record the discovered volume roots 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "archive",
+    "info",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "directories": 0,
+    "files": 2,
+    "root": "<sandbox>/archives",
+    "sizeCompressed": 20,
+    "sizeReal": 20,
+    "volumes": [
+      {
+        "entries": 1,
+        "path": "<sandbox>/archives/configs.db",
+        "root": "gamedata/configs/",
+        "sizeCompressed": 10,
+        "sizeReal": 10,
+      },
+      {
+        "entries": 1,
+        "path": "<sandbox>/archives/scripts.db",
+        "root": "gamedata/scripts/",
+        "sizeCompressed": 10,
+        "sizeReal": 10,
+      },
+    ],
+  },
+}
+`;
+
+exports[`archive info entry points should write the expected files 1`] = `
+[
+  {
+    "path": "archives/configs.db",
+    "sha256": "8b18f66af047ba510f85e7319b1f877348c20f7905b97acf97539d383c43b610",
+    "size": 115,
+  },
+  {
+    "path": "archives/scripts.db",
+    "sha256": "c094ba1bbf2214c80b706511482a3622698ba33165f5f93d5d61fc65c4625c3e",
+    "size": 115,
+  },
+  {
+    "path": "configs/config.ltx",
+    "sha256": "4380474660e3fa47c914a9d1e23b37c0799b30f8338e882c669791c7a395664c",
+    "size": 10,
+  },
+  {
+    "path": "info.json",
+    "sha256": "596432c3dae1696b15cd96c2c67c2c9ae62d870ea01b7eac917fe75c44145bb6",
+    "size": 1021,
+  },
+  {
+    "path": "restored/gamedata/configs/config.ltx",
+    "sha256": "4380474660e3fa47c914a9d1e23b37c0799b30f8338e882c669791c7a395664c",
+    "size": 10,
+  },
+  {
+    "path": "restored/gamedata/scripts/script.ltx",
+    "sha256": "f2e2b8011e1bdda0cbd3c22a5ea4ff7e70886c5cd2d66b693e9968158a9b59b7",
+    "size": 10,
+  },
+  {
+    "path": "scripts/script.ltx",
+    "sha256": "f2e2b8011e1bdda0cbd3c22a5ea4ff7e70886c5cd2d66b693e9968158a9b59b7",
+    "size": 10,
+  },
+]
+`;

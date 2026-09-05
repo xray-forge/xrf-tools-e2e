@@ -12,7 +12,6 @@ describe("archive roundtrip", () => {
 
   let pack: CliResult;
   let unpack: CliResult;
-  let dry: CliResult;
 
   beforeAll(() => {
     const source = box.copyIn(gamedata("configs"), "source");
@@ -24,7 +23,6 @@ describe("archive roundtrip", () => {
     // A single volume is written as testdata.db rather than testdata.db0.
     pack = box.run("archive pack", ["--path", source, "--dest", box.at("packed"), "--name", "testdata"]);
     unpack = box.run("archive unpack", ["--path", box.at("packed/testdata.db"), "--dest", box.at("unpacked")]);
-    dry = box.run("archive unpack", ["--path", box.at("packed/testdata.db"), "--dest", box.at("dry"), "--dry"]);
   });
 
   it("should pack a directory into a volume", () => {
@@ -44,10 +42,6 @@ describe("archive roundtrip", () => {
 
     expect(box.sha("unpacked/gamedata/empty.ltx")).toBe(box.sha("source/empty.ltx"));
     expect(fs.statSync(box.at("unpacked/gamedata/empty")).isDirectory()).toBe(true);
-  });
-
-  it("should report without writing in dry mode", () => {
-    expect(dry).toMatchSnapshot();
   });
 
   it("should write the expected files", () => {
