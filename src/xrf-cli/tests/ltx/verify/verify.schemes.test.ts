@@ -60,22 +60,33 @@ describe("ltx verify schemes", () => {
     expect(said).not.toContain("[wpn_child_upgrades]");
   });
 
-  it("should name the file a finding was raised in", () => {
-    expect(said).toContain("in '<resources>/ltx-schemes/configs/standalone.ltx' [ammo_9x18]");
+  /**
+   * A finding inside an included file names that file, and the entry point that resolved it.
+   *
+   * @remarks
+   * `[wpn_broken]` is written in `configs/items/w_broken.ltx` and reached only through
+   * `#include "items\w_*.ltx"`. Naming only `configs/system.ltx` sent a modder to a file that
+   * declares none of it, which on a vanilla tree is almost every section in the game.
+   * Both are reported: the declaring file is what to open, the entry point is the
+   * unit a caller re-runs and the only thing saying why two files were read together.
+   */
+  it("should name the file that declared an included section, and the entry point that resolved it", () => {
+    expect(said).toContain(
+      "in '<resources>/ltx-schemes/configs/items/w_broken.ltx' resolved from '<resources>/ltx-schemes/configs/system.ltx' [wpn_broken]"
+    );
   });
 
   /**
-   * A finding inside an included file is reported at the entry point that included it.
+   * A section written in the entry point itself reads as it always did.
    *
    * @remarks
-   * `[wpn_broken]` is written in `configs/items/w_broken.ltx`, and every finding it raises names
-   * `configs/system.ltx`. Verification reads one resolved document per entry point and the section
-   * carries no record of the file it came from, so the location is the only one the verifier has.
-   * Recorded because it is what a caller has to act on today, not because it is the useful answer.
+   * `standalone.ltx` is included by nothing, so the file that declares `[ammo_9x18]` and the entry
+   * point that resolved it are one file. Saying so twice would be noise, so the location collapses
+   * to a single path and the wording is unchanged for the common case.
    */
-  it("should report a finding from an included file at the entry point", () => {
-    expect(said).toContain("in '<resources>/ltx-schemes/configs/system.ltx' [wpn_broken]");
-    expect(said).not.toContain("w_broken.ltx");
+  it("should name one path when the declaring file is the entry point", () => {
+    expect(said).toContain("in '<resources>/ltx-schemes/configs/standalone.ltx' [ammo_9x18]");
+    expect(said).not.toContain("standalone.ltx' resolved from");
   });
 
   it("should name each checked field when asked to be verbose", () => {

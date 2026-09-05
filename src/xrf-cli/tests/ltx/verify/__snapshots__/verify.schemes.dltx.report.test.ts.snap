@@ -83,7 +83,8 @@ exports[`ltx verify schemes --dltx report should report the scheme findings the 
     "errors": [
       {
         "LtxScheme": {
-          "at": "<resources>/ltx-schemes-dltx/configs/system.ltx",
+          "at": "<resources>/ltx-schemes-dltx/configs/items/w_ak74.ltx",
+          "entry": "<resources>/ltx-schemes-dltx/configs/system.ltx",
           "field": "cost",
           "message": "Invalid value, unsigned 32 bit number is expected, got 'expensive'",
           "section": "wpn_ak74",
@@ -91,7 +92,8 @@ exports[`ltx verify schemes --dltx report should report the scheme findings the 
       },
       {
         "LtxScheme": {
-          "at": "<resources>/ltx-schemes-dltx/configs/system.ltx",
+          "at": "<resources>/ltx-schemes-dltx/configs/items/w_ak74.ltx",
+          "entry": "<resources>/ltx-schemes-dltx/configs/system.ltx",
           "field": "rpm",
           "message": "Required field was not provided",
           "section": "wpn_ak74",

@@ -51,11 +51,22 @@ describe("ltx verify schemes --dltx", () => {
     expect(said).toContain("[wpn_ak74] rpm : Required field was not provided");
   });
 
-  it("should report both findings at the entry point the patch applies to", () => {
-    // Same location rule as an included file: the resolved document belongs to `system.ltx`, so
-    // neither the file declaring the section nor the file breaking it is named.
-    expect(said).toContain("in '<resources>/ltx-schemes-dltx/configs/system.ltx' [wpn_ak74]");
-    expect(said).not.toContain("w_ak74.ltx");
+  it("should name the file that declared the patched section, and the entry point that resolved it", () => {
+    // The declaring file is what a modder opens to see the section; the entry point is what they re-run.
+    expect(said).toContain(
+      "in '<resources>/ltx-schemes-dltx/configs/items/w_ak74.ltx' resolved from '<resources>/ltx-schemes-dltx/configs/system.ltx' [wpn_ak74]"
+    );
+  });
+
+  /**
+   * The patch file that broke the value is still not named.
+   *
+   * @remarks
+   * Section origin is per section, so a finding names where the section is declared, not which of the
+   * files touching it supplied the offending value. `xrf-dltx` already records the winning file per
+   * field in `LtxResolution::provenance`. Recorded so the gap is visible rather than assumed closed.
+   */
+  it("should not yet name the patch file that supplied the offending value", () => {
     expect(said).not.toContain("mod_system_xxx.ltx");
   });
 

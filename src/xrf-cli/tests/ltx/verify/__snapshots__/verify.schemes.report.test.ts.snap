@@ -35,6 +35,7 @@ exports[`ltx verify schemes report should report every finding and the coverage 
       {
         "LtxScheme": {
           "at": "<resources>/ltx-schemes/configs/standalone.ltx",
+          "entry": "<resources>/ltx-schemes/configs/standalone.ltx",
           "field": "cost",
           "message": "Invalid value, unsigned 32 bit number is expected, got 'free'",
           "section": "ammo_9x18",
@@ -43,6 +44,7 @@ exports[`ltx verify schemes report should report every finding and the coverage 
       {
         "LtxScheme": {
           "at": "<resources>/ltx-schemes/configs/standalone.ltx",
+          "entry": "<resources>/ltx-schemes/configs/standalone.ltx",
           "field": "box_size",
           "message": "Invalid value, unsigned 8 bit number is expected, got '300'",
           "section": "ammo_9x18",
@@ -50,7 +52,8 @@ exports[`ltx verify schemes report should report every finding and the coverage 
       },
       {
         "LtxScheme": {
-          "at": "<resources>/ltx-schemes/configs/system.ltx",
+          "at": "<resources>/ltx-schemes/configs/items/w_broken.ltx",
+          "entry": "<resources>/ltx-schemes/configs/system.ltx",
           "field": "cost",
           "message": "Invalid value, unsigned 32 bit number is expected, got 'expensive'",
           "section": "wpn_broken",
@@ -58,7 +61,8 @@ exports[`ltx verify schemes report should report every finding and the coverage 
       },
       {
         "LtxScheme": {
-          "at": "<resources>/ltx-schemes/configs/system.ltx",
+          "at": "<resources>/ltx-schemes/configs/items/w_broken.ltx",
+          "entry": "<resources>/ltx-schemes/configs/system.ltx",
           "field": "kind",
           "message": "Invalid value, one of possible values [pistol,rifle,shotgun] expected, got 'launcher'",
           "section": "wpn_broken",
@@ -66,7 +70,8 @@ exports[`ltx verify schemes report should report every finding and the coverage 
       },
       {
         "LtxScheme": {
-          "at": "<resources>/ltx-schemes/configs/system.ltx",
+          "at": "<resources>/ltx-schemes/configs/items/w_broken.ltx",
+          "entry": "<resources>/ltx-schemes/configs/system.ltx",
           "field": "unexpected_field",
           "message": "Unexpected field, definition is required in strict mode",
           "section": "wpn_broken",
@@ -74,7 +79,8 @@ exports[`ltx verify schemes report should report every finding and the coverage 
       },
       {
         "LtxScheme": {
-          "at": "<resources>/ltx-schemes/configs/system.ltx",
+          "at": "<resources>/ltx-schemes/configs/items/w_broken.ltx",
+          "entry": "<resources>/ltx-schemes/configs/system.ltx",
           "field": "ammo_class",
           "message": "Required field was not provided",
           "section": "wpn_broken",
@@ -82,7 +88,8 @@ exports[`ltx verify schemes report should report every finding and the coverage 
       },
       {
         "LtxScheme": {
-          "at": "<resources>/ltx-schemes/configs/system.ltx",
+          "at": "<resources>/ltx-schemes/configs/items/w_broken.ltx",
+          "entry": "<resources>/ltx-schemes/configs/system.ltx",
           "field": "ammo_class",
           "message": "Required field was not provided",
           "section": "wpn_incomplete",
@@ -90,7 +97,8 @@ exports[`ltx verify schemes report should report every finding and the coverage 
       },
       {
         "LtxScheme": {
-          "at": "<resources>/ltx-schemes/configs/system.ltx",
+          "at": "<resources>/ltx-schemes/configs/items/w_broken.ltx",
+          "entry": "<resources>/ltx-schemes/configs/system.ltx",
           "field": "kind",
           "message": "Required field was not provided",
           "section": "wpn_incomplete",
@@ -98,7 +106,8 @@ exports[`ltx verify schemes report should report every finding and the coverage 
       },
       {
         "LtxScheme": {
-          "at": "<resources>/ltx-schemes/configs/system.ltx",
+          "at": "<resources>/ltx-schemes/configs/items/w_broken.ltx",
+          "entry": "<resources>/ltx-schemes/configs/system.ltx",
           "field": "*",
           "message": "Required schema '$no_such_scheme' definition is not found",
           "section": "wpn_undeclared_scheme",

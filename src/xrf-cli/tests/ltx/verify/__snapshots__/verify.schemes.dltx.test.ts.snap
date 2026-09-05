@@ -4,8 +4,8 @@ exports[`ltx verify schemes --dltx should fail the resolved section with the fla
 {
   "exitCode": 3,
   "stderr": [
-    "Ltx scheme error in '<resources>/ltx-schemes-dltx/configs/system.ltx' [wpn_ak74] cost : Invalid value, unsigned 32 bit number is expected, got 'expensive'",
-    "Ltx scheme error in '<resources>/ltx-schemes-dltx/configs/system.ltx' [wpn_ak74] rpm : Required field was not provided",
+    "Ltx scheme error in '<resources>/ltx-schemes-dltx/configs/items/w_ak74.ltx' resolved from '<resources>/ltx-schemes-dltx/configs/system.ltx' [wpn_ak74] cost : Invalid value, unsigned 32 bit number is expected, got 'expensive'",
+    "Ltx scheme error in '<resources>/ltx-schemes-dltx/configs/items/w_ak74.ltx' resolved from '<resources>/ltx-schemes-dltx/configs/system.ltx' [wpn_ak74] rpm : Required field was not provided",
     "Check failed: 2 finding(s)",
   ],
   "stdout": [
