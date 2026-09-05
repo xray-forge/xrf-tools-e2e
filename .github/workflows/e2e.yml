@@ -63,7 +63,7 @@ jobs:
         run: npm run cli:download
 
       - name: Run CLI E2E suite
-        run: npm run e2e:cli
+        run: npm run e2e:cli -- --maxWorkers=100%
 
   e2e-app:
     name: E2E App (Windows)
