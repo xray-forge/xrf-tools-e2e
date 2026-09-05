@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata verify resolved DLTX schema should write the expected reports and files 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "cache": {
+      "bytes": 105,
+      "entries": 2,
+      "hits": 4,
+      "misses": 2,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "passed",
+        "summary": "2/2 LTX files formatted; 1/1 sections valid",
+        "verificationType": "ltx",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "passed",
+  },
+}
+`;
+
+exports[`gamedata verify resolved DLTX schema should write the expected reports and files 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 2 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "cache": {
+      "bytes": 142,
+      "entries": 3,
+      "hits": 6,
+      "misses": 3,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "assetPath": "configs/system.ltx",
+            "message": "[wpn_test] cost: Invalid value, unsigned 32 bit number is expected, got 'expensive'",
+            "ruleId": "ltx.schema",
+          },
+          {
+            "assetPath": "configs/system.ltx",
+            "message": "[wpn_test] rpm: Required field was not provided",
+            "ruleId": "ltx.schema",
+          },
+        ],
+        "status": "failed",
+        "summary": "3/3 LTX files formatted; 0/1 sections valid",
+        "verificationType": "ltx",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`gamedata verify resolved DLTX schema should write the expected reports and files 3`] = `
+[
+  {
+    "path": "clean.json",
+    "sha256": "199e3d7b86fe10098a1395dd17548661a2f9203854bafca4f2a80b3ac9f2e740",
+    "size": 1330,
+  },
+  {
+    "path": "clean/configs/system.ltx",
+    "sha256": "92f05114f93ab718620caca0cfa2bb38914943871fa36634e587413c62416cf0",
+    "size": 55,
+  },
+  {
+    "path": "clean/configs/weapons.scheme.ltx",
+    "sha256": "b3cb7d5f23673f9f28b405a6d6854e10542a230523c6e6db78ca46be253c59ab",
+    "size": 50,
+  },
+  {
+    "path": "patched.json",
+    "sha256": "c8284c3118e588e6fad4b603039bb81209da8890be7801d53c38de4a3879e2e2",
+    "size": 1764,
+  },
+  {
+    "path": "patched/configs/mod_system_test.ltx",
+    "sha256": "8c0ac9b9ea76601a2709731b2ff015d4402ca35c22cd18353606b1d9ef7df32a",
+    "size": 37,
+  },
+  {
+    "path": "patched/configs/system.ltx",
+    "sha256": "92f05114f93ab718620caca0cfa2bb38914943871fa36634e587413c62416cf0",
+    "size": 55,
+  },
+  {
+    "path": "patched/configs/weapons.scheme.ltx",
+    "sha256": "b3cb7d5f23673f9f28b405a6d6854e10542a230523c6e6db78ca46be253c59ab",
+    "size": 50,
+  },
+]
+`;

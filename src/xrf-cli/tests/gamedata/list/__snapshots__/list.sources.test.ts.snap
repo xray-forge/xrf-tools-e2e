@@ -1,5 +1,194 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`gamedata list sources should report every asset the tree resolves 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "list",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "collisions": [],
+    "duration": "<duration>",
+    "entries": [
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "configs\\alife.ltx",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "configs\\defines.ltx",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "configs\\evaluation.ltx",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "configs\\fonts.ltx",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "configs\\game.ltx",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "configs\\gameplay\\dialogs.xml",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "configs\\gameplay\\dialogs_zaton.xml",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "configs\\misc\\inventory_icons.ltx",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "configs\\system.ltx",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "configs\\text\\eng\\st_items.xml",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "configs\\text\\eng\\st_ui.xml",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "configs\\text\\ukr\\st_items.xml",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "configs\\text\\ukr\\st_ui.xml",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "configs\\ui\\textures_descr\\ui_test_sheet.xml",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "meshes\\ogf\\dev_bolt_hud.ogf",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "meshes\\ogf\\notes_paper_1.ogf",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "meshes\\ogf\\part_none.ogf",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "meshes\\ogf\\residue_split_motion_ref.ogf",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "meshes\\ogf\\wpn_pm_lod.ogf",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "meshes\\omf\\wpn_knife_hud_animation.omf",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "meshes\\omf\\wpn_mp5_hud_animation.omf",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "meshes\\omf\\wpn_svd_hud_animation.omf",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "particles.xr",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "shaders.xr",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "spawns\\all.spawn",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "textures\\act_cat_bump.thm",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "textures\\prop_lampa_g.dds",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "textures\\ui\\ui_test_sheet.dds",
+      },
+      {
+        "container": "<resources>/gamedata",
+        "isArchived": false,
+        "logicalPath": "textures\\ui_empty.dds",
+      },
+    ],
+    "isShadowedIncluded": false,
+    "mounts": [
+      "Directory <resources>/gamedata (gamedata)",
+    ],
+    "origin": "<resources>/gamedata",
+    "shadowed": [],
+    "skipped": [],
+    "total": 29,
+  },
+}
+`;
+
 exports[`gamedata list sources should resolve the whole tree 1`] = `
 {
   "exitCode": 0,
@@ -41,4 +230,12 @@ exports[`gamedata list sources should resolve the whole tree 1`] = `
 }
 `;
 
-exports[`gamedata list sources should write nothing 1`] = `[]`;
+exports[`gamedata list sources should write only its report 1`] = `
+[
+  {
+    "path": "listing.json",
+    "sha256": "a8bcd75024d9579a88981820c4345741843129d092e0ca5d33a7c95f8fbaa14d",
+    "size": 4989,
+  },
+]
+`;

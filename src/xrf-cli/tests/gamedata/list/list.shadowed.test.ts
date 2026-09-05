@@ -23,6 +23,7 @@ describe("gamedata list across mounts", () => {
   let listed: CliResult;
   let shadowed: CliResult;
   let loose: CliResult;
+  let before: Array<string>;
 
   beforeAll(() => {
     // The archive is packed from a staging tree shaped like a gamedata root, so its entries land on
@@ -37,9 +38,25 @@ describe("gamedata list across mounts", () => {
     box.copyIn(gamedata("configs/system.ltx"), "install/gamedata/configs/system.ltx");
     box.write("install/fsgame.ltx", FSGAME);
 
-    listed = box.run("gamedata list", ["--path", box.at("install")]);
-    shadowed = box.run("gamedata list", ["--path", box.at("install"), "--shadowed"]);
-    loose = box.run("gamedata list", ["--path", box.at("install"), "--loose"]);
+    const inputs = [
+      "stage/configs/fonts.ltx",
+      "stage/configs/system.ltx",
+      "install/gamedata/configs/system.ltx",
+      "install/fsgame.ltx",
+      "install/database/gamedata.db",
+    ];
+
+    before = inputs.map((input) => box.sha(input));
+
+    listed = box.run("gamedata list", ["--path", box.at("install"), "--report", box.at("listing.json")]);
+    shadowed = box.run("gamedata list", [
+      "--path",
+      box.at("install"),
+      "--shadowed",
+      "--report",
+      box.at("shadowed.json"),
+    ]);
+    loose = box.run("gamedata list", ["--path", box.at("install"), "--loose", "--report", box.at("loose.json")]);
   });
 
   // Two mounts, and each asset reports which one answered for it.
@@ -58,7 +75,61 @@ describe("gamedata list across mounts", () => {
     expect(loose).toMatchSnapshot();
   });
 
-  it("should write nothing of its own", () => {
-    expect(box.manifest()).toMatchSnapshot();
+  it("should report ordered winners, shadowed archive entries and loose-only entries", () => {
+    const install = "<sandbox>/install";
+    const archive = "<sandbox>/install/database";
+    const looseRoot = "<sandbox>/install/gamedata";
+
+    expect(box.json("listing.json")).toMatchObject({
+      result: {
+        origin: install,
+        total: 2,
+        entries: [
+          { container: archive, isArchived: true, logicalPath: "configs\\fonts.ltx" },
+          { container: looseRoot, isArchived: false, logicalPath: "configs\\system.ltx" },
+        ],
+        shadowed: [],
+      },
+    });
+    expect(box.json("shadowed.json")).toMatchObject({
+      result: {
+        origin: install,
+        isShadowedIncluded: true,
+        total: 2,
+        entries: [
+          { container: archive, isArchived: true, logicalPath: "configs\\fonts.ltx" },
+          { container: looseRoot, isArchived: false, logicalPath: "configs\\system.ltx" },
+        ],
+        shadowed: [{ container: archive, isArchived: true, logicalPath: "configs\\system.ltx" }],
+      },
+    });
+    expect(box.json("loose.json")).toMatchObject({
+      result: {
+        origin: install,
+        total: 1,
+        entries: [{ container: looseRoot, isArchived: false, logicalPath: "configs\\system.ltx" }],
+        shadowed: [],
+      },
+    });
+  });
+
+  it("should record each source mode", () => {
+    expect(box.json("listing.json")).toMatchSnapshot();
+    expect(box.json("shadowed.json")).toMatchSnapshot();
+    expect(box.json("loose.json")).toMatchSnapshot();
+  });
+
+  it("should leave source inputs unchanged", () => {
+    expect([
+      box.sha("stage/configs/fonts.ltx"),
+      box.sha("stage/configs/system.ltx"),
+      box.sha("install/gamedata/configs/system.ltx"),
+      box.sha("install/fsgame.ltx"),
+      box.sha("install/database/gamedata.db"),
+    ]).toEqual(before);
+  });
+
+  it("should write only its reports", () => {
+    expect(box.manifest({ normalized: ["listing.json", "shadowed.json", "loose.json"] })).toMatchSnapshot();
   });
 });

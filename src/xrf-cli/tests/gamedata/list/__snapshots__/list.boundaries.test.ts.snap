@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata list prefix boundaries should record both boundary selections 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "list",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "collisions": [],
+    "duration": "<duration>",
+    "entries": [
+      {
+        "container": "<sandbox>/boundary",
+        "isArchived": false,
+        "logicalPath": "configs\\kept.ltx",
+      },
+    ],
+    "isShadowedIncluded": false,
+    "mounts": [
+      "Directory <sandbox>/boundary (boundary)",
+    ],
+    "origin": "<sandbox>/boundary",
+    "shadowed": [],
+    "skipped": [],
+    "total": 1,
+  },
+}
+`;
+
+exports[`gamedata list prefix boundaries should record both boundary selections 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "list",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "collisions": [],
+    "duration": "<duration>",
+    "entries": [
+      {
+        "container": "<sandbox>/boundary",
+        "isArchived": false,
+        "logicalPath": "configs_backup\\kept.ltx",
+      },
+    ],
+    "isShadowedIncluded": false,
+    "mounts": [
+      "Directory <sandbox>/boundary (boundary)",
+    ],
+    "origin": "<sandbox>/boundary",
+    "shadowed": [],
+    "skipped": [],
+    "total": 1,
+  },
+}
+`;
+
+exports[`gamedata list prefix boundaries should write the expected files 1`] = `
+[
+  {
+    "path": "boundary/configs/kept.ltx",
+    "sha256": "103a539289a678adff8051e579582bc226aeccd3bcf7854bc6bc4d3cbd0c3b4f",
+    "size": 7,
+  },
+  {
+    "path": "boundary/configs_backup/kept.ltx",
+    "sha256": "5de1b9e21771847fc4e64095eb2d16d4db2e89001917d01e8675ca8daf1c5786",
+    "size": 10,
+  },
+  {
+    "path": "ignore.json",
+    "sha256": "ff3db5ab602abaaf283f0776e15f778118c507660fdeef002e3f25e4f3f44f11",
+    "size": 934,
+  },
+  {
+    "path": "prefix.json",
+    "sha256": "efafaf599fba569048e292b2ac130c492a1a599be532c026b7f455f807639f1b",
+    "size": 927,
+  },
+]
+`;

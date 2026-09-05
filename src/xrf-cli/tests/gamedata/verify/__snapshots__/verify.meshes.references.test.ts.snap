@@ -1,0 +1,243 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata verify mesh texture references should accept a mesh whose referenced texture resolves 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Workers: <workers> (auto)",
+    "Opening gamedata project",
+    "Root: <sandbox>/present, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
+    "Verifying gamedata project: <sandbox>/present",
+    "Verifying modules:",
+    "  -meshes",
+    "",
+    "Verify declared source coverage:",
+    "Verified declared source coverage in <duration>, 0 unopened source(s)",
+    "Verify path collisions:",
+    "Verified gamedata path collisions in <duration>, 0 unreachable file(s)",
+    "Verify meshes:",
+    "Verified gamedata meshes in <duration>, 1/1 shader libraries valid, 205 blender definitions; 1/1 meshes valid",
+    "",
+    "Project gamedata is valid",
+    "Gamedata project verified in <duration>",
+  ],
+}
+`;
+
+exports[`gamedata verify mesh texture references should record each report as a readable document 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "cache": {
+      "bytes": 22,
+      "entries": 1,
+      "hits": 0,
+      "misses": 3,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "passed",
+        "summary": "1/1 shader libraries valid, 205 blender definitions; 1/1 meshes valid",
+        "verificationType": "meshes",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "passed",
+  },
+}
+`;
+
+exports[`gamedata verify mesh texture references should record each report as a readable document 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 1 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "cache": {
+      "bytes": 22,
+      "entries": 1,
+      "hits": 0,
+      "misses": 3,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "assetPath": "meshes/ogf/notes_paper_1.ogf",
+            "message": "Mesh references missing texture 'item\\item_notes'",
+            "ruleId": "meshes.validation",
+          },
+        ],
+        "status": "failed",
+        "summary": "1/1 shader libraries valid, 205 blender definitions; 0/1 meshes valid",
+        "verificationType": "meshes",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`gamedata verify mesh texture references should report the missing referenced texture once at its mesh in check order 1`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "Cannot read OGF texture: item\\item_notes",
+    "Mesh is not valid: meshes\\ogf\\notes_paper_1.ogf",
+    "",
+    "Project gamedata is invalid",
+    "- 1/1 shader libraries valid, 205 blender definitions; 0/1 meshes valid",
+    "  - [meshes] meshes/ogf/notes_paper_1.ogf: Mesh references missing texture 'item\\item_notes'",
+    "Gamedata project checked in <duration>",
+    "Check failed: 1 finding(s)",
+  ],
+  "stdout": [
+    "Workers: <workers> (auto)",
+    "Opening gamedata project",
+    "Root: <sandbox>/missing, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
+    "Verifying gamedata project: <sandbox>/missing",
+    "Verifying modules:",
+    "  -meshes",
+    "",
+    "Verify declared source coverage:",
+    "Verified declared source coverage in <duration>, 0 unopened source(s)",
+    "Verify path collisions:",
+    "Verified gamedata path collisions in <duration>, 0 unreachable file(s)",
+    "Verify meshes:",
+    "Verified gamedata meshes in <duration>, 1/1 shader libraries valid, 205 blender definitions; 0/1 meshes valid",
+  ],
+}
+`;
+
+exports[`gamedata verify mesh texture references should write only its fixture and reports 1`] = `
+[
+  {
+    "path": "missing.json",
+    "sha256": "a596a826dc3a2db3d401814b3d2a7b66183c6043117241f8ade50500f38589d7",
+    "size": 1595,
+  },
+  {
+    "path": "missing/configs/system.ltx",
+    "sha256": "5cac9f20c4fbb6af5a0d925326f9f25b1f740554698bed99cab1fe6166d19b61",
+    "size": 22,
+  },
+  {
+    "path": "missing/meshes/ogf/notes_paper_1.ogf",
+    "sha256": "ef49409071d4f3be76c82e6ffa995c2386d50aad5e5eff7663df11133d0c5a6b",
+    "size": 1976,
+  },
+  {
+    "path": "missing/shaders.xr",
+    "sha256": "526e9363e42764c56a39bae72de854d89d65dfc1fe9aca0231e576456b8720c9",
+    "size": 191315,
+  },
+  {
+    "path": "present.json",
+    "sha256": "ffaf05f89221b541cbce86b841661b8dd70572c778c35553872dc1607fcdf7c5",
+    "size": 1358,
+  },
+  {
+    "path": "present/configs/system.ltx",
+    "sha256": "5cac9f20c4fbb6af5a0d925326f9f25b1f740554698bed99cab1fe6166d19b61",
+    "size": 22,
+  },
+  {
+    "path": "present/meshes/ogf/notes_paper_1.ogf",
+    "sha256": "ef49409071d4f3be76c82e6ffa995c2386d50aad5e5eff7663df11133d0c5a6b",
+    "size": 1976,
+  },
+  {
+    "path": "present/shaders.xr",
+    "sha256": "526e9363e42764c56a39bae72de854d89d65dfc1fe9aca0231e576456b8720c9",
+    "size": 191315,
+  },
+  {
+    "path": "present/textures/item/item_notes.dds",
+    "sha256": "3c353eaac54b08b29f50c8f2fb7bf68ef3d2b103c1a7ad9334fd4cb862e02e13",
+    "size": 144,
+  },
+]
+`;

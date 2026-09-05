@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata list containing installation should record the discovered installation 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "list",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "collisions": [],
+    "duration": "<duration>",
+    "entries": [
+      {
+        "container": "<sandbox>/install/gamedata",
+        "isArchived": false,
+        "logicalPath": "configs\\installed.ltx",
+      },
+    ],
+    "isShadowedIncluded": false,
+    "mounts": [
+      "Directory <sandbox>/install/gamedata (gamedata)",
+    ],
+    "origin": "<sandbox>/install/gamedata/configs",
+    "shadowed": [],
+    "skipped": [],
+    "total": 1,
+  },
+}
+`;
+
+exports[`gamedata list containing installation should write the expected files 1`] = `
+[
+  {
+    "path": "containing.json",
+    "sha256": "2ff7b1dfab22725c37ce8c9f36ca278ba5057be16d0fa8f947d377465f8d1412",
+    "size": 964,
+  },
+  {
+    "path": "install/fsgame.ltx",
+    "sha256": "1b134540b8a1948da8b9af003e875d32032f7645d4bbb75ed3f7b65588311cc1",
+    "size": 47,
+  },
+  {
+    "path": "install/gamedata/configs/installed.ltx",
+    "sha256": "6d789b2a95ac2ded98ff4ea838ed7e8dfb736ed3663e449944b1d0b66dd4e660",
+    "size": 12,
+  },
+]
+`;

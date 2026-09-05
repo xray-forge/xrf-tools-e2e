@@ -10,13 +10,26 @@ describe("gamedata list selection", () => {
 
   beforeAll(() => {
     prefixed = box.run("gamedata list", ["--path", gamedata(), "--prefix", "meshes"]);
+    box.run("gamedata list", [
+      "--path",
+      gamedata(),
+      "--prefix",
+      "meshes",
+      "--silent",
+      "--report",
+      box.at("meshes.json"),
+    ]);
   });
 
   it("should limit a listing to one subtree", () => {
     expect(prefixed).toMatchSnapshot();
   });
 
-  it("should write nothing", () => {
-    expect(box.manifest()).toMatchSnapshot();
+  it("should report only the subtree a prefix names", () => {
+    expect(box.json("meshes.json")).toMatchSnapshot();
+  });
+
+  it("should write only its report", () => {
+    expect(box.manifest({ normalized: ["meshes.json"] })).toMatchSnapshot();
   });
 });

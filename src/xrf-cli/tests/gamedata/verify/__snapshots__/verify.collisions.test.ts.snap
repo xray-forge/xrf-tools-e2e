@@ -109,8 +109,164 @@ exports[`gamedata verify meets unreachable files should carry the collision as i
 }
 `;
 
-exports[`gamedata verify meets unreachable files should write only its report 1`] = `
+exports[`gamedata verify meets unreachable files should preserve its inputs and write readable reports 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 1 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "cache": {
+      "bytes": 22,
+      "entries": 1,
+      "hits": 0,
+      "misses": 1,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "assetPath": "textures/k.dds",
+            "message": "File '<sandbox>/gamedata/textures/K.dds' cannot be reached, '<sandbox>/gamedata/textures/k.dds' claims this path",
+            "ruleId": "collisions.unreachable",
+          },
+        ],
+        "status": "failed",
+        "summary": "1 file(s) cannot be reached, another file claims their path",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "passed",
+        "summary": "0/0 scripts valid",
+        "verificationType": "scripts",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`gamedata verify meets unreachable files should preserve its inputs and write readable reports 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "cache": {
+      "bytes": 22,
+      "entries": 1,
+      "hits": 0,
+      "misses": 1,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "passed",
+        "summary": "0/0 scripts valid",
+        "verificationType": "scripts",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "passed",
+  },
+}
+`;
+
+exports[`gamedata verify meets unreachable files should preserve its inputs and write readable reports 3`] = `
 [
+  {
+    "path": "clean.json",
+    "sha256": "465ff8c00a0c50cd0af5ef587e4f81ecbda4409bdd5eddbf813f9128a1f58f91",
+    "size": 1307,
+  },
+  {
+    "path": "clean/configs/system.ltx",
+    "sha256": "5cac9f20c4fbb6af5a0d925326f9f25b1f740554698bed99cab1fe6166d19b61",
+    "size": 22,
+  },
+  {
+    "path": "clean/textures/k.dds",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+  },
+  {
+    "path": "empty-check.json",
+    "sha256": "a6a0b5c5430b6a28a7307f7c7dafd61a757f8f91b4fe3ccc301073319f0ca63a",
+    "size": 1637,
+  },
   {
     "path": "gamedata/configs/system.ltx",
     "sha256": "5cac9f20c4fbb6af5a0d925326f9f25b1f740554698bed99cab1fe6166d19b61",

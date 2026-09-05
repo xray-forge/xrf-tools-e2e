@@ -12,6 +12,7 @@ describe("gamedata list sources", () => {
   beforeAll(() => {
     listed = box.run("gamedata list", ["--path", gamedata()]);
     loose = box.run("gamedata list", ["--path", gamedata(), "--loose"]);
+    box.run("gamedata list", ["--path", gamedata(), "--silent", "--report", box.at("listing.json")]);
   });
 
   it("should resolve the whole tree", () => {
@@ -23,7 +24,11 @@ describe("gamedata list sources", () => {
     expect(loose.stdout).toEqual(listed.stdout);
   });
 
-  it("should write nothing", () => {
-    expect(box.manifest()).toMatchSnapshot();
+  it("should report every asset the tree resolves", () => {
+    expect(box.json("listing.json")).toMatchSnapshot();
+  });
+
+  it("should write only its report", () => {
+    expect(box.manifest({ normalized: ["listing.json"] })).toMatchSnapshot();
   });
 });

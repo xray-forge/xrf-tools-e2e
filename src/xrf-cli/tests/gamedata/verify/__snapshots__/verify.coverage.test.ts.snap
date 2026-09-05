@@ -77,6 +77,198 @@ exports[`gamedata verify meets a declared source it cannot open should carry the
 }
 `;
 
+exports[`gamedata verify meets a declared source it cannot open should preserve its inputs and write readable reports 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Verify error: Project gamedata verification is incomplete",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 1,
+  "outcome": "executionFailed",
+  "result": {
+    "cache": {
+      "bytes": 22,
+      "entries": 1,
+      "hits": 0,
+      "misses": 1,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "assetPath": "db",
+            "message": "Declared source '$arch_dir$' could not be opened, so no result covers it: Read error: archive <sandbox>/install/db/files.db0 declares a 1629515361-byte chunk at 8, beyond its 21-byte end",
+            "ruleId": "coverage.skipped-mount",
+          },
+        ],
+        "status": "incomplete",
+        "summary": "1 declared source(s) could not be opened, so no result covers them",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "passed",
+        "summary": "0/0 scripts valid",
+        "verificationType": "scripts",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [
+      {
+        "origin": "$arch_dir$",
+        "path": "<sandbox>/install/db",
+        "reason": "Read error: archive <sandbox>/install/db/files.db0 declares a 1629515361-byte chunk at 8, beyond its 21-byte end",
+      },
+    ],
+    "status": "incomplete",
+  },
+}
+`;
+
+exports[`gamedata verify meets a declared source it cannot open should preserve its inputs and write readable reports 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "cache": {
+      "bytes": 22,
+      "entries": 1,
+      "hits": 0,
+      "misses": 1,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "passed",
+        "summary": "0/0 scripts valid",
+        "verificationType": "scripts",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "passed",
+  },
+}
+`;
+
+exports[`gamedata verify meets a declared source it cannot open should preserve its inputs and write readable reports 3`] = `
+[
+  {
+    "path": "clean.json",
+    "sha256": "465ff8c00a0c50cd0af5ef587e4f81ecbda4409bdd5eddbf813f9128a1f58f91",
+    "size": 1307,
+  },
+  {
+    "path": "clean/fsgame.ltx",
+    "sha256": "d31945cf01c50ec21c79d3dfd311a0c9f5e52c01ff63018d4e18785cb1dd3ece",
+    "size": 156,
+  },
+  {
+    "path": "clean/gamedata/configs/system.ltx",
+    "sha256": "5cac9f20c4fbb6af5a0d925326f9f25b1f740554698bed99cab1fe6166d19b61",
+    "size": 22,
+  },
+  {
+    "path": "empty-check.json",
+    "sha256": "ecfeb2eb8826fb8be7727c163c73d2cfa7d395720117946cd379b93824a10830",
+    "size": 1965,
+  },
+  {
+    "path": "install/db/files.db0",
+    "sha256": "46c16d807e5b386ffed5fc3d8bcbbdcf281590014d787d64e21d9a275c8fc421",
+    "size": 21,
+  },
+  {
+    "path": "install/fsgame.ltx",
+    "sha256": "d31945cf01c50ec21c79d3dfd311a0c9f5e52c01ff63018d4e18785cb1dd3ece",
+    "size": 156,
+  },
+  {
+    "path": "install/gamedata/configs/system.ltx",
+    "sha256": "5cac9f20c4fbb6af5a0d925326f9f25b1f740554698bed99cab1fe6166d19b61",
+    "size": 22,
+  },
+  {
+    "path": "report.json",
+    "sha256": "3485b4e6491e730632db57e1331c2e123d6db1f252ec3352bdc1e84ba6049bc4",
+    "size": 1987,
+  },
+  {
+    "path": "silent.json",
+    "sha256": "3485b4e6491e730632db57e1331c2e123d6db1f252ec3352bdc1e84ba6049bc4",
+    "size": 1987,
+  },
+]
+`;
+
 exports[`gamedata verify meets a declared source it cannot open should warn which declared source went unread and answer non-zero 1`] = `
 {
   "exitCode": 1,
@@ -113,34 +305,4 @@ exports[`gamedata verify meets a declared source it cannot open should warn whic
     "Verified gamedata ltx files in <duration>",
   ],
 }
-`;
-
-exports[`gamedata verify meets a declared source it cannot open should write only its reports 1`] = `
-[
-  {
-    "path": "install/db/files.db0",
-    "sha256": "46c16d807e5b386ffed5fc3d8bcbbdcf281590014d787d64e21d9a275c8fc421",
-    "size": 21,
-  },
-  {
-    "path": "install/fsgame.ltx",
-    "sha256": "d31945cf01c50ec21c79d3dfd311a0c9f5e52c01ff63018d4e18785cb1dd3ece",
-    "size": 156,
-  },
-  {
-    "path": "install/gamedata/configs/system.ltx",
-    "sha256": "5cac9f20c4fbb6af5a0d925326f9f25b1f740554698bed99cab1fe6166d19b61",
-    "size": 22,
-  },
-  {
-    "path": "report.json",
-    "sha256": "3485b4e6491e730632db57e1331c2e123d6db1f252ec3352bdc1e84ba6049bc4",
-    "size": 1987,
-  },
-  {
-    "path": "silent.json",
-    "sha256": "3485b4e6491e730632db57e1331c2e123d6db1f252ec3352bdc1e84ba6049bc4",
-    "size": 1987,
-  },
-]
 `;

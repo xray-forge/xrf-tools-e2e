@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata list repeated roots should record the resolved roots 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "list",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "collisions": [],
+    "duration": "<duration>",
+    "entries": [
+      {
+        "container": "<sandbox>/base",
+        "isArchived": false,
+        "logicalPath": "configs\\base.ltx",
+      },
+      {
+        "container": "<sandbox>/override",
+        "isArchived": false,
+        "logicalPath": "configs\\override.ltx",
+      },
+      {
+        "container": "<sandbox>/base",
+        "isArchived": false,
+        "logicalPath": "configs\\system.ltx",
+      },
+    ],
+    "isShadowedIncluded": true,
+    "mounts": [
+      "Directory <sandbox>/base (base)",
+      "Directory <sandbox>/override (override)",
+    ],
+    "origin": "<sandbox>/base, <sandbox>/override",
+    "shadowed": [
+      {
+        "container": "<sandbox>/override",
+        "isArchived": false,
+        "logicalPath": "configs\\system.ltx",
+      },
+    ],
+    "skipped": [],
+    "total": 3,
+  },
+}
+`;
+
+exports[`gamedata list repeated roots should write the expected files 1`] = `
+[
+  {
+    "path": "base/configs/base.ltx",
+    "sha256": "a82afe91ae9b5e6cae3ac1cc3a4db627fef6915fea2025cdc2a67aa8001b64c0",
+    "size": 12,
+  },
+  {
+    "path": "base/configs/system.ltx",
+    "sha256": "c9248a7ab03008f68e7bbc41976deccfc318f6b79d3824de907ebafa31e32dce",
+    "size": 7,
+  },
+  {
+    "path": "overlay.json",
+    "sha256": "9fb3b92a6a83f80c8eb5fa531b2337b54069b53a84697bf3075ab756bd8195cc",
+    "size": 1383,
+  },
+  {
+    "path": "override/configs/override.ltx",
+    "sha256": "b5c450487cc0c89aa8591313b9d8a7698b4857df07e67874ab0b3146e16acce1",
+    "size": 16,
+  },
+  {
+    "path": "override/configs/system.ltx",
+    "sha256": "8e35fdb36f3ac5d29e6a0e064b58035648575d74fd820c9aa9f5800ce09d90c8",
+    "size": 11,
+  },
+]
+`;

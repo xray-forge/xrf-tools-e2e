@@ -13,6 +13,171 @@ exports[`gamedata list across mounts should list only loose files when asked 1`]
 }
 `;
 
+exports[`gamedata list across mounts should record each source mode 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "list",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "collisions": [],
+    "duration": "<duration>",
+    "entries": [
+      {
+        "container": "<sandbox>/install/database",
+        "isArchived": true,
+        "logicalPath": "configs\\fonts.ltx",
+      },
+      {
+        "container": "<sandbox>/install/gamedata",
+        "isArchived": false,
+        "logicalPath": "configs\\system.ltx",
+      },
+    ],
+    "isShadowedIncluded": false,
+    "mounts": [
+      "Directory <sandbox>/install/gamedata (gamedata)",
+      "Archive   <sandbox>/install/database (database)",
+    ],
+    "origin": "<sandbox>/install",
+    "shadowed": [],
+    "skipped": [],
+    "total": 2,
+  },
+}
+`;
+
+exports[`gamedata list across mounts should record each source mode 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "list",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "collisions": [],
+    "duration": "<duration>",
+    "entries": [
+      {
+        "container": "<sandbox>/install/database",
+        "isArchived": true,
+        "logicalPath": "configs\\fonts.ltx",
+      },
+      {
+        "container": "<sandbox>/install/gamedata",
+        "isArchived": false,
+        "logicalPath": "configs\\system.ltx",
+      },
+    ],
+    "isShadowedIncluded": true,
+    "mounts": [
+      "Directory <sandbox>/install/gamedata (gamedata)",
+      "Archive   <sandbox>/install/database (database)",
+    ],
+    "origin": "<sandbox>/install",
+    "shadowed": [
+      {
+        "container": "<sandbox>/install/database",
+        "isArchived": true,
+        "logicalPath": "configs\\system.ltx",
+      },
+    ],
+    "skipped": [],
+    "total": 2,
+  },
+}
+`;
+
+exports[`gamedata list across mounts should record each source mode 3`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "list",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "collisions": [],
+    "duration": "<duration>",
+    "entries": [
+      {
+        "container": "<sandbox>/install/gamedata",
+        "isArchived": false,
+        "logicalPath": "configs\\system.ltx",
+      },
+    ],
+    "isShadowedIncluded": false,
+    "mounts": [
+      "Directory <sandbox>/install/gamedata (gamedata)",
+    ],
+    "origin": "<sandbox>/install",
+    "shadowed": [],
+    "skipped": [],
+    "total": 1,
+  },
+}
+`;
+
 exports[`gamedata list across mounts should resolve an installation across both mounts 1`] = `
 {
   "exitCode": 0,
@@ -46,7 +211,7 @@ exports[`gamedata list across mounts should reveal the copy hidden by a higher-p
 }
 `;
 
-exports[`gamedata list across mounts should write nothing of its own 1`] = `
+exports[`gamedata list across mounts should write only its reports 1`] = `
 [
   {
     "path": "install/database/gamedata.db",
@@ -62,6 +227,21 @@ exports[`gamedata list across mounts should write nothing of its own 1`] = `
     "path": "install/gamedata/configs/system.ltx",
     "sha256": "b4a4a566d26d645fbb86678c4c16dc9fd8b540b786b191c596801de49ff60da1",
     "size": 265,
+  },
+  {
+    "path": "listing.json",
+    "sha256": "a99984ce32893c33ec9ddecf56b934f0b1ddaee6992aeca8a07d3ba9bb247075",
+    "size": 1141,
+  },
+  {
+    "path": "loose.json",
+    "sha256": "3e50d5ef52ab3fa9f3ef3507bf559f0dbd31de675ddb1602d43c8e00850e3522",
+    "size": 944,
+  },
+  {
+    "path": "shadowed.json",
+    "sha256": "8eb326e1fe55bb1c657688a88563ffc5dedb8bb13b37914d9472b8ecdd4f5735",
+    "size": 1285,
   },
   {
     "path": "stage/configs/fonts.ltx",
