@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`thm patch-bump destination should rewrite in place when given no destination 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Patched thm bump '' -> 'wpn\\wpn_pm\\wpn_pm_bump', written into <sandbox>/in-place.thm",
+  ],
+}
+`;
+
+exports[`thm patch-bump destination should write the assigned reference to a destination 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Patched thm bump '' -> 'wpn\\wpn_pm\\wpn_pm_bump', written into <sandbox>/assigned.thm",
+  ],
+}
+`;
+
+exports[`thm patch-bump destination should write the expected files 1`] = `
+[
+  {
+    "path": "assigned.thm",
+    "sha256": "133d45e8124b3228eef2d4374b447f5fc0ebc3d3f18f9e23fef0f09107c31105",
+    "size": 160,
+  },
+  {
+    "path": "in-place.thm",
+    "sha256": "133d45e8124b3228eef2d4374b447f5fc0ebc3d3f18f9e23fef0f09107c31105",
+    "size": 160,
+  },
+]
+`;

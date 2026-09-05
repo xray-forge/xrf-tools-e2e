@@ -16,12 +16,53 @@ exports[`spawn repack should report the second pass the same way 1`] = `
 }
 `;
 
+exports[`spawn repack should report what repacking read and wrote 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "spawn",
+    "repack",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "destination": "<sandbox>/repacked.spawn",
+    "readDuration": "<duration>",
+    "source": "<resources>/gamedata/spawns/all.spawn",
+    "writeDuration": "<duration>",
+  },
+}
+`;
+
 exports[`spawn repack should write the expected files 1`] = `
 [
   {
     "path": "repacked.spawn",
     "sha256": "273c85c97dcf2a9351d81e389a483ab0bad207314ec3a05c081fe2caf3916105",
     "size": 1053148,
+  },
+  {
+    "path": "report.json",
+    "sha256": "5ca1ac7616e27cb7c14bf806a71168a6b9e4ba28052b0391099f5dbaef242f1c",
+    "size": 695,
   },
   {
     "path": "twice.spawn",

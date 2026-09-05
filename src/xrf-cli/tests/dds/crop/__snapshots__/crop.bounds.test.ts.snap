@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`dds crop bounds should crop a region ending at the right edge 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Wrote 64x64 region from 192:0 of <resources>/gamedata/textures/ui/ui_test_sheet.dds to <sandbox>/edge.dds",
+  ],
+}
+`;
+
+exports[`dds crop bounds should refuse a region that exceeds the edge by one pixel 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Texture processing error: Region 193:0 64x64 does not fit in source <resources>/gamedata/textures/ui/ui_test_sheet.dds which is 256x64",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`dds crop bounds should refuse a region that runs past the edge 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Texture processing error: Region 192:0 128x64 does not fit in source <resources>/gamedata/textures/ui/ui_test_sheet.dds which is 256x64",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`dds crop bounds should report the exact-edge region and output dimensions 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "dds",
+    "crop",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "destination": "<sandbox>/edge.dds",
+    "height": 64,
+    "regionHeight": 64,
+    "regionWidth": 64,
+    "regionX": 192,
+    "regionY": 0,
+    "source": "<resources>/gamedata/textures/ui/ui_test_sheet.dds",
+    "width": 64,
+  },
+}
+`;
+
+exports[`dds crop bounds should write the edge crop and preserved output 1`] = `
+[
+  {
+    "path": "edge.dds",
+    "sha256": "a07cacbd97c81a6cff05eb1955b121bbef7b4aabf8443512e7cf13a7527aae6e",
+    "size": 4244,
+  },
+  {
+    "path": "edge.json",
+    "sha256": "f38a50f5458222a8abe87029caddfd021bf4d1993025453c77ed6d9a65b21d79",
+    "size": 749,
+  },
+  {
+    "path": "preserved.dds",
+    "sha256": "7c3b7b767f4d9aec695041276d13db7c6798e1485004f213a668716d22021a5a",
+    "size": 16512,
+  },
+]
+`;

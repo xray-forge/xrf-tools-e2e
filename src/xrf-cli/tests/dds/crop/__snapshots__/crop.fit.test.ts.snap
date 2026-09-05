@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`dds crop fit should report the fitted dimensions 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read dds file <sandbox>/fitted.dds",
+    "File size: 1172 (1.14 KB)",
+    "Metadata size: 148",
+    "Data size: 1024 (1 KB)",
+    "Size: 32 x 32",
+    "Mipmap: 1 - 16",
+    "Linear size: 1024",
+    "Block size: 16",
+    "Four CC: 894720068",
+    "DXGI format: BC3_UNorm",
+  ],
+}
+`;
+
+exports[`dds crop fit should scale a cropped region to fit 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Fitting cropped 64x64 region into 32x32",
+    "Wrote 32x32 region from 0:0 of <resources>/gamedata/textures/ui/ui_test_sheet.dds to <sandbox>/fitted.dds",
+  ],
+}
+`;
+
+exports[`dds crop fit should write the expected file 1`] = `
+[
+  {
+    "path": "fitted.dds",
+    "sha256": "b7334cdbdc445ce9e95851029dd29be06660303d0597cb9389f50c6193763906",
+    "size": 1172,
+  },
+]
+`;

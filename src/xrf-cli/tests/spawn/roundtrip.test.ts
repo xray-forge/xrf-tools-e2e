@@ -15,11 +15,25 @@ describe("spawn roundtrip", () => {
 
   beforeAll(() => {
     info = box.run("spawn info", ["--path", ALL_SPAWN]);
-    verify = box.run("spawn verify", ["--path", ALL_SPAWN]);
+    verify = box.run("spawn verify", ["--path", ALL_SPAWN, "--report", box.at("verify.json")]);
 
     // Produces twelve files: alife and artefact spawns, patrols, and the level graphs.
-    unpack = box.run("spawn unpack", ["--path", ALL_SPAWN, "--dest", box.at("unpacked")]);
-    pack = box.run("spawn pack", ["--path", box.at("unpacked"), "--dest", box.at("repacked.spawn")]);
+    unpack = box.run("spawn unpack", [
+      "--path",
+      ALL_SPAWN,
+      "--dest",
+      box.at("unpacked"),
+      "--report",
+      box.at("unpack.json"),
+    ]);
+    pack = box.run("spawn pack", [
+      "--path",
+      box.at("unpacked"),
+      "--dest",
+      box.at("repacked.spawn"),
+      "--report",
+      box.at("pack.json"),
+    ]);
 
     // The repacked file is deliberately not verified again. The test below proves it is byte
     // identical to the source, which was already verified, so a second pass would spend two
@@ -34,12 +48,24 @@ describe("spawn roundtrip", () => {
     expect(verify).toMatchSnapshot();
   });
 
+  it("should report the source verdict", () => {
+    expect(box.json("verify.json")).toMatchSnapshot();
+  });
+
   it("should unpack the whole game spawn", () => {
     expect(unpack).toMatchSnapshot();
   });
 
+  it("should report what unpacking read and wrote", () => {
+    expect(box.json("unpack.json")).toMatchSnapshot();
+  });
+
   it("should pack it back", () => {
     expect(pack).toMatchSnapshot();
+  });
+
+  it("should report what packing read and wrote", () => {
+    expect(box.json("pack.json")).toMatchSnapshot();
   });
 
   // The strongest assertion in the suite: a full unpack and repack of the real game spawn returns
@@ -49,6 +75,6 @@ describe("spawn roundtrip", () => {
   });
 
   it("should write the expected files", () => {
-    expect(box.manifest()).toMatchSnapshot();
+    expect(box.manifest({ normalized: ["pack.json", "unpack.json", "verify.json"] })).toMatchSnapshot();
   });
 });

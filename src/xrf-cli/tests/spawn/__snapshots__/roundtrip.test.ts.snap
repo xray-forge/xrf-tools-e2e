@@ -29,6 +29,113 @@ exports[`spawn roundtrip should report object, patrol, and graph counts 1`] = `
 }
 `;
 
+exports[`spawn roundtrip should report the source verdict 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "spawn",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "findings": [],
+    "status": "passed",
+    "subject": "<resources>/gamedata/spawns/all.spawn",
+  },
+}
+`;
+
+exports[`spawn roundtrip should report what packing read and wrote 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "spawn",
+    "pack",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "destination": "<sandbox>/repacked.spawn",
+    "readDuration": "<duration>",
+    "source": "<sandbox>/unpacked",
+    "writeDuration": "<duration>",
+  },
+}
+`;
+
+exports[`spawn roundtrip should report what unpacking read and wrote 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "spawn",
+    "unpack",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "destination": "<sandbox>/unpacked",
+    "readDuration": "<duration>",
+    "source": "<resources>/gamedata/spawns/all.spawn",
+    "writeDuration": "<duration>",
+  },
+}
+`;
+
 exports[`spawn roundtrip should unpack the whole game spawn 1`] = `
 {
   "exitCode": 0,
@@ -53,9 +160,19 @@ exports[`spawn roundtrip should verify the source 1`] = `
 exports[`spawn roundtrip should write the expected files 1`] = `
 [
   {
+    "path": "pack.json",
+    "sha256": "26d21da841c999836a5e37e7c2b95d2205600e0ce945a9673a367d2cac5a34bb",
+    "size": 674,
+  },
+  {
     "path": "repacked.spawn",
     "sha256": "273c85c97dcf2a9351d81e389a483ab0bad207314ec3a05c081fe2caf3916105",
     "size": 1053148,
+  },
+  {
+    "path": "unpack.json",
+    "sha256": "a9fc81ae11491a598c25a0a90eae098f454281b4249cdcec2571ddaa13df5044",
+    "size": 689,
   },
   {
     "path": "unpacked/alife_spawns.ltx",
@@ -116,6 +233,11 @@ exports[`spawn roundtrip should write the expected files 1`] = `
     "path": "unpacked/patrols.ltx",
     "sha256": "d05598e321601c1907300b8aa08209c3641621d1eb48542071f365b174989cfb",
     "size": 518672,
+  },
+  {
+    "path": "verify.json",
+    "sha256": "d8ca899eeb9da4df83bb2a3bc38fb507262495435d432d387ce0cd772ab21213",
+    "size": 624,
   },
 ]
 `;

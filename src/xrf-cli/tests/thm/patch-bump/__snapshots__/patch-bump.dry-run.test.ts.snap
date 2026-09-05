@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`thm patch-bump dry run should report a dry run without writing 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Dry run, nothing written, bump '' -> 'wpn\\wpn_pm\\wpn_pm_bump' and <sandbox>/never-written.thm would receive 160 bytes instead of 138",
+  ],
+}
+`;
+
+exports[`thm patch-bump dry run should report the intended original and patched sizes 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "thm",
+    "patch-bump",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "isDryRun": true,
+    "originalSize": 138,
+    "patchedSize": 160,
+    "previousMode": 1,
+    "previousName": "",
+  },
+}
+`;
+
+exports[`thm patch-bump dry run should write only the report and preserved destination 1`] = `
+[
+  {
+    "path": "dry.json",
+    "sha256": "a1a6e0bdf0d35827b1001ecc6156adef4d30fb795ab45a92ac0121ca42f22739",
+    "size": 644,
+  },
+  {
+    "path": "never-written.thm",
+    "sha256": "b343b3f1db388b598a3acf9374e81a50693dc37f8e9d652ffb2ba9b7991b6fc1",
+    "size": 138,
+  },
+]
+`;

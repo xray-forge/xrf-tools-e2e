@@ -6,13 +6,12 @@ import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 // 256x64 DXT5.
 const SHEET = gamedata("textures/ui/ui_test_sheet.dds");
 
-describe("dds crop", () => {
+describe("dds crop regions", () => {
   const box = new Sandbox(__filename);
 
   let corner: CliResult;
   let offset: CliResult;
-  let fitted: CliResult;
-  let outOfBounds: CliResult;
+  let cornerInfo: CliResult;
 
   beforeAll(() => {
     corner = box.run("dds crop", [
@@ -28,6 +27,8 @@ describe("dds crop", () => {
       "64",
       "--height",
       "64",
+      "--report",
+      box.at("crop.json"),
     ]);
 
     offset = box.run("dds crop", [
@@ -45,44 +46,7 @@ describe("dds crop", () => {
       "64",
     ]);
 
-    // Scaling letterboxes the region rather than stretching it, so the aspect survives.
-    fitted = box.run("dds crop", [
-      "--source",
-      SHEET,
-      "--output",
-      box.at("fitted.dds"),
-      "--x",
-      "0",
-      "--y",
-      "0",
-      "--width",
-      "64",
-      "--height",
-      "64",
-      "--fit-width",
-      "32",
-      "--fit-height",
-      "32",
-    ]);
-
-    outOfBounds = box.run(
-      "dds crop",
-      [
-        "--source",
-        SHEET,
-        "--output",
-        box.at("never-written.dds"),
-        "--x",
-        "192",
-        "--y",
-        "0",
-        "--width",
-        "128",
-        "--height",
-        "64",
-      ],
-      { expectExit: 1 }
-    );
+    cornerInfo = box.run("dds info", ["--path", box.at("corner.dds")]);
   });
 
   it("should crop the top left region", () => {
@@ -93,14 +57,6 @@ describe("dds crop", () => {
     expect(offset).toMatchSnapshot();
   });
 
-  it("should scale a cropped region to fit", () => {
-    expect(fitted).toMatchSnapshot();
-  });
-
-  it("should refuse a region that runs past the edge", () => {
-    expect(outOfBounds).toMatchSnapshot();
-  });
-
   // Two different regions of the same sheet must not come out identical, or the crop ignored its
   // offset.
   it("should take different regions from different offsets", () => {
@@ -108,14 +64,14 @@ describe("dds crop", () => {
   });
 
   it("should report the cropped dimensions", () => {
-    expect(box.run("dds info", ["--path", box.at("corner.dds")])).toMatchSnapshot();
+    expect(cornerInfo).toMatchSnapshot();
   });
 
-  it("should report the fitted dimensions", () => {
-    expect(box.run("dds info", ["--path", box.at("fitted.dds")])).toMatchSnapshot();
+  it("should report the region a crop produced", () => {
+    expect(box.json("crop.json")).toMatchSnapshot();
   });
 
   it("should write the expected files", () => {
-    expect(box.manifest()).toMatchSnapshot();
+    expect(box.manifest({ normalized: ["crop.json"] })).toMatchSnapshot();
   });
 });

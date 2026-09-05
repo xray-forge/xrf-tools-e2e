@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`dds crop regions should crop an offset region 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Wrote 64x64 region from 64:0 of <resources>/gamedata/textures/ui/ui_test_sheet.dds to <sandbox>/offset.dds",
+  ],
+}
+`;
+
+exports[`dds crop regions should crop the top left region 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Wrote 64x64 region from 0:0 of <resources>/gamedata/textures/ui/ui_test_sheet.dds to <sandbox>/corner.dds",
+  ],
+}
+`;
+
+exports[`dds crop regions should report the cropped dimensions 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read dds file <sandbox>/corner.dds",
+    "File size: 4244 (4.14 KB)",
+    "Metadata size: 148",
+    "Data size: 4096 (4 KB)",
+    "Size: 64 x 64",
+    "Mipmap: 1 - 16",
+    "Linear size: 4096",
+    "Block size: 16",
+    "Four CC: 894720068",
+    "DXGI format: BC3_UNorm",
+  ],
+}
+`;
+
+exports[`dds crop regions should report the region a crop produced 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "dds",
+    "crop",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "destination": "<sandbox>/corner.dds",
+    "height": 64,
+    "regionHeight": 64,
+    "regionWidth": 64,
+    "regionX": 0,
+    "regionY": 0,
+    "source": "<resources>/gamedata/textures/ui/ui_test_sheet.dds",
+    "width": 64,
+  },
+}
+`;
+
+exports[`dds crop regions should write the expected files 1`] = `
+[
+  {
+    "path": "corner.dds",
+    "sha256": "8465624c2cad1d2486054856003ee6d275f53a36113059c36b972d512a1b44aa",
+    "size": 4244,
+  },
+  {
+    "path": "crop.json",
+    "sha256": "2e0ad571134225e8255fd5c017c46e6442964a4580b9edd76029c49b3b522d28",
+    "size": 749,
+  },
+  {
+    "path": "offset.dds",
+    "sha256": "b01ac10e62d9f2c72831f0c1c5e44960e305cf869dbf33b1c5308047a23a5c26",
+    "size": 4244,
+  },
+]
+`;

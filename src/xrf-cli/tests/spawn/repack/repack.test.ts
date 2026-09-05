@@ -14,7 +14,14 @@ describe("spawn repack", () => {
   beforeAll(() => {
     // Repacking is the unpack and pack pair done in memory, so it has to land on the same bytes as
     // doing both by hand does.
-    repack = box.run("spawn repack", ["--path", ALL_SPAWN, "--dest", box.at("repacked.spawn")]);
+    repack = box.run("spawn repack", [
+      "--path",
+      ALL_SPAWN,
+      "--dest",
+      box.at("repacked.spawn"),
+      "--report",
+      box.at("report.json"),
+    ]);
     again = box.run("spawn repack", ["--path", box.at("repacked.spawn"), "--dest", box.at("twice.spawn")]);
   });
 
@@ -24,6 +31,10 @@ describe("spawn repack", () => {
 
   it("should reproduce the source byte for byte", () => {
     expect(box.sha("repacked.spawn")).toBe(sha(ALL_SPAWN));
+  });
+
+  it("should report what repacking read and wrote", () => {
+    expect(box.json("report.json")).toMatchSnapshot();
   });
 
   // Repacking an already repacked file must change nothing, or the operation is not a fixed point
@@ -37,6 +48,6 @@ describe("spawn repack", () => {
   });
 
   it("should write the expected files", () => {
-    expect(box.manifest()).toMatchSnapshot();
+    expect(box.manifest({ normalized: ["report.json"] })).toMatchSnapshot();
   });
 });

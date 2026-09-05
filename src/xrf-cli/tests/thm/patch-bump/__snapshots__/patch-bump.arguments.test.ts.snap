@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`thm patch-bump arguments should reject both options during argument parsing before a report exists 1`] = `
+{
+  "exitCode": 2,
+  "stderr": [
+    "error: the argument '--to <to>' cannot be used with '--off'",
+    "",
+    "Usage: xrf-cli thm patch-bump --path <path> --to <to> --report <PATH>",
+    "",
+    "For more information, try '--help'.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`thm patch-bump arguments should reject neither assignment nor disable during execution with an envelope 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: Expected either --to with a bump reference or --off to declare no bump",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`thm patch-bump arguments should reject neither assignment nor disable during execution with an envelope 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "thm",
+    "patch-bump",
+  ],
+  "duration": "<duration>",
+  "error": "Invalid error: Expected either --to with a bump reference or --off to declare no bump",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 1,
+  "outcome": "executionFailed",
+  "result": null,
+}
+`;
+
+exports[`thm patch-bump arguments should write only the input and execution envelope 1`] = `
+[
+  {
+    "path": "input.thm",
+    "sha256": "b343b3f1db388b598a3acf9374e81a50693dc37f8e9d652ffb2ba9b7991b6fc1",
+    "size": 138,
+  },
+  {
+    "path": "neither.json",
+    "sha256": "4cc50bfa2bdbb4c47bd516ac7ef5111ef13be84ad3d10acca075463694fbee68",
+    "size": 617,
+  },
+]
+`;

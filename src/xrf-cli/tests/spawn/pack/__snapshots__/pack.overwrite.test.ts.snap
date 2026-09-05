@@ -1,19 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`spawn force should prune it when forced 1`] = `
-{
-  "exitCode": 0,
-  "stderr": [],
-  "stdout": [
-    "Starting parsing spawn file: <resources>/gamedata/spawns/all.spawn",
-    "Unpack destination: <sandbox>/unpacked",
-    "Read spawn file took: <duration>",
-    "Export spawn file took: <duration>",
-  ],
-}
-`;
-
-exports[`spawn force should refuse an existing packed file 1`] = `
+exports[`spawn pack overwrite should refuse an existing packed file 1`] = `
 {
   "exitCode": 1,
   "stderr": [
@@ -23,20 +10,7 @@ exports[`spawn force should refuse an existing packed file 1`] = `
 }
 `;
 
-exports[`spawn force should refuse an existing unpack destination 1`] = `
-{
-  "exitCode": 1,
-  "stderr": [
-    "Error: IO error: Unpack output directory already exists, use --force to prune destination folder",
-  ],
-  "stdout": [
-    "Starting parsing spawn file: <resources>/gamedata/spawns/all.spawn",
-    "Unpack destination: <sandbox>/unpacked",
-  ],
-}
-`;
-
-exports[`spawn force should replace it when forced 1`] = `
+exports[`spawn pack overwrite should replace changed output with canonical spawn bytes when forced 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -44,7 +18,7 @@ exports[`spawn force should replace it when forced 1`] = `
 }
 `;
 
-exports[`spawn force should write the expected files 1`] = `
+exports[`spawn pack overwrite should write the expected files 1`] = `
 [
   {
     "path": "packed.spawn",

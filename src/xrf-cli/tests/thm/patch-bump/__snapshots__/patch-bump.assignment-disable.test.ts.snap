@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`thm patch-bump assignment and disable should assign a bump reference 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Patched thm bump '' -> 'wpn\\wpn_pm\\wpn_pm_bump', written into <sandbox>/assigned.thm",
+  ],
+}
+`;
+
+exports[`thm patch-bump assignment and disable should clear an assigned reference back to the baseline bytes 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Patched thm bump 'wpn\\wpn_pm\\wpn_pm_bump' -> none, written into <sandbox>/disabled-assigned.thm",
+  ],
+}
+`;
+
+exports[`thm patch-bump assignment and disable should clear an assigned reference back to the baseline bytes 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "thm",
+    "patch-bump",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "isDryRun": false,
+    "originalSize": 160,
+    "patchedSize": 138,
+    "previousMode": 1,
+    "previousName": "wpn\\wpn_pm\\wpn_pm_bump",
+  },
+}
+`;
+
+exports[`thm patch-bump assignment and disable should leave an already empty bump declaration unchanged 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Patched thm bump '' -> none, written into <sandbox>/cleared.thm",
+  ],
+}
+`;
+
+exports[`thm patch-bump assignment and disable should report clearing the baseline declaration 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "thm",
+    "patch-bump",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "isDryRun": false,
+    "originalSize": 138,
+    "patchedSize": 138,
+    "previousMode": 1,
+    "previousName": "",
+  },
+}
+`;
+
+exports[`thm patch-bump assignment and disable should report the bump it replaced 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "thm",
+    "patch-bump",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "isDryRun": false,
+    "originalSize": 138,
+    "patchedSize": 160,
+    "previousMode": 1,
+    "previousName": "",
+  },
+}
+`;
+
+exports[`thm patch-bump assignment and disable should write the expected files 1`] = `
+[
+  {
+    "path": "assigned.json",
+    "sha256": "4bfb20d0ef3e9ba50afef017704f043f3e0a3714138752f206db731944c3354b",
+    "size": 645,
+  },
+  {
+    "path": "assigned.thm",
+    "sha256": "133d45e8124b3228eef2d4374b447f5fc0ebc3d3f18f9e23fef0f09107c31105",
+    "size": 160,
+  },
+  {
+    "path": "cleared.json",
+    "sha256": "a0228d9aa295a208b187bd36083aaf969ff6cd38470d40757cbe517a5baaf451",
+    "size": 645,
+  },
+  {
+    "path": "cleared.thm",
+    "sha256": "b343b3f1db388b598a3acf9374e81a50693dc37f8e9d652ffb2ba9b7991b6fc1",
+    "size": 138,
+  },
+  {
+    "path": "disabled-assigned.json",
+    "sha256": "00c6b6c7fb0e56b6c03b70e8e9f57e0987af630748fac0982a13603a121312f0",
+    "size": 669,
+  },
+  {
+    "path": "disabled-assigned.thm",
+    "sha256": "b343b3f1db388b598a3acf9374e81a50693dc37f8e9d652ffb2ba9b7991b6fc1",
+    "size": 138,
+  },
+]
+`;

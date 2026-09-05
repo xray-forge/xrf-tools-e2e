@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`spawn unpack force should prune nested stale files and restore the canonical project when forced 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Starting parsing spawn file: <resources>/gamedata/spawns/all.spawn",
+    "Unpack destination: <sandbox>/unpacked",
+    "Read spawn file took: <duration>",
+    "Export spawn file took: <duration>",
+  ],
+}
+`;
+
+exports[`spawn unpack force should refuse an existing unpack destination 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: IO error: Unpack output directory already exists, use --force to prune destination folder",
+  ],
+  "stdout": [
+    "Starting parsing spawn file: <resources>/gamedata/spawns/all.spawn",
+    "Unpack destination: <sandbox>/unpacked",
+  ],
+}
+`;
+
+exports[`spawn unpack force should write the expected files 1`] = `
+[
+  {
+    "path": "unpacked/alife_spawns.ltx",
+    "sha256": "84a7a747aae92bc5e70bfda79b9636bec90907a2f380799325bff4ac4755d9bb",
+    "size": 278730,
+  },
+  {
+    "path": "unpacked/artefact_spawns.ltx",
+    "sha256": "74f05635921e79abbde4d4d185b12c2175367e111e140d50956376a2eb88dd5f",
+    "size": 23684,
+  },
+  {
+    "path": "unpacked/graphs_cross_tables.gct",
+    "sha256": "7a8f76d6ebe399962ca8a70412f7d88690cd4824f791fd7562f18a04ec86032c",
+    "size": 7920,
+  },
+  {
+    "path": "unpacked/graphs_edges.ltx",
+    "sha256": "20ee8c896e7091189caf225f62fbcf8c66006beb66ae952cd88ef6dc6e6cf2fd",
+    "size": 136177,
+  },
+  {
+    "path": "unpacked/graphs_header.ltx",
+    "sha256": "83976976408c452364be077f229b9170ba9f5cfcfc039591142b201dabc55913",
+    "size": 145,
+  },
+  {
+    "path": "unpacked/graphs_levels.ltx",
+    "sha256": "b211789e66b81b85ad51f9ed3bca383888262fbb12ea7b0adb7ef12d62425ff9",
+    "size": 631,
+  },
+  {
+    "path": "unpacked/graphs_points.ltx",
+    "sha256": "05ac5885f19c7e927b037b5ece781fdacd3e1b607d4d5ac8080fd3ee1d57cda5",
+    "size": 47239,
+  },
+  {
+    "path": "unpacked/graphs_vertices.ltx",
+    "sha256": "7b5ec59a6ac91f6d0072309acf5adafca6c6f90d3a699ecd52a2ec6b617ec1e1",
+    "size": 236785,
+  },
+  {
+    "path": "unpacked/header.ltx",
+    "sha256": "d3f2f2aad94d24ab79954b2dad922479e4e2c5caae16bcf957d8d278004a4284",
+    "size": 152,
+  },
+  {
+    "path": "unpacked/patrol_links.ltx",
+    "sha256": "b13ce0589d447cd40926a987fce51f47bcb052306d18b38e28492b51f39b07f1",
+    "size": 346036,
+  },
+  {
+    "path": "unpacked/patrol_points.ltx",
+    "sha256": "532adc68c91e0c2f220fbacb53b308d55fd2a0932bf0cd53ca502fe7ebf02a71",
+    "size": 1246106,
+  },
+  {
+    "path": "unpacked/patrols.ltx",
+    "sha256": "d05598e321601c1907300b8aa08209c3641621d1eb48542071f365b174989cfb",
+    "size": 518672,
+  },
+]
+`;
