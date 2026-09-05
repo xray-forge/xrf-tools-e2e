@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`translation format line endings should judge line endings only when they are asserted 1`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "Format issues with 2/2 translation source(s) in <duration>",
+    "Check failed: 2 finding(s)",
+  ],
+  "stdout": [
+    "Checking 2 translation source(s)",
+    "Not formatted: <sandbox>/translations/st_items.json",
+    "Not formatted: <sandbox>/translations/st_ui.json",
+  ],
+}
+`;
+
+exports[`translation format line endings should write the expected files 1`] = `
+[
+  {
+    "path": "translations/st_items.json",
+    "sha256": "23502d001fb270172c58ca0c0a442c84bb297a0418d07af284e1da761291259e",
+    "size": 166,
+  },
+  {
+    "path": "translations/st_ui.json",
+    "sha256": "d22d15184078feb051eb577fb870f395f39a46e7aea63fb295f306bbbfbd9460",
+    "size": 143,
+  },
+]
+`;

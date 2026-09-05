@@ -17,4 +17,12 @@ exports[`translation parse previews without writing should report what it would 
 }
 `;
 
-exports[`translation parse previews without writing should write the expected files 1`] = `[]`;
+exports[`translation parse previews without writing should write the expected files 1`] = `
+[
+  {
+    "path": "seeded/st_items.json",
+    "sha256": "88d87640c7c51a3c1d02397a0746ea705c10deaa99303fca7090c182d6b5bd9e",
+    "size": 39,
+  },
+]
+`;

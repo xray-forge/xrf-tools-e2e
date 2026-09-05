@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ogf fix sweep should report the sweep beside its findings 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "ogf",
+    "fix",
+  ],
+  "duration": "<duration>",
+  "error": "Verify error: Failed to fix 1 of 3 ogf visual(s)",
+  "execution": {
+    "origin": "requested",
+    "workers": "<workers>",
+  },
+  "exitCode": 1,
+  "outcome": "executionFailed",
+  "result": {
+    "checked": 3,
+    "discardedSize": 34,
+    "failed": 1,
+    "files": [
+      {
+        "cause": "split-motion-ref",
+        "destination": "<sandbox>/meshes/residue.ogf",
+        "discardedReference": "actors\\stalker_scenario_animation",
+        "discardedSize": 34,
+        "isWritten": true,
+        "normalizedSize": 210,
+        "originalSize": 244,
+        "source": "<sandbox>/meshes/residue.ogf",
+      },
+    ],
+    "findings": [
+      {
+        "message": "Invalid error: Chunk 0x656b6c61 at position 227 declares 1668505458 bytes, 28 remain before source end 255",
+        "source": "<sandbox>/meshes/unaccountable.ogf",
+      },
+    ],
+    "isDryRun": false,
+    "normalized": 1,
+    "unchanged": 1,
+  },
+}
+`;
+
+exports[`ogf fix sweep should sweep a directory and fail for what it refused 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Discarding uncounted motion reference 'actors\\stalker_scenario_animation' from <sandbox>/meshes/residue.ogf",
+    "Failed to fix <sandbox>/meshes/unaccountable.ogf: Invalid error: Chunk 0x656b6c61 at position 227 declares 1668505458 bytes, 28 remain before source end 255",
+    "Error: Verify error: Failed to fix 1 of 3 ogf visual(s)",
+  ],
+  "stdout": [
+    "Workers: <workers> (requested)",
+    "Fixing 3 ogf visuals in <sandbox>/meshes",
+    "Normalize <sandbox>/meshes/residue.ogf: 34 bytes the engine never reads",
+    "Ogf visual written into <sandbox>/meshes/residue.ogf",
+    "Normalized 1 of 3 visual(s), 34 bytes discarded, 1 unchanged, 1 failed",
+  ],
+}
+`;
+
+exports[`ogf fix sweep should write only the sweep inputs and report 1`] = `
+[
+  {
+    "path": "meshes/nested/clean.ogf",
+    "sha256": "2c41c8c88a51e20277009d457b479083e7b3719b959d1576d1e2e3208c2cd224",
+    "size": 13867,
+  },
+  {
+    "path": "meshes/residue.ogf",
+    "sha256": "433033159f338d374cd6f3db373f26327432ef6b4db8accac92fb6bbab0b5fb0",
+    "size": 210,
+  },
+  {
+    "path": "meshes/unaccountable.ogf",
+    "sha256": "446db474afb2e6a6dbe82a3f2c971dfd8b89dddd140ef6415b702503368f308f",
+    "size": 255,
+  },
+  {
+    "path": "tree.json",
+    "sha256": "f8f5c0438c01e182e26c7eef15083506cd85604af04cc8418caeff7b6f18abb0",
+    "size": 1290,
+  },
+]
+`;

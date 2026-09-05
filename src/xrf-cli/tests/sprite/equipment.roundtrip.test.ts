@@ -21,6 +21,8 @@ describe("equipment sprite roundtrip", () => {
       SHEET,
       "--output",
       box.at("icons"),
+      "--report",
+      box.at("unpack.json"),
     ]);
 
     packed = box.run("sprite pack-equipment", [
@@ -30,6 +32,8 @@ describe("equipment sprite roundtrip", () => {
       box.at("icons"),
       "--output",
       box.at("repacked.dds"),
+      "--report",
+      box.at("pack.json"),
     ]);
 
     info = box.run("dds info", ["--path", box.at("repacked.dds")]);
@@ -45,11 +49,16 @@ describe("equipment sprite roundtrip", () => {
     expect(packed).toMatchSnapshot();
   });
 
+  it("should report the sliced icons and repacked sheet as readable documents", () => {
+    expect(box.json("unpack.json")).toMatchSnapshot();
+    expect(box.json("pack.json")).toMatchSnapshot();
+  });
+
   it("should describe the packed sheet", () => {
     expect(info).toMatchSnapshot();
   });
 
   it("should write the expected files", () => {
-    expect(box.manifest()).toMatchSnapshot();
+    expect(box.manifest({ normalized: ["unpack.json", "pack.json"] })).toMatchSnapshot();
   });
 });

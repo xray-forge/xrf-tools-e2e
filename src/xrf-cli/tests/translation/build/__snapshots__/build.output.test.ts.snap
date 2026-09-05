@@ -1,0 +1,212 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`translation build output selection and ordering should build every language 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Building translations in <resources>/translations (ContainingInstallation), language - all, sorted - true",
+    "Building 2 translation source(s)",
+    "Built translation files in <duration>",
+  ],
+}
+`;
+
+exports[`translation build output selection and ordering should build one language when asked 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Building translations in <resources>/translations (ContainingInstallation), language - eng, sorted - true",
+    "Building 2 translation source(s)",
+    "Built translation files in <duration>",
+  ],
+}
+`;
+
+exports[`translation build output selection and ordering should build without sorting 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Building translations in <resources>/translations (ContainingInstallation), language - all, sorted - false",
+    "Building 2 translation source(s)",
+    "Built translation files in <duration>",
+  ],
+}
+`;
+
+exports[`translation build output selection and ordering should write the expected files 1`] = `
+[
+  {
+    "path": "all/eng/st_items.xml",
+    "sha256": "daa924e9eb3b36bdd9a4d38914e20d150673cd00cfe9cafc1bc2a4a2cfc7e47c",
+    "size": 210,
+  },
+  {
+    "path": "all/eng/st_ui.xml",
+    "sha256": "034b0c3d26679feaa1727519ac9eea9eb04a9d3693814f13c23411ccb9ae99b0",
+    "size": 207,
+  },
+  {
+    "path": "all/fra/st_items.xml",
+    "sha256": "adb25f43b57f121d59c01c9ae25d75e8c91c2b45cb83116184049945b290b038",
+    "size": 226,
+  },
+  {
+    "path": "all/fra/st_ui.xml",
+    "sha256": "5739dba84948027055ea0e12477e5e255af0af300bb73fdf3734f6551233c6e1",
+    "size": 214,
+  },
+  {
+    "path": "all/ger/st_items.xml",
+    "sha256": "f3c0eb362e8ee9ef38fa610b936b522e580f8565441f212c15862b8e747e576e",
+    "size": 217,
+  },
+  {
+    "path": "all/ger/st_ui.xml",
+    "sha256": "c4085931823bfb6a8e9babc066093a9328b21d75e29592eb965640a2d56b0223",
+    "size": 214,
+  },
+  {
+    "path": "all/ita/st_items.xml",
+    "sha256": "adb25f43b57f121d59c01c9ae25d75e8c91c2b45cb83116184049945b290b038",
+    "size": 226,
+  },
+  {
+    "path": "all/ita/st_ui.xml",
+    "sha256": "5739dba84948027055ea0e12477e5e255af0af300bb73fdf3734f6551233c6e1",
+    "size": 214,
+  },
+  {
+    "path": "all/pol/st_items.xml",
+    "sha256": "ea3d9202daf832cb1dd5f46f16f40ef0661396207747dbbb77afce40e647e0f5",
+    "size": 226,
+  },
+  {
+    "path": "all/pol/st_ui.xml",
+    "sha256": "c4085931823bfb6a8e9babc066093a9328b21d75e29592eb965640a2d56b0223",
+    "size": 214,
+  },
+  {
+    "path": "all/rus/st_items.xml",
+    "sha256": "fd2b8f183f33ec47dbb5d0bc73a0dd9a0ddcdd9efd580a79e5521c3fb12d6b1f",
+    "size": 226,
+  },
+  {
+    "path": "all/rus/st_ui.xml",
+    "sha256": "a9bdc3a5ea28180f86b0f22006a7e9d775c446f1af3407a18e062910ea7816f5",
+    "size": 214,
+  },
+  {
+    "path": "all/spa/st_items.xml",
+    "sha256": "adb25f43b57f121d59c01c9ae25d75e8c91c2b45cb83116184049945b290b038",
+    "size": 226,
+  },
+  {
+    "path": "all/spa/st_ui.xml",
+    "sha256": "5739dba84948027055ea0e12477e5e255af0af300bb73fdf3734f6551233c6e1",
+    "size": 214,
+  },
+  {
+    "path": "all/ukr/st_items.xml",
+    "sha256": "85ab0dbf93d19c60a2ef9bef413488cda024ff20da8d9b4973a023419f5243d4",
+    "size": 217,
+  },
+  {
+    "path": "all/ukr/st_ui.xml",
+    "sha256": "2b8cf22e7ecd772a5d9f79c5e611adc340625b7298c38249f013542137dc0999",
+    "size": 213,
+  },
+  {
+    "path": "eng/eng/st_items.xml",
+    "sha256": "daa924e9eb3b36bdd9a4d38914e20d150673cd00cfe9cafc1bc2a4a2cfc7e47c",
+    "size": 210,
+  },
+  {
+    "path": "eng/eng/st_ui.xml",
+    "sha256": "034b0c3d26679feaa1727519ac9eea9eb04a9d3693814f13c23411ccb9ae99b0",
+    "size": 207,
+  },
+  {
+    "path": "unsorted/eng/st_items.xml",
+    "sha256": "8d17e94efde02c833cae0e4abae8e0577cadcacd89f71994457815a9781e18c4",
+    "size": 210,
+  },
+  {
+    "path": "unsorted/eng/st_ui.xml",
+    "sha256": "523d07c96ecf48c7ba073c8565d864ea4618e30eabd4d2335f90ed5c081473e7",
+    "size": 207,
+  },
+  {
+    "path": "unsorted/fra/st_items.xml",
+    "sha256": "e64727a573c1565f8ddf49495337706d7bc5306d527cb3d1ab072b1f32ee67c6",
+    "size": 226,
+  },
+  {
+    "path": "unsorted/fra/st_ui.xml",
+    "sha256": "fa369c71ee75a53c06942c734efff99ca6314871265e1540324a5cd4de917d9e",
+    "size": 214,
+  },
+  {
+    "path": "unsorted/ger/st_items.xml",
+    "sha256": "72edbbd0da4c7d81dc26b503091e5ee8433683d1fa9d19e82604089c2a90d6cf",
+    "size": 217,
+  },
+  {
+    "path": "unsorted/ger/st_ui.xml",
+    "sha256": "ed3fc32802744d1751d72777206002c28f87590cc18e8d4eaca784f5ea4a0760",
+    "size": 214,
+  },
+  {
+    "path": "unsorted/ita/st_items.xml",
+    "sha256": "e64727a573c1565f8ddf49495337706d7bc5306d527cb3d1ab072b1f32ee67c6",
+    "size": 226,
+  },
+  {
+    "path": "unsorted/ita/st_ui.xml",
+    "sha256": "fa369c71ee75a53c06942c734efff99ca6314871265e1540324a5cd4de917d9e",
+    "size": 214,
+  },
+  {
+    "path": "unsorted/pol/st_items.xml",
+    "sha256": "1fb1ce9157c47071c6ad5969d18a791f5907c02fd878a4518e4f0a70a9e662c4",
+    "size": 226,
+  },
+  {
+    "path": "unsorted/pol/st_ui.xml",
+    "sha256": "ed3fc32802744d1751d72777206002c28f87590cc18e8d4eaca784f5ea4a0760",
+    "size": 214,
+  },
+  {
+    "path": "unsorted/rus/st_items.xml",
+    "sha256": "e2f0b6aa0e7b9c8b32c8976cba173335e053b57c429aedc399ac45012a4e49ec",
+    "size": 226,
+  },
+  {
+    "path": "unsorted/rus/st_ui.xml",
+    "sha256": "1a92aa4d8f1120dbaa524efd1e713bfa3012ed732dd3720a84354d3d6d273ce2",
+    "size": 214,
+  },
+  {
+    "path": "unsorted/spa/st_items.xml",
+    "sha256": "e64727a573c1565f8ddf49495337706d7bc5306d527cb3d1ab072b1f32ee67c6",
+    "size": 226,
+  },
+  {
+    "path": "unsorted/spa/st_ui.xml",
+    "sha256": "fa369c71ee75a53c06942c734efff99ca6314871265e1540324a5cd4de917d9e",
+    "size": 214,
+  },
+  {
+    "path": "unsorted/ukr/st_items.xml",
+    "sha256": "7801c05a63f747d9691ddec70ce0c56be5b5c763309a6bc94ea9e92d55c48180",
+    "size": 217,
+  },
+  {
+    "path": "unsorted/ukr/st_ui.xml",
+    "sha256": "f4759e5cbd40bd853544696716add4242a8e956d18b2401b94a98d9ceae79fb6",
+    "size": 213,
+  },
+]
+`;

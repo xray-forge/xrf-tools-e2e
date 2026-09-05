@@ -30,6 +30,80 @@ exports[`description sprite roundtrip should pack the regions back into a sheet 
 }
 `;
 
+exports[`description sprite roundtrip should report the description packing and unpacking inputs as readable documents 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "sprite",
+    "unpack-description",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "base": "<resources>/gamedata/textures",
+    "description": "<resources>/gamedata/configs/ui/textures_descr/ui_test_sheet.xml",
+    "destination": "<sandbox>/unpacked",
+    "files": [],
+    "isStrict": false,
+  },
+}
+`;
+
+exports[`description sprite roundtrip should report the description packing and unpacking inputs as readable documents 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "sprite",
+    "pack-description",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "base": "<sandbox>/unpacked",
+    "description": "<resources>/gamedata/configs/ui/textures_descr/ui_test_sheet.xml",
+    "destination": "<sandbox>/packed",
+    "files": [],
+    "isStrict": false,
+  },
+}
+`;
+
 exports[`description sprite roundtrip should unpack every described region 1`] = `
 {
   "exitCode": 0,
@@ -46,9 +120,19 @@ exports[`description sprite roundtrip should unpack every described region 1`] =
 exports[`description sprite roundtrip should write the expected files 1`] = `
 [
   {
+    "path": "pack.json",
+    "sha256": "1198a27a62d271c70fd0687e5f4819ba09c1d75b59b0bc2e4db367444dcad4e6",
+    "size": 735,
+  },
+  {
     "path": "packed/ui/ui_test_sheet.dds",
     "sha256": "6e47e1aa4712a7800af1290b2063f6a5cdb367976701034a4b9f8e2efdfddb04",
     "size": 16532,
+  },
+  {
+    "path": "unpack.json",
+    "sha256": "688c35b8809f77cdd63d4c6d66516a1c69b8bb6d5825e09157b8b2562c5d7c4d",
+    "size": 750,
   },
   {
     "path": "unpacked/ui/ui_test_sheet/ui_test_end.dds",

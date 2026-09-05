@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ogf fix dry run should report a dry run without writing 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [
+    "Discarding uncounted motion reference 'actors\\stalker_scenario_animation' from <resources>/gamedata/meshes/ogf/residue_split_motion_ref.ogf",
+  ],
+  "stdout": [
+    "Workers: <workers> (auto)",
+    "Checking ogf visual <resources>/gamedata/meshes/ogf/residue_split_motion_ref.ogf",
+    "Normalize <resources>/gamedata/meshes/ogf/residue_split_motion_ref.ogf: 34 bytes the engine never reads",
+    "Dry run, nothing written, <resources>/gamedata/meshes/ogf/residue_split_motion_ref.ogf would receive 210 bytes instead of 244",
+    "Dry run, nothing written: 1 of 1 visual(s) would be normalized, 34 bytes discarded, 0 unchanged, 0 failed",
+  ],
+}
+`;
+
+exports[`ogf fix dry run should report what a dry run would discard 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "ogf",
+    "fix",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "checked": 1,
+    "discardedSize": 34,
+    "failed": 0,
+    "files": [
+      {
+        "cause": "split-motion-ref",
+        "destination": "<resources>/gamedata/meshes/ogf/residue_split_motion_ref.ogf",
+        "discardedReference": "actors\\stalker_scenario_animation",
+        "discardedSize": 34,
+        "isWritten": false,
+        "normalizedSize": 210,
+        "originalSize": 244,
+        "source": "<resources>/gamedata/meshes/ogf/residue_split_motion_ref.ogf",
+      },
+    ],
+    "findings": [],
+    "isDryRun": true,
+    "normalized": 1,
+    "unchanged": 0,
+  },
+}
+`;
+
+exports[`ogf fix dry run should write only its report 1`] = `
+[
+  {
+    "path": "dry-run.json",
+    "sha256": "7b506035dbf908635cc33a076ddce656cea7d1368e68ac48ffb3da84e83e3ab4",
+    "size": 1090,
+  },
+]
+`;

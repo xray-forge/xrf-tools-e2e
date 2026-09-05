@@ -23,6 +23,8 @@ describe("description sprite roundtrip", () => {
       gamedata("textures"),
       "--output",
       box.at("unpacked"),
+      "--report",
+      box.at("unpack.json"),
     ]);
 
     // The description names the sheet under ui/, so packing must create that output subdirectory.
@@ -33,6 +35,8 @@ describe("description sprite roundtrip", () => {
       box.at("unpacked"),
       "--output",
       box.at("packed"),
+      "--report",
+      box.at("pack.json"),
     ]);
 
     info = box.run("dds info", ["--path", box.at("packed/ui/ui_test_sheet.dds")]);
@@ -46,6 +50,11 @@ describe("description sprite roundtrip", () => {
     expect(pack).toMatchSnapshot();
   });
 
+  it("should report the description packing and unpacking inputs as readable documents", () => {
+    expect(box.json("unpack.json")).toMatchSnapshot();
+    expect(box.json("pack.json")).toMatchSnapshot();
+  });
+
   // The sheet is re-encoded rather than reassembled from the original blocks, so the roundtrip is
   // lossy at the byte level even though every region is the right size and position.
   it("should not reproduce the sheet byte for byte", () => {
@@ -57,6 +66,6 @@ describe("description sprite roundtrip", () => {
   });
 
   it("should write the expected files", () => {
-    expect(box.manifest()).toMatchSnapshot();
+    expect(box.manifest({ normalized: ["unpack.json", "pack.json"] })).toMatchSnapshot();
   });
 });

@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`sprite verify-equipment identical icon sharing should accept a grid whose only sharing is identical 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Inventory icon grid is clean, no overlapping rects",
+  ],
+}
+`;
+
+exports[`sprite verify-equipment identical icon sharing should report the clean icon grid verdict as a readable document 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "sprite",
+    "verify-equipment",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "findings": [],
+    "status": "passed",
+    "subject": "<resources>/gamedata/configs/system.ltx",
+  },
+}
+`;
+
+exports[`sprite verify-equipment identical icon sharing should write the expected files 1`] = `
+[
+  {
+    "path": "verify.json",
+    "sha256": "0c988c65c1c997c6eaebfff30ccf5cd27cebba02bc9b756137c4d971e6a0b1f5",
+    "size": 637,
+  },
+]
+`;

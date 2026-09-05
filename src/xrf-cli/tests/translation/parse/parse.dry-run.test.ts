@@ -7,6 +7,8 @@ describe("translation parse previews without writing", () => {
   const box = new Sandbox(__filename);
 
   let dry: CliResult;
+  let seeded: CliResult;
+  let existingSource: string;
 
   beforeAll(() => {
     dry = box.run("translation parse", [
@@ -20,11 +22,37 @@ describe("translation parse previews without writing", () => {
       box.at("sources"),
       "--dry-run",
     ]);
+
+    box.write(
+      "seeded/st_items.json",
+      `{
+  "st_existing": { "eng": "Keep" }
+}\n`
+    );
+    existingSource = box.sha("seeded/st_items.json");
+
+    seeded = box.run("translation parse", [
+      "--path",
+      resource("mod-text"),
+      "--source",
+      "directory",
+      "--language",
+      "eng",
+      "--output",
+      box.at("seeded"),
+      "--dry-run",
+    ]);
   });
 
   // A dry run's whole result is what it would have written, which is the summary it just printed.
   it("should report what it would have written", () => {
     expect(dry).toMatchSnapshot();
+  });
+
+  it("should preserve existing output bytes while only previewing new sources", () => {
+    expect(seeded.exitCode).toBe(0);
+    expect(box.sha("seeded/st_items.json")).toBe(existingSource);
+    expect(box.manifest().map((file) => file.path)).toEqual(["seeded/st_items.json"]);
   });
 
   it("should write the expected files", () => {

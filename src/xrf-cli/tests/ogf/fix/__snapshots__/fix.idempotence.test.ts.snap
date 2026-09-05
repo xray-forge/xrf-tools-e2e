@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ogf fix idempotence should leave a visual it already fixed alone 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Workers: <workers> (auto)",
+    "Fixing ogf visual <sandbox>/meshes/residue.ogf",
+    "Normalized 0 of 1 visual(s), 0 bytes discarded, 1 unchanged, 0 failed",
+  ],
+}
+`;
+
+exports[`ogf fix idempotence should report nothing left to discard 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "ogf",
+    "fix",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "checked": 1,
+    "discardedSize": 0,
+    "failed": 0,
+    "files": [],
+    "findings": [],
+    "isDryRun": false,
+    "normalized": 0,
+    "unchanged": 1,
+  },
+}
+`;
+
+exports[`ogf fix idempotence should write only the fixed visual and report 1`] = `
+[
+  {
+    "path": "again.json",
+    "sha256": "440770aaa2b2d8fea0c65d8802feb8b9de29c396841a868b7f740e0d37723ad6",
+    "size": 679,
+  },
+  {
+    "path": "meshes/residue.ogf",
+    "sha256": "433033159f338d374cd6f3db373f26327432ef6b4db8accac92fb6bbab0b5fb0",
+    "size": 210,
+  },
+]
+`;

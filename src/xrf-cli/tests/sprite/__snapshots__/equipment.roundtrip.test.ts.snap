@@ -34,6 +34,84 @@ exports[`equipment sprite roundtrip should pack the icons back into a sheet 1`] 
 }
 `;
 
+exports[`equipment sprite roundtrip should report the sliced icons and repacked sheet as readable documents 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "sprite",
+    "unpack-equipment",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "declaredMipmapLevels": null,
+    "destination": "<sandbox>/icons",
+    "format": "DXT5",
+    "height": 64,
+    "source": "<resources>/gamedata/textures/ui/ui_test_sheet.dds",
+    "systemLtx": "<resources>/gamedata/configs/system.ltx",
+    "width": 256,
+  },
+}
+`;
+
+exports[`equipment sprite roundtrip should report the sliced icons and repacked sheet as readable documents 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "sprite",
+    "pack-equipment",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "duration": "<duration>",
+    "outcome": "completed",
+    "packedCount": 4,
+    "savedAt": "<sandbox>/repacked.dds",
+    "savedHeight": 52,
+    "savedWidth": 152,
+    "skippedCount": 0,
+  },
+}
+`;
+
 exports[`equipment sprite roundtrip should unpack only the opted-in icons 1`] = `
 {
   "exitCode": 0,
@@ -71,9 +149,19 @@ exports[`equipment sprite roundtrip should write the expected files 1`] = `
     "size": 2852,
   },
   {
+    "path": "pack.json",
+    "sha256": "f5618a7885313346badc75f85679424f1e0a376fe63b699f8aadd7d4b49782a2",
+    "size": 723,
+  },
+  {
     "path": "repacked.dds",
     "sha256": "d5530b9e72e489e25bc505e324f178c654629839931f0548fd6388c067ae4ed5",
     "size": 8052,
+  },
+  {
+    "path": "unpack.json",
+    "sha256": "7870f18dd309148ffc68747f083f7d3f9e5a2153d7de2b21d6674ec03bc62721",
+    "size": 793,
   },
 ]
 `;

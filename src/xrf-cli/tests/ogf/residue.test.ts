@@ -9,7 +9,7 @@ const SOURCE = gamedata("meshes/ogf/residue_split_motion_ref.ogf");
  * The accepted OGF residue contract across inspection, project verification and mutation.
  *
  * @remarks
- * The synthetic visual declares four motion refs in chunk 24, then splits an ignored fifth ref
+ * The synthetic visual declares five motion refs in chunk 24, then splits an ignored sixth ref
  * across the chunk boundary. The engine never reads that fifth ref, so inspection and verification
  * account for it while a patch deliberately normalizes it away.
  */
@@ -48,6 +48,19 @@ describe("ogf residue", () => {
 
   it("should report the residue cause and discarded reference", () => {
     expect(box.json("info.json")).toMatchSnapshot();
+  });
+
+  it("should expose the nonzero split residue before a repair discards it", () => {
+    expect(box.json("info.json")).toMatchObject({
+      result: {
+        residue: {
+          cause: "split-motion-ref",
+          discardedReference: "actors\\stalker_scenario_animation",
+          position: 219,
+          size: 34,
+        },
+      },
+    });
   });
 
   it("should report chunk residue as a verification finding", () => {

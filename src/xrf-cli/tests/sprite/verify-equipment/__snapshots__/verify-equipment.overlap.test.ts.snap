@@ -1,16 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`sprite verify-equipment should accept a grid whose only sharing is identical 1`] = `
-{
-  "exitCode": 0,
-  "stderr": [],
-  "stdout": [
-    "Inventory icon grid is clean, no overlapping rects",
-  ],
-}
-`;
-
-exports[`sprite verify-equipment should reject a partial overlap 1`] = `
+exports[`sprite verify-equipment partial overlap should reject a partial overlap 1`] = `
 {
   "exitCode": 3,
   "stderr": [
@@ -22,7 +12,7 @@ exports[`sprite verify-equipment should reject a partial overlap 1`] = `
 }
 `;
 
-exports[`sprite verify-equipment should write the expected files 1`] = `
+exports[`sprite verify-equipment partial overlap should write the expected files 1`] = `
 [
   {
     "path": "overlapping.ltx",

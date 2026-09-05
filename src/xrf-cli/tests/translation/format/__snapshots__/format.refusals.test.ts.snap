@@ -1,20 +1,5 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`translation format refusals should judge line endings only when they are asserted 1`] = `
-{
-  "exitCode": 3,
-  "stderr": [
-    "Format issues with 2/2 translation source(s) in <duration>",
-    "Check failed: 2 finding(s)",
-  ],
-  "stdout": [
-    "Checking 2 translation source(s)",
-    "Not formatted: <sandbox>/translations/st_items.json",
-    "Not formatted: <sandbox>/translations/st_ui.json",
-  ],
-}
-`;
-
 exports[`translation format refusals should refuse a path that does not exist 1`] = `
 {
   "exitCode": 1,

@@ -1,9 +1,6 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { gamedata } from "#/xrf-cli/test/constants";
 import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
-
-const SYSTEM_LTX = gamedata("configs/system.ltx");
 
 /**
  * Two rectangles sharing a single cell without being identical, which is the shape the verifier
@@ -26,27 +23,17 @@ const PARTIAL_OVERLAP = [
   "",
 ].join("\n");
 
-describe("sprite verify-equipment", () => {
+describe("sprite verify-equipment partial overlap", () => {
   const box = new Sandbox(__filename);
 
-  let verified: CliResult;
   let overlapping: CliResult;
 
   beforeAll(() => {
-    verified = box.run("sprite verify-equipment", ["--system-ltx", SYSTEM_LTX]);
-
     // Kept out of the committed tree: a deliberately broken config there would also show up in
     // every other test that walks the configs directory.
     overlapping = box.run("sprite verify-equipment", ["--system-ltx", box.write("overlapping.ltx", PARTIAL_OVERLAP)], {
       expectExit: 3,
     });
-  });
-
-  // The committed sections include a pair sharing one slot exactly. Identical rects are legitimate
-  // - variants such as _nimble and the quest copies do it - so a clean answer here is the point
-  // rather than an accident.
-  it("should accept a grid whose only sharing is identical", () => {
-    expect(verified).toMatchSnapshot();
   });
 
   it("should reject a partial overlap", () => {
