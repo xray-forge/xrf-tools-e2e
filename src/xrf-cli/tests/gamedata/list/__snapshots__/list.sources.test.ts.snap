@@ -1,26 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`gamedata list should limit a listing to one subtree 1`] = `
-{
-  "exitCode": 0,
-  "stderr": [],
-  "stdout": [
-    "Listing <resources>/gamedata",
-    "  Directory <resources>/gamedata (gamedata)",
-    "  meshes\\ogf\\dev_bolt_hud.ogf [<resources>/gamedata]",
-    "  meshes\\ogf\\notes_paper_1.ogf [<resources>/gamedata]",
-    "  meshes\\ogf\\part_none.ogf [<resources>/gamedata]",
-    "  meshes\\ogf\\residue_split_motion_ref.ogf [<resources>/gamedata]",
-    "  meshes\\ogf\\wpn_pm_lod.ogf [<resources>/gamedata]",
-    "  meshes\\omf\\wpn_knife_hud_animation.omf [<resources>/gamedata]",
-    "  meshes\\omf\\wpn_mp5_hud_animation.omf [<resources>/gamedata]",
-    "  meshes\\omf\\wpn_svd_hud_animation.omf [<resources>/gamedata]",
-    "8 asset(s) across 1 mount(s) in <duration>",
-  ],
-}
-`;
-
-exports[`gamedata list should resolve the whole tree 1`] = `
+exports[`gamedata list sources should resolve the whole tree 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -61,4 +41,4 @@ exports[`gamedata list should resolve the whole tree 1`] = `
 }
 `;
 
-exports[`gamedata list should write nothing 1`] = `[]`;
+exports[`gamedata list sources should write nothing 1`] = `[]`;

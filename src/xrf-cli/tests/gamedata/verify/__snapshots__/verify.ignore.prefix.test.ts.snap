@@ -1,64 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`gamedata verify ignore list should empty a check whose subtree is ignored 1`] = `
-{
-  "exitCode": 0,
-  "stderr": [],
-  "stdout": [
-    "Workers: <workers> (auto)",
-    "Opening gamedata project",
-    "Root: <resources>/gamedata, ignored: [meshes]",
-    "Verifying gamedata project: <resources>/gamedata",
-    "Verifying modules:",
-    "  -meshes",
-    "",
-    "Verify declared source coverage:",
-    "Verified declared source coverage in <duration>, 0 unopened source(s)",
-    "Verify path collisions:",
-    "Verified gamedata path collisions in <duration>, 0 unreachable file(s)",
-    "Verify meshes:",
-    "Verified gamedata meshes in <duration>, 1/1 shader libraries valid, 205 blender definitions; 0/0 meshes valid",
-    "",
-    "Project gamedata is valid",
-    "Gamedata project verified in <duration>",
-  ],
-}
-`;
-
-exports[`gamedata verify ignore list should empty the LTX check when the configs directory is ignored 1`] = `
-{
-  "exitCode": 0,
-  "stderr": [],
-  "stdout": [
-    "Workers: <workers> (auto)",
-    "Opening gamedata project",
-    "Root: <resources>/gamedata, ignored: [configs]",
-    "Verifying gamedata project: <resources>/gamedata",
-    "Verifying modules:",
-    "  -ltx",
-    "",
-    "Verify declared source coverage:",
-    "Verified declared source coverage in <duration>, 0 unopened source(s)",
-    "Verify path collisions:",
-    "Verified gamedata path collisions in <duration>, 0 unreachable file(s)",
-    "Verify LTX files",
-    "Verify LTX files formatting",
-    "Checking 0 file(s)",
-    "All 0 files are formatted, checked in <duration>",
-    "Verify LTX schemas",
-    "Verify path: <resources>/gamedata/configs",
-    "Checked 0 files, 0 sections in <duration>",
-    "No LTX sections were verified",
-    "Found 0 error(s)",
-    "Verified gamedata ltx files in <duration>",
-    "",
-    "Project gamedata is valid",
-    "Gamedata project verified in <duration>",
-  ],
-}
-`;
-
-exports[`gamedata verify ignore list should ignore a prefix that matches nothing 1`] = `
+exports[`gamedata verify ignored prefixes should ignore a prefix that matches nothing 1`] = `
 {
   "exitCode": 3,
   "stderr": [
@@ -108,7 +50,7 @@ exports[`gamedata verify ignore list should ignore a prefix that matches nothing
 }
 `;
 
-exports[`gamedata verify ignore list should leave a check alone when the prefix names another subtree 1`] = `
+exports[`gamedata verify ignored prefixes should leave a check alone when the prefix names another subtree 1`] = `
 {
   "exitCode": 3,
   "stderr": [
@@ -158,7 +100,7 @@ exports[`gamedata verify ignore list should leave a check alone when the prefix 
 }
 `;
 
-exports[`gamedata verify ignore list should narrow a check to the unignored part of a subtree 1`] = `
+exports[`gamedata verify ignored prefixes should narrow a check to the unignored part of a subtree 1`] = `
 {
   "exitCode": 3,
   "stderr": [
@@ -206,7 +148,7 @@ exports[`gamedata verify ignore list should narrow a check to the unignored part
 }
 `;
 
-exports[`gamedata verify ignore list should narrow the LTX check when only system.ltx is ignored 1`] = `
+exports[`gamedata verify ignored prefixes should narrow the LTX check when only system.ltx is ignored 1`] = `
 {
   "exitCode": 3,
   "stderr": [
@@ -254,58 +196,4 @@ exports[`gamedata verify ignore list should narrow the LTX check when only syste
 }
 `;
 
-exports[`gamedata verify ignore list should run a check that never reads the ignored prefix 1`] = `
-{
-  "exitCode": 3,
-  "stderr": [
-    "Cannot read OGF texture: wpn\\wpn_bolt",
-    "Mesh motion refs not found by path: dynamics\\devices\\dev_bolt\\dev_bolt_hud_animation",
-    "Not matching bones count in ogf and reference omf: 2 <-> 7 : wpn_body,body <-> wpn_body,body,trigger,zatvor,lock,wpn_silencer,magazin",
-    "Mesh is not valid: meshes\\ogf\\dev_bolt_hud.ogf",
-    "Cannot read OGF texture: item\\item_notes",
-    "Mesh is not valid: meshes\\ogf\\notes_paper_1.ogf",
-    "Cannot read OGF texture: glow\\glow_ghost",
-    "Mesh is not valid: meshes\\ogf\\part_none.ogf",
-    "Mesh motion refs not found by path: actors\\stalker_animation",
-    "Mesh motion refs not found by path: actors\\stalker_scripts_animation",
-    "Mesh motion refs not found by path: actors\\zombied_animation",
-    "Mesh motion refs not found by path: actors\\stalker_smart_cover_animation",
-    "Mesh is not valid: meshes\\ogf\\residue_split_motion_ref.ogf",
-    "Cannot read OGF texture: wpn\\wpn_pm",
-    "Mesh is not valid: meshes\\ogf\\wpn_pm_lod.ogf",
-    "",
-    "Project gamedata is invalid",
-    "- 1/1 shader libraries valid, 205 blender definitions; 0/5 meshes valid",
-    "  - [meshes] meshes/ogf/dev_bolt_hud.ogf: Mesh references missing motion 'dynamics\\devices\\dev_bolt\\dev_bolt_hud_animation'",
-    "  - [meshes] meshes/ogf/dev_bolt_hud.ogf: Mesh references missing texture 'wpn\\wpn_bolt'",
-    "  - [meshes] meshes/ogf/notes_paper_1.ogf: Mesh references missing texture 'item\\item_notes'",
-    "  - [meshes] meshes/ogf/part_none.ogf: Mesh references missing texture 'glow\\glow_ghost'",
-    "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh carries 34 bytes the engine never reads, an uncounted motion reference 'actors\\stalker_scenario_animation' split across the declared bounds of the motion refs chunk",
-    "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh references missing motion 'actors\\stalker_animation'",
-    "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh references missing motion 'actors\\stalker_scripts_animation'",
-    "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh references missing motion 'actors\\stalker_smart_cover_animation'",
-    "  - [meshes] meshes/ogf/residue_split_motion_ref.ogf: Mesh references missing motion 'actors\\zombied_animation'",
-    "  - [meshes] meshes/ogf/wpn_pm_lod.ogf: Mesh references missing texture 'wpn\\wpn_pm'",
-    "  - [meshes] meshes/omf/wpn_mp5_hud_animation.omf: Motion bone count does not match mesh: 2 mesh bones, 7 motion bones",
-    "Gamedata project checked in <duration>",
-    "Check failed: 11 finding(s)",
-  ],
-  "stdout": [
-    "Workers: <workers> (auto)",
-    "Opening gamedata project",
-    "Root: <resources>/gamedata, ignored: [configs]",
-    "Verifying gamedata project: <resources>/gamedata",
-    "Verifying modules:",
-    "  -meshes",
-    "",
-    "Verify declared source coverage:",
-    "Verified declared source coverage in <duration>, 0 unopened source(s)",
-    "Verify path collisions:",
-    "Verified gamedata path collisions in <duration>, 0 unreachable file(s)",
-    "Verify meshes:",
-    "Verified gamedata meshes in <duration>, 1/1 shader libraries valid, 205 blender definitions; 0/5 meshes valid",
-  ],
-}
-`;
-
-exports[`gamedata verify ignore list should write nothing 1`] = `[]`;
+exports[`gamedata verify ignored prefixes should write nothing 1`] = `[]`;

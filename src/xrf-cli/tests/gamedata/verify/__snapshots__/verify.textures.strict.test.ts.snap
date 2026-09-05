@@ -1,0 +1,263 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata verify texture companion strictness should write readable reports and a complete manifest 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "cache": {
+      "bytes": 0,
+      "entries": 1,
+      "hits": 0,
+      "misses": 2,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "assetPath": "textures/descriptor.thm",
+            "message": "Texture descriptor declares bump 'bump\\only' whose companion 'bump\\only#' is not in gamedata, the engine binds nothing",
+            "ruleId": "textures.bump-companion",
+          },
+        ],
+        "status": "passed",
+        "summary": "1/1 textures valid; 1/1 declared bumps resolved, 1 bumps without a companion",
+        "verificationType": "textures",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "passed",
+  },
+}
+`;
+
+exports[`gamedata verify texture companion strictness should write readable reports and a complete manifest 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 1 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "cache": {
+      "bytes": 0,
+      "entries": 1,
+      "hits": 0,
+      "misses": 2,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "assetPath": "textures/descriptor.thm",
+            "message": "Texture descriptor declares bump 'bump\\only' whose companion 'bump\\only#' is not in gamedata, the engine binds nothing",
+            "ruleId": "textures.bump-companion",
+          },
+        ],
+        "status": "failed",
+        "summary": "1/1 textures valid; 1/1 declared bumps resolved, 1 bumps without a companion",
+        "verificationType": "textures",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`gamedata verify texture companion strictness should write readable reports and a complete manifest 3`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "cache": {
+      "bytes": 0,
+      "entries": 1,
+      "hits": 0,
+      "misses": 2,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "passed",
+        "summary": "2/2 textures valid; 1/1 declared bumps resolved",
+        "verificationType": "textures",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "passed",
+  },
+}
+`;
+
+exports[`gamedata verify texture companion strictness should write readable reports and a complete manifest 4`] = `
+[
+  {
+    "path": "clean-strict.json",
+    "sha256": "ae2f4225dbafe08098a21db834cd062b35d0b894a31e92d4d060ac6ec7293adf",
+    "size": 1337,
+  },
+  {
+    "path": "clean/configs/system.ltx",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+  },
+  {
+    "path": "clean/textures/bump/pair#.dds",
+    "sha256": "3c353eaac54b08b29f50c8f2fb7bf68ef3d2b103c1a7ad9334fd4cb862e02e13",
+    "size": 144,
+  },
+  {
+    "path": "clean/textures/bump/pair.dds",
+    "sha256": "3c353eaac54b08b29f50c8f2fb7bf68ef3d2b103c1a7ad9334fd4cb862e02e13",
+    "size": 144,
+  },
+  {
+    "path": "clean/textures/descriptor.thm",
+    "sha256": "aa643bd8b58ebe5f4b08d41cfdb71116c8cb1549e93736a07df74cc7f96be3bd",
+    "size": 38,
+  },
+  {
+    "path": "companion/configs/system.ltx",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+  },
+  {
+    "path": "companion/textures/bump/only.dds",
+    "sha256": "3c353eaac54b08b29f50c8f2fb7bf68ef3d2b103c1a7ad9334fd4cb862e02e13",
+    "size": 144,
+  },
+  {
+    "path": "companion/textures/descriptor.thm",
+    "sha256": "28e66ef3cb01ea06ef51d798b55adf7a5f82ae27ec8fff4e9d2b73f3d94b39f2",
+    "size": 38,
+  },
+  {
+    "path": "ordinary.json",
+    "sha256": "d671865deb0a384b93b2a014719e9941bad7a3a9fc639a8747c1a3d448300f9a",
+    "size": 1646,
+  },
+  {
+    "path": "strict.json",
+    "sha256": "cec52a00be1aa91f8b908ccf00aed7705a22ac3e7f71ef3d37fed77e8bd42215",
+    "size": 1674,
+  },
+]
+`;

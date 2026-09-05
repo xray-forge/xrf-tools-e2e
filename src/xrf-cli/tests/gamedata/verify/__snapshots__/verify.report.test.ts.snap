@@ -1028,82 +1028,12 @@ exports[`gamedata verify full run should answer non-zero and report only the fai
 }
 `;
 
-exports[`gamedata verify full run should report one check as a readable document 1`] = `
-{
-  "build": {
-    "builtAt": "<build>",
-    "commit": "<build>",
-    "isDirty": "<build>",
-    "kind": "<build>",
-    "optimization": "<build>",
-    "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
-    "version": "<build>",
-  },
-  "command": [
-    "gamedata",
-    "verify",
-  ],
-  "duration": "<duration>",
-  "error": null,
-  "execution": {
-    "origin": "auto",
-    "workers": "<workers>",
-  },
-  "exitCode": 0,
-  "outcome": "success",
-  "result": {
-    "cache": {
-      "bytes": 8535,
-      "entries": 7,
-      "hits": 0,
-      "misses": 7,
-      "refused": 0,
-    },
-    "checks": [
-      {
-        "duration": "<duration>",
-        "findings": [],
-        "status": "skipped",
-        "summary": "Every declared source opened",
-        "verificationType": "coverage",
-      },
-      {
-        "duration": "<duration>",
-        "findings": [],
-        "status": "skipped",
-        "summary": "No unreachable files",
-        "verificationType": "collisions",
-      },
-      {
-        "duration": "<duration>",
-        "findings": [],
-        "status": "passed",
-        "summary": "0/0 scripts valid",
-        "verificationType": "scripts",
-      },
-    ],
-    "duration": "<duration>",
-    "skippedMounts": [],
-    "status": "passed",
-  },
-}
-`;
-
 exports[`gamedata verify full run should write a findings report 1`] = `
 [
   {
     "path": "report.json",
     "sha256": "6e7cf5230966c4b3b05f3df2390f05611511d0edc61743ec7659b4a9d83411ef",
     "size": 240631,
-  },
-  {
-    "path": "scripts.json",
-    "sha256": "6a0b3d192fb572c18eeb947db5607318231ffe2db5e55da78f1ad15efb606e20",
-    "size": 1309,
   },
 ]
 `;

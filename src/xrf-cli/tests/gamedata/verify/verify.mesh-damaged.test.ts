@@ -5,7 +5,7 @@ import { beforeAll, describe, expect, it } from "@jest/globals";
 import { gamedata } from "#/xrf-cli/test/constants";
 import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
-describe("gamedata verify meets a damaged tree", () => {
+describe("gamedata verify meets a damaged mesh tree", () => {
   const box = new Sandbox(__filename);
 
   let swept: CliResult;

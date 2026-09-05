@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata verify ignored check input should empty a check whose subtree is ignored 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Workers: <workers> (auto)",
+    "Opening gamedata project",
+    "Root: <resources>/gamedata, ignored: [meshes]",
+    "Verifying gamedata project: <resources>/gamedata",
+    "Verifying modules:",
+    "  -meshes",
+    "",
+    "Verify declared source coverage:",
+    "Verified declared source coverage in <duration>, 0 unopened source(s)",
+    "Verify path collisions:",
+    "Verified gamedata path collisions in <duration>, 0 unreachable file(s)",
+    "Verify meshes:",
+    "Verified gamedata meshes in <duration>, 1/1 shader libraries valid, 205 blender definitions; 0/0 meshes valid",
+    "",
+    "Project gamedata is valid",
+    "Gamedata project verified in <duration>",
+  ],
+}
+`;
+
+exports[`gamedata verify ignored check input should empty the LTX check when the configs directory is ignored 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Workers: <workers> (auto)",
+    "Opening gamedata project",
+    "Root: <resources>/gamedata, ignored: [configs]",
+    "Verifying gamedata project: <resources>/gamedata",
+    "Verifying modules:",
+    "  -ltx",
+    "",
+    "Verify declared source coverage:",
+    "Verified declared source coverage in <duration>, 0 unopened source(s)",
+    "Verify path collisions:",
+    "Verified gamedata path collisions in <duration>, 0 unreachable file(s)",
+    "Verify LTX files",
+    "Verify LTX files formatting",
+    "Checking 0 file(s)",
+    "All 0 files are formatted, checked in <duration>",
+    "Verify LTX schemas",
+    "Verify path: <resources>/gamedata/configs",
+    "Checked 0 files, 0 sections in <duration>",
+    "No LTX sections were verified",
+    "Found 0 error(s)",
+    "Verified gamedata ltx files in <duration>",
+    "",
+    "Project gamedata is valid",
+    "Gamedata project verified in <duration>",
+  ],
+}
+`;
+
+exports[`gamedata verify ignored check input should write nothing 1`] = `[]`;

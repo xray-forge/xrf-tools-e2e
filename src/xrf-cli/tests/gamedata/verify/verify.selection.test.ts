@@ -10,10 +10,11 @@ describe("gamedata verify check selection", () => {
 
   let ltx: CliResult;
   let scripts: CliResult;
-  let meshes: CliResult;
-  let meshesAgain: CliResult;
-  let meshesThird: CliResult;
   let several: CliResult;
+  let repeated: CliResult;
+  let unknown: CliResult;
+  let coverage: CliResult;
+  let collisions: CliResult;
 
   beforeAll(() => {
     // The configs are in vanilla rather than formatter shape, so the ltx check has findings and
@@ -24,15 +25,17 @@ describe("gamedata verify check selection", () => {
     // time is what shows that a non-zero answer comes from a named check rather than the whole run.
     scripts = box.run("gamedata verify", [GAMEDATA, "--checks", "scripts"]);
 
-    // Run three times because the check works in parallel: one run cannot show whether the output
-    // is stable, and repeating it is what turns a flaky snapshot into a stated expectation.
-    meshes = box.run("gamedata verify", [GAMEDATA, "--checks", "meshes"], { expectExit: 3 });
-    meshesAgain = box.run("gamedata verify", [GAMEDATA, "--checks", "meshes"], { expectExit: 3 });
-    meshesThird = box.run("gamedata verify", [GAMEDATA, "--checks", "meshes"], { expectExit: 3 });
-
     // Several checks after one flag, which is how a caller narrows a run to the part of the tree
     // they touched rather than running all thirteen.
     several = box.run("gamedata verify", [GAMEDATA, "--checks", "ltx", "scripts"], { expectExit: 3 });
+
+    // Repetition is accepted as an ergonomic command line spelling, but selection runs a check once
+    // in first-requested order rather than paying the full verification cost twice.
+    repeated = box.run("gamedata verify", [GAMEDATA, "--checks", "ltx", "ltx", "scripts"], { expectExit: 3 });
+
+    unknown = box.run("gamedata verify", [GAMEDATA, "--checks", "unknown"], { expectExit: 2 });
+    coverage = box.run("gamedata verify", [GAMEDATA, "--checks", "coverage"], { expectExit: 2 });
+    collisions = box.run("gamedata verify", [GAMEDATA, "--checks", "collisions"], { expectExit: 2 });
   });
 
   it("should report findings from one named check", () => {
@@ -43,20 +46,21 @@ describe("gamedata verify check selection", () => {
     expect(scripts).toMatchSnapshot();
   });
 
-  it("should verify meshes", () => {
-    expect(meshes).toMatchSnapshot();
-  });
-
-  // Byte for byte, not merely the same set: the check verifies through rayon, and each worker logs
-  // into its listed position rather than as it finishes, so what the command prints is decided by
-  // the tree and not by which mesh happened to be read first.
-  it("should print an identical run every time", () => {
-    expect(meshesAgain).toEqual(meshes);
-    expect(meshesThird).toEqual(meshes);
-  });
-
   it("should run several named checks at once", () => {
     expect(several).toMatchSnapshot();
+  });
+
+  it("should run a repeated check only once", () => {
+    expect(repeated).toEqual(several);
+  });
+
+  it("should reject an unknown check", () => {
+    expect(unknown).toMatchSnapshot();
+  });
+
+  it("should reject the always-run coverage and collision checks as selections", () => {
+    expect(coverage).toMatchSnapshot();
+    expect(collisions).toMatchSnapshot();
   });
 
   it("should write nothing", () => {

@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata verify ineffective texture declarations should write the expected reports and files 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "cache": {
+      "bytes": 0,
+      "entries": 1,
+      "hits": 0,
+      "misses": 3,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "assetPath": "textures/disqualified.thm",
+            "message": "Texture descriptor declares bump 'detail' but its texture type 'Bump Map' is skipped by the engine",
+            "ruleId": "textures.bump-declaration",
+          },
+          {
+            "assetPath": "textures/empty.thm",
+            "message": "Texture descriptor asks for a bump in mode 'Use' with an empty name",
+            "ruleId": "textures.bump-declaration",
+          },
+        ],
+        "status": "passed",
+        "summary": "0/0 textures valid; 0/0 declared bumps resolved, 2 bump declarations the engine never reads",
+        "verificationType": "textures",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "passed",
+  },
+}
+`;
+
+exports[`gamedata verify ineffective texture declarations should write the expected reports and files 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 2 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "cache": {
+      "bytes": 0,
+      "entries": 1,
+      "hits": 0,
+      "misses": 3,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "assetPath": "textures/disqualified.thm",
+            "message": "Texture descriptor declares bump 'detail' but its texture type 'Bump Map' is skipped by the engine",
+            "ruleId": "textures.bump-declaration",
+          },
+          {
+            "assetPath": "textures/empty.thm",
+            "message": "Texture descriptor asks for a bump in mode 'Use' with an empty name",
+            "ruleId": "textures.bump-declaration",
+          },
+        ],
+        "status": "failed",
+        "summary": "0/0 textures valid; 0/0 declared bumps resolved, 2 bump declarations the engine never reads",
+        "verificationType": "textures",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`gamedata verify ineffective texture declarations should write the expected reports and files 3`] = `
+[
+  {
+    "path": "gamedata/configs/system.ltx",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+  },
+  {
+    "path": "gamedata/textures/disqualified.thm",
+    "sha256": "2b5dfa6deebf257b8027dcdf9d227a87211d1cf0ca00744048e504ee0a054440",
+    "size": 35,
+  },
+  {
+    "path": "gamedata/textures/empty.thm",
+    "sha256": "361eea677401b3afbbf80fb08d3bef2375a7b92a868bc52912fcca1d7f8fb033",
+    "size": 29,
+  },
+  {
+    "path": "ordinary.json",
+    "sha256": "92e6431934658ae09479f5253acd7b4862df7e4927ba1257269d361223c7c100",
+    "size": 1859,
+  },
+  {
+    "path": "strict.json",
+    "sha256": "e04daf41ce89ab869025b41baec2d2f945faff8831d54aaf7d23c44609d2c499",
+    "size": 1887,
+  },
+]
+`;

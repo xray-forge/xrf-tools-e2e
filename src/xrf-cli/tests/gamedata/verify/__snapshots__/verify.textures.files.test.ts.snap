@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata verify texture files should write the expected reports and files 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "cache": {
+      "bytes": 0,
+      "entries": 1,
+      "hits": 0,
+      "misses": 1,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "passed",
+        "summary": "1/1 textures valid; 0/0 declared bumps resolved",
+        "verificationType": "textures",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "passed",
+  },
+}
+`;
+
+exports[`gamedata verify texture files should write the expected reports and files 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 1 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "cache": {
+      "bytes": 0,
+      "entries": 1,
+      "hits": 0,
+      "misses": 1,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "assetPath": "textures/truncated.dds",
+            "message": "Texture processing error: Failed to read DDS from memory: failed to fill whole buffer.",
+            "ruleId": "textures.read",
+          },
+        ],
+        "status": "failed",
+        "summary": "1/2 textures valid; 0/0 declared bumps resolved",
+        "verificationType": "textures",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`gamedata verify texture files should write the expected reports and files 3`] = `
+[
+  {
+    "path": "damaged.json",
+    "sha256": "fe80c7ebf3d9e0e1151c6aa17c82cc7aeda15100c8de47f8fe343d9c6b8da94d",
+    "size": 1600,
+  },
+  {
+    "path": "damaged/configs/system.ltx",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+  },
+  {
+    "path": "damaged/textures/readable.dds",
+    "sha256": "3c353eaac54b08b29f50c8f2fb7bf68ef3d2b103c1a7ad9334fd4cb862e02e13",
+    "size": 144,
+  },
+  {
+    "path": "damaged/textures/truncated.dds",
+    "sha256": "f07eebc8e2fbb3611e7315f71cc29aa2d351db962106e7defa1622151fdbd596",
+    "size": 64,
+  },
+  {
+    "path": "valid.json",
+    "sha256": "39f21ab261b3f465bc646d13b348f0ce05d70bdb968ecfb1434af84a01c2d6a3",
+    "size": 1337,
+  },
+  {
+    "path": "valid/configs/system.ltx",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+  },
+  {
+    "path": "valid/textures/readable.dds",
+    "sha256": "3c353eaac54b08b29f50c8f2fb7bf68ef3d2b103c1a7ad9334fd4cb862e02e13",
+    "size": 144,
+  },
+]
+`;

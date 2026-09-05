@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`gamedata verify strict mode should reach the same conclusion under strict 1`] = `
+exports[`gamedata verify ignored unrelated subtree should run a check that never reads the ignored prefix 1`] = `
 {
   "exitCode": 3,
   "stderr": [
@@ -39,7 +39,7 @@ exports[`gamedata verify strict mode should reach the same conclusion under stri
   "stdout": [
     "Workers: <workers> (auto)",
     "Opening gamedata project",
-    "Root: <resources>/gamedata, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
+    "Root: <resources>/gamedata, ignored: [configs]",
     "Verifying gamedata project: <resources>/gamedata",
     "Verifying modules:",
     "  -meshes",
@@ -54,4 +54,4 @@ exports[`gamedata verify strict mode should reach the same conclusion under stri
 }
 `;
 
-exports[`gamedata verify strict mode should write nothing 1`] = `[]`;
+exports[`gamedata verify ignored unrelated subtree should write nothing 1`] = `[]`;

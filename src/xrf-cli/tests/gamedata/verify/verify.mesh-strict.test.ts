@@ -3,7 +3,7 @@ import { beforeAll, describe, expect, it } from "@jest/globals";
 import { gamedata } from "#/xrf-cli/test/constants";
 import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
-describe("gamedata verify strict mode", () => {
+describe("gamedata verify strict mesh validation", () => {
   const box = new Sandbox(__filename);
 
   let strict: CliResult;
@@ -12,8 +12,7 @@ describe("gamedata verify strict mode", () => {
     strict = box.run("gamedata verify", [gamedata(), "--checks", "meshes", "--strict"], { expectExit: 3 });
   });
 
-  // Recorded as current behaviour: strict is meant to validate expensive payloads fully, and on
-  // this tree it reaches the same conclusion as the ordinary run does.
+  // This corpus already fails normal mesh validation; warning escalation has a separate texture fixture.
   it("should reach the same conclusion under strict", () => {
     expect(strict).toMatchSnapshot();
   });

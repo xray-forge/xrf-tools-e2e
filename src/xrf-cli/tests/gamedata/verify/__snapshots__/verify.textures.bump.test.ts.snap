@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata verify texture bump declarations should write a readable report and complete manifest 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 2 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "cache": {
+      "bytes": 0,
+      "entries": 1,
+      "hits": 0,
+      "misses": 5,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "assetPath": "textures/descriptors/missing-bump.thm",
+            "message": "Texture descriptor declares bump 'bump\\missing' that is not in gamedata, the engine binds nothing",
+            "ruleId": "textures.bump",
+          },
+          {
+            "assetPath": "textures/descriptors/missing-companion.thm",
+            "message": "Texture descriptor declares bump 'bump\\companion' whose companion 'bump\\companion#' is not in gamedata, the engine binds nothing",
+            "ruleId": "textures.bump-companion",
+          },
+        ],
+        "status": "failed",
+        "summary": "3/3 textures valid; 2/3 declared bumps resolved, 1 bumps without a companion",
+        "verificationType": "textures",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`gamedata verify texture bump declarations should write a readable report and complete manifest 2`] = `
+[
+  {
+    "path": "gamedata/configs/system.ltx",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+  },
+  {
+    "path": "gamedata/textures/bump/companion.dds",
+    "sha256": "3c353eaac54b08b29f50c8f2fb7bf68ef3d2b103c1a7ad9334fd4cb862e02e13",
+    "size": 144,
+  },
+  {
+    "path": "gamedata/textures/bump/complete#.dds",
+    "sha256": "3c353eaac54b08b29f50c8f2fb7bf68ef3d2b103c1a7ad9334fd4cb862e02e13",
+    "size": 144,
+  },
+  {
+    "path": "gamedata/textures/bump/complete.dds",
+    "sha256": "3c353eaac54b08b29f50c8f2fb7bf68ef3d2b103c1a7ad9334fd4cb862e02e13",
+    "size": 144,
+  },
+  {
+    "path": "gamedata/textures/descriptors/complete.thm",
+    "sha256": "82370e4af6005d22479a64b15ef8dd50798327184d09265e177e5a97dfc45f69",
+    "size": 42,
+  },
+  {
+    "path": "gamedata/textures/descriptors/disabled.thm",
+    "sha256": "e6919ec9c51267813acfe22c2efd1d734457ba6ed4db2b7b752d84b52af39fdc",
+    "size": 42,
+  },
+  {
+    "path": "gamedata/textures/descriptors/missing-bump.thm",
+    "sha256": "7fe34bdaf7a27a0d48c68122df227ed29e6716b5252ac91936574f2741c9889b",
+    "size": 41,
+  },
+  {
+    "path": "gamedata/textures/descriptors/missing-companion.thm",
+    "sha256": "b0942cc1582e87c6f107f661090fd4cae8a1e368fce3dec292b43c2b86d4ba68",
+    "size": 43,
+  },
+  {
+    "path": "report.json",
+    "sha256": "d42ac32e5ecf81c06d6cc073cd6014f2d6283527c2969bd4319973f330a133da",
+    "size": 1957,
+  },
+]
+`;
