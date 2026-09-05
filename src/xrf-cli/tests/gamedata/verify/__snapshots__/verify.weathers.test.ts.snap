@@ -1,0 +1,262 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata verify weather cycles should record both reports as readable documents 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "cache": {
+      "bytes": 1136,
+      "entries": 6,
+      "hits": 6,
+      "misses": 6,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "passed",
+        "summary": "1/1 weather files valid",
+        "verificationType": "weathers",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "passed",
+  },
+}
+`;
+
+exports[`gamedata verify weather cycles should record both reports as readable documents 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 1 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "cache": {
+      "bytes": 1140,
+      "entries": 6,
+      "hits": 6,
+      "misses": 6,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "assetPath": "configs/environment/weathers/test.ltx",
+            "message": "Weather [00:00:00] references missing ambient [absent_ambient]",
+            "ruleId": "weathers.validation",
+          },
+        ],
+        "status": "failed",
+        "summary": "0/1 weather files valid",
+        "verificationType": "weathers",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`gamedata verify weather cycles should write the expected reports and files 1`] = `
+[
+  {
+    "path": "broken.json",
+    "sha256": "006c6998c9ec34ea5a4ac941d485c8c1a1d1a1816b34ea7297bf944d78435791",
+    "size": 1576,
+  },
+  {
+    "path": "broken/configs/environment/ambients.ltx",
+    "sha256": "a0daa5148b3993e47b32477eed80b52c3f735c8a120326190afc4146dcda46e1",
+    "size": 13,
+  },
+  {
+    "path": "broken/configs/environment/suns.ltx",
+    "sha256": "b4666fdd1d7270e8f49f6a344680d0858c714625ab125e8ba212a162a50c92ee",
+    "size": 9,
+  },
+  {
+    "path": "broken/configs/environment/thunderbolt_collections.ltx",
+    "sha256": "5ccb749d9c808517df1104c701ca5ea328ebe2046cd069436428c0feed0797c8",
+    "size": 17,
+  },
+  {
+    "path": "broken/configs/environment/thunderbolts.ltx",
+    "sha256": "3411ca52920bfbb5777c08cf05dc727946e67c5b6730a92afa74df04dc970d57",
+    "size": 7,
+  },
+  {
+    "path": "broken/configs/environment/weathers/test.ltx",
+    "sha256": "ecee19092b0ba8a4b85e3adcb7c07e480b5792c216504f7cc1701782adf18478",
+    "size": 1094,
+  },
+  {
+    "path": "broken/configs/system.ltx",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+  },
+  {
+    "path": "broken/textures/sky/clouds.dds",
+    "sha256": "3c353eaac54b08b29f50c8f2fb7bf68ef3d2b103c1a7ad9334fd4cb862e02e13",
+    "size": 144,
+  },
+  {
+    "path": "broken/textures/sky/first#small.dds",
+    "sha256": "3c353eaac54b08b29f50c8f2fb7bf68ef3d2b103c1a7ad9334fd4cb862e02e13",
+    "size": 144,
+  },
+  {
+    "path": "broken/textures/sky/first.dds",
+    "sha256": "3c353eaac54b08b29f50c8f2fb7bf68ef3d2b103c1a7ad9334fd4cb862e02e13",
+    "size": 144,
+  },
+  {
+    "path": "broken/textures/sky/second#small.dds",
+    "sha256": "3c353eaac54b08b29f50c8f2fb7bf68ef3d2b103c1a7ad9334fd4cb862e02e13",
+    "size": 144,
+  },
+  {
+    "path": "broken/textures/sky/second.dds",
+    "sha256": "3c353eaac54b08b29f50c8f2fb7bf68ef3d2b103c1a7ad9334fd4cb862e02e13",
+    "size": 144,
+  },
+  {
+    "path": "valid.json",
+    "sha256": "efdc98ac92b9bf433c4a379a5a6ed0f8854398325b8f200836f6dffe681b26ed",
+    "size": 1316,
+  },
+  {
+    "path": "valid/configs/environment/ambients.ltx",
+    "sha256": "a0daa5148b3993e47b32477eed80b52c3f735c8a120326190afc4146dcda46e1",
+    "size": 13,
+  },
+  {
+    "path": "valid/configs/environment/suns.ltx",
+    "sha256": "b4666fdd1d7270e8f49f6a344680d0858c714625ab125e8ba212a162a50c92ee",
+    "size": 9,
+  },
+  {
+    "path": "valid/configs/environment/thunderbolt_collections.ltx",
+    "sha256": "5ccb749d9c808517df1104c701ca5ea328ebe2046cd069436428c0feed0797c8",
+    "size": 17,
+  },
+  {
+    "path": "valid/configs/environment/thunderbolts.ltx",
+    "sha256": "3411ca52920bfbb5777c08cf05dc727946e67c5b6730a92afa74df04dc970d57",
+    "size": 7,
+  },
+  {
+    "path": "valid/configs/environment/weathers/test.ltx",
+    "sha256": "8633c24689e0e73048fc0075184e8b42b0b908e47b8146e5f2147748a0960b7d",
+    "size": 1090,
+  },
+  {
+    "path": "valid/configs/system.ltx",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+  },
+  {
+    "path": "valid/textures/sky/clouds.dds",
+    "sha256": "3c353eaac54b08b29f50c8f2fb7bf68ef3d2b103c1a7ad9334fd4cb862e02e13",
+    "size": 144,
+  },
+  {
+    "path": "valid/textures/sky/first#small.dds",
+    "sha256": "3c353eaac54b08b29f50c8f2fb7bf68ef3d2b103c1a7ad9334fd4cb862e02e13",
+    "size": 144,
+  },
+  {
+    "path": "valid/textures/sky/first.dds",
+    "sha256": "3c353eaac54b08b29f50c8f2fb7bf68ef3d2b103c1a7ad9334fd4cb862e02e13",
+    "size": 144,
+  },
+  {
+    "path": "valid/textures/sky/second#small.dds",
+    "sha256": "3c353eaac54b08b29f50c8f2fb7bf68ef3d2b103c1a7ad9334fd4cb862e02e13",
+    "size": 144,
+  },
+  {
+    "path": "valid/textures/sky/second.dds",
+    "sha256": "3c353eaac54b08b29f50c8f2fb7bf68ef3d2b103c1a7ad9334fd4cb862e02e13",
+    "size": 144,
+  },
+]
+`;

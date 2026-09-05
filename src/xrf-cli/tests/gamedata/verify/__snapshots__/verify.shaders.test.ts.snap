@@ -1,0 +1,192 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata verify renderer shaders should record readable reports and only expected artifacts 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "cache": {
+      "bytes": 0,
+      "entries": 1,
+      "hits": 0,
+      "misses": 1,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "passed",
+        "summary": "1 shader scripts and 2 shader sources checked, 0 problems",
+        "verificationType": "shaders",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "passed",
+  },
+}
+`;
+
+exports[`gamedata verify renderer shaders should record readable reports and only expected artifacts 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 1 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "cache": {
+      "bytes": 0,
+      "entries": 1,
+      "hits": 0,
+      "misses": 1,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "assetPath": "shaders/r3/main.ps",
+            "message": "Not found error: Shader shaders\\r3\\main.ps includes missing file 'shared/missing.h' on line 1",
+            "ruleId": "shaders.include-missing",
+          },
+        ],
+        "status": "failed",
+        "summary": "1 shader scripts and 1 shader sources checked, 1 problems",
+        "verificationType": "shaders",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`gamedata verify renderer shaders should record readable reports and only expected artifacts 3`] = `
+[
+  {
+    "path": "damaged.json",
+    "sha256": "f531bb62eabed0366d766e7314326f5f8d0e1aaed693b51924823b9a2b6ac4b9",
+    "size": 1624,
+  },
+  {
+    "path": "damaged/configs/system.ltx",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+  },
+  {
+    "path": "damaged/shaders/r3/basic.s",
+    "sha256": "0b82c1461ed145c79034a53db5f0efbab591317f9f4e7423e837be377af746fe",
+    "size": 56,
+  },
+  {
+    "path": "damaged/shaders/r3/main.ps",
+    "sha256": "1dbca503bae933eadd2e4b01203746bd655e84cfdf8c3e104f92929f155042dd",
+    "size": 28,
+  },
+  {
+    "path": "damaged/shaders/shared/common.h",
+    "sha256": "1323e83336182a7b262688eb2cbb479ca4b85ac35991bf1ac325b0738fc5e5e1",
+    "size": 13,
+  },
+  {
+    "path": "valid.json",
+    "sha256": "f1a6c4144b81d8f78f89e4813126c197e4b47916c131702b7fe25f286de5edba",
+    "size": 1346,
+  },
+  {
+    "path": "valid/configs/system.ltx",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+  },
+  {
+    "path": "valid/shaders/r3/basic.s",
+    "sha256": "0b82c1461ed145c79034a53db5f0efbab591317f9f4e7423e837be377af746fe",
+    "size": 56,
+  },
+  {
+    "path": "valid/shaders/r3/main.ps",
+    "sha256": "60bfa622d8fea1a33ef8e3d1c7cbf45d1f096f598261d6b85b33aa3110aa1823",
+    "size": 27,
+  },
+  {
+    "path": "valid/shaders/shared/common.h",
+    "sha256": "1323e83336182a7b262688eb2cbb479ca4b85ac35991bf1ac325b0738fc5e5e1",
+    "size": 13,
+  },
+]
+`;

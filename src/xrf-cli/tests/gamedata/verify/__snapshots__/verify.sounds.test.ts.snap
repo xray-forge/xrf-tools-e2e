@@ -1,0 +1,172 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata verify sounds should record readable reports and only expected artifacts 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "cache": {
+      "bytes": 37,
+      "entries": 1,
+      "hits": 1,
+      "misses": 1,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "passed",
+        "summary": "1/1 sounds valid; 1/1 sound references valid",
+        "verificationType": "sounds",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "passed",
+  },
+}
+`;
+
+exports[`gamedata verify sounds should record readable reports and only expected artifacts 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 1 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "cache": {
+      "bytes": 36,
+      "entries": 1,
+      "hits": 1,
+      "misses": 1,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "assetPath": "configs/system.ltx",
+            "message": "Unknown sound reference: [test] snd_test = weapons\\missing",
+            "ruleId": "sounds.references",
+          },
+        ],
+        "status": "failed",
+        "summary": "1/1 sounds valid; 0/1 sound references valid",
+        "verificationType": "sounds",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`gamedata verify sounds should record readable reports and only expected artifacts 3`] = `
+[
+  {
+    "path": "missing.json",
+    "sha256": "41f6c35701003ce18d947823546d067c206929bd60dcb08d5804466ff7aea9d0",
+    "size": 1569,
+  },
+  {
+    "path": "missing/configs/system.ltx",
+    "sha256": "afd254f41659a5311a8c4b585de42c283561aec0292ca108269494b877b1c013",
+    "size": 36,
+  },
+  {
+    "path": "missing/sounds/weapons/no_sound.ogg",
+    "sha256": "b74d4e310bb86f67bbffecd969223aa697eb25f5b36cc74551858e8fb5cb6742",
+    "size": 3573,
+  },
+  {
+    "path": "valid.json",
+    "sha256": "3834398d151ac6670db0b64005ead1fd17c076f1e2f5f2511faf064b7b0e1b9d",
+    "size": 1333,
+  },
+  {
+    "path": "valid/configs/system.ltx",
+    "sha256": "47fd0bbe73ce0436d72e0b31b953569c7d52ede4f1428c6dcd66bf20ca413a7f",
+    "size": 37,
+  },
+  {
+    "path": "valid/sounds/weapons/no_sound.ogg",
+    "sha256": "b74d4e310bb86f67bbffecd969223aa697eb25f5b36cc74551858e8fb5cb6742",
+    "size": 3573,
+  },
+]
+`;
