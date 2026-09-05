@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`gamedata list prefix boundaries should record both boundary selections 1`] = `
+exports[`gamedata list prefix boundaries should record the boundary and empty selections 1`] = `
 {
   "build": {
     "builtAt": "<build>",
@@ -49,7 +49,7 @@ exports[`gamedata list prefix boundaries should record both boundary selections 
 }
 `;
 
-exports[`gamedata list prefix boundaries should record both boundary selections 2`] = `
+exports[`gamedata list prefix boundaries should record the boundary and empty selections 2`] = `
 {
   "build": {
     "builtAt": "<build>",
@@ -98,8 +98,56 @@ exports[`gamedata list prefix boundaries should record both boundary selections 
 }
 `;
 
+exports[`gamedata list prefix boundaries should record the boundary and empty selections 3`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "list",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "collisions": [],
+    "duration": "<duration>",
+    "entries": [],
+    "isShadowedIncluded": false,
+    "mounts": [
+      "Directory <sandbox>/boundary (boundary)",
+    ],
+    "origin": "<sandbox>/boundary",
+    "shadowed": [],
+    "skipped": [],
+    "total": 0,
+  },
+}
+`;
+
 exports[`gamedata list prefix boundaries should write the expected files 1`] = `
 [
+  {
+    "path": "absent.json",
+    "sha256": "2a702fb3793eb41534c76c6e61dafab7ccb88e2484430498705f4ec74523333e",
+    "size": 791,
+  },
   {
     "path": "boundary/configs/kept.ltx",
     "sha256": "103a539289a678adff8051e579582bc226aeccd3bcf7854bc6bc4d3cbd0c3b4f",

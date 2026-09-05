@@ -32,6 +32,18 @@ describe("gamedata list repeated roots", () => {
       "--report",
       box.at("overlay.json"),
     ]);
+    box.run("gamedata list", [
+      "--path",
+      box.at("base"),
+      "--path",
+      box.at("base"),
+      "--source",
+      "directory",
+      "--shadowed",
+      "--silent",
+      "--report",
+      box.at("identical.json"),
+    ]);
   });
 
   it("should preserve the first repeated directory root as the winning source", () => {
@@ -53,6 +65,22 @@ describe("gamedata list repeated roots", () => {
 
   it("should record the resolved roots", () => {
     expect(box.json("overlay.json")).toMatchSnapshot();
+    expect(box.json("identical.json")).toMatchSnapshot();
+  });
+
+  it("should deduplicate a repeated identical root before resolving entries", () => {
+    const report: CommandEnvelope = envelopeAt(box.at("identical.json"));
+    const base = box.at("base").replaceAll("\\", "/");
+
+    expect(report.result).toMatchObject({
+      isShadowedIncluded: true,
+      total: 2,
+      entries: [
+        { container: base, isArchived: false, logicalPath: "configs\\base.ltx" },
+        { container: base, isArchived: false, logicalPath: "configs\\system.ltx" },
+      ],
+      shadowed: [],
+    });
   });
 
   it("should leave authored inputs unchanged", () => {
@@ -60,6 +88,6 @@ describe("gamedata list repeated roots", () => {
   });
 
   it("should write the expected files", () => {
-    expect(box.manifest({ normalized: ["overlay.json"] })).toMatchSnapshot();
+    expect(box.manifest({ normalized: ["overlay.json", "identical.json"] })).toMatchSnapshot();
   });
 });

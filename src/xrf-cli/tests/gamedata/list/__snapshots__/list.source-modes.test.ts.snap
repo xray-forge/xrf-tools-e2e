@@ -1,0 +1,333 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata list source modes should record every supported source-mode result 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "list",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "collisions": [],
+    "duration": "<duration>",
+    "entries": [
+      {
+        "container": "<sandbox>/install/database",
+        "isArchived": true,
+        "logicalPath": "configs\\archive_only.ltx",
+      },
+      {
+        "container": "<sandbox>/install/gamedata",
+        "isArchived": false,
+        "logicalPath": "configs\\system.ltx",
+      },
+    ],
+    "isShadowedIncluded": false,
+    "mounts": [
+      "Directory <sandbox>/install/gamedata (gamedata)",
+      "Archive   <sandbox>/install/database (database)",
+    ],
+    "origin": "<sandbox>/install",
+    "shadowed": [],
+    "skipped": [],
+    "total": 2,
+  },
+}
+`;
+
+exports[`gamedata list source modes should record every supported source-mode result 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "list",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "collisions": [],
+    "duration": "<duration>",
+    "entries": [
+      {
+        "container": "<sandbox>/install/database",
+        "isArchived": true,
+        "logicalPath": "configs\\archive_only.ltx",
+      },
+      {
+        "container": "<sandbox>/install/gamedata",
+        "isArchived": false,
+        "logicalPath": "configs\\system.ltx",
+      },
+    ],
+    "isShadowedIncluded": false,
+    "mounts": [
+      "Directory <sandbox>/install/gamedata (gamedata)",
+      "Archive   <sandbox>/install/database (database)",
+    ],
+    "origin": "<sandbox>/install",
+    "shadowed": [],
+    "skipped": [],
+    "total": 2,
+  },
+}
+`;
+
+exports[`gamedata list source modes should record every supported source-mode result 3`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "list",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "collisions": [],
+    "duration": "<duration>",
+    "entries": [
+      {
+        "container": "<sandbox>/install",
+        "isArchived": false,
+        "logicalPath": "database\\gamedata.db",
+      },
+      {
+        "container": "<sandbox>/install",
+        "isArchived": false,
+        "logicalPath": "fsgame.ltx",
+      },
+      {
+        "container": "<sandbox>/install",
+        "isArchived": false,
+        "logicalPath": "gamedata\\configs\\system.ltx",
+      },
+    ],
+    "isShadowedIncluded": false,
+    "mounts": [
+      "Directory <sandbox>/install (install)",
+    ],
+    "origin": "<sandbox>/install",
+    "shadowed": [],
+    "skipped": [],
+    "total": 3,
+  },
+}
+`;
+
+exports[`gamedata list source modes should record every supported source-mode result 4`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "list",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "collisions": [],
+    "duration": "<duration>",
+    "entries": [
+      {
+        "container": "<sandbox>/install/database",
+        "isArchived": true,
+        "logicalPath": "configs\\archive_only.ltx",
+      },
+      {
+        "container": "<sandbox>/install/database",
+        "isArchived": true,
+        "logicalPath": "configs\\system.ltx",
+      },
+    ],
+    "isShadowedIncluded": false,
+    "mounts": [
+      "Archive   <sandbox>/install/database (database)",
+    ],
+    "origin": "<sandbox>/install/database",
+    "shadowed": [],
+    "skipped": [],
+    "total": 2,
+  },
+}
+`;
+
+exports[`gamedata list source modes should record every supported source-mode result 5`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "list",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "collisions": [],
+    "duration": "<duration>",
+    "entries": [
+      {
+        "container": "<sandbox>/install/database/gamedata.db",
+        "isArchived": true,
+        "logicalPath": "configs\\archive_only.ltx",
+      },
+      {
+        "container": "<sandbox>/install/database/gamedata.db",
+        "isArchived": true,
+        "logicalPath": "configs\\system.ltx",
+      },
+    ],
+    "isShadowedIncluded": false,
+    "mounts": [
+      "Archive   <sandbox>/install/database/gamedata.db (gamedata.db)",
+    ],
+    "origin": "<sandbox>/install/database",
+    "shadowed": [],
+    "skipped": [],
+    "total": 2,
+  },
+}
+`;
+
+exports[`gamedata list source modes should write the expected files 1`] = `
+[
+  {
+    "path": "auto-install.json",
+    "sha256": "2b782d0a170b4c688be4f253b98c2ee7cd2c4e18c19feb3aac9bcdcc6fb5a340",
+    "size": 1148,
+  },
+  {
+    "path": "auto-volumes.json",
+    "sha256": "c29b5f8a519782954cba4f6d2908c5f825f03c29dffe56251803c9daaf184f3e",
+    "size": 1099,
+  },
+  {
+    "path": "directory.json",
+    "sha256": "e8f14965c46bf9427c16be7ba869a2d0fe9959f1ecb837a42c4c9f4580043bf2",
+    "size": 1194,
+  },
+  {
+    "path": "install/database/gamedata.db",
+    "sha256": "ddb87623e585c5bed22aee824918988ad866ebb34fc1aba6bfbc62fd81e8bc74",
+    "size": 197,
+  },
+  {
+    "path": "install/fsgame.ltx",
+    "sha256": "1b05e91b88e5aa27004d03d782b9ded55eff3f4b04917bf57444cfc986aff16a",
+    "size": 95,
+  },
+  {
+    "path": "install/gamedata/configs/system.ltx",
+    "sha256": "ad8d5b2dcb036b55b03ba4be6958e6c2960d7f950ba7a9cfe4eee0ff2c863447",
+    "size": 15,
+  },
+  {
+    "path": "installation.json",
+    "sha256": "2b782d0a170b4c688be4f253b98c2ee7cd2c4e18c19feb3aac9bcdcc6fb5a340",
+    "size": 1148,
+  },
+  {
+    "path": "stage/configs/archive_only.ltx",
+    "sha256": "8035b7683fe087337859fa46e61cb2fce21d560b49e34668d9756a153386fae5",
+    "size": 15,
+  },
+  {
+    "path": "stage/configs/system.ltx",
+    "sha256": "36b9d89fcd7c60540f0ede2e55e2a0d1e93cd0d929e321209bdb852cf4cd742c",
+    "size": 17,
+  },
+  {
+    "path": "volumes.json",
+    "sha256": "7c066e59be48236b2e8b8fde5c5bbed0b90c87e8a4c8012b14df873f060b8992",
+    "size": 1138,
+  },
+]
+`;

@@ -19,6 +19,8 @@ describe("gamedata verify meets unreachable files", () => {
 
   let verify: CliResult;
   let emptyCheck: CliResult;
+  let unrelatedIgnore: CliResult;
+  let ignoredCollision: CliResult;
   let clean: CliResult;
   let inputs: Array<ManifestFile>;
 
@@ -42,6 +44,30 @@ describe("gamedata verify meets unreachable files", () => {
       [box.at("gamedata"), "--checks", "scripts", "--report", box.at("empty-check.json")],
       { expectExit: 3 }
     );
+    unrelatedIgnore = box.run(
+      "gamedata verify",
+      [
+        box.at("gamedata"),
+        "--checks",
+        "scripts",
+        "--ignore",
+        "textures/wip",
+        "--report",
+        box.at("unrelated-ignore.json"),
+      ],
+      { expectExit: 3 }
+    );
+    // The VFS applies ignored prefixes while indexing each mount. Excluding this whole logical subtree leaves neither
+    // colliding entry in the selected namespace, so a clean aggregate report is the intended result.
+    ignoredCollision = box.run("gamedata verify", [
+      box.at("gamedata"),
+      "--checks",
+      "scripts",
+      "--ignore",
+      "textures",
+      "--report",
+      box.at("ignored-collision.json"),
+    ]);
     clean = box.run("gamedata verify", [box.at("clean"), "--checks", "scripts", "--report", box.at("clean.json")]);
   });
 
@@ -78,6 +104,44 @@ describe("gamedata verify meets unreachable files", () => {
     });
   });
 
+  it("should retain a collision outside the ignored logical subtree", () => {
+    expect(unrelatedIgnore.exitCode).toBe(3);
+    expect(box.json("unrelated-ignore.json")).toMatchObject({
+      exitCode: 3,
+      outcome: "checkFailed",
+      result: {
+        status: "failed",
+        checks: [
+          { verificationType: "coverage", status: "skipped", summary: "Every declared source opened", findings: [] },
+          {
+            verificationType: "collisions",
+            status: "failed",
+            summary: "1 file(s) cannot be reached, another file claims their path",
+            findings: [{ ruleId: "collisions.unreachable", assetPath: "textures/k.dds" }],
+          },
+          { verificationType: "scripts", status: "passed", summary: "0/0 scripts valid", findings: [] },
+        ],
+      },
+    });
+  });
+
+  it("should exclude an ignored collision from the mounted namespace", () => {
+    expect(ignoredCollision.exitCode).toBe(0);
+    expect(box.json("ignored-collision.json")).toMatchObject({
+      exitCode: 0,
+      outcome: "success",
+      result: {
+        status: "passed",
+        skippedMounts: [],
+        checks: [
+          { verificationType: "coverage", status: "skipped", summary: "Every declared source opened", findings: [] },
+          { verificationType: "collisions", status: "skipped", summary: "No unreachable files", findings: [] },
+          { verificationType: "scripts", status: "passed", summary: "0/0 scripts valid", findings: [] },
+        ],
+      },
+    });
+  });
+
   it("should pass after removing only the colliding sibling", () => {
     expect(clean.exitCode).toBe(0);
     expect(box.json("clean.json")).toMatchObject({
@@ -96,10 +160,33 @@ describe("gamedata verify meets unreachable files", () => {
 
   it("should preserve its inputs and write readable reports", () => {
     expect(
-      box.manifest().filter((file) => !["report.json", "empty-check.json", "clean.json"].includes(file.path))
+      box
+        .manifest()
+        .filter(
+          (file) =>
+            ![
+              "report.json",
+              "empty-check.json",
+              "unrelated-ignore.json",
+              "ignored-collision.json",
+              "clean.json",
+            ].includes(file.path)
+        )
     ).toEqual(inputs);
     expect(box.json("empty-check.json")).toMatchSnapshot();
+    expect(box.json("unrelated-ignore.json")).toMatchSnapshot();
+    expect(box.json("ignored-collision.json")).toMatchSnapshot();
     expect(box.json("clean.json")).toMatchSnapshot();
-    expect(box.manifest({ normalized: ["report.json", "empty-check.json", "clean.json"] })).toMatchSnapshot();
+    expect(
+      box.manifest({
+        normalized: [
+          "report.json",
+          "empty-check.json",
+          "unrelated-ignore.json",
+          "ignored-collision.json",
+          "clean.json",
+        ],
+      })
+    ).toMatchSnapshot();
   });
 });

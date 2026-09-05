@@ -35,6 +35,17 @@ describe("gamedata list prefix boundaries", () => {
       "--report",
       box.at("ignore.json"),
     ]);
+    box.run("gamedata list", [
+      "--path",
+      box.at("boundary"),
+      "--source",
+      "directory",
+      "--prefix",
+      "absent",
+      "--silent",
+      "--report",
+      box.at("absent.json"),
+    ]);
   });
 
   it("should apply prefix and ignore at logical component boundaries", () => {
@@ -52,9 +63,16 @@ describe("gamedata list prefix boundaries", () => {
     });
   });
 
-  it("should record both boundary selections", () => {
+  it("should record the boundary and empty selections", () => {
     expect(box.json("prefix.json")).toMatchSnapshot();
     expect(box.json("ignore.json")).toMatchSnapshot();
+    expect(box.json("absent.json")).toMatchSnapshot();
+  });
+
+  it("should return an empty successful listing for a prefix with no match", () => {
+    const absent: CommandEnvelope = envelopeAt(box.at("absent.json"));
+
+    expect(absent.result).toMatchObject({ entries: [], shadowed: [], total: 0 });
   });
 
   it("should leave authored inputs unchanged", () => {
@@ -62,6 +80,6 @@ describe("gamedata list prefix boundaries", () => {
   });
 
   it("should write the expected files", () => {
-    expect(box.manifest({ normalized: ["prefix.json", "ignore.json"] })).toMatchSnapshot();
+    expect(box.manifest({ normalized: ["prefix.json", "ignore.json", "absent.json"] })).toMatchSnapshot();
   });
 });

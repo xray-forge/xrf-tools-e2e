@@ -200,6 +200,77 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
     "verify",
   ],
   "duration": "<duration>",
+  "error": "Check failed: 1 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "cache": {
+      "bytes": 22,
+      "entries": 1,
+      "hits": 0,
+      "misses": 1,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "assetPath": "textures/k.dds",
+            "message": "File '<sandbox>/gamedata/textures/K.dds' cannot be reached, '<sandbox>/gamedata/textures/k.dds' claims this path",
+            "ruleId": "collisions.unreachable",
+          },
+        ],
+        "status": "failed",
+        "summary": "1 file(s) cannot be reached, another file claims their path",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "passed",
+        "summary": "0/0 scripts valid",
+        "verificationType": "scripts",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`gamedata verify meets unreachable files should preserve its inputs and write readable reports 3`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
   "error": null,
   "execution": {
     "origin": "auto",
@@ -245,7 +316,72 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
 }
 `;
 
-exports[`gamedata verify meets unreachable files should preserve its inputs and write readable reports 3`] = `
+exports[`gamedata verify meets unreachable files should preserve its inputs and write readable reports 4`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "cache": {
+      "bytes": 22,
+      "entries": 1,
+      "hits": 0,
+      "misses": 1,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "passed",
+        "summary": "0/0 scripts valid",
+        "verificationType": "scripts",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "passed",
+  },
+}
+`;
+
+exports[`gamedata verify meets unreachable files should preserve its inputs and write readable reports 5`] = `
 [
   {
     "path": "clean.json",
@@ -283,9 +419,19 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
     "size": 0,
   },
   {
+    "path": "ignored-collision.json",
+    "sha256": "465ff8c00a0c50cd0af5ef587e4f81ecbda4409bdd5eddbf813f9128a1f58f91",
+    "size": 1307,
+  },
+  {
     "path": "report.json",
     "sha256": "7641204eef91a117dd512fa646189f55eef9eadc9607f188188ec2f3bb767baa",
     "size": 1659,
+  },
+  {
+    "path": "unrelated-ignore.json",
+    "sha256": "a6a0b5c5430b6a28a7307f7c7dafd61a757f8f91b4fe3ccc301073319f0ca63a",
+    "size": 1637,
   },
 ]
 `;

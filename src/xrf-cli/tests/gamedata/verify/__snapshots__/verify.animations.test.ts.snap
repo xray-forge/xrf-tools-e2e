@@ -1,0 +1,245 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata verify animations should record the reports as readable documents 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "cache": {
+      "bytes": 294,
+      "entries": 2,
+      "hits": 2,
+      "misses": 2,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "passed",
+        "summary": "1/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces",
+        "verificationType": "animations",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "passed",
+  },
+}
+`;
+
+exports[`gamedata verify animations should record the reports as readable documents 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 1 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "cache": {
+      "bytes": 135,
+      "entries": 1,
+      "hits": 1,
+      "misses": 3,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "assetPath": "configs/system.ltx",
+            "message": "Player HUD section [actor_hud] has invalid animations",
+            "ruleId": "animations.player-hud",
+          },
+        ],
+        "status": "failed",
+        "summary": "0/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces",
+        "verificationType": "animations",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`gamedata verify animations should report a damaged linked motion bank through its HUD configuration 1`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "Failed to read linked visual: [actor_hud] - meshes\\dynamics\\devices\\dev_bolt\\dev_bolt_hud_animation.omf - Invalid error: Incomplete chunk header at position 79, expected 8 bytes but only 1 remain",
+    "Hud [actor_hud] contains no animations",
+    "",
+    "Project gamedata is invalid",
+    "- 0/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces",
+    "  - [animations] <sandbox>/damaged/configs/system.ltx: Player HUD section [actor_hud] has invalid animations",
+    "Gamedata project checked in <duration>",
+    "Check failed: 1 finding(s)",
+  ],
+  "stdout": [
+    "Workers: <workers> (auto)",
+    "Opening gamedata project",
+    "Root: <sandbox>/damaged, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
+    "Verifying gamedata project: <sandbox>/damaged",
+    "Verifying modules:",
+    "  -animations",
+    "",
+    "Verify declared source coverage:",
+    "Verified declared source coverage in <duration>, 0 unopened source(s)",
+    "Verify path collisions:",
+    "Verified gamedata path collisions in <duration>, 0 unreachable file(s)",
+    "Verify animations:",
+    "Player hud config [actor_hud] is invalid",
+    "Verified gamedata huds, 0/1 valid",
+    "Verified gamedata hud items, 0/0 valid",
+    "Verified gamedata hud motion namespaces, 0 collisions across 1 huds",
+    "Verified gamedata animations in <duration>, 0/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces",
+  ],
+}
+`;
+
+exports[`gamedata verify animations should validate a HUD with a linked motion bank 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Workers: <workers> (auto)",
+    "Opening gamedata project",
+    "Root: <sandbox>/valid, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
+    "Verifying gamedata project: <sandbox>/valid",
+    "Verifying modules:",
+    "  -animations",
+    "",
+    "Verify declared source coverage:",
+    "Verified declared source coverage in <duration>, 0 unopened source(s)",
+    "Verify path collisions:",
+    "Verified gamedata path collisions in <duration>, 0 unreachable file(s)",
+    "Verify animations:",
+    "Verified gamedata huds, 1/1 valid",
+    "Verified gamedata hud items, 0/0 valid",
+    "Verified gamedata hud motion namespaces, 0 collisions across 1 huds",
+    "Verified gamedata animations in <duration>, 1/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces",
+    "",
+    "Project gamedata is valid",
+    "Gamedata project verified in <duration>",
+  ],
+}
+`;
+
+exports[`gamedata verify animations should write only its fixture and reports 1`] = `
+[
+  {
+    "path": "damaged.json",
+    "sha256": "3bb21bb735337999da44c8540aff4ca10926a673db45993b704caa92167dbafb",
+    "size": 1628,
+  },
+  {
+    "path": "damaged/configs/system.ltx",
+    "sha256": "229e3b2f36deaf3aff2914f15120cf54b7536c0c6677391688e5c8c6c0b9f444",
+    "size": 135,
+  },
+  {
+    "path": "damaged/meshes/dynamics/devices/dev_bolt/dev_bolt_hud.ogf",
+    "sha256": "2c41c8c88a51e20277009d457b479083e7b3719b959d1576d1e2e3208c2cd224",
+    "size": 13867,
+  },
+  {
+    "path": "damaged/meshes/dynamics/devices/dev_bolt/dev_bolt_hud_animation.omf",
+    "sha256": "81a2fa5ba685e9df392e4c9f3ea5a90ff5342398b856500335dc083ff86aa6b2",
+    "size": 80,
+  },
+  {
+    "path": "valid.json",
+    "sha256": "42223185467f0ae32ee532c80874ce5564df5f3abeba3b1e1fa2b545a915a358",
+    "size": 1394,
+  },
+  {
+    "path": "valid/configs/system.ltx",
+    "sha256": "229e3b2f36deaf3aff2914f15120cf54b7536c0c6677391688e5c8c6c0b9f444",
+    "size": 135,
+  },
+  {
+    "path": "valid/meshes/dynamics/devices/dev_bolt/dev_bolt_hud.ogf",
+    "sha256": "2c41c8c88a51e20277009d457b479083e7b3719b959d1576d1e2e3208c2cd224",
+    "size": 13867,
+  },
+  {
+    "path": "valid/meshes/dynamics/devices/dev_bolt/dev_bolt_hud_animation.omf",
+    "sha256": "2facf6d4c269eeb168a894bcb3a04584f050f94669bd60eeb8869b93b121df6d",
+    "size": 159,
+  },
+]
+`;

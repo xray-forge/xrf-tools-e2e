@@ -28,6 +28,7 @@ describe("gamedata verify meets a declared source it cannot open", () => {
 
   let verify: CliResult;
   let emptyCheck: CliResult;
+  let ignoredSource: CliResult;
   let clean: CliResult;
   let inputs: Array<ManifestFile>;
 
@@ -52,6 +53,13 @@ describe("gamedata verify meets a declared source it cannot open", () => {
     emptyCheck = box.run(
       "gamedata verify",
       [box.at("install"), "--checks", "scripts", "--report", box.at("empty-check.json")],
+      { expectExit: 1 }
+    );
+    // `db` names the mount directory on disk, not a logical asset prefix. Ignoring it must therefore leave the
+    // declared archive source subject to the same open-and-coverage accounting.
+    ignoredSource = box.run(
+      "gamedata verify",
+      [box.at("install"), "--checks", "scripts", "--ignore", "db", "--report", box.at("ignore.json")],
       { expectExit: 1 }
     );
     clean = box.run("gamedata verify", [box.at("clean"), "--checks", "scripts", "--report", box.at("clean.json")]);
@@ -97,6 +105,33 @@ describe("gamedata verify meets a declared source it cannot open", () => {
     });
   });
 
+  it("should retain the unread source when an ignored logical prefix names its mount directory", () => {
+    expect(ignoredSource.exitCode).toBe(1);
+    expect(box.json("ignore.json")).toMatchObject({
+      exitCode: 1,
+      outcome: "executionFailed",
+      result: {
+        status: "incomplete",
+        skippedMounts: [{ origin: "$arch_dir$" }],
+        checks: [
+          {
+            verificationType: "coverage",
+            status: "incomplete",
+            summary: "1 declared source(s) could not be opened, so no result covers them",
+            findings: [{ ruleId: "coverage.skipped-mount", assetPath: "db" }],
+          },
+          {
+            verificationType: "collisions",
+            status: "skipped",
+            summary: "No unreachable files",
+            findings: [],
+          },
+          { verificationType: "scripts", status: "passed", summary: "0/0 scripts valid", findings: [] },
+        ],
+      },
+    });
+  });
+
   it("should pass the empty selection when the installation has no unread mount", () => {
     expect(clean.exitCode).toBe(0);
     expect(box.json("clean.json")).toMatchObject({
@@ -123,12 +158,15 @@ describe("gamedata verify meets a declared source it cannot open", () => {
     expect(
       box
         .manifest()
-        .filter((file) => !["report.json", "silent.json", "empty-check.json", "clean.json"].includes(file.path))
+        .filter(
+          (file) => !["report.json", "silent.json", "empty-check.json", "ignore.json", "clean.json"].includes(file.path)
+        )
     ).toEqual(inputs);
     expect(box.json("empty-check.json")).toMatchSnapshot();
+    expect(box.json("ignore.json")).toMatchSnapshot();
     expect(box.json("clean.json")).toMatchSnapshot();
     expect(
-      box.manifest({ normalized: ["report.json", "silent.json", "empty-check.json", "clean.json"] })
+      box.manifest({ normalized: ["report.json", "silent.json", "empty-check.json", "ignore.json", "clean.json"] })
     ).toMatchSnapshot();
   });
 });

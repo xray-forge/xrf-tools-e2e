@@ -66,6 +66,60 @@ exports[`gamedata list repeated roots should record the resolved roots 1`] = `
 }
 `;
 
+exports[`gamedata list repeated roots should record the resolved roots 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "list",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "collisions": [],
+    "duration": "<duration>",
+    "entries": [
+      {
+        "container": "<sandbox>/base",
+        "isArchived": false,
+        "logicalPath": "configs\\base.ltx",
+      },
+      {
+        "container": "<sandbox>/base",
+        "isArchived": false,
+        "logicalPath": "configs\\system.ltx",
+      },
+    ],
+    "isShadowedIncluded": true,
+    "mounts": [
+      "Directory <sandbox>/base (base)",
+    ],
+    "origin": "<sandbox>/base, <sandbox>/base",
+    "shadowed": [],
+    "skipped": [],
+    "total": 2,
+  },
+}
+`;
+
 exports[`gamedata list repeated roots should write the expected files 1`] = `
 [
   {
@@ -77,6 +131,11 @@ exports[`gamedata list repeated roots should write the expected files 1`] = `
     "path": "base/configs/system.ltx",
     "sha256": "c9248a7ab03008f68e7bbc41976deccfc318f6b79d3824de907ebafa31e32dce",
     "size": 7,
+  },
+  {
+    "path": "identical.json",
+    "sha256": "e7dacc87ba0ab581cd9edc04f65c3148c40bb6982a0f491f9a20ef0b43406145",
+    "size": 1056,
   },
   {
     "path": "overlay.json",

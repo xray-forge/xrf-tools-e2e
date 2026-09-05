@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata verify read tracing should record the trace and expected artifacts 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "cache": {
+      "bytes": 77,
+      "entries": 2,
+      "hits": 4,
+      "misses": 2,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "passed",
+        "summary": "2/2 LTX files formatted; 1/1 sections valid",
+        "verificationType": "ltx",
+      },
+    ],
+    "duration": "<duration>",
+    "reads": {
+      "bytes": 154,
+      "hottest": [
+        {
+          "bytes": 78,
+          "path": "configs\\system.ltx",
+          "reads": 2,
+        },
+        {
+          "bytes": 76,
+          "path": "configs\\test.scheme.ltx",
+          "reads": 2,
+        },
+      ],
+      "paths": 2,
+      "reads": 4,
+      "uniqueBytes": 77,
+    },
+    "skippedMounts": [],
+    "status": "passed",
+  },
+}
+`;
+
+exports[`gamedata verify read tracing should record the trace and expected artifacts 2`] = `
+[
+  {
+    "path": "gamedata/configs/system.ltx",
+    "sha256": "022b9e484116b5ae3ceb29917b40201f70ee6fab7478fd71f60b651b9185a026",
+    "size": 39,
+  },
+  {
+    "path": "gamedata/configs/test.scheme.ltx",
+    "sha256": "06b903dfe40786a8726fcc22cc323ba2da5a90e9698df7de414b4dccfa7e065f",
+    "size": 38,
+  },
+  {
+    "path": "normal.json",
+    "sha256": "5d621f0f5e953a9a90f794140fa67d651c65270b01df0ca7fb5a27318b6ceeb3",
+    "size": 1329,
+  },
+  {
+    "path": "traced.json",
+    "sha256": "54c4082849f7e9b36d94e3eadf5ae90e178c2b77fbc1d838a256a24d5a5fb7f7",
+    "size": 1675,
+  },
+]
+`;
