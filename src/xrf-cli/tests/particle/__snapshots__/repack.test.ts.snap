@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`particle repack and particle re-unpack should agree with unpacking the repacked container 1`] = `
+exports[`particle repack and particle re-unpack should re-unpack an unpacked directory 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -8,11 +8,39 @@ exports[`particle repack and particle re-unpack should agree with unpacking the 
 }
 `;
 
-exports[`particle repack and particle re-unpack should re-unpack an unpacked directory 1`] = `
+exports[`particle repack and particle re-unpack should re-unpack an unpacked directory 2`] = `
 {
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "particle",
+    "re-unpack",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
   "exitCode": 0,
-  "stderr": [],
-  "stdout": [],
+  "outcome": "success",
+  "result": {
+    "destination": "<sandbox>/re-unpacked",
+    "readDuration": "<duration>",
+    "source": "<sandbox>/unpacked",
+    "writeDuration": "<duration>",
+  },
 }
 `;
 
@@ -24,8 +52,57 @@ exports[`particle repack and particle re-unpack should repack a container in one
 }
 `;
 
+exports[`particle repack and particle re-unpack should repack a container in one step 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "particle",
+    "repack",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "destination": "<sandbox>/repacked.xr",
+    "readDuration": "<duration>",
+    "source": "<resources>/gamedata/particles.xr",
+    "writeDuration": "<duration>",
+  },
+}
+`;
+
+exports[`particle repack and particle re-unpack should unpack the source container 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [],
+}
+`;
+
 exports[`particle repack and particle re-unpack should write the expected files 1`] = `
 [
+  {
+    "path": "re-unpack.json",
+    "sha256": "d2950d431c59757de1e9aac2f829cfce1f5d1fd651fe6deebc9a7d25cacd65c3",
+    "size": 679,
+  },
   {
     "path": "re-unpacked/effects.ltx",
     "sha256": "883cd5b870743a27eec4c352b748e01eca0c17a62bc9da2d819079915658d400",
@@ -40,6 +117,11 @@ exports[`particle repack and particle re-unpack should write the expected files 
     "path": "re-unpacked/header.ltx",
     "sha256": "40a40cc067c5ae41dec907d61c4abf415bfe05aff3908ca9920aeb4b9768a08c",
     "size": 49,
+  },
+  {
+    "path": "repack.json",
+    "sha256": "7467aa430172d478f33802f9a39d2c0cf167808f2a2e4ae36867cc9a1c840a02",
+    "size": 691,
   },
   {
     "path": "repacked.xr",

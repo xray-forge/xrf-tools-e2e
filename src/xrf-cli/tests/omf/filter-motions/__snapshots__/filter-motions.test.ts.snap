@@ -76,8 +76,96 @@ exports[`omf filter-motions should report a dry run without writing 1`] = `
 }
 `;
 
+exports[`omf filter-motions should report a filter dry run as one that wrote nothing 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "omf",
+    "filter-motions",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "destination": "<sandbox>/never-written.omf",
+    "isDry": true,
+    "kept": [
+      "idle",
+    ],
+    "source": "<resources>/gamedata/meshes/omf/wpn_svd_hud_animation.omf",
+    "total": 3,
+  },
+}
+`;
+
+exports[`omf filter-motions should report which motions a filter kept 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "omf",
+    "filter-motions",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "destination": "<sandbox>/kept-idle.omf",
+    "isDry": false,
+    "kept": [
+      "idle",
+    ],
+    "source": "<resources>/gamedata/meshes/omf/wpn_svd_hud_animation.omf",
+    "total": 3,
+  },
+}
+`;
+
 exports[`omf filter-motions should write the expected files 1`] = `
 [
+  {
+    "path": "filter-dry.json",
+    "sha256": "dbcfffdcd01120328343b86750e94e4d1d8a70d7bc3c63b41caf24e80ca4dc39",
+    "size": 724,
+  },
+  {
+    "path": "filter.json",
+    "sha256": "47f1df6480b25808a64d6b2b2398e05539f86734b3fe43bc9b0dfaad0ff8be40",
+    "size": 721,
+  },
   {
     "path": "kept-idle.omf",
     "sha256": "0d6070cb2dc20aa5a4b1231db0ec8e4e855e98dea2ce2d317670177209525e66",

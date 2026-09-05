@@ -36,6 +36,44 @@ exports[`omf duplicate-motion should read back the duplicated motion 1`] = `
 }
 `;
 
+exports[`omf duplicate-motion should report the duplicated motion 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "omf",
+    "duplicate-motion",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "destination": "<sandbox>/duplicated.omf",
+    "from": "idle",
+    "isPlayOnce": false,
+    "motions": 4,
+    "source": "<resources>/gamedata/meshes/omf/wpn_svd_hud_animation.omf",
+    "to": "idle_copy",
+  },
+}
+`;
+
 exports[`omf duplicate-motion should rewrite in place when given no destination 1`] = `
 {
   "exitCode": 0,
@@ -48,6 +86,11 @@ exports[`omf duplicate-motion should rewrite in place when given no destination 
 
 exports[`omf duplicate-motion should write the expected files 1`] = `
 [
+  {
+    "path": "duplicate.json",
+    "sha256": "999265397b617c96b5f291eae76114b9434d2f1a3c1cbabebe7fe4570c9fb66c",
+    "size": 740,
+  },
   {
     "path": "duplicated-once.omf",
     "sha256": "d55eb93e317f9c29180809868725ba1a9645b484e2be54c4bca1f0fe58955319",

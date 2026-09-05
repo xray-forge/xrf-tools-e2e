@@ -8,6 +8,42 @@ exports[`particles roundtrip should pack back into a container 1`] = `
 }
 `;
 
+exports[`particles roundtrip should pack back into a container 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "particle",
+    "pack",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "destination": "<sandbox>/repacked.xr",
+    "readDuration": "<duration>",
+    "source": "<sandbox>/unpacked",
+    "writeDuration": "<duration>",
+  },
+}
+`;
+
 exports[`particles roundtrip should report effect and group counts 1`] = `
 {
   "exitCode": 0,
@@ -30,11 +66,82 @@ exports[`particles roundtrip should unpack to ltx files 1`] = `
 }
 `;
 
+exports[`particles roundtrip should unpack to ltx files 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "particle",
+    "unpack",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "destination": "<sandbox>/unpacked",
+    "readDuration": "<duration>",
+    "source": "<resources>/gamedata/particles.xr",
+    "writeDuration": "<duration>",
+  },
+}
+`;
+
 exports[`particles roundtrip should verify the packed container 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
   "stdout": [],
+}
+`;
+
+exports[`particles roundtrip should verify the packed container 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "particle",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "findings": [],
+    "status": "passed",
+    "subject": "<resources>/gamedata/particles.xr",
+  },
 }
 `;
 
@@ -46,12 +153,57 @@ exports[`particles roundtrip should verify the unpacked form 1`] = `
 }
 `;
 
+exports[`particles roundtrip should verify the unpacked form 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "particle",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "findings": [],
+    "status": "passed",
+    "subject": "<sandbox>/unpacked",
+  },
+}
+`;
+
 exports[`particles roundtrip should write the expected files 1`] = `
 [
+  {
+    "path": "pack.json",
+    "sha256": "c9d6f11a35e51bf3e56ef7908cade0fcd23ae61ab2ec51ff1fde28659417315d",
+    "size": 674,
+  },
   {
     "path": "repacked.xr",
     "sha256": "4b78a17cd22fea8dc7ebad99ae423079bc9933157d68a37e6d48eed2e0b3c0ae",
     "size": 1184775,
+  },
+  {
+    "path": "unpack.json",
+    "sha256": "884dd9375f774a87a128dd7a6f982b0cd0c79ff387fa362ce4a398802760cc25",
+    "size": 688,
   },
   {
     "path": "unpacked-again/effects.ltx",
@@ -82,6 +234,16 @@ exports[`particles roundtrip should write the expected files 1`] = `
     "path": "unpacked/header.ltx",
     "sha256": "40a40cc067c5ae41dec907d61c4abf415bfe05aff3908ca9920aeb4b9768a08c",
     "size": 49,
+  },
+  {
+    "path": "verify-unpacked.json",
+    "sha256": "aa18b87d441cc6bc61c7df54c8a0e30cb030df9e0c272d463cc429cdd55e3d81",
+    "size": 608,
+  },
+  {
+    "path": "verify.json",
+    "sha256": "1a3f607caf9ea0b84c0041c247b86586ddff27c8e2b586684c6156ea02ac252a",
+    "size": 623,
   },
 ]
 `;

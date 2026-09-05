@@ -1,5 +1,41 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`omf repack roundtrip should report a repack 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "omf",
+    "repack",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "destination": "<sandbox>/repacked.omf",
+    "readDuration": "<duration>",
+    "source": "<resources>/gamedata/meshes/omf/wpn_svd_hud_animation.omf",
+    "writeDuration": "<duration>",
+  },
+}
+`;
+
 exports[`omf repack roundtrip should still read back after repacking 1`] = `
 {
   "exitCode": 0,
@@ -35,8 +71,13 @@ exports[`omf repack roundtrip should write a repacked container 1`] = `
 }
 `;
 
-exports[`omf repack roundtrip should write only the repacked container 1`] = `
+exports[`omf repack roundtrip should write only the repacked container and report 1`] = `
 [
+  {
+    "path": "repack.json",
+    "sha256": "09678096b48d541708419540d7280797287aa1da973ebc67c76ca788e571f589",
+    "size": 711,
+  },
   {
     "path": "repacked.omf",
     "sha256": "5fed0250b53cc35dc79e38611e1ca32c997c77f0c39690401ef65861810e9686",

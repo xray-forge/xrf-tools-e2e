@@ -6,35 +6,25 @@ import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 // Three motions: idle, svd_shoot, svd_reload. The map below covers two of them on purpose.
 const SOURCE = gamedata("meshes/omf/wpn_svd_hud_animation.omf");
 
-describe("omf rename-motions", () => {
+describe("omf rename-motions success", () => {
   const box = new Sandbox(__filename);
 
   let renamed: CliResult;
-  let dryRun: CliResult;
-  let strict: CliResult;
   let info: CliResult;
 
   beforeAll(() => {
     const map = box.write("rename-map.json", `${JSON.stringify({ idle: "stand", svd_shoot: "fire" }, undefined, 2)}\n`);
 
-    renamed = box.run("omf rename-motions", ["--path", SOURCE, "--dest", box.at("renamed.omf"), "--map", map]);
-    dryRun = box.run("omf rename-motions", [
+    renamed = box.run("omf rename-motions", [
       "--path",
       SOURCE,
       "--dest",
-      box.at("never-renamed.omf"),
+      box.at("renamed.omf"),
       "--map",
       map,
-      "--dry-run",
+      "--report",
+      box.at("rename.json"),
     ]);
-
-    // Strict requires the map to cover every motion, and this one leaves svd_reload out.
-    strict = box.run(
-      "omf rename-motions",
-      ["--path", SOURCE, "--dest", box.at("never-strict.omf"), "--map", map, "--strict"],
-      { expectExit: 1 }
-    );
-
     info = box.run("omf info", ["--path", box.at("renamed.omf")]);
   });
 
@@ -42,19 +32,15 @@ describe("omf rename-motions", () => {
     expect(renamed).toMatchSnapshot();
   });
 
+  it("should report renamed motions", () => {
+    expect(box.json("rename.json")).toMatchSnapshot();
+  });
+
   it("should read back the renamed motions", () => {
     expect(info).toMatchSnapshot();
   });
 
-  it("should report a dry run without writing", () => {
-    expect(dryRun).toMatchSnapshot();
-  });
-
-  it("should reject an incomplete map under strict", () => {
-    expect(strict).toMatchSnapshot();
-  });
-
   it("should write the expected files", () => {
-    expect(box.manifest()).toMatchSnapshot();
+    expect(box.manifest({ normalized: ["rename.json"] })).toMatchSnapshot();
   });
 });

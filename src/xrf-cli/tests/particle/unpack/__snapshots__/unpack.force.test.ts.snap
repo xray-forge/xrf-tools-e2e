@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`particle unpack force should prune nested stale files when forced 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [],
+}
+`;
+
+exports[`particle unpack force should refuse an existing unpack destination 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: IO error: Unpack output directory already exists, use --force to prune destination folder",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`particle unpack force should unpack into an empty destination 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [],
+}
+`;
+
+exports[`particle unpack force should write the expected files 1`] = `
+[
+  {
+    "path": "unpacked/effects.ltx",
+    "sha256": "883cd5b870743a27eec4c352b748e01eca0c17a62bc9da2d819079915658d400",
+    "size": 3251974,
+  },
+  {
+    "path": "unpacked/groups.ltx",
+    "sha256": "b9a39fb60d5fbc5e3e8afa0e580d3e3b13eecfb6a492c243b76ce32679feaa0a",
+    "size": 310075,
+  },
+  {
+    "path": "unpacked/header.ltx",
+    "sha256": "40a40cc067c5ae41dec907d61c4abf415bfe05aff3908ca9920aeb4b9768a08c",
+    "size": 49,
+  },
+]
+`;

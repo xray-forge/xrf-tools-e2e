@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
 import { ltxUnformatted } from "#/xrf-cli/test/constants";
-import { Sandbox, sha, type CliResult } from "#/xrf-cli/test/sandbox";
+import { Sandbox, sha, type CliResult, type ManifestFile } from "#/xrf-cli/test/sandbox";
 
 /**
  * What the formatter actually rewrites, line by line.
@@ -18,7 +18,10 @@ describe("ltx format samples", () => {
   let format: CliResult;
   let recheck: CliResult;
   let formatAgain: CliResult;
-  let rewrittenSha: string;
+  let manifestBeforeCheck: Array<ManifestFile>;
+  let manifestAfterCheck: Array<ManifestFile>;
+  let manifestAfterFormat: Array<ManifestFile>;
+  let manifestAfterIdempotentFormat: Array<ManifestFile>;
 
   beforeAll(() => {
     // The formatter rewrites in place, so it works on a copy and never touches the corpus.
@@ -28,16 +31,21 @@ describe("ltx format samples", () => {
       before[sample] = box.raw(`samples/${sample}`);
     }
 
+    manifestBeforeCheck = box.manifest();
+
     check = box.run("ltx format", ["--path", samples, "--check"], { expectExit: 3 });
+    manifestAfterCheck = box.manifest();
+
     format = box.run("ltx format", ["--path", samples]);
 
     for (const sample of SAMPLES) {
       after[sample] = box.raw(`samples/${sample}`);
     }
 
-    rewrittenSha = box.sha("samples/spacing.ltx");
+    manifestAfterFormat = box.manifest();
     recheck = box.run("ltx format", ["--path", samples, "--check"]);
     formatAgain = box.run("ltx format", ["--path", samples]);
+    manifestAfterIdempotentFormat = box.manifest();
   });
 
   it("should read the samples as they were authored", () => {
@@ -46,6 +54,10 @@ describe("ltx format samples", () => {
 
   it("should reject the two that are not formatted", () => {
     expect(check).toMatchSnapshot();
+  });
+
+  it("should leave every input byte untouched while checking", () => {
+    expect(manifestAfterCheck).toEqual(manifestBeforeCheck);
   });
 
   it("should rewrite only those two", () => {
@@ -69,7 +81,7 @@ describe("ltx format samples", () => {
   // A second rewrite must find nothing left to do, or the command could not gate a build.
   it("should be idempotent", () => {
     expect(formatAgain).toMatchSnapshot();
-    expect(box.sha("samples/spacing.ltx")).toBe(rewrittenSha);
+    expect(manifestAfterIdempotentFormat).toEqual(manifestAfterFormat);
   });
 
   it("should write no file beside the samples it was given", () => {

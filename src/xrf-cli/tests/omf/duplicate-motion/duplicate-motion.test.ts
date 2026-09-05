@@ -24,6 +24,8 @@ describe("omf duplicate-motion", () => {
       "idle",
       "--to",
       "idle_copy",
+      "--report",
+      box.at("duplicate.json"),
     ]);
 
     // The copy can be made to play once instead of looping, which is the reason to duplicate a
@@ -58,6 +60,10 @@ describe("omf duplicate-motion", () => {
     expect(duplicated).toMatchSnapshot();
   });
 
+  it("should report the duplicated motion", () => {
+    expect(box.json("duplicate.json")).toMatchSnapshot();
+  });
+
   it("should duplicate a motion that plays once", () => {
     expect(duplicatedOnce).toMatchSnapshot();
   });
@@ -83,6 +89,6 @@ describe("omf duplicate-motion", () => {
   });
 
   it("should write the expected files", () => {
-    expect(box.manifest()).toMatchSnapshot();
+    expect(box.manifest({ normalized: ["duplicate.json"] })).toMatchSnapshot();
   });
 });

@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ltx format selection should format an explicitly named non-LTX file 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Formatting 1 ltx file(s) from 1 provided path(s)",
+    "Formatting 1 file(s)",
+    "Formatted: <sandbox>/inputs/selected.txt",
+    "Formatted 1/1 files in <duration>",
+  ],
+}
+`;
+
+exports[`ltx format selection should format an explicitly named non-LTX file 2`] = `
+{
+  "neighbor": [
+    "[neighbor]\\r\\n",
+    "value = 2\\r\\n",
+  ],
+  "selected": [
+    "[selected]\\r\\n",
+    "value = 1\\r\\n",
+  ],
+}
+`;
+
+exports[`ltx format selection should format only the LTX neighbor from a directory 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Formatting 1 ltx file(s) from 1 provided path(s)",
+    "Formatting 1 file(s)",
+    "Formatted: <sandbox>/inputs/neighbor.ltx",
+    "Formatted 1/1 files in <duration>",
+  ],
+}
+`;
+
+exports[`ltx format selection should leave no extra output beside the selected inputs 1`] = `
+[
+  {
+    "path": "inputs/neighbor.ltx",
+    "sha256": "625bc53f40c50af1fbcfbfe6f749a5974ec139b063b9c25460aed8902cd3358e",
+    "size": 23,
+  },
+  {
+    "path": "inputs/selected.txt",
+    "sha256": "f0ca8c870f9d711a379d808f98e0eef0abb83b55eb450f26448e2ee60b93bd76",
+    "size": 23,
+  },
+]
+`;

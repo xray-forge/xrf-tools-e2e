@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`particles force should prune it when forced 1`] = `
+exports[`particle pack overwrite should publish into an empty destination 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -8,7 +8,7 @@ exports[`particles force should prune it when forced 1`] = `
 }
 `;
 
-exports[`particles force should refuse an existing packed container 1`] = `
+exports[`particle pack overwrite should refuse an existing packed container 1`] = `
 {
   "exitCode": 1,
   "stderr": [
@@ -18,17 +18,7 @@ exports[`particles force should refuse an existing packed container 1`] = `
 }
 `;
 
-exports[`particles force should refuse an existing unpack destination 1`] = `
-{
-  "exitCode": 1,
-  "stderr": [
-    "Error: IO error: Unpack output directory already exists, use --force to prune destination folder",
-  ],
-  "stdout": [],
-}
-`;
-
-exports[`particles force should replace it when forced 1`] = `
+exports[`particle pack overwrite should replace the container when forced 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -36,7 +26,21 @@ exports[`particles force should replace it when forced 1`] = `
 }
 `;
 
-exports[`particles force should write the expected files 1`] = `
+exports[`particle pack overwrite should still describe the forced container 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read particle file <sandbox>/packed.xr",
+    "Particles file information:",
+    "Version: 1",
+    "Effects count: 921",
+    "Groups count: 350",
+  ],
+}
+`;
+
+exports[`particle pack overwrite should write the expected files 1`] = `
 [
   {
     "path": "packed.xr",
@@ -59,18 +63,4 @@ exports[`particles force should write the expected files 1`] = `
     "size": 49,
   },
 ]
-`;
-
-exports[`particles force should write the same container when forced 1`] = `
-{
-  "exitCode": 0,
-  "stderr": [],
-  "stdout": [
-    "Read particle file <sandbox>/packed.xr",
-    "Particles file information:",
-    "Version: 1",
-    "Effects count: 921",
-    "Groups count: 350",
-  ],
-}
 `;

@@ -16,7 +16,16 @@ describe("omf filter-motions", () => {
   let info: CliResult;
 
   beforeAll(() => {
-    keptOne = box.run("omf filter-motions", ["--path", SOURCE, "--dest", box.at("kept-idle.omf"), "--keep", "idle"]);
+    keptOne = box.run("omf filter-motions", [
+      "--path",
+      SOURCE,
+      "--dest",
+      box.at("kept-idle.omf"),
+      "--keep",
+      "idle",
+      "--report",
+      box.at("filter.json"),
+    ]);
     keptPrefix = box.run("omf filter-motions", [
       "--path",
       SOURCE,
@@ -33,6 +42,8 @@ describe("omf filter-motions", () => {
       "--keep",
       "idle",
       "--dry-run",
+      "--report",
+      box.at("filter-dry.json"),
     ]);
 
     // --keep takes several names after one flag rather than being repeated; passing it twice is a
@@ -52,6 +63,10 @@ describe("omf filter-motions", () => {
 
   it("should keep a named motion", () => {
     expect(keptOne).toMatchSnapshot();
+  });
+
+  it("should report which motions a filter kept", () => {
+    expect(box.json("filter.json")).toMatchSnapshot();
   });
 
   it("should keep motions by prefix", () => {
@@ -74,8 +89,12 @@ describe("omf filter-motions", () => {
     expect(dryRun).toMatchSnapshot();
   });
 
+  it("should report a filter dry run as one that wrote nothing", () => {
+    expect(box.json("filter-dry.json")).toMatchSnapshot();
+  });
+
   // The manifest is what proves the dry run wrote nothing: its destination never appears in it.
   it("should write the expected files", () => {
-    expect(box.manifest()).toMatchSnapshot();
+    expect(box.manifest({ normalized: ["filter.json", "filter-dry.json"] })).toMatchSnapshot();
   });
 });

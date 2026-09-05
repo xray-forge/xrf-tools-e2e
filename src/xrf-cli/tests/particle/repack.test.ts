@@ -13,17 +13,33 @@ describe("particle repack and particle re-unpack", () => {
   let reUnpack: CliResult;
 
   beforeAll(() => {
-    repack = box.run("particle repack", ["--path", SOURCE, "--dest", box.at("repacked.xr")]);
+    repack = box.run("particle repack", [
+      "--path",
+      SOURCE,
+      "--dest",
+      box.at("repacked.xr"),
+      "--report",
+      box.at("repack.json"),
+    ]);
     unpack = box.run("particle unpack", ["--path", SOURCE, "--dest", box.at("unpacked")]);
-    reUnpack = box.run("particle re-unpack", ["--path", box.at("unpacked"), "--dest", box.at("re-unpacked")]);
+    reUnpack = box.run("particle re-unpack", [
+      "--path",
+      box.at("unpacked"),
+      "--dest",
+      box.at("re-unpacked"),
+      "--report",
+      box.at("re-unpack.json"),
+    ]);
   });
 
   it("should repack a container in one step", () => {
     expect(repack).toMatchSnapshot();
+    expect(box.json("repack.json")).toMatchSnapshot();
   });
 
   it("should re-unpack an unpacked directory", () => {
     expect(reUnpack).toMatchSnapshot();
+    expect(box.json("re-unpack.json")).toMatchSnapshot();
   });
 
   // Same as the roundtrip test states: the packer is deterministic but does not reproduce the
@@ -42,11 +58,11 @@ describe("particle repack and particle re-unpack", () => {
     expect(box.sha("re-unpacked/groups.ltx")).toBe(box.sha("unpacked/groups.ltx"));
   });
 
-  it("should agree with unpacking the repacked container", () => {
+  it("should unpack the source container", () => {
     expect(unpack).toMatchSnapshot();
   });
 
   it("should write the expected files", () => {
-    expect(box.manifest()).toMatchSnapshot();
+    expect(box.manifest({ normalized: ["re-unpack.json", "repack.json"] })).toMatchSnapshot();
   });
 });

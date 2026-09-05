@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`omf rename-motions strict map should reject an incomplete map under strict 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: Refused to rename <resources>/gamedata/meshes/omf/wpn_svd_hud_animation.omf in strict mode, 1 motions are missing from the map: svd_reload",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`omf rename-motions strict map should report every input motion before refusing 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "omf",
+    "rename-motions",
+  ],
+  "duration": "<duration>",
+  "error": "Invalid error: Refused to rename <resources>/gamedata/meshes/omf/wpn_svd_hud_animation.omf in strict mode, 1 motions are missing from the map: svd_reload",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 1,
+  "outcome": "executionFailed",
+  "result": {
+    "destination": "<sandbox>/never-strict.omf",
+    "isDry": false,
+    "motions": [
+      "idle",
+      "svd_shoot",
+      "svd_reload",
+    ],
+    "renamed": 0,
+    "source": "<resources>/gamedata/meshes/omf/wpn_svd_hud_animation.omf",
+  },
+}
+`;
+
+exports[`omf rename-motions strict map should write only the map, report, and preserved destination 1`] = `
+[
+  {
+    "path": "never-strict.omf",
+    "sha256": "5fed0250b53cc35dc79e38611e1ca32c997c77f0c39690401ef65861810e9686",
+    "size": 3355,
+  },
+  {
+    "path": "rename-map.json",
+    "sha256": "8677ebb7c1a27fbe3c916efd8814212cd998e3ce1db0aeeba2a718ffe5367400",
+    "size": 45,
+  },
+  {
+    "path": "strict.json",
+    "sha256": "608f1b58f7fb309a44b1c4b830d47640d1bc02a9ded1e95e6f8f61436b1d6776",
+    "size": 927,
+  },
+]
+`;

@@ -16,12 +16,32 @@ describe("particles roundtrip", () => {
 
   beforeAll(() => {
     info = box.run("particle info", ["--path", SOURCE]);
-    verify = box.run("particle verify", ["--path", SOURCE]);
+    verify = box.run("particle verify", ["--path", SOURCE, "--report", box.at("verify.json")]);
 
     // Unpacks to header, effects, and groups ltx files.
-    unpack = box.run("particle unpack", ["--path", SOURCE, "--dest", box.at("unpacked")]);
-    verifyUnpacked = box.run("particle verify", ["--path", box.at("unpacked"), "--unpacked"]);
-    pack = box.run("particle pack", ["--path", box.at("unpacked"), "--dest", box.at("repacked.xr")]);
+    unpack = box.run("particle unpack", [
+      "--path",
+      SOURCE,
+      "--dest",
+      box.at("unpacked"),
+      "--report",
+      box.at("unpack.json"),
+    ]);
+    verifyUnpacked = box.run("particle verify", [
+      "--path",
+      box.at("unpacked"),
+      "--unpacked",
+      "--report",
+      box.at("verify-unpacked.json"),
+    ]);
+    pack = box.run("particle pack", [
+      "--path",
+      box.at("unpacked"),
+      "--dest",
+      box.at("repacked.xr"),
+      "--report",
+      box.at("pack.json"),
+    ]);
 
     box.run("particle unpack", ["--path", box.at("repacked.xr"), "--dest", box.at("unpacked-again")]);
   });
@@ -32,18 +52,22 @@ describe("particles roundtrip", () => {
 
   it("should verify the packed container", () => {
     expect(verify).toMatchSnapshot();
+    expect(box.json("verify.json")).toMatchSnapshot();
   });
 
   it("should unpack to ltx files", () => {
     expect(unpack).toMatchSnapshot();
+    expect(box.json("unpack.json")).toMatchSnapshot();
   });
 
   it("should verify the unpacked form", () => {
     expect(verifyUnpacked).toMatchSnapshot();
+    expect(box.json("verify-unpacked.json")).toMatchSnapshot();
   });
 
   it("should pack back into a container", () => {
     expect(pack).toMatchSnapshot();
+    expect(box.json("pack.json")).toMatchSnapshot();
   });
 
   // The packer is deterministic but does not reproduce the vanilla container byte for byte. Stating
@@ -62,6 +86,8 @@ describe("particles roundtrip", () => {
   });
 
   it("should write the expected files", () => {
-    expect(box.manifest()).toMatchSnapshot();
+    expect(
+      box.manifest({ normalized: ["pack.json", "unpack.json", "verify-unpacked.json", "verify.json"] })
+    ).toMatchSnapshot();
   });
 });
