@@ -1,0 +1,192 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata verify weapons should record readable reports and only expected artifacts 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "cache": {
+      "bytes": 3730,
+      "entries": 3,
+      "hits": 1,
+      "misses": 5,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "passed",
+        "summary": "1/1 weapons valid",
+        "verificationType": "weapons",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "passed",
+  },
+}
+`;
+
+exports[`gamedata verify weapons should record readable reports and only expected artifacts 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 1 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "cache": {
+      "bytes": 3725,
+      "entries": 3,
+      "hits": 1,
+      "misses": 4,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "assetPath": "configs/system.ltx",
+            "message": "Weapon section [wpn_test] is invalid",
+            "ruleId": "weapons.validation",
+          },
+        ],
+        "status": "failed",
+        "summary": "0/1 weapons valid",
+        "verificationType": "weapons",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`gamedata verify weapons should record readable reports and only expected artifacts 3`] = `
+[
+  {
+    "path": "missing.json",
+    "sha256": "8f2e627ff15a516bc6e4e602c8fca678417e881232333602005aacf46c385198",
+    "size": 1523,
+  },
+  {
+    "path": "missing/configs/system.ltx",
+    "sha256": "aa86fb915fce47bc71b0b84984254c1a96dcf7b9b95f551a5261a057991358f1",
+    "size": 336,
+  },
+  {
+    "path": "missing/meshes/dynamics/devices/dev_bolt/dev_bolt_hud.ogf",
+    "sha256": "2c41c8c88a51e20277009d457b479083e7b3719b959d1576d1e2e3208c2cd224",
+    "size": 13867,
+  },
+  {
+    "path": "missing/meshes/dynamics/devices/dev_bolt/dev_bolt_hud_animation.omf",
+    "sha256": "2facf6d4c269eeb168a894bcb3a04584f050f94669bd60eeb8869b93b121df6d",
+    "size": 159,
+  },
+  {
+    "path": "missing/meshes/omf/wpn_mp5_hud_animation.omf",
+    "sha256": "71c4c92308378f045fb7962d751884003ce41557984b75ad8bb0374cce11bdd4",
+    "size": 3230,
+  },
+  {
+    "path": "valid.json",
+    "sha256": "bc72cf4fec123061e802d8c4a40867c52609a54535853df917ff5f91e9b49614",
+    "size": 1309,
+  },
+  {
+    "path": "valid/configs/system.ltx",
+    "sha256": "c644e885e66ffab0bedc205a62242d2505d25a3744a7e29aa08468cf4e800ec1",
+    "size": 341,
+  },
+  {
+    "path": "valid/meshes/dynamics/devices/dev_bolt/dev_bolt_hud.ogf",
+    "sha256": "2c41c8c88a51e20277009d457b479083e7b3719b959d1576d1e2e3208c2cd224",
+    "size": 13867,
+  },
+  {
+    "path": "valid/meshes/dynamics/devices/dev_bolt/dev_bolt_hud_animation.omf",
+    "sha256": "2facf6d4c269eeb168a894bcb3a04584f050f94669bd60eeb8869b93b121df6d",
+    "size": 159,
+  },
+  {
+    "path": "valid/meshes/omf/wpn_mp5_hud_animation.omf",
+    "sha256": "71c4c92308378f045fb7962d751884003ce41557984b75ad8bb0374cce11bdd4",
+    "size": 3230,
+  },
+]
+`;
