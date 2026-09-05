@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata verify scripts should record readable reports and only expected artifacts 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "cache": {
+      "bytes": 0,
+      "entries": 1,
+      "hits": 0,
+      "misses": 1,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "passed",
+        "summary": "1/1 scripts valid",
+        "verificationType": "scripts",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "passed",
+  },
+}
+`;
+
+exports[`gamedata verify scripts should record readable reports and only expected artifacts 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 1 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "cache": {
+      "bytes": 0,
+      "entries": 1,
+      "hits": 0,
+      "misses": 1,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "assetPath": "scripts/broken.script",
+            "message": "Verify error: Failed to check LuaJIT script file: scripts\\broken.script, errors: error occurred while creating ast: unexpected token \`=\`. (starting from line 1, character 13 and ending on line 1, character 14)
+additional information: expected an expression",
+            "ruleId": "scripts.read",
+          },
+        ],
+        "status": "failed",
+        "summary": "1/2 scripts valid",
+        "verificationType": "scripts",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`gamedata verify scripts should record readable reports and only expected artifacts 3`] = `
+[
+  {
+    "path": "malformed.json",
+    "sha256": "12cb1ad44b5706a28533d9a603fc0618b3af5631264fba844d6c7c15e92a2bd9",
+    "size": 1739,
+  },
+  {
+    "path": "malformed/configs/system.ltx",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+  },
+  {
+    "path": "malformed/scripts/broken.script",
+    "sha256": "72a6747c83219c0f0c4076d12bd896e51f9567ae9901ef6163a391d2d111159f",
+    "size": 13,
+  },
+  {
+    "path": "malformed/scripts/valid.script",
+    "sha256": "2969e19a8812f9d09420410ad6410bde7071d0bd197960cc8aaef06d6a119847",
+    "size": 15,
+  },
+  {
+    "path": "valid.json",
+    "sha256": "95e3045e1735121d7b0782f91d5a5ccf376be4cb3ebd9affe9e093a9d71d432f",
+    "size": 1306,
+  },
+  {
+    "path": "valid/configs/system.ltx",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+  },
+  {
+    "path": "valid/scripts/valid.script",
+    "sha256": "2969e19a8812f9d09420410ad6410bde7071d0bd197960cc8aaef06d6a119847",
+    "size": 15,
+  },
+]
+`;
