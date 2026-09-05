@@ -4,6 +4,9 @@ import * as path from "node:path";
 import { browser } from "@wdio/globals";
 import { type TauriCapabilities } from "@wdio/tauri-service";
 
+import { Trace } from "#/xrf-app/test/trace";
+import { installTracedCommands, pauseForSlowMotion } from "#/xrf-app/test/traced-commands";
+
 const PROJECT_ROOT: string = path.resolve(__dirname, "../../..");
 
 /**
@@ -20,11 +23,11 @@ export const APP_EXECUTABLE: string = path.resolve(PROJECT_ROOT, "target/xrf-app
  */
 export const APP_RESOURCES_ROOT: string = path.resolve(PROJECT_ROOT, "src/xrf-app/resources");
 
-/** Generated state from one application E2E run: driver logs and failure screenshots. */
+/** Generated state from one application E2E run: driver logs and the trace of what was on screen. */
 export const APP_OUTPUT_ROOT: string = path.resolve(PROJECT_ROOT, "target/e2e-app");
 
-/** Failure screenshots, wiped before a run so a stale picture cannot outlive the failure it shows. */
-const SCREENSHOTS_ROOT: string = path.resolve(APP_OUTPUT_ROOT, "screenshots");
+/** What this run leaves behind to be looked at afterwards. */
+const trace: Trace = new Trace();
 
 const capabilities: Array<TauriCapabilities> = [
   {
@@ -66,8 +69,8 @@ export const config: WebdriverIO.Config = {
   connectionRetryTimeout: 120000,
   connectionRetryCount: 1,
   onPrepare(): void {
-    // The launcher has already opened its log stream under `outputDir`, so only the screenshots are cleared here.
-    fs.rmSync(SCREENSHOTS_ROOT, { recursive: true, force: true });
+    // The launcher has already opened its log stream under `outputDir`, so only the trace is cleared here.
+    trace.reset();
 
     if (!fs.existsSync(APP_EXECUTABLE)) {
       throw new Error(`No executable at '${APP_EXECUTABLE}'.\nRun 'npm run app:refresh' or 'npm run app:download'.`);
@@ -78,16 +81,19 @@ export const config: WebdriverIO.Config = {
     // which this executable deliberately does not carry: each probe retries for seconds before giving up.
     // An explicit switch to the only window is the documented way to tell the service to stop recovering.
     await browser.switchToWindow(await browser.getWindowHandle());
+
+    await installTracedCommands(trace);
+  },
+  beforeSuite(suite): void {
+    trace.open(suite.title);
+  },
+  async beforeCommand(): Promise<void> {
+    await pauseForSlowMotion();
   },
   async afterTest(test, _context, { passed }): Promise<void> {
-    if (passed) {
-      return;
-    }
-
-    const name: string = `${test.parent} ${test.title}`.replace(/[^a-z0-9]+/gi, "-").toLowerCase();
-
-    fs.mkdirSync(SCREENSHOTS_ROOT, { recursive: true });
-
-    await browser.saveScreenshot(path.resolve(SCREENSHOTS_ROOT, `${name}.png`));
+    await trace.captureTest(test.title, Boolean(passed));
+  },
+  afterSuite(suite): void {
+    trace.close(suite.title);
   },
 };
