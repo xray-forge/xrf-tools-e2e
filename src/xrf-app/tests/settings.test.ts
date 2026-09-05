@@ -1,4 +1,5 @@
 import { $, expect } from "@wdio/globals";
+import { describe, it } from "mocha";
 
 describe("settings", () => {
   it("opens the dialog and reads the build identity over IPC", async () => {

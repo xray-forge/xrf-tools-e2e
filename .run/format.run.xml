@@ -1,9 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="cli: refresh" type="js.build_tools.npm" folderName="cli">
+  <configuration default="false" name="format" type="js.build_tools.npm" folderName="check" nameIsGenerated="true">
     <package-json value="$PROJECT_DIR$/package.json" />
     <command value="run" />
     <scripts>
-      <script value="cli:refresh" />
+      <script value="format" />
     </scripts>
     <node-interpreter value="project" />
     <envs />

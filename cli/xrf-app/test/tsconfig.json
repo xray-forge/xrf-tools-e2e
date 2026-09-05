@@ -1,8 +1,0 @@
-{
-  "extends": "../../../tsconfig.json",
-  "compilerOptions": {
-    "types": ["node", "@wdio/globals/types", "@wdio/mocha-framework", "expect-webdriverio"]
-  },
-  "include": ["./", "../../../src/xrf-app/"],
-  "exclude": ["../../../node_modules", "../../../target"]
-}

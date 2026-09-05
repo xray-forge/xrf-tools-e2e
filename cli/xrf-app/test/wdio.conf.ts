@@ -15,6 +15,11 @@ const PROJECT_ROOT: string = path.resolve(__dirname, "../../..");
  */
 export const APP_EXECUTABLE: string = path.resolve(PROJECT_ROOT, "target/xrf-app.exe");
 
+/**
+ * Committed inputs the application specs open.
+ */
+export const APP_RESOURCES_ROOT: string = path.resolve(PROJECT_ROOT, "src/xrf-app/resources");
+
 /** Generated state from one application E2E run: driver logs and failure screenshots. */
 export const APP_OUTPUT_ROOT: string = path.resolve(PROJECT_ROOT, "target/e2e-app");
 

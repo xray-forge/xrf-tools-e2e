@@ -1,4 +1,5 @@
 import { $, $$, expect } from "@wdio/globals";
+import { describe, it } from "mocha";
 
 describe("launcher", () => {
   it("renders the tool catalog without a crash surface", async () => {
