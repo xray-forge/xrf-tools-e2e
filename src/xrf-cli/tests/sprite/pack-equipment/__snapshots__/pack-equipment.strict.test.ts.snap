@@ -37,23 +37,23 @@ exports[`sprite pack-equipment strict mode should write the expected files 1`] =
 [
   {
     "path": "icons/test_icon_a.dds",
-    "sha256": "9e5161552c4b164c58eb80afee93cbf36a9083066f8709883bf025769f3c0323",
-    "size": 2852,
+    "sha256": "aa9b7d4a193862807b616041fe6eccaf3808baf14e87b75c555e9b433b61df20",
+    "size": 2832,
   },
   {
     "path": "icons/test_icon_c.dds",
-    "sha256": "0ccd5870fc1bf3a9192611c314f927f0076d850a39a9e2419b49a834af4f95f4",
-    "size": 2852,
+    "sha256": "e7c5f367251456cb8358436a8b8ae6537eeff98280b9f64b468425ed314809b8",
+    "size": 2832,
   },
   {
     "path": "icons/test_icon_c_variant.dds",
-    "sha256": "0ccd5870fc1bf3a9192611c314f927f0076d850a39a9e2419b49a834af4f95f4",
-    "size": 2852,
+    "sha256": "e7c5f367251456cb8358436a8b8ae6537eeff98280b9f64b468425ed314809b8",
+    "size": 2832,
   },
   {
     "path": "lenient.dds",
-    "sha256": "9724ecc8a747c2b4905fd405e216b2b6fe08c16a17aedbbb314ec9a20e9e2ff3",
-    "size": 8052,
+    "sha256": "5583caa0d283e2f92e0a60c526e2dbab401fcf67ab87532b039ccb2fbfff4daa",
+    "size": 8032,
   },
 ]
 `;

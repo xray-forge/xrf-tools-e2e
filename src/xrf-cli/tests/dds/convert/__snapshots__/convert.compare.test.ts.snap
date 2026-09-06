@@ -5,7 +5,7 @@ exports[`dds convert comparison should convert while weighing the alternatives 1
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Converted <resources>/gamedata/textures/ui/ui_test_sheet.dds to <sandbox>/compared.dds as BC3 (DXT5), 9 levels, 22052 bytes",
+    "Converted <resources>/gamedata/textures/ui/ui_test_sheet.dds to <sandbox>/compared.dds as BC3 (DXT5), 9 levels, 22032 bytes",
   ],
 }
 `;
@@ -61,7 +61,7 @@ exports[`dds convert comparison should report every candidate against the same l
           },
         ],
         "encodeDuration": "<duration>",
-        "fileBytes": 11100,
+        "fileBytes": 11080,
         "format": "BC1 (DXT1)",
         "gpuBytes": 10952,
         "psnr": 7.624109963864384,
@@ -88,7 +88,7 @@ exports[`dds convert comparison should report every candidate against the same l
           },
         ],
         "encodeDuration": "<duration>",
-        "fileBytes": 22052,
+        "fileBytes": 22032,
         "format": "BC2 (DXT3)",
         "gpuBytes": 21904,
         "psnr": 42.7631938555309,
@@ -115,7 +115,7 @@ exports[`dds convert comparison should report every candidate against the same l
           },
         ],
         "encodeDuration": "<duration>",
-        "fileBytes": 87536,
+        "fileBytes": 87516,
         "format": "RGBA8",
         "gpuBytes": 87388,
         "psnr": null,
@@ -175,7 +175,7 @@ exports[`dds convert comparison should report every candidate against the same l
         },
       ],
       "encodeDuration": "<duration>",
-      "fileBytes": 22052,
+      "fileBytes": 22032,
       "format": "BC3 (DXT5)",
       "gpuBytes": 21904,
       "psnr": 42.736186228862074,
@@ -188,12 +188,12 @@ exports[`dds convert comparison should write the expected files 1`] = `
 [
   {
     "path": "compared.dds",
-    "sha256": "2709baa00551a4c0995400d31ef387a7cb91146440a5ab329b0b2145cbc8235e",
-    "size": 22052,
+    "sha256": "8e6bb6344007fefdd34b2539342e5dfae183edf097b44d317ed39f9951fa6497",
+    "size": 22032,
   },
   {
     "path": "compared.json",
-    "sha256": "52738ad384b7464fb00011ccaccc24b08c754384f9f47d15afdbb68dceb6dac9",
+    "sha256": "b7e39d7fae6df3b8c78e27ebc73b3acd322322a75885dc4d61510a4a7eab301b",
     "size": 3780,
   },
 ]

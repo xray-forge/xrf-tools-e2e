@@ -6,15 +6,14 @@ exports[`equipment sprite roundtrip should describe the packed sheet 1`] = `
   "stderr": [],
   "stdout": [
     "Read dds file <sandbox>/repacked.dds",
-    "File size: 8052 (7.86 KB)",
-    "Metadata size: 148",
+    "File size: 8032 (7.84 KB)",
+    "Metadata size: 128",
     "Data size: 7904 (7.72 KB)",
     "Size: 152 x 52",
     "Mipmap: 1 - 16",
     "Linear size: 7904",
     "Block size: 16",
-    "Four CC: 894720068",
-    "DXGI format: BC3_UNorm",
+    "D3D format: DXT5",
   ],
 }
 `;
@@ -130,23 +129,23 @@ exports[`equipment sprite roundtrip should write the expected files 1`] = `
 [
   {
     "path": "icons/test_icon_a.dds",
-    "sha256": "9e5161552c4b164c58eb80afee93cbf36a9083066f8709883bf025769f3c0323",
-    "size": 2852,
+    "sha256": "aa9b7d4a193862807b616041fe6eccaf3808baf14e87b75c555e9b433b61df20",
+    "size": 2832,
   },
   {
     "path": "icons/test_icon_b.dds",
-    "sha256": "bb4c61c9d620ee98cb690fb5e4daf72beb8bef041534f9e95c379eb998391c48",
-    "size": 2852,
+    "sha256": "9260d2d9cf41fbedb6e5875ed398e9663c8c07cc09e7411be2e9b19824a2628d",
+    "size": 2832,
   },
   {
     "path": "icons/test_icon_c.dds",
-    "sha256": "0ccd5870fc1bf3a9192611c314f927f0076d850a39a9e2419b49a834af4f95f4",
-    "size": 2852,
+    "sha256": "e7c5f367251456cb8358436a8b8ae6537eeff98280b9f64b468425ed314809b8",
+    "size": 2832,
   },
   {
     "path": "icons/test_icon_c_variant.dds",
-    "sha256": "0ccd5870fc1bf3a9192611c314f927f0076d850a39a9e2419b49a834af4f95f4",
-    "size": 2852,
+    "sha256": "e7c5f367251456cb8358436a8b8ae6537eeff98280b9f64b468425ed314809b8",
+    "size": 2832,
   },
   {
     "path": "pack.json",
@@ -155,8 +154,8 @@ exports[`equipment sprite roundtrip should write the expected files 1`] = `
   },
   {
     "path": "repacked.dds",
-    "sha256": "d5530b9e72e489e25bc505e324f178c654629839931f0548fd6388c067ae4ed5",
-    "size": 8052,
+    "sha256": "3ccdcd2f962bcf72f5f09410e938ca348983f58eaf68a1d550ef6943f2f58d9a",
+    "size": 8032,
   },
   {
     "path": "unpack.json",

@@ -7,6 +7,16 @@ import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 // 256x64 DXT5.
 const SHEET = gamedata("textures/ui/ui_test_sheet.dds");
 
+/** Every format the command offers, with the header each is written through. */
+const CANDIDATES: ReadonlyArray<{ flag: string; name: string; header: number }> = [
+  { flag: "bc1", name: "BC1 (DXT1)", header: 128 },
+  { flag: "bc2", name: "BC2 (DXT3)", header: 128 },
+  { flag: "bc3", name: "BC3 (DXT5)", header: 128 },
+  { flag: "rgba8", name: "RGBA8", header: 128 },
+  // The one candidate with no legacy `FourCC` spelling, so the only one carrying a DX10 header.
+  { flag: "bc7", name: "BC7", header: 148 },
+];
+
 describe("dds convert formats", () => {
   const box = new Sandbox(__filename);
 
@@ -80,7 +90,43 @@ describe("dds convert formats", () => {
     expect(compressedInfo).toMatchSnapshot();
   });
 
+  // Every candidate, not only the two above: a format nobody writes in a test is a format nobody
+  // finds out about until a modder does.
+  it.each(CANDIDATES)("should write and read back $name", ({ flag, name, header }) => {
+    const written = box.run("dds convert", [
+      SHEET,
+      box.at(`${flag}.dds`),
+      "--format",
+      flag,
+      "--quality",
+      "fast",
+      "--report",
+      box.at(`${flag}.json`),
+    ]);
+
+    expect(written.exitCode).toBe(0);
+
+    const report = (box.json(`${flag}.json`) as { result: { written: { format: string } } }).result;
+
+    expect(report.written.format).toBe(name);
+
+    // No shipped X-Ray texture carries a DX10 header - not one of the 13,274 across `gamedata` and
+    // `gamedata-anomaly` - because the D3D9 loader reads only the old one. So every format with a
+    // legacy spelling gets it, and BC7, which has none, is the exception that proves the rule.
+    box.run("dds info", ["--path", box.at(`${flag}.dds`), "--report", box.at(`info-${flag}.json`)]);
+
+    const described = (box.json(`info-${flag}.json`) as { result: { metadataSize: number } }).result;
+
+    expect(described.metadataSize).toBe(header);
+  });
+
+  // Every report the cases above wrote, hashed over normalized text: a report's raw bytes carry the
+  // absolute paths and timings of the machine that produced it, which move between two correct runs.
   it("should write the expected files", () => {
-    expect(box.manifest({ normalized: ["bc1.json", "rgba8.json"] })).toMatchSnapshot();
+    expect(
+      box.manifest({
+        normalized: CANDIDATES.flatMap(({ flag }) => [`${flag}.json`, `info-${flag}.json`]).concat(["rgba8.json"]),
+      })
+    ).toMatchSnapshot();
   });
 });

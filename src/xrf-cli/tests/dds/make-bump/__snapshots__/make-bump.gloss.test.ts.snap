@@ -68,13 +68,13 @@ exports[`dds make-bump gloss should write the expected files 1`] = `
   },
   {
     "path": "matte_bump#.dds",
-    "sha256": "bf16d7825f40546b73687c614cfdee67c617b394ed9488126bf5480c6e87d37a",
-    "size": 22052,
+    "sha256": "a4e700b4713f728bc3b997fe8504161824b9ff1abe9b258caa35e60677362ea3",
+    "size": 22032,
   },
   {
     "path": "matte_bump.dds",
-    "sha256": "056e2a94d697842b02e137b056ad03991129ad93a6853a983fe03708e95bfdca",
-    "size": 22052,
+    "sha256": "934b99a8572567dd8c9470e1b6baa793b297e0451072bd7ab1ebcaeda42df4ff",
+    "size": 22032,
   },
 ]
 `;

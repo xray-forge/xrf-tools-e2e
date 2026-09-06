@@ -6,15 +6,14 @@ exports[`dds crop fit should report the fitted dimensions 1`] = `
   "stderr": [],
   "stdout": [
     "Read dds file <sandbox>/fitted.dds",
-    "File size: 1172 (1.14 KB)",
-    "Metadata size: 148",
+    "File size: 1152 (1.12 KB)",
+    "Metadata size: 128",
     "Data size: 1024 (1 KB)",
     "Size: 32 x 32",
     "Mipmap: 1 - 16",
     "Linear size: 1024",
     "Block size: 16",
-    "Four CC: 894720068",
-    "DXGI format: BC3_UNorm",
+    "D3D format: DXT5",
   ],
 }
 `;
@@ -34,8 +33,8 @@ exports[`dds crop fit should write the expected file 1`] = `
 [
   {
     "path": "fitted.dds",
-    "sha256": "b7334cdbdc445ce9e95851029dd29be06660303d0597cb9389f50c6193763906",
-    "size": 1172,
+    "sha256": "3cbae0ecb4fdf8ff02dcfa142d683236d517ad1551b4871fec37f441135f68de",
+    "size": 1152,
   },
 ]
 `;

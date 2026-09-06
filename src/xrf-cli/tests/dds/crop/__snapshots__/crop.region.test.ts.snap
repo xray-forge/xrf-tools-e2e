@@ -26,15 +26,14 @@ exports[`dds crop regions should report the cropped dimensions 1`] = `
   "stderr": [],
   "stdout": [
     "Read dds file <sandbox>/corner.dds",
-    "File size: 4244 (4.14 KB)",
-    "Metadata size: 148",
+    "File size: 4224 (4.12 KB)",
+    "Metadata size: 128",
     "Data size: 4096 (4 KB)",
     "Size: 64 x 64",
     "Mipmap: 1 - 16",
     "Linear size: 4096",
     "Block size: 16",
-    "Four CC: 894720068",
-    "DXGI format: BC3_UNorm",
+    "D3D format: DXT5",
   ],
 }
 `;
@@ -83,8 +82,8 @@ exports[`dds crop regions should write the expected files 1`] = `
 [
   {
     "path": "corner.dds",
-    "sha256": "8465624c2cad1d2486054856003ee6d275f53a36113059c36b972d512a1b44aa",
-    "size": 4244,
+    "sha256": "343370f1905841cb2509ddebaec33943598c735f721906bf933f261dd86000a3",
+    "size": 4224,
   },
   {
     "path": "crop.json",
@@ -93,8 +92,8 @@ exports[`dds crop regions should write the expected files 1`] = `
   },
   {
     "path": "offset.dds",
-    "sha256": "b01ac10e62d9f2c72831f0c1c5e44960e305cf869dbf33b1c5308047a23a5c26",
-    "size": 4244,
+    "sha256": "8450593fedf5a4d9288b558eb5e3c07424984d0c82ed43eefb98c1d641b9a5b3",
+    "size": 4224,
   },
 ]
 `;

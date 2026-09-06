@@ -53,15 +53,14 @@ exports[`dds make-bump pair should write both halves as DXT5 with a chain 1`] = 
   "stderr": [],
   "stdout": [
     "Read dds file <sandbox>/wall_bump.dds",
-    "File size: 22052 (21.5 KB)",
-    "Metadata size: 148",
+    "File size: 22032 (21.5 KB)",
+    "Metadata size: 128",
     "Data size: 21904 (21.4 KB)",
     "Size: 256 x 64",
     "Mipmap: 9 - 16",
     "Linear size: 16384",
     "Block size: 16",
-    "Four CC: 894720068",
-    "DXGI format: BC3_UNorm",
+    "D3D format: DXT5",
   ],
 }
 `;
@@ -72,15 +71,14 @@ exports[`dds make-bump pair should write both halves as DXT5 with a chain 2`] = 
   "stderr": [],
   "stdout": [
     "Read dds file <sandbox>/wall_bump#.dds",
-    "File size: 22052 (21.5 KB)",
-    "Metadata size: 148",
+    "File size: 22032 (21.5 KB)",
+    "Metadata size: 128",
     "Data size: 21904 (21.4 KB)",
     "Size: 256 x 64",
     "Mipmap: 9 - 16",
     "Linear size: 16384",
     "Block size: 16",
-    "Four CC: 894720068",
-    "DXGI format: BC3_UNorm",
+    "D3D format: DXT5",
   ],
 }
 `;
@@ -94,13 +92,13 @@ exports[`dds make-bump pair should write the expected files 1`] = `
   },
   {
     "path": "wall_bump#.dds",
-    "sha256": "bf16d7825f40546b73687c614cfdee67c617b394ed9488126bf5480c6e87d37a",
-    "size": 22052,
+    "sha256": "a4e700b4713f728bc3b997fe8504161824b9ff1abe9b258caa35e60677362ea3",
+    "size": 22032,
   },
   {
     "path": "wall_bump.dds",
-    "sha256": "f1695525c3cb596a67e4dff1fdb0c91310e6d6d7ab27ae27ccc9247a18aeaed6",
-    "size": 22052,
+    "sha256": "a6b024e7719cc0693fd2ace609c83c983e7efba505bfa03d61e892c01ddd43f8",
+    "size": 22032,
   },
 ]
 `;

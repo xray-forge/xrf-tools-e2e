@@ -6,15 +6,14 @@ exports[`description sprite roundtrip should describe the repacked sheet the sam
   "stderr": [],
   "stdout": [
     "Read dds file <sandbox>/packed/ui/ui_test_sheet.dds",
-    "File size: 16532 (16.1 KB)",
-    "Metadata size: 148",
+    "File size: 16512 (16.1 KB)",
+    "Metadata size: 128",
     "Data size: 16384 (16 KB)",
     "Size: 256 x 64",
     "Mipmap: 1 - 16",
     "Linear size: 16384",
     "Block size: 16",
-    "Four CC: 894720068",
-    "DXGI format: BC3_UNorm",
+    "D3D format: DXT5",
   ],
 }
 `;
@@ -126,8 +125,8 @@ exports[`description sprite roundtrip should write the expected files 1`] = `
   },
   {
     "path": "packed/ui/ui_test_sheet.dds",
-    "sha256": "6e47e1aa4712a7800af1290b2063f6a5cdb367976701034a4b9f8e2efdfddb04",
-    "size": 16532,
+    "sha256": "c25e7a13db2d30f8a6e322eaa9801c85d320166f1788a3428c79c2b5e9e208e4",
+    "size": 16512,
   },
   {
     "path": "unpack.json",
@@ -136,23 +135,23 @@ exports[`description sprite roundtrip should write the expected files 1`] = `
   },
   {
     "path": "unpacked/ui/ui_test_sheet/ui_test_end.dds",
-    "sha256": "a07cacbd97c81a6cff05eb1955b121bbef7b4aabf8443512e7cf13a7527aae6e",
-    "size": 4244,
+    "sha256": "508068286e0a4c9637a75433d15779c7cf17a24e2f1d4a41c8423688e002a798",
+    "size": 4224,
   },
   {
     "path": "unpacked/ui/ui_test_sheet/ui_test_left.dds",
-    "sha256": "8465624c2cad1d2486054856003ee6d275f53a36113059c36b972d512a1b44aa",
-    "size": 4244,
+    "sha256": "343370f1905841cb2509ddebaec33943598c735f721906bf933f261dd86000a3",
+    "size": 4224,
   },
   {
     "path": "unpacked/ui/ui_test_sheet/ui_test_mid.dds",
-    "sha256": "b01ac10e62d9f2c72831f0c1c5e44960e305cf869dbf33b1c5308047a23a5c26",
-    "size": 4244,
+    "sha256": "8450593fedf5a4d9288b558eb5e3c07424984d0c82ed43eefb98c1d641b9a5b3",
+    "size": 4224,
   },
   {
     "path": "unpacked/ui/ui_test_sheet/ui_test_right.dds",
-    "sha256": "49a5d63e0a75800599731341c7b078d1b97028e12a6d956f9bd5152e16f493b3",
-    "size": 4244,
+    "sha256": "28fc70fb441016d921d04369a343667e5e8f88971def3ddf9faa36b4becbfb29",
+    "size": 4224,
   },
 ]
 `;

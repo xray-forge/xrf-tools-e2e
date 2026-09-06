@@ -5,7 +5,7 @@ exports[`dds convert formats should convert into a block format 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Converted <resources>/gamedata/textures/ui/ui_test_sheet.dds to <sandbox>/bc1.dds as BC1 (DXT1), 9 levels, 11100 bytes",
+    "Converted <resources>/gamedata/textures/ui/ui_test_sheet.dds to <sandbox>/bc1.dds as BC1 (DXT1), 9 levels, 11080 bytes",
   ],
 }
 `;
@@ -15,7 +15,7 @@ exports[`dds convert formats should convert into an uncompressed format 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Converted <resources>/gamedata/textures/ui/ui_test_sheet.dds to <sandbox>/rgba8.dds as RGBA8, 9 levels, 87536 bytes",
+    "Converted <resources>/gamedata/textures/ui/ui_test_sheet.dds to <sandbox>/rgba8.dds as RGBA8, 9 levels, 87516 bytes",
   ],
 }
 `;
@@ -26,15 +26,14 @@ exports[`dds convert formats should describe the converted texture 1`] = `
   "stderr": [],
   "stdout": [
     "Read dds file <sandbox>/bc1.dds",
-    "File size: 11100 (10.8 KB)",
-    "Metadata size: 148",
+    "File size: 11080 (10.8 KB)",
+    "Metadata size: 128",
     "Data size: 10952 (10.7 KB)",
     "Size: 256 x 64",
     "Mipmap: 9 - 8",
     "Linear size: 8192",
     "Block size: 8",
-    "Four CC: 827611204",
-    "DXGI format: BC1_UNorm",
+    "D3D format: DXT1",
   ],
 }
 `;
@@ -95,7 +94,7 @@ exports[`dds convert formats should report what the format cost 1`] = `
         },
       ],
       "encodeDuration": "<duration>",
-      "fileBytes": 11100,
+      "fileBytes": 11080,
       "format": "BC1 (DXT1)",
       "gpuBytes": 10952,
       "psnr": 7.624109963864384,
@@ -109,7 +108,7 @@ exports[`dds convert formats should write only the base level when a chain is re
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Converted <resources>/gamedata/textures/ui/ui_test_sheet.dds to <sandbox>/flat.dds as BC3 (DXT5), 1 levels, 16532 bytes",
+    "Converted <resources>/gamedata/textures/ui/ui_test_sheet.dds to <sandbox>/flat.dds as BC3 (DXT5), 1 levels, 16512 bytes",
   ],
 }
 `;
@@ -118,27 +117,82 @@ exports[`dds convert formats should write the expected files 1`] = `
 [
   {
     "path": "bc1.dds",
-    "sha256": "268de84348d1a9c6752f80fb84112276b0e3099842f90784230507c6a4a1b46d",
-    "size": 11100,
+    "sha256": "c1d2251a1f1149f0271c0bb12f18af568399b15385891890dcf3f7a8544c52c4",
+    "size": 11080,
   },
   {
     "path": "bc1.json",
-    "sha256": "de8a5d5279200d64b6e71e1e6b343344c22d33c4bafbc4f63bfe69dba8be2a9f",
+    "sha256": "65a42f6db190cd65d73b3d4654a5e189d851549d6095c5b36ff9804b271e3831",
     "size": 1301,
   },
   {
+    "path": "bc2.dds",
+    "sha256": "c13b28ee4da9850114b63a14ae2a2209a2f890e4f7b8ccfb518677e1c98d990f",
+    "size": 22032,
+  },
+  {
+    "path": "bc2.json",
+    "sha256": "57c85e051f83073360bfec043b84469543575ba0d36c0747abb36daed294b102",
+    "size": 1301,
+  },
+  {
+    "path": "bc3.dds",
+    "sha256": "8e6bb6344007fefdd34b2539342e5dfae183edf097b44d317ed39f9951fa6497",
+    "size": 22032,
+  },
+  {
+    "path": "bc3.json",
+    "sha256": "2c8a6254f7a67fb4d1acd50acd170b4bf31160de5de5d0978e607638b149d53f",
+    "size": 1303,
+  },
+  {
+    "path": "bc7.dds",
+    "sha256": "b85851a55a9225e2e3f5fb3afd39be9de72b20351dc61bd2c69b438e6282c416",
+    "size": 22052,
+  },
+  {
+    "path": "bc7.json",
+    "sha256": "8b2775946984eb75a4772d0be9a9edf1efff1aadb1fe8cbcc173aaa67a084c6b",
+    "size": 1307,
+  },
+  {
     "path": "flat.dds",
-    "sha256": "6e47e1aa4712a7800af1290b2063f6a5cdb367976701034a4b9f8e2efdfddb04",
-    "size": 16532,
+    "sha256": "c25e7a13db2d30f8a6e322eaa9801c85d320166f1788a3428c79c2b5e9e208e4",
+    "size": 16512,
+  },
+  {
+    "path": "info-bc1.json",
+    "sha256": "c71799ed00a53c90f1aca0d8ea9340bb0384c77d32f6a869f1b9cf1bc625009c",
+    "size": 886,
+  },
+  {
+    "path": "info-bc2.json",
+    "sha256": "1df50366733ff079a600462772b824fab4e60f24a696fa5fb5ac3b3551a0f154",
+    "size": 889,
+  },
+  {
+    "path": "info-bc3.json",
+    "sha256": "20194f9cf22ad4602d94991e50c2413fb370157789e6314d5838b4e0bb0346a5",
+    "size": 889,
+  },
+  {
+    "path": "info-bc7.json",
+    "sha256": "6b974b4196098b2fa882a9382b881701b05010a7793933488c4b14a8ffd70042",
+    "size": 894,
+  },
+  {
+    "path": "info-rgba8.json",
+    "sha256": "e14f2a5a9ee55fd439dcf6e261eb63bf0908049dd044d0d02d4e7844fa621362",
+    "size": 891,
   },
   {
     "path": "rgba8.dds",
-    "sha256": "75be134fe2031805a74d4a34ef42239d73c1ad785f157b9eaea843c5c8519747",
-    "size": 87536,
+    "sha256": "5886d49d2a146b774f255c49580237a68325f7be07b1c374ca317c927340727f",
+    "size": 87516,
   },
   {
     "path": "rgba8.json",
-    "sha256": "d4bf2c8cffc7ae8e8f7d2c2c14096dfce6a2bd72c7cf862a756fd9296968bd46",
+    "sha256": "5b04bb0941759a64bb4b9ab7a48e46913dc36ed7683b28a270a1a1dc7458897a",
     "size": 1237,
   },
 ]

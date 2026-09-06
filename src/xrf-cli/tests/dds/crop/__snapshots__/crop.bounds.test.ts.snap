@@ -74,8 +74,8 @@ exports[`dds crop bounds should write the edge crop and preserved output 1`] = `
 [
   {
     "path": "edge.dds",
-    "sha256": "a07cacbd97c81a6cff05eb1955b121bbef7b4aabf8443512e7cf13a7527aae6e",
-    "size": 4244,
+    "sha256": "508068286e0a4c9637a75433d15779c7cf17a24e2f1d4a41c8423688e002a798",
+    "size": 4224,
   },
   {
     "path": "edge.json",
