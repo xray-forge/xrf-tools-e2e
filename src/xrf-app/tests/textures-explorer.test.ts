@@ -88,27 +88,29 @@ describe("textures explorer", () => {
     //   x = 200 / 255 + (255 / 255 - 1) = 0.784
     //   y = 90 / 255 + (200 / 255 - 1) = 0.137
     //   z = 40 / 255 + (64 / 255 - 1) = -0.592
-    // Gloss is the bump's red squared, (128 / 255) ** 2 = 0.252, and height is the companion's blue, 64 / 255 = 0.251.
+    // Gloss is the bump's red squared, (128 / 255) ** 2 = 0.252. Height is the companion's alpha, 20 / 255 = 0.078:
+    // its blue is already spent correcting the normal's z.
     await expect(await readTexelRows()).toEqual([
       "At\n0, 0 of 8 x 8",
       "Bump\n128, 40, 90, 200",
-      "Bump#\n255, 200, 64, 0",
+      "Bump#\n255, 200, 64, 20",
       "Normal\n0.784, 0.137, -0.592",
       "Gloss\n0.252",
-      "Height\n0.251",
+      "Height\n0.078",
     ]);
 
     await hoverTexel(0.95, 0.95);
 
-    // The last row: green is 40 + 8 * 7 = 96 and the companion's blue is 64 + 16 * 7 = 176, so height is
-    // 176 / 255 = 0.690 and the normal's z becomes 40 / 255 + (176 / 255 - 1) = 0.067.
+    // The last row: green is 40 + 8 * 7 = 96, the companion's blue is 64 + 16 * 7 = 176 and its alpha is
+    // 20 + 30 * 7 = 230, so the normal's z becomes 40 / 255 + (176 / 255 - 1) = 0.067 and height is
+    // 230 / 255 = 0.902.
     await expect(await readTexelRows()).toEqual([
       "At\n7, 7 of 8 x 8",
       "Bump\n128, 96, 90, 200",
-      "Bump#\n255, 200, 176, 0",
+      "Bump#\n255, 200, 176, 230",
       "Normal\n0.784, 0.137, 0.067",
       "Gloss\n0.252",
-      "Height\n0.690",
+      "Height\n0.902",
     ]);
   });
 });
