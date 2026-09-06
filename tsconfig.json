@@ -3,10 +3,6 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    // `dom` is here for the application lane: a WebdriverIO spec authors functions that are serialized and run in the
-    // page, so their bodies are browser code even though the spec process is node. It widens the standard library only
-    // - ambient test globals stay out through `types` below, which is what keeps a spec naming the framework it runs
-    // under.
     "lib": ["es2023", "dom"],
     "module": "commonjs",
     "noImplicitAny": true,
