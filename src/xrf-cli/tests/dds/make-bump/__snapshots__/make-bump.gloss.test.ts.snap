@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`dds make-bump gloss should refuse a gloss outside the range a gloss is measured in 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: Gloss level 4 is outside the 0 to 1 range a gloss is measured in",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`dds make-bump gloss should report the verdict rather than failing on it 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "dds",
+    "make-bump",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "bump": "<sandbox>/matte_bump.dds",
+    "companion": "<sandbox>/matte_bump#.dds",
+    "glossPower": 0.0470588244497776,
+    "isGlossTooDark": true,
+    "source": "<resources>/gamedata/textures/ui/ui_test_sheet.dds",
+  },
+}
+`;
+
+exports[`dds make-bump gloss should warn about a gloss too dark and still write the pair 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [
+    "Gloss power is 0.047, below 0.1: the surface will show almost no specular response",
+  ],
+  "stdout": [
+    "Generated <sandbox>/matte_bump.dds and <sandbox>/matte_bump#.dds from <resources>/gamedata/textures/ui/ui_test_sheet.dds",
+  ],
+}
+`;
+
+exports[`dds make-bump gloss should write the expected files 1`] = `
+[
+  {
+    "path": "matte.json",
+    "sha256": "bad586c753e677adafb21ed08bd63381bc9b3e2697db3e088c32eb671a42a29a",
+    "size": 745,
+  },
+  {
+    "path": "matte_bump#.dds",
+    "sha256": "bf16d7825f40546b73687c614cfdee67c617b394ed9488126bf5480c6e87d37a",
+    "size": 22052,
+  },
+  {
+    "path": "matte_bump.dds",
+    "sha256": "056e2a94d697842b02e137b056ad03991129ad93a6853a983fe03708e95bfdca",
+    "size": 22052,
+  },
+]
+`;

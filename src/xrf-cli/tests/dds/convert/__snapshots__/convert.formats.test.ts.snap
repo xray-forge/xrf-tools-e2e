@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`dds convert formats should convert into a block format 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Converted <resources>/gamedata/textures/ui/ui_test_sheet.dds to <sandbox>/bc1.dds as BC1 (DXT1), 9 levels, 11100 bytes",
+  ],
+}
+`;
+
+exports[`dds convert formats should convert into an uncompressed format 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Converted <resources>/gamedata/textures/ui/ui_test_sheet.dds to <sandbox>/rgba8.dds as RGBA8, 9 levels, 87536 bytes",
+  ],
+}
+`;
+
+exports[`dds convert formats should describe the converted texture 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read dds file <sandbox>/bc1.dds",
+    "File size: 11100 (10.8 KB)",
+    "Metadata size: 148",
+    "Data size: 10952 (10.7 KB)",
+    "Size: 256 x 64",
+    "Mipmap: 9 - 8",
+    "Linear size: 8192",
+    "Block size: 8",
+    "Four CC: 827611204",
+    "DXGI format: BC1_UNorm",
+  ],
+}
+`;
+
+exports[`dds convert formats should report what the format cost 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "dds",
+    "convert",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "candidates": [],
+    "destination": "<sandbox>/bc1.dds",
+    "height": 64,
+    "mipmapLevels": 9,
+    "source": "<resources>/gamedata/textures/ui/ui_test_sheet.dds",
+    "width": 256,
+    "written": {
+      "channelRmse": [
+        2.3324728696171366,
+        0.40625,
+        2.3324728696171366,
+        211.9880158977798,
+      ],
+      "compatibility": [
+        {
+          "renderer": "DX9",
+          "support": "supported",
+        },
+        {
+          "renderer": "DX11",
+          "support": "supported",
+        },
+        {
+          "renderer": "GL",
+          "support": "unverified",
+        },
+      ],
+      "encodeDuration": "<duration>",
+      "fileBytes": 11100,
+      "format": "BC1 (DXT1)",
+      "gpuBytes": 10952,
+      "psnr": 7.624109963864384,
+    },
+  },
+}
+`;
+
+exports[`dds convert formats should write only the base level when a chain is refused 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Converted <resources>/gamedata/textures/ui/ui_test_sheet.dds to <sandbox>/flat.dds as BC3 (DXT5), 1 levels, 16532 bytes",
+  ],
+}
+`;
+
+exports[`dds convert formats should write the expected files 1`] = `
+[
+  {
+    "path": "bc1.dds",
+    "sha256": "268de84348d1a9c6752f80fb84112276b0e3099842f90784230507c6a4a1b46d",
+    "size": 11100,
+  },
+  {
+    "path": "bc1.json",
+    "sha256": "de8a5d5279200d64b6e71e1e6b343344c22d33c4bafbc4f63bfe69dba8be2a9f",
+    "size": 1301,
+  },
+  {
+    "path": "flat.dds",
+    "sha256": "6e47e1aa4712a7800af1290b2063f6a5cdb367976701034a4b9f8e2efdfddb04",
+    "size": 16532,
+  },
+  {
+    "path": "rgba8.dds",
+    "sha256": "75be134fe2031805a74d4a34ef42239d73c1ad785f157b9eaea843c5c8519747",
+    "size": 87536,
+  },
+  {
+    "path": "rgba8.json",
+    "sha256": "d4bf2c8cffc7ae8e8f7d2c2c14096dfce6a2bd72c7cf862a756fd9296968bd46",
+    "size": 1237,
+  },
+]
+`;

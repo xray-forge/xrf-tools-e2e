@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`dds make-bump pair should generate the pair 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Generated <sandbox>/wall_bump.dds and <sandbox>/wall_bump#.dds from <resources>/gamedata/textures/ui/ui_test_sheet.dds",
+  ],
+}
+`;
+
+exports[`dds make-bump pair should report both halves and the gloss 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "dds",
+    "make-bump",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "bump": "<sandbox>/wall_bump.dds",
+    "companion": "<sandbox>/wall_bump#.dds",
+    "glossPower": 0.6000000238418579,
+    "isGlossTooDark": false,
+    "source": "<resources>/gamedata/textures/ui/ui_test_sheet.dds",
+  },
+}
+`;
+
+exports[`dds make-bump pair should write both halves as DXT5 with a chain 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read dds file <sandbox>/wall_bump.dds",
+    "File size: 22052 (21.5 KB)",
+    "Metadata size: 148",
+    "Data size: 21904 (21.4 KB)",
+    "Size: 256 x 64",
+    "Mipmap: 9 - 16",
+    "Linear size: 16384",
+    "Block size: 16",
+    "Four CC: 894720068",
+    "DXGI format: BC3_UNorm",
+  ],
+}
+`;
+
+exports[`dds make-bump pair should write both halves as DXT5 with a chain 2`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read dds file <sandbox>/wall_bump#.dds",
+    "File size: 22052 (21.5 KB)",
+    "Metadata size: 148",
+    "Data size: 21904 (21.4 KB)",
+    "Size: 256 x 64",
+    "Mipmap: 9 - 16",
+    "Linear size: 16384",
+    "Block size: 16",
+    "Four CC: 894720068",
+    "DXGI format: BC3_UNorm",
+  ],
+}
+`;
+
+exports[`dds make-bump pair should write the expected files 1`] = `
+[
+  {
+    "path": "bump.json",
+    "sha256": "efea419f298d5adec1d5b2ac5146a9b74562dee3f5060cf63ea9f5ebcac3ec0c",
+    "size": 744,
+  },
+  {
+    "path": "wall_bump#.dds",
+    "sha256": "bf16d7825f40546b73687c614cfdee67c617b394ed9488126bf5480c6e87d37a",
+    "size": 22052,
+  },
+  {
+    "path": "wall_bump.dds",
+    "sha256": "f1695525c3cb596a67e4dff1fdb0c91310e6d6d7ab27ae27ccc9247a18aeaed6",
+    "size": 22052,
+  },
+]
+`;

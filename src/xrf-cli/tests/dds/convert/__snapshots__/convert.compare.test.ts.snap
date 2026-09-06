@@ -1,0 +1,200 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`dds convert comparison should convert while weighing the alternatives 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Converted <resources>/gamedata/textures/ui/ui_test_sheet.dds to <sandbox>/compared.dds as BC3 (DXT5), 9 levels, 22052 bytes",
+  ],
+}
+`;
+
+exports[`dds convert comparison should report every candidate against the same levels 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "dds",
+    "convert",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "candidates": [
+      {
+        "channelRmse": [
+          2.3324728696171366,
+          0.40625,
+          2.3324728696171366,
+          211.9880158977798,
+        ],
+        "compatibility": [
+          {
+            "renderer": "DX9",
+            "support": "supported",
+          },
+          {
+            "renderer": "DX11",
+            "support": "supported",
+          },
+          {
+            "renderer": "GL",
+            "support": "unverified",
+          },
+        ],
+        "encodeDuration": "<duration>",
+        "fileBytes": 11100,
+        "format": "BC1 (DXT1)",
+        "gpuBytes": 10952,
+        "psnr": 7.624109963864384,
+      },
+      {
+        "channelRmse": [
+          2.3324728696171366,
+          0.40625,
+          2.3324728696171366,
+          1.6493998967901173,
+        ],
+        "compatibility": [
+          {
+            "renderer": "DX9",
+            "support": "supported",
+          },
+          {
+            "renderer": "DX11",
+            "support": "supported",
+          },
+          {
+            "renderer": "GL",
+            "support": "unverified",
+          },
+        ],
+        "encodeDuration": "<duration>",
+        "fileBytes": 22052,
+        "format": "BC2 (DXT3)",
+        "gpuBytes": 21904,
+        "psnr": 42.7631938555309,
+      },
+      {
+        "channelRmse": [
+          0,
+          0,
+          0,
+          0,
+        ],
+        "compatibility": [
+          {
+            "renderer": "DX9",
+            "support": "supported",
+          },
+          {
+            "renderer": "DX11",
+            "support": "supported",
+          },
+          {
+            "renderer": "GL",
+            "support": "unverified",
+          },
+        ],
+        "encodeDuration": "<duration>",
+        "fileBytes": 87536,
+        "format": "RGBA8",
+        "gpuBytes": 87388,
+        "psnr": null,
+      },
+      {
+        "channelRmse": [
+          0.7444865706688402,
+          1.0058119679362292,
+          0.746206225160813,
+          1.5869954906993278,
+        ],
+        "compatibility": [
+          {
+            "renderer": "DX9",
+            "support": "unsupported",
+          },
+          {
+            "renderer": "DX11",
+            "support": "supported",
+          },
+          {
+            "renderer": "GL",
+            "support": "unverified",
+          },
+        ],
+        "encodeDuration": "<duration>",
+        "fileBytes": 22052,
+        "format": "BC7",
+        "gpuBytes": 21904,
+        "psnr": 47.48501049450951,
+      },
+    ],
+    "destination": "<sandbox>/compared.dds",
+    "height": 64,
+    "mipmapLevels": 9,
+    "source": "<resources>/gamedata/textures/ui/ui_test_sheet.dds",
+    "width": 256,
+    "written": {
+      "channelRmse": [
+        2.3324728696171366,
+        0.40625,
+        2.3324728696171366,
+        1.6752302780140407,
+      ],
+      "compatibility": [
+        {
+          "renderer": "DX9",
+          "support": "supported",
+        },
+        {
+          "renderer": "DX11",
+          "support": "supported",
+        },
+        {
+          "renderer": "GL",
+          "support": "unverified",
+        },
+      ],
+      "encodeDuration": "<duration>",
+      "fileBytes": 22052,
+      "format": "BC3 (DXT5)",
+      "gpuBytes": 21904,
+      "psnr": 42.736186228862074,
+    },
+  },
+}
+`;
+
+exports[`dds convert comparison should write the expected files 1`] = `
+[
+  {
+    "path": "compared.dds",
+    "sha256": "2709baa00551a4c0995400d31ef387a7cb91146440a5ab329b0b2145cbc8235e",
+    "size": 22052,
+  },
+  {
+    "path": "compared.json",
+    "sha256": "52738ad384b7464fb00011ccaccc24b08c754384f9f47d15afdbb68dceb6dac9",
+    "size": 3780,
+  },
+]
+`;
