@@ -44,10 +44,16 @@ async function readTexelRows(): Promise<Array<string>> {
 
 describe("textures explorer", () => {
   before(async () => {
-    // The path field is read-only and only a native dialog writes it, so the remembered value is the way in.
-    await browser.execute("window.localStorage.setItem(arguments[0], arguments[1])", TEXTURE_FIELD_KEY, TEXTURE);
-
     await $('[data-testid="launcher-catalog"]').waitForExist({ timeout: 10_000 });
+
+    // The path field is read-only and only a native dialog writes it, so the remembered value is the way in. Seeded
+    // after the launcher is on screen.
+    await browser.execute(
+      (key: string, value: string): void => window.localStorage.setItem(key, value),
+      TEXTURE_FIELD_KEY,
+      TEXTURE
+    );
+
     await $('[data-testid="launcher-catalog"] [aria-label="Textures explorer"]').click();
 
     await $("button=Texture").click();

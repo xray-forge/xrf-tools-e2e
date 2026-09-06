@@ -1,7 +1,7 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
 
-import { browser } from "@wdio/globals";
+import { $, browser } from "@wdio/globals";
 import { type TauriCapabilities } from "@wdio/tauri-service";
 
 import { Trace } from "#/xrf-app/test/trace";
@@ -25,6 +25,11 @@ export const APP_RESOURCES_ROOT: string = path.resolve(PROJECT_ROOT, "src/xrf-ap
 
 /** Generated state from one application E2E run: driver logs and the trace of what was on screen. */
 export const APP_OUTPUT_ROOT: string = path.resolve(PROJECT_ROOT, "target/e2e-app");
+
+/**
+ * How long a cold run may take to put the application's own document on screen.
+ */
+const APP_READY_TIMEOUT_MS: number = 15_000;
 
 /** What this run leaves behind to be looked at afterwards. */
 const trace: Trace = new Trace();
@@ -81,6 +86,10 @@ export const config: WebdriverIO.Config = {
     // which this executable deliberately does not carry: each probe retries for seconds before giving up.
     // An explicit switch to the only window is the documented way to tell the service to stop recovering.
     await browser.switchToWindow(await browser.getWindowHandle());
+
+    // The window opens on WebView2's initial blank document and only then navigates to the application's own. That
+    // blank document has an opaque origin.
+    await $('[data-testid="application-shell-frame"]').waitForExist({ timeout: APP_READY_TIMEOUT_MS });
 
     await installTracedCommands(trace);
   },
