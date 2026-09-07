@@ -4,13 +4,17 @@ import { describe, it } from "mocha";
 describe("settings", () => {
   it("opens the dialog and reads the build identity over IPC", async () => {
     await $('[data-testid="launcher-catalog"]').waitForExist({ timeout: 10_000 });
-    await $('[aria-label="Settings"]').click();
+    await $('button[aria-label="Settings"]').click();
 
     const dialog = $('[role="dialog"]');
 
     await expect(dialog).toBeDisplayed();
     await expect(dialog.$("span=General")).toBeDisplayed();
-    await expect(dialog.$("span=Paths")).toBeDisplayed();
+    await expect(dialog.$("span=Storage")).toBeDisplayed();
+
+    await dialog.$("span=Storage").click();
+
+    await expect(dialog.$("h6=Local storage")).toBeDisplayed();
 
     await dialog.$("span=About").click();
 
