@@ -19,8 +19,8 @@ describe("archive extract precedence", () => {
     box.write(`base/${CASE_BASE_PATH}`, "base case bytes");
     box.write(`patch/${CASE_PATCH_PATH}`, "patch case bytes");
 
-    box.run("archive pack", ["--path", box.at("base"), "--dest", box.at("archives"), "--name", "base"]);
-    box.run("archive pack", ["--path", box.at("patch"), "--dest", box.at("archives"), "--name", "patch"]);
+    box.run("archive pack", [box.at("base"), "--dest", box.at("archives"), "--name", "base"]);
+    box.run("archive pack", [box.at("patch"), "--dest", box.at("archives"), "--name", "patch"]);
 
     exact = box.run("archive extract", [
       "--path",

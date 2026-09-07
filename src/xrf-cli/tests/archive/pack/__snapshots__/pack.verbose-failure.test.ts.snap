@@ -9,6 +9,7 @@ exports[`archive pack verbose late failure should leave a log naming the opened 
   "stdout": [
     "Pack source: <sandbox>/source",
     "Pack destination: <sandbox>/failing",
+    "Target: a (1/1)",
     "Pack mode: compress, volume cap 1 MB, skip list on, 0 excluded extension(s)",
     "Directory: gameplay",
     "Directory: misc",
@@ -17,6 +18,7 @@ exports[`archive pack verbose late failure should leave a log naming the opened 
     "Directory: text\\ukr",
     "Directory: ui",
     "Directory: ui\\textures_descr",
+    "Unclaimed: 0 file(s) no target packs",
     "Opened volume: a.db0",
     "Compressed: alife.ltx, 781 B -> 502 B (64.3%)",
     "Compressed: defines.ltx, 3.76 KB -> 1.48 KB (39.3%)",

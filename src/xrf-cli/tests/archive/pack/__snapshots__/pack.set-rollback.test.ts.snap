@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive pack set rollback should leave an archive it replaced when a later target fails 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: File 'particles.xr' needs a volume of 1184892 bytes to itself, past the configured maximum volume size of 1048576 bytes",
+  ],
+  "stdout": [
+    "Pack config: <sandbox>/rollback.ltx",
+    "Pack source: <resources>/gamedata",
+    "Pack destination: <sandbox>/published",
+  ],
+}
+`;
+
+exports[`archive pack set rollback should publish the first target on its own 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Pack config: <sandbox>/rollback.ltx",
+    "Pack source: <resources>/gamedata",
+    "Pack destination: <sandbox>/published",
+    "Wrote <sandbox>/published/configs.db",
+    "Packed 14 file(s) into 1 volume(s) in <duration>",
+    "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
+    "Summary: 14 compressed, 0 stored, 0 aliased, 0 skipped, 15 unclaimed",
+    "Size: 11.5 KB source, 5.39 KB written",
+    "Speed: <speed>",
+  ],
+}
+`;
+
+exports[`archive pack set rollback should take back a finished target when a later one fails 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: File 'particles.xr' needs a volume of 1184892 bytes to itself, past the configured maximum volume size of 1048576 bytes",
+  ],
+  "stdout": [
+    "Pack config: <sandbox>/rollback.ltx",
+    "Pack source: <resources>/gamedata",
+    "Pack destination: <sandbox>/clean",
+  ],
+}
+`;
+
+exports[`archive pack set rollback should write the expected files 1`] = `
+[
+  {
+    "path": "published/configs.db",
+    "sha256": "affadd45ee4b3e9bd516750ad4c4eb5663a5d202c8cab78d3eadfca38779cbf3",
+    "size": 5516,
+  },
+  {
+    "path": "published/particles.db0",
+    "sha256": "6b524a292f14b669798c6bdf081fb7e898942bd1f161f87cc33d49ec5cd5e2da",
+    "size": 79,
+  },
+  {
+    "path": "rollback.ltx",
+    "sha256": "3d5d7e2297d3d9ebb7dc53d6ffc902f7820ba39a7df35a359d7262e69bdefd04",
+    "size": 151,
+  },
+]
+`;

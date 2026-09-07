@@ -10,9 +10,8 @@ describe("archive list directory", () => {
 
   beforeAll(() => {
     box.copyIn(gamedata("configs"), "source/configs");
-    box.run("archive pack", ["--path", box.at("source"), "--dest", box.at("archives/configs"), "--name", "configs"]);
+    box.run("archive pack", [box.at("source"), "--dest", box.at("archives/configs"), "--name", "configs"]);
     box.run("archive pack", [
-      "--path",
       gamedata("configs/gameplay"),
       "--dest",
       box.at("archives/gameplay"),

@@ -9,7 +9,7 @@ describe("archive extract file from one volume", () => {
   let result: CliResult;
 
   beforeAll(() => {
-    box.run("archive pack", ["--path", gamedata("configs"), "--dest", box.at("packed"), "--name", "fixture"]);
+    box.run("archive pack", [gamedata("configs"), "--dest", box.at("packed"), "--name", "fixture"]);
 
     result = box.run("archive extract", [
       "--path",

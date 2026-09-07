@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive pack signature should document the positional source in its usage 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Command to pack provided directory into *.db archive volumes",
+    "",
+    "Usage: xrf-cli archive pack [OPTIONS] <SOURCE>",
+    "",
+    "Arguments:",
+    "  <SOURCE>  Directory to pack, normally a gamedata root",
+    "",
+    "Options:",
+    "  -d, --dest <dest>",
+    "          Path to folder for writing the volumes [default: packed]",
+    "  -s, --silent",
+    "          Turn off logging",
+    "  -n, --name <name>",
+    "          Base name of the volumes, written as <name>.db0, <name>.db1 and so on [default: gamedata]",
+    "  -v, --verbose",
+    "          Turn on verbose logging",
+    "      --config <config>",
+    "          Path to a packing configuration describing what to include, as *.ltx or *.json",
+    "      --json",
+    "          Write the run's JSON report to stdout, moving human output to stderr",
+    "      --report <PATH>",
+    "          Write the run's JSON report to a file",
+    "      --target <target>",
+    "          Name of one target of the configuration to pack, repeatable; naming none packs every target",
+    "      --include-file <include-file>",
+    "          File to pack, named relative to <SOURCE>, repeatable",
+    "      --include-directory <include-directory>",
+    "          Directory to pack with everything below it, relative to <SOURCE>, repeatable",
+    "      --include-directory-shallow <include-directory-shallow>",
+    "          Directory whose own files are packed while its subdirectories only get listed, repeatable",
+    "      --exclude-directory <exclude-directory>",
+    "          Directory to leave out along with everything below it, repeatable",
+    "      --exclude-directory-shallow <exclude-directory-shallow>",
+    "          Directory to leave out while its contents still pack, repeatable",
+    "      --exclude-extension <exclude-extension>",
+    "          Extension pattern that keeps a file out, such as *.txt, repeatable",
+    "      --header <header>",
+    "          Header entry written into the archive as <key>=<value>, repeatable, replacing the default header",
+    "      --mode <mode>",
+    "          How payloads are held: compress what the engine expects compressed, or store everything [possible values: compress, store]",
+    "      --extension <extension>",
+    "          Extension the volumes carry, which also decides how the engine reads a missing header [possible values: db, xdb]",
+    "      --max-size <max-size>",
+    "          Maximum volume size in megabytes, from 1 to 1900",
+    "      --oversized-volumes",
+    "          Let --max-size exceed 1900 MB, which only an engine fork that raised XRP_MAX_SIZE can mount",
+    "      --no-skip-list",
+    "          Keep editor and source leftovers the engine build normally drops",
+    "  -f, --force",
+    "          Replace volumes of the same set the destination already holds",
+    "  -h, --help",
+    "          Print help",
+  ],
+}
+`;
+
+exports[`archive pack signature should refuse a mode that names no packing mode 1`] = `
+{
+  "exitCode": 2,
+  "stderr": [
+    "error: invalid value 'squish' for '--mode <mode>'",
+    "  [possible values: compress, store]",
+    "",
+    "For more information, try '--help'.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`archive pack signature should refuse a run that names no source 1`] = `
+{
+  "exitCode": 2,
+  "stderr": [
+    "error: the following required arguments were not provided:",
+    "  <SOURCE>",
+    "",
+    "Usage: xrf-cli archive pack --dest <dest> --name <name> <SOURCE>",
+    "",
+    "For more information, try '--help'.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`archive pack signature should refuse the removed mode and extension switches 1`] = `
+{
+  "exitCode": 2,
+  "stderr": [
+    "error: unexpected argument '--store' found",
+    "",
+    "  tip: a similar argument exists: '--force'",
+    "",
+    "Usage: xrf-cli archive pack --dest <dest> --force <SOURCE>",
+    "",
+    "For more information, try '--help'.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`archive pack signature should refuse the removed mode and extension switches 2`] = `
+{
+  "exitCode": 2,
+  "stderr": [
+    "error: unexpected argument '--xdb' found",
+    "",
+    "  tip: to pass '--xdb' as a value, use '-- --xdb'",
+    "",
+    "Usage: xrf-cli archive pack --dest <dest> <SOURCE>",
+    "",
+    "For more information, try '--help'.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`archive pack signature should refuse the removed source option 1`] = `
+{
+  "exitCode": 2,
+  "stderr": [
+    "error: unexpected argument '--path' found",
+    "",
+    "  tip: to pass '--path' as a value, use '-- --path'",
+    "",
+    "Usage: xrf-cli archive pack [OPTIONS] <SOURCE>",
+    "",
+    "For more information, try '--help'.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`archive pack signature should write the expected files 1`] = `[]`;

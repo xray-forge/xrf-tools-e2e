@@ -23,13 +23,13 @@ describe("archive pack multiple indexed volumes", () => {
     }
 
     pack = box.run("archive pack", [
-      "--path",
       box.at("source"),
       "--dest",
       box.at("packed"),
       "--name",
       "fixture",
-      "--store",
+      "--mode",
+      "store",
       "--max-size",
       "1",
       "--report",

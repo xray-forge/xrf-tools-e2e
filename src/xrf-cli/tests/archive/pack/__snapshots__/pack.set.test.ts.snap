@@ -1,0 +1,303 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive pack set should honour an owned empty exclusion section over the shared one 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Pack config: <sandbox>/exclusions.ltx",
+    "Pack source: <resources>/gamedata",
+    "Pack destination: <sandbox>/exclusions",
+    "Target 1/2: configs",
+    "Wrote <sandbox>/exclusions/configs.db",
+    "Packed 10 file(s) into 1 volume(s) in <duration>",
+    "Target 2/2: meshes",
+    "Wrote <sandbox>/exclusions/meshes.db",
+    "Packed 8 file(s) into 1 volume(s) in <duration>",
+    "Packed 18 file(s) into 2 volume(s) across 2 target(s) in <duration>",
+    "Summary: 10 compressed, 8 stored, 0 aliased, 0 skipped, 11 unclaimed",
+    "Size: 41.3 KB source, 35.6 KB written",
+    "Speed: <speed>",
+  ],
+}
+`;
+
+exports[`archive pack set should pack one archive per target from an LTX set 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Pack config: <sandbox>/set.ltx",
+    "Pack source: <resources>/gamedata",
+    "Pack destination: <sandbox>/ltx",
+    "Target 1/2: configs",
+    "Wrote <sandbox>/ltx/configs.db",
+    "Packed 7 file(s) into 1 volume(s) in <duration>",
+    "Target 2/2: meshes",
+    "Wrote <sandbox>/ltx/meshes.db",
+    "Packed 8 file(s) into 1 volume(s) in <duration>",
+    "Packed 15 file(s) into 2 volume(s) across 2 target(s) in <duration>",
+    "Summary: 7 compressed, 8 stored, 0 aliased, 7 skipped, 14 unclaimed",
+    "Size: 38.8 KB source, 34.7 KB written",
+    "Speed: <speed>",
+  ],
+}
+`;
+
+exports[`archive pack set should pack only the named target 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Pack config: <sandbox>/set.ltx",
+    "Pack source: <resources>/gamedata",
+    "Pack destination: <sandbox>/one",
+    "Wrote <sandbox>/one/meshes.db",
+    "Packed 8 file(s) into 1 volume(s) in <duration>",
+    "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
+    "Summary: 0 compressed, 8 stored, 0 aliased, 0 skipped, 21 unclaimed",
+    "Size: 30.5 KB source, 30.8 KB written",
+    "Speed: <speed>",
+  ],
+}
+`;
+
+exports[`archive pack set should pack the same set written as a document 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Pack config: <sandbox>/set.json",
+    "Pack source: <resources>/gamedata",
+    "Pack destination: <sandbox>/json",
+    "Target 1/2: configs",
+    "Wrote <sandbox>/json/configs.db",
+    "Packed 7 file(s) into 1 volume(s) in <duration>",
+    "Target 2/2: meshes",
+    "Wrote <sandbox>/json/meshes.db",
+    "Packed 8 file(s) into 1 volume(s) in <duration>",
+    "Packed 15 file(s) into 2 volume(s) across 2 target(s) in <duration>",
+    "Summary: 7 compressed, 8 stored, 0 aliased, 7 skipped, 14 unclaimed",
+    "Size: 38.8 KB source, 34.7 KB written",
+    "Speed: <speed>",
+  ],
+}
+`;
+
+exports[`archive pack set should refuse a target the set does not name 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: The packing set has no target named 'textures'. It names: configs, meshes.",
+  ],
+  "stdout": [
+    "Pack config: <sandbox>/set.ltx",
+  ],
+}
+`;
+
+exports[`archive pack set should refuse a volume name beside a set that names its own 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: --name 'everything' names one archive, and configuration '<sandbox>/set.ltx' names its own target(s): configs, meshes. Drop --name, or point --config at a configuration that names no target.",
+  ],
+  "stdout": [
+    "Pack config: <sandbox>/set.ltx",
+  ],
+}
+`;
+
+exports[`archive pack set should report each target by name beside the totals it was folded into 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "archive",
+    "pack",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "duration": "<duration>",
+    "filesAliased": 0,
+    "filesCompressed": 7,
+    "filesSkipped": 7,
+    "filesStored": 8,
+    "filesTotal": 15,
+    "outcome": "completed",
+    "sizeSource": 39756,
+    "sizeWritten": 35513,
+    "speed": "<speed>",
+    "targets": [
+      {
+        "name": "configs",
+        "result": {
+          "collectDuration": "<duration>",
+          "duration": "<duration>",
+          "filesAliased": 0,
+          "filesCompressed": 7,
+          "filesSkipped": 7,
+          "filesStored": 0,
+          "filesTotal": 7,
+          "finalizeDuration": "<duration>",
+          "outcome": "completed",
+          "sizeSource": 8535,
+          "sizeWritten": 3944,
+          "speed": "<speed>",
+          "volumes": [
+            "<sandbox>/ltx/configs.db",
+          ],
+          "volumesOpened": [
+            "<sandbox>/ltx/configs.db",
+          ],
+          "writeDuration": "<duration>",
+        },
+      },
+      {
+        "name": "meshes",
+        "result": {
+          "collectDuration": "<duration>",
+          "duration": "<duration>",
+          "filesAliased": 0,
+          "filesCompressed": 0,
+          "filesSkipped": 0,
+          "filesStored": 8,
+          "filesTotal": 8,
+          "finalizeDuration": "<duration>",
+          "outcome": "completed",
+          "sizeSource": 31221,
+          "sizeWritten": 31569,
+          "speed": "<speed>",
+          "volumes": [
+            "<sandbox>/ltx/meshes.db",
+          ],
+          "volumesOpened": [
+            "<sandbox>/ltx/meshes.db",
+          ],
+          "writeDuration": "<duration>",
+        },
+      },
+    ],
+    "unclaimed": 14,
+    "volumesTotal": 2,
+  },
+}
+`;
+
+exports[`archive pack set should write the expected files 1`] = `
+[
+  {
+    "path": "compressed.report.json",
+    "sha256": "6c83c9b7f533fc6b1ae5979cb1a55c60692f0736ae2cd194b23da8d134ab42ae",
+    "size": 2196,
+  },
+  {
+    "path": "compressed/configs.db",
+    "sha256": "affadd45ee4b3e9bd516750ad4c4eb5663a5d202c8cab78d3eadfca38779cbf3",
+    "size": 5516,
+  },
+  {
+    "path": "compressed/meshes.db",
+    "sha256": "ab9e4e1a75ba4df85b72e3c58d0e326383a83ede2e816cc8d828aebd26fba377",
+    "size": 31570,
+  },
+  {
+    "path": "exclusions.ltx",
+    "sha256": "9fc9a7d92d8c57367547ee6caff8b5befaf8d6c3500fca956a7380d89cadb5fa",
+    "size": 164,
+  },
+  {
+    "path": "exclusions.report.json",
+    "sha256": "f6759036983fefd1dbecc4153604e8a671a68a85eaa77d8fef9a98b7d70c543d",
+    "size": 2197,
+  },
+  {
+    "path": "exclusions/configs.db",
+    "sha256": "c49a1c2fe18f470102504185159f7ea3e915183c3bf919231e3af0c861a157e6",
+    "size": 4895,
+  },
+  {
+    "path": "exclusions/meshes.db",
+    "sha256": "ab9e4e1a75ba4df85b72e3c58d0e326383a83ede2e816cc8d828aebd26fba377",
+    "size": 31570,
+  },
+  {
+    "path": "json/configs.db",
+    "sha256": "ac19c87d9daad3842b4b55f93f993142cd3364413577266df3b931b0d2e20c43",
+    "size": 3944,
+  },
+  {
+    "path": "json/meshes.db",
+    "sha256": "457413db8b31f58b91a076c347d0618e9ded01d1e651ba9ca9bf75398fd0f834",
+    "size": 31569,
+  },
+  {
+    "path": "ltx/configs.db",
+    "sha256": "ac19c87d9daad3842b4b55f93f993142cd3364413577266df3b931b0d2e20c43",
+    "size": 3944,
+  },
+  {
+    "path": "ltx/meshes.db",
+    "sha256": "457413db8b31f58b91a076c347d0618e9ded01d1e651ba9ca9bf75398fd0f834",
+    "size": 31569,
+  },
+  {
+    "path": "modes.ltx",
+    "sha256": "c50ec97910fe3005f92df14cfc7e4db4a5675e6bbbdf8e9538e235b82a6efd49",
+    "size": 113,
+  },
+  {
+    "path": "one/meshes.db",
+    "sha256": "457413db8b31f58b91a076c347d0618e9ded01d1e651ba9ca9bf75398fd0f834",
+    "size": 31569,
+  },
+  {
+    "path": "set.json",
+    "sha256": "d0cb21d804dcf9d36585f6265eb5e95bb37c92368c6a186582e677b7f70c3100",
+    "size": 546,
+  },
+  {
+    "path": "set.ltx",
+    "sha256": "4922701a0f5ef9159364ee79b7d55bcfc5725f98ec425ba8aee6e91d3cadbbd7",
+    "size": 173,
+  },
+  {
+    "path": "set.report.json",
+    "sha256": "90d9c6f80510f956f542b8f43ef1582da1088164a5c432223b13211bd61a98eb",
+    "size": 2165,
+  },
+  {
+    "path": "stored.report.json",
+    "sha256": "45dc4abdccf18e464c3c6a8aa12775bd2d4a24ec4f1fddd61de8a5026834774c",
+    "size": 2181,
+  },
+  {
+    "path": "stored/configs.db",
+    "sha256": "227e22cd31168d1b5357bc7bedbe0a213b5f9154a736b35d16577f4b36637d39",
+    "size": 12289,
+  },
+  {
+    "path": "stored/meshes.db",
+    "sha256": "ab9e4e1a75ba4df85b72e3c58d0e326383a83ede2e816cc8d828aebd26fba377",
+    "size": 31570,
+  },
+]
+`;

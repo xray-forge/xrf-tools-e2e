@@ -12,7 +12,7 @@ exports[`archive pack volume size should pack past that cap when the flag lifts 
     "Wrote <sandbox>/allowed/cfg.db",
     "Packed 14 file(s) into 1 volume(s) in <duration>",
     "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
-    "Summary: 14 compressed, 0 stored, 0 aliased, 0 skipped",
+    "Summary: 14 compressed, 0 stored, 0 aliased, 0 skipped, 0 unclaimed",
     "Size: 11.5 KB source, 5.36 KB written",
     "Speed: <speed>",
   ],
@@ -35,7 +35,10 @@ exports[`archive pack volume size should refuse a mistyped cap even with the fla
   "stderr": [
     "Error: Invalid error: Archive volume size must not exceed 34359738368 bytes, got 41943040000. Nothing lifts this bound; check the number for a stray digit.",
   ],
-  "stdout": [],
+  "stdout": [
+    "Pack source: <resources>/gamedata/configs",
+    "Pack destination: <sandbox>/mistyped",
+  ],
 }
 `;
 

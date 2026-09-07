@@ -15,8 +15,8 @@ describe("archive pack skip list", () => {
 
     box.write("source/readme.txt", "leftover\n");
 
-    skipped = box.run("archive pack", ["--path", source, "--dest", box.at("skipped"), "--name", "a"]);
-    kept = box.run("archive pack", ["--path", source, "--dest", box.at("kept"), "--name", "a", "--no-skip-list"]);
+    skipped = box.run("archive pack", [source, "--dest", box.at("skipped"), "--name", "a"]);
+    kept = box.run("archive pack", [source, "--dest", box.at("kept"), "--name", "a", "--no-skip-list"]);
   });
 
   it("should skip editor leftovers by default", () => {
