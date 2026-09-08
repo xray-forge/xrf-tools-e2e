@@ -2,30 +2,20 @@ import * as fs from "node:fs";
 
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import type { Optional } from "#/types";
 import { gamedata } from "#/xrf-cli/test/constants";
 import { envelopeAt } from "#/xrf-cli/test/envelope";
 import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
 /**
- * The set totals, which is what a run answers with whether it packed one archive or five.
+ * The pack result, as far as this suite reads it back.
  */
-interface IPackSetResult {
-  targets: Array<{ name: string; result: IPackResult }>;
+interface IPackResult {
   filesTotal: number;
   filesSkipped: number;
   filesCompressed: number;
   filesStored: number;
   filesAliased: number;
-  unclaimed: number;
   speed: number;
-  duration: number;
-}
-
-/**
- * One target of the set, which is where the phases of a single archive are reported.
- */
-interface IPackResult {
   duration: number;
   collectDuration: number;
   writeDuration: number;
@@ -67,9 +57,10 @@ describe("archive pack verbose output", () => {
     box.write("source/empty.ltx", "");
     box.write("source/tiny.ltx", "[a]\n");
 
-    plain = box.run("archive pack", [source, "--dest", box.at("plain"), "--name", "a", ...selection]);
+    plain = box.run("archive pack", ["--path", source, "--dest", box.at("plain"), "--name", "a", ...selection]);
 
     reported = box.run("archive pack", [
+      "--path",
       source,
       "--dest",
       box.at("reported"),
@@ -80,7 +71,16 @@ describe("archive pack verbose output", () => {
       box.at("reported.json"),
     ]);
 
-    verbose = box.run("archive pack", [source, "--dest", box.at("verbose"), "--name", "a", ...selection, "--verbose"]);
+    verbose = box.run("archive pack", [
+      "--path",
+      source,
+      "--dest",
+      box.at("verbose"),
+      "--name",
+      "a",
+      ...selection,
+      "--verbose",
+    ]);
   });
 
   it("should keep the normal summary compact", () => {
@@ -104,30 +104,20 @@ describe("archive pack verbose output", () => {
   });
 
   it("should name the same totals on the terminal as in the report", () => {
-    const result: IPackSetResult = envelopeAt(box.at("reported.json")).result as IPackSetResult;
+    const result: IPackResult = envelopeAt(box.at("reported.json")).result as IPackResult;
 
     expect(verbose.stdout).toContain(
       `Summary: ${result.filesCompressed} compressed, ${result.filesStored} stored, ${result.filesAliased} aliased, ` +
-        `${result.filesSkipped} skipped, ${result.unclaimed} unclaimed`
+        `${result.filesSkipped} skipped`
     );
     expect(verbose.stdout).toContain("Speed: <speed>");
     expect(result.speed).toBeGreaterThan(0);
   });
 
-  // The phases belong to one archive, so they are reported on the target rather than on the set: what a set spends
-  // deciding it may write at all belongs to none of its targets.
   it("should divide the reported duration between the reported phases", () => {
-    const set: IPackSetResult = envelopeAt(box.at("reported.json")).result as IPackSetResult;
-    const target: Optional<IPackSetResult["targets"][number]> = set.targets[0];
-
-    if (target === undefined) {
-      throw new Error("The run reported no target.");
-    }
-
-    const result: IPackResult = target.result;
+    const result: IPackResult = envelopeAt(box.at("reported.json")).result as IPackResult;
     const phases: number = result.collectDuration + result.writeDuration + result.finalizeDuration;
 
-    expect(set.targets).toHaveLength(1);
     expect(phases).toBeLessThanOrEqual(result.duration);
     expect(phases).toBeGreaterThanOrEqual(result.duration - 2);
   });

@@ -24,7 +24,7 @@ describe("archive pack verbose late failure", () => {
 
     failing = box.run(
       "archive pack",
-      [source, "--dest", box.at("failing"), "--name", "a", "--max-size", "1", "--verbose"],
+      ["--path", source, "--dest", box.at("failing"), "--name", "a", "--max-size", "1", "--verbose"],
       { expectExit: 1 }
     );
   });

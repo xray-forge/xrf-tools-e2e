@@ -15,7 +15,7 @@ describe("archive list shared payloads", () => {
     box.copyIn(gamedata("configs"), "source/configs");
     box.copyIn(gamedata("configs/system.ltx"), "source/configs/system_copy.ltx");
 
-    box.run("archive pack", [box.at("source"), "--dest", box.at("packed"), "--name", "fixture"]);
+    box.run("archive pack", ["--path", box.at("source"), "--dest", box.at("packed"), "--name", "fixture"]);
 
     listed = box.run("archive list", [
       "--path",

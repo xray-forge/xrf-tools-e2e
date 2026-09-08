@@ -18,7 +18,7 @@ describe("archive verify damaged volume", () => {
   beforeAll(() => {
     // Compression makes verification pass through decompression and CRC validation rather than merely copy a stored byte.
     box.write("source/payload.ltx", "payload ".repeat(4096));
-    box.run("archive pack", [box.at("source"), "--dest", box.at("packed"), "--name", "fixture"]);
+    box.run("archive pack", ["--path", box.at("source"), "--dest", box.at("packed"), "--name", "fixture"]);
 
     const volume = box.at("packed/fixture.db");
 

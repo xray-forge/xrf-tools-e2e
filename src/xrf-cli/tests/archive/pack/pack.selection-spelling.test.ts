@@ -25,7 +25,16 @@ describe("archive pack LTX selection spellings", () => {
       const config = box.write(`${name}.ltx`, ["[exclude_folders]", `${spelling} = true`, ""].join("\n"));
 
       packed.push(
-        box.run("archive pack", [box.at("source"), "--dest", box.at(name), "--name", "fixture", "--config", config])
+        box.run("archive pack", [
+          "--path",
+          box.at("source"),
+          "--dest",
+          box.at(name),
+          "--name",
+          "fixture",
+          "--config",
+          config,
+        ])
       );
     }
 

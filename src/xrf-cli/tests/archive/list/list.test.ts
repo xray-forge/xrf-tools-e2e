@@ -10,7 +10,7 @@ describe("archive list", () => {
   let directories: CliResult;
 
   beforeAll(() => {
-    box.run("archive pack", [gamedata("configs"), "--dest", box.at("packed"), "--name", "fixture"]);
+    box.run("archive pack", ["--path", gamedata("configs"), "--dest", box.at("packed"), "--name", "fixture"]);
 
     files = box.run("archive list", ["--path", box.at("packed/fixture.db"), "--files"]);
     directories = box.run("archive list", ["--path", box.at("packed/fixture.db"), "--directories"]);

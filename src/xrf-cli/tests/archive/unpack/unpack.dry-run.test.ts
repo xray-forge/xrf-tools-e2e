@@ -11,7 +11,7 @@ describe("archive unpack dry run", () => {
 
   beforeAll(() => {
     box.write("source/configs/nested/system.ltx", "archived bytes");
-    box.run("archive pack", [box.at("source"), "--dest", box.at("packed"), "--name", "fixture"]);
+    box.run("archive pack", ["--path", box.at("source"), "--dest", box.at("packed"), "--name", "fixture"]);
 
     box.write("destination/sentinel.ltx", "leave this untouched");
     box.write("destination/gamedata/configs/nested/system.ltx", "pre-existing destination bytes");

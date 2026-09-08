@@ -19,7 +19,7 @@ describe("archive pack shallow selection", () => {
       "selection.json",
       JSON.stringify({ includeDirectories: [{ path: "shallow-include", isRecursive: false }] }, null, 2)
     );
-    const common = [box.at("source"), "--name", "fixture"];
+    const common = ["--path", box.at("source"), "--name", "fixture"];
 
     direct = box.run("archive pack", [
       ...common,

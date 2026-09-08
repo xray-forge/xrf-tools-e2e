@@ -16,7 +16,7 @@ describe("archive extract refusals", () => {
 
   beforeAll(() => {
     box.write("source/configs/one.ltx", "archived bytes");
-    box.run("archive pack", [box.at("source"), "--dest", box.at("packed"), "--name", "fixture"]);
+    box.run("archive pack", ["--path", box.at("source"), "--dest", box.at("packed"), "--name", "fixture"]);
     box.run("archive extract", [
       "--path",
       box.at("packed/fixture.db"),

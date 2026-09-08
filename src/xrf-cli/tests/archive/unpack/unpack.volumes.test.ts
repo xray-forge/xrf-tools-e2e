@@ -21,6 +21,7 @@ describe("archive unpack volumes", () => {
 
   beforeAll(() => {
     box.run("archive pack", [
+      "--path",
       gamedata(),
       "--dest",
       box.at("split"),

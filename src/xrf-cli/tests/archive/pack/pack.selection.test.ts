@@ -66,7 +66,7 @@ describe("archive pack selection", () => {
         2
       )
     );
-    const common = [box.at("source"), "--name", "selection"];
+    const common = ["--path", box.at("source"), "--name", "selection"];
 
     direct = box.run("archive pack", [
       ...common,

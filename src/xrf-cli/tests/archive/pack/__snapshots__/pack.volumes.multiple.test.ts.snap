@@ -28,48 +28,29 @@ exports[`archive pack multiple indexed volumes should write the expected files a
   "exitCode": 0,
   "outcome": "success",
   "result": {
+    "collectDuration": "<duration>",
     "duration": "<duration>",
     "filesAliased": 0,
     "filesCompressed": 0,
     "filesSkipped": 0,
     "filesStored": 3,
     "filesTotal": 3,
+    "finalizeDuration": "<duration>",
     "outcome": "completed",
     "sizeSource": 1843200,
     "sizeWritten": 1843554,
     "speed": "<speed>",
-    "targets": [
-      {
-        "name": "fixture",
-        "result": {
-          "collectDuration": "<duration>",
-          "duration": "<duration>",
-          "filesAliased": 0,
-          "filesCompressed": 0,
-          "filesSkipped": 0,
-          "filesStored": 3,
-          "filesTotal": 3,
-          "finalizeDuration": "<duration>",
-          "outcome": "completed",
-          "sizeSource": 1843200,
-          "sizeWritten": 1843554,
-          "speed": "<speed>",
-          "volumes": [
-            "<sandbox>/packed/fixture.db0",
-            "<sandbox>/packed/fixture.db1",
-            "<sandbox>/packed/fixture.db2",
-          ],
-          "volumesOpened": [
-            "<sandbox>/packed/fixture.db0",
-            "<sandbox>/packed/fixture.db1",
-            "<sandbox>/packed/fixture.db2",
-          ],
-          "writeDuration": "<duration>",
-        },
-      },
+    "volumes": [
+      "<sandbox>/packed/fixture.db0",
+      "<sandbox>/packed/fixture.db1",
+      "<sandbox>/packed/fixture.db2",
     ],
-    "unclaimed": 0,
-    "volumesTotal": 3,
+    "volumesOpened": [
+      "<sandbox>/packed/fixture.db0",
+      "<sandbox>/packed/fixture.db1",
+      "<sandbox>/packed/fixture.db2",
+    ],
+    "writeDuration": "<duration>",
   },
 }
 `;
@@ -191,8 +172,8 @@ exports[`archive pack multiple indexed volumes should write the expected files a
   },
   {
     "path": "pack-report.json",
-    "sha256": "534b0a223d2f46c59f070eb03102d307da3058c207db6d4f6026554d36adedc3",
-    "size": 1695,
+    "sha256": "4921dd4d883b20a527bafab71d100c5d2cb1f9e46600aa83793acc74346555d0",
+    "size": 1166,
   },
   {
     "path": "packed/fixture.db0",

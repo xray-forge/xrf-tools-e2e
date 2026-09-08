@@ -33,6 +33,7 @@ describe("archive pack configuration equivalence", () => {
     );
 
     configured = box.run("archive pack", [
+      "--path",
       gamedata("configs"),
       "--dest",
       box.at("configured"),
@@ -43,6 +44,7 @@ describe("archive pack configuration equivalence", () => {
     ]);
 
     configuredJson = box.run("archive pack", [
+      "--path",
       gamedata("configs"),
       "--dest",
       box.at("configured-json"),
@@ -69,6 +71,7 @@ describe("archive pack configuration equivalence", () => {
     );
 
     viaConfig = box.run("archive pack", [
+      "--path",
       gamedata("configs"),
       "--dest",
       box.at("via-config"),
@@ -79,6 +82,7 @@ describe("archive pack configuration equivalence", () => {
     ]);
     // The same selection named on the command line, which is how xrf-engine compresses without writing a file.
     viaArguments = box.run("archive pack", [
+      "--path",
       gamedata("configs"),
       "--dest",
       box.at("via-arguments"),

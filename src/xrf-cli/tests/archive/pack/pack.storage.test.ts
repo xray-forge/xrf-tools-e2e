@@ -10,15 +10,14 @@ describe("archive pack storage", () => {
 
   beforeAll(() => {
     stored = box.run("archive pack", [
+      "--path",
       gamedata("configs"),
       "--dest",
       box.at("stored"),
       "--name",
       "cfg",
-      "--extension",
-      "xdb",
-      "--mode",
-      "store",
+      "--xdb",
+      "--store",
     ]);
   });
 

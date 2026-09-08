@@ -79,7 +79,7 @@ exports[`archive workflow should pack the source tree 1`] = `
     "Wrote <sandbox>/packed/fixture.db",
     "Packed 14 file(s) into 1 volume(s) in <duration>",
     "Phases: <duration> collecting, <duration> writing, <duration> finalizing",
-    "Summary: 14 compressed, 0 stored, 0 aliased, 0 skipped, 0 unclaimed",
+    "Summary: 14 compressed, 0 stored, 0 aliased, 0 skipped",
     "Size: 11.5 KB source, 5.39 KB written",
     "Speed: <speed>",
   ],

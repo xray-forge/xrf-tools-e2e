@@ -16,12 +16,21 @@ describe("archive pack name refusals", () => {
 
     escaped = box.run(
       "archive pack",
-      [box.at("source"), "--dest", box.at("escaping"), "--name", "fixture", "--include-file", "..\\outside.ltx"],
+      [
+        "--path",
+        box.at("source"),
+        "--dest",
+        box.at("escaping"),
+        "--name",
+        "fixture",
+        "--include-file",
+        "..\\outside.ltx",
+      ],
       { expectExit: 1 }
     );
     invalidName = box.run(
       "archive pack",
-      [box.at("source"), "--dest", box.at("invalid-name"), "--name", "..\\outside"],
+      ["--path", box.at("source"), "--dest", box.at("invalid-name"), "--name", "..\\outside"],
       { expectExit: 1 }
     );
   });

@@ -6,7 +6,7 @@ exports[`archive pack arguments should refuse a configuration file beside a dire
   "stderr": [
     "error: the argument '--config <config>' cannot be used with '--include-directory <include-directory>'",
     "",
-    "Usage: xrf-cli archive pack --dest <dest> --name <name> --config <config> <SOURCE>",
+    "Usage: xrf-cli archive pack --path <path> --dest <dest> --name <name> --config <config>",
     "",
     "For more information, try '--help'.",
   ],
