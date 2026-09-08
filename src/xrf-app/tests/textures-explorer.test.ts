@@ -37,7 +37,7 @@ async function hoverTexel(acrossFraction: number, downFraction: number): Promise
  * @returns One string per row, label and value separated by a newline.
  */
 async function readTexelRows(): Promise<Array<string>> {
-  const rows = $$('[data-testid="texture-channels-panel"] [data-testid="visual-panel-row"]');
+  const rows = $$('[data-testid="texture-channels-readout"] [data-testid="editor-panel-property"]');
 
   return rows.map((it) => it.getText());
 }
