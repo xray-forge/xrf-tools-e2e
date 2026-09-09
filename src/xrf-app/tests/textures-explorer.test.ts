@@ -11,6 +11,9 @@ const TEXTURE: string = path.resolve(APP_RESOURCES_ROOT, "gamedata/textures/act/
 /** Where the open form reads a remembered path from, which is the only way a spec can fill a read-only field. */
 const TEXTURE_FIELD_KEY: string = "xrf.form.textures-explorer.texture";
 
+/** The channel tile every texel is read from. */
+const TILE_SELECTOR: string = '[data-testid="texture-channel-bump"]';
+
 /**
  * Moves the pointer onto one texel of a channel tile.
  *
@@ -18,12 +21,13 @@ const TEXTURE_FIELD_KEY: string = "xrf.form.textures-explorer.texture";
  * @param downFraction - How far down the tile, from 0 at the top.
  */
 async function hoverTexel(acrossFraction: number, downFraction: number): Promise<void> {
-  const tile = $('[data-testid="texture-channel-bump"]');
-  const size = await tile.getSize();
+  const tile = $(TILE_SELECTOR);
 
-  // Onto the tile before onto the texel. The first move is what scrolls the panel and settles the layout under the
-  // pointer, and a move that lands while that is still happening leaves the tile again before anything reads it.
-  await tile.moveTo();
+  await browser.execute((selector: string): void => {
+    document.querySelector(selector)?.scrollIntoView({ block: "center" });
+  }, TILE_SELECTOR);
+
+  const size = await tile.getSize();
 
   // WebDriver measures an offset from the element's centre, not its corner, so a fraction across the tile is that
   // fraction less a half.
@@ -77,7 +81,7 @@ describe("textures explorer", () => {
 
   it("reads a texel of the pair, as stored and as the engine reconstructs it", async () => {
     await $('[aria-label="Channels"]').click();
-    await $('[data-testid="texture-channel-bump"]').waitForExist({ timeout: 10_000 });
+    await $(TILE_SELECTOR).waitForExist({ timeout: 10_000 });
 
     await hoverTexel(0.05, 0.05);
 

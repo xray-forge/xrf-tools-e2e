@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive pack-patch arguments should refuse a header entry that names no key 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: Header entry 'auto_load' names no key: write it as <key>=<value>",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`archive pack-patch arguments should refuse a volume size past what the engine mounts 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: Volume size 3.91 GB is past the 1900 MB the engine mounts. Pass --oversized-volumes to publish volumes only a fork that raised XRP_MAX_SIZE can open.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`archive pack-patch arguments should refuse both report destinations at once 1`] = `
+{
+  "exitCode": 2,
+  "stderr": [
+    "error: the argument '--json' cannot be used with '--report <PATH>'",
+    "",
+    "Usage: xrf-cli archive pack-patch --base <base> --target <target> --dest <dest> --json",
+    "",
+    "For more information, try '--help'.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`archive pack-patch arguments should require a base root 1`] = `
+{
+  "exitCode": 2,
+  "stderr": [
+    "error: the following required arguments were not provided:",
+    "  --base <base>",
+    "",
+    "Usage: xrf-cli archive pack-patch --base <base> --target <target> --dest <dest>",
+    "",
+    "For more information, try '--help'.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`archive pack-patch arguments should require a target root 1`] = `
+{
+  "exitCode": 2,
+  "stderr": [
+    "error: the following required arguments were not provided:",
+    "  --target <target>",
+    "",
+    "Usage: xrf-cli archive pack-patch --base <base> --target <target> --dest <dest>",
+    "",
+    "For more information, try '--help'.",
+  ],
+  "stdout": [],
+}
+`;

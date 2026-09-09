@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive pack-patch classification should classify each entry in the report 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "archive",
+    "pack-patch",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "added": [
+      {
+        "base": null,
+        "class": "added",
+        "name": "configs\\weapons\\wpn_added.ltx",
+        "target": {
+          "origin": 1,
+          "size": 31,
+        },
+      },
+    ],
+    "compareDuration": "<duration>",
+    "duration": "<duration>",
+    "modified": [
+      {
+        "base": {
+          "origin": 0,
+          "size": 265,
+        },
+        "class": "modified",
+        "name": "configs\\system.ltx",
+        "target": {
+          "origin": 1,
+          "size": 20,
+        },
+      },
+    ],
+    "origins": [
+      {
+        "kind": "directory",
+        "root": "<sandbox>/base",
+      },
+      {
+        "kind": "directory",
+        "root": "<sandbox>/target",
+      },
+    ],
+    "outcome": "completed",
+    "packDuration": "<duration>",
+    "payloadsRead": 27,
+    "publication": {
+      "kind": "compared",
+    },
+    "removed": [
+      {
+        "base": {
+          "origin": 0,
+          "size": 2021,
+        },
+        "class": "removed",
+        "name": "configs\\fonts.ltx",
+        "target": null,
+      },
+    ],
+    "sizeCarried": 51,
+    "unchanged": 27,
+  },
+}
+`;
+
+exports[`archive pack-patch classification should report what changed and write nothing 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [
+    "1 entry(s) the base holds are absent from the target. A '.db' patch cannot express a deletion, so these stay readable from the base; they are listed in the report.",
+  ],
+  "stdout": [
+    "Patch base: <sandbox>/base",
+    "Patch target: <sandbox>/target",
+    "Compared in <duration>: 1 to add, 1 to modify, 27 unchanged. Nothing written.",
+    "Phases: <duration> comparing, <duration> packing",
+    "Summary: 1 added, 1 modified, 27 unchanged, 27 payload(s) read to decide",
+    "Size: 51 B to carry",
+  ],
+}
+`;
