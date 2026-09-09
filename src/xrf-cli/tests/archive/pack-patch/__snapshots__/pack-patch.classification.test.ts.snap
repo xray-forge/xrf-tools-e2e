@@ -82,6 +82,7 @@ exports[`archive pack-patch classification should classify each entry in the rep
         "target": null,
       },
     ],
+    "shape": "release",
     "sizeCarried": 51,
     "unchanged": 27,
   },
@@ -95,7 +96,7 @@ exports[`archive pack-patch classification should report what changed and write 
     "1 entry(s) the base holds are absent from the target. A '.db' patch cannot express a deletion, so these stay readable from the base; they are listed in the report.",
   ],
   "stdout": [
-    "Patch base: <sandbox>/base",
+    "Patch input: <sandbox>/base",
     "Patch target: <sandbox>/target",
     "Compared in <duration>: 1 to add, 1 to modify, 27 unchanged. Nothing written.",
     "Phases: <duration> comparing, <duration> packing",

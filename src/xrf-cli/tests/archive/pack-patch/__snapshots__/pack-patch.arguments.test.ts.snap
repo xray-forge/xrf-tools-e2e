@@ -20,13 +20,27 @@ exports[`archive pack-patch arguments should refuse a volume size past what the 
 }
 `;
 
+exports[`archive pack-patch arguments should refuse an input holding no volumes to compare against 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: '<sandbox>/base' holds no archive volumes, so its loose files have nothing to override. Point at the game installation instead, or name this tree as the target of one.",
+  ],
+  "stdout": [
+    "Patch input: <sandbox>/base",
+    "Patch target: loose gamedata of the input",
+    "Patch destination: <sandbox>/out",
+  ],
+}
+`;
+
 exports[`archive pack-patch arguments should refuse both report destinations at once 1`] = `
 {
   "exitCode": 2,
   "stderr": [
     "error: the argument '--json' cannot be used with '--report <PATH>'",
     "",
-    "Usage: xrf-cli archive pack-patch --base <base> --target <target> --dest <dest> --json",
+    "Usage: xrf-cli archive pack-patch --input <input> --target <target> --dest <dest> --json",
     "",
     "For more information, try '--help'.",
   ],
@@ -34,29 +48,14 @@ exports[`archive pack-patch arguments should refuse both report destinations at 
 }
 `;
 
-exports[`archive pack-patch arguments should require a base root 1`] = `
+exports[`archive pack-patch arguments should require an input 1`] = `
 {
   "exitCode": 2,
   "stderr": [
     "error: the following required arguments were not provided:",
-    "  --base <base>",
+    "  --input <input>",
     "",
-    "Usage: xrf-cli archive pack-patch --base <base> --target <target> --dest <dest>",
-    "",
-    "For more information, try '--help'.",
-  ],
-  "stdout": [],
-}
-`;
-
-exports[`archive pack-patch arguments should require a target root 1`] = `
-{
-  "exitCode": 2,
-  "stderr": [
-    "error: the following required arguments were not provided:",
-    "  --target <target>",
-    "",
-    "Usage: xrf-cli archive pack-patch --base <base> --target <target> --dest <dest>",
+    "Usage: xrf-cli archive pack-patch --input <input> --target <target> --dest <dest>",
     "",
     "For more information, try '--help'.",
   ],

@@ -5,7 +5,7 @@ exports[`archive pack-patch publication should publish the difference 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Patch base: <sandbox>/base",
+    "Patch input: <sandbox>/base",
     "Patch target: <sandbox>/target",
     "Patch destination: <sandbox>/patch",
     "Wrote <sandbox>/patch/patch_01.db",
@@ -108,6 +108,7 @@ exports[`archive pack-patch publication should report the volume set it wrote 1`
       "writeDuration": "<duration>",
     },
     "removed": [],
+    "shape": "overlay",
     "sizeCarried": 51,
     "unchanged": 28,
   },
@@ -119,7 +120,7 @@ exports[`archive pack-patch publication should write no volume when the two worl
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Patch base: <sandbox>/same-base",
+    "Patch input: <sandbox>/same-base",
     "Patch target: <sandbox>/same-target",
     "Patch destination: <sandbox>/unnecessary",
     "Compared in <duration>: nothing differs, so no patch was written. 29 entry(s) match.",

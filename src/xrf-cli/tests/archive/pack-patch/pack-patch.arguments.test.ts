@@ -18,38 +18,39 @@ describe("archive pack-patch arguments", () => {
     base = createWorld(box, "base");
     target = createWorld(box, "target", [{ content: EDITED_SYSTEM_LTX, path: "configs/system.ltx" }]);
 
-    // A comparison needs two worlds, so neither side has a default to fall back on.
+    // The input is the one thing a run cannot infer; the target falls back to the input's own loose tree.
     withoutBase = box.run("archive pack-patch", ["--target", target, "--dest", box.at("out")], {
       expectExit: 2,
     });
-    withoutTarget = box.run("archive pack-patch", ["--base", base, "--dest", box.at("out")], {
-      expectExit: 2,
+    // A gamedata tree named as the input has no archive half to compare its files against.
+    withoutTarget = box.run("archive pack-patch", ["--input", base, "--dest", box.at("out")], {
+      expectExit: 1,
     });
 
     malformedHeader = box.run(
       "archive pack-patch",
-      ["--base", base, "--target", target, "--dest", box.at("out"), "--header", "auto_load"],
+      ["--input", base, "--target", target, "--dest", box.at("out"), "--header", "auto_load"],
       { expectExit: 1 }
     );
 
     conflictingReports = box.run(
       "archive pack-patch",
-      ["--base", base, "--target", target, "--dest", box.at("out"), "--json", "--report", box.at("both.json")],
+      ["--input", base, "--target", target, "--dest", box.at("out"), "--json", "--report", box.at("both.json")],
       { expectExit: 2 }
     );
 
     oversized = box.run(
       "archive pack-patch",
-      ["--base", base, "--target", target, "--dest", box.at("out"), "--max-size", "4000"],
+      ["--input", base, "--target", target, "--dest", box.at("out"), "--max-size", "4000"],
       { expectExit: 1 }
     );
   });
 
-  it("should require a base root", () => {
+  it("should require an input", () => {
     expect(withoutBase).toMatchSnapshot();
   });
 
-  it("should require a target root", () => {
+  it("should refuse an input holding no volumes to compare against", () => {
     expect(withoutTarget).toMatchSnapshot();
   });
 
@@ -69,7 +70,7 @@ describe("archive pack-patch arguments", () => {
   it("should publish oversized volumes when asked", () => {
     expect(
       box.run("archive pack-patch", [
-        "--base",
+        "--input",
         base,
         "--target",
         target,

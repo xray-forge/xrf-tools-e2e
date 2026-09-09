@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive pack-patch split input should compare the volumes against the loose tree of one input 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Patch input: <sandbox>/game",
+    "Patch target: loose gamedata of the input",
+    "Patch destination: <sandbox>/patch",
+    "Wrote <sandbox>/patch/mypatch.db",
+    "Patched 2 file(s) into 1 volume(s) in <duration>",
+    "Phases: <duration> comparing, <duration> packing",
+    "Summary: 1 added, 1 modified, 0 unchanged, 0 payload(s) read to decide",
+    "Size: 51 B carried, 224 B written",
+  ],
+}
+`;
+
+exports[`archive pack-patch split input should refuse the release shape, which needs two releases 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: Release shape compares two complete releases, and one input split into its volumes and its loose tree is not two releases. Name a target to compare releases, or drop the release shape.",
+  ],
+  "stdout": [
+    "Patch input: <sandbox>/game",
+    "Patch target: loose gamedata of the input",
+  ],
+}
+`;

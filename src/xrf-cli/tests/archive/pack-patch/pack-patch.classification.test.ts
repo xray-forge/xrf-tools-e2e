@@ -19,8 +19,23 @@ describe("archive pack-patch classification", () => {
     const base: string = createWorld(box, "base");
     const target: string = createWorld(box, "target", TARGET_EDITS);
 
+    // Release shape, because it is the only one where every class is reportable: an overlay says nothing about what
+    // it does not carry, so a deletion has nowhere to appear.
     compared = box.run("archive pack-patch", [
-      "--base",
+      "--input",
+      base,
+      "--target",
+      target,
+      "--dest",
+      box.at("patch"),
+      "--dry-run",
+      "--release",
+      "--report",
+      box.at("compared.json"),
+    ]);
+
+    box.run("archive pack-patch", [
+      "--input",
       base,
       "--target",
       target,
@@ -28,7 +43,7 @@ describe("archive pack-patch classification", () => {
       box.at("patch"),
       "--dry-run",
       "--report",
-      box.at("compared.json"),
+      box.at("overlay.json"),
     ]);
   });
 
@@ -38,6 +53,19 @@ describe("archive pack-patch classification", () => {
 
   it("should classify each entry in the report", () => {
     expect(box.json("compared.json")).toMatchSnapshot();
+  });
+
+  it("should carry the same entries as an overlay, without classifying the deletion", () => {
+    // Same pair, same carried set. Only the reading of what the base holds alone differs.
+    const released = box.json("compared.json") as { result: { added: Array<unknown>; modified: Array<unknown> } };
+    const overlay = box.json("overlay.json") as {
+      result: { added: Array<unknown>; modified: Array<unknown>; removed: Array<unknown>; shape: string };
+    };
+
+    expect(overlay.result.added).toEqual(released.result.added);
+    expect(overlay.result.modified).toEqual(released.result.modified);
+    expect(overlay.result.removed).toEqual([]);
+    expect(overlay.result.shape).toBe("overlay");
   });
 
   it("should leave the destination absent on a dry run", () => {

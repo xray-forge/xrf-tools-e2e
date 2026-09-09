@@ -7,7 +7,7 @@ exports[`archive pack-patch refusals should fail under strict when the base hold
     "Error: Invalid error: 1 entry(s) the base holds are absent from the target, and a '.db' patch cannot express a deletion: 'CLocatorAPI::Register' overwrites a descriptor and never removes one. They are listed in the report; ship a tree rather than a patch to remove them, or drop the strict check to publish anyway.",
   ],
   "stdout": [
-    "Patch base: <sandbox>/base",
+    "Patch input: <sandbox>/base",
     "Patch target: <sandbox>/target",
   ],
 }
@@ -20,7 +20,7 @@ exports[`archive pack-patch refusals should refuse a destination already holding
     "Error: Invalid error: Destination '<sandbox>/occupied' already holds 1 volume(s) of the archive set 'patch.db': patch.db. Packing replaces them and cannot put them back if it fails partway, so publishing over them has to be asked for.",
   ],
   "stdout": [
-    "Patch base: <sandbox>/base",
+    "Patch input: <sandbox>/base",
     "Patch target: <sandbox>/target",
     "Patch destination: <sandbox>/occupied",
   ],
@@ -31,10 +31,10 @@ exports[`archive pack-patch refusals should refuse a destination inside a compar
 {
   "exitCode": 1,
   "stderr": [
-    "Error: Invalid error: Destination '<sandbox>/base/patches' is inside the base root '<sandbox>/base'. A patch written into a tree it compares becomes part of that tree, so the next run over the same pair would read this run's own output as a difference.",
+    "Error: Invalid error: Destination '<sandbox>/base/patches' is inside the base root '<sandbox>/base'. A patch written into a tree it compares becomes part of that tree, so the next run would read this run's own output as a difference. Write it elsewhere and copy it in.",
   ],
   "stdout": [
-    "Patch base: <sandbox>/base",
+    "Patch input: <sandbox>/base",
     "Patch target: <sandbox>/target",
     "Patch destination: <sandbox>/base/patches",
   ],
@@ -48,7 +48,7 @@ exports[`archive pack-patch refusals should refuse a scope that matches nothing 
     "Error: Invalid error: The comparison scope matched no entry on the base side ('<sandbox>/base'). A scope naming nothing on one side makes every entry of the other a difference.",
   ],
   "stdout": [
-    "Patch base: <sandbox>/base",
+    "Patch input: <sandbox>/base",
     "Patch target: <sandbox>/target",
   ],
 }
@@ -61,7 +61,7 @@ exports[`archive pack-patch refusals should refuse a side that holds no entry 1`
     "Error: Invalid error: The base root '<sandbox>/hollow' holds no entry to compare. Every entry of the other side would become a difference, which is not a comparison.",
   ],
   "stdout": [
-    "Patch base: <sandbox>/hollow",
+    "Patch input: <sandbox>/hollow",
     "Patch target: <sandbox>/target",
   ],
 }

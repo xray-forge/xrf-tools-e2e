@@ -25,17 +25,21 @@ describe("archive pack-patch refusals", () => {
 
     strict = box.run(
       "archive pack-patch",
-      ["--base", base, "--target", target, "--dest", box.at("strict"), "--dry-run", "--strict"],
+      ["--input", base, "--target", target, "--dest", box.at("strict"), "--dry-run", "--release", "--strict"],
       { expectExit: 1 }
     );
 
-    insideRoot = box.run("archive pack-patch", ["--base", base, "--target", target, "--dest", box.at("base/patches")], {
-      expectExit: 1,
-    });
+    insideRoot = box.run(
+      "archive pack-patch",
+      ["--input", base, "--target", target, "--dest", box.at("base/patches")],
+      {
+        expectExit: 1,
+      }
+    );
 
     emptyScope = box.run(
       "archive pack-patch",
-      ["--base", base, "--target", target, "--dest", box.at("empty-scope"), "--dry-run", "--include", "renamed"],
+      ["--input", base, "--target", target, "--dest", box.at("empty-scope"), "--dry-run", "--include", "renamed"],
       { expectExit: 1 }
     );
 
@@ -43,12 +47,12 @@ describe("archive pack-patch refusals", () => {
 
     emptyBase = box.run(
       "archive pack-patch",
-      ["--base", box.at("hollow"), "--target", target, "--dest", box.at("empty-base"), "--dry-run"],
+      ["--input", box.at("hollow"), "--target", target, "--dest", box.at("empty-base"), "--dry-run"],
       { expectExit: 1 }
     );
 
     box.run("archive pack-patch", [
-      "--base",
+      "--input",
       base,
       "--target",
       target,
@@ -61,7 +65,7 @@ describe("archive pack-patch refusals", () => {
 
     occupied = box.run(
       "archive pack-patch",
-      ["--base", base, "--target", target, "--dest", box.at("occupied"), "--name", "patch"],
+      ["--input", base, "--target", target, "--dest", box.at("occupied"), "--name", "patch"],
       { expectExit: 1 }
     );
   });
@@ -93,7 +97,7 @@ describe("archive pack-patch refusals", () => {
   it("should replace an existing set when forced", () => {
     expect(
       box.run("archive pack-patch", [
-        "--base",
+        "--input",
         base,
         "--target",
         target,
@@ -109,16 +113,34 @@ describe("archive pack-patch refusals", () => {
 
   it("should report removals without failing when strict is not asked for", () => {
     const reported: CliResult = box.run("archive pack-patch", [
-      "--base",
+      "--input",
       base,
       "--target",
       target,
       "--dest",
       box.at("lenient"),
       "--dry-run",
+      "--release",
     ]);
 
     expect(reported.exitCode).toBe(0);
     expect(reported.stderr.join("\n")).toContain("cannot express a deletion");
+  });
+
+  it("should say nothing about removals without the release shape", () => {
+    // The default reading. What the input holds and the delivered tree does not is every file the author left alone,
+    // which at an installation is the whole game rather than a finding.
+    const reported: CliResult = box.run("archive pack-patch", [
+      "--input",
+      base,
+      "--target",
+      target,
+      "--dest",
+      box.at("overlay"),
+      "--dry-run",
+    ]);
+
+    expect(reported.exitCode).toBe(0);
+    expect(reported.stderr.join("\n")).not.toContain("cannot express a deletion");
   });
 });

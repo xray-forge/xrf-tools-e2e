@@ -44,7 +44,7 @@ describe("archive pack-patch sources", () => {
 
   const compare = (base: string, target: string, name: string): CliResult =>
     box.run("archive pack-patch", [
-      "--base",
+      "--input",
       base,
       "--target",
       target,
@@ -114,7 +114,7 @@ describe("archive pack-patch sources", () => {
 
   it("should publish a patch a reader can list back", () => {
     box.run("archive pack-patch", [
-      "--base",
+      "--input",
       createPackedWorld(box, "readback-base"),
       "--target",
       createWorld(box, "readback-target", edit),
