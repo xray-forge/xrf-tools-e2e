@@ -48,21 +48,10 @@ describe("archive pack-patch split input", () => {
 
   it("should classify the overriding file as modified rather than added", () => {
     const report = box.json("split.json") as {
-      result: { added: Array<{ name: string }>; modified: Array<{ name: string }>; removed: Array<unknown> };
+      result: { added: Array<{ name: string }>; modified: Array<{ name: string }> };
     };
 
     expect(report.result.modified.map((change) => change.name)).toEqual(["configs\\system.ltx"]);
     expect(report.result.added.map((change) => change.name)).toEqual(["configs\\weapons\\wpn_added.ltx"]);
-    expect(report.result.removed).toEqual([]);
-  });
-
-  it("should refuse the release shape, which needs two releases", () => {
-    expect(
-      box.run(
-        "archive pack-patch",
-        ["--input", box.at("game"), "--dest", box.at("released"), "--dry-run", "--release"],
-        { expectExit: 1 }
-      )
-    ).toMatchSnapshot();
   });
 });

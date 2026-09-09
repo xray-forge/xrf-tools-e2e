@@ -71,18 +71,6 @@ exports[`archive pack-patch classification should classify each entry in the rep
     "publication": {
       "kind": "compared",
     },
-    "removed": [
-      {
-        "base": {
-          "origin": 0,
-          "size": 2021,
-        },
-        "class": "removed",
-        "name": "configs\\fonts.ltx",
-        "target": null,
-      },
-    ],
-    "shape": "release",
     "sizeCarried": 51,
     "unchanged": 27,
   },
@@ -92,9 +80,7 @@ exports[`archive pack-patch classification should classify each entry in the rep
 exports[`archive pack-patch classification should report what changed and write nothing 1`] = `
 {
   "exitCode": 0,
-  "stderr": [
-    "1 entry(s) the base holds are absent from the target. A '.db' patch cannot express a deletion, so these stay readable from the base; they are listed in the report.",
-  ],
+  "stderr": [],
   "stdout": [
     "Patch input: <sandbox>/base",
     "Patch target: <sandbox>/target",

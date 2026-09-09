@@ -107,8 +107,6 @@ exports[`archive pack-patch publication should report the volume set it wrote 1`
       ],
       "writeDuration": "<duration>",
     },
-    "removed": [],
-    "shape": "overlay",
     "sizeCarried": 51,
     "unchanged": 28,
   },

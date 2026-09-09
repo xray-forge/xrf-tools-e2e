@@ -1,18 +1,5 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`archive pack-patch refusals should fail under strict when the base holds what the target does not 1`] = `
-{
-  "exitCode": 1,
-  "stderr": [
-    "Error: Invalid error: 1 entry(s) the base holds are absent from the target, and a '.db' patch cannot express a deletion: 'CLocatorAPI::Register' overwrites a descriptor and never removes one. They are listed in the report; ship a tree rather than a patch to remove them, or drop the strict check to publish anyway.",
-  ],
-  "stdout": [
-    "Patch input: <sandbox>/base",
-    "Patch target: <sandbox>/target",
-  ],
-}
-`;
-
 exports[`archive pack-patch refusals should refuse a destination already holding the set 1`] = `
 {
   "exitCode": 1,

@@ -77,8 +77,8 @@ describe("archive pack-patch scope", () => {
   it("should narrow both sides alike, so a scope never invents a difference", () => {
     // Everything outside `configs` is absent from both sides of the scoped comparison rather than
     // present on one, which is what keeps a narrowed run from reporting additions or removals.
-    const envelope = box.json("included.json") as { result: { removed: Array<unknown> } };
+    const envelope = box.json("included.json") as { result: { added: Array<unknown> } };
 
-    expect(envelope.result.removed).toEqual([]);
+    expect(envelope.result.added).toEqual([]);
   });
 });

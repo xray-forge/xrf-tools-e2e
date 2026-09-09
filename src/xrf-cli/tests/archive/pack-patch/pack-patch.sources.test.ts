@@ -15,7 +15,6 @@ interface PatchTotals {
   added: number;
   modified: number;
   payloadsRead: number;
-  removed: number;
   unchanged: number;
 }
 
@@ -28,7 +27,6 @@ describe("archive pack-patch sources", () => {
         added: Array<unknown>;
         modified: Array<unknown>;
         payloadsRead: number;
-        removed: Array<unknown>;
         unchanged: number;
       };
     };
@@ -37,7 +35,6 @@ describe("archive pack-patch sources", () => {
       added: envelope.result.added.length,
       modified: envelope.result.modified.length,
       payloadsRead: envelope.result.payloadsRead,
-      removed: envelope.result.removed.length,
       unchanged: envelope.result.unchanged,
     };
   };
@@ -70,7 +67,6 @@ describe("archive pack-patch sources", () => {
       added: 0,
       modified: 1,
       payloadsRead: 0,
-      removed: 0,
       unchanged: 28,
     });
   });
@@ -81,7 +77,6 @@ describe("archive pack-patch sources", () => {
       added: 0,
       modified: 1,
       payloadsRead: 28,
-      removed: 0,
       unchanged: 28,
     });
   });
@@ -91,7 +86,6 @@ describe("archive pack-patch sources", () => {
       added: 0,
       modified: 1,
       payloadsRead: 28,
-      removed: 0,
       unchanged: 28,
     });
   });
@@ -107,7 +101,6 @@ describe("archive pack-patch sources", () => {
       added: 0,
       modified: 0,
       payloadsRead: 29,
-      removed: 0,
       unchanged: 29,
     });
   });

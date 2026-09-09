@@ -10,7 +10,6 @@ describe("archive pack-patch refusals", () => {
 
   let base: string;
   let target: string;
-  let strict: CliResult;
   let insideRoot: CliResult;
   let emptyScope: CliResult;
   let emptyBase: CliResult;
@@ -22,12 +21,6 @@ describe("archive pack-patch refusals", () => {
       { content: EDITED_SYSTEM_LTX, path: "configs/system.ltx" },
       { content: null, path: "configs/fonts.ltx" },
     ]);
-
-    strict = box.run(
-      "archive pack-patch",
-      ["--input", base, "--target", target, "--dest", box.at("strict"), "--dry-run", "--release", "--strict"],
-      { expectExit: 1 }
-    );
 
     insideRoot = box.run(
       "archive pack-patch",
@@ -70,10 +63,6 @@ describe("archive pack-patch refusals", () => {
     );
   });
 
-  it("should fail under strict when the base holds what the target does not", () => {
-    expect(strict).toMatchSnapshot();
-  });
-
   it("should refuse a destination inside a compared root", () => {
     // `db/patches/` is both where a patch belongs and a directory someone would name as a base root,
     // so a patch written there would become an input to the next run over the same pair.
@@ -109,38 +98,5 @@ describe("archive pack-patch refusals", () => {
         "--silent",
       ]).exitCode
     ).toBe(0);
-  });
-
-  it("should report removals without failing when strict is not asked for", () => {
-    const reported: CliResult = box.run("archive pack-patch", [
-      "--input",
-      base,
-      "--target",
-      target,
-      "--dest",
-      box.at("lenient"),
-      "--dry-run",
-      "--release",
-    ]);
-
-    expect(reported.exitCode).toBe(0);
-    expect(reported.stderr.join("\n")).toContain("cannot express a deletion");
-  });
-
-  it("should say nothing about removals without the release shape", () => {
-    // The default reading. What the input holds and the delivered tree does not is every file the author left alone,
-    // which at an installation is the whole game rather than a finding.
-    const reported: CliResult = box.run("archive pack-patch", [
-      "--input",
-      base,
-      "--target",
-      target,
-      "--dest",
-      box.at("overlay"),
-      "--dry-run",
-    ]);
-
-    expect(reported.exitCode).toBe(0);
-    expect(reported.stderr.join("\n")).not.toContain("cannot express a deletion");
   });
 });
