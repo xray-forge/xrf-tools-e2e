@@ -40,7 +40,7 @@ exports[`archive pack-patch arguments should refuse both report destinations at 
   "stderr": [
     "error: the argument '--json' cannot be used with '--report <PATH>'",
     "",
-    "Usage: xrf-cli archive pack-patch --input <input> --target <target> --dest <dest> --json",
+    "Usage: xrf-cli archive pack-patch --target <target> --dest <dest> --json <SOURCE>",
     "",
     "For more information, try '--help'.",
   ],
@@ -53,9 +53,9 @@ exports[`archive pack-patch arguments should require an input 1`] = `
   "exitCode": 2,
   "stderr": [
     "error: the following required arguments were not provided:",
-    "  --input <input>",
+    "  <SOURCE>",
     "",
-    "Usage: xrf-cli archive pack-patch --input <input> --target <target> --dest <dest>",
+    "Usage: xrf-cli archive pack-patch --target <target> --dest <dest> <SOURCE>",
     "",
     "For more information, try '--help'.",
   ],

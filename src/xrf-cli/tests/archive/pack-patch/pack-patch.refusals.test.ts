@@ -22,17 +22,13 @@ describe("archive pack-patch refusals", () => {
       { content: null, path: "configs/fonts.ltx" },
     ]);
 
-    insideRoot = box.run(
-      "archive pack-patch",
-      ["--input", base, "--target", target, "--dest", box.at("base/patches")],
-      {
-        expectExit: 1,
-      }
-    );
+    insideRoot = box.run("archive pack-patch", [base, "--target", target, "--dest", box.at("base/patches")], {
+      expectExit: 1,
+    });
 
     emptyScope = box.run(
       "archive pack-patch",
-      ["--input", base, "--target", target, "--dest", box.at("empty-scope"), "--dry-run", "--include", "renamed"],
+      [base, "--target", target, "--dest", box.at("empty-scope"), "--dry-run", "--include", "renamed"],
       { expectExit: 1 }
     );
 
@@ -40,12 +36,11 @@ describe("archive pack-patch refusals", () => {
 
     emptyBase = box.run(
       "archive pack-patch",
-      ["--input", box.at("hollow"), "--target", target, "--dest", box.at("empty-base"), "--dry-run"],
+      [box.at("hollow"), "--target", target, "--dest", box.at("empty-base"), "--dry-run"],
       { expectExit: 1 }
     );
 
     box.run("archive pack-patch", [
-      "--input",
       base,
       "--target",
       target,
@@ -58,7 +53,7 @@ describe("archive pack-patch refusals", () => {
 
     occupied = box.run(
       "archive pack-patch",
-      ["--input", base, "--target", target, "--dest", box.at("occupied"), "--name", "patch"],
+      [base, "--target", target, "--dest", box.at("occupied"), "--name", "patch"],
       { expectExit: 1 }
     );
   });
@@ -86,7 +81,6 @@ describe("archive pack-patch refusals", () => {
   it("should replace an existing set when forced", () => {
     expect(
       box.run("archive pack-patch", [
-        "--input",
         base,
         "--target",
         target,

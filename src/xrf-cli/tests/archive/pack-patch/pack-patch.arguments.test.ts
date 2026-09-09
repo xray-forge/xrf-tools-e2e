@@ -23,25 +23,25 @@ describe("archive pack-patch arguments", () => {
       expectExit: 2,
     });
     // A gamedata tree named as the input has no archive half to compare its files against.
-    withoutTarget = box.run("archive pack-patch", ["--input", base, "--dest", box.at("out")], {
+    withoutTarget = box.run("archive pack-patch", [base, "--dest", box.at("out")], {
       expectExit: 1,
     });
 
     malformedHeader = box.run(
       "archive pack-patch",
-      ["--input", base, "--target", target, "--dest", box.at("out"), "--header", "auto_load"],
+      [base, "--target", target, "--dest", box.at("out"), "--header", "auto_load"],
       { expectExit: 1 }
     );
 
     conflictingReports = box.run(
       "archive pack-patch",
-      ["--input", base, "--target", target, "--dest", box.at("out"), "--json", "--report", box.at("both.json")],
+      [base, "--target", target, "--dest", box.at("out"), "--json", "--report", box.at("both.json")],
       { expectExit: 2 }
     );
 
     oversized = box.run(
       "archive pack-patch",
-      ["--input", base, "--target", target, "--dest", box.at("out"), "--max-size", "4000"],
+      [base, "--target", target, "--dest", box.at("out"), "--max-size", "4000"],
       { expectExit: 1 }
     );
   });
@@ -70,7 +70,6 @@ describe("archive pack-patch arguments", () => {
   it("should publish oversized volumes when asked", () => {
     expect(
       box.run("archive pack-patch", [
-        "--input",
         base,
         "--target",
         target,

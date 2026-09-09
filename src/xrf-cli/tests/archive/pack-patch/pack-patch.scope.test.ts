@@ -26,7 +26,6 @@ describe("archive pack-patch scope", () => {
 
   const compare = (name: string, scope: Array<string>): CliResult =>
     box.run("archive pack-patch", [
-      "--input",
       base,
       "--target",
       target,

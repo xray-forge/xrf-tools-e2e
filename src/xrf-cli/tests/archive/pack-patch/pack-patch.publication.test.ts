@@ -18,7 +18,6 @@ describe("archive pack-patch publication", () => {
     ]);
 
     published = box.run("archive pack-patch", [
-      "--input",
       base,
       "--target",
       target,
@@ -34,7 +33,6 @@ describe("archive pack-patch publication", () => {
 
     // The same tree on both sides: a run that would have written, with nothing worth writing.
     unnecessary = box.run("archive pack-patch", [
-      "--input",
       createWorld(box, "same-base"),
       "--target",
       createWorld(box, "same-target"),
