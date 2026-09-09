@@ -30,8 +30,8 @@ exports[`spawn unpack force should write the expected files 1`] = `
 [
   {
     "path": "unpacked/alife_spawns.ltx",
-    "sha256": "84a7a747aae92bc5e70bfda79b9636bec90907a2f380799325bff4ac4755d9bb",
-    "size": 278730,
+    "sha256": "9c4d583f1f62350bdfbffb5d607089386b97be3af071d9633df41f0797c51642",
+    "size": 278011,
   },
   {
     "path": "unpacked/artefact_spawns.ltx",

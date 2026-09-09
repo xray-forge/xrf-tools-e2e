@@ -57,13 +57,13 @@ exports[`archive info entry points should write the expected files 1`] = `
 [
   {
     "path": "archives/configs.db",
-    "sha256": "8b18f66af047ba510f85e7319b1f877348c20f7905b97acf97539d383c43b610",
-    "size": 115,
+    "sha256": "99e44f40d34aab328b15ad5bfc6d8a9e0288e9313c0f4dfb5b7d61faaa85b71b",
+    "size": 133,
   },
   {
     "path": "archives/scripts.db",
-    "sha256": "c094ba1bbf2214c80b706511482a3622698ba33165f5f93d5d61fc65c4625c3e",
-    "size": 115,
+    "sha256": "db4c42eab7a775d4bfd517aa1eea4a6f3cefd8b5369518dc952f6deb579116f1",
+    "size": 133,
   },
   {
     "path": "configs/config.ltx",

@@ -110,8 +110,8 @@ exports[`particle repack and particle re-unpack should write the expected files 
   },
   {
     "path": "re-unpacked/groups.ltx",
-    "sha256": "b9a39fb60d5fbc5e3e8afa0e580d3e3b13eecfb6a492c243b76ce32679feaa0a",
-    "size": 310075,
+    "sha256": "4efe646d5aaef8fbdd09f320a4dcb2a267973d505bd95aa0f5827e5e2e638105",
+    "size": 306686,
   },
   {
     "path": "re-unpacked/header.ltx",
@@ -135,8 +135,8 @@ exports[`particle repack and particle re-unpack should write the expected files 
   },
   {
     "path": "unpacked/groups.ltx",
-    "sha256": "b9a39fb60d5fbc5e3e8afa0e580d3e3b13eecfb6a492c243b76ce32679feaa0a",
-    "size": 310075,
+    "sha256": "4efe646d5aaef8fbdd09f320a4dcb2a267973d505bd95aa0f5827e5e2e638105",
+    "size": 306686,
   },
   {
     "path": "unpacked/header.ltx",
