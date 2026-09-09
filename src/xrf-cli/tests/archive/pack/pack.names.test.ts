@@ -21,7 +21,6 @@ describe("archive pack names and aliases", () => {
     box.write("source/nested/payload_copy.ltx", "same payload\n");
 
     packed = box.run("archive pack", [
-      "--path",
       box.at("source"),
       "--dest",
       box.at("packed"),

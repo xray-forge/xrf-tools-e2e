@@ -18,7 +18,7 @@ describe("archive workflow", () => {
 
     const archive = box.at("packed");
 
-    pack = box.run("archive pack", ["--path", box.at("source"), "--dest", archive, "--name", "fixture"]);
+    pack = box.run("archive pack", [box.at("source"), "--dest", archive, "--name", "fixture"]);
     info = box.run("archive info", ["--path", archive]);
     verify = box.run("archive verify", ["--path", archive]);
     list = box.run("archive list", ["--path", archive, "--files"]);

@@ -58,7 +58,7 @@ describe("CLI reporting contract", () => {
   }
 
   beforeAll(() => {
-    box.run("archive pack", ["--path", gamedata("configs"), "--dest", box.at("packed"), "--name", "fixture"]);
+    box.run("archive pack", [gamedata("configs"), "--dest", box.at("packed"), "--name", "fixture"]);
 
     archive = box.at("packed/fixture.db");
     dialogs = box.at("dialogs");

@@ -14,7 +14,6 @@ describe("archive info entry points", () => {
     box.write("configs/config.ltx", "[configs]\n");
     box.write("scripts/script.ltx", "[scripts]\n");
     box.run("archive pack", [
-      "--path",
       box.at("configs"),
       "--dest",
       box.at("archives"),
@@ -24,7 +23,6 @@ describe("archive info entry points", () => {
       "entry_point=$fs_root$\\gamedata\\configs\\",
     ]);
     box.run("archive pack", [
-      "--path",
       box.at("scripts"),
       "--dest",
       box.at("archives"),

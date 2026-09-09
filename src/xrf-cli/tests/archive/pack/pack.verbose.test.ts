@@ -57,10 +57,9 @@ describe("archive pack verbose output", () => {
     box.write("source/empty.ltx", "");
     box.write("source/tiny.ltx", "[a]\n");
 
-    plain = box.run("archive pack", ["--path", source, "--dest", box.at("plain"), "--name", "a", ...selection]);
+    plain = box.run("archive pack", [source, "--dest", box.at("plain"), "--name", "a", ...selection]);
 
     reported = box.run("archive pack", [
-      "--path",
       source,
       "--dest",
       box.at("reported"),
@@ -71,16 +70,7 @@ describe("archive pack verbose output", () => {
       box.at("reported.json"),
     ]);
 
-    verbose = box.run("archive pack", [
-      "--path",
-      source,
-      "--dest",
-      box.at("verbose"),
-      "--name",
-      "a",
-      ...selection,
-      "--verbose",
-    ]);
+    verbose = box.run("archive pack", [source, "--dest", box.at("verbose"), "--name", "a", ...selection, "--verbose"]);
   });
 
   it("should keep the normal summary compact", () => {

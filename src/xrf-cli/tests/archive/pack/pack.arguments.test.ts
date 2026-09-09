@@ -16,7 +16,6 @@ describe("archive pack arguments", () => {
     conflicting = box.run(
       "archive pack",
       [
-        "--path",
         gamedata("configs"),
         "--dest",
         box.at("conflicting"),
@@ -32,7 +31,7 @@ describe("archive pack arguments", () => {
 
     malformedHeader = box.run(
       "archive pack",
-      ["--path", gamedata("configs"), "--dest", box.at("malformed-header"), "--name", "cfg", "--header", "auto_load"],
+      [gamedata("configs"), "--dest", box.at("malformed-header"), "--name", "cfg", "--header", "auto_load"],
       { expectExit: 1 }
     );
   });
