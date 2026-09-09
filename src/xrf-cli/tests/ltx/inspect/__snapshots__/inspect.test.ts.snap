@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ltx inspect should deposit the same explanation through a report 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "ltx",
+    "inspect",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "diagnostics": [],
+    "dialect": "ltx",
+    "section": {
+      "entry": "system.ltx",
+      "fields": [
+        {
+          "key": "$scheme",
+          "origin": {
+            "file": "items\\w_base.ltx",
+            "kind": "inherited",
+            "section": "wpn_base",
+          },
+          "value": "$weapon",
+        },
+        {
+          "key": "cost",
+          "origin": {
+            "file": "items\\w_base.ltx",
+            "kind": "declared",
+          },
+          "value": "4000",
+        },
+        {
+          "key": "ammo_class",
+          "origin": {
+            "file": "items\\w_base.ltx",
+            "kind": "declared",
+          },
+          "value": "ammo_545x39, ammo_545x39_ap",
+        },
+        {
+          "key": "kind",
+          "origin": {
+            "file": "items\\w_base.ltx",
+            "kind": "declared",
+          },
+          "value": "rifle",
+        },
+        {
+          "key": "upgrade_scheme",
+          "origin": {
+            "file": "items\\w_base.ltx",
+            "kind": "declared",
+          },
+          "value": "wpn_child_upgrades",
+        },
+        {
+          "key": "description",
+          "origin": {
+            "file": "items\\w_base.ltx",
+            "kind": "declared",
+          },
+          "value": "inherits the scheme it never declares",
+        },
+      ],
+      "name": "wpn_child",
+      "origin": "items\\w_base.ltx",
+      "parents": [
+        "wpn_base",
+      ],
+    },
+  },
+}
+`;
+
+exports[`ltx inspect should explain every field of the section 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Inspect path: <resources>/ltx-schemes/configs",
+    "[wpn_child] resolved from system.ltx (ltx)",
+    "  declared in items\\w_base.ltx",
+    "  inherits wpn_base",
+    "  $scheme        = $weapon                                inherited from [wpn_base] in items\\w_base.ltx",
+    "  cost           = 4000                                   written here, in items\\w_base.ltx",
+    "  ammo_class     = ammo_545x39, ammo_545x39_ap            written here, in items\\w_base.ltx",
+    "  kind           = rifle                                  written here, in items\\w_base.ltx",
+    "  upgrade_scheme = wpn_child_upgrades                     written here, in items\\w_base.ltx",
+    "  description    = inherits the scheme it never declares  written here, in items\\w_base.ltx",
+    "6 field(s), 0 diagnostic(s)",
+  ],
+}
+`;

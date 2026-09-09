@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ltx inspect dltx should deposit the same explanation through a report 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "ltx",
+    "inspect",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "diagnostics": [],
+    "dialect": "dltx",
+    "section": {
+      "entry": "system.ltx",
+      "fields": [
+        {
+          "key": "$scheme",
+          "origin": {
+            "depth": 1,
+            "file": "w_ak74.ltx",
+            "kind": "loaded",
+            "operation": "",
+          },
+          "value": "$wpn_patched",
+        },
+        {
+          "key": "ammo_class",
+          "origin": {
+            "depth": -200,
+            "file": "mod_system_aaa.ltx",
+            "kind": "loaded",
+            "operation": ">",
+          },
+          "value": "ammo_a,ammo_b,ammo_c",
+        },
+        {
+          "key": "cost",
+          "origin": {
+            "depth": -400,
+            "file": "mod_system_xxx.ltx",
+            "kind": "loaded",
+            "operation": "",
+          },
+          "value": "9000",
+        },
+        {
+          "key": "patched_by",
+          "origin": {
+            "depth": -400,
+            "file": "mod_system_xxx.ltx",
+            "kind": "loaded",
+            "operation": "",
+          },
+          "value": "mod_system_xxx.ltx",
+        },
+      ],
+      "name": "wpn_ak74",
+      "origin": "items\\w_ak74.ltx",
+      "parents": [
+        "wpn_base",
+      ],
+    },
+  },
+}
+`;
+
+exports[`ltx inspect dltx should explain every field the dialect resolved 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Inspect path: <resources>/gamedata-dltx/configs",
+    "[wpn_ak74] resolved from system.ltx (dltx)",
+    "  declared in items\\w_ak74.ltx",
+    "  inherits wpn_base",
+    "  $scheme    = $wpn_patched          set by w_ak74.ltx (depth 1)",
+    "  ammo_class = ammo_a,ammo_b,ammo_c  set by mod_system_aaa.ltx ('>', depth -200)",
+    "  cost       = 9000                  set by mod_system_xxx.ltx (depth -400)",
+    "  patched_by = mod_system_xxx.ltx    set by mod_system_xxx.ltx (depth -400)",
+    "4 field(s), 0 diagnostic(s)",
+  ],
+}
+`;

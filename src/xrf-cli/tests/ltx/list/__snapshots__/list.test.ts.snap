@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ltx list should deposit the same inventory through a report 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "ltx",
+    "list",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "files": [
+      {
+        "isPhysical": true,
+        "path": "items\\w_base.ltx",
+        "role": {
+          "by": [
+            "system.ltx",
+          ],
+          "kind": "included",
+        },
+        "source": "<resources>/ltx-schemes/configs",
+      },
+      {
+        "isPhysical": true,
+        "path": "items\\w_broken.ltx",
+        "role": {
+          "by": [
+            "system.ltx",
+          ],
+          "kind": "included",
+        },
+        "source": "<resources>/ltx-schemes/configs",
+      },
+      {
+        "isPhysical": true,
+        "path": "standalone.ltx",
+        "role": {
+          "kind": "entryPoint",
+        },
+        "source": "<resources>/ltx-schemes/configs",
+      },
+      {
+        "isPhysical": true,
+        "path": "system.ltx",
+        "role": {
+          "kind": "entryPoint",
+        },
+        "source": "<resources>/ltx-schemes/configs",
+      },
+      {
+        "isPhysical": true,
+        "path": "weapons.scheme.ltx",
+        "role": {
+          "kind": "schemeFile",
+        },
+        "source": "<resources>/ltx-schemes/configs",
+      },
+    ],
+  },
+}
+`;
+
+exports[`ltx list should list every config with the role it plays 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "List path: <resources>/ltx-schemes/configs",
+    "items\\w_base.ltx - included by system.ltx",
+    "items\\w_broken.ltx - included by system.ltx",
+    "standalone.ltx - entry point",
+    "system.ltx - entry point",
+    "weapons.scheme.ltx - scheme",
+    "5 configs: 2 entry points, 2 included, 1 schemes, 0 attachments, 0 archived",
+  ],
+}
+`;
