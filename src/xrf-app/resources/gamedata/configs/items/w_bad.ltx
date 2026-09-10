@@ -1,0 +1,8 @@
+; Reached through the wildcard include in system.ltx, so what it breaks is reported against that entry
+; point rather than against this path - which is what a cross-file jump exists for.
+;
+; [$weapon] is not strict here, so the absent `kind` is silence and only the typed `cost` is judged.
+
+[wpn_bad]
+$scheme = $weapon
+cost = expensive

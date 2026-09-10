@@ -96,6 +96,49 @@ describe("configs explorer", () => {
     await expect(resolved).toHaveText(expect.stringContaining("inherited from [wpn_base]"));
   });
 
+  it("says what judges the selected section, binding and all", async () => {
+    // `wpn_child` declares no `$scheme` of its own. Nothing in the text of its header says it is a weapon, and the
+    // resolution is what knows - which is the answer this panel exists to give.
+    await $('[data-testid="configs-sections-panel"]').$("span=wpn_child").click();
+    await $('[aria-label="Scheme"]').click();
+
+    const scheme = $('[data-testid="configs-scheme-panel"]');
+
+    await scheme.waitForExist({ timeout: 10_000 });
+
+    await expect(scheme).toHaveText(expect.stringContaining("$weapon"));
+    await expect(scheme).toHaveText(expect.stringContaining("inherited from wpn_base"));
+    // The declared type beside the value the section supplies, which is the whole point of a typed inspector.
+    await expect(scheme).toHaveText(expect.stringContaining("u32"));
+    await expect(scheme).toHaveText(expect.stringContaining("4000"));
+  });
+
+  it("lists what is wrong with the whole root and opens the config a finding names", async () => {
+    await $('[aria-label="Problems"]').click();
+
+    const problems = $('[data-testid="configs-problems-panel"]');
+
+    await problems.waitForExist({ timeout: 20_000 });
+
+    // `w_bad.ltx` is reached through the wildcard include, so its scheme failure is found by verifying the root and
+    // reported against the file that writes it.
+    await expect(problems).toHaveText(expect.stringContaining("w_bad.ltx"));
+    await expect(problems).toHaveText(expect.stringContaining("wpn_bad"));
+
+    await $('[data-testid="configs-problems-panel"]').$('[data-testid="editor-problems-row"]').click();
+
+    // The jump: another config, opened as written, with the finding marked in its gutter.
+    await expect($('[data-testid="editor-toolbar"]')).toHaveText(expect.stringContaining("w_bad.ltx"));
+
+    await $('[data-testid="configs-authored-lines"]').waitForExist({ timeout: 20_000 });
+
+    // The gutter of the line the finding names carries its mark. Matched as an element rather than by the icon's
+    // accessible name: that name is an SVG `<title>` child, and wdio's text selectors look for HTML elements.
+    const gutters = await $$('[data-testid="configs-authored-lines"] [data-testid="virtualized-lines-gutter"]');
+
+    await expect(gutters[7].$("svg")).toBeExisting();
+  });
+
   it("returns to the launcher without leaving the project open", async () => {
     await $('[data-testid="editor-toolbar"]').$("button=XRF").click();
 
