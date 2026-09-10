@@ -136,7 +136,7 @@ describe("configs explorer", () => {
     // accessible name: that name is an SVG `<title>` child, and wdio's text selectors look for HTML elements.
     const gutters = await $$('[data-testid="configs-authored-lines"] [data-testid="virtualized-lines-gutter"]');
 
-    await expect(gutters[7].$("svg")).toBeExisting();
+    await expect(gutters[7]?.$("svg")).toBeExisting();
   });
 
   it("returns to the launcher without leaving the project open", async () => {
