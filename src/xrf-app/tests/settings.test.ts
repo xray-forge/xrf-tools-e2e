@@ -3,7 +3,7 @@ import { describe, it } from "mocha";
 
 describe("settings", () => {
   it("opens the dialog and reads the build identity over IPC", async () => {
-    await $('[data-testid="launcher-catalog"]').waitForExist({ timeout: 10_000 });
+    await $('[data-testid="application-launcher-catalog"]').waitForExist({ timeout: 10_000 });
     await $('button[aria-label="Settings"]').click();
 
     const dialog = $('[role="dialog"]');

@@ -48,7 +48,7 @@ async function readTexelRows(): Promise<Array<string>> {
 
 describe("textures explorer", () => {
   before(async () => {
-    await $('[data-testid="launcher-catalog"]').waitForExist({ timeout: 10_000 });
+    await $('[data-testid="application-launcher-catalog"]').waitForExist({ timeout: 10_000 });
 
     // The path field is read-only and only a native dialog writes it, so the remembered value is the way in. Seeded
     // after the launcher is on screen.
@@ -58,7 +58,7 @@ describe("textures explorer", () => {
       TEXTURE
     );
 
-    await $('[data-testid="launcher-catalog"] [aria-label="Textures explorer"]').click();
+    await $('[data-testid="application-launcher-catalog"] [aria-label="Textures explorer"]').click();
 
     await $("button=Texture").click();
     await $("button=Open").click();

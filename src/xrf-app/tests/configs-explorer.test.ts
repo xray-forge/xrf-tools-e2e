@@ -13,7 +13,7 @@ const ROOT_FIELD_KEY: string = "xrf.form.configs-explorer.root";
 
 describe("configs explorer", () => {
   before(async () => {
-    await $('[data-testid="launcher-catalog"]').waitForExist({ timeout: 10_000 });
+    await $('[data-testid="application-launcher-catalog"]').waitForExist({ timeout: 10_000 });
 
     // The path field is read-only and only a native dialog writes it, so the remembered value is the way in.
     await browser.execute(
@@ -22,7 +22,7 @@ describe("configs explorer", () => {
       CONFIGS
     );
 
-    await $('[data-testid="launcher-catalog"] [aria-label="Configs explorer"]').click();
+    await $('[data-testid="application-launcher-catalog"] [aria-label="Configs explorer"]').click();
     await $("button=Open").click();
 
     await $('[data-testid="configs-menu"]').waitForExist({ timeout: 20_000 });
@@ -34,16 +34,18 @@ describe("configs explorer", () => {
     await expect(menu).toHaveText(expect.stringContaining("system.ltx"));
     await expect(menu).toHaveText(expect.stringContaining("weapons.scheme.ltx"));
 
-    // The badges are the answer this tree gives that a filesystem listing cannot: which config resolves on its own,
-    // and which one declares the rules the others are judged by.
-    await expect(menu).toHaveText(expect.stringContaining("entry"));
-    await expect(menu).toHaveText(expect.stringContaining("scheme"));
+    // The role is the answer this tree gives that a filesystem listing cannot: which config resolves on its own, and
+    // which one declares the rules the others are judged by. It is the icon's tint, so the title is where it is
+    // readable - the row's own text is the file name and nothing else.
+    await expect(menu.$('[title^="Entry point"]')).toBeExisting();
+    await expect(menu.$('[title^="Scheme declaration"]')).toBeExisting();
   });
 
   it("reads a config and colours what only the parser knows", async () => {
-    // Exact text on the label span: the row's own text is the name plus its badges, so a partial match on the row
-    // would also match `weapons.scheme.ltx`.
-    await $('[data-testid="configs-menu"]').$("span=system.ltx").click();
+    // Double click, because selecting is inert: arrow keys move the selection and reading every row they cross would
+    // resolve a config per keystroke. Exact text on the label span, since a partial match on the row would also match
+    // `weapons.scheme.ltx`.
+    await $('[data-testid="configs-menu"]').$("span=system.ltx").doubleClick();
 
     const view = $('[data-testid="configs-document-view"]');
 
@@ -142,6 +144,6 @@ describe("configs explorer", () => {
   it("returns to the launcher without leaving the project open", async () => {
     await $('[data-testid="editor-toolbar"]').$("button=XRF").click();
 
-    await expect($('[data-testid="launcher-catalog"]')).toBeDisplayed();
+    await expect($('[data-testid="application-launcher-catalog"]')).toBeDisplayed();
   });
 });
