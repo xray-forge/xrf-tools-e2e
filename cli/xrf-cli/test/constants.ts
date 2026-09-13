@@ -40,6 +40,11 @@ export const CLI_LTX_SCHEMES_ROOT: string = path.resolve(CLI_RESOURCES_ROOT, "./
  */
 export const CLI_LTX_SCHEMES_DLTX_ROOT: string = path.resolve(CLI_RESOURCES_ROOT, "./ltx-schemes-dltx");
 
+/**
+ * Root of the committed config tree whose scheme declarations are assembled by a scheme root.
+ */
+export const CLI_LTX_SCHEME_ASSEMBLY_ROOT: string = path.resolve(CLI_RESOURCES_ROOT, "./ltx-scheme-assembly");
+
 export const CLI_TESTS_ROOT: string = path.resolve(PROJECT_ROOT, "./src/xrf-cli/tests");
 
 /** Generated state from one E2E run, deleted before any test suite starts. */
@@ -146,4 +151,14 @@ export function ltxSchemes(relative: string = ""): string {
  */
 export function ltxSchemesDltx(relative: string = ""): string {
   return relative ? path.resolve(CLI_LTX_SCHEMES_DLTX_ROOT, relative) : CLI_LTX_SCHEMES_DLTX_ROOT;
+}
+
+/**
+ * Refers to a file in the committed tree whose declarations are assembled by a scheme root.
+ *
+ * @param relative - Path relative to that tree's root, for example `configs`.
+ * @returns Absolute path.
+ */
+export function ltxSchemeAssembly(relative: string = ""): string {
+  return relative ? path.resolve(CLI_LTX_SCHEME_ASSEMBLY_ROOT, relative) : CLI_LTX_SCHEME_ASSEMBLY_ROOT;
 }

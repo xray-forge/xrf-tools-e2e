@@ -30,28 +30,29 @@ exports[`ltx list should deposit the same inventory through a report 1`] = `
   "result": {
     "files": [
       {
+        "includedBy": [
+          "system.ltx",
+        ],
         "isPhysical": true,
         "path": "items\\w_base.ltx",
         "role": {
-          "by": [
-            "system.ltx",
-          ],
           "kind": "included",
         },
         "source": "<resources>/ltx-schemes/configs",
       },
       {
+        "includedBy": [
+          "system.ltx",
+        ],
         "isPhysical": true,
         "path": "items\\w_broken.ltx",
         "role": {
-          "by": [
-            "system.ltx",
-          ],
           "kind": "included",
         },
         "source": "<resources>/ltx-schemes/configs",
       },
       {
+        "includedBy": [],
         "isPhysical": true,
         "path": "standalone.ltx",
         "role": {
@@ -60,6 +61,7 @@ exports[`ltx list should deposit the same inventory through a report 1`] = `
         "source": "<resources>/ltx-schemes/configs",
       },
       {
+        "includedBy": [],
         "isPhysical": true,
         "path": "system.ltx",
         "role": {
@@ -68,6 +70,7 @@ exports[`ltx list should deposit the same inventory through a report 1`] = `
         "source": "<resources>/ltx-schemes/configs",
       },
       {
+        "includedBy": [],
         "isPhysical": true,
         "path": "weapons.scheme.ltx",
         "role": {

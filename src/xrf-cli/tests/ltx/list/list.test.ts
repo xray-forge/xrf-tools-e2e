@@ -1,6 +1,6 @@
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
-import { gamedataDltx, ltxSchemes } from "#/xrf-cli/test/constants";
+import { gamedataDltx, ltxSchemeAssembly, ltxSchemes } from "#/xrf-cli/test/constants";
 import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
 /**
@@ -36,6 +36,17 @@ describe("ltx list", () => {
 
   it("should report a config nothing includes as an entry point", () => {
     expect(said).toContain("standalone.ltx - entry point");
+  });
+
+  it("should name the scheme root that assembles a declaration", () => {
+    // The shape `xrf-engine` ships: one scheme root includes every declaration and they inherit across each other, so
+    // a declaration resolves only through that root. Its role says it is a scheme and nothing about which resolution
+    // judges it, which is why the includers are recorded for every role rather than inside one of them.
+    const assembled: CliResult = box.run("ltx list", ["--path", ltxSchemeAssembly("configs")]);
+    const listing: string = assembled.stdout.join("\n");
+
+    expect(listing).toContain("$scheme\\items.scheme.ltx - scheme, included by $scheme\\scheme.ltx");
+    expect(listing).toContain("$scheme\\scheme.ltx - scheme");
   });
 
   it("should read a patch file as an attachment only under the dialect that has them", () => {
