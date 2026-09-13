@@ -18,13 +18,12 @@ describe("settings", () => {
 
     await dialog.$("span=About").click();
 
-    // Rendered only after `system|get_build_info` answers, so its presence proves the IPC bridge.
-    const info = dialog.$('[data-testid="settings-build-info"]');
+    const build = dialog.$('[data-testid="settings-build-section"]');
 
-    await info.waitForExist();
+    await build.waitForExist();
 
-    await expect(info).toHaveText(expect.stringContaining("Version"));
-    await expect(info).toHaveText(expect.stringContaining("Target"));
+    await expect(build).toHaveText(expect.stringContaining("Version"));
+    await expect(build).toHaveText(expect.stringContaining("Target"));
 
     await dialog.$("button=Done").click();
 
