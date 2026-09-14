@@ -67,7 +67,9 @@ describe("textures explorer", () => {
   });
 
   it("reads the descriptor of one loose texture and the pair it declares", async () => {
-    await expect($("#editor-toolbar")).toHaveText(expect.stringContaining("act_arm_1"));
+    // The header rather than the toolbar: the toolbar's last crumb is where the session was opened, which a loose
+    // texture does not have, and naming what is on screen is this row's job.
+    await expect($('[data-testid="texture-file-header"]')).toHaveText(expect.stringContaining("act_arm_1"));
 
     // The Material panel opens with the editor, so it is read rather than opened.
     const material = $('[data-testid="texture-material-panel"]');

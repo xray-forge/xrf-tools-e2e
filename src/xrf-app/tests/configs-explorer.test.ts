@@ -129,8 +129,10 @@ describe("configs explorer", () => {
 
     await $('[data-testid="configs-problems-panel"]').$('[data-testid="editor-problems-row"]').click();
 
-    // The jump: another config, opened as written, with the finding marked in its gutter.
-    await expect($('[data-testid="editor-toolbar"]')).toHaveText(expect.stringContaining("w_bad.ltx"));
+    // The jump: another config, opened as written, with the finding marked in its gutter. Read off the document
+    // header rather than the toolbar, whose last crumb is the root the session was opened on and says nothing about
+    // which config is on screen.
+    await expect($('[data-testid="configs-document-header"]')).toHaveText(expect.stringContaining("w_bad.ltx"));
 
     await $('[data-testid="configs-authored-lines"]').waitForExist({ timeout: 20_000 });
 
