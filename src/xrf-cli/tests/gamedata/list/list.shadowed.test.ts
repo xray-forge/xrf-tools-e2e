@@ -77,7 +77,7 @@ describe("gamedata list across mounts", () => {
 
   it("should report ordered winners, shadowed archive entries and loose-only entries", () => {
     const install = "<sandbox>/install";
-    const archive = "<sandbox>/install/database";
+    const archive = "<sandbox>/install/database/gamedata.db";
     const looseRoot = "<sandbox>/install/gamedata";
 
     expect(box.json("listing.json")).toMatchObject({

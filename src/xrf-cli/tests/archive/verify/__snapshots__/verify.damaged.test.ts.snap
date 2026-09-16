@@ -120,6 +120,7 @@ exports[`archive verify damaged volume should record the readable archive report
     "checked": 1,
     "collisions": [],
     "findings": [],
+    "overrides": [],
     "status": "passed",
   },
 }
@@ -161,6 +162,7 @@ exports[`archive verify damaged volume should record the readable archive report
         "name": "payload.ltx",
       },
     ],
+    "overrides": [],
     "status": "failed",
   },
 }
@@ -180,8 +182,8 @@ exports[`archive verify damaged volume should write the expected files 1`] = `
   },
   {
     "path": "intact.json",
-    "sha256": "c09fc9c49703f3967eba98aac81b9b90ab02bacd871522f3055857b0bdfe2459",
-    "size": 610,
+    "sha256": "c0b6df5e96f365f89ad748ababc959608d3dde077c10655ba2854daeda3a677b",
+    "size": 631,
   },
   {
     "path": "listing.json",
@@ -205,8 +207,8 @@ exports[`archive verify damaged volume should write the expected files 1`] = `
   },
   {
     "path": "verify.json",
-    "sha256": "0967cc0a44970372140c1c3f3b532acdc6bdc4db56552d0249158416bc83738c",
-    "size": 810,
+    "sha256": "608227c3f90ec44ce83d0568575d9173c956278d125f1d59346353ecdfddb814",
+    "size": 831,
   },
 ]
 `;

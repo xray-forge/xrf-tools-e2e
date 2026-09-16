@@ -472,7 +472,7 @@ exports[`docs generate should render gamedata.md 1`] = `
   "| \`--prefix <prefix>\` |  |  | Limit to one logical subtree, such as configs or textures\\wpn |",
   "| \`-i, --ignore <ignore>...\` |  |  | Logical prefixes the directory mounts omit, such as textures\\wip |",
   "| \`--loose\` |  |  | List only loose files, ignoring archived entries |",
-  "| \`--shadowed\` |  |  | Also report entries hidden by a higher-priority mount |",
+  "| \`--shadowed\` |  |  | Also report entries hidden by a higher-priority source, mount or volume |",
   "| \`-s, --silent\` |  |  | Turn off logging |",
   "| \`-v, --verbose\` |  |  | Turn on verbose logging |",
   "| \`--json\` |  |  | Write the run's JSON report to stdout, moving human output to stderr |",
@@ -1294,8 +1294,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/gamedata.md",
-    "sha256": "a309588a277c15d13e5d9a242296d1600855e42e0a988b1daee55227202e0a8c",
-    "size": 2630,
+    "sha256": "609a59771979457daf695e3f9cedd89abd743cb9d3433353d966f3217767b3fc",
+    "size": 2648,
   },
   {
     "path": "docs/ltx.md",

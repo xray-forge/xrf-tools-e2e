@@ -20,7 +20,7 @@ exports[`gamedata command help should keep each leaf command's help stable 1`] =
       "  -i, --ignore <ignore>...  Logical prefixes the directory mounts omit, such as textures\\wip",
       "      --report <PATH>       Write the run's JSON report to a file",
       "      --loose               List only loose files, ignoring archived entries",
-      "      --shadowed            Also report entries hidden by a higher-priority mount",
+      "      --shadowed            Also report entries hidden by a higher-priority source, mount or volume",
       "  -h, --help                Print help",
     ],
   },

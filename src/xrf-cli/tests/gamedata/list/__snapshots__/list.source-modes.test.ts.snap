@@ -32,7 +32,7 @@ exports[`gamedata list source modes should record every supported source-mode re
     "duration": "<duration>",
     "entries": [
       {
-        "container": "<sandbox>/install/database",
+        "container": "<sandbox>/install/database/gamedata.db",
         "isArchived": true,
         "logicalPath": "configs\\archive_only.ltx",
       },
@@ -87,7 +87,7 @@ exports[`gamedata list source modes should record every supported source-mode re
     "duration": "<duration>",
     "entries": [
       {
-        "container": "<sandbox>/install/database",
+        "container": "<sandbox>/install/database/gamedata.db",
         "isArchived": true,
         "logicalPath": "configs\\archive_only.ltx",
       },
@@ -201,12 +201,12 @@ exports[`gamedata list source modes should record every supported source-mode re
     "duration": "<duration>",
     "entries": [
       {
-        "container": "<sandbox>/install/database",
+        "container": "<sandbox>/install/database/gamedata.db",
         "isArchived": true,
         "logicalPath": "configs\\archive_only.ltx",
       },
       {
-        "container": "<sandbox>/install/database",
+        "container": "<sandbox>/install/database/gamedata.db",
         "isArchived": true,
         "logicalPath": "configs\\system.ltx",
       },
@@ -281,13 +281,13 @@ exports[`gamedata list source modes should write the expected files 1`] = `
 [
   {
     "path": "auto-install.json",
-    "sha256": "2b782d0a170b4c688be4f253b98c2ee7cd2c4e18c19feb3aac9bcdcc6fb5a340",
-    "size": 1148,
+    "sha256": "d9b2cd9042e18f9fc28555cca53f210fa7d302481f9b224f4fb9622254222f56",
+    "size": 1160,
   },
   {
     "path": "auto-volumes.json",
-    "sha256": "c29b5f8a519782954cba4f6d2908c5f825f03c29dffe56251803c9daaf184f3e",
-    "size": 1099,
+    "sha256": "1c835c713705e2297a1f991fd66e158984a6582ca6889ffd712b65a979448fd7",
+    "size": 1123,
   },
   {
     "path": "directory.json",
@@ -311,8 +311,8 @@ exports[`gamedata list source modes should write the expected files 1`] = `
   },
   {
     "path": "installation.json",
-    "sha256": "2b782d0a170b4c688be4f253b98c2ee7cd2c4e18c19feb3aac9bcdcc6fb5a340",
-    "size": 1148,
+    "sha256": "d9b2cd9042e18f9fc28555cca53f210fa7d302481f9b224f4fb9622254222f56",
+    "size": 1160,
   },
   {
     "path": "stage/configs/archive_only.ltx",

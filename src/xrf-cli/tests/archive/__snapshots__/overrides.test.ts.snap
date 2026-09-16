@@ -1,61 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`volume set reachability should report the same collision from the listing 1`] = `
-{
-  "build": {
-    "builtAt": "<build>",
-    "commit": "<build>",
-    "isDirty": "<build>",
-    "kind": "<build>",
-    "optimization": "<build>",
-    "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
-    "version": "<build>",
-  },
-  "command": [
-    "gamedata",
-    "list",
-  ],
-  "duration": "<duration>",
-  "error": null,
-  "execution": {
-    "origin": "auto",
-    "workers": "<workers>",
-  },
-  "exitCode": 0,
-  "outcome": "success",
-  "result": {
-    "collisions": [
-      {
-        "kept": "<sandbox>/db/patch.db::Textures/Wpn/WPN_AK74.DDS",
-        "logicalPath": "textures\\wpn\\wpn_ak74.dds",
-        "unreachable": "<sandbox>/db/base.db::textures/wpn/wpn_ak74.dds",
-      },
-    ],
-    "duration": "<duration>",
-    "entries": [
-      {
-        "container": "<sandbox>/db",
-        "isArchived": true,
-        "logicalPath": "textures\\wpn\\wpn_ak74.dds",
-      },
-    ],
-    "isShadowedIncluded": false,
-    "mounts": [
-      "Archive   <sandbox>/db (db)",
-    ],
-    "origin": "<sandbox>/db",
-    "shadowed": [],
-    "skipped": [],
-    "total": 1,
-  },
-}
-`;
-
-exports[`volume set reachability should report the unreachable entry beside the verdict 1`] = `
+exports[`volume set overrides should report the overridden path beside the verdict, and nothing as unreachable 1`] = `
 {
   "build": {
     "builtAt": "<build>",
@@ -84,33 +29,90 @@ exports[`volume set reachability should report the unreachable entry beside the 
   "outcome": "success",
   "result": {
     "checked": 2,
-    "collisions": [
+    "collisions": [],
+    "findings": [],
+    "overrides": [
       {
-        "kept": "<sandbox>/db/patch.db::Textures/Wpn/WPN_AK74.DDS",
+        "container": "<sandbox>/db/patch.db",
+        "hidden": [
+          "<sandbox>/db/base.db",
+        ],
         "logicalPath": "textures\\wpn\\wpn_ak74.dds",
-        "unreachable": "<sandbox>/db/base.db::textures/wpn/wpn_ak74.dds",
       },
     ],
-    "findings": [],
     "status": "passed",
   },
 }
 `;
 
-exports[`volume set reachability should verify clean and still name what no lookup can reach 1`] = `
+exports[`volume set overrides should report the same buried copy from the listing 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "list",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "collisions": [],
+    "duration": "<duration>",
+    "entries": [
+      {
+        "container": "<sandbox>/db/patch.db",
+        "isArchived": true,
+        "logicalPath": "textures\\wpn\\wpn_ak74.dds",
+      },
+    ],
+    "isShadowedIncluded": true,
+    "mounts": [
+      "Archive   <sandbox>/db (db)",
+    ],
+    "origin": "<sandbox>/db",
+    "shadowed": [
+      {
+        "container": "<sandbox>/db/base.db",
+        "isArchived": true,
+        "logicalPath": "textures\\wpn\\wpn_ak74.dds",
+      },
+    ],
+    "skipped": [],
+    "total": 1,
+  },
+}
+`;
+
+exports[`volume set overrides should verify clean and still name what the patch buried 1`] = `
 {
   "exitCode": 0,
-  "stderr": [
-    "1 file(s) cannot be reached, another file claims their path:",
-    "  <sandbox>/db/base.db::textures/wpn/wpn_ak74.dds is unreachable, <sandbox>/db/patch.db::Textures/Wpn/WPN_AK74.DDS answers 'textures\\wpn\\wpn_ak74.dds'",
-  ],
+  "stderr": [],
   "stdout": [
+    "1 path(s) are held more than once, burying 1 cop(ies):",
+    "  'textures\\wpn\\wpn_ak74.dds' answers from <sandbox>/db/patch.db (archive), hiding 1 cop(ies)",
     "Verified 2 file(s) in <duration>",
   ],
 }
 `;
 
-exports[`volume set reachability should write the expected files 1`] = `
+exports[`volume set overrides should write the expected files 1`] = `
 [
   {
     "path": "base/textures/wpn/wpn_ak74.dds",
@@ -129,8 +131,8 @@ exports[`volume set reachability should write the expected files 1`] = `
   },
   {
     "path": "listing.json",
-    "sha256": "33a3682edf190f0b0b137432e35ae8b2fdd29dd9e932b1fb29ab578ab6df2691",
-    "size": 1128,
+    "sha256": "91148bf79a51cf651d12c526b2c936b0de43f1c00194a7e92946be2a045287c8",
+    "size": 1067,
   },
   {
     "path": "patch/Textures/Wpn/WPN_AK74.DDS",
@@ -139,8 +141,8 @@ exports[`volume set reachability should write the expected files 1`] = `
   },
   {
     "path": "verify.json",
-    "sha256": "d3d0a9af132c750de0c8f499df22ae937bb97fea355b7aace57f98339c2fd87c",
-    "size": 826,
+    "sha256": "330b4142809284370c72a26d30f63c75ad7d8a0036a4867fa23ff0cc7b1f210a",
+    "size": 815,
   },
 ]
 `;

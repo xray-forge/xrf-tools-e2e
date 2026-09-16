@@ -83,7 +83,7 @@ describe("gamedata list source modes", () => {
 
   it("should treat an installation as its declared loose and archive sources in auto and installation modes", () => {
     const report: CommandEnvelope = envelopeAt(box.at("auto-install.json"));
-    const archive = box.at("install/database").replaceAll("\\", "/");
+    const archive = box.at("install/database/gamedata.db").replaceAll("\\", "/");
     const loose = box.at("install/gamedata").replaceAll("\\", "/");
 
     expect(automatic.exitCode).toBe(0);
@@ -117,7 +117,7 @@ describe("gamedata list source modes", () => {
 
   it("should recognize a named volume directory in auto mode and enumerate it in volumes mode", () => {
     const report: CommandEnvelope = envelopeAt(box.at("auto-volumes.json"));
-    const archive = box.at("install/database").replaceAll("\\", "/");
+    const archive = box.at("install/database/gamedata.db").replaceAll("\\", "/");
 
     expect(automaticVolumes.exitCode).toBe(0);
     expect(volumes.exitCode).toBe(0);

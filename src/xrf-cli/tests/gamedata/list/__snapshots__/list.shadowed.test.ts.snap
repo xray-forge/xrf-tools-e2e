@@ -45,7 +45,7 @@ exports[`gamedata list across mounts should record each source mode 1`] = `
     "duration": "<duration>",
     "entries": [
       {
-        "container": "<sandbox>/install/database",
+        "container": "<sandbox>/install/database/gamedata.db",
         "isArchived": true,
         "logicalPath": "configs\\fonts.ltx",
       },
@@ -100,7 +100,7 @@ exports[`gamedata list across mounts should record each source mode 2`] = `
     "duration": "<duration>",
     "entries": [
       {
-        "container": "<sandbox>/install/database",
+        "container": "<sandbox>/install/database/gamedata.db",
         "isArchived": true,
         "logicalPath": "configs\\fonts.ltx",
       },
@@ -118,7 +118,7 @@ exports[`gamedata list across mounts should record each source mode 2`] = `
     "origin": "<sandbox>/install",
     "shadowed": [
       {
-        "container": "<sandbox>/install/database",
+        "container": "<sandbox>/install/database/gamedata.db",
         "isArchived": true,
         "logicalPath": "configs\\system.ltx",
       },
@@ -186,7 +186,7 @@ exports[`gamedata list across mounts should resolve an installation across both 
     "Listing <sandbox>/install",
     "  Directory <sandbox>/install/gamedata (gamedata)",
     "  Archive   <sandbox>/install/database (database)",
-    "  configs\\fonts.ltx [<sandbox>/install/database (archive)]",
+    "  configs\\fonts.ltx [<sandbox>/install/database/gamedata.db (archive)]",
     "  configs\\system.ltx [<sandbox>/install/gamedata]",
     "2 asset(s) across 2 mount(s) in <duration>",
   ],
@@ -198,13 +198,13 @@ exports[`gamedata list across mounts should reveal the copy hidden by a higher-p
   "exitCode": 0,
   "stderr": [
     "1 entry(ies) are shadowed:",
-    "  configs\\system.ltx hidden in [<sandbox>/install/database (archive)]",
+    "  configs\\system.ltx hidden in [<sandbox>/install/database/gamedata.db (archive)]",
   ],
   "stdout": [
     "Listing <sandbox>/install",
     "  Directory <sandbox>/install/gamedata (gamedata)",
     "  Archive   <sandbox>/install/database (database)",
-    "  configs\\fonts.ltx [<sandbox>/install/database (archive)]",
+    "  configs\\fonts.ltx [<sandbox>/install/database/gamedata.db (archive)]",
     "  configs\\system.ltx [<sandbox>/install/gamedata]",
     "2 asset(s) across 2 mount(s) in <duration>",
   ],
@@ -230,8 +230,8 @@ exports[`gamedata list across mounts should write only its reports 1`] = `
   },
   {
     "path": "listing.json",
-    "sha256": "a99984ce32893c33ec9ddecf56b934f0b1ddaee6992aeca8a07d3ba9bb247075",
-    "size": 1141,
+    "sha256": "c0cdc622d527a7fd17c66c255cb90870318bfef38c345521518c44c761ab1a1e",
+    "size": 1153,
   },
   {
     "path": "loose.json",
@@ -240,8 +240,8 @@ exports[`gamedata list across mounts should write only its reports 1`] = `
   },
   {
     "path": "shadowed.json",
-    "sha256": "8eb326e1fe55bb1c657688a88563ffc5dedb8bb13b37914d9472b8ecdd4f5735",
-    "size": 1285,
+    "sha256": "7bd9ff1050ba074a4824556d78434c970222685d2088c28e5dd3e92f4d30afad",
+    "size": 1309,
   },
   {
     "path": "stage/configs/fonts.ltx",
