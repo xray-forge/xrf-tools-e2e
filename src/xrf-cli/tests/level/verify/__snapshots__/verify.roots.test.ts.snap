@@ -74,6 +74,7 @@ exports[`level verify roots should read a level of mounted roots by its name 1`]
     "Read 1 visuals in <duration>, 1 drawable and 1 with a fast path",
     "Addressed 3 vertices and 3 indices against a 4 entry shader table",
     "0 sectors joined by 0 portals, named 0 times between them",
+    "Sectors reach 0 visuals, 0 drawables reached by more than one, 1 reached by none",
     "0 static lights, none of them a sun",
     "Decoded geometry spans (0.0, 0.0, 0.0) to (1.0, 1.0, 0.0), widest texture coordinate 0.0 tiles",
     "Verification passed, status: passed",
