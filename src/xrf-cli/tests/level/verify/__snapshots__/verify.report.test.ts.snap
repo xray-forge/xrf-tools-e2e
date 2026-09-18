@@ -1,0 +1,818 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`level verify report should expose decoded bounds and geometry layouts in verbose output 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Verifying compiled level <sandbox>/triangle",
+    "Read 1 visuals in <duration>, 1 drawable and 1 with a fast path",
+    "Addressed 3 vertices and 3 indices against a 4 entry shader table",
+    "Decoded geometry spans (0.0, 0.0, 0.0) to (1.0, 1.0, 0.0), widest texture coordinate 0.0 tiles",
+    "Layout positions only: 2 visuals",
+    "MT_NORMAL: 1 visuals",
+    "Verification passed, status: passed",
+  ],
+}
+`;
+
+exports[`level verify report should pass every check for drawable geometry 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "level",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "read",
+        "status": "passed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "ranges",
+        "status": "passed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "geometry",
+        "status": "passed",
+      },
+    ],
+    "status": "passed",
+  },
+}
+`;
+
+exports[`level verify report should preserve fixture bytes and write only the requested reports 1`] = `
+[
+  {
+    "path": "broken-geometry.json",
+    "sha256": "92ece402081e38b4a485a8158b6e0864d36c8b7c27f01ae1fbe45723e1a621f2",
+    "size": 1239,
+  },
+  {
+    "path": "broken-geometry/level",
+    "sha256": "3a400ff6f2067edf9d43cd4d6c9ca2fd46df220e173830ef73dc7794e358297c",
+    "size": 205,
+  },
+  {
+    "path": "broken-geometry/level.geom",
+    "sha256": "31313632296176cb4d06715f3a4203f40173ee77f45b1a0fec285352f1ade1fa",
+    "size": 89,
+  },
+  {
+    "path": "invalid-fastpath.json",
+    "sha256": "7426ab537c93deced05a8fab09c97b110a665b34a6a0131e8fc8ab3018964e59",
+    "size": 1215,
+  },
+  {
+    "path": "invalid-fastpath/level",
+    "sha256": "3a400ff6f2067edf9d43cd4d6c9ca2fd46df220e173830ef73dc7794e358297c",
+    "size": 205,
+  },
+  {
+    "path": "invalid-fastpath/level.geom",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "invalid-fastpath/level.geomx",
+    "sha256": "db4e7f1c6d071c4495812f3bf49c017582cf96f73b6661c31cd81e58ea42641e",
+    "size": 90,
+  },
+  {
+    "path": "invalid-geometry.json",
+    "sha256": "3b10fc35a4a2750dbfe026482c894dd652b4f88a3ff03541d5e08648c6e61fd2",
+    "size": 1456,
+  },
+  {
+    "path": "invalid-geometry/level",
+    "sha256": "3a400ff6f2067edf9d43cd4d6c9ca2fd46df220e173830ef73dc7794e358297c",
+    "size": 205,
+  },
+  {
+    "path": "invalid-geometry/level.geom",
+    "sha256": "7663231b82ce5be50f601825875f3123fd8b2443625ea1b68db74275853d1945",
+    "size": 90,
+  },
+  {
+    "path": "invalid-geometry/level.geomx",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "invalid-range.json",
+    "sha256": "719bf26925ef6a39cad625ae7a90b3cf7ebe51c4988b463d69814a08eaf0de4f",
+    "size": 1503,
+  },
+  {
+    "path": "invalid-range/level",
+    "sha256": "d29e0f65d8e604df92cca46fa2303123ea652a1ebc1a1b291d396f8c95fa8ffe",
+    "size": 205,
+  },
+  {
+    "path": "invalid-range/level.geom",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "invalid-range/level.geomx",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "invalid-shader.json",
+    "sha256": "24867fd9eecacf29dd0319e12c096c802ea26dbba2d07089c696b9132711babe",
+    "size": 1214,
+  },
+  {
+    "path": "invalid-shader/level",
+    "sha256": "bde1947c2b6393ce273380c94df3b5c59a192c9ebaf0ede8e7c76b3f0469ae33",
+    "size": 205,
+  },
+  {
+    "path": "invalid-shader/level.geom",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "invalid-shader/level.geomx",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "malformed-shader.json",
+    "sha256": "ec5379067d4363cba7adafc57ddb49e8eff6a73e3151600c13a654f66a4ba612",
+    "size": 1284,
+  },
+  {
+    "path": "malformed-shader/level",
+    "sha256": "b90c41d56d4ec49b68bea0b0ac6bdea5af82d985be88208995e07e71173a8ce5",
+    "size": 205,
+  },
+  {
+    "path": "malformed-shader/level.geom",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "malformed-shader/level.geomx",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "minimal.json",
+    "sha256": "ed38707b6e6dc76da20df89aa6393ad443c882fa1aa1b65a56b0275948b358da",
+    "size": 1195,
+  },
+  {
+    "path": "minimal/level",
+    "sha256": "be85bc59ad17ae04f2c43de0747e8eee496b24d6b0e94a6430dfd481c5bd569f",
+    "size": 12,
+  },
+  {
+    "path": "missing.json",
+    "sha256": "de149e1d6f29e1c3078922d5977b89ad52898e9661c0334db0fd22546b220093",
+    "size": 1442,
+  },
+  {
+    "path": "triangle.json",
+    "sha256": "7c7cb0bac7e19847609c770629ad6d333f9add347f6b5a92e079170fef595a98",
+    "size": 948,
+  },
+  {
+    "path": "triangle/level",
+    "sha256": "3a400ff6f2067edf9d43cd4d6c9ca2fd46df220e173830ef73dc7794e358297c",
+    "size": 205,
+  },
+  {
+    "path": "triangle/level.geom",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "triangle/level.geomx",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "truncated.json",
+    "sha256": "15a42fe985a8529c8cc0846edb91b6daea22e86af8fb8ba12a9fd42ea38c2aad",
+    "size": 1456,
+  },
+  {
+    "path": "truncated/level",
+    "sha256": "d5f5a9cb5945f773689ab13daa5991651a9a37f70fdee13f8a7c134609997ba9",
+    "size": 11,
+  },
+]
+`;
+
+exports[`level verify report should print all geometry findings and their failure count 1`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "[level.visuals.indices.out_of_range] Visual 0 draws index 3, past the 3 vertices it declares",
+    "[level.visuals.vertices.not_finite] Visual 0 carries a vertex at 0 whose position is not a finite number",
+    "Check failed: 2 finding(s)",
+  ],
+  "stdout": [
+    "Verifying compiled level <sandbox>/invalid-geometry",
+    "Read 1 visuals in <duration>, 1 drawable and 1 with a fast path",
+    "Addressed 3 vertices and 3 indices against a 4 entry shader table",
+    "Decoded geometry spans (0.0, 0.0, 0.0) to (1.0, 1.0, 0.0), widest texture coordinate 0.0 tiles",
+  ],
+}
+`;
+
+exports[`level verify report should report broken-geometry findings with a check-failure exit 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "level",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 1 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "Invalid error: Chunk 0x0000000a at position 76 declares 14 bytes, 13 remain before source end 89",
+            "ruleId": "level.geometry.read",
+            "subject": "<sandbox>/broken-geometry/level.geom",
+          },
+        ],
+        "id": "read",
+        "status": "failed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "ranges",
+        "status": "passed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "geometry",
+        "status": "passed",
+      },
+    ],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`level verify report should report invalid-fastpath findings with a check-failure exit 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "level",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 1 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "read",
+        "status": "passed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "ranges",
+        "status": "passed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "Visual 0 draws index 3, past the 3 vertices it declares",
+            "ruleId": "level.visuals.indices.out_of_range",
+            "subject": "<sandbox>/invalid-fastpath/level.geomx",
+          },
+        ],
+        "id": "geometry",
+        "status": "failed",
+      },
+    ],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`level verify report should report invalid-geometry findings with a check-failure exit 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "level",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 2 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "read",
+        "status": "passed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "ranges",
+        "status": "passed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "Visual 0 draws index 3, past the 3 vertices it declares",
+            "ruleId": "level.visuals.indices.out_of_range",
+            "subject": "<sandbox>/invalid-geometry/level.geom",
+          },
+          {
+            "message": "Visual 0 carries a vertex at 0 whose position is not a finite number",
+            "ruleId": "level.visuals.vertices.not_finite",
+            "subject": "<sandbox>/invalid-geometry/level.geom",
+          },
+        ],
+        "id": "geometry",
+        "status": "failed",
+      },
+    ],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`level verify report should report invalid-range findings with a check-failure exit 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "level",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 2 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "read",
+        "status": "passed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "Visual 0 draws 2 indices, which is not a whole number of triangles",
+            "ruleId": "level.visuals.indices.not_triangles",
+            "subject": "<sandbox>/invalid-range/level.geom",
+          },
+          {
+            "message": "Visual 0: Invalid error: Unexpected level render geometry range [0..0+4) in vertex buffer 0, which declares 3",
+            "ruleId": "level.visuals.vertices.unreadable",
+            "subject": "<sandbox>/invalid-range/level.geom",
+          },
+        ],
+        "id": "ranges",
+        "status": "failed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "geometry",
+        "status": "passed",
+      },
+    ],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`level verify report should report invalid-shader findings with a check-failure exit 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "level",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 1 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "read",
+        "status": "passed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "Visual 0 names shader table entry 4, past the 4 the table holds",
+            "ruleId": "level.visuals.shader.out_of_range",
+            "subject": "<sandbox>/invalid-shader/level",
+          },
+        ],
+        "id": "ranges",
+        "status": "failed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "geometry",
+        "status": "passed",
+      },
+    ],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`level verify report should report malformed-shader findings with a check-failure exit 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "level",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 1 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "read",
+        "status": "passed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "Visual 0 names shader table entry 1 (broken), which carries no delimiter and the renderer dereferences the result without a null check",
+            "ruleId": "level.visuals.shader.malformed",
+            "subject": "<sandbox>/malformed-shader/level",
+          },
+        ],
+        "id": "ranges",
+        "status": "failed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "geometry",
+        "status": "passed",
+      },
+    ],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`level verify report should report minimal findings with a check-failure exit 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "level",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 1 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "The level carries no shader table, which the renderer asserts on",
+            "ruleId": "level.shaders.absent",
+            "subject": "<sandbox>/minimal/level",
+          },
+        ],
+        "id": "read",
+        "status": "failed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "ranges",
+        "status": "passed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "geometry",
+        "status": "passed",
+      },
+    ],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`level verify report should report missing findings with a check-failure exit 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "level",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 2 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "Not found error: Level file was not read: <sandbox>/missing/level, error: <missing path>",
+            "ruleId": "level.read",
+            "subject": "<sandbox>/missing/level",
+          },
+          {
+            "message": "Not found error: Level file was not read: <sandbox>/missing/level, error: <missing path>",
+            "ruleId": "level.visuals.read",
+            "subject": "<sandbox>/missing/level",
+          },
+        ],
+        "id": "read",
+        "status": "failed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "ranges",
+        "status": "passed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "geometry",
+        "status": "passed",
+      },
+    ],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`level verify report should report truncated findings with a check-failure exit 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "level",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 2 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "Invalid error: Chunk 0x00000001 at position 8 declares 4 bytes, 3 remain before source end 11",
+            "ruleId": "level.read",
+            "subject": "<sandbox>/truncated/level",
+          },
+          {
+            "message": "Invalid error: Chunk 0x00000001 at position 8 declares 4 bytes, 3 remain before source end 11",
+            "ruleId": "level.visuals.read",
+            "subject": "<sandbox>/truncated/level",
+          },
+        ],
+        "id": "read",
+        "status": "failed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "ranges",
+        "status": "passed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "geometry",
+        "status": "passed",
+      },
+    ],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`level verify report should require a level directory 1`] = `
+{
+  "exitCode": 2,
+  "stderr": [
+    "error: the following required arguments were not provided:",
+    "  --path <path>",
+    "",
+    "Usage: xrf-cli level verify --path <path>",
+    "",
+    "For more information, try '--help'.",
+  ],
+  "stdout": [],
+}
+`;
