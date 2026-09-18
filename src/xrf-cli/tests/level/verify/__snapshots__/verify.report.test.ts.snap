@@ -8,6 +8,8 @@ exports[`level verify report should expose decoded bounds and geometry layouts i
     "Verifying compiled level <sandbox>/triangle",
     "Read 1 visuals in <duration>, 1 drawable and 1 with a fast path",
     "Addressed 3 vertices and 3 indices against a 4 entry shader table",
+    "0 sectors joined by 0 portals, named 0 times between them",
+    "0 static lights, none of them a sun",
     "Decoded geometry spans (0.0, 0.0, 0.0) to (1.0, 1.0, 0.0), widest texture coordinate 0.0 tiles",
     "Layout positions only: 2 visuals",
     "MT_NORMAL: 1 visuals",
@@ -246,6 +248,8 @@ exports[`level verify report should print all geometry findings and their failur
     "Verifying compiled level <sandbox>/invalid-geometry",
     "Read 1 visuals in <duration>, 1 drawable and 1 with a fast path",
     "Addressed 3 vertices and 3 indices against a 4 entry shader table",
+    "0 sectors joined by 0 portals, named 0 times between them",
+    "0 static lights, none of them a sun",
     "Decoded geometry spans (0.0, 0.0, 0.0) to (1.0, 1.0, 0.0), widest texture coordinate 0.0 tiles",
   ],
 }

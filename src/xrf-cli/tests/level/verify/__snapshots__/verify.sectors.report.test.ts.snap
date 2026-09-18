@@ -1,0 +1,302 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`level verify sectors and portals should accept linked sectors and portals with three and six vertices 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "level",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "read",
+        "status": "passed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "ranges",
+        "status": "passed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "geometry",
+        "status": "passed",
+      },
+    ],
+    "status": "passed",
+  },
+}
+`;
+
+exports[`level verify sectors and portals should count sectors, portal references and static lights including the sun 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Verifying compiled level <sandbox>/sectors",
+    "Read 1 visuals in <duration>, 1 drawable and 1 with a fast path",
+    "Addressed 3 vertices and 3 indices against a 4 entry shader table",
+    "2 sectors joined by 2 portals, named 4 times between them",
+    "2 static lights, one of them the sun",
+    "Decoded geometry spans (0.0, 0.0, 0.0) to (1.0, 1.0, 0.0), widest texture coordinate 0.0 tiles",
+    "Verification passed, status: passed",
+  ],
+}
+`;
+
+exports[`level verify sectors and portals should preserve fixture bytes and write only the requested reports 1`] = `
+[
+  {
+    "path": "invalid-sectors.json",
+    "sha256": "33608470aa1a3d2cfadcf6f42e7a2d4e2cb44c0aa5d83b45d54e03dd74cf6811",
+    "size": 2373,
+  },
+  {
+    "path": "invalid-sectors/level",
+    "sha256": "cf171cfa0c91e0e46c5b26ed306b024f5a9852a33d08eb0364806d72c3987a03",
+    "size": 669,
+  },
+  {
+    "path": "invalid-sectors/level.geom",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "invalid-sectors/level.geomx",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "sectors.json",
+    "sha256": "7c7cb0bac7e19847609c770629ad6d333f9add347f6b5a92e079170fef595a98",
+    "size": 948,
+  },
+  {
+    "path": "sectors/level",
+    "sha256": "de35230c93b44a05ab310adc00aa8bf8f22b117a77561e1c87d2c36e36d9e269",
+    "size": 669,
+  },
+  {
+    "path": "sectors/level.geom",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "sectors/level.geomx",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "truncated-portals.json",
+    "sha256": "bbb131d2eb61c39f0472fdaf9886813268c9825a77f1e33421c657fb201a5c2d",
+    "size": 1233,
+  },
+  {
+    "path": "truncated-portals/level",
+    "sha256": "fa6f4349b6927b44235c7a49f2cd5f47f310302fdedd82d4a43207f4a0b13955",
+    "size": 668,
+  },
+  {
+    "path": "truncated-portals/level.geom",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "truncated-portals/level.geomx",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+]
+`;
+
+exports[`level verify sectors and portals should print every sector and portal finding with the total count 1`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "[level.portals.sector.out_of_range] Portal 0 joins sector 2 on its front, past the 2 the level holds",
+    "[level.portals.sector.out_of_range] Portal 0 joins sector 3 on its back, past the 2 the level holds",
+    "[level.sectors.portal.out_of_range] Sector 0 names portal 2, past the 2 the level holds",
+    "[level.sectors.root.out_of_range] Sector 0 draws visual 1, past the 1 the level holds",
+    "[level.portals.not_a_polygon] Portal 0 spans 2 vertices, where a polygon takes three and the record holds six",
+    "[level.portals.not_a_polygon] Portal 1 spans 7 vertices, where a polygon takes three and the record holds six",
+    "Check failed: 6 finding(s)",
+  ],
+  "stdout": [
+    "Verifying compiled level <sandbox>/invalid-sectors",
+    "Read 1 visuals in <duration>, 1 drawable and 1 with a fast path",
+    "Addressed 3 vertices and 3 indices against a 4 entry shader table",
+    "2 sectors joined by 2 portals, named 4 times between them",
+    "2 static lights, one of them the sun",
+    "Decoded geometry spans (0.0, 0.0, 0.0) to (1.0, 1.0, 0.0), widest texture coordinate 0.0 tiles",
+  ],
+}
+`;
+
+exports[`level verify sectors and portals should reject a partial portal record as a read finding 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "level",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 1 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "Invalid error: Unexpected level portals chunk of 159 bytes, which does not divide into 80 byte records",
+            "ruleId": "level.read",
+            "subject": "<sandbox>/truncated-portals/level",
+          },
+        ],
+        "id": "read",
+        "status": "failed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "ranges",
+        "status": "passed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "geometry",
+        "status": "passed",
+      },
+    ],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`level verify sectors and portals should report invalid roots, portal references and both portal sides together 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "level",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 6 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "read",
+        "status": "passed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "Portal 0 joins sector 2 on its front, past the 2 the level holds",
+            "ruleId": "level.portals.sector.out_of_range",
+            "subject": "<sandbox>/invalid-sectors/level",
+          },
+          {
+            "message": "Portal 0 joins sector 3 on its back, past the 2 the level holds",
+            "ruleId": "level.portals.sector.out_of_range",
+            "subject": "<sandbox>/invalid-sectors/level",
+          },
+          {
+            "message": "Sector 0 names portal 2, past the 2 the level holds",
+            "ruleId": "level.sectors.portal.out_of_range",
+            "subject": "<sandbox>/invalid-sectors/level",
+          },
+          {
+            "message": "Sector 0 draws visual 1, past the 1 the level holds",
+            "ruleId": "level.sectors.root.out_of_range",
+            "subject": "<sandbox>/invalid-sectors/level",
+          },
+        ],
+        "id": "ranges",
+        "status": "failed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "Portal 0 spans 2 vertices, where a polygon takes three and the record holds six",
+            "ruleId": "level.portals.not_a_polygon",
+            "subject": "<sandbox>/invalid-sectors/level",
+          },
+          {
+            "message": "Portal 1 spans 7 vertices, where a polygon takes three and the record holds six",
+            "ruleId": "level.portals.not_a_polygon",
+            "subject": "<sandbox>/invalid-sectors/level",
+          },
+        ],
+        "id": "geometry",
+        "status": "failed",
+      },
+    ],
+    "status": "failed",
+  },
+}
+`;
