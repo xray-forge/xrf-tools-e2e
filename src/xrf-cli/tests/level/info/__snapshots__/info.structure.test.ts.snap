@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`level info structure should preserve fixture bytes and write only the requested reports 1`] = `
+[
+  {
+    "path": "by-name.json",
+    "sha256": "6f7aa364d51b05a6e44f623407b6cdd22d22256f5e7dd9f0e9b02bff87cffc26",
+    "size": 1726,
+  },
+  {
+    "path": "root/levels/zaton/level",
+    "sha256": "de35230c93b44a05ab310adc00aa8bf8f22b117a77561e1c87d2c36e36d9e269",
+    "size": 669,
+  },
+  {
+    "path": "root/levels/zaton/level.geom",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "root/levels/zaton/level.geomx",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "structure.json",
+    "sha256": "6f7aa364d51b05a6e44f623407b6cdd22d22256f5e7dd9f0e9b02bff87cffc26",
+    "size": 1726,
+  },
+  {
+    "path": "triangle/level",
+    "sha256": "3a400ff6f2067edf9d43cd4d6c9ca2fd46df220e173830ef73dc7794e358297c",
+    "size": 205,
+  },
+  {
+    "path": "triangle/level.geom",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "triangle/level.geomx",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "without-structure.json",
+    "sha256": "d4116cfcbc99f3190a6169f20d2647f0621bae3aeab60632ec26f6abbd6ea5a2",
+    "size": 1727,
+  },
+]
+`;
+
+exports[`level info structure should report the sectors, portals and lights the bundle carries 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read compiled level <sandbox>/root/levels/zaton",
+    "Built by xrLC version 14, quality 1",
+    "2 sectors, 2 portals, 2 static lights, one of them the sun",
+    "Shader table entries: 4",
+    "Visuals: 1, drawable: 1, with fast path: 1",
+    "level.geom: 1 vertex buffers, 1 index buffers, 0 slide windows",
+    "level.geomx: 1 vertex buffers, 1 index buffers, 0 slide windows",
+  ],
+}
+`;

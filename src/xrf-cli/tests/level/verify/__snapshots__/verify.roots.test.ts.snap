@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`level verify roots should name every level the roots hold when none was chosen 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: Expected --level naming one of the 2 the mounted roots hold: triangle, zaton",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`level verify roots should preserve fixture bytes and write only the requested reports 1`] = `
+[
+  {
+    "path": "archived.json",
+    "sha256": "7c7cb0bac7e19847609c770629ad6d333f9add347f6b5a92e079170fef595a98",
+    "size": 948,
+  },
+  {
+    "path": "loose.json",
+    "sha256": "7c7cb0bac7e19847609c770629ad6d333f9add347f6b5a92e079170fef595a98",
+    "size": 948,
+  },
+  {
+    "path": "packed/levels.db",
+    "sha256": "47962e0d1191dd13b05e113c45161761afc3c664d6efe97275e328d9300b4bab",
+    "size": 1221,
+  },
+  {
+    "path": "root/levels/not_a_level/lmap#1_1.dds",
+    "sha256": "2cea274d0bedc39ec4ab6ba9e59ec889e3ed6fb56a1cf088a64d9b383378dc97",
+    "size": 7,
+  },
+  {
+    "path": "root/levels/triangle/level",
+    "sha256": "3a400ff6f2067edf9d43cd4d6c9ca2fd46df220e173830ef73dc7794e358297c",
+    "size": 205,
+  },
+  {
+    "path": "root/levels/triangle/level.geom",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "root/levels/triangle/level.geomx",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "root/levels/zaton/level",
+    "sha256": "de35230c93b44a05ab310adc00aa8bf8f22b117a77561e1c87d2c36e36d9e269",
+    "size": 669,
+  },
+  {
+    "path": "root/levels/zaton/level.geom",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "root/levels/zaton/level.geomx",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+]
+`;
+
+exports[`level verify roots should read a level of mounted roots by its name 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Verifying compiled level levels\\triangle",
+    "Read 1 visuals in <duration>, 1 drawable and 1 with a fast path",
+    "Addressed 3 vertices and 3 indices against a 4 entry shader table",
+    "0 sectors joined by 0 portals, named 0 times between them",
+    "0 static lights, none of them a sun",
+    "Decoded geometry spans (0.0, 0.0, 0.0) to (1.0, 1.0, 0.0), widest texture coordinate 0.0 tiles",
+    "Verification passed, status: passed",
+  ],
+}
+`;
+
+exports[`level verify roots should refuse a directory that carries no bundle 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Not found error: Level 'not_a_level' was not found in the mounted roots, which hold no 'levels\\not_a_level\\level' for it",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`level verify roots should refuse a level name without roots to look in 1`] = `
+{
+  "exitCode": 2,
+  "stderr": [
+    "error: the following required arguments were not provided:",
+    "  <--path <path>|--root <root>>",
+    "",
+    "Usage: xrf-cli level verify --level <level> <--path <path>|--root <root>>",
+    "",
+    "For more information, try '--help'.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`level verify roots should refuse a name no level answers to 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Not found error: Level 'pripyat' was not found in the mounted roots, which hold no 'levels\\pripyat\\level' for it",
+  ],
+  "stdout": [],
+}
+`;

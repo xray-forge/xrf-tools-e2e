@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`level verify optional files should pass a level compiled with no fast geometry 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Verifying compiled level <sandbox>/no-geomx",
+    "Read 1 visuals in <duration>, 1 drawable and 0 with a fast path",
+    "Addressed 3 vertices and 3 indices against a 4 entry shader table",
+    "0 sectors joined by 0 portals, named 0 times between them",
+    "0 static lights, none of them a sun",
+    "Decoded geometry spans (0.0, 0.0, 0.0) to (1.0, 1.0, 0.0), widest texture coordinate 0.0 tiles",
+    "Verification passed, status: passed",
+  ],
+}
+`;
+
+exports[`level verify optional files should preserve fixture bytes and write only the requested reports 1`] = `
+[
+  {
+    "path": "no-bundle.json",
+    "sha256": "f78b7c95cbdb8753237da2f70141e5188bdfde30e760c8c3925fdd4688741c58",
+    "size": 1372,
+  },
+  {
+    "path": "no-bundle/level.geom",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "no-bundle/level.geomx",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "no-geom.json",
+    "sha256": "7c7cb0bac7e19847609c770629ad6d333f9add347f6b5a92e079170fef595a98",
+    "size": 948,
+  },
+  {
+    "path": "no-geom/level",
+    "sha256": "3a400ff6f2067edf9d43cd4d6c9ca2fd46df220e173830ef73dc7794e358297c",
+    "size": 205,
+  },
+  {
+    "path": "no-geom/level.geomx",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "no-geomx.json",
+    "sha256": "7c7cb0bac7e19847609c770629ad6d333f9add347f6b5a92e079170fef595a98",
+    "size": 948,
+  },
+  {
+    "path": "no-geomx/level",
+    "sha256": "3a400ff6f2067edf9d43cd4d6c9ca2fd46df220e173830ef73dc7794e358297c",
+    "size": 205,
+  },
+  {
+    "path": "no-geomx/level.geom",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+]
+`;
+
+exports[`level verify optional files should report an absent bundle rather than passing with nothing to check 1`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "[level.read] Level file was not found: <sandbox>/no-bundle/level",
+    "[level.visuals.read] Level file was not found: <sandbox>/no-bundle/level",
+    "Check failed: 2 finding(s)",
+  ],
+  "stdout": [
+    "Verifying compiled level <sandbox>/no-bundle",
+    "Read 0 visuals in <duration>, 0 drawable and 0 with a fast path",
+    "Addressed 0 vertices and 0 indices against a 0 entry shader table",
+    "0 sectors joined by 0 portals, named 0 times between them",
+    "0 static lights, none of them a sun",
+  ],
+}
+`;

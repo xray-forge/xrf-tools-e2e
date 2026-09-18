@@ -7,6 +7,7 @@ exports[`level info report should describe the visual and buffer counts in verbo
   "stdout": [
     "Read compiled level <sandbox>/triangle",
     "Built by xrLC version 14, quality 1",
+    "0 sectors, 0 portals, 0 static lights",
     "Shader table entries: 4",
     "Visuals: 1, drawable: 1, with fast path: 1",
     "[0] MT_NORMAL, shader id 2, vb 0 [0..3), ib 0 [0..3), 1 tris",
@@ -57,6 +58,13 @@ exports[`level info report should distinguish absent optional chunks from empty 
       "references": 0,
       "total": 0,
     },
+    "structure": {
+      "hasSun": false,
+      "lights": 0,
+      "portals": 0,
+      "sectorPortalReferences": 0,
+      "sectors": 0,
+    },
     "visuals": null,
   },
 }
@@ -81,8 +89,8 @@ exports[`level info report should preserve the authored inputs and write only th
   },
   {
     "path": "minimal.json",
-    "sha256": "32629135168a51fa95aa153f81241238f4de0a74ee7c72e284ec764d58a22b29",
-    "size": 792,
+    "sha256": "7664bc3b40340e26601f9c56fdf7fd425c4f66d22724a74e460c98ea984a9e69",
+    "size": 934,
   },
   {
     "path": "minimal/level",
@@ -91,13 +99,13 @@ exports[`level info report should preserve the authored inputs and write only th
   },
   {
     "path": "missing.json",
-    "sha256": "1a2456f6914dfd719119297cd1df18e2a9c54ddd6326203297e75425aa596b5e",
-    "size": 616,
+    "sha256": "f95b2d9303ae12a99add28cc9e75dc47bd91d37634d7a0be9d094db1fe5fb66a",
+    "size": 596,
   },
   {
     "path": "triangle.json",
-    "sha256": "c0860d9bfded5bc6504d48ef946fe6e3a77184a1b4df545426654600705cd5ea",
-    "size": 1585,
+    "sha256": "d4116cfcbc99f3190a6169f20d2647f0621bae3aeab60632ec26f6abbd6ea5a2",
+    "size": 1727,
   },
   {
     "path": "triangle/level",
@@ -178,7 +186,7 @@ exports[`level info report should reject missing input without a partial result 
     "info",
   ],
   "duration": "<duration>",
-  "error": "Not found error: Level file was not read: <sandbox>/missing/level, error: <missing path>",
+  "error": "Not found error: Level bundle was not found: <sandbox>/missing/level",
   "execution": {
     "origin": "auto",
     "workers": "<workers>",
@@ -289,6 +297,13 @@ exports[`level info report should report one drawable triangle and both geometry
       "references": 2,
       "total": 4,
     },
+    "structure": {
+      "hasSun": false,
+      "lights": 0,
+      "portals": 0,
+      "sectorPortalReferences": 0,
+      "sectors": 0,
+    },
     "visuals": {
       "drawable": 1,
       "fastpath": 1,
@@ -311,9 +326,9 @@ exports[`level info report should require a level directory 1`] = `
   "exitCode": 2,
   "stderr": [
     "error: the following required arguments were not provided:",
-    "  --path <path>",
+    "  <--path <path>|--root <root>>",
     "",
-    "Usage: xrf-cli level info --path <path>",
+    "Usage: xrf-cli level info <--path <path>|--root <root>>",
     "",
     "For more information, try '--help'.",
   ],

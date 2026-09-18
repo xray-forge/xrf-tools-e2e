@@ -200,8 +200,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "missing.json",
-    "sha256": "de149e1d6f29e1c3078922d5977b89ad52898e9661c0334db0fd22546b220093",
-    "size": 1442,
+    "sha256": "78384b9c370ea31d33c48e5260da717efea79c23ad6620862ea65baf76684aa9",
+    "size": 1364,
   },
   {
     "path": "triangle.json",
@@ -711,12 +711,12 @@ exports[`level verify report should report missing findings with a check-failure
         "duration": "<duration>",
         "findings": [
           {
-            "message": "Not found error: Level file was not read: <sandbox>/missing/level, error: <missing path>",
+            "message": "Level file was not found: <sandbox>/missing/level",
             "ruleId": "level.read",
             "subject": "<sandbox>/missing/level",
           },
           {
-            "message": "Not found error: Level file was not read: <sandbox>/missing/level, error: <missing path>",
+            "message": "Level file was not found: <sandbox>/missing/level",
             "ruleId": "level.visuals.read",
             "subject": "<sandbox>/missing/level",
           },
@@ -811,9 +811,9 @@ exports[`level verify report should require a level directory 1`] = `
   "exitCode": 2,
   "stderr": [
     "error: the following required arguments were not provided:",
-    "  --path <path>",
+    "  <--path <path>|--root <root>>",
     "",
-    "Usage: xrf-cli level verify --path <path>",
+    "Usage: xrf-cli level verify <--path <path>|--root <root>>",
     "",
     "For more information, try '--help'.",
   ],
