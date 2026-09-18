@@ -1,0 +1,322 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`level info report should describe the visual and buffer counts in verbose output 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read compiled level <sandbox>/triangle",
+    "Built by xrLC version 14, quality 1",
+    "Shader table entries: 4",
+    "Visuals: 1, drawable: 1, with fast path: 1",
+    "[0] MT_NORMAL, shader id 2, vb 0 [0..3), ib 0 [0..3), 1 tris",
+    "level.geom: 1 vertex buffers, 1 index buffers, 0 slide windows",
+    "level.geomx: 1 vertex buffers, 1 index buffers, 0 slide windows",
+  ],
+}
+`;
+
+exports[`level info report should distinguish absent optional chunks from empty geometry 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "level",
+    "info",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "detailGeometry": null,
+    "geometry": null,
+    "header": {
+      "xrlcQuality": 1,
+      "xrlcVersion": 14,
+    },
+    "shaders": {
+      "empty": 0,
+      "lightmapped": 0,
+      "malformed": 0,
+      "references": 0,
+      "total": 0,
+    },
+    "visuals": null,
+  },
+}
+`;
+
+exports[`level info report should preserve the authored inputs and write only the requested reports 1`] = `
+[
+  {
+    "path": "broken-geometry.json",
+    "sha256": "7fc7ce15ecc3f793917233bb5933a4022dd939cb45e72ac1838739e5a03bde48",
+    "size": 624,
+  },
+  {
+    "path": "broken-geometry/level",
+    "sha256": "3a400ff6f2067edf9d43cd4d6c9ca2fd46df220e173830ef73dc7794e358297c",
+    "size": 205,
+  },
+  {
+    "path": "broken-geometry/level.geom",
+    "sha256": "31313632296176cb4d06715f3a4203f40173ee77f45b1a0fec285352f1ade1fa",
+    "size": 89,
+  },
+  {
+    "path": "minimal.json",
+    "sha256": "32629135168a51fa95aa153f81241238f4de0a74ee7c72e284ec764d58a22b29",
+    "size": 792,
+  },
+  {
+    "path": "minimal/level",
+    "sha256": "be85bc59ad17ae04f2c43de0747e8eee496b24d6b0e94a6430dfd481c5bd569f",
+    "size": 12,
+  },
+  {
+    "path": "missing.json",
+    "sha256": "1a2456f6914dfd719119297cd1df18e2a9c54ddd6326203297e75425aa596b5e",
+    "size": 616,
+  },
+  {
+    "path": "triangle.json",
+    "sha256": "c0860d9bfded5bc6504d48ef946fe6e3a77184a1b4df545426654600705cd5ea",
+    "size": 1585,
+  },
+  {
+    "path": "triangle/level",
+    "sha256": "3a400ff6f2067edf9d43cd4d6c9ca2fd46df220e173830ef73dc7794e358297c",
+    "size": 205,
+  },
+  {
+    "path": "triangle/level.geom",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "triangle/level.geomx",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "truncated.json",
+    "sha256": "cc0be478934466dbdc7d8f9c6ed06bad0877c0ced0a53ff76b0a0c4dc8557f46",
+    "size": 621,
+  },
+  {
+    "path": "truncated/level",
+    "sha256": "d5f5a9cb5945f773689ab13daa5991651a9a37f70fdee13f8a7c134609997ba9",
+    "size": 11,
+  },
+]
+`;
+
+exports[`level info report should reject broken-geometry input without a partial result 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "level",
+    "info",
+  ],
+  "duration": "<duration>",
+  "error": "Invalid error: Chunk 0x0000000a at position 76 declares 14 bytes, 13 remain before source end 89",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 1,
+  "outcome": "executionFailed",
+  "result": null,
+}
+`;
+
+exports[`level info report should reject missing input without a partial result 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "level",
+    "info",
+  ],
+  "duration": "<duration>",
+  "error": "Not found error: Level file was not read: <sandbox>/missing/level, error: <missing path>",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 1,
+  "outcome": "executionFailed",
+  "result": null,
+}
+`;
+
+exports[`level info report should reject truncated input without a partial result 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "level",
+    "info",
+  ],
+  "duration": "<duration>",
+  "error": "Invalid error: Chunk 0x00000001 at position 8 declares 4 bytes, 3 remain before source end 11",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 1,
+  "outcome": "executionFailed",
+  "result": null,
+}
+`;
+
+exports[`level info report should report one drawable triangle and both geometry files 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "level",
+    "info",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "detailGeometry": {
+      "indexBuffers": 1,
+      "indices": 3,
+      "layouts": [
+        {
+          "buffers": 1,
+          "declaration": "POSITION0:FLOAT3",
+          "stride": 12,
+          "vertices": 3,
+        },
+      ],
+      "slideWindows": 0,
+      "vertexBuffers": 1,
+      "vertices": 3,
+    },
+    "geometry": {
+      "indexBuffers": 1,
+      "indices": 3,
+      "layouts": [
+        {
+          "buffers": 1,
+          "declaration": "POSITION0:FLOAT3",
+          "stride": 12,
+          "vertices": 3,
+        },
+      ],
+      "slideWindows": 0,
+      "vertexBuffers": 1,
+      "vertices": 3,
+    },
+    "header": {
+      "xrlcQuality": 1,
+      "xrlcVersion": 14,
+    },
+    "shaders": {
+      "empty": 1,
+      "lightmapped": 1,
+      "malformed": 1,
+      "references": 2,
+      "total": 4,
+    },
+    "visuals": {
+      "drawable": 1,
+      "fastpath": 1,
+      "indices": 3,
+      "modelTypes": {
+        "MT_NORMAL": 1,
+      },
+      "textured": 0,
+      "total": 1,
+      "triangles": 1,
+      "uniqueRanges": 1,
+      "vertices": 3,
+    },
+  },
+}
+`;
+
+exports[`level info report should require a level directory 1`] = `
+{
+  "exitCode": 2,
+  "stderr": [
+    "error: the following required arguments were not provided:",
+    "  --path <path>",
+    "",
+    "Usage: xrf-cli level info --path <path>",
+    "",
+    "For more information, try '--help'.",
+  ],
+  "stdout": [],
+}
+`;

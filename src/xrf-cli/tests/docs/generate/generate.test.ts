@@ -12,6 +12,7 @@ const PAGES: ReadonlyArray<string> = [
   "docs.md",
   "externs.md",
   "gamedata.md",
+  "level.md",
   "ltx.md",
   "ogf.md",
   "omf.md",

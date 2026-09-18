@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`level command help should keep each leaf command's help stable 1`] = `
+{
+  "info": {
+    "exitCode": 0,
+    "stderr": [],
+    "stdout": [
+      "Command to print information about a compiled level directory",
+      "",
+      "Usage: xrf-cli level info [OPTIONS] --path <path>",
+      "",
+      "Options:",
+      "  -p, --path <path>    Path to a compiled level directory, the one holding \`level\` and \`level.geom\`",
+      "  -s, --silent         Turn off logging",
+      "  -v, --verbose        Turn on verbose logging",
+      "      --json           Write the run's JSON report to stdout, moving human output to stderr",
+      "      --report <PATH>  Write the run's JSON report to a file",
+      "  -h, --help           Print help",
+    ],
+  },
+}
+`;
