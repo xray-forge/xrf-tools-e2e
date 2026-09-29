@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`gamedata verify weather cycles should record both reports as readable documents 1`] = `
+exports[`gamedata verify environment should record the reports as readable documents 1`] = `
 {
   "build": {
     "builtAt": "<build>",
@@ -29,10 +29,10 @@ exports[`gamedata verify weather cycles should record both reports as readable d
   "outcome": "success",
   "result": {
     "cache": {
-      "bytes": 1136,
-      "entries": 6,
-      "hits": 6,
-      "misses": 6,
+      "bytes": 1988,
+      "entries": 8,
+      "hits": 7,
+      "misses": 8,
       "refused": 0,
     },
     "checks": [
@@ -54,8 +54,8 @@ exports[`gamedata verify weather cycles should record both reports as readable d
         "duration": "<duration>",
         "findings": [],
         "status": "passed",
-        "summary": "1/1 weather files valid",
-        "verificationType": "weathers",
+        "summary": "7/7 environment configs valid",
+        "verificationType": "environment",
       },
     ],
     "duration": "<duration>",
@@ -65,7 +65,7 @@ exports[`gamedata verify weather cycles should record both reports as readable d
 }
 `;
 
-exports[`gamedata verify weather cycles should record both reports as readable documents 2`] = `
+exports[`gamedata verify environment should record the reports as readable documents 2`] = `
 {
   "build": {
     "builtAt": "<build>",
@@ -94,10 +94,10 @@ exports[`gamedata verify weather cycles should record both reports as readable d
   "outcome": "checkFailed",
   "result": {
     "cache": {
-      "bytes": 1140,
-      "entries": 6,
-      "hits": 6,
-      "misses": 6,
+      "bytes": 1992,
+      "entries": 8,
+      "hits": 7,
+      "misses": 8,
       "refused": 0,
     },
     "checks": [
@@ -121,12 +121,12 @@ exports[`gamedata verify weather cycles should record both reports as readable d
           {
             "assetPath": "configs/environment/weathers/test.ltx",
             "message": "Weather [00:00:00] references missing ambient [absent_ambient]",
-            "ruleId": "weathers.validation",
+            "ruleId": "environment.reference",
           },
         ],
         "status": "failed",
-        "summary": "0/1 weather files valid",
-        "verificationType": "weathers",
+        "summary": "6/7 environment configs valid",
+        "verificationType": "environment",
       },
     ],
     "duration": "<duration>",
@@ -136,22 +136,108 @@ exports[`gamedata verify weather cycles should record both reports as readable d
 }
 `;
 
-exports[`gamedata verify weather cycles should write the expected reports and files 1`] = `
+exports[`gamedata verify environment should record the reports as readable documents 3`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 2 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "cache": {
+      "bytes": 1988,
+      "entries": 8,
+      "hits": 7,
+      "misses": 8,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "assetPath": "configs/environment/ambients.ltx",
+            "message": "Ambient [ambient_ok] is missing required field [effects]",
+            "ruleId": "environment.engine",
+          },
+          {
+            "assetPath": "configs/environment/sun_positions.ltx",
+            "message": "There is no environment\\sun_positions.ltx, which the engine stands the sun by",
+            "ruleId": "environment.engine",
+          },
+        ],
+        "status": "failed",
+        "summary": "6/8 environment configs valid",
+        "verificationType": "environment",
+      },
+    ],
+    "duration": "<duration>",
+    "skippedMounts": [],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`gamedata verify environment should write the expected reports and files 1`] = `
 [
   {
     "path": "broken.json",
-    "sha256": "006c6998c9ec34ea5a4ac941d485c8c1a1d1a1816b34ea7297bf944d78435791",
-    "size": 1576,
+    "sha256": "b180beb6b8d7ad7cda9e863d10c67430ea5fc91b501ef6cf227a2833d46a7829",
+    "size": 1587,
   },
   {
     "path": "broken/configs/environment/ambients.ltx",
-    "sha256": "a0daa5148b3993e47b32477eed80b52c3f735c8a120326190afc4146dcda46e1",
-    "size": 13,
+    "sha256": "ed55eee5009d835ff1e4838fbb1f08d047b630f4f2a02c39c187ec0931befee8",
+    "size": 87,
+  },
+  {
+    "path": "broken/configs/environment/environment.ltx",
+    "sha256": "64e87e33e7c35eaaa00c1c2335e6d8a1e1e454af1e46165ba0081c5b81fc6037",
+    "size": 155,
+  },
+  {
+    "path": "broken/configs/environment/sound_channels.ltx",
+    "sha256": "3fdc215fc0b72322668f00f726692d58979c77d147e3cb0572321dd65e1bb84a",
+    "size": 136,
   },
   {
     "path": "broken/configs/environment/suns.ltx",
-    "sha256": "b4666fdd1d7270e8f49f6a344680d0858c714625ab125e8ba212a162a50c92ee",
-    "size": 9,
+    "sha256": "640d55f8afe6d01733d9e705107b819a9e6a303e066933a30aaf4685c77b5e45",
+    "size": 89,
   },
   {
     "path": "broken/configs/environment/thunderbolt_collections.ltx",
@@ -160,13 +246,13 @@ exports[`gamedata verify weather cycles should write the expected reports and fi
   },
   {
     "path": "broken/configs/environment/thunderbolts.ltx",
-    "sha256": "3411ca52920bfbb5777c08cf05dc727946e67c5b6730a92afa74df04dc970d57",
-    "size": 7,
+    "sha256": "0fe93c20461051bb6114564aca47eae1353ad96012bcb90b9fbcc82bd0f961ad",
+    "size": 404,
   },
   {
     "path": "broken/configs/environment/weathers/test.ltx",
-    "sha256": "ecee19092b0ba8a4b85e3adcb7c07e480b5792c216504f7cc1701782adf18478",
-    "size": 1094,
+    "sha256": "6d34a2c38b03622b491421045982f849df12b26ecad413066ad76a9a29595328",
+    "size": 1104,
   },
   {
     "path": "broken/configs/system.ltx",
@@ -199,19 +285,34 @@ exports[`gamedata verify weather cycles should write the expected reports and fi
     "size": 144,
   },
   {
+    "path": "extended.json",
+    "sha256": "54389b0dcc027de781ed04a2fd308896e8eea719b9a973c741c57d8aef55fa24",
+    "size": 1812,
+  },
+  {
     "path": "valid.json",
-    "sha256": "efdc98ac92b9bf433c4a379a5a6ed0f8854398325b8f200836f6dffe681b26ed",
-    "size": 1316,
+    "sha256": "052a03f15e492a82af95883bd89b76f6e5c49d4316311a3d1449a17d225c78db",
+    "size": 1325,
   },
   {
     "path": "valid/configs/environment/ambients.ltx",
-    "sha256": "a0daa5148b3993e47b32477eed80b52c3f735c8a120326190afc4146dcda46e1",
-    "size": 13,
+    "sha256": "ed55eee5009d835ff1e4838fbb1f08d047b630f4f2a02c39c187ec0931befee8",
+    "size": 87,
+  },
+  {
+    "path": "valid/configs/environment/environment.ltx",
+    "sha256": "64e87e33e7c35eaaa00c1c2335e6d8a1e1e454af1e46165ba0081c5b81fc6037",
+    "size": 155,
+  },
+  {
+    "path": "valid/configs/environment/sound_channels.ltx",
+    "sha256": "3fdc215fc0b72322668f00f726692d58979c77d147e3cb0572321dd65e1bb84a",
+    "size": 136,
   },
   {
     "path": "valid/configs/environment/suns.ltx",
-    "sha256": "b4666fdd1d7270e8f49f6a344680d0858c714625ab125e8ba212a162a50c92ee",
-    "size": 9,
+    "sha256": "640d55f8afe6d01733d9e705107b819a9e6a303e066933a30aaf4685c77b5e45",
+    "size": 89,
   },
   {
     "path": "valid/configs/environment/thunderbolt_collections.ltx",
@@ -220,13 +321,13 @@ exports[`gamedata verify weather cycles should write the expected reports and fi
   },
   {
     "path": "valid/configs/environment/thunderbolts.ltx",
-    "sha256": "3411ca52920bfbb5777c08cf05dc727946e67c5b6730a92afa74df04dc970d57",
-    "size": 7,
+    "sha256": "0fe93c20461051bb6114564aca47eae1353ad96012bcb90b9fbcc82bd0f961ad",
+    "size": 404,
   },
   {
     "path": "valid/configs/environment/weathers/test.ltx",
-    "sha256": "8633c24689e0e73048fc0075184e8b42b0b908e47b8146e5f2147748a0960b7d",
-    "size": 1090,
+    "sha256": "67f23b0f109d33e88730410154798da540745d35344193ecb297f063b1341d44",
+    "size": 1100,
   },
   {
     "path": "valid/configs/system.ltx",

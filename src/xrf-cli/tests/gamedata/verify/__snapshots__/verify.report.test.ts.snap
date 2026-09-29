@@ -4,6 +4,8 @@ exports[`gamedata verify full run should answer non-zero and report only the fai
 {
   "exitCode": 3,
   "stderr": [
+    "There is no [thunderbolt_common] section, where the engine reads where thunderbolts strike from: <resources>/gamedata/configs/system.ltx",
+    "No weather cycles under environment\\weathers, where the engine requires at least one: configs/environment/weathers",
     "Cannot read OGF texture: wpn\\wpn_bolt",
     "Mesh motion refs not found by path: dynamics\\devices\\dev_bolt\\dev_bolt_hud_animation",
     "Not matching bones count in ogf and reference omf: 2 <-> 7 : wpn_body,body <-> wpn_body,body,trigger,zatvor,lock,wpn_silencer,magazin",
@@ -21,12 +23,14 @@ exports[`gamedata verify full run should answer non-zero and report only the fai
     "Mesh is not valid: meshes\\ogf\\wpn_pm_lod.ogf",
     "",
     "Project gamedata is invalid",
+    "- 0/2 environment configs valid",
     "- 0/0 level bundles valid; 0/0 level shader references valid",
     "- 0/7 LTX files formatted; 0/32 sections valid",
     "- 1/1 shader libraries valid, 205 blender definitions; 0/5 meshes valid",
     "- 0/1 particle library files valid",
     "- 0 shader scripts and 0 shader sources checked, 1 problems",
-    "- No weather files found",
+    "  - [environment] <resources>/gamedata/configs/system.ltx: There is no [thunderbolt_common] section, where the engine reads where thunderbolts strike from",
+    "  - [environment] configs/environment/weathers: No weather cycles under environment\\weathers, where the engine requires at least one",
     "  - [levels] levels/jupiter: Game graph declares level [jupiter] with id 115, but no level bundle exists for it",
     "  - [levels] levels/jupiter: Game graph declares level [jupiter], but no level map is declared for it in [level_maps_single] or [level_maps_mp]",
     "  - [levels] levels/jupiter_underground: Game graph declares level [jupiter_underground] with id 158, but no level bundle exists for it",
@@ -1020,9 +1024,8 @@ exports[`gamedata verify full run should answer non-zero and report only the fai
     "  - [particles] particles.xr: Particle effect 'zones_mine\\effects\\zone_graviti_mine_idle_leaves' references missing texture 'pfx\\pfx_leaves_01'",
     "  - [particles] particles.xr: Particle effect 'zones_mine\\effects\\zone_graviti_mine_idle_steam' references missing texture 'pfx\\pfx_anomaly_88'",
     "  - [shaders] shaders/r3: DirectX 11 renderer shader root is missing",
-    "  - [weathers] No weather files found",
     "Gamedata project checked in <duration>",
-    "Check failed: 994 finding(s)",
+    "Check failed: 995 finding(s)",
   ],
   "stdout": [],
 }
@@ -1032,8 +1035,8 @@ exports[`gamedata verify full run should write a findings report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "6e7cf5230966c4b3b05f3df2390f05611511d0edc61743ec7659b4a9d83411ef",
-    "size": 240631,
+    "sha256": "6f71c977bd9b7bde969ebe29fc96e249b80f3ccdc17345ad43d97e4b3c281712",
+    "size": 240971,
   },
 ]
 `;
