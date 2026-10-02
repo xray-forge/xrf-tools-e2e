@@ -14,7 +14,7 @@ exports[`translation parse guards the language it was given should refuse the al
 {
   "exitCode": 1,
   "stderr": [
-    "Error: Unknown language: Unexpected language 'all' provided'",
+    "Error: Unknown language: Unexpected language 'all' provided",
   ],
   "stdout": [],
 }
