@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+
+<string_table>
+	<string id="snag_cache_0">
+		<text>Want to earn some?</text>
+	</string>
+	<string id="snag_cache_1">
+		<text>What do I do?</text>
+	</string>
+	<string id="snag_cache_11">
+		<text>Deal.</text>
+	</string>
+	<string id="snag_share_0">
+		<text>Here's the container.</text>
+	</string>
+	<string id="hello_0">
+		<text>Hello, stalker.</text>
+	</string>
+	<string id="actor_break_0">
+		<text>Laters.</text>
+	</string>
+</string_table>

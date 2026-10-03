@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<game_information_portions>
+	<info_portion id="global_dialogs">
+		<dialog>actor_break_dialog</dialog>
+	</info_portion>
+	<info_portion id="snag_cache_known"></info_portion>
+</game_information_portions>

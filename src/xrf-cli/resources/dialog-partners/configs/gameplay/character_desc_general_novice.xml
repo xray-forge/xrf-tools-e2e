@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<specific_character id="novice_1" team_default="1">
+	<class>novice</class>
+#include "gameplay\character_dialogs.xml"
+</specific_character>
+<specific_character id="novice_2" team_default="1">
+	<class>novice</class>
+	<actor_dialog>about_quests</actor_dialog>
+</specific_character>

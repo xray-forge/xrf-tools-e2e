@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`dialog list should list every dialog with its file, phrase count and opening line 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "snag_cache_dialog (configs\\gameplay\\dialogs.xml, 4 phrases): Want to earn some?",
+    "snag_share_dialog (configs\\gameplay\\dialogs.xml, 1 phrases): Here's the container.",
+    "hello_dialog (configs\\gameplay\\dialogs.xml, 1 phrases): Hello, stalker.",
+    "about_quests (configs\\gameplay\\dialogs.xml, 1 phrases): about_quests_0",
+    "actor_break_dialog (configs\\gameplay\\dialogs.xml, 1 phrases): Laters.",
+    "actor_break_dialog (configs\\gameplay\\dialogs_overlay.xml, 1 phrases): overlay_break_0",
+    "Listed 6 dialogs",
+  ],
+}
+`;
+
+exports[`dialog list should report each dialog with its conditions and no offers 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "dialog",
+    "list",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "dialogs": [
+      {
+        "caption": "Want to earn some?",
+        "captionKey": "snag_cache_0",
+        "elements": [
+          {
+            "kind": "dontHasInfo",
+            "name": "dont_has_info",
+            "value": "snag_cache_known",
+          },
+        ],
+        "id": "snag_cache_dialog",
+        "logicalPath": "configs\\gameplay\\dialogs.xml",
+        "offers": [],
+        "phrases": 4,
+        "priority": null,
+      },
+      {
+        "caption": "Here's the container.",
+        "captionKey": "snag_share_0",
+        "elements": [
+          {
+            "kind": "hasInfo",
+            "name": "has_info",
+            "value": "snag_cache_known",
+          },
+          {
+            "kind": "precondition",
+            "name": "precondition",
+            "value": "dialogs.actor_has_container",
+          },
+        ],
+        "id": "snag_share_dialog",
+        "logicalPath": "configs\\gameplay\\dialogs.xml",
+        "offers": [],
+        "phrases": 1,
+        "priority": 5,
+      },
+      {
+        "caption": "Hello, stalker.",
+        "captionKey": "hello_0",
+        "elements": [],
+        "id": "hello_dialog",
+        "logicalPath": "configs\\gameplay\\dialogs.xml",
+        "offers": [],
+        "phrases": 1,
+        "priority": null,
+      },
+      {
+        "caption": null,
+        "captionKey": "about_quests_0",
+        "elements": [],
+        "id": "about_quests",
+        "logicalPath": "configs\\gameplay\\dialogs.xml",
+        "offers": [],
+        "phrases": 1,
+        "priority": null,
+      },
+      {
+        "caption": "Laters.",
+        "captionKey": "actor_break_0",
+        "elements": [],
+        "id": "actor_break_dialog",
+        "logicalPath": "configs\\gameplay\\dialogs.xml",
+        "offers": [],
+        "phrases": 1,
+        "priority": null,
+      },
+      {
+        "caption": null,
+        "captionKey": "overlay_break_0",
+        "elements": [],
+        "id": "actor_break_dialog",
+        "logicalPath": "configs\\gameplay\\dialogs_overlay.xml",
+        "offers": [],
+        "phrases": 1,
+        "priority": null,
+      },
+    ],
+    "findings": [],
+    "language": "eng",
+    "profile": null,
+  },
+}
+`;
+
+exports[`dialog list should show the translation keys for a language the tree holds no text in 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "snag_cache_dialog (configs\\gameplay\\dialogs.xml, 4 phrases): snag_cache_0",
+    "snag_share_dialog (configs\\gameplay\\dialogs.xml, 1 phrases): snag_share_0",
+    "hello_dialog (configs\\gameplay\\dialogs.xml, 1 phrases): hello_0",
+    "about_quests (configs\\gameplay\\dialogs.xml, 1 phrases): about_quests_0",
+    "actor_break_dialog (configs\\gameplay\\dialogs.xml, 1 phrases): actor_break_0",
+    "actor_break_dialog (configs\\gameplay\\dialogs_overlay.xml, 1 phrases): overlay_break_0",
+    "Listed 6 dialogs",
+  ],
+}
+`;
+
+exports[`dialog list should write a structured report 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "snag_cache_dialog (configs\\gameplay\\dialogs.xml, 4 phrases): Want to earn some?",
+    "snag_share_dialog (configs\\gameplay\\dialogs.xml, 1 phrases): Here's the container.",
+    "hello_dialog (configs\\gameplay\\dialogs.xml, 1 phrases): Hello, stalker.",
+    "about_quests (configs\\gameplay\\dialogs.xml, 1 phrases): about_quests_0",
+    "actor_break_dialog (configs\\gameplay\\dialogs.xml, 1 phrases): Laters.",
+    "actor_break_dialog (configs\\gameplay\\dialogs_overlay.xml, 1 phrases): overlay_break_0",
+    "Listed 6 dialogs",
+  ],
+}
+`;
+
+exports[`dialog list should write only the report 1`] = `
+[
+  {
+    "path": "report.json",
+    "sha256": "3fa60e407c1adcfe7103f53b09a28ea37e6c9191cff1b63b0d8f4d31e24576fb",
+    "size": 2680,
+  },
+]
+`;

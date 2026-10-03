@@ -1,0 +1,218 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`dialog inspect should explain the dialog's conditions and what each phrase says, leads to, gives and runs 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Dialog 'snag_cache_dialog' in configs\\gameplay\\dialogs.xml",
+    "  dont_has_info: snag_cache_known",
+    "  [0] Want to earn some? -> 1",
+    "  [1] What do I do? -> 11, 12",
+    "  [11] Deal. | give_info snag_cache_known; action dialogs.give_task",
+    "  [12] snag_cache_12 | precondition dialogs.is_ready",
+    "Explained 4 phrases",
+  ],
+}
+`;
+
+exports[`dialog inspect should read the declaration of the file asked for 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [
+    "Also declared in configs\\gameplay\\dialogs.xml, ask with --file to read another",
+  ],
+  "stdout": [
+    "Dialog 'actor_break_dialog' in configs\\gameplay\\dialogs_overlay.xml",
+    "  [0] overlay_break_0",
+    "Explained 1 phrases",
+  ],
+}
+`;
+
+exports[`dialog inspect should read the first declaration and name the files declaring the dialog again 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [
+    "Also declared in configs\\gameplay\\dialogs_overlay.xml, ask with --file to read another",
+  ],
+  "stdout": [
+    "Dialog 'actor_break_dialog' in configs\\gameplay\\dialogs.xml",
+    "  [0] Laters.",
+    "Explained 1 phrases",
+  ],
+}
+`;
+
+exports[`dialog inspect should refuse a dialog no file declares 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Not found error: No file under 'configs\\gameplay' declares dialog 'nothing'",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`dialog inspect should refuse a file that does not declare the dialog 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Not found error: Dialog 'snag_cache_dialog' is not declared in 'configs\\gameplay\\dialogs_overlay.xml'",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`dialog inspect should report every element of every phrase in document order 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "dialog",
+    "inspect",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "alsoDeclaredIn": [],
+    "dialog": {
+      "elements": [
+        {
+          "kind": "dontHasInfo",
+          "name": "dont_has_info",
+          "value": "snag_cache_known",
+        },
+      ],
+      "id": "snag_cache_dialog",
+      "language": "eng",
+      "logicalPath": "configs\\gameplay\\dialogs.xml",
+      "phrases": [
+        {
+          "elements": [
+            {
+              "kind": "text",
+              "name": "text",
+              "value": "snag_cache_0",
+            },
+            {
+              "kind": "next",
+              "name": "next",
+              "value": "1",
+            },
+          ],
+          "id": "0",
+          "isFinal": false,
+          "isInPhraseList": true,
+          "next": [
+            "1",
+          ],
+          "text": "Want to earn some?",
+          "textKey": "snag_cache_0",
+        },
+        {
+          "elements": [
+            {
+              "kind": "text",
+              "name": "text",
+              "value": "snag_cache_1",
+            },
+            {
+              "kind": "next",
+              "name": "next",
+              "value": "11",
+            },
+            {
+              "kind": "next",
+              "name": "next",
+              "value": "12",
+            },
+          ],
+          "id": "1",
+          "isFinal": false,
+          "isInPhraseList": true,
+          "next": [
+            "11",
+            "12",
+          ],
+          "text": "What do I do?",
+          "textKey": "snag_cache_1",
+        },
+        {
+          "elements": [
+            {
+              "kind": "text",
+              "name": "text",
+              "value": "snag_cache_11",
+            },
+            {
+              "kind": "giveInfo",
+              "name": "give_info",
+              "value": "snag_cache_known",
+            },
+            {
+              "kind": "action",
+              "name": "action",
+              "value": "dialogs.give_task",
+            },
+          ],
+          "id": "11",
+          "isFinal": false,
+          "isInPhraseList": true,
+          "next": [],
+          "text": "Deal.",
+          "textKey": "snag_cache_11",
+        },
+        {
+          "elements": [
+            {
+              "kind": "text",
+              "name": "text",
+              "value": "snag_cache_12",
+            },
+            {
+              "kind": "precondition",
+              "name": "precondition",
+              "value": "dialogs.is_ready",
+            },
+          ],
+          "id": "12",
+          "isFinal": false,
+          "isInPhraseList": true,
+          "next": [],
+          "text": null,
+          "textKey": "snag_cache_12",
+        },
+      ],
+      "priority": null,
+    },
+  },
+}
+`;
+
+exports[`dialog inspect should write only the report 1`] = `
+[
+  {
+    "path": "report.json",
+    "sha256": "314520c6a07c8b04982a0805a0ff742f50dcc4cd8f9ff3b7e1af512630cb7cd7",
+    "size": 3171,
+  },
+]
+`;

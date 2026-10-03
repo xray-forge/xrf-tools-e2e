@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<game_dialogs>
+	<dialog id="snag_cache_dialog">
+		<dont_has_info>snag_cache_known</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>snag_cache_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>snag_cache_1</text>
+				<next>11</next>
+				<next>12</next>
+			</phrase>
+			<phrase id="11">
+				<text>snag_cache_11</text>
+				<give_info>snag_cache_known</give_info>
+				<action>dialogs.give_task</action>
+			</phrase>
+			<phrase id="12">
+				<text>snag_cache_12</text>
+				<precondition>dialogs.is_ready</precondition>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	<dialog id="snag_share_dialog" priority="5">
+		<has_info>snag_cache_known</has_info>
+		<precondition>dialogs.actor_has_container</precondition>
+		<phrase_list>
+			<phrase id="0">
+				<text>snag_share_0</text>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	<dialog id="hello_dialog">
+		<phrase_list>
+			<phrase id="0">
+				<text>hello_0</text>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	<dialog id="about_quests">
+		<phrase_list>
+			<phrase id="0">
+				<text>about_quests_0</text>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	<dialog id="actor_break_dialog">
+		<phrase_list>
+			<phrase id="0">
+				<text>actor_break_0</text>
+			</phrase>
+		</phrase_list>
+	</dialog>
+</game_dialogs>

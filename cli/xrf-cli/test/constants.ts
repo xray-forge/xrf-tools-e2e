@@ -45,6 +45,15 @@ export const CLI_LTX_SCHEMES_DLTX_ROOT: string = path.resolve(CLI_RESOURCES_ROOT
  */
 export const CLI_LTX_SCHEME_ASSEMBLY_ROOT: string = path.resolve(CLI_RESOURCES_ROOT, "./ltx-scheme-assembly");
 
+/**
+ * Root of the committed gamedata tree whose characters, profiles and info portions offer its dialogs.
+ *
+ * @remarks
+ * Kept apart from the gamedata tree because every file added there moves the archive, listing and verify snapshots
+ * that read it whole.
+ */
+export const CLI_DIALOG_PARTNERS_ROOT: string = path.resolve(CLI_RESOURCES_ROOT, "./dialog-partners");
+
 export const CLI_TESTS_ROOT: string = path.resolve(PROJECT_ROOT, "./src/xrf-cli/tests");
 
 /** Generated state from one E2E run, deleted before any test suite starts. */
@@ -161,4 +170,14 @@ export function ltxSchemesDltx(relative: string = ""): string {
  */
 export function ltxSchemeAssembly(relative: string = ""): string {
   return relative ? path.resolve(CLI_LTX_SCHEME_ASSEMBLY_ROOT, relative) : CLI_LTX_SCHEME_ASSEMBLY_ROOT;
+}
+
+/**
+ * Refers to a file in the committed tree whose characters, profiles and info portions offer its dialogs.
+ *
+ * @param relative - Path relative to that tree's root, for example `configs`.
+ * @returns Absolute path.
+ */
+export function dialogPartners(relative: string = ""): string {
+  return relative ? path.resolve(CLI_DIALOG_PARTNERS_ROOT, relative) : CLI_DIALOG_PARTNERS_ROOT;
 }

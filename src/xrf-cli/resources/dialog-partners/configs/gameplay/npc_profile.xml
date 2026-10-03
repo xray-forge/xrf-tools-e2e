@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<xml>
+	<character id="snag">
+		<class>snag</class>
+	</character>
+	<character id="snag_pinned">
+		<specific_character>snag</specific_character>
+	</character>
+	<character id="novice">
+		<class>novice</class>
+	</character>
+	<character id="nobody">
+		<class>no_such_class</class>
+	</character>
+</xml>

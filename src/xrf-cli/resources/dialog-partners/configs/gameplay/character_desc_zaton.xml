@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<xml>
+	<specific_character id="snag" team_default="1">
+		<class>Snag</class>
+		<start_dialog>snag_cache_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+		<actor_dialog>snag_share_dialog</actor_dialog>
+		<actor_dialog>snag_missing_dialog</actor_dialog>
+	</specific_character>
+	<specific_character id="story_novice" no_random="1">
+		<class>novice</class>
+	</specific_character>
+</xml>

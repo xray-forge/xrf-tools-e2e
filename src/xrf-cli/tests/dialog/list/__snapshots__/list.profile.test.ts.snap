@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`dialog list --profile should list the start dialog, the actor dialogs and the info portion dialogs, in that order 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "snag_cache_dialog (configs\\gameplay\\dialogs.xml, 4 phrases, start of snag): Want to earn some?",
+    "about_quests (configs\\gameplay\\dialogs.xml, 1 phrases, actor dialog of snag): about_quests_0",
+    "snag_share_dialog (configs\\gameplay\\dialogs.xml, 1 phrases, actor dialog of snag): Here's the container.",
+    "actor_break_dialog (configs\\gameplay\\dialogs.xml, 1 phrases, with info global_dialogs): Laters.",
+    "Profile 'snag' (snag) offers 4 dialogs",
+  ],
+}
+`;
+
+exports[`dialog list --profile should name an offered dialog no file declares under verbose output 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "snag_cache_dialog (configs\\gameplay\\dialogs.xml, 4 phrases, start of snag): Want to earn some?",
+    "about_quests (configs\\gameplay\\dialogs.xml, 1 phrases, actor dialog of snag): about_quests_0",
+    "snag_share_dialog (configs\\gameplay\\dialogs.xml, 1 phrases, actor dialog of snag): Here's the container.",
+    "actor_break_dialog (configs\\gameplay\\dialogs.xml, 1 phrases, with info global_dialogs): Laters.",
+    "  [dialog.offer-missing] snag_missing_dialog: Dialog 'snag_missing_dialog' is offered, but no dialog file declares it",
+    "Profile 'snag' (snag) offers 4 dialogs",
+  ],
+}
+`;
+
+exports[`dialog list --profile should refuse a profile the tree does not declare 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Not found error: No profile 'stranger' under 'configs\\gameplay' in <resources>/dialog-partners",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`dialog list --profile should refuse a profile whose class no character carries 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Not found error: Profile 'nobody' resolves to no character",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`dialog list --profile should report the profile, the characters it resolves to and each way a dialog is offered 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "dialog",
+    "list",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "dialogs": [
+      {
+        "caption": "Want to earn some?",
+        "captionKey": "snag_cache_0",
+        "elements": [
+          {
+            "kind": "dontHasInfo",
+            "name": "dont_has_info",
+            "value": "snag_cache_known",
+          },
+        ],
+        "id": "snag_cache_dialog",
+        "logicalPath": "configs\\gameplay\\dialogs.xml",
+        "offers": [
+          {
+            "character": "snag",
+            "kind": "start",
+          },
+        ],
+        "phrases": 4,
+        "priority": null,
+      },
+      {
+        "caption": null,
+        "captionKey": "about_quests_0",
+        "elements": [],
+        "id": "about_quests",
+        "logicalPath": "configs\\gameplay\\dialogs.xml",
+        "offers": [
+          {
+            "character": "snag",
+            "kind": "actor",
+          },
+        ],
+        "phrases": 1,
+        "priority": null,
+      },
+      {
+        "caption": "Here's the container.",
+        "captionKey": "snag_share_0",
+        "elements": [
+          {
+            "kind": "hasInfo",
+            "name": "has_info",
+            "value": "snag_cache_known",
+          },
+          {
+            "kind": "precondition",
+            "name": "precondition",
+            "value": "dialogs.actor_has_container",
+          },
+        ],
+        "id": "snag_share_dialog",
+        "logicalPath": "configs\\gameplay\\dialogs.xml",
+        "offers": [
+          {
+            "character": "snag",
+            "kind": "actor",
+          },
+        ],
+        "phrases": 1,
+        "priority": 5,
+      },
+      {
+        "caption": "Laters.",
+        "captionKey": "actor_break_0",
+        "elements": [],
+        "id": "actor_break_dialog",
+        "logicalPath": "configs\\gameplay\\dialogs.xml",
+        "offers": [
+          {
+            "info": "global_dialogs",
+            "kind": "info",
+          },
+        ],
+        "phrases": 1,
+        "priority": null,
+      },
+    ],
+    "findings": [
+      {
+        "message": "Dialog 'snag_missing_dialog' is offered, but no dialog file declares it",
+        "rule": "dialog.offer-missing",
+        "subject": "snag_missing_dialog",
+      },
+    ],
+    "language": "eng",
+    "profile": {
+      "characters": [
+        "snag",
+      ],
+      "id": "snag",
+    },
+  },
+}
+`;
+
+exports[`dialog list --profile should resolve a class to every character it may pick, read through the file including them 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "hello_dialog (configs\\gameplay\\dialogs.xml, 1 phrases, start of novice_1): Hello, stalker.",
+    "about_quests (configs\\gameplay\\dialogs.xml, 1 phrases, actor dialog of novice_1, actor dialog of novice_2): about_quests_0",
+    "actor_break_dialog (configs\\gameplay\\dialogs.xml, 1 phrases, with info global_dialogs): Laters.",
+    "Profile 'novice' (novice_1, novice_2) offers 3 dialogs",
+  ],
+}
+`;
+
+exports[`dialog list --profile should write only the report 1`] = `
+[
+  {
+    "path": "report.json",
+    "sha256": "df36104c2f8ed17973e0d7eb3ccc53fd343a639d4c5395d7c1a98c193ea1bc75",
+    "size": 2779,
+  },
+]
+`;
