@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`dialog find should list where dialogs check, give and take an info portion across files 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Info portion 'tech_have_one_dose': given 1, taken 1, checked 2",
+    "  configs\\gameplay\\dialogs.xml tech_drink_dialog dialog dont_has_info tech_have_one_dose",
+    "  configs\\gameplay\\dialogs.xml tech_drink_dialog [1] give_info tech_have_one_dose",
+    "  configs\\gameplay\\dialogs.xml tech_story_dialog [0] has_info tech_have_one_dose",
+    "  configs\\gameplay\\dialogs_jupiter.xml jup_tech_drink_dialog [1] disable_info tech_have_one_dose",
+    "Found 4 references",
+  ],
+}
+`;
+
+exports[`dialog find should mark the entry phrase's condition as never read and warn that no dialog gives the info portion 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [
+    "No dialog gives 'tech_drink_first_time'; scripts, logic and tasks may still give it",
+  ],
+  "stdout": [
+    "Info portion 'tech_drink_first_time': given 0, taken 0, checked 2",
+    "  configs\\gameplay\\dialogs.xml tech_greeting_dialog [1] dont_has_info tech_drink_first_time",
+    "  configs\\gameplay\\dialogs.xml tech_greeting_dialog [2] has_info tech_drink_first_time",
+    "  configs\\gameplay\\dialogs.xml tech_drink_dialog [0] has_info tech_drink_first_time (never read: the entry phrase's own condition)",
+    "Found 3 references",
+  ],
+}
+`;
+
+exports[`dialog find should match a bare function name in any module and a full name in its own 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Function 'if_actor_has_vodka': 2 references",
+    "  configs\\gameplay\\dialogs.xml tech_drink_dialog dialog precondition dialogs_zaton.if_actor_has_vodka",
+    "  configs\\gameplay\\dialogs_jupiter.xml jup_tech_drink_dialog dialog precondition dialogs_jupiter.if_actor_has_vodka",
+    "Function 'dialogs_zaton.give_vodka': 2 references",
+    "  configs\\gameplay\\dialogs.xml tech_drink_dialog [1] action dialogs_zaton.give_vodka",
+    "  configs\\gameplay\\dialogs_jupiter.xml jup_tech_drink_dialog [1] action dialogs_zaton.give_vodka",
+    "Found 4 references",
+  ],
+}
+`;
+
+exports[`dialog find should refuse a search naming nothing to find 1`] = `
+{
+  "exitCode": 2,
+  "stderr": [
+    "error: the following required arguments were not provided:",
+    "  <--info <info>|--functor <functor>>",
+    "",
+    "Usage: xrf-cli dialog find --path <path>... --source <source> <--info <info>|--functor <functor>>",
+    "",
+    "For more information, try '--help'.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`dialog find should report every reference with its file, dialog, phrase, element and whether it is read 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "dialog",
+    "find",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "functors": [
+      "give_vodka",
+    ],
+    "infos": [
+      "tech_drink_first_time",
+    ],
+    "references": [
+      {
+        "dialogId": "tech_greeting_dialog",
+        "element": {
+          "kind": "dontHasInfo",
+          "name": "dont_has_info",
+          "value": "tech_drink_first_time",
+        },
+        "isIgnored": false,
+        "logicalPath": "configs\\gameplay\\dialogs.xml",
+        "phraseId": "1",
+      },
+      {
+        "dialogId": "tech_greeting_dialog",
+        "element": {
+          "kind": "hasInfo",
+          "name": "has_info",
+          "value": "tech_drink_first_time",
+        },
+        "isIgnored": false,
+        "logicalPath": "configs\\gameplay\\dialogs.xml",
+        "phraseId": "2",
+      },
+      {
+        "dialogId": "tech_drink_dialog",
+        "element": {
+          "kind": "hasInfo",
+          "name": "has_info",
+          "value": "tech_drink_first_time",
+        },
+        "isIgnored": true,
+        "logicalPath": "configs\\gameplay\\dialogs.xml",
+        "phraseId": "0",
+      },
+      {
+        "dialogId": "tech_drink_dialog",
+        "element": {
+          "kind": "action",
+          "name": "action",
+          "value": "dialogs_zaton.give_vodka",
+        },
+        "isIgnored": false,
+        "logicalPath": "configs\\gameplay\\dialogs.xml",
+        "phraseId": "1",
+      },
+      {
+        "dialogId": "jup_tech_drink_dialog",
+        "element": {
+          "kind": "action",
+          "name": "action",
+          "value": "dialogs_zaton.give_vodka",
+        },
+        "isIgnored": false,
+        "logicalPath": "configs\\gameplay\\dialogs_jupiter.xml",
+        "phraseId": "1",
+      },
+    ],
+  },
+}
+`;
+
+exports[`dialog find should succeed with no references for a name nothing mentions 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Info portion 'nobody_checks_this': given 0, taken 0, checked 0",
+    "Found 0 references",
+  ],
+}
+`;
+
+exports[`dialog find should write only the report 1`] = `
+[
+  {
+    "path": "report.json",
+    "sha256": "d2b4c1587a2109f9bc9f4fc238f2c3609b9f7e550109808cffa62af3a540c713",
+    "size": 2176,
+  },
+]
+`;

@@ -54,6 +54,15 @@ export const CLI_LTX_SCHEME_ASSEMBLY_ROOT: string = path.resolve(CLI_RESOURCES_R
  */
 export const CLI_DIALOG_PARTNERS_ROOT: string = path.resolve(CLI_RESOURCES_ROOT, "./dialog-partners");
 
+/**
+ * Root of the committed dialog tree whose info portions and script calls `dialog find` searches.
+ *
+ * @remarks
+ * Kept apart from the dialog-partners tree because every dialog added there moves the list and info snapshots that read
+ * it whole.
+ */
+export const CLI_DIALOG_REFERENCES_ROOT: string = path.resolve(CLI_RESOURCES_ROOT, "./dialog-references");
+
 export const CLI_TESTS_ROOT: string = path.resolve(PROJECT_ROOT, "./src/xrf-cli/tests");
 
 /** Generated state from one E2E run, deleted before any test suite starts. */
@@ -180,4 +189,14 @@ export function ltxSchemeAssembly(relative: string = ""): string {
  */
 export function dialogPartners(relative: string = ""): string {
   return relative ? path.resolve(CLI_DIALOG_PARTNERS_ROOT, relative) : CLI_DIALOG_PARTNERS_ROOT;
+}
+
+/**
+ * Refers to a file in the committed dialog tree `dialog find` searches.
+ *
+ * @param relative - Path relative to that tree's root, for example `configs`.
+ * @returns Absolute path.
+ */
+export function dialogReferences(relative: string = ""): string {
+  return relative ? path.resolve(CLI_DIALOG_REFERENCES_ROOT, relative) : CLI_DIALOG_REFERENCES_ROOT;
 }

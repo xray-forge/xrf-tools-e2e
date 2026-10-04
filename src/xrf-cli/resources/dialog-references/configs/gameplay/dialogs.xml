@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<game_dialogs>
+	<dialog id="tech_greeting_dialog">
+		<phrase_list>
+			<phrase id="0">
+				<next>1</next>
+				<next>2</next>
+			</phrase>
+			<phrase id="1">
+				<text>tech_greeting_sober</text>
+				<dont_has_info>tech_drink_first_time</dont_has_info>
+			</phrase>
+			<phrase id="2">
+				<text>tech_greeting_drunk</text>
+				<has_info>tech_drink_first_time</has_info>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	<dialog id="tech_drink_dialog">
+		<precondition>dialogs_zaton.if_actor_has_vodka</precondition>
+		<dont_has_info>tech_have_one_dose</dont_has_info>
+		<phrase_list>
+			<phrase id="0">
+				<text>tech_drink_0</text>
+				<has_info>tech_drink_first_time</has_info>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>tech_drink_1</text>
+				<action>dialogs_zaton.give_vodka</action>
+				<give_info>tech_have_one_dose</give_info>
+			</phrase>
+		</phrase_list>
+	</dialog>
+	<dialog id="tech_story_dialog">
+		<phrase_list>
+			<phrase id="0">
+				<text>tech_story_0</text>
+				<has_info>tech_have_one_dose</has_info>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>tech_story_1</text>
+				<next>0</next>
+			</phrase>
+		</phrase_list>
+	</dialog>
+</game_dialogs>

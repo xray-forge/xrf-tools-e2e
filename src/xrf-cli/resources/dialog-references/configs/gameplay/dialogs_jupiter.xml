@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<game_dialogs>
+	<dialog id="jup_tech_drink_dialog">
+		<precondition>dialogs_jupiter.if_actor_has_vodka</precondition>
+		<phrase_list>
+			<phrase id="0">
+				<text>jup_tech_drink_0</text>
+				<next>1</next>
+			</phrase>
+			<phrase id="1">
+				<text>jup_tech_drink_1</text>
+				<action>dialogs_zaton.give_vodka</action>
+				<disable_info>tech_have_one_dose</disable_info>
+			</phrase>
+		</phrase_list>
+	</dialog>
+</game_dialogs>
