@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`particle inspect should explain a group's effects, their windows and the children they spawn 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "group explosions\\campfire_boar_grill",
+    "  time limit: none, loops",
+    "  effects: 5",
+    "    0. explosions\\effects\\campfire_boar_grill_smoke from <duration> to <duration> (Enabled)",
+    "    1. explosions\\effects\\campfire_boar_grill_sparks from <duration> to <duration> (Enabled)",
+    "    2. explosions\\effects\\fire_distort from <duration> to <duration> (Enabled)",
+    "    3. explosions\\effects\\campfire_boar_grill_vacuum from <duration> to <duration> (Enabled)",
+    "    4. explosions\\effects\\campfire_boar_grill_drop from <duration> to <duration> (Enabled, OnBirthChild, OnDeadChild)",
+    "       on birth: explosions\\effects\\campfire_boar_grill_drop_smoke",
+    "       on death: explosions\\effects\\campfire_boar_grill_drop_sparks",
+  ],
+}
+`;
+
+exports[`particle inspect should explain an effect's sprite, flags, frames and actions 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "effect explosions\\effects\\campfire_boar_grill_drop",
+    "  sprite: particles\\add, pfx\\pfx_splash_02",
+    "  max particles: 6",
+    "  flags: Sprite, Framed, RandomFrame",
+    "  time limit: none, loops",
+    "  frames: 4 in rows of 4, at 4 a second",
+    "  actions: 8",
+    "    0. KillOld",
+    "    1. TargetSize",
+    "    2. TargetColor",
+    "    3. TargetVelocity",
+    "    4. TargetRotate",
+    "    5. Move",
+    "    6. Gravity",
+    "    7. Source",
+  ],
+}
+`;
+
+exports[`particle inspect should fail on a missing name, naming the names holding it 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Not found error: No effect or group 'campfire_boar' in <resources>/gamedata/particles.xr; names holding it: explosions\\effects\\campfire_boar_grill_drop, explosions\\effects\\campfire_boar_grill_drop_smoke, explosions\\effects\\campfire_boar_grill_drop_sparks, explosions\\effects\\campfire_boar_grill_smoke, explosions\\effects\\campfire_boar_grill_sparks, explosions\\effects\\campfire_boar_grill_vacuum, explosions\\campfire_boar_grill",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`particle inspect should report the group whole, as the library holds it 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "particle",
+    "inspect",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "effect": null,
+    "group": {
+      "description": null,
+      "effects": [
+        {
+          "flags": 4,
+          "name": "explosions\\effects\\campfire_boar_grill_smoke",
+          "onBirthChildName": "",
+          "onDeadChildName": "",
+          "onPlayChildName": "",
+          "time0": 0,
+          "time1": 0,
+        },
+        {
+          "flags": 4,
+          "name": "explosions\\effects\\campfire_boar_grill_sparks",
+          "onBirthChildName": "",
+          "onDeadChildName": "",
+          "onPlayChildName": "",
+          "time0": 0.5,
+          "time1": 0,
+        },
+        {
+          "flags": 4,
+          "name": "explosions\\effects\\fire_distort",
+          "onBirthChildName": "",
+          "onDeadChildName": "",
+          "onPlayChildName": "",
+          "time0": 0,
+          "time1": 0,
+        },
+        {
+          "flags": 4,
+          "name": "explosions\\effects\\campfire_boar_grill_vacuum",
+          "onBirthChildName": "",
+          "onDeadChildName": "",
+          "onPlayChildName": "",
+          "time0": 0,
+          "time1": 0,
+        },
+        {
+          "flags": 100,
+          "name": "explosions\\effects\\campfire_boar_grill_drop",
+          "onBirthChildName": "explosions\\effects\\campfire_boar_grill_drop_smoke",
+          "onDeadChildName": "explosions\\effects\\campfire_boar_grill_drop_sparks",
+          "onPlayChildName": "",
+          "time0": 0,
+          "time1": 0,
+        },
+      ],
+      "effectsOld": null,
+      "flags": 0,
+      "name": "explosions\\campfire_boar_grill",
+      "timeLimit": 0,
+      "version": 3,
+    },
+  },
+}
+`;
+
+exports[`particle inspect should write only the report 1`] = `
+[
+  {
+    "path": "report.json",
+    "sha256": "394ef037dfdcb7246d4a8dc6761c2f044efdc5c2dfce58437c47127e3a23eb36",
+    "size": 2143,
+  },
+]
+`;

@@ -1,0 +1,175 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`particle find should find the effects sampling a texture however it is spelled 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "effect _samples_particles_\\vodorosli_01 (particles\\add, pfx\\pfx_splash_02, 1000 particles, 8 actions): texture pfx\\pfx_splash_02",
+    "effect explosions\\effects\\campfire_boar_grill_drop (particles\\add, pfx\\pfx_splash_02, 6 particles, 8 actions): texture pfx\\pfx_splash_02",
+    "Found 2 effects and groups",
+  ],
+}
+`;
+
+exports[`particle find should refuse an action type the library format has not 1`] = `
+{
+  "exitCode": 2,
+  "stderr": [
+    "error: invalid value 'Flicker' for '--action <action>': 'Flicker' is no particle action type",
+    "",
+    "For more information, try '--help'.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`particle find should report the groups playing an effect and the one spawning it as a birth child 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "particle",
+    "find",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "actions": [],
+    "effects": [
+      "explosions\\effects\\campfire_sparks",
+      "explosions\\effects\\campfire_boar_grill_drop_smoke",
+    ],
+    "matches": [
+      {
+        "children": [],
+        "effects": [
+          "explosions\\effects\\campfire_flame",
+          "explosions\\effects\\campfire_smoke",
+          "explosions\\effects\\campfire_sparks",
+          "explosions\\effects\\campfire_distort",
+          "explosions\\effects\\campfire_vacum",
+          "explosions\\effects\\campfire_glow",
+        ],
+        "kind": "group",
+        "name": "explosions\\campfire",
+        "reasons": [
+          {
+            "kind": "effect",
+            "value": "explosions\\effects\\campfire_sparks",
+          },
+        ],
+        "timeLimit": 0,
+      },
+      {
+        "children": [
+          "explosions\\effects\\campfire_boar_grill_drop_smoke",
+          "explosions\\effects\\campfire_boar_grill_drop_sparks",
+        ],
+        "effects": [
+          "explosions\\effects\\campfire_boar_grill_smoke",
+          "explosions\\effects\\campfire_boar_grill_sparks",
+          "explosions\\effects\\fire_distort",
+          "explosions\\effects\\campfire_boar_grill_vacuum",
+          "explosions\\effects\\campfire_boar_grill_drop",
+        ],
+        "kind": "group",
+        "name": "explosions\\campfire_boar_grill",
+        "reasons": [
+          {
+            "kind": "birthChild",
+            "value": "explosions\\effects\\campfire_boar_grill_drop_smoke",
+          },
+        ],
+        "timeLimit": 0,
+      },
+      {
+        "children": [],
+        "effects": [
+          "explosions\\effects\\campfire_flame_blowout",
+          "explosions\\effects\\campfire_smoke_disabled",
+          "explosions\\effects\\campfire_sparks",
+          "explosions\\effects\\campfire_sparks_blowout",
+          "explosions\\effects\\campfire_flame_blowout",
+        ],
+        "kind": "group",
+        "name": "explosions\\campfire_disabled",
+        "reasons": [
+          {
+            "kind": "effect",
+            "value": "explosions\\effects\\campfire_sparks",
+          },
+        ],
+        "timeLimit": 0,
+      },
+      {
+        "children": [],
+        "effects": [
+          "explosions\\effects\\campfire_flame_enabled",
+          "explosions\\effects\\campfire_smoke_disabled",
+          "explosions\\effects\\campfire_sparks",
+          "explosions\\effects\\campfire_sparks_blowout",
+        ],
+        "kind": "group",
+        "name": "explosions\\campfire_enabled",
+        "reasons": [
+          {
+            "kind": "effect",
+            "value": "explosions\\effects\\campfire_sparks",
+          },
+        ],
+        "timeLimit": 0,
+      },
+      {
+        "children": [],
+        "effects": [
+          "explosions\\effects\\campfire_flame",
+          "explosions\\effects\\campfire_smoke",
+          "explosions\\effects\\campfire_sparks",
+          "explosions\\effects\\campfire_distort_short",
+          "explosions\\effects\\campfire_vacum",
+          "explosions\\effects\\campfire_glow",
+        ],
+        "kind": "group",
+        "name": "explosions\\campfire_no_flame",
+        "reasons": [
+          {
+            "kind": "effect",
+            "value": "explosions\\effects\\campfire_sparks",
+          },
+        ],
+        "timeLimit": 0,
+      },
+    ],
+    "shaders": [],
+    "textures": [],
+  },
+}
+`;
+
+exports[`particle find should write only the report 1`] = `
+[
+  {
+    "path": "report.json",
+    "sha256": "864c64548492a4aaf792c5a14cb18b1482b79a1870492352f45f996d72020f42",
+    "size": 3860,
+  },
+]
+`;

@@ -1,0 +1,176 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`particle list should list the groups holding a name with how many effects and children each has 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "group explosions\\campfire (6 effects, 0 children)",
+    "group explosions\\campfire_06 (4 effects, 0 children)",
+    "group explosions\\campfire_bed_fireplace (1 effects, 0 children)",
+    "group explosions\\campfire_big (6 effects, 0 children)",
+    "group explosions\\campfire_boar_grill (5 effects, 2 children)",
+    "group explosions\\campfire_disabled (5 effects, 0 children)",
+    "group explosions\\campfire_enabled (4 effects, 0 children)",
+    "group explosions\\campfire_hot_no_fire (4 effects, 0 children)",
+    "group explosions\\campfire_no_flame (6 effects, 0 children)",
+    "Listed 0 effects and 9 groups",
+  ],
+}
+`;
+
+exports[`particle list should report each effect's sprite, particles and action types 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "particle",
+    "list",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "entries": [
+      {
+        "actions": [
+          "KillOld",
+          "TargetSize",
+          "TargetColor",
+          "TargetVelocity",
+          "TargetRotate",
+          "Move",
+          "Gravity",
+          "Source",
+        ],
+        "kind": "effect",
+        "maxParticles": 6,
+        "name": "explosions\\effects\\campfire_boar_grill_drop",
+        "shader": "particles\\add",
+        "textures": [
+          "pfx\\pfx_splash_02",
+        ],
+        "timeLimit": null,
+      },
+      {
+        "actions": [
+          "KillOld",
+          "TargetSize",
+          "TargetColor",
+          "Source",
+          "Move",
+          "TargetVelocity",
+        ],
+        "kind": "effect",
+        "maxParticles": 1,
+        "name": "explosions\\effects\\campfire_boar_grill_drop_smoke",
+        "shader": "particles\\alpha_add",
+        "textures": [
+          "pfx\\pfx_smoke_a",
+        ],
+        "timeLimit": 0.5,
+      },
+      {
+        "actions": [
+          "KillOld",
+          "TargetSize",
+          "TargetColor",
+          "Move",
+          "Source",
+        ],
+        "kind": "effect",
+        "maxParticles": 1,
+        "name": "explosions\\effects\\campfire_boar_grill_drop_sparks",
+        "shader": "particles\\add",
+        "textures": [
+          "pfx\\pfx_flame_01",
+        ],
+        "timeLimit": 0.5,
+      },
+      {
+        "actions": [
+          "KillOld",
+          "TargetSize",
+          "TargetColor",
+          "TargetRotate",
+          "Move",
+          "TargetVelocity",
+          "Source",
+        ],
+        "kind": "effect",
+        "maxParticles": 20,
+        "name": "explosions\\effects\\campfire_boar_grill_smoke",
+        "shader": "particles\\alpha_add",
+        "textures": [
+          "pfx\\pfx_smoke_a",
+        ],
+        "timeLimit": null,
+      },
+      {
+        "actions": [
+          "KillOld",
+          "TargetColor",
+          "Source",
+          "RandomAccel",
+          "Move",
+        ],
+        "kind": "effect",
+        "maxParticles": 20,
+        "name": "explosions\\effects\\campfire_boar_grill_sparks",
+        "shader": "particles\\alpha_add",
+        "textures": [
+          "pfx\\pfx_ani-fire01.bmp",
+        ],
+        "timeLimit": null,
+      },
+      {
+        "actions": [
+          "KillOld",
+          "TargetColor",
+          "TargetSize",
+          "TargetRotate",
+          "OrbitPoint",
+          "Sink",
+          "SpeedLimit",
+          "Move",
+          "Source",
+        ],
+        "kind": "effect",
+        "maxParticles": 20,
+        "name": "explosions\\effects\\campfire_boar_grill_vacuum",
+        "shader": "particles\\alpha_add",
+        "textures": [
+          "pfx\\pfx_smoke_a",
+        ],
+        "timeLimit": null,
+      },
+    ],
+  },
+}
+`;
+
+exports[`particle list should write only the report 1`] = `
+[
+  {
+    "path": "report.json",
+    "sha256": "08dc13f2df63539347bc636c599c01b6be4ab599624d634489c07c46e4877150",
+    "size": 3239,
+  },
+]
+`;
