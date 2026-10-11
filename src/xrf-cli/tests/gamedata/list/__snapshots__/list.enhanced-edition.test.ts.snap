@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata list enhanced edition should record both results 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "list",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "collisions": [],
+    "duration": "<duration>",
+    "entries": [
+      {
+        "container": "<sandbox>/install/resources/configs.db",
+        "isArchived": true,
+        "logicalPath": "configs\\archive_only.ltx",
+      },
+      {
+        "container": "<sandbox>/install/gamedata",
+        "isArchived": false,
+        "logicalPath": "configs\\system.ltx",
+      },
+    ],
+    "isShadowedIncluded": false,
+    "mounts": [
+      "Directory <sandbox>/install/gamedata (gamedata)",
+      "Archive   <sandbox>/install/resources (resources)",
+    ],
+    "origin": "<sandbox>/install",
+    "shadowed": [],
+    "skipped": [],
+    "total": 2,
+  },
+}
+`;
+
+exports[`gamedata list enhanced edition should record both results 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "list",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "collisions": [],
+    "duration": "<duration>",
+    "entries": [
+      {
+        "container": "<sandbox>/install/resources/configs.db",
+        "isArchived": true,
+        "logicalPath": "configs\\archive_only.ltx",
+      },
+      {
+        "container": "<sandbox>/install/gamedata",
+        "isArchived": false,
+        "logicalPath": "configs\\system.ltx",
+      },
+    ],
+    "isShadowedIncluded": false,
+    "mounts": [
+      "Directory <sandbox>/install/gamedata (gamedata)",
+      "Archive   <sandbox>/install/resources (resources)",
+    ],
+    "origin": "<sandbox>/install/gamedata/configs",
+    "shadowed": [],
+    "skipped": [],
+    "total": 2,
+  },
+}
+`;
+
+exports[`gamedata list enhanced edition should write the expected files 1`] = `
+[
+  {
+    "path": "auto.json",
+    "sha256": "682c7a2be03373cb2fb970c51506f859c9ffe89673a1754e5b0478790cd9abdd",
+    "size": 1162,
+  },
+  {
+    "path": "containing.json",
+    "sha256": "96d98583a3219025b3141bdcc481c5a2b7587d93eeeb8ba92602bc4d70a59727",
+    "size": 1179,
+  },
+  {
+    "path": "install/fsgame_cop.ltx",
+    "sha256": "40b380f6ac51f7405976a04b5f9e82e038333a89738c507fc16b330f86749288",
+    "size": 257,
+  },
+  {
+    "path": "install/gamedata/configs/system.ltx",
+    "sha256": "ad8d5b2dcb036b55b03ba4be6958e6c2960d7f950ba7a9cfe4eee0ff2c863447",
+    "size": 15,
+  },
+  {
+    "path": "install/resources/configs.db",
+    "sha256": "ddb87623e585c5bed22aee824918988ad866ebb34fc1aba6bfbc62fd81e8bc74",
+    "size": 197,
+  },
+  {
+    "path": "stage/configs/archive_only.ltx",
+    "sha256": "8035b7683fe087337859fa46e61cb2fce21d560b49e34668d9756a153386fae5",
+    "size": 15,
+  },
+  {
+    "path": "stage/configs/system.ltx",
+    "sha256": "36b9d89fcd7c60540f0ede2e55e2a0d1e93cd0d929e321209bdb852cf4cd742c",
+    "size": 17,
+  },
+]
+`;

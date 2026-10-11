@@ -406,6 +406,9 @@ exports[`CLI help tree should expose every domain from root help 1`] = `
     "      --report <PATH>  Write the run's JSON report to a file",
     "  -h, --help           Print help",
     "  -V, --version        Print version",
+    "",
+    "Environment:",
+    "  RUST_LOG  The log's filter, in env_logger's syntax, such as info,wgpu_hal=warn.",
   ],
 }
 `;

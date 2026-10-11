@@ -25,6 +25,14 @@ describe("settings", () => {
     await expect(build).toHaveText(expect.stringContaining("Version"));
     await expect(build).toHaveText(expect.stringContaining("Target"));
 
+    // What it lists depends on the driver's own environment, so only that it read the variables over IPC.
+    const variables = dialog.$('[data-testid="settings-variables-section"]');
+
+    await variables.waitForExist();
+
+    await expect(variables).toHaveText(expect.stringContaining("Environment variables"));
+    await expect(variables).not.toHaveText(expect.stringContaining("Reading environment variables"));
+
     await dialog.$("button=Done").click();
 
     await expect(dialog).not.toBeExisting();
