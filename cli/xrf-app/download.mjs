@@ -1,3 +1,4 @@
+import * as cp from "node:child_process";
 import * as fs from "node:fs/promises";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -9,10 +10,11 @@ if (process.platform !== "win32") {
   process.exit(1);
 }
 
-const ASSET_NAME = "xrf-app-dev.exe";
-const EXECUTABLE_NAME = "xrf-app.exe";
-const DESTINATION = path.resolve(PROJECT_ROOT, "target", EXECUTABLE_NAME);
-const DOWNLOAD = `${DESTINATION}.download`;
+// The application ships as an archive of one `xrf-app/` folder: the executable and the resources beside it.
+const ASSET_NAME = "xrf-app-dev-windows-x64.zip";
+const TARGET = path.resolve(PROJECT_ROOT, "target");
+const DESTINATION = path.resolve(TARGET, "xrf-app");
+const DOWNLOAD = path.resolve(TARGET, `${ASSET_NAME}.download`);
 const URL = `https://github.com/xray-forge/xrf-tools/releases/download/nightly/${ASSET_NAME}`;
 
 try {
@@ -28,14 +30,21 @@ try {
     throw new Error("Downloaded asset is empty");
   }
 
-  await fs.mkdir(path.dirname(DESTINATION), { recursive: true });
+  await fs.mkdir(TARGET, { recursive: true });
   await fs.writeFile(DOWNLOAD, contents);
-  await fs.rm(DESTINATION, { force: true });
-  await fs.rename(DOWNLOAD, DESTINATION);
+  await fs.rm(DESTINATION, { recursive: true, force: true });
+  // Windows' own tar reads the archive as the zip it is.
+  cp.execFileSync(path.join(process.env.SystemRoot ?? "C:\\Windows", "System32", "tar.exe"), [
+    "-xf",
+    DOWNLOAD,
+    "-C",
+    TARGET,
+  ]);
 
-  console.log(`Downloaded ${URL}\n        to ${DESTINATION}`);
+  console.log(`Downloaded ${URL}\n  unpacked to ${DESTINATION}`);
 } catch (error) {
-  await fs.rm(DOWNLOAD, { force: true });
   console.error(error instanceof Error ? error.message : error);
   process.exitCode = 1;
+} finally {
+  await fs.rm(DOWNLOAD, { force: true });
 }

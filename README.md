@@ -37,7 +37,7 @@ report, and Jest cache live under `target/e2e-cli/`, which is deleted before eve
 
 ## Application
 
-Application specs live under `src/xrf-app/tests/` and drive ignored `target/xrf-app.exe` through
+Application specs live under `src/xrf-app/tests/` and drive ignored `target/xrf-app/xrf-app.exe` through
 [tauri-driver](https://v2.tauri.app/develop/tests/webdriver/) and the Edge WebDriver matching the installed WebView2
 runtime. Windows only. Install `tauri-driver` once with `cargo install tauri-driver`; the matching `msedgedriver` is
 downloaded on demand. Driver logs and failure screenshots land under `target/e2e-app/`.
@@ -47,8 +47,8 @@ npm run app:refresh
 npm run e2e:app
 ```
 
-| Command                         | Purpose                                                      |
-| ------------------------------- | ------------------------------------------------------------ |
-| `npm run app:download`          | Download the current nightly development application.        |
-| `npm run app:refresh -- [path]` | Copy a local `xrf-app.exe` build to the ignored target path. |
-| `npm run e2e:app`               | Run the application specs against the target executable.     |
+| Command                         | Purpose                                                                         |
+| ------------------------------- | ------------------------------------------------------------------------------- |
+| `npm run app:download`          | Download and unpack the current nightly development application archive.        |
+| `npm run app:refresh -- [path]` | Copy a local build's `xrf-app.exe` and `resources/` to the ignored target path. |
+| `npm run e2e:app`               | Run the application specs against the target executable.                        |

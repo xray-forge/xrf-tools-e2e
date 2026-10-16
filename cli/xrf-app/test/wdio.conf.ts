@@ -13,10 +13,10 @@ const PROJECT_ROOT: string = path.resolve(__dirname, "../../..");
  * The ignored binary under test.
  *
  * @remarks
- * CI downloads the current nightly application asset here through `app:download`; `npm run app:refresh`
- * copies a local build to the same path, so the configuration knows one location.
+ * CI unpacks the current nightly application archive here through `app:download`; `npm run app:refresh`
+ * copies a local build with its resources to the same folder, so the configuration knows one location.
  */
-export const APP_EXECUTABLE: string = path.resolve(PROJECT_ROOT, "target/xrf-app.exe");
+export const APP_EXECUTABLE: string = path.resolve(PROJECT_ROOT, "target/xrf-app/xrf-app.exe");
 
 /**
  * Committed inputs the application specs open.
