@@ -78,12 +78,15 @@ describe("level verify roots", () => {
     });
   });
 
-  // The point of the archived lane: a level with no directory to point at reads identically to one that has.
+  // The point of the archived lane: a level with no directory to point at reads identically to one that has. Each check's
+  // duration is a timing of its own run, so it is left out of the comparison.
   it("should reach the same verdict archived as loose", () => {
+    const timeless = (result: unknown): unknown =>
+      JSON.parse(JSON.stringify(result, (key: string, value: unknown) => (key === "duration" ? undefined : value)));
     const looseResult = (envelopeAt(box.at("loose.json")) as { result: unknown }).result;
     const archivedResult = (envelopeAt(box.at("archived.json")) as { result: unknown }).result;
 
-    expect(archivedResult).toEqual(looseResult);
+    expect(timeless(archivedResult)).toEqual(timeless(looseResult));
   });
 
   it("should name every level the roots hold when none was chosen", () => {
