@@ -19,6 +19,7 @@ describe("dialog inspect", () => {
   let explained: CliResult;
   let shadowed: CliResult;
   let overlay: CliResult;
+  let slashed: CliResult;
 
   beforeAll(() => {
     explained = box.run("dialog inspect", ["--path", TREE, "--source", "directory", "snag_cache_dialog"]);
@@ -31,6 +32,15 @@ describe("dialog inspect", () => {
       "actor_break_dialog",
       "--file",
       "configs\\gameplay\\DIALOGS_OVERLAY.xml",
+    ]);
+    slashed = box.run("dialog inspect", [
+      "--path",
+      TREE,
+      "--source",
+      "directory",
+      "actor_break_dialog",
+      "--file",
+      "configs/gameplay/dialogs_overlay.xml",
     ]);
 
     box.run("dialog inspect", [
@@ -56,6 +66,12 @@ describe("dialog inspect", () => {
   // The file is named the way a person types it, so the match ignores case as engine paths do.
   it("should read the declaration of the file asked for", () => {
     expect(overlay).toMatchSnapshot();
+  });
+
+  // Either slash names the file, as the other dialog and particle commands take a name.
+  it("should read the file asked for with forward slashes as with backslashes", () => {
+    expect(slashed.exitCode).toBe(0);
+    expect(slashed.stdout).toEqual(overlay.stdout);
   });
 
   it("should report every element of every phrase in document order", () => {
