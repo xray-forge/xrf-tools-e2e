@@ -59,6 +59,11 @@ exports[`gamedata verify texture files should write the expected reports and fil
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "passed",
   },
@@ -130,6 +135,11 @@ exports[`gamedata verify texture files should write the expected reports and fil
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "failed",
   },
@@ -140,8 +150,8 @@ exports[`gamedata verify texture files should write the expected reports and fil
 [
   {
     "path": "damaged.json",
-    "sha256": "fe80c7ebf3d9e0e1151c6aa17c82cc7aeda15100c8de47f8fe343d9c6b8da94d",
-    "size": 1600,
+    "sha256": "eec44bd44d478766d747be1d732f6bc196805b5c92118770f9e0b46a62793a50",
+    "size": 1701,
   },
   {
     "path": "damaged/configs/system.ltx",
@@ -160,8 +170,8 @@ exports[`gamedata verify texture files should write the expected reports and fil
   },
   {
     "path": "valid.json",
-    "sha256": "39f21ab261b3f465bc646d13b348f0ce05d70bdb968ecfb1434af84a01c2d6a3",
-    "size": 1337,
+    "sha256": "18fbce18ef3be60cf9308c7df7308f55085f66a200a4518f49cf55e0e3c7314b",
+    "size": 1438,
   },
   {
     "path": "valid/configs/system.ltx",

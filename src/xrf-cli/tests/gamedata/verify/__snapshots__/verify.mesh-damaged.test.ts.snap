@@ -39,6 +39,7 @@ exports[`gamedata verify meets a damaged mesh tree should name a damaged asset a
     "Workers: <workers> (auto)",
     "Opening gamedata project",
     "Root: <sandbox>/gamedata, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
+    "Engine: vanilla (no Anomaly or Atmosfear signs)",
     "Verifying gamedata project: <sandbox>/gamedata",
     "Verifying modules:",
     "  -meshes",

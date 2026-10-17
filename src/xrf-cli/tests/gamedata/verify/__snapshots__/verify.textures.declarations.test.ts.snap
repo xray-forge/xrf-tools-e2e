@@ -70,6 +70,11 @@ exports[`gamedata verify ineffective texture declarations should write the expec
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "passed",
   },
@@ -146,6 +151,11 @@ exports[`gamedata verify ineffective texture declarations should write the expec
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "failed",
   },
@@ -171,13 +181,13 @@ exports[`gamedata verify ineffective texture declarations should write the expec
   },
   {
     "path": "ordinary.json",
-    "sha256": "92e6431934658ae09479f5253acd7b4862df7e4927ba1257269d361223c7c100",
-    "size": 1859,
+    "sha256": "d0e1164a5485a11ff1ae7a7b637feac4ac0edb0ae9382098670695c0e166fa92",
+    "size": 1960,
   },
   {
     "path": "strict.json",
-    "sha256": "e04daf41ce89ab869025b41baec2d2f945faff8831d54aaf7d23c44609d2c499",
-    "size": 1887,
+    "sha256": "69303a9d3b2c214cc204fb7f4c9254452b81203037994386f53ea545278c3cb5",
+    "size": 1988,
   },
 ]
 `;

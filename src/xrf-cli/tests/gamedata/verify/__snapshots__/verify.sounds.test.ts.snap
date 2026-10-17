@@ -59,6 +59,11 @@ exports[`gamedata verify sounds should record readable reports and only expected
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "passed",
   },
@@ -130,6 +135,11 @@ exports[`gamedata verify sounds should record readable reports and only expected
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "failed",
   },
@@ -140,8 +150,8 @@ exports[`gamedata verify sounds should record readable reports and only expected
 [
   {
     "path": "missing.json",
-    "sha256": "41f6c35701003ce18d947823546d067c206929bd60dcb08d5804466ff7aea9d0",
-    "size": 1569,
+    "sha256": "834f124ef1245fd5040abc4f6ba1941de3fc44067ec24e375765a8157d0ae8b9",
+    "size": 1670,
   },
   {
     "path": "missing/configs/system.ltx",
@@ -155,8 +165,8 @@ exports[`gamedata verify sounds should record readable reports and only expected
   },
   {
     "path": "valid.json",
-    "sha256": "3834398d151ac6670db0b64005ead1fd17c076f1e2f5f2511faf064b7b0e1b9d",
-    "size": 1333,
+    "sha256": "dd1f078c8d96784ccf974bd8d90d62132cb06ed100394d0cd4d5467f1127196d",
+    "size": 1434,
   },
   {
     "path": "valid/configs/system.ltx",

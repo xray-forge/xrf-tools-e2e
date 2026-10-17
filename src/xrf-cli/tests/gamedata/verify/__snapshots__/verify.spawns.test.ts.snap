@@ -59,6 +59,11 @@ exports[`gamedata verify spawns should record readable reports and only expected
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "passed",
   },
@@ -130,6 +135,11 @@ exports[`gamedata verify spawns should record readable reports and only expected
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "failed",
   },
@@ -140,8 +150,8 @@ exports[`gamedata verify spawns should record readable reports and only expected
 [
   {
     "path": "damaged.json",
-    "sha256": "2b6b179bf8e2499123e341f6899cab838bf9c91ebc8f80a9b276510b71d793c0",
-    "size": 1602,
+    "sha256": "8cd0dccd15fab1dddd7f095827f43a56717ab1f43bac0357f18e2b001806aafd",
+    "size": 1703,
   },
   {
     "path": "damaged/configs/system.ltx",
@@ -155,8 +165,8 @@ exports[`gamedata verify spawns should record readable reports and only expected
   },
   {
     "path": "valid.json",
-    "sha256": "0777ef0f87b4e27d5d768b1ef272f20218b90805690130ebbbde93214685596b",
-    "size": 1304,
+    "sha256": "257762bcafa19e408217d79b564404780bb181972441122824d931296a0a69f0",
+    "size": 1405,
   },
   {
     "path": "valid/configs/system.ltx",

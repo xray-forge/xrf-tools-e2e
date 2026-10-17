@@ -59,6 +59,11 @@ exports[`gamedata verify DDS format compatibility should record the reports and 
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "passed",
   },
@@ -130,6 +135,11 @@ exports[`gamedata verify DDS format compatibility should record the reports and 
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "failed",
   },
@@ -140,8 +150,8 @@ exports[`gamedata verify DDS format compatibility should record the reports and 
 [
   {
     "path": "supported.json",
-    "sha256": "39f21ab261b3f465bc646d13b348f0ce05d70bdb968ecfb1434af84a01c2d6a3",
-    "size": 1337,
+    "sha256": "18fbce18ef3be60cf9308c7df7308f55085f66a200a4518f49cf55e0e3c7314b",
+    "size": 1438,
   },
   {
     "path": "supported/configs/system.ltx",
@@ -155,8 +165,8 @@ exports[`gamedata verify DDS format compatibility should record the reports and 
   },
   {
     "path": "unsupported.json",
-    "sha256": "8d819924e26f8d01d28d04f1bc8671b033f81adca427df00772c4a308219748a",
-    "size": 1544,
+    "sha256": "a8a5157597c421e0e5218839b1da7b152d2d2aaa55f137e7a9b93aa4c9504286",
+    "size": 1645,
   },
   {
     "path": "unsupported/configs/system.ltx",

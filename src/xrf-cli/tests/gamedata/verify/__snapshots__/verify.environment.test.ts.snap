@@ -59,6 +59,11 @@ exports[`gamedata verify environment should record the reports as readable docum
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "passed",
   },
@@ -130,6 +135,11 @@ exports[`gamedata verify environment should record the reports as readable docum
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "failed",
   },
@@ -206,6 +216,11 @@ exports[`gamedata verify environment should record the reports as readable docum
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "extended",
+      "evidence": "named",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "failed",
   },
@@ -216,8 +231,8 @@ exports[`gamedata verify environment should write the expected reports and files
 [
   {
     "path": "broken.json",
-    "sha256": "b180beb6b8d7ad7cda9e863d10c67430ea5fc91b501ef6cf227a2833d46a7829",
-    "size": 1587,
+    "sha256": "996d5ff537c803a9da459512ada3a1d80efea77a9783b1b5788688adf0399ae8",
+    "size": 1688,
   },
   {
     "path": "broken/configs/environment/ambients.ltx",
@@ -286,13 +301,13 @@ exports[`gamedata verify environment should write the expected reports and files
   },
   {
     "path": "extended.json",
-    "sha256": "54389b0dcc027de781ed04a2fd308896e8eea719b9a973c741c57d8aef55fa24",
-    "size": 1812,
+    "sha256": "c0bd31985bdaec156c2fbf13b12d43cbe9464d36f2226d722875d562b238b306",
+    "size": 1912,
   },
   {
     "path": "valid.json",
-    "sha256": "052a03f15e492a82af95883bd89b76f6e5c49d4316311a3d1449a17d225c78db",
-    "size": 1325,
+    "sha256": "f2265a3af7dbfddeb471708a4ee9173b26b6aaa0d4157f3a66e025857bf804f3",
+    "size": 1426,
   },
   {
     "path": "valid/configs/environment/ambients.ltx",

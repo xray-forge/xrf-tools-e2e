@@ -70,6 +70,11 @@ exports[`gamedata verify texture bump declarations should write a readable repor
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "failed",
   },
@@ -120,8 +125,8 @@ exports[`gamedata verify texture bump declarations should write a readable repor
   },
   {
     "path": "report.json",
-    "sha256": "d42ac32e5ecf81c06d6cc073cd6014f2d6283527c2969bd4319973f330a133da",
-    "size": 1957,
+    "sha256": "150b0cf4376950abcf38dde3ba7988935ef7e8ee0466c31aa8e6e1818447f638",
+    "size": 2058,
   },
 ]
 `;

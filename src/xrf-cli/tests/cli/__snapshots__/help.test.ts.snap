@@ -408,7 +408,7 @@ exports[`CLI help tree should expose every domain from root help 1`] = `
     "  -V, --version        Print version",
     "",
     "Environment:",
-    "  RUST_LOG  The log's filter, in env_logger's syntax, such as info,wgpu_hal=warn.",
+    "  RUST_LOG  Log filter in env_logger syntax, for example info,wgpu_hal=warn.",
   ],
 }
 `;

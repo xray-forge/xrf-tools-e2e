@@ -65,6 +65,11 @@ exports[`gamedata verify texture companion strictness should write readable repo
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "passed",
   },
@@ -136,6 +141,11 @@ exports[`gamedata verify texture companion strictness should write readable repo
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "failed",
   },
@@ -201,6 +211,11 @@ exports[`gamedata verify texture companion strictness should write readable repo
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "passed",
   },
@@ -211,8 +226,8 @@ exports[`gamedata verify texture companion strictness should write readable repo
 [
   {
     "path": "clean-strict.json",
-    "sha256": "ae2f4225dbafe08098a21db834cd062b35d0b894a31e92d4d060ac6ec7293adf",
-    "size": 1337,
+    "sha256": "3251c8421f6d48dd8b91f6e21850fafcaeb4469eee5ba0b365d51f414e4fc96e",
+    "size": 1438,
   },
   {
     "path": "clean/configs/system.ltx",
@@ -251,13 +266,13 @@ exports[`gamedata verify texture companion strictness should write readable repo
   },
   {
     "path": "ordinary.json",
-    "sha256": "d671865deb0a384b93b2a014719e9941bad7a3a9fc639a8747c1a3d448300f9a",
-    "size": 1646,
+    "sha256": "44173354111c33e3f173cb32227ae5cedd7151308f16ed7a6f48733513aa94f2",
+    "size": 1747,
   },
   {
     "path": "strict.json",
-    "sha256": "cec52a00be1aa91f8b908ccf00aed7705a22ac3e7f71ef3d37fed77e8bd42215",
-    "size": 1674,
+    "sha256": "b1553d3a425d0716ea81025382c2c1de5f1acba7e721d2e73e4b7d728e358f94",
+    "size": 1775,
   },
 ]
 `;

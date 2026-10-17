@@ -41,6 +41,7 @@ exports[`gamedata verify meets diverging motion labels should report the divergi
     "Workers: <workers> (auto)",
     "Opening gamedata project",
     "Root: <sandbox>/gamedata, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
+    "Engine: vanilla (no Anomaly or Atmosfear signs)",
     "Verifying gamedata project: <sandbox>/gamedata",
     "Verifying modules:",
     "  -meshes",

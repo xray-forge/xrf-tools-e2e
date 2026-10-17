@@ -65,6 +65,11 @@ exports[`gamedata verify particle libraries should record the report as a readab
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "failed",
   },
@@ -85,8 +90,8 @@ exports[`gamedata verify particle libraries should write the expected report and
   },
   {
     "path": "report.json",
-    "sha256": "78db28144589b586018dd226055272b66a36aa585a41825c86d33b27117ac934",
-    "size": 1630,
+    "sha256": "a844d4ba482d761ef3c4f8f817a419babb7d3ed3889288795ca7b8e9ad02c708",
+    "size": 1731,
   },
 ]
 `;

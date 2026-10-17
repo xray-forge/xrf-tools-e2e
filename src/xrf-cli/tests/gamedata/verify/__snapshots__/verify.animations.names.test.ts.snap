@@ -59,6 +59,11 @@ exports[`gamedata verify named HUD animations should record the reports as reada
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "passed",
   },
@@ -130,6 +135,11 @@ exports[`gamedata verify named HUD animations should record the reports as reada
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "failed",
   },
@@ -153,6 +163,7 @@ exports[`gamedata verify named HUD animations should report a missing named moti
     "Workers: <workers> (auto)",
     "Opening gamedata project",
     "Root: <sandbox>/missing, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
+    "Engine: vanilla (no Anomaly or Atmosfear signs)",
     "Verifying gamedata project: <sandbox>/missing",
     "Verifying modules:",
     "  -animations",
@@ -179,6 +190,7 @@ exports[`gamedata verify named HUD animations should validate the named idle mot
     "Workers: <workers> (auto)",
     "Opening gamedata project",
     "Root: <sandbox>/valid, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
+    "Engine: vanilla (no Anomaly or Atmosfear signs)",
     "Verifying gamedata project: <sandbox>/valid",
     "Verifying modules:",
     "  -animations",
@@ -203,8 +215,8 @@ exports[`gamedata verify named HUD animations should write only its fixture and 
 [
   {
     "path": "missing.json",
-    "sha256": "8a4ed52426a252376a5532c1aa7069b8dcfa8c4ad721d476619065dcdce30d28",
-    "size": 1628,
+    "sha256": "bb8fbeb3b8812caeacdc1ccec7b25a8b1f8273199577afc6ec674074b9cfd95a",
+    "size": 1729,
   },
   {
     "path": "missing/configs/system.ltx",
@@ -223,8 +235,8 @@ exports[`gamedata verify named HUD animations should write only its fixture and 
   },
   {
     "path": "valid.json",
-    "sha256": "5a2cabdbc63fefe9acd4a85803cfeff37573becdee080dbec7081f8ce08dbb00",
-    "size": 1394,
+    "sha256": "4b107ce487943bc9b763614cb2c0ad77c5e1babc73285f8152a665a73b2b306a",
+    "size": 1495,
   },
   {
     "path": "valid/configs/system.ltx",

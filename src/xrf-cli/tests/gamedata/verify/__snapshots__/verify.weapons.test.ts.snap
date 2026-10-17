@@ -59,6 +59,11 @@ exports[`gamedata verify weapons should record readable reports and only expecte
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "passed",
   },
@@ -130,6 +135,11 @@ exports[`gamedata verify weapons should record readable reports and only expecte
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "failed",
   },
@@ -140,8 +150,8 @@ exports[`gamedata verify weapons should record readable reports and only expecte
 [
   {
     "path": "missing.json",
-    "sha256": "8f2e627ff15a516bc6e4e602c8fca678417e881232333602005aacf46c385198",
-    "size": 1523,
+    "sha256": "56b225848eda9633723ce24d77da20c04ce0d660c57e10fb18ba661b1902d777",
+    "size": 1624,
   },
   {
     "path": "missing/configs/system.ltx",
@@ -165,8 +175,8 @@ exports[`gamedata verify weapons should record readable reports and only expecte
   },
   {
     "path": "valid.json",
-    "sha256": "bc72cf4fec123061e802d8c4a40867c52609a54535853df917ff5f91e9b49614",
-    "size": 1309,
+    "sha256": "606d06ffc77c6ff5457d99ce4ab0276de6211a610301b658810a76cc5ea1837e",
+    "size": 1410,
   },
   {
     "path": "valid/configs/system.ltx",

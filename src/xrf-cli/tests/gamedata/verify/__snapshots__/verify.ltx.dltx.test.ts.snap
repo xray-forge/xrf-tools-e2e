@@ -59,6 +59,11 @@ exports[`gamedata verify resolved DLTX schema should write the expected reports 
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "passed",
   },
@@ -135,6 +140,11 @@ exports[`gamedata verify resolved DLTX schema should write the expected reports 
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "failed",
   },
@@ -145,8 +155,8 @@ exports[`gamedata verify resolved DLTX schema should write the expected reports 
 [
   {
     "path": "clean.json",
-    "sha256": "199e3d7b86fe10098a1395dd17548661a2f9203854bafca4f2a80b3ac9f2e740",
-    "size": 1330,
+    "sha256": "bd8f1b56072dc9705be405bc2bf5026533221a381c2dc7352deaf2c134a1218e",
+    "size": 1431,
   },
   {
     "path": "clean/configs/system.ltx",
@@ -160,8 +170,8 @@ exports[`gamedata verify resolved DLTX schema should write the expected reports 
   },
   {
     "path": "patched.json",
-    "sha256": "c8284c3118e588e6fad4b603039bb81209da8890be7801d53c38de4a3879e2e2",
-    "size": 1764,
+    "sha256": "91c66e378b6454eb224cdb27c48b0de27df5dbb0bef0efeb8d354f9f3aa523d1",
+    "size": 1865,
   },
   {
     "path": "patched/configs/mod_system_test.ltx",

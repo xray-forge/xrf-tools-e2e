@@ -59,6 +59,11 @@ exports[`gamedata verify scripts should record readable reports and only expecte
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "passed",
   },
@@ -131,6 +136,11 @@ additional information: expected an expression",
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "failed",
   },
@@ -141,8 +151,8 @@ exports[`gamedata verify scripts should record readable reports and only expecte
 [
   {
     "path": "malformed.json",
-    "sha256": "12cb1ad44b5706a28533d9a603fc0618b3af5631264fba844d6c7c15e92a2bd9",
-    "size": 1739,
+    "sha256": "bfcd87c5e0153e23e5dfe30eda419f0d6e89ec13eb22e706d0da51cb0776f4ee",
+    "size": 1840,
   },
   {
     "path": "malformed/configs/system.ltx",
@@ -161,8 +171,8 @@ exports[`gamedata verify scripts should record readable reports and only expecte
   },
   {
     "path": "valid.json",
-    "sha256": "95e3045e1735121d7b0782f91d5a5ccf376be4cb3ebd9affe9e093a9d71d432f",
-    "size": 1306,
+    "sha256": "294b03374295652b3a51e8ee0b4f6fab30c208706830b49fca64e17921ccd265",
+    "size": 1407,
   },
   {
     "path": "valid/configs/system.ltx",

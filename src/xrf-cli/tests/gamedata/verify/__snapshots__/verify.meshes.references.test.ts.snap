@@ -8,6 +8,7 @@ exports[`gamedata verify mesh texture references should accept a mesh whose refe
     "Workers: <workers> (auto)",
     "Opening gamedata project",
     "Root: <sandbox>/present, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
+    "Engine: vanilla (no Anomaly or Atmosfear signs)",
     "Verifying gamedata project: <sandbox>/present",
     "Verifying modules:",
     "  -meshes",
@@ -84,6 +85,11 @@ exports[`gamedata verify mesh texture references should record each report as a 
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "passed",
   },
@@ -155,6 +161,11 @@ exports[`gamedata verify mesh texture references should record each report as a 
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "failed",
   },
@@ -178,6 +189,7 @@ exports[`gamedata verify mesh texture references should report the missing refer
     "Workers: <workers> (auto)",
     "Opening gamedata project",
     "Root: <sandbox>/missing, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
+    "Engine: vanilla (no Anomaly or Atmosfear signs)",
     "Verifying gamedata project: <sandbox>/missing",
     "Verifying modules:",
     "  -meshes",
@@ -196,8 +208,8 @@ exports[`gamedata verify mesh texture references should write only its fixture a
 [
   {
     "path": "missing.json",
-    "sha256": "a596a826dc3a2db3d401814b3d2a7b66183c6043117241f8ade50500f38589d7",
-    "size": 1595,
+    "sha256": "5b2af8d7cd6dae3c80d5350e0531175fb42fe5be164fe02b9d6131a5f3fce14a",
+    "size": 1696,
   },
   {
     "path": "missing/configs/system.ltx",
@@ -216,8 +228,8 @@ exports[`gamedata verify mesh texture references should write only its fixture a
   },
   {
     "path": "present.json",
-    "sha256": "ffaf05f89221b541cbce86b841661b8dd70572c778c35553872dc1607fcdf7c5",
-    "size": 1358,
+    "sha256": "082a1c60becdd04260c73e57b15c5a4497437bca4446f283e1207dd8f746c893",
+    "size": 1459,
   },
   {
     "path": "present/configs/system.ltx",

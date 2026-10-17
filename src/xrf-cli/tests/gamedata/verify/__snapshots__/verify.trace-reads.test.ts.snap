@@ -59,6 +59,11 @@ exports[`gamedata verify read tracing should record the trace and expected artif
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "reads": {
       "bytes": 154,
       "hottest": [
@@ -97,13 +102,13 @@ exports[`gamedata verify read tracing should record the trace and expected artif
   },
   {
     "path": "normal.json",
-    "sha256": "5d621f0f5e953a9a90f794140fa67d651c65270b01df0ca7fb5a27318b6ceeb3",
-    "size": 1329,
+    "sha256": "9b94870dfb6647ea5f414d7d27f942c3661bf364c43352f0a1dbcb19e34c9080",
+    "size": 1430,
   },
   {
     "path": "traced.json",
-    "sha256": "54c4082849f7e9b36d94e3eadf5ae90e178c2b77fbc1d838a256a24d5a5fb7f7",
-    "size": 1675,
+    "sha256": "1d967ad6c18b501d8113d0a6bac101edd412f8f9eb79fc1ed68215ca854f7eac",
+    "size": 1776,
   },
 ]
 `;

@@ -40,6 +40,7 @@ exports[`gamedata verify strict mesh validation should reach the same conclusion
     "Workers: <workers> (auto)",
     "Opening gamedata project",
     "Root: <resources>/gamedata, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
+    "Engine: vanilla (no Anomaly or Atmosfear signs)",
     "Verifying gamedata project: <resources>/gamedata",
     "Verifying modules:",
     "  -meshes",

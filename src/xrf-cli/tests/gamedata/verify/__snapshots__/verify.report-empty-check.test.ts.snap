@@ -59,6 +59,11 @@ exports[`gamedata verify empty check report should report one check as a readabl
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "passed",
   },
@@ -69,8 +74,8 @@ exports[`gamedata verify empty check report should write only the report 1`] = `
 [
   {
     "path": "scripts.json",
-    "sha256": "6a0b3d192fb572c18eeb947db5607318231ffe2db5e55da78f1ad15efb606e20",
-    "size": 1309,
+    "sha256": "817a30c4f0c86d8609498d9c2326cc0a60de5c1a789dc2f264e7b757701f7430",
+    "size": 1410,
   },
 ]
 `;

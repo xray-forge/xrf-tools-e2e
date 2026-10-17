@@ -15,6 +15,7 @@ exports[`gamedata verify meets unreachable files should answer non-zero and name
     "Workers: <workers> (auto)",
     "Opening gamedata project",
     "Root: <sandbox>/gamedata, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
+    "Engine: vanilla (no Anomaly or Atmosfear signs)",
     "Verifying gamedata project: <sandbox>/gamedata",
     "Verifying modules:",
     "  -ltx",
@@ -103,6 +104,11 @@ exports[`gamedata verify meets unreachable files should carry the collision as i
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "failed",
   },
@@ -174,6 +180,11 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "failed",
   },
@@ -245,6 +256,11 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "failed",
   },
@@ -310,6 +326,11 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "passed",
   },
@@ -375,6 +396,11 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "passed",
   },
@@ -385,8 +411,8 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
 [
   {
     "path": "clean.json",
-    "sha256": "465ff8c00a0c50cd0af5ef587e4f81ecbda4409bdd5eddbf813f9128a1f58f91",
-    "size": 1307,
+    "sha256": "a8bfe6ad3fab3082014348857e96dea9b3b810625a6b1b91464c70c144ce5919",
+    "size": 1408,
   },
   {
     "path": "clean/configs/system.ltx",
@@ -400,8 +426,8 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
   },
   {
     "path": "empty-check.json",
-    "sha256": "a6a0b5c5430b6a28a7307f7c7dafd61a757f8f91b4fe3ccc301073319f0ca63a",
-    "size": 1637,
+    "sha256": "6b6971993636a52dfb8ae461b738c664721fc978848553b856e91fd4da496dbd",
+    "size": 1738,
   },
   {
     "path": "gamedata/configs/system.ltx",
@@ -420,18 +446,18 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
   },
   {
     "path": "ignored-collision.json",
-    "sha256": "465ff8c00a0c50cd0af5ef587e4f81ecbda4409bdd5eddbf813f9128a1f58f91",
-    "size": 1307,
+    "sha256": "a8bfe6ad3fab3082014348857e96dea9b3b810625a6b1b91464c70c144ce5919",
+    "size": 1408,
   },
   {
     "path": "report.json",
-    "sha256": "7641204eef91a117dd512fa646189f55eef9eadc9607f188188ec2f3bb767baa",
-    "size": 1659,
+    "sha256": "65de0fd8db82c7d7007482d3a14875fefcae4909c889f20d8fe86dace4ae9998",
+    "size": 1760,
   },
   {
     "path": "unrelated-ignore.json",
-    "sha256": "a6a0b5c5430b6a28a7307f7c7dafd61a757f8f91b4fe3ccc301073319f0ca63a",
-    "size": 1637,
+    "sha256": "6b6971993636a52dfb8ae461b738c664721fc978848553b856e91fd4da496dbd",
+    "size": 1738,
   },
 ]
 `;

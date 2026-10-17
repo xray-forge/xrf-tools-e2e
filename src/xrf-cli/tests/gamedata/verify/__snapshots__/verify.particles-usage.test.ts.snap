@@ -59,6 +59,11 @@ exports[`gamedata verify particle usage should record both reports as readable d
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "passed",
   },
@@ -130,6 +135,11 @@ exports[`gamedata verify particle usage should record both reports as readable d
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "failed",
   },
@@ -140,8 +150,8 @@ exports[`gamedata verify particle usage should write the expected reports and fi
 [
   {
     "path": "missing.json",
-    "sha256": "4314c3bffdf6d8c10d097d94c3d17a2547ab082f4f4e2d9fd50f25013945be53",
-    "size": 1639,
+    "sha256": "d514b46d4b108ab40909a66b1d2753203b95e56256805aeb4ac4b0f90049d56e",
+    "size": 1740,
   },
   {
     "path": "missing/configs/particles.ltx",
@@ -160,8 +170,8 @@ exports[`gamedata verify particle usage should write the expected reports and fi
   },
   {
     "path": "valid.json",
-    "sha256": "00960506feb5676761ca3ac13f9d2efa1c9404b6e96555b9ab9cbcb5639fc255",
-    "size": 1386,
+    "sha256": "b29efb69700a15f9bb1b0ad8c102f6b3a92ef20967e95efe8d3b0ba29ad2cfde",
+    "size": 1487,
   },
   {
     "path": "valid/configs/particles.ltx",

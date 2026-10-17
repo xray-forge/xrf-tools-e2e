@@ -26,7 +26,7 @@ exports[`docs generate should list every group and command in the index 1`] = `
   "",
   "# XRF CLI command reference",
   "",
-  "Reference for \`xrf-cli\` subcommands, generated from the clap command definitions. This directory is fully generated: rebuild it with \`cargo make docs-cli\` instead of editing pages.",
+  "Reference for \`xrf-cli\` subcommands, generated from the clap command definitions. This directory is fully generated: rebuild it with \`cargo make doc-cli\` instead of editing pages.",
   "",
   "<!-- ANCHOR: groups -->",
   "",
@@ -1433,8 +1433,8 @@ exports[`docs generate should write the expected pages 1`] = `
 [
   {
     "path": "docs/README.md",
-    "sha256": "66aec8fc86d332d78a86b9ac9495ff20f9df0b5f1fc60f0464953bcccd8dc519",
-    "size": 4125,
+    "sha256": "0a581de9c8f855fb6f4f340304289974c5e90f25d15422a6a4c78b395e4740b6",
+    "size": 4124,
   },
   {
     "path": "docs/archive.md",

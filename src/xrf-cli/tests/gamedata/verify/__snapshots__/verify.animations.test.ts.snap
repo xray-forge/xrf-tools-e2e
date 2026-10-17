@@ -59,6 +59,11 @@ exports[`gamedata verify animations should record the reports as readable docume
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "passed",
   },
@@ -130,6 +135,11 @@ exports[`gamedata verify animations should record the reports as readable docume
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "failed",
   },
@@ -153,6 +163,7 @@ exports[`gamedata verify animations should report a damaged linked motion bank t
     "Workers: <workers> (auto)",
     "Opening gamedata project",
     "Root: <sandbox>/damaged, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
+    "Engine: vanilla (no Anomaly or Atmosfear signs)",
     "Verifying gamedata project: <sandbox>/damaged",
     "Verifying modules:",
     "  -animations",
@@ -179,6 +190,7 @@ exports[`gamedata verify animations should validate a HUD with a linked motion b
     "Workers: <workers> (auto)",
     "Opening gamedata project",
     "Root: <sandbox>/valid, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
+    "Engine: vanilla (no Anomaly or Atmosfear signs)",
     "Verifying gamedata project: <sandbox>/valid",
     "Verifying modules:",
     "  -animations",
@@ -203,8 +215,8 @@ exports[`gamedata verify animations should write only its fixture and reports 1`
 [
   {
     "path": "damaged.json",
-    "sha256": "3bb21bb735337999da44c8540aff4ca10926a673db45993b704caa92167dbafb",
-    "size": 1628,
+    "sha256": "c07c33f71e29567b49ac2f9098088389a741df970bc7f00712b387d815a35c80",
+    "size": 1729,
   },
   {
     "path": "damaged/configs/system.ltx",
@@ -223,8 +235,8 @@ exports[`gamedata verify animations should write only its fixture and reports 1`
   },
   {
     "path": "valid.json",
-    "sha256": "42223185467f0ae32ee532c80874ce5564df5f3abeba3b1e1fa2b545a915a358",
-    "size": 1394,
+    "sha256": "1c358f92df77dbb0b1eae4e7ba5fa9a50e9f1830db8f8bb6973530304f7937b2",
+    "size": 1495,
   },
   {
     "path": "valid/configs/system.ltx",

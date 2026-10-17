@@ -65,6 +65,11 @@ exports[`gamedata verify meets a declared source it cannot open should carry the
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [
       {
         "origin": "$arch_dir$",
@@ -142,6 +147,11 @@ exports[`gamedata verify meets a declared source it cannot open should preserve 
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [
       {
         "origin": "$arch_dir$",
@@ -219,6 +229,11 @@ exports[`gamedata verify meets a declared source it cannot open should preserve 
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [
       {
         "origin": "$arch_dir$",
@@ -290,6 +305,11 @@ exports[`gamedata verify meets a declared source it cannot open should preserve 
       },
     ],
     "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
     "skippedMounts": [],
     "status": "passed",
   },
@@ -300,8 +320,8 @@ exports[`gamedata verify meets a declared source it cannot open should preserve 
 [
   {
     "path": "clean.json",
-    "sha256": "465ff8c00a0c50cd0af5ef587e4f81ecbda4409bdd5eddbf813f9128a1f58f91",
-    "size": 1307,
+    "sha256": "a8bfe6ad3fab3082014348857e96dea9b3b810625a6b1b91464c70c144ce5919",
+    "size": 1408,
   },
   {
     "path": "clean/fsgame.ltx",
@@ -315,13 +335,13 @@ exports[`gamedata verify meets a declared source it cannot open should preserve 
   },
   {
     "path": "empty-check.json",
-    "sha256": "ecfeb2eb8826fb8be7727c163c73d2cfa7d395720117946cd379b93824a10830",
-    "size": 1965,
+    "sha256": "4697f75fb67aff6f087a15bce96ad87d3e615505498287678ca02e85b5551457",
+    "size": 2066,
   },
   {
     "path": "ignore.json",
-    "sha256": "ecfeb2eb8826fb8be7727c163c73d2cfa7d395720117946cd379b93824a10830",
-    "size": 1965,
+    "sha256": "4697f75fb67aff6f087a15bce96ad87d3e615505498287678ca02e85b5551457",
+    "size": 2066,
   },
   {
     "path": "install/db/files.db0",
@@ -340,13 +360,13 @@ exports[`gamedata verify meets a declared source it cannot open should preserve 
   },
   {
     "path": "report.json",
-    "sha256": "3485b4e6491e730632db57e1331c2e123d6db1f252ec3352bdc1e84ba6049bc4",
-    "size": 1987,
+    "sha256": "d39868569fe5642f5a37dcc6c196b8624ce0dcc83c9f998a4014b00776853c81",
+    "size": 2088,
   },
   {
     "path": "silent.json",
-    "sha256": "3485b4e6491e730632db57e1331c2e123d6db1f252ec3352bdc1e84ba6049bc4",
-    "size": 1987,
+    "sha256": "d39868569fe5642f5a37dcc6c196b8624ce0dcc83c9f998a4014b00776853c81",
+    "size": 2088,
   },
 ]
 `;
@@ -367,6 +387,7 @@ exports[`gamedata verify meets a declared source it cannot open should warn whic
     "Workers: <workers> (auto)",
     "Opening gamedata project",
     "Root: <sandbox>/install, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
+    "Engine: vanilla (no Anomaly or Atmosfear signs)",
     "Verifying gamedata project: <sandbox>/install",
     "Verifying modules:",
     "  -ltx",
