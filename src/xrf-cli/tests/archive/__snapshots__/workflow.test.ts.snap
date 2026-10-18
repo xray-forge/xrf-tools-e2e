@@ -29,6 +29,7 @@ exports[`archive workflow should extract the selected source file byte for byte 
   "exitCode": 0,
   "stderr": [],
   "stdout": [
+    "Workers: <workers> (auto)",
     "Extracted configs\\system.ltx (265 B) in <duration>",
   ],
 }

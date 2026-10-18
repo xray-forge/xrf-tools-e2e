@@ -5,6 +5,7 @@ exports[`archive extract directory from archive tree should extract a directory 
   "exitCode": 0,
   "stderr": [],
   "stdout": [
+    "Workers: <workers> (auto)",
     "Extracted 2 file(s) from configs\\gameplay (2.17 KB total) in <duration>",
   ],
 }

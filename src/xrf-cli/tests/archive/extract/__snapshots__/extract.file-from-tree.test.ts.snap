@@ -5,6 +5,7 @@ exports[`archive extract file from archive tree should extract a file from an ar
   "exitCode": 0,
   "stderr": [],
   "stdout": [
+    "Workers: <workers> (auto)",
     "Extracted configs\\system.ltx (265 B) in <duration>",
   ],
 }
