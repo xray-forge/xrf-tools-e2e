@@ -1347,6 +1347,7 @@ exports[`docs generate should render translation.md 1`] = `
   "| \`-o, --output <output>\` | yes |  | Path to output translation |",
   "| \`-l, --language <language>\` |  | \`all\` | Target language to translate |",
   "| \`--no-sort\` |  |  | Preserve source order instead of sorting dynamic translation files |",
+  "| \`--refuse-links\` |  |  | Refuse to write through links or junctions already below the destination, instead of following them |",
   "| \`-s, --silent\` |  |  | Turn off logging |",
   "| \`-v, --verbose\` |  |  | Turn on verbose logging |",
   "| \`--json\` |  |  | Write the run's JSON report to stdout, moving human output to stderr |",
@@ -1518,8 +1519,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/translation.md",
-    "sha256": "f31ffc3dd9f68bdcc95e18294c07bf8edec187ca0bf39bc44f83476a427f7339",
-    "size": 5936,
+    "sha256": "dac42e730d7eed3027c0f6abd8847562385f43f3790213cb9a04378e71b53e7c",
+    "size": 6065,
   },
   {
     "path": "drifted/README.md",

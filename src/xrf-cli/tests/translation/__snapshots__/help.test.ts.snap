@@ -21,6 +21,7 @@ exports[`translation command help should keep each leaf command's help stable 1`
       "      --report <PATH>        Write the run's JSON report to a file",
       "  -l, --language <language>  Target language to translate [default: all]",
       "      --no-sort              Preserve source order instead of sorting dynamic translation files",
+      "      --refuse-links         Refuse to write through links or junctions already below the destination, instead of following them",
       "  -h, --help                 Print help",
     ],
   },

@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`translation build single-file source paths should build a source named by an absolute path 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Building translation <sandbox>/input/st_test.json, language - eng, sorted - true",
+    "Built translation files in <duration>",
+  ],
+}
+`;
+
+exports[`translation build single-file source paths should build a source named relative to the working directory 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Building translation input/st_test.json, language - eng, sorted - true",
+    "Built translation files in <duration>",
+  ],
+}
+`;
+
+exports[`translation build single-file source paths should build a source reached through parent components 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Building translation ../../build/build.single-file-paths/input/st_test.json, language - eng, sorted - true",
+    "Built translation files in <duration>",
+  ],
+}
+`;
+
+exports[`translation build single-file source paths should write the expected files 1`] = `
+[
+  {
+    "path": "absolute/eng/st_test.xml",
+    "sha256": "2faeefa3e144af86acc20f3e79aeb94a5451af26a25cf2ec8b81d048ad931a30",
+    "size": 136,
+  },
+  {
+    "path": "climbing/eng/st_test.xml",
+    "sha256": "2faeefa3e144af86acc20f3e79aeb94a5451af26a25cf2ec8b81d048ad931a30",
+    "size": 136,
+  },
+  {
+    "path": "input/st_test.json",
+    "sha256": "03d530ee25d1d71ee8e744cb432fdb952f748d54d3cb3ee852aed25ce607417b",
+    "size": 27,
+  },
+  {
+    "path": "input/st_test.xml",
+    "sha256": "8dfef3faa531cad70736cb40ad8932ffb50887f5a8fffd209193b545c4e354ae",
+    "size": 7,
+  },
+  {
+    "path": "relative/eng/st_test.xml",
+    "sha256": "2faeefa3e144af86acc20f3e79aeb94a5451af26a25cf2ec8b81d048ad931a30",
+    "size": 136,
+  },
+]
+`;
