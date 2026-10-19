@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`sprite unpack-equipment escaping section names should refuse every section name that leaves the output directory 1`] = `
+[
+  {
+    "exitCode": 1,
+    "stderr": [
+      "Error: Invalid error: Inventory icon section '../victim' must be a single file name, without a separator, a drive, or a traversal",
+    ],
+    "stdout": [
+      "Opening DDS file: <resources>/gamedata/textures/ui/ui_test_sheet.dds",
+      "Source DDS file details: 256x64, mip-maps: 0, format: None",
+      "Unpacking the equipment sprite into: <sandbox>/out-0",
+    ],
+  },
+  {
+    "exitCode": 1,
+    "stderr": [
+      "Error: Invalid error: Inventory icon section '..\\victim' must be a single file name, without a separator, a drive, or a traversal",
+    ],
+    "stdout": [
+      "Opening DDS file: <resources>/gamedata/textures/ui/ui_test_sheet.dds",
+      "Source DDS file details: 256x64, mip-maps: 0, format: None",
+      "Unpacking the equipment sprite into: <sandbox>/out-1",
+    ],
+  },
+  {
+    "exitCode": 1,
+    "stderr": [
+      "Error: Invalid error: Inventory icon section 'c:victim' must be a single file name, without a separator, a drive, or a traversal",
+    ],
+    "stdout": [
+      "Opening DDS file: <resources>/gamedata/textures/ui/ui_test_sheet.dds",
+      "Source DDS file details: 256x64, mip-maps: 0, format: None",
+      "Unpacking the equipment sprite into: <sandbox>/out-2",
+    ],
+  },
+]
+`;
+
+exports[`sprite unpack-equipment escaping section names should write the expected files 1`] = `
+[
+  {
+    "path": "configs/escape-0.ltx",
+    "sha256": "207550a9abe46f9522c8523c9b0e38e04b004995eb6c1f633ded74b3b0d9287a",
+    "size": 208,
+  },
+  {
+    "path": "configs/escape-1.ltx",
+    "sha256": "6bb3e652b254c1745b2121390132629f39a524add86e89cc7ac0c2106e7a076a",
+    "size": 208,
+  },
+  {
+    "path": "configs/escape-2.ltx",
+    "sha256": "e7eba651e4fcc5c75d5b808bc38df525f3f3325fd6b528dcbcd16984690d33a8",
+    "size": 207,
+  },
+  {
+    "path": "victim.dds",
+    "sha256": "2b7847b7b705781d7cf21a05e9c1bb37cbf078aea103bc3edcc6aca52ab65453",
+    "size": 8,
+  },
+]
+`;

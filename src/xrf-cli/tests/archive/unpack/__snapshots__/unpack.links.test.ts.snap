@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`archive unpack through a linked directory should refuse the link when asked to 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: Cannot write through '<sandbox>/refused/out/gamedata' - it is a link, and this run refuses links below its destination",
+  ],
+  "stdout": [
+    "Workers: <workers> (auto)",
+    "Unpack source: <sandbox>/packed/cfg.db",
+    "Unpack destination: <sandbox>/refused/out",
+    "Summary: 1 archive(s), 21 file(s), 4.88 KB compressed, 11.5 KB real",
+  ],
+}
+`;
+
+exports[`archive unpack through a linked directory should unpack through the link by default 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Workers: <workers> (auto)",
+    "Unpack source: <sandbox>/packed/cfg.db",
+    "Unpack destination: <sandbox>/followed/out",
+    "Summary: 1 archive(s), 21 file(s), 4.88 KB compressed, 11.5 KB real",
+    "Unpacked archive in <duration> (preparation <duration>, unpack <duration>)",
+  ],
+}
+`;
+
+exports[`archive unpack through a linked directory should write the expected files 1`] = `
+[
+  {
+    "path": "followed/linked/alife.ltx",
+    "sha256": "160920506a492754ff5c45ceb7f4d169e19e002dff25be0cfe03b1cc671b91cd",
+    "size": 781,
+  },
+  {
+    "path": "followed/linked/defines.ltx",
+    "sha256": "3901c71e698c9be76fd7502c7837f9ee3176c592edcb120156788f1ad1957b7d",
+    "size": 3848,
+  },
+  {
+    "path": "followed/linked/evaluation.ltx",
+    "sha256": "13b3971565375db44d091d58246aaf728df84d55f61adcd232f1351b621e81cc",
+    "size": 276,
+  },
+  {
+    "path": "followed/linked/fonts.ltx",
+    "sha256": "c68091a9f10ac4545cd0818f9e1a98194898f8fe3483e620328122353e50b93d",
+    "size": 2021,
+  },
+  {
+    "path": "followed/linked/game.ltx",
+    "sha256": "c502a7d26aff39902fcd3631e65c37b732a8e85470aff4267cbb04f36a30184b",
+    "size": 218,
+  },
+  {
+    "path": "followed/linked/gameplay/dialogs.xml",
+    "sha256": "6583bab4e036cca053ce8c820639a39b80dc7bae71d4adba54d5ee2d865cc5b4",
+    "size": 1670,
+  },
+  {
+    "path": "followed/linked/gameplay/dialogs_zaton.xml",
+    "sha256": "aaaaff52afc3c50a3907ba992d7b73f69e90146421385d22f07d363131e474b9",
+    "size": 548,
+  },
+  {
+    "path": "followed/linked/misc/inventory_icons.ltx",
+    "sha256": "5c7b9ae42acbb5e29fe65dc0b14417681fbca966fafac096807a369e30779c2a",
+    "size": 1126,
+  },
+  {
+    "path": "followed/linked/system.ltx",
+    "sha256": "b4a4a566d26d645fbb86678c4c16dc9fd8b540b786b191c596801de49ff60da1",
+    "size": 265,
+  },
+  {
+    "path": "followed/linked/text/eng/st_items.xml",
+    "sha256": "c0b041ad4bbb98e0578a0d2e7a2cf84cf10271919fad252b7cb79c62b605b89d",
+    "size": 203,
+  },
+  {
+    "path": "followed/linked/text/eng/st_ui.xml",
+    "sha256": "6eb95635b812a217ea18561f4aab2c1dea34da97683264abf1346a404358fbb3",
+    "size": 143,
+  },
+  {
+    "path": "followed/linked/text/ukr/st_items.xml",
+    "sha256": "be9f8767ee5af7d6e2f9378733b862fb52eae569d9dfd2e3686dafe3d6566ec4",
+    "size": 203,
+  },
+  {
+    "path": "followed/linked/text/ukr/st_ui.xml",
+    "sha256": "d35cba9d839aafedf40bb61b4cebfe0c5fda810499ad49e154ed577eed5f7f61",
+    "size": 143,
+  },
+  {
+    "path": "followed/linked/ui/textures_descr/ui_test_sheet.xml",
+    "sha256": "44329d941bf367bbd107efb9eb255aa12752cb550d3b99d7b88a2d1d91090012",
+    "size": 352,
+  },
+  {
+    "path": "packed/cfg.db",
+    "sha256": "bd5e46067436b520a9f801d177a7204c8834e7a60185a8aff4af226d32ae038c",
+    "size": 5491,
+  },
+]
+`;

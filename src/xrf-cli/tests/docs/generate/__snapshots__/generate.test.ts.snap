@@ -239,6 +239,7 @@ exports[`docs generate should render archive.md 1`] = `
   "| \`-d, --dest <dest>\` |  | \`unpacked\` | Path to folder for exporting |",
   "| \`--dry\` |  |  | Run in dry mode without actually unpacking to disk |",
   "| \`-j, --jobs <JOBS>\` |  | \`auto\` | How much of the machine to use: 'auto', a worker count, or a share such as '50%' |",
+  "| \`--refuse-links\` |  |  | Refuse to write through links or junctions already below the destination, instead of following them |",
   "| \`-s, --silent\` |  |  | Turn off logging |",
   "| \`-v, --verbose\` |  |  | Turn on verbose logging |",
   "| \`--json\` |  |  | Write the run's JSON report to stdout, moving human output to stderr |",
@@ -1200,6 +1201,7 @@ exports[`docs generate should render sprite.md 1`] = `
   "| \`--output <output>\` |  |  | Path to directory where output dds files |",
   "| \`--file <file>...\` |  |  | Name of a described file to pack, repeatable; packs every described file if omitted |",
   "| \`--strict\` |  |  | Turn on strict unpack mode |",
+  "| \`--refuse-links\` |  |  | Refuse to write through links or junctions already below the destination, instead of following them |",
   "| \`-s, --silent\` |  |  | Turn off logging |",
   "| \`-v, --verbose\` |  |  | Turn on verbose logging |",
   "| \`--json\` |  |  | Write the run's JSON report to stdout, moving human output to stderr |",
@@ -1242,6 +1244,7 @@ exports[`docs generate should render sprite.md 1`] = `
   "| \`--file <file>...\` |  |  | Name of a described file to unpack, repeatable; unpacks every described file if omitted |",
   "| \`--strict\` |  |  | Turn on strict unpack mode |",
   "| \`-j, --jobs <JOBS>\` |  | \`auto\` | How much of the machine to use: 'auto', a worker count, or a share such as '50%' |",
+  "| \`--refuse-links\` |  |  | Refuse to write through links or junctions already below the destination, instead of following them |",
   "| \`-s, --silent\` |  |  | Turn off logging |",
   "| \`-v, --verbose\` |  |  | Turn on verbose logging |",
   "| \`--json\` |  |  | Write the run's JSON report to stdout, moving human output to stderr |",
@@ -1261,6 +1264,7 @@ exports[`docs generate should render sprite.md 1`] = `
   "| \`--source <source>\` | yes |  | Path to source dds file |",
   "| \`--output <output>\` | yes |  | Path to output folder for sections icons |",
   "| \`--dltx\` |  |  | Resolve configs with the Monolith/Anomaly DLTX patch dialect, applying mod_&lt;base&gt;_*.ltx files |",
+  "| \`--refuse-links\` |  |  | Refuse to write through links or junctions already below the destination, instead of following them |",
   "| \`-s, --silent\` |  |  | Turn off logging |",
   "| \`-v, --verbose\` |  |  | Turn on verbose logging |",
   "| \`--json\` |  |  | Write the run's JSON report to stdout, moving human output to stderr |",
@@ -1439,8 +1443,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/archive.md",
-    "sha256": "5c8cb312d69d6946736668fbfe9c566d1838a7c597c3ea4f8a5ae1b7b07e29fa",
-    "size": 9278,
+    "sha256": "aa7a0cd0a9c56ead63cb70e8d482b81bb45d314ca6daf6b4b2034c43756bb920",
+    "size": 9407,
   },
   {
     "path": "docs/dds.md",
@@ -1504,8 +1508,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/sprite.md",
-    "sha256": "098a1749442646b4833bb35e7488a5ea2eb2fa2763cde92f5335308268c996e4",
-    "size": 4880,
+    "sha256": "bab21ffc8884815f17876b4346c754f7d01261998bd599463105fbef69e36efe",
+    "size": 5267,
   },
   {
     "path": "docs/thm.md",

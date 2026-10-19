@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`sprite unpack-description escaping sprite ids should refuse every id that leaves the output directory 1`] = `
+[
+  {
+    "exitCode": 1,
+    "stderr": [
+      "Error: Invalid error: Sprite id '../../../victim' must be a single file name, without a separator, a drive, or a traversal",
+    ],
+    "stdout": [
+      "Workers: <workers> (auto)",
+      "Unpacking texture descriptions: <sandbox>/descriptions/escape-0.xml, from <resources>/gamedata/textures to <sandbox>/out-0",
+    ],
+  },
+  {
+    "exitCode": 1,
+    "stderr": [
+      "Error: Invalid error: Sprite id '..\\..\\..\\victim' must be a single file name, without a separator, a drive, or a traversal",
+    ],
+    "stdout": [
+      "Workers: <workers> (auto)",
+      "Unpacking texture descriptions: <sandbox>/descriptions/escape-1.xml, from <resources>/gamedata/textures to <sandbox>/out-1",
+    ],
+  },
+  {
+    "exitCode": 1,
+    "stderr": [
+      "Error: Invalid error: Sprite id 'c:victim' must be a single file name, without a separator, a drive, or a traversal",
+    ],
+    "stdout": [
+      "Workers: <workers> (auto)",
+      "Unpacking texture descriptions: <sandbox>/descriptions/escape-2.xml, from <resources>/gamedata/textures to <sandbox>/out-2",
+    ],
+  },
+  {
+    "exitCode": 1,
+    "stderr": [
+      "Error: Invalid error: Sprite id '<sandbox>/victim' must be a single file name, without a separator, a drive, or a traversal",
+    ],
+    "stdout": [
+      "Workers: <workers> (auto)",
+      "Unpacking texture descriptions: <sandbox>/descriptions/escape-3.xml, from <resources>/gamedata/textures to <sandbox>/out-3",
+    ],
+  },
+]
+`;
+
+exports[`sprite unpack-description escaping sprite ids should write the expected files 1`] = `
+[
+  {
+    "path": "descriptions/escape-0.xml",
+    "sha256": "f5875e659d6064be1de2ee2f5355ccfbb57b581d7276f8f63f5a8197b0582285",
+    "size": 194,
+  },
+  {
+    "path": "descriptions/escape-1.xml",
+    "sha256": "8e97dfa539ff871368b88e7e401e91cc7606c0f76ac024b946ddcee165e8aafd",
+    "size": 194,
+  },
+  {
+    "path": "descriptions/escape-2.xml",
+    "sha256": "633152630f6a6296d20ba8b59097c56e6f7392af45cfa9b2b42f136986fa188d",
+    "size": 187,
+  },
+  {
+    "path": "descriptions/escape-3.xml",
+    "sha256": "563cd3404a3b0b75a2c8a82d4a90d6ece5e495cf1e6842daaf1485c5b1181cb5",
+    "size": 295,
+  },
+  {
+    "path": "victim.dds",
+    "sha256": "2b7847b7b705781d7cf21a05e9c1bb37cbf078aea103bc3edcc6aca52ab65453",
+    "size": 8,
+  },
+]
+`;
