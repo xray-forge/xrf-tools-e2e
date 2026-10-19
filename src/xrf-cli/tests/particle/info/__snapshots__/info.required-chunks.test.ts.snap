@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`particle info required chunks should refuse the library with a parse error naming the missing chunk 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Parsing error: Failed to read particle version chunk: Not found error: Chunk with ID 1 was not found",
+  ],
+  "stdout": [
+    "Read particle file <sandbox>/empty-effect.xr",
+  ],
+}
+`;
+
+exports[`particle info required chunks should write the expected files 1`] = `
+[
+  {
+    "path": "empty-effect.xr",
+    "sha256": "861603b0c50b56320a3e32a79a440f4c6a06847bd0e3cde5fa797187ccafcd24",
+    "size": 34,
+  },
+]
+`;
