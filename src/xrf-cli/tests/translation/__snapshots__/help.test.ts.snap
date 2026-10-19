@@ -83,6 +83,7 @@ exports[`translation command help should keep each leaf command's help stable 1`
       "      --overwrite            Replace existing text that differs, instead of keeping what is already there",
       "      --dry-run              Report what would be written without writing it",
       "      --strict               Answer with a check failure when anything was unreadable or off schema",
+      "      --refuse-links         Refuse to write through links or junctions already below the destination, instead of following them",
       "  -h, --help                 Print help",
     ],
   },

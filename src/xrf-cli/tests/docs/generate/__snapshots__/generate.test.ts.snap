@@ -1406,6 +1406,7 @@ exports[`docs generate should render translation.md 1`] = `
   "| \`--overwrite\` |  |  | Replace existing text that differs, instead of keeping what is already there |",
   "| \`--dry-run\` |  |  | Report what would be written without writing it |",
   "| \`--strict\` |  |  | Answer with a check failure when anything was unreadable or off schema |",
+  "| \`--refuse-links\` |  |  | Refuse to write through links or junctions already below the destination, instead of following them |",
   "| \`-s, --silent\` |  |  | Turn off logging |",
   "| \`-v, --verbose\` |  |  | Turn on verbose logging |",
   "| \`--json\` |  |  | Write the run's JSON report to stdout, moving human output to stderr |",
@@ -1519,8 +1520,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/translation.md",
-    "sha256": "dac42e730d7eed3027c0f6abd8847562385f43f3790213cb9a04378e71b53e7c",
-    "size": 6065,
+    "sha256": "d4319e6d63035db6d713c0eb2805b6bbc427a865190302dd67039405ba9bf931",
+    "size": 6194,
   },
   {
     "path": "drifted/README.md",
