@@ -4,6 +4,7 @@ import { $, $$, browser, expect } from "@wdio/globals";
 import { before, describe, it } from "mocha";
 
 import { APP_RESOURCES_ROOT } from "#/xrf-app/test/wdio.conf";
+import { closeTool } from "#/xrf-app/test/window-menu";
 
 /** The committed fixture: one entry point, the file it includes, a scheme declaration, and a broken parent. */
 const CONFIGS: string = path.resolve(APP_RESOURCES_ROOT, "gamedata/configs");
@@ -144,7 +145,7 @@ describe("configs explorer", () => {
   });
 
   it("returns to the launcher without leaving the project open", async () => {
-    await $('[data-testid="editor-toolbar"]').$("button=XRF").click();
+    await closeTool();
 
     await expect($('[data-testid="application-launcher-catalog"]')).toBeDisplayed();
   });

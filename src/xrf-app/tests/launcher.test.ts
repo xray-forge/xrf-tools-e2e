@@ -1,6 +1,8 @@
 import { $, $$, expect } from "@wdio/globals";
 import { describe, it } from "mocha";
 
+import { closeTool } from "#/xrf-app/test/window-menu";
+
 describe("launcher", () => {
   it("renders the tool catalog without a crash surface", async () => {
     await $('[data-testid="application-launcher-catalog"]').waitForExist({ timeout: 10_000 });
@@ -30,7 +32,7 @@ describe("launcher", () => {
     await expect($('[data-testid="application-launcher-catalog"]')).not.toBeExisting();
     await expect($("*=This tool stopped rendering")).not.toBeExisting();
 
-    await toolbar.$("button=XRF").click();
+    await closeTool();
 
     await expect($('[data-testid="application-launcher-catalog"]')).toBeDisplayed();
   });
