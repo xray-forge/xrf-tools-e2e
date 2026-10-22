@@ -104,6 +104,7 @@ exports[`docs generate should render archive.md 1`] = `
   "| \`--directory <directory>\` |  |  | Logical directory to extract; --dest receives that directory's contents |",
   "| \`-d, --dest <dest>\` | yes |  | Output file for --file, or output directory for --directory |",
   "| \`-j, --jobs <JOBS>\` |  | \`auto\` | How much of the machine to use: 'auto', a worker count, or a share such as '50%' |",
+  "| \`--refuse-links\` |  |  | Refuse to write through links or junctions already below the destination, instead of following them |",
   "| \`-s, --silent\` |  |  | Turn off logging |",
   "| \`-v, --verbose\` |  |  | Turn on verbose logging |",
   "| \`--json\` |  |  | Write the run's JSON report to stdout, moving human output to stderr |",
@@ -1445,8 +1446,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/archive.md",
-    "sha256": "aa7a0cd0a9c56ead63cb70e8d482b81bb45d314ca6daf6b4b2034c43756bb920",
-    "size": 9407,
+    "sha256": "7da79da140e88bdff3052ea3a347483473801cb143797ee3492c2062df5ecf5a",
+    "size": 9536,
   },
   {
     "path": "docs/dds.md",
