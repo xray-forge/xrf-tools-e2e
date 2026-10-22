@@ -64,8 +64,8 @@ exports[`sprite unpack-description escaping sprite ids should write the expected
   },
   {
     "path": "descriptions/escape-3.xml",
-    "sha256": "563cd3404a3b0b75a2c8a82d4a90d6ece5e495cf1e6842daaf1485c5b1181cb5",
-    "size": 295,
+    "sha256": "3db1cbefd26d742d8f2333017698185318626254d1933c11f4165a993dbc47bb",
+    "size": 194,
   },
   {
     "path": "victim.dds",

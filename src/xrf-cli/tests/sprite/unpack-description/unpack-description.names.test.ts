@@ -50,6 +50,7 @@ describe("sprite unpack-description escaping sprite ids", () => {
   });
 
   it("should write the expected files", () => {
-    expect(box.manifest()).toMatchSnapshot();
+    // The last description names the sandbox's own path, which differs between checkouts.
+    expect(box.manifest({ normalized: ["descriptions/escape-3.xml"] })).toMatchSnapshot();
   });
 });
