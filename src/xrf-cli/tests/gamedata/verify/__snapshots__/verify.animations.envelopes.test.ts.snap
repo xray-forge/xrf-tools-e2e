@@ -1,0 +1,302 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata verify animations envelopes should read, write back and evaluate a shipped object motion and post-process effect 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Workers: <workers> (auto)",
+    "Opening gamedata project",
+    "Root: <sandbox>/valid, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
+    "Engine: vanilla (no Anomaly or Atmosfear signs)",
+    "Verifying gamedata project: <sandbox>/valid",
+    "Verifying modules:",
+    "  -animations",
+    "",
+    "Verify declared source coverage:",
+    "Verified declared source coverage in <duration>, 0 unopened source(s)",
+    "Verify path collisions:",
+    "Verified gamedata path collisions in <duration>, 0 unreachable file(s)",
+    "Verify animations:",
+    "Verified gamedata huds, 0/0 valid",
+    "Verified gamedata hud items, 0/0 valid",
+    "Verified gamedata hud motion namespaces, 0 collisions across 0 huds",
+    "Verified gamedata object motions, 1/1 valid",
+    "Verified gamedata post-process effects, 1/1 valid",
+    "Verified gamedata animations in <duration>, 0/0 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 0 HUD namespaces, 1/1 object motions valid, 1/1 post-process effects valid",
+    "",
+    "Project gamedata is valid",
+    "Gamedata project verified in <duration>",
+  ],
+}
+`;
+
+exports[`gamedata verify animations envelopes should record the reports as readable documents 1`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": null,
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "outcome": "success",
+  "result": {
+    "cache": {
+      "bytes": 0,
+      "entries": 1,
+      "hits": 1,
+      "misses": 1,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "passed",
+        "summary": "0/0 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 0 HUD namespaces, 1/1 object motions valid, 1/1 post-process effects valid",
+        "verificationType": "animations",
+      },
+    ],
+    "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
+    "skippedMounts": [],
+    "status": "passed",
+  },
+}
+`;
+
+exports[`gamedata verify animations envelopes should record the reports as readable documents 2`] = `
+{
+  "build": {
+    "builtAt": "<build>",
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "optimization": "<build>",
+    "profile": "<build>",
+    "reference": "<build>",
+    "runId": "<build>",
+    "rustc": "<build>",
+    "target": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "error": "Check failed: 5 finding(s)",
+  "execution": {
+    "origin": "auto",
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "outcome": "checkFailed",
+  "result": {
+    "cache": {
+      "bytes": 0,
+      "entries": 1,
+      "hits": 1,
+      "misses": 1,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "Every declared source opened",
+        "verificationType": "coverage",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "status": "skipped",
+        "summary": "No unreachable files",
+        "verificationType": "collisions",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "assetPath": "anims/extra_chunk.anm",
+            "message": "Does not write back to the bytes it was read from: 335 bytes read, 323 written, first difference at byte 323",
+            "ruleId": "animations.object-motion-round-trip",
+          },
+          {
+            "assetPath": "anims/non_finite.anm",
+            "message": "Channel 'position x' evaluates to NaN at time 0.200",
+            "ruleId": "animations.object-motion-value",
+          },
+          {
+            "assetPath": "anims/non_finite.ppe",
+            "message": "Channel 'colour map influence' evaluates to inf at time -5.000",
+            "ruleId": "animations.post-process-value",
+          },
+          {
+            "assetPath": "anims/truncated.anm",
+            "message": "Failed to read object motion: Invalid error: Chunk 0x00001100 at position 8 declares 315 bytes, 92 remain before source end 100",
+            "ruleId": "animations.object-motion-read",
+          },
+          {
+            "assetPath": "anims/truncated.ppe",
+            "message": "Failed to read post-process effect: IO error: failed to fill whole buffer",
+            "ruleId": "animations.post-process-read",
+          },
+        ],
+        "status": "failed",
+        "summary": "0/0 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 0 HUD namespaces, 0/3 object motions valid, 0/2 post-process effects valid",
+        "verificationType": "animations",
+      },
+    ],
+    "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
+    "skippedMounts": [],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`gamedata verify animations envelopes should report each damaged motion and effect under the rule it breaks 1`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "",
+    "Project gamedata is invalid",
+    "- 0/0 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 0 HUD namespaces, 0/3 object motions valid, 0/2 post-process effects valid",
+    "  - [animations] anims/extra_chunk.anm: Does not write back to the bytes it was read from: 335 bytes read, 323 written, first difference at byte 323",
+    "  - [animations] anims/non_finite.anm: Channel 'position x' evaluates to NaN at time 0.200",
+    "  - [animations] anims/non_finite.ppe: Channel 'colour map influence' evaluates to inf at time -5.000",
+    "  - [animations] anims/truncated.anm: Failed to read object motion: Invalid error: Chunk 0x00001100 at position 8 declares 315 bytes, 92 remain before source end 100",
+    "  - [animations] anims/truncated.ppe: Failed to read post-process effect: IO error: failed to fill whole buffer",
+    "Gamedata project checked in <duration>",
+    "Check failed: 5 finding(s)",
+  ],
+  "stdout": [
+    "Workers: <workers> (auto)",
+    "Opening gamedata project",
+    "Root: <sandbox>/damaged, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
+    "Engine: vanilla (no Anomaly or Atmosfear signs)",
+    "Verifying gamedata project: <sandbox>/damaged",
+    "Verifying modules:",
+    "  -animations",
+    "",
+    "Verify declared source coverage:",
+    "Verified declared source coverage in <duration>, 0 unopened source(s)",
+    "Verify path collisions:",
+    "Verified gamedata path collisions in <duration>, 0 unreachable file(s)",
+    "Verify animations:",
+    "Verified gamedata huds, 0/0 valid",
+    "Verified gamedata hud items, 0/0 valid",
+    "Verified gamedata hud motion namespaces, 0 collisions across 0 huds",
+    "Invalid object motion: anims\\extra_chunk.anm",
+    "Invalid object motion: anims\\non_finite.anm",
+    "Failed to read object motion 'anims\\truncated.anm': Invalid error: Chunk 0x00001100 at position 8 declares 315 bytes, 92 remain before source end 100",
+    "Verified gamedata object motions, 0/3 valid",
+    "Invalid post-process effect: anims\\non_finite.ppe",
+    "Failed to read post-process effect 'anims\\truncated.ppe': IO error: failed to fill whole buffer",
+    "Verified gamedata post-process effects, 0/2 valid",
+    "Verified gamedata animations in <duration>, 0/0 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 0 HUD namespaces, 0/3 object motions valid, 0/2 post-process effects valid",
+  ],
+}
+`;
+
+exports[`gamedata verify animations envelopes should write only its fixture and reports 1`] = `
+[
+  {
+    "path": "damaged.json",
+    "sha256": "732f36dd8b87b3894e7affbe9b52e6e147652ccb463162e0cc788714713cd88a",
+    "size": 2788,
+  },
+  {
+    "path": "damaged/anims/extra_chunk.anm",
+    "sha256": "e295707b43a24642ca043b1988666d88f0de8c056814bb5eaa944af4b2571f9a",
+    "size": 335,
+  },
+  {
+    "path": "damaged/anims/non_finite.anm",
+    "sha256": "d086daa5e0b5a95d8096154161e1ce5f257e9133dfa798fefb1b06675728a542",
+    "size": 323,
+  },
+  {
+    "path": "damaged/anims/non_finite.ppe",
+    "sha256": "4fa674f87978dc25f6d242904fec2c0a7a2bcfb1b35983dbaaf762eb8b135d98",
+    "size": 144,
+  },
+  {
+    "path": "damaged/anims/truncated.anm",
+    "sha256": "e3605feb746b65dc73a919087e7f6e162e8ad85ce2c9fa8c6b27c72f2ceac7b5",
+    "size": 100,
+  },
+  {
+    "path": "damaged/anims/truncated.ppe",
+    "sha256": "780088d5a0d3a38375c71573017b264404b82f8509e544eb54c68f13302aed3f",
+    "size": 60,
+  },
+  {
+    "path": "damaged/configs/system.ltx",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+  },
+  {
+    "path": "valid.json",
+    "sha256": "62496a0574317fbeb480caabe94d2c18647e3bd2140488e68d07bc4ac36c1d27",
+    "size": 1551,
+  },
+  {
+    "path": "valid/anims/camera_effects/weapon/ak74_shoot.anm",
+    "sha256": "079479b912671deba4db888deac5243d1b59368ac5bac17af914941b1bcd6626",
+    "size": 323,
+  },
+  {
+    "path": "valid/anims/psi.ppe",
+    "sha256": "829ad3bf9ded31992e3891e9a48cf0ff608dfc79a189c697146ad9f1525ddaa0",
+    "size": 144,
+  },
+  {
+    "path": "valid/configs/system.ltx",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+  },
+]
+`;

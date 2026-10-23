@@ -54,7 +54,7 @@ exports[`gamedata verify named HUD animations should record the reports as reada
         "duration": "<duration>",
         "findings": [],
         "status": "passed",
-        "summary": "1/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces",
+        "summary": "1/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
         "verificationType": "animations",
       },
     ],
@@ -130,7 +130,7 @@ exports[`gamedata verify named HUD animations should record the reports as reada
           },
         ],
         "status": "failed",
-        "summary": "0/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces",
+        "summary": "0/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
         "verificationType": "animations",
       },
     ],
@@ -154,7 +154,7 @@ exports[`gamedata verify named HUD animations should report a missing named moti
     "Hud [actor_hud] failed weapons check",
     "",
     "Project gamedata is invalid",
-    "- 0/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces",
+    "- 0/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
     "  - [animations] <sandbox>/missing/configs/system.ltx: Player HUD section [actor_hud] has invalid animations",
     "Gamedata project checked in <duration>",
     "Check failed: 1 finding(s)",
@@ -177,7 +177,9 @@ exports[`gamedata verify named HUD animations should report a missing named moti
     "Verified gamedata huds, 0/1 valid",
     "Verified gamedata hud items, 0/0 valid",
     "Verified gamedata hud motion namespaces, 0 collisions across 1 huds",
-    "Verified gamedata animations in <duration>, 0/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces",
+    "Verified gamedata object motions, 0/0 valid",
+    "Verified gamedata post-process effects, 0/0 valid",
+    "Verified gamedata animations in <duration>, 0/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
   ],
 }
 `;
@@ -203,7 +205,9 @@ exports[`gamedata verify named HUD animations should validate the named idle mot
     "Verified gamedata huds, 1/1 valid",
     "Verified gamedata hud items, 0/0 valid",
     "Verified gamedata hud motion namespaces, 0 collisions across 1 huds",
-    "Verified gamedata animations in <duration>, 1/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces",
+    "Verified gamedata object motions, 0/0 valid",
+    "Verified gamedata post-process effects, 0/0 valid",
+    "Verified gamedata animations in <duration>, 1/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
     "",
     "Project gamedata is valid",
     "Gamedata project verified in <duration>",
@@ -215,8 +219,8 @@ exports[`gamedata verify named HUD animations should write only its fixture and 
 [
   {
     "path": "missing.json",
-    "sha256": "bb8fbeb3b8812caeacdc1ccec7b25a8b1f8273199577afc6ec674074b9cfd95a",
-    "size": 1729,
+    "sha256": "301612a84d087b58d8ec63470ff9aca9ae0dfa82866496b52a00dbfe72597102",
+    "size": 1787,
   },
   {
     "path": "missing/configs/system.ltx",
@@ -235,8 +239,8 @@ exports[`gamedata verify named HUD animations should write only its fixture and 
   },
   {
     "path": "valid.json",
-    "sha256": "4b107ce487943bc9b763614cb2c0ad77c5e1babc73285f8152a665a73b2b306a",
-    "size": 1495,
+    "sha256": "ac0d6ec3f63aebc6e2550bce31cc8ce40f7bc66430317ff60c7fa3adb75b725b",
+    "size": 1553,
   },
   {
     "path": "valid/configs/system.ltx",

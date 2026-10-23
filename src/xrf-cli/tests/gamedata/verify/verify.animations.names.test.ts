@@ -74,7 +74,7 @@ describe("gamedata verify named HUD animations", () => {
             findings: [],
             status: "passed",
             summary:
-              "1/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces",
+              "1/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
             verificationType: "animations",
           },
         ],
@@ -102,7 +102,7 @@ describe("gamedata verify named HUD animations", () => {
             ],
             status: "failed",
             summary:
-              "0/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces",
+              "0/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
             verificationType: "animations",
           },
         ],

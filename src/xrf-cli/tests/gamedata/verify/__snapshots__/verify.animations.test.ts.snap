@@ -54,7 +54,7 @@ exports[`gamedata verify animations should record the reports as readable docume
         "duration": "<duration>",
         "findings": [],
         "status": "passed",
-        "summary": "1/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces",
+        "summary": "1/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
         "verificationType": "animations",
       },
     ],
@@ -130,7 +130,7 @@ exports[`gamedata verify animations should record the reports as readable docume
           },
         ],
         "status": "failed",
-        "summary": "0/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces",
+        "summary": "0/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
         "verificationType": "animations",
       },
     ],
@@ -154,7 +154,7 @@ exports[`gamedata verify animations should report a damaged linked motion bank t
     "Hud [actor_hud] contains no animations",
     "",
     "Project gamedata is invalid",
-    "- 0/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces",
+    "- 0/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
     "  - [animations] <sandbox>/damaged/configs/system.ltx: Player HUD section [actor_hud] has invalid animations",
     "Gamedata project checked in <duration>",
     "Check failed: 1 finding(s)",
@@ -177,7 +177,9 @@ exports[`gamedata verify animations should report a damaged linked motion bank t
     "Verified gamedata huds, 0/1 valid",
     "Verified gamedata hud items, 0/0 valid",
     "Verified gamedata hud motion namespaces, 0 collisions across 1 huds",
-    "Verified gamedata animations in <duration>, 0/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces",
+    "Verified gamedata object motions, 0/0 valid",
+    "Verified gamedata post-process effects, 0/0 valid",
+    "Verified gamedata animations in <duration>, 0/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
   ],
 }
 `;
@@ -203,7 +205,9 @@ exports[`gamedata verify animations should validate a HUD with a linked motion b
     "Verified gamedata huds, 1/1 valid",
     "Verified gamedata hud items, 0/0 valid",
     "Verified gamedata hud motion namespaces, 0 collisions across 1 huds",
-    "Verified gamedata animations in <duration>, 1/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces",
+    "Verified gamedata object motions, 0/0 valid",
+    "Verified gamedata post-process effects, 0/0 valid",
+    "Verified gamedata animations in <duration>, 1/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
     "",
     "Project gamedata is valid",
     "Gamedata project verified in <duration>",
@@ -215,8 +219,8 @@ exports[`gamedata verify animations should write only its fixture and reports 1`
 [
   {
     "path": "damaged.json",
-    "sha256": "c07c33f71e29567b49ac2f9098088389a741df970bc7f00712b387d815a35c80",
-    "size": 1729,
+    "sha256": "2060e92927a9d7a7e7c8d52aa6e21aed215b99b9e4ec7f6db10bf6b9e0034f6b",
+    "size": 1787,
   },
   {
     "path": "damaged/configs/system.ltx",
@@ -235,8 +239,8 @@ exports[`gamedata verify animations should write only its fixture and reports 1`
   },
   {
     "path": "valid.json",
-    "sha256": "1c358f92df77dbb0b1eae4e7ba5fa9a50e9f1830db8f8bb6973530304f7937b2",
-    "size": 1495,
+    "sha256": "5db2b0a62cc065d6b03d991c9c5fd0ab87f6ab7583c1276fd871566f5d239b25",
+    "size": 1553,
   },
   {
     "path": "valid/configs/system.ltx",
