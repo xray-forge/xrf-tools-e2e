@@ -19,13 +19,14 @@ describe("gamedata verify animations envelopes", () => {
     box.copyIn(resource("anims/motion.anm"), "valid/anims/camera_effects/weapon/ak74_shoot.anm");
     box.copyIn(resource("anims/effect.ppe"), "valid/anims/psi.ppe");
 
-    // Each damaged file breaks one way: cut short, carrying a chunk the engine skips and the tools do not keep, or
-    // keyed to a value no channel can play.
+    // Each damaged file breaks one way: cut short, carrying a chunk the engine skips and the tools do not keep, keyed
+    // to a value no channel can play, or keyed to a noise granularity the engine stops on.
     box.copyTruncated(resource("anims/motion.anm"), "damaged/anims/truncated.anm", 100);
     box.copyIn(resource("anims/motion_extra_chunk.anm"), "damaged/anims/extra_chunk.anm");
     box.copyIn(resource("anims/motion_non_finite.anm"), "damaged/anims/non_finite.anm");
     box.copyTruncated(resource("anims/effect.ppe"), "damaged/anims/truncated.ppe", 60);
     box.copyIn(resource("anims/effect_non_finite.ppe"), "damaged/anims/non_finite.ppe");
+    box.copyIn(resource("anims/effect_noise_granularity.ppe"), "damaged/anims/noise_granularity.ppe");
     inputsBefore = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("damaged/"));
 
     valid = box.run("gamedata verify", [box.at("valid"), "--checks", "animations", "--report", box.at("valid.json")], {
@@ -78,6 +79,11 @@ describe("gamedata verify animations envelopes", () => {
                 ruleId: "animations.object-motion-round-trip",
               },
               {
+                assetPath: "anims/noise_granularity.ppe",
+                message: "Noise granularity reaches 0.000 at time 1.000, which the engine refuses at full strength",
+                ruleId: "animations.post-process-noise-granularity",
+              },
+              {
                 assetPath: "anims/non_finite.anm",
                 message: "Channel 'position x' evaluates to NaN at time 0.200",
                 ruleId: "animations.object-motion-value",
@@ -99,7 +105,7 @@ describe("gamedata verify animations envelopes", () => {
               },
             ],
             status: "failed",
-            summary: expect.stringContaining("0/3 object motions valid, 0/2 post-process effects valid"),
+            summary: expect.stringContaining("0/3 object motions valid, 0/3 post-process effects valid"),
             verificationType: "animations",
           },
         ],

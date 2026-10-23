@@ -121,7 +121,7 @@ exports[`gamedata verify animations envelopes should record the reports as reada
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 5 finding(s)",
+  "error": "Check failed: 6 finding(s)",
   "execution": {
     "origin": "auto",
     "workers": "<workers>",
@@ -160,6 +160,11 @@ exports[`gamedata verify animations envelopes should record the reports as reada
             "ruleId": "animations.object-motion-round-trip",
           },
           {
+            "assetPath": "anims/noise_granularity.ppe",
+            "message": "Noise granularity reaches 0.000 at time 1.000, which the engine refuses at full strength",
+            "ruleId": "animations.post-process-noise-granularity",
+          },
+          {
             "assetPath": "anims/non_finite.anm",
             "message": "Channel 'position x' evaluates to NaN at time 0.200",
             "ruleId": "animations.object-motion-value",
@@ -181,7 +186,7 @@ exports[`gamedata verify animations envelopes should record the reports as reada
           },
         ],
         "status": "failed",
-        "summary": "0/0 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 0 HUD namespaces, 0/3 object motions valid, 0/2 post-process effects valid",
+        "summary": "0/0 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 0 HUD namespaces, 0/3 object motions valid, 0/3 post-process effects valid",
         "verificationType": "animations",
       },
     ],
@@ -203,14 +208,15 @@ exports[`gamedata verify animations envelopes should report each damaged motion 
   "stderr": [
     "",
     "Project gamedata is invalid",
-    "- 0/0 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 0 HUD namespaces, 0/3 object motions valid, 0/2 post-process effects valid",
+    "- 0/0 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 0 HUD namespaces, 0/3 object motions valid, 0/3 post-process effects valid",
     "  - [animations] anims/extra_chunk.anm: Does not write back to the bytes it was read from: 335 bytes read, 323 written, first difference at byte 323",
+    "  - [animations] anims/noise_granularity.ppe: Noise granularity reaches 0.000 at time 1.000, which the engine refuses at full strength",
     "  - [animations] anims/non_finite.anm: Channel 'position x' evaluates to NaN at time 0.200",
     "  - [animations] anims/non_finite.ppe: Channel 'colour map influence' evaluates to inf at time -5.000",
     "  - [animations] anims/truncated.anm: Failed to read object motion: Invalid error: Chunk 0x00001100 at position 8 declares 315 bytes, 92 remain before source end 100",
     "  - [animations] anims/truncated.ppe: Failed to read post-process effect: IO error: failed to fill whole buffer",
     "Gamedata project checked in <duration>",
-    "Check failed: 5 finding(s)",
+    "Check failed: 6 finding(s)",
   ],
   "stdout": [
     "Workers: <workers> (auto)",
@@ -233,10 +239,11 @@ exports[`gamedata verify animations envelopes should report each damaged motion 
     "Invalid object motion: anims\\non_finite.anm",
     "Failed to read object motion 'anims\\truncated.anm': Invalid error: Chunk 0x00001100 at position 8 declares 315 bytes, 92 remain before source end 100",
     "Verified gamedata object motions, 0/3 valid",
+    "Invalid post-process effect: anims\\noise_granularity.ppe",
     "Invalid post-process effect: anims\\non_finite.ppe",
     "Failed to read post-process effect 'anims\\truncated.ppe': IO error: failed to fill whole buffer",
-    "Verified gamedata post-process effects, 0/2 valid",
-    "Verified gamedata animations in <duration>, 0/0 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 0 HUD namespaces, 0/3 object motions valid, 0/2 post-process effects valid",
+    "Verified gamedata post-process effects, 0/3 valid",
+    "Verified gamedata animations in <duration>, 0/0 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 0 HUD namespaces, 0/3 object motions valid, 0/3 post-process effects valid",
   ],
 }
 `;
@@ -245,13 +252,18 @@ exports[`gamedata verify animations envelopes should write only its fixture and 
 [
   {
     "path": "damaged.json",
-    "sha256": "732f36dd8b87b3894e7affbe9b52e6e147652ccb463162e0cc788714713cd88a",
-    "size": 2788,
+    "sha256": "ed5f3f2b74fafd712713fb7edcc86d717d2ee5f79a31d1eebb19c058ff960412",
+    "size": 3050,
   },
   {
     "path": "damaged/anims/extra_chunk.anm",
     "sha256": "e295707b43a24642ca043b1988666d88f0de8c056814bb5eaa944af4b2571f9a",
     "size": 335,
+  },
+  {
+    "path": "damaged/anims/noise_granularity.ppe",
+    "sha256": "cb4972b9829ed4dabcca27c032d06f57f2dac4bd93937288a1175b1f9b6c716d",
+    "size": 190,
   },
   {
     "path": "damaged/anims/non_finite.anm",
