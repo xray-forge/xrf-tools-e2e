@@ -11,7 +11,7 @@ describe("archive unpack dry run", () => {
 
   beforeAll(() => {
     box.write("source/configs/nested/system.ltx", "archived bytes");
-    box.run("archive pack", [box.at("source"), "--dest", box.at("packed"), "--name", "fixture"]);
+    box.run("archive pack", ["--path", box.at("source"), "--dest", box.at("packed"), "--name", "fixture"]);
 
     box.write("destination/sentinel.ltx", "leave this untouched");
     box.write("destination/gamedata/configs/nested/system.ltx", "pre-existing destination bytes");
@@ -21,7 +21,7 @@ describe("archive unpack dry run", () => {
       box.at("packed/fixture.db"),
       "--dest",
       box.at("destination"),
-      "--dry",
+      "--dry-run",
       "--report",
       box.at("dry-report.json"),
     ]);
@@ -36,8 +36,9 @@ describe("archive unpack dry run", () => {
       exitCode: 0,
       outcome: "success",
       result: expect.objectContaining({
-        entries: 3,
-        isDry: true,
+        directories: 2,
+        files: 1,
+        isDryRun: true,
       }),
     });
   });

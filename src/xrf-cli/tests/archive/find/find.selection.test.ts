@@ -15,7 +15,7 @@ describe("archive find selection", () => {
     box.write("source/nested/System_Alpha.ltx", "alpha\n");
     box.write("source/nested/system_copy.ltx", "alpha\n");
     box.write("source/zeta.ltx", "zeta\n");
-    box.run("archive pack", [box.at("source"), "--dest", box.at("packed"), "--name", "fixture"]);
+    box.run("archive pack", ["--path", box.at("source"), "--dest", box.at("packed"), "--name", "fixture"]);
 
     caseInsensitive = box.run("archive find", [
       "--path",
@@ -65,7 +65,7 @@ describe("archive find selection", () => {
     expect(caseInsensitive.exitCode).toBe(0);
     expect(report).toMatchObject({ command: ["archive", "find"], outcome: "success", exitCode: 0 });
     expect(report.result).toMatchObject({
-      query: "copy",
+      query: "CoPy",
       total: 1,
       entries: [{ name: "nested\\system_copy.ltx", sharedWith: ["nested\\System_Alpha.ltx"] }],
     });

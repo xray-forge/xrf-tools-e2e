@@ -12,7 +12,7 @@ describe("archive extract directory through a linked directory", () => {
   let refused: CliResult;
 
   beforeAll(() => {
-    box.run("archive pack", [gamedata("configs"), "--dest", box.at("packed"), "--name", "cfg"]);
+    box.run("archive pack", ["--path", gamedata("configs"), "--dest", box.at("packed"), "--name", "cfg"]);
 
     // A junction needs no privilege on Windows; elsewhere the type is ignored and this is a symlink.
     for (const name of ["followed", "refused"]) {

@@ -15,6 +15,7 @@ describe("archive pack volumes", () => {
 
   beforeAll(() => {
     split = box.run("archive pack", [
+      "--path",
       gamedata(),
       "--dest",
       box.at("split"),
@@ -26,7 +27,7 @@ describe("archive pack volumes", () => {
 
     refused = box.run(
       "archive pack",
-      [gamedata(), "--dest", box.at("refused"), "--name", "gamedata", "--max-size", "1"],
+      ["--path", gamedata(), "--dest", box.at("refused"), "--name", "gamedata", "--max-size", "1"],
       { expectExit: 1 }
     );
   });

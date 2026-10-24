@@ -9,7 +9,7 @@ exports[`archive unpack dry run should report the unpack it would perform 1`] = 
     "Unpack in dry mode",
     "Unpack source: <sandbox>/packed/fixture.db",
     "Unpack destination: <sandbox>/destination",
-    "Summary: 1 archive(s), 3 file(s), 14 B compressed, 14 B real",
+    "Summary: 1 archive(s), 1 file(s), 2 directory record(s), 14 B compressed, 14 B real",
   ],
 }
 `;
@@ -44,8 +44,9 @@ exports[`archive unpack dry run should report the unpack it would perform 2`] = 
   "result": {
     "archives": 1,
     "destination": "<sandbox>/destination",
-    "entries": 3,
-    "isDry": true,
+    "directories": 2,
+    "files": 1,
+    "isDryRun": true,
     "sizeCompressed": 14,
     "sizeReal": 14,
     "source": "<sandbox>/packed/fixture.db",
@@ -67,8 +68,8 @@ exports[`archive unpack dry run should write the expected files 1`] = `
   },
   {
     "path": "dry-report.json",
-    "sha256": "d3cd473da8b37e32dce5f6d9b906d34bcb5a992d129a2698e666a2c1959f4888",
-    "size": 717,
+    "sha256": "b0d609fefd3fda24213a28183a9274dfcbd3a0b6f56547290c205de192de0f91",
+    "size": 740,
   },
   {
     "path": "packed/fixture.db",

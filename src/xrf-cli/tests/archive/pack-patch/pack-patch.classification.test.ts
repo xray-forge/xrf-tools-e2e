@@ -20,6 +20,7 @@ describe("archive pack-patch classification", () => {
     const target: string = createWorld(box, "target", TARGET_EDITS);
 
     compared = box.run("archive pack-patch", [
+      "--path",
       base,
       "--target",
       target,

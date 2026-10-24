@@ -6,7 +6,7 @@ exports[`archive pack arguments should refuse a configuration file beside a dire
   "stderr": [
     "error: the argument '--config <config>' cannot be used with '--include-directory <include-directory>'",
     "",
-    "Usage: xrf-cli archive pack --dest <dest> --name <name> --config <config> <SOURCE>",
+    "Usage: xrf-cli archive pack --path <path> --dest <dest> --name <name> --config <config>",
     "",
     "For more information, try '--help'.",
   ],
@@ -18,7 +18,7 @@ exports[`archive pack arguments should refuse a header entry that names no key 1
 {
   "exitCode": 1,
   "stderr": [
-    "Error: Invalid error: Header entry 'auto_load' is not a <key>=<value> pair. Write it as --header auto_load=true.",
+    "Error: Invalid error: Header entry 'auto_load' is not a <key>=<value> pair. Write it as auto_load=true.",
   ],
   "stdout": [],
 }

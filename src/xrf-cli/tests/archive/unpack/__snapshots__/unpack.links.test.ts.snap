@@ -10,7 +10,7 @@ exports[`archive unpack through a linked directory should refuse the link when a
     "Workers: <workers> (auto)",
     "Unpack source: <sandbox>/packed/cfg.db",
     "Unpack destination: <sandbox>/refused/out",
-    "Summary: 1 archive(s), 21 file(s), 4.88 KB compressed, 11.5 KB real",
+    "Summary: 1 archive(s), 14 file(s), 7 directory record(s), 4.88 KB compressed, 11.5 KB real",
   ],
 }
 `;
@@ -23,7 +23,7 @@ exports[`archive unpack through a linked directory should unpack through the lin
     "Workers: <workers> (auto)",
     "Unpack source: <sandbox>/packed/cfg.db",
     "Unpack destination: <sandbox>/followed/out",
-    "Summary: 1 archive(s), 21 file(s), 4.88 KB compressed, 11.5 KB real",
+    "Summary: 1 archive(s), 14 file(s), 7 directory record(s), 4.88 KB compressed, 11.5 KB real",
     "Unpacked archive in <duration> (preparation <duration>, unpack <duration>)",
   ],
 }

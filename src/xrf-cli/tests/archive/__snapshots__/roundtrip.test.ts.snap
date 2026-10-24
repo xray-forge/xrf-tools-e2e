@@ -25,7 +25,7 @@ exports[`archive roundtrip should unpack the volume 1`] = `
     "Workers: <workers> (auto)",
     "Unpack source: <sandbox>/packed/testdata.db",
     "Unpack destination: <sandbox>/unpacked",
-    "Summary: 1 archive(s), 23 file(s), 4.88 KB compressed, 11.5 KB real",
+    "Summary: 1 archive(s), 15 file(s), 8 directory record(s), 4.88 KB compressed, 11.5 KB real",
     "Unpacked archive in <duration> (preparation <duration>, unpack <duration>)",
   ],
 }

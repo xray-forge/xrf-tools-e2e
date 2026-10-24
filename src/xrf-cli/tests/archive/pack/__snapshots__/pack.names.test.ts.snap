@@ -32,7 +32,7 @@ exports[`archive pack names and aliases should preserve an empty nested file and
     "Workers: <workers> (auto)",
     "Unpack source: <sandbox>/packed/fixture.db",
     "Unpack destination: <sandbox>/unpacked",
-    "Summary: 1 archive(s), 4 file(s), 26 B compressed, 26 B real",
+    "Summary: 1 archive(s), 3 file(s), 1 directory record(s), 26 B compressed, 26 B real",
     "Unpacked archive in <duration> (preparation <duration>, unpack <duration>)",
   ],
 }

@@ -40,7 +40,7 @@ exports[`archive find selection should record each machine-readable selection 1`
         "source": "<sandbox>/packed/fixture.db",
       },
     ],
-    "query": "copy",
+    "query": "CoPy",
     "total": 1,
   },
 }
@@ -198,7 +198,7 @@ exports[`archive find selection should write the expected files 1`] = `
   },
   {
     "path": "case.json",
-    "sha256": "6d8f818a35a06c53893e2ef9158069e94dda25c38b949a4b6263b5cd0824f8ff",
+    "sha256": "a20685f9828d05c554dbc228e7540e0b80f07308e31457ade5652031224840cd",
     "size": 846,
   },
   {

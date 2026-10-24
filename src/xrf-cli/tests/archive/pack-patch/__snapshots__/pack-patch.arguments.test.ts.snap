@@ -4,7 +4,7 @@ exports[`archive pack-patch arguments should refuse a header entry that names no
 {
   "exitCode": 1,
   "stderr": [
-    "Error: Invalid error: Header entry 'auto_load' names no key: write it as <key>=<value>",
+    "Error: Invalid error: Header entry 'auto_load' is not a <key>=<value> pair. Write it as auto_load=true.",
   ],
   "stdout": [],
 }
@@ -40,7 +40,7 @@ exports[`archive pack-patch arguments should refuse both report destinations at 
   "stderr": [
     "error: the argument '--json' cannot be used with '--report <PATH>'",
     "",
-    "Usage: xrf-cli archive pack-patch --target <target> --dest <dest> --json <SOURCE>",
+    "Usage: xrf-cli archive pack-patch --path <path> --target <target> --dest <dest> --json",
     "",
     "For more information, try '--help'.",
   ],
@@ -53,9 +53,9 @@ exports[`archive pack-patch arguments should require an input 1`] = `
   "exitCode": 2,
   "stderr": [
     "error: the following required arguments were not provided:",
-    "  <SOURCE>",
+    "  --path <path>",
     "",
-    "Usage: xrf-cli archive pack-patch --target <target> --dest <dest> <SOURCE>",
+    "Usage: xrf-cli archive pack-patch --path <path> --target <target> --dest <dest>",
     "",
     "For more information, try '--help'.",
   ],

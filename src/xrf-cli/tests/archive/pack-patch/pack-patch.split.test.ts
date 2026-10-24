@@ -22,6 +22,7 @@ describe("archive pack-patch split input", () => {
     ]);
 
     published = box.run("archive pack-patch", [
+      "--path",
       install,
       "--dest",
       box.at("patch"),

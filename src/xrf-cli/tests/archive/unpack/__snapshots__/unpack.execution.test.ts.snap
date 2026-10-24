@@ -8,7 +8,7 @@ exports[`archive unpack execution width should unpack on a single worker 1`] = `
     "Workers: <workers> (requested)",
     "Unpack source: <sandbox>/packed/cfg.db",
     "Unpack destination: <sandbox>/serial",
-    "Summary: 1 archive(s), 21 file(s), 4.88 KB compressed, 11.5 KB real",
+    "Summary: 1 archive(s), 14 file(s), 7 directory record(s), 4.88 KB compressed, 11.5 KB real",
     "Unpacked archive in <duration> (preparation <duration>, unpack <duration>)",
   ],
 }

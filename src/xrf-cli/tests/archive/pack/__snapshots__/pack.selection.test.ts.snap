@@ -8,7 +8,7 @@ exports[`archive pack selection should restore every selected byte 1`] = `
     "Workers: <workers> (auto)",
     "Unpack source: <sandbox>/direct/selection.db",
     "Unpack destination: <sandbox>/unpacked",
-    "Summary: 1 archive(s), 10 file(s), 43 B compressed, 43 B real",
+    "Summary: 1 archive(s), 6 file(s), 4 directory record(s), 43 B compressed, 43 B real",
     "Unpacked archive in <duration> (preparation <duration>, unpack <duration>)",
   ],
 }

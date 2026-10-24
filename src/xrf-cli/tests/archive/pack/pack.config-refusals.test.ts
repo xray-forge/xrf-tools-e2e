@@ -15,7 +15,7 @@ describe("archive pack configuration refusals", () => {
 
     unsupported = box.run(
       "archive pack",
-      [gamedata("configs"), "--dest", box.at("unsupported"), "--name", "cfg", "--config", misnamed],
+      ["--path", gamedata("configs"), "--dest", box.at("unsupported"), "--name", "cfg", "--config", misnamed],
       { expectExit: 1 }
     );
   });

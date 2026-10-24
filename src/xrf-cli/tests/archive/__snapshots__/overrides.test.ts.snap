@@ -84,7 +84,11 @@ exports[`volume set overrides should report the same buried copy from the listin
     ],
     "isShadowedIncluded": true,
     "mounts": [
-      "Archive   <sandbox>/db (db)",
+      {
+        "kind": "archive",
+        "label": "db",
+        "root": "<sandbox>/db",
+      },
     ],
     "origin": "<sandbox>/db",
     "shadowed": [
@@ -131,8 +135,8 @@ exports[`volume set overrides should write the expected files 1`] = `
   },
   {
     "path": "listing.json",
-    "sha256": "91148bf79a51cf651d12c526b2c936b0de43f1c00194a7e92946be2a045287c8",
-    "size": 1067,
+    "sha256": "5891020de154b99c48c74724b2900052797ce2b3c2063404c917238fb4352745",
+    "size": 1128,
   },
   {
     "path": "patch/Textures/Wpn/WPN_AK74.DDS",

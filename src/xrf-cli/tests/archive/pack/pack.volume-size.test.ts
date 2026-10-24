@@ -28,19 +28,29 @@ describe("archive pack volume size", () => {
     // the configuration is built at all.
     refusedTooSmall = box.run(
       "archive pack",
-      [gamedata("configs"), "--dest", box.at("too-small"), "--name", "cfg", "--max-size", "0"],
+      ["--path", gamedata("configs"), "--dest", box.at("too-small"), "--name", "cfg", "--max-size", "0"],
       { expectExit: 2 }
     );
 
     refusedOversized = box.run(
       "archive pack",
-      [gamedata("configs"), "--dest", box.at("refused"), "--name", "cfg", "--max-size", String(OVERSIZED_MEGABYTES)],
+      [
+        "--path",
+        gamedata("configs"),
+        "--dest",
+        box.at("refused"),
+        "--name",
+        "cfg",
+        "--max-size",
+        String(OVERSIZED_MEGABYTES),
+      ],
       { expectExit: 1 }
     );
 
     // The same size, allowed. The archive is well-formed; what it is not is loadable by any shipped engine, which is
     // what the flag's name and the warning both say.
     allowedOversized = box.run("archive pack", [
+      "--path",
       gamedata("configs"),
       "--dest",
       box.at("allowed"),
@@ -55,6 +65,7 @@ describe("archive pack volume size", () => {
     refusedMistyped = box.run(
       "archive pack",
       [
+        "--path",
         gamedata("configs"),
         "--dest",
         box.at("mistyped"),
