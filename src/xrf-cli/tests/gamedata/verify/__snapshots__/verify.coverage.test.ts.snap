@@ -20,7 +20,7 @@ exports[`gamedata verify meets a declared source it cannot open should carry the
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Verify error: Project gamedata verification is incomplete",
+  "error": "Verify error: Gamedata project did not complete, status: incomplete",
   "execution": {
     "origin": "auto",
     "workers": "<workers>",
@@ -40,28 +40,28 @@ exports[`gamedata verify meets a declared source it cannot open should carry the
         "duration": "<duration>",
         "findings": [
           {
-            "assetPath": "db",
             "message": "Declared source '$arch_dir$' could not be opened, so no result covers it: Read error: archive <sandbox>/install/db/files.db0 declares a 1629515361-byte chunk at 8, beyond its 21-byte end",
             "ruleId": "coverage.skipped-mount",
+            "subject": "db",
           },
         ],
+        "id": "coverage",
         "status": "incomplete",
         "summary": "1 declared source(s) could not be opened, so no result covers them",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "ltx",
         "status": "passed",
         "summary": "1/1 LTX files formatted; 0/1 sections valid",
-        "verificationType": "ltx",
       },
     ],
     "duration": "<duration>",
@@ -102,7 +102,7 @@ exports[`gamedata verify meets a declared source it cannot open should preserve 
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Verify error: Project gamedata verification is incomplete",
+  "error": "Verify error: Gamedata project did not complete, status: incomplete",
   "execution": {
     "origin": "auto",
     "workers": "<workers>",
@@ -122,28 +122,28 @@ exports[`gamedata verify meets a declared source it cannot open should preserve 
         "duration": "<duration>",
         "findings": [
           {
-            "assetPath": "db",
             "message": "Declared source '$arch_dir$' could not be opened, so no result covers it: Read error: archive <sandbox>/install/db/files.db0 declares a 1629515361-byte chunk at 8, beyond its 21-byte end",
             "ruleId": "coverage.skipped-mount",
+            "subject": "db",
           },
         ],
+        "id": "coverage",
         "status": "incomplete",
         "summary": "1 declared source(s) could not be opened, so no result covers them",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "scripts",
         "status": "passed",
         "summary": "0/0 scripts valid",
-        "verificationType": "scripts",
       },
     ],
     "duration": "<duration>",
@@ -184,7 +184,7 @@ exports[`gamedata verify meets a declared source it cannot open should preserve 
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Verify error: Project gamedata verification is incomplete",
+  "error": "Verify error: Gamedata project did not complete, status: incomplete",
   "execution": {
     "origin": "auto",
     "workers": "<workers>",
@@ -204,28 +204,28 @@ exports[`gamedata verify meets a declared source it cannot open should preserve 
         "duration": "<duration>",
         "findings": [
           {
-            "assetPath": "db",
             "message": "Declared source '$arch_dir$' could not be opened, so no result covers it: Read error: archive <sandbox>/install/db/files.db0 declares a 1629515361-byte chunk at 8, beyond its 21-byte end",
             "ruleId": "coverage.skipped-mount",
+            "subject": "db",
           },
         ],
+        "id": "coverage",
         "status": "incomplete",
         "summary": "1 declared source(s) could not be opened, so no result covers them",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "scripts",
         "status": "passed",
         "summary": "0/0 scripts valid",
-        "verificationType": "scripts",
       },
     ],
     "duration": "<duration>",
@@ -285,23 +285,23 @@ exports[`gamedata verify meets a declared source it cannot open should preserve 
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "scripts",
         "status": "passed",
         "summary": "0/0 scripts valid",
-        "verificationType": "scripts",
       },
     ],
     "duration": "<duration>",
@@ -320,8 +320,8 @@ exports[`gamedata verify meets a declared source it cannot open should preserve 
 [
   {
     "path": "clean.json",
-    "sha256": "a8bfe6ad3fab3082014348857e96dea9b3b810625a6b1b91464c70c144ce5919",
-    "size": 1408,
+    "sha256": "c7ddd89dcbaad7c223da7003ba9ee0975560b5c821a412c969710b0a03386e50",
+    "size": 1366,
   },
   {
     "path": "clean/fsgame.ltx",
@@ -335,13 +335,13 @@ exports[`gamedata verify meets a declared source it cannot open should preserve 
   },
   {
     "path": "empty-check.json",
-    "sha256": "4697f75fb67aff6f087a15bce96ad87d3e615505498287678ca02e85b5551457",
-    "size": 2066,
+    "sha256": "a9df4eb31cf1a605d20aa5147033e39b5e8fc7034e5372b2444dbc71118f879d",
+    "size": 2032,
   },
   {
     "path": "ignore.json",
-    "sha256": "4697f75fb67aff6f087a15bce96ad87d3e615505498287678ca02e85b5551457",
-    "size": 2066,
+    "sha256": "a9df4eb31cf1a605d20aa5147033e39b5e8fc7034e5372b2444dbc71118f879d",
+    "size": 2032,
   },
   {
     "path": "install/db/files.db0",
@@ -360,13 +360,13 @@ exports[`gamedata verify meets a declared source it cannot open should preserve 
   },
   {
     "path": "report.json",
-    "sha256": "d39868569fe5642f5a37dcc6c196b8624ce0dcc83c9f998a4014b00776853c81",
-    "size": 2088,
+    "sha256": "b413eafbece1ad54c1d7609dd67d402d8ca7d5fcf531795cc5eff8d1b6142b51",
+    "size": 2054,
   },
   {
     "path": "silent.json",
-    "sha256": "d39868569fe5642f5a37dcc6c196b8624ce0dcc83c9f998a4014b00776853c81",
-    "size": 2088,
+    "sha256": "b413eafbece1ad54c1d7609dd67d402d8ca7d5fcf531795cc5eff8d1b6142b51",
+    "size": 2054,
   },
 ]
 `;
@@ -376,12 +376,8 @@ exports[`gamedata verify meets a declared source it cannot open should warn whic
   "exitCode": 1,
   "stderr": [
     "Declared source could not be opened: $arch_dir$ at <sandbox>/install/db: Read error: archive <sandbox>/install/db/files.db0 declares a 1629515361-byte chunk at 8, beyond its 21-byte end",
-    "",
-    "Project gamedata verification is incomplete",
-    "- 1 declared source(s) could not be opened, so no result covers them",
-    "  - [coverage] <sandbox>/install/db: Declared source '$arch_dir$' could not be opened, so no result covers it: Read error: archive <sandbox>/install/db/files.db0 declares a 1629515361-byte chunk at 8, beyond its 21-byte end",
-    "Gamedata project checked in <duration>",
-    "Error: Verify error: Project gamedata verification is incomplete",
+    "Check 'coverage' is incomplete with 1 finding(s)",
+    "Error: Verify error: Gamedata project did not complete, status: incomplete",
   ],
   "stdout": [
     "Workers: <workers> (auto)",
@@ -406,6 +402,7 @@ exports[`gamedata verify meets a declared source it cannot open should warn whic
     "Verified 0.00%, 1 files, 0 sections, 0 fields",
     "Found 0 error(s)",
     "Verified gamedata ltx files in <duration>",
+    "Gamedata project checked in <duration>",
   ],
 }
 `;

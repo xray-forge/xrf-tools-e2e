@@ -27,7 +27,8 @@ describe("gamedata verify meets diverging motion labels", () => {
 
     writeScrambledMotionLabels(gamedata("meshes/omf/wpn_knife_hud_animation.omf"), box.at(REFERENCED_BANK));
 
-    swept = box.run("gamedata verify", [root, "--checks", "meshes"], { expectExit: 3 });
+    // Verbose, because findings are listed under their check only then.
+    swept = box.run("gamedata verify", ["--path", root, "--checks", "meshes", "--verbose"], { expectExit: 3 });
   });
 
   // Reported alongside the bone finding the same bank earns, rather than instead of it: a sweep

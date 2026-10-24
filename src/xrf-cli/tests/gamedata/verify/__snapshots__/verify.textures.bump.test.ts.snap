@@ -39,34 +39,34 @@ exports[`gamedata verify texture bump declarations should write a readable repor
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [
           {
-            "assetPath": "textures/descriptors/missing-bump.thm",
             "message": "Texture descriptor declares bump 'bump\\missing' that is not in gamedata, the engine binds nothing",
             "ruleId": "textures.bump",
+            "subject": "textures/descriptors/missing-bump.thm",
           },
           {
-            "assetPath": "textures/descriptors/missing-companion.thm",
             "message": "Texture descriptor declares bump 'bump\\companion' whose companion 'bump\\companion#' is not in gamedata, the engine binds nothing",
             "ruleId": "textures.bump-companion",
+            "subject": "textures/descriptors/missing-companion.thm",
           },
         ],
+        "id": "textures",
         "status": "failed",
         "summary": "3/3 textures valid; 2/3 declared bumps resolved, 1 bumps without a companion",
-        "verificationType": "textures",
       },
     ],
     "duration": "<duration>",
@@ -125,8 +125,8 @@ exports[`gamedata verify texture bump declarations should write a readable repor
   },
   {
     "path": "report.json",
-    "sha256": "150b0cf4376950abcf38dde3ba7988935ef7e8ee0466c31aa8e6e1818447f638",
-    "size": 2058,
+    "sha256": "bf045e7cab61616431ef6588d639e5fcc1cc358152e00f9523fbb6a57e876df8",
+    "size": 2012,
   },
 ]
 `;

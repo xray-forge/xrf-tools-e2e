@@ -29,10 +29,17 @@ describe("gamedata verify DDS format compatibility", () => {
     fs.writeFileSync(box.at("unsupported/textures/format.dds"), texture);
     inputs = box.manifest();
 
-    box.run("gamedata verify", [box.at("supported"), "--checks", "textures", "--report", box.at("supported.json")]);
+    box.run("gamedata verify", [
+      "--path",
+      box.at("supported"),
+      "--checks",
+      "textures",
+      "--report",
+      box.at("supported.json"),
+    ]);
     box.run(
       "gamedata verify",
-      [box.at("unsupported"), "--checks", "textures", "--report", box.at("unsupported.json")],
+      ["--path", box.at("unsupported"), "--checks", "textures", "--report", box.at("unsupported.json")],
       {
         expectExit: 3,
       }
@@ -46,10 +53,10 @@ describe("gamedata verify DDS format compatibility", () => {
       result: {
         status: "passed",
         checks: [
-          { verificationType: "coverage", status: "skipped", findings: [] },
-          { verificationType: "collisions", status: "skipped", findings: [] },
+          { id: "coverage", status: "skipped", findings: [] },
+          { id: "collisions", status: "skipped", findings: [] },
           {
-            verificationType: "textures",
+            id: "textures",
             status: "passed",
             summary: "1/1 textures valid; 0/0 declared bumps resolved",
             findings: [],
@@ -66,15 +73,15 @@ describe("gamedata verify DDS format compatibility", () => {
       result: {
         status: "failed",
         checks: [
-          { verificationType: "coverage", status: "skipped", findings: [] },
-          { verificationType: "collisions", status: "skipped", findings: [] },
+          { id: "coverage", status: "skipped", findings: [] },
+          { id: "collisions", status: "skipped", findings: [] },
           {
-            verificationType: "textures",
+            id: "textures",
             status: "failed",
             summary: "0/1 textures valid; 0/0 declared bumps resolved",
             findings: [
               {
-                assetPath: "textures/format.dds",
+                subject: "textures/format.dds",
                 ruleId: "textures.dds",
                 message: "Texture uses an unsupported format",
               },

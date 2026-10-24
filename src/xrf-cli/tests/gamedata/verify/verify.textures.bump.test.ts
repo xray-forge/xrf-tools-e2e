@@ -34,9 +34,13 @@ describe("gamedata verify texture bump declarations", () => {
 
     inputs = box.manifest();
 
-    verification = box.run("gamedata verify", [root, "--checks", "textures", "--report", box.at("report.json")], {
-      expectExit: 3,
-    });
+    verification = box.run(
+      "gamedata verify",
+      ["--path", root, "--checks", "textures", "--report", box.at("report.json")],
+      {
+        expectExit: 3,
+      }
+    );
   });
 
   it("should count a resolved orphan descriptor while naming missing bump and companion fixes separately", () => {
@@ -49,18 +53,18 @@ describe("gamedata verify texture bump declarations", () => {
         checks: expect.arrayContaining([
           {
             duration: "<duration>",
-            verificationType: "textures",
+            id: "textures",
             status: "failed",
             summary: "3/3 textures valid; 2/3 declared bumps resolved, 1 bumps without a companion",
             findings: [
               {
                 ruleId: "textures.bump",
-                assetPath: "textures/descriptors/missing-bump.thm",
+                subject: "textures/descriptors/missing-bump.thm",
                 message: expect.stringContaining("bump\\missing"),
               },
               {
                 ruleId: "textures.bump-companion",
-                assetPath: "textures/descriptors/missing-companion.thm",
+                subject: "textures/descriptors/missing-companion.thm",
                 message: expect.stringContaining("bump\\companion#"),
               },
             ],

@@ -8,7 +8,15 @@ describe("gamedata verify empty check report", () => {
 
   beforeAll(() => {
     // The corpus has no scripts; this pins an empty check's document, not script validation.
-    box.run("gamedata verify", [gamedata(), "--checks", "scripts", "--silent", "--report", box.at("scripts.json")]);
+    box.run("gamedata verify", [
+      "--path",
+      gamedata(),
+      "--checks",
+      "scripts",
+      "--silent",
+      "--report",
+      box.at("scripts.json"),
+    ]);
   });
 
   it("should report one check as a readable document", () => {

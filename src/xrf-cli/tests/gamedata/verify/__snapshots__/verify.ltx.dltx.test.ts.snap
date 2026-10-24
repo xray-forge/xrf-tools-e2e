@@ -39,23 +39,23 @@ exports[`gamedata verify resolved DLTX schema should write the expected reports 
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "ltx",
         "status": "passed",
         "summary": "2/2 LTX files formatted; 1/1 sections valid",
-        "verificationType": "ltx",
       },
     ],
     "duration": "<duration>",
@@ -109,34 +109,34 @@ exports[`gamedata verify resolved DLTX schema should write the expected reports 
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [
           {
-            "assetPath": "configs/system.ltx",
             "message": "[wpn_test] cost: Invalid value, unsigned 32 bit number is expected, got 'expensive'",
             "ruleId": "ltx.schema",
+            "subject": "configs/system.ltx",
           },
           {
-            "assetPath": "configs/system.ltx",
             "message": "[wpn_test] rpm: Required field was not provided",
             "ruleId": "ltx.schema",
+            "subject": "configs/system.ltx",
           },
         ],
+        "id": "ltx",
         "status": "failed",
         "summary": "3/3 LTX files formatted; 0/1 sections valid",
-        "verificationType": "ltx",
       },
     ],
     "duration": "<duration>",
@@ -155,8 +155,8 @@ exports[`gamedata verify resolved DLTX schema should write the expected reports 
 [
   {
     "path": "clean.json",
-    "sha256": "bd8f1b56072dc9705be405bc2bf5026533221a381c2dc7352deaf2c134a1218e",
-    "size": 1431,
+    "sha256": "fede75464a1ac36cb69636645172bca326b0ba78532d1d94fa6f230966d06d76",
+    "size": 1389,
   },
   {
     "path": "clean/configs/system.ltx",
@@ -170,8 +170,8 @@ exports[`gamedata verify resolved DLTX schema should write the expected reports 
   },
   {
     "path": "patched.json",
-    "sha256": "91c66e378b6454eb224cdb27c48b0de27df5dbb0bef0efeb8d354f9f3aa523d1",
-    "size": 1865,
+    "sha256": "713a62fcae3d07c71dfde4876f19f1ee3fd9a71c572878ae49e4df55ff6b95ac",
+    "size": 1819,
   },
   {
     "path": "patched/configs/mod_system_test.ltx",

@@ -14,8 +14,16 @@ describe("gamedata verify read tracing", () => {
     box.write("gamedata/configs/test.scheme.ltx", "[$test]\r\n$strict = true\r\nvalue = u32\r\n");
     inputs = box.manifest();
 
-    normal = box.run("gamedata verify", [box.at("gamedata"), "--checks", "ltx", "--report", box.at("normal.json")]);
+    normal = box.run("gamedata verify", [
+      "--path",
+      box.at("gamedata"),
+      "--checks",
+      "ltx",
+      "--report",
+      box.at("normal.json"),
+    ]);
     traced = box.run("gamedata verify", [
+      "--path",
       box.at("gamedata"),
       "--checks",
       "ltx",
@@ -32,10 +40,10 @@ describe("gamedata verify read tracing", () => {
       result: {
         status: "passed",
         checks: [
-          { verificationType: "coverage", status: "skipped", findings: [] },
-          { verificationType: "collisions", status: "skipped", findings: [] },
+          { id: "coverage", status: "skipped", findings: [] },
+          { id: "collisions", status: "skipped", findings: [] },
           {
-            verificationType: "ltx",
+            id: "ltx",
             status: "passed",
             summary: "2/2 LTX files formatted; 1/1 sections valid",
             findings: [],

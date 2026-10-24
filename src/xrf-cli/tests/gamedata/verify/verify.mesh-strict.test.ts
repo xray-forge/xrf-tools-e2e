@@ -9,7 +9,7 @@ describe("gamedata verify strict mesh validation", () => {
   let strict: CliResult;
 
   beforeAll(() => {
-    strict = box.run("gamedata verify", [gamedata(), "--checks", "meshes", "--strict"], { expectExit: 3 });
+    strict = box.run("gamedata verify", ["--path", gamedata(), "--checks", "meshes", "--strict"], { expectExit: 3 });
   });
 
   // This corpus already fails normal mesh validation; warning escalation has a separate texture fixture.

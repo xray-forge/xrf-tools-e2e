@@ -39,23 +39,23 @@ exports[`gamedata verify renderer shaders should record readable reports and onl
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "shaders",
         "status": "passed",
         "summary": "1 shader scripts and 2 shader sources checked, 0 problems",
-        "verificationType": "shaders",
       },
     ],
     "duration": "<duration>",
@@ -109,29 +109,29 @@ exports[`gamedata verify renderer shaders should record readable reports and onl
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [
           {
-            "assetPath": "shaders/r3/main.ps",
             "message": "Not found error: Shader shaders\\r3\\main.ps includes missing file 'shared/missing.h' on line 1",
             "ruleId": "shaders.include-missing",
+            "subject": "shaders/r3/main.ps",
           },
         ],
+        "id": "shaders",
         "status": "failed",
         "summary": "1 shader scripts and 1 shader sources checked, 1 problems",
-        "verificationType": "shaders",
       },
     ],
     "duration": "<duration>",
@@ -150,8 +150,8 @@ exports[`gamedata verify renderer shaders should record readable reports and onl
 [
   {
     "path": "damaged.json",
-    "sha256": "28e27fe512c76bd7078dddfadfbb2837f95fa6078dd731bfc284a2252c11b17b",
-    "size": 1725,
+    "sha256": "54cf7b6d9c51432d1ea69273e928372c0c5dbf5c7c9538f2c0315d3f98cbc48b",
+    "size": 1681,
   },
   {
     "path": "damaged/configs/system.ltx",
@@ -175,8 +175,8 @@ exports[`gamedata verify renderer shaders should record readable reports and onl
   },
   {
     "path": "valid.json",
-    "sha256": "ffb01f95bdddb9b34bb239f59c7f15608a2866d5d2d3a1f540d4a801467c0df7",
-    "size": 1447,
+    "sha256": "2a0a6a56b5dc4116fd57a45a32376762293ee1c014fe30d26a662b8f539baa36",
+    "size": 1405,
   },
   {
     "path": "valid/configs/system.ltx",

@@ -46,10 +46,17 @@ describe("gamedata verify weapons", () => {
     );
     inputsBefore = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("missing/"));
 
-    valid = box.run("gamedata verify", [box.at("valid"), "--checks", "weapons", "--report", box.at("valid.json")]);
+    valid = box.run("gamedata verify", [
+      "--path",
+      box.at("valid"),
+      "--checks",
+      "weapons",
+      "--report",
+      box.at("valid.json"),
+    ]);
     missingVisual = box.run(
       "gamedata verify",
-      [box.at("missing"), "--checks", "weapons", "--report", box.at("missing.json")],
+      ["--path", box.at("missing"), "--checks", "weapons", "--report", box.at("missing.json")],
       { expectExit: 3 }
     );
     inputsAfter = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("missing/"));
@@ -64,9 +71,9 @@ describe("gamedata verify weapons", () => {
         status: "passed",
         skippedMounts: [],
         checks: [
-          { verificationType: "coverage", status: "skipped", summary: "Every declared source opened", findings: [] },
-          { verificationType: "collisions", status: "skipped", summary: "No unreachable files", findings: [] },
-          { verificationType: "weapons", status: "passed", summary: "1/1 weapons valid", findings: [] },
+          { id: "coverage", status: "skipped", summary: "Every declared source opened", findings: [] },
+          { id: "collisions", status: "skipped", summary: "No unreachable files", findings: [] },
+          { id: "weapons", status: "passed", summary: "1/1 weapons valid", findings: [] },
         ],
       },
     });
@@ -81,16 +88,16 @@ describe("gamedata verify weapons", () => {
         status: "failed",
         skippedMounts: [],
         checks: [
-          { verificationType: "coverage", status: "skipped", summary: "Every declared source opened", findings: [] },
-          { verificationType: "collisions", status: "skipped", summary: "No unreachable files", findings: [] },
+          { id: "coverage", status: "skipped", summary: "Every declared source opened", findings: [] },
+          { id: "collisions", status: "skipped", summary: "No unreachable files", findings: [] },
           {
-            verificationType: "weapons",
+            id: "weapons",
             status: "failed",
             summary: "0/1 weapons valid",
             findings: [
               {
                 ruleId: "weapons.validation",
-                assetPath: "configs/system.ltx",
+                subject: "configs/system.ltx",
                 message: "Weapon section [wpn_test] is invalid",
               },
             ],

@@ -15,10 +15,17 @@ describe("gamedata verify ineffective texture declarations", () => {
     writeTextureDescriptor(box.at("gamedata/textures/disqualified.thm"), { bump: "detail", textureType: 2 });
     inputs = box.manifest();
 
-    box.run("gamedata verify", [box.at("gamedata"), "--checks", "textures", "--report", box.at("ordinary.json")]);
+    box.run("gamedata verify", [
+      "--path",
+      box.at("gamedata"),
+      "--checks",
+      "textures",
+      "--report",
+      box.at("ordinary.json"),
+    ]);
     box.run(
       "gamedata verify",
-      [box.at("gamedata"), "--checks", "textures", "--strict", "--report", box.at("strict.json")],
+      ["--path", box.at("gamedata"), "--checks", "textures", "--strict", "--report", box.at("strict.json")],
       { expectExit: 3 }
     );
   });
@@ -36,18 +43,18 @@ describe("gamedata verify ineffective texture declarations", () => {
           checks: expect.arrayContaining([
             {
               duration: "<duration>",
-              verificationType: "textures",
+              id: "textures",
               status,
               summary: "0/0 textures valid; 0/0 declared bumps resolved, 2 bump declarations the engine never reads",
               findings: [
                 {
                   ruleId: "textures.bump-declaration",
-                  assetPath: "textures/disqualified.thm",
+                  subject: "textures/disqualified.thm",
                   message: expect.stringContaining("Bump Map"),
                 },
                 {
                   ruleId: "textures.bump-declaration",
-                  assetPath: "textures/empty.thm",
+                  subject: "textures/empty.thm",
                   message: expect.stringContaining("empty name"),
                 },
               ],

@@ -35,12 +35,16 @@ describe("gamedata verify animations", () => {
     box.copyTruncated(gamedata("meshes/omf/wpn_knife_hud_animation.omf"), `damaged/${HUD_MOTION_BANK}`, 80);
     inputsBefore = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("damaged/"));
 
-    valid = box.run("gamedata verify", [box.at("valid"), "--checks", "animations", "--report", box.at("valid.json")], {
-      expectExit: 0,
-    });
+    valid = box.run(
+      "gamedata verify",
+      ["--path", box.at("valid"), "--checks", "animations", "--report", box.at("valid.json")],
+      {
+        expectExit: 0,
+      }
+    );
     damaged = box.run(
       "gamedata verify",
-      [box.at("damaged"), "--checks", "animations", "--report", box.at("damaged.json")],
+      ["--path", box.at("damaged"), "--checks", "animations", "--report", box.at("damaged.json")],
       { expectExit: 3 }
     );
     inputsAfter = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("damaged/"));
@@ -53,14 +57,14 @@ describe("gamedata verify animations", () => {
       outcome: "success",
       result: {
         checks: [
-          { findings: [], status: "skipped", verificationType: "coverage" },
-          { findings: [], status: "skipped", verificationType: "collisions" },
+          { findings: [], status: "skipped", id: "coverage" },
+          { findings: [], status: "skipped", id: "collisions" },
           {
             findings: [],
             status: "passed",
             summary:
               "1/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
-            verificationType: "animations",
+            id: "animations",
           },
         ],
         status: "passed",
@@ -75,12 +79,12 @@ describe("gamedata verify animations", () => {
       outcome: "checkFailed",
       result: {
         checks: [
-          { findings: [], status: "skipped", verificationType: "coverage" },
-          { findings: [], status: "skipped", verificationType: "collisions" },
+          { findings: [], status: "skipped", id: "coverage" },
+          { findings: [], status: "skipped", id: "collisions" },
           {
             findings: [
               {
-                assetPath: "configs/system.ltx",
+                subject: "configs/system.ltx",
                 message: "Player HUD section [actor_hud] has invalid animations",
                 ruleId: "animations.player-hud",
               },
@@ -88,7 +92,7 @@ describe("gamedata verify animations", () => {
             status: "failed",
             summary:
               "0/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
-            verificationType: "animations",
+            id: "animations",
           },
         ],
         status: "failed",

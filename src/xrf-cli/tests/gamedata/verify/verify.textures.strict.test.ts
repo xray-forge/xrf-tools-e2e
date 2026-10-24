@@ -27,6 +27,7 @@ describe("gamedata verify texture companion strictness", () => {
     inputs = box.manifest();
 
     ordinary = box.run("gamedata verify", [
+      "--path",
       box.at("companion"),
       "--checks",
       "textures",
@@ -35,10 +36,11 @@ describe("gamedata verify texture companion strictness", () => {
     ]);
     strict = box.run(
       "gamedata verify",
-      [box.at("companion"), "--checks", "textures", "--strict", "--report", box.at("strict.json")],
+      ["--path", box.at("companion"), "--checks", "textures", "--strict", "--report", box.at("strict.json")],
       { expectExit: 3 }
     );
     cleanStrict = box.run("gamedata verify", [
+      "--path",
       box.at("clean"),
       "--checks",
       "textures",
@@ -63,13 +65,13 @@ describe("gamedata verify texture companion strictness", () => {
           checks: expect.arrayContaining([
             {
               duration: "<duration>",
-              verificationType: "textures",
+              id: "textures",
               status,
               summary: "1/1 textures valid; 1/1 declared bumps resolved, 1 bumps without a companion",
               findings: [
                 {
                   ruleId: "textures.bump-companion",
-                  assetPath: "textures/descriptor.thm",
+                  subject: "textures/descriptor.thm",
                   message: expect.stringContaining("bump\\only#"),
                 },
               ],
@@ -90,7 +92,7 @@ describe("gamedata verify texture companion strictness", () => {
         checks: expect.arrayContaining([
           {
             duration: "<duration>",
-            verificationType: "textures",
+            id: "textures",
             status: "passed",
             summary: "2/2 textures valid; 1/1 declared bumps resolved",
             findings: [],

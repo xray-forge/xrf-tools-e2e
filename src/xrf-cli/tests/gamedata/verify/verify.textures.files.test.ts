@@ -17,10 +17,17 @@ describe("gamedata verify texture files", () => {
     box.copyTruncated(gamedata("textures/ui_empty.dds"), "damaged/textures/truncated.dds", 64);
     inputs = box.manifest();
 
-    valid = box.run("gamedata verify", [box.at("valid"), "--checks", "textures", "--report", box.at("valid.json")]);
+    valid = box.run("gamedata verify", [
+      "--path",
+      box.at("valid"),
+      "--checks",
+      "textures",
+      "--report",
+      box.at("valid.json"),
+    ]);
     damaged = box.run(
       "gamedata verify",
-      [box.at("damaged"), "--checks", "textures", "--report", box.at("damaged.json")],
+      ["--path", box.at("damaged"), "--checks", "textures", "--report", box.at("damaged.json")],
       { expectExit: 3 }
     );
   });
@@ -34,7 +41,7 @@ describe("gamedata verify texture files", () => {
         checks: expect.arrayContaining([
           {
             duration: "<duration>",
-            verificationType: "textures",
+            id: "textures",
             status: "passed",
             summary: "1/1 textures valid; 0/0 declared bumps resolved",
             findings: [],
@@ -53,13 +60,13 @@ describe("gamedata verify texture files", () => {
         checks: expect.arrayContaining([
           {
             duration: "<duration>",
-            verificationType: "textures",
+            id: "textures",
             status: "failed",
             summary: "1/2 textures valid; 0/0 declared bumps resolved",
             findings: [
               {
                 ruleId: "textures.read",
-                assetPath: "textures/truncated.dds",
+                subject: "textures/truncated.dds",
                 message: expect.any(String),
               },
             ],

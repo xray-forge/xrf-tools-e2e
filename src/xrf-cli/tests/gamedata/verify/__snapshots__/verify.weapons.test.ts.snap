@@ -39,23 +39,23 @@ exports[`gamedata verify weapons should record readable reports and only expecte
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "weapons",
         "status": "passed",
         "summary": "1/1 weapons valid",
-        "verificationType": "weapons",
       },
     ],
     "duration": "<duration>",
@@ -109,29 +109,29 @@ exports[`gamedata verify weapons should record readable reports and only expecte
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [
           {
-            "assetPath": "configs/system.ltx",
             "message": "Weapon section [wpn_test] is invalid",
             "ruleId": "weapons.validation",
+            "subject": "configs/system.ltx",
           },
         ],
+        "id": "weapons",
         "status": "failed",
         "summary": "0/1 weapons valid",
-        "verificationType": "weapons",
       },
     ],
     "duration": "<duration>",
@@ -150,8 +150,8 @@ exports[`gamedata verify weapons should record readable reports and only expecte
 [
   {
     "path": "missing.json",
-    "sha256": "56b225848eda9633723ce24d77da20c04ce0d660c57e10fb18ba661b1902d777",
-    "size": 1624,
+    "sha256": "110a3b1546cf503ab032927ef1c8a2b49014ffd1f5a65901a7fc3ff951097b8f",
+    "size": 1580,
   },
   {
     "path": "missing/configs/system.ltx",
@@ -175,8 +175,8 @@ exports[`gamedata verify weapons should record readable reports and only expecte
   },
   {
     "path": "valid.json",
-    "sha256": "606d06ffc77c6ff5457d99ce4ab0276de6211a610301b658810a76cc5ea1837e",
-    "size": 1410,
+    "sha256": "b76c682f7bba98c2b172c55085d78f2b8ca128c951ee759b64053c592c246482",
+    "size": 1368,
   },
   {
     "path": "valid/configs/system.ltx",

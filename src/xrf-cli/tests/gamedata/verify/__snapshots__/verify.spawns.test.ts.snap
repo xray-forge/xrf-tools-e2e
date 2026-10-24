@@ -39,23 +39,23 @@ exports[`gamedata verify spawns should record readable reports and only expected
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "spawns",
         "status": "passed",
         "summary": "1/1 spawns valid",
-        "verificationType": "spawns",
       },
     ],
     "duration": "<duration>",
@@ -109,29 +109,29 @@ exports[`gamedata verify spawns should record readable reports and only expected
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [
           {
-            "assetPath": "spawns/all.spawn",
             "message": "Failed to read spawn file: Invalid error: Chunk 0x00000001 at position 60 declares 67940 bytes, 964 remain before source end 1024",
             "ruleId": "spawns.read",
+            "subject": "spawns/all.spawn",
           },
         ],
+        "id": "spawns",
         "status": "failed",
         "summary": "0/1 spawns valid",
-        "verificationType": "spawns",
       },
     ],
     "duration": "<duration>",
@@ -150,8 +150,8 @@ exports[`gamedata verify spawns should record readable reports and only expected
 [
   {
     "path": "damaged.json",
-    "sha256": "8cd0dccd15fab1dddd7f095827f43a56717ab1f43bac0357f18e2b001806aafd",
-    "size": 1703,
+    "sha256": "f70839f162a2e267a7ea6e416a35e53e34a341b9c5c9f7755f743ae06637ef60",
+    "size": 1659,
   },
   {
     "path": "damaged/configs/system.ltx",
@@ -165,8 +165,8 @@ exports[`gamedata verify spawns should record readable reports and only expected
   },
   {
     "path": "valid.json",
-    "sha256": "257762bcafa19e408217d79b564404780bb181972441122824d931296a0a69f0",
-    "size": 1405,
+    "sha256": "89a398383e1d6b0e1ba80d8ad1dbcb4d18ab204b6239f016480acf547984254e",
+    "size": 1363,
   },
   {
     "path": "valid/configs/system.ltx",

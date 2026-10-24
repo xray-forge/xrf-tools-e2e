@@ -16,10 +16,12 @@ describe("gamedata verify execution width", () => {
   let wide: CliResult;
 
   beforeAll(() => {
-    sequential = box.run("gamedata verify", [GAMEDATA, "-j", "1", "--report", box.at("sequential.json")], {
+    sequential = box.run("gamedata verify", ["--path", GAMEDATA, "-j", "1", "--report", box.at("sequential.json")], {
       expectExit: 3,
     });
-    wide = box.run("gamedata verify", [GAMEDATA, "-j", "8", "--report", box.at("wide.json")], { expectExit: 3 });
+    wide = box.run("gamedata verify", ["--path", GAMEDATA, "-j", "8", "--report", box.at("wide.json")], {
+      expectExit: 3,
+    });
   });
 
   it("should really have run at two different widths", () => {

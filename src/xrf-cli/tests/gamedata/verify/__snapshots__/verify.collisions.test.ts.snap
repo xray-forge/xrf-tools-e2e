@@ -4,11 +4,7 @@ exports[`gamedata verify meets unreachable files should answer non-zero and name
 {
   "exitCode": 3,
   "stderr": [
-    "",
-    "Project gamedata is invalid",
-    "- 1 file(s) cannot be reached, another file claims their path",
-    "  - [collisions] textures/k.dds: File '<sandbox>/gamedata/textures/K.dds' cannot be reached, '<sandbox>/gamedata/textures/k.dds' claims this path",
-    "Gamedata project checked in <duration>",
+    "Check 'collisions' is failed with 1 finding(s)",
     "Check failed: 1 finding(s)",
   ],
   "stdout": [
@@ -35,6 +31,7 @@ exports[`gamedata verify meets unreachable files should answer non-zero and name
     "Verified 0.00%, 1 files, 0 sections, 0 fields",
     "Found 0 error(s)",
     "Verified gamedata ltx files in <duration>",
+    "Gamedata project checked in <duration>",
   ],
 }
 `;
@@ -78,29 +75,29 @@ exports[`gamedata verify meets unreachable files should carry the collision as i
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [
           {
-            "assetPath": "textures/k.dds",
             "message": "File '<sandbox>/gamedata/textures/K.dds' cannot be reached, '<sandbox>/gamedata/textures/k.dds' claims this path",
             "ruleId": "collisions.unreachable",
+            "subject": "textures/k.dds",
           },
         ],
+        "id": "collisions",
         "status": "failed",
         "summary": "1 file(s) cannot be reached, another file claims their path",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "ltx",
         "status": "passed",
         "summary": "1/1 LTX files formatted; 0/1 sections valid",
-        "verificationType": "ltx",
       },
     ],
     "duration": "<duration>",
@@ -154,29 +151,29 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [
           {
-            "assetPath": "textures/k.dds",
             "message": "File '<sandbox>/gamedata/textures/K.dds' cannot be reached, '<sandbox>/gamedata/textures/k.dds' claims this path",
             "ruleId": "collisions.unreachable",
+            "subject": "textures/k.dds",
           },
         ],
+        "id": "collisions",
         "status": "failed",
         "summary": "1 file(s) cannot be reached, another file claims their path",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "scripts",
         "status": "passed",
         "summary": "0/0 scripts valid",
-        "verificationType": "scripts",
       },
     ],
     "duration": "<duration>",
@@ -230,29 +227,29 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [
           {
-            "assetPath": "textures/k.dds",
             "message": "File '<sandbox>/gamedata/textures/K.dds' cannot be reached, '<sandbox>/gamedata/textures/k.dds' claims this path",
             "ruleId": "collisions.unreachable",
+            "subject": "textures/k.dds",
           },
         ],
+        "id": "collisions",
         "status": "failed",
         "summary": "1 file(s) cannot be reached, another file claims their path",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "scripts",
         "status": "passed",
         "summary": "0/0 scripts valid",
-        "verificationType": "scripts",
       },
     ],
     "duration": "<duration>",
@@ -306,23 +303,23 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "scripts",
         "status": "passed",
         "summary": "0/0 scripts valid",
-        "verificationType": "scripts",
       },
     ],
     "duration": "<duration>",
@@ -376,23 +373,23 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "scripts",
         "status": "passed",
         "summary": "0/0 scripts valid",
-        "verificationType": "scripts",
       },
     ],
     "duration": "<duration>",
@@ -411,8 +408,8 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
 [
   {
     "path": "clean.json",
-    "sha256": "a8bfe6ad3fab3082014348857e96dea9b3b810625a6b1b91464c70c144ce5919",
-    "size": 1408,
+    "sha256": "c7ddd89dcbaad7c223da7003ba9ee0975560b5c821a412c969710b0a03386e50",
+    "size": 1366,
   },
   {
     "path": "clean/configs/system.ltx",
@@ -426,8 +423,8 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
   },
   {
     "path": "empty-check.json",
-    "sha256": "6b6971993636a52dfb8ae461b738c664721fc978848553b856e91fd4da496dbd",
-    "size": 1738,
+    "sha256": "94a8c99f7800c38f6c0007ef87541c08854be83b5af67b127cf84ad8f8396dc6",
+    "size": 1694,
   },
   {
     "path": "gamedata/configs/system.ltx",
@@ -446,18 +443,18 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
   },
   {
     "path": "ignored-collision.json",
-    "sha256": "a8bfe6ad3fab3082014348857e96dea9b3b810625a6b1b91464c70c144ce5919",
-    "size": 1408,
+    "sha256": "c7ddd89dcbaad7c223da7003ba9ee0975560b5c821a412c969710b0a03386e50",
+    "size": 1366,
   },
   {
     "path": "report.json",
-    "sha256": "65de0fd8db82c7d7007482d3a14875fefcae4909c889f20d8fe86dace4ae9998",
-    "size": 1760,
+    "sha256": "cc643d534b6eee3abbf81cea21ccec0a861cf2eb48a5514850d4e38e7a292308",
+    "size": 1716,
   },
   {
     "path": "unrelated-ignore.json",
-    "sha256": "6b6971993636a52dfb8ae461b738c664721fc978848553b856e91fd4da496dbd",
-    "size": 1738,
+    "sha256": "94a8c99f7800c38f6c0007ef87541c08854be83b5af67b127cf84ad8f8396dc6",
+    "size": 1694,
   },
 ]
 `;

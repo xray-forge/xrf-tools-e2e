@@ -39,29 +39,29 @@ exports[`gamedata verify texture companion strictness should write readable repo
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [
           {
-            "assetPath": "textures/descriptor.thm",
             "message": "Texture descriptor declares bump 'bump\\only' whose companion 'bump\\only#' is not in gamedata, the engine binds nothing",
             "ruleId": "textures.bump-companion",
+            "subject": "textures/descriptor.thm",
           },
         ],
+        "id": "textures",
         "status": "passed",
         "summary": "1/1 textures valid; 1/1 declared bumps resolved, 1 bumps without a companion",
-        "verificationType": "textures",
       },
     ],
     "duration": "<duration>",
@@ -115,29 +115,29 @@ exports[`gamedata verify texture companion strictness should write readable repo
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [
           {
-            "assetPath": "textures/descriptor.thm",
             "message": "Texture descriptor declares bump 'bump\\only' whose companion 'bump\\only#' is not in gamedata, the engine binds nothing",
             "ruleId": "textures.bump-companion",
+            "subject": "textures/descriptor.thm",
           },
         ],
+        "id": "textures",
         "status": "failed",
         "summary": "1/1 textures valid; 1/1 declared bumps resolved, 1 bumps without a companion",
-        "verificationType": "textures",
       },
     ],
     "duration": "<duration>",
@@ -191,23 +191,23 @@ exports[`gamedata verify texture companion strictness should write readable repo
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "textures",
         "status": "passed",
         "summary": "2/2 textures valid; 1/1 declared bumps resolved",
-        "verificationType": "textures",
       },
     ],
     "duration": "<duration>",
@@ -226,8 +226,8 @@ exports[`gamedata verify texture companion strictness should write readable repo
 [
   {
     "path": "clean-strict.json",
-    "sha256": "3251c8421f6d48dd8b91f6e21850fafcaeb4469eee5ba0b365d51f414e4fc96e",
-    "size": 1438,
+    "sha256": "7eb12b83c880e88754646cb460a5ca3740d3ab15712a8fd72fbc787718e9c2b4",
+    "size": 1396,
   },
   {
     "path": "clean/configs/system.ltx",
@@ -266,13 +266,13 @@ exports[`gamedata verify texture companion strictness should write readable repo
   },
   {
     "path": "ordinary.json",
-    "sha256": "44173354111c33e3f173cb32227ae5cedd7151308f16ed7a6f48733513aa94f2",
-    "size": 1747,
+    "sha256": "1de404e915151563db95299a59a660c720cd10cdc927087a93f0187d41363022",
+    "size": 1703,
   },
   {
     "path": "strict.json",
-    "sha256": "b1553d3a425d0716ea81025382c2c1de5f1acba7e721d2e73e4b7d728e358f94",
-    "size": 1775,
+    "sha256": "3a081851ae251e86ca6c2e70b1e4e28b6ac17e1e2fd968099e434fa501c360e3",
+    "size": 1731,
   },
 ]
 `;

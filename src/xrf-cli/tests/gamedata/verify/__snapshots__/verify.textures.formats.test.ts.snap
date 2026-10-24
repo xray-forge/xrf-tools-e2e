@@ -39,23 +39,23 @@ exports[`gamedata verify DDS format compatibility should record the reports and 
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "textures",
         "status": "passed",
         "summary": "1/1 textures valid; 0/0 declared bumps resolved",
-        "verificationType": "textures",
       },
     ],
     "duration": "<duration>",
@@ -109,29 +109,29 @@ exports[`gamedata verify DDS format compatibility should record the reports and 
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [
           {
-            "assetPath": "textures/format.dds",
             "message": "Texture uses an unsupported format",
             "ruleId": "textures.dds",
+            "subject": "textures/format.dds",
           },
         ],
+        "id": "textures",
         "status": "failed",
         "summary": "0/1 textures valid; 0/0 declared bumps resolved",
-        "verificationType": "textures",
       },
     ],
     "duration": "<duration>",
@@ -150,8 +150,8 @@ exports[`gamedata verify DDS format compatibility should record the reports and 
 [
   {
     "path": "supported.json",
-    "sha256": "18fbce18ef3be60cf9308c7df7308f55085f66a200a4518f49cf55e0e3c7314b",
-    "size": 1438,
+    "sha256": "985f1e4312d888737f5b2163ae25515f74b01eb96babce36c3090d4215ac9d35",
+    "size": 1396,
   },
   {
     "path": "supported/configs/system.ltx",
@@ -165,8 +165,8 @@ exports[`gamedata verify DDS format compatibility should record the reports and 
   },
   {
     "path": "unsupported.json",
-    "sha256": "a8a5157597c421e0e5218839b1da7b152d2d2aaa55f137e7a9b93aa4c9504286",
-    "size": 1645,
+    "sha256": "18f2e6f4519c1e54016341094c2cfbfa34a99f21ecba55266c70e82bb2929526",
+    "size": 1601,
   },
   {
     "path": "unsupported/configs/system.ltx",

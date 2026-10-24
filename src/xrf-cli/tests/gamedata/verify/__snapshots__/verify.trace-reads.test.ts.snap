@@ -39,23 +39,23 @@ exports[`gamedata verify read tracing should record the trace and expected artif
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "ltx",
         "status": "passed",
         "summary": "2/2 LTX files formatted; 1/1 sections valid",
-        "verificationType": "ltx",
       },
     ],
     "duration": "<duration>",
@@ -102,13 +102,13 @@ exports[`gamedata verify read tracing should record the trace and expected artif
   },
   {
     "path": "normal.json",
-    "sha256": "9b94870dfb6647ea5f414d7d27f942c3661bf364c43352f0a1dbcb19e34c9080",
-    "size": 1430,
+    "sha256": "fa99a6b24d310675eada5f93f788026a81b591343f7ba46978ade2e42fd4ed40",
+    "size": 1388,
   },
   {
     "path": "traced.json",
-    "sha256": "1d967ad6c18b501d8113d0a6bac101edd412f8f9eb79fc1ed68215ca854f7eac",
-    "size": 1776,
+    "sha256": "c2adcb070b7cc345aa231ea8ea802c857cf28336c6fc9bab2dd8efc3aa5ef07a",
+    "size": 1734,
   },
 ]
 `;

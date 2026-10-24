@@ -29,12 +29,16 @@ describe("gamedata verify animations envelopes", () => {
     box.copyIn(resource("anims/effect_noise_granularity.ppe"), "damaged/anims/noise_granularity.ppe");
     inputsBefore = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("damaged/"));
 
-    valid = box.run("gamedata verify", [box.at("valid"), "--checks", "animations", "--report", box.at("valid.json")], {
-      expectExit: 0,
-    });
+    valid = box.run(
+      "gamedata verify",
+      ["--path", box.at("valid"), "--checks", "animations", "--report", box.at("valid.json")],
+      {
+        expectExit: 0,
+      }
+    );
     damaged = box.run(
       "gamedata verify",
-      [box.at("damaged"), "--checks", "animations", "--report", box.at("damaged.json")],
+      ["--path", box.at("damaged"), "--checks", "animations", "--report", box.at("damaged.json")],
       { expectExit: 3 }
     );
     inputsAfter = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("damaged/"));
@@ -47,13 +51,13 @@ describe("gamedata verify animations envelopes", () => {
       outcome: "success",
       result: {
         checks: [
-          { findings: [], status: "skipped", verificationType: "coverage" },
-          { findings: [], status: "skipped", verificationType: "collisions" },
+          { findings: [], status: "skipped", id: "coverage" },
+          { findings: [], status: "skipped", id: "collisions" },
           {
             findings: [],
             status: "passed",
             summary: expect.stringContaining("1/1 object motions valid, 1/1 post-process effects valid"),
-            verificationType: "animations",
+            id: "animations",
           },
         ],
         status: "passed",
@@ -68,45 +72,45 @@ describe("gamedata verify animations envelopes", () => {
       outcome: "checkFailed",
       result: {
         checks: [
-          { findings: [], status: "skipped", verificationType: "coverage" },
-          { findings: [], status: "skipped", verificationType: "collisions" },
+          { findings: [], status: "skipped", id: "coverage" },
+          { findings: [], status: "skipped", id: "collisions" },
           {
             findings: [
               {
-                assetPath: "anims/extra_chunk.anm",
+                subject: "anims/extra_chunk.anm",
                 message:
                   "Does not write back to the bytes it was read from: 335 bytes read, 323 written, first difference at byte 323",
                 ruleId: "animations.object-motion-round-trip",
               },
               {
-                assetPath: "anims/noise_granularity.ppe",
+                subject: "anims/noise_granularity.ppe",
                 message: "Noise granularity reaches 0.000 at time 1.000, which the engine refuses at full strength",
                 ruleId: "animations.post-process-noise-granularity",
               },
               {
-                assetPath: "anims/non_finite.anm",
+                subject: "anims/non_finite.anm",
                 message: "Channel 'position x' evaluates to NaN at time 0.200",
                 ruleId: "animations.object-motion-value",
               },
               {
-                assetPath: "anims/non_finite.ppe",
+                subject: "anims/non_finite.ppe",
                 message: "Channel 'colour map influence' evaluates to inf at time -5.000",
                 ruleId: "animations.post-process-value",
               },
               {
-                assetPath: "anims/truncated.anm",
+                subject: "anims/truncated.anm",
                 message: expect.stringContaining("Failed to read object motion:"),
                 ruleId: "animations.object-motion-read",
               },
               {
-                assetPath: "anims/truncated.ppe",
+                subject: "anims/truncated.ppe",
                 message: expect.stringContaining("Failed to read post-process effect:"),
                 ruleId: "animations.post-process-read",
               },
             ],
             status: "failed",
             summary: expect.stringContaining("0/3 object motions valid, 0/3 post-process effects valid"),
-            verificationType: "animations",
+            id: "animations",
           },
         ],
         status: "failed",

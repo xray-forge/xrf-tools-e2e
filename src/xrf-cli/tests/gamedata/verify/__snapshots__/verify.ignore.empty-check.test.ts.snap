@@ -19,9 +19,8 @@ exports[`gamedata verify ignored check input should empty a check whose subtree 
     "Verified gamedata path collisions in <duration>, 0 unreachable file(s)",
     "Verify meshes:",
     "Verified gamedata meshes in <duration>, 1/1 shader libraries valid, 205 blender definitions; 0/0 meshes valid",
-    "",
-    "Project gamedata is valid",
-    "Gamedata project verified in <duration>",
+    "Gamedata project checked in <duration>",
+    "Gamedata project: passed",
   ],
 }
 `;
@@ -53,9 +52,8 @@ exports[`gamedata verify ignored check input should empty the LTX check when the
     "No LTX sections were verified",
     "Found 0 error(s)",
     "Verified gamedata ltx files in <duration>",
-    "",
-    "Project gamedata is valid",
-    "Gamedata project verified in <duration>",
+    "Gamedata project checked in <duration>",
+    "Gamedata project: passed",
   ],
 }
 `;

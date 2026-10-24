@@ -17,7 +17,7 @@ describe("gamedata verify particle libraries", () => {
 
     damaged = box.run(
       "gamedata verify",
-      [box.at("gamedata"), "--checks", "particles", "--report", box.at("report.json")],
+      ["--path", box.at("gamedata"), "--checks", "particles", "--report", box.at("report.json")],
       { expectExit: 3 }
     );
     inputsAfter = box.manifest().filter((file) => file.path.startsWith("gamedata/"));
@@ -30,20 +30,20 @@ describe("gamedata verify particle libraries", () => {
       outcome: "checkFailed",
       result: {
         checks: [
-          { findings: [], status: "skipped", verificationType: "coverage" },
-          { findings: [], status: "skipped", verificationType: "collisions" },
+          { findings: [], status: "skipped", id: "coverage" },
+          { findings: [], status: "skipped", id: "collisions" },
           {
             duration: "<duration>",
             findings: [
               {
-                assetPath: "particles.xr",
+                subject: "particles.xr",
                 message: expect.stringContaining("Failed to read particle library:"),
                 ruleId: "particles.library",
               },
             ],
             status: "failed",
             summary: "0/1 particle library files valid",
-            verificationType: "particles",
+            id: "particles",
           },
         ],
         status: "failed",

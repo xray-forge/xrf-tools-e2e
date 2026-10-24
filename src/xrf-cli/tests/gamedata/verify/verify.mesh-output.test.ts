@@ -15,9 +15,9 @@ describe("gamedata verify mesh output", () => {
   beforeAll(() => {
     // This is distinct from execution-width parity: it pins repeatable mesh diagnostics at the command's ordinary
     // scheduler choice, where the verifier itself may fan work out across its assets.
-    meshes = box.run("gamedata verify", [GAMEDATA, "--checks", "meshes"], { expectExit: 3 });
-    meshesAgain = box.run("gamedata verify", [GAMEDATA, "--checks", "meshes"], { expectExit: 3 });
-    meshesThird = box.run("gamedata verify", [GAMEDATA, "--checks", "meshes"], { expectExit: 3 });
+    meshes = box.run("gamedata verify", ["--path", GAMEDATA, "--checks", "meshes"], { expectExit: 3 });
+    meshesAgain = box.run("gamedata verify", ["--path", GAMEDATA, "--checks", "meshes"], { expectExit: 3 });
+    meshesThird = box.run("gamedata verify", ["--path", GAMEDATA, "--checks", "meshes"], { expectExit: 3 });
   });
 
   it("should verify meshes", () => {

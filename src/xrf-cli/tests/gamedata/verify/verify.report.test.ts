@@ -14,7 +14,7 @@ describe("gamedata verify full run", () => {
     // shape, visuals and particle effects referencing textures the trimmed tree does not ship. A
     // non-zero answer with a known set of findings is therefore the correct result, and it is what
     // makes this a real check rather than a tree with nothing to say.
-    verify = box.run("gamedata verify", [gamedata(), "--silent", "--report", box.at("report.json")], {
+    verify = box.run("gamedata verify", ["--path", gamedata(), "--silent", "--report", box.at("report.json")], {
       expectExit: 3,
     });
   });

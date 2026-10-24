@@ -39,23 +39,23 @@ exports[`gamedata verify animations should record the reports as readable docume
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "animations",
         "status": "passed",
         "summary": "1/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
-        "verificationType": "animations",
       },
     ],
     "duration": "<duration>",
@@ -109,29 +109,29 @@ exports[`gamedata verify animations should record the reports as readable docume
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [
           {
-            "assetPath": "configs/system.ltx",
             "message": "Player HUD section [actor_hud] has invalid animations",
             "ruleId": "animations.player-hud",
+            "subject": "configs/system.ltx",
           },
         ],
+        "id": "animations",
         "status": "failed",
         "summary": "0/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
-        "verificationType": "animations",
       },
     ],
     "duration": "<duration>",
@@ -152,11 +152,7 @@ exports[`gamedata verify animations should report a damaged linked motion bank t
   "stderr": [
     "Failed to read linked visual: [actor_hud] - meshes\\dynamics\\devices\\dev_bolt\\dev_bolt_hud_animation.omf - Invalid error: Incomplete chunk header at position 79, expected 8 bytes but only 1 remain",
     "Hud [actor_hud] contains no animations",
-    "",
-    "Project gamedata is invalid",
-    "- 0/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
-    "  - [animations] <sandbox>/damaged/configs/system.ltx: Player HUD section [actor_hud] has invalid animations",
-    "Gamedata project checked in <duration>",
+    "Check 'animations' is failed with 1 finding(s)",
     "Check failed: 1 finding(s)",
   ],
   "stdout": [
@@ -180,6 +176,7 @@ exports[`gamedata verify animations should report a damaged linked motion bank t
     "Verified gamedata object motions, 0/0 valid",
     "Verified gamedata post-process effects, 0/0 valid",
     "Verified gamedata animations in <duration>, 0/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
+    "Gamedata project checked in <duration>",
   ],
 }
 `;
@@ -208,9 +205,8 @@ exports[`gamedata verify animations should validate a HUD with a linked motion b
     "Verified gamedata object motions, 0/0 valid",
     "Verified gamedata post-process effects, 0/0 valid",
     "Verified gamedata animations in <duration>, 1/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
-    "",
-    "Project gamedata is valid",
-    "Gamedata project verified in <duration>",
+    "Gamedata project checked in <duration>",
+    "Gamedata project: passed",
   ],
 }
 `;
@@ -219,8 +215,8 @@ exports[`gamedata verify animations should write only its fixture and reports 1`
 [
   {
     "path": "damaged.json",
-    "sha256": "2060e92927a9d7a7e7c8d52aa6e21aed215b99b9e4ec7f6db10bf6b9e0034f6b",
-    "size": 1787,
+    "sha256": "6073dd14ca56986fea2d152c42b58d3de0e67206c03d3ef63e227de87f65900e",
+    "size": 1743,
   },
   {
     "path": "damaged/configs/system.ltx",
@@ -239,8 +235,8 @@ exports[`gamedata verify animations should write only its fixture and reports 1`
   },
   {
     "path": "valid.json",
-    "sha256": "5db2b0a62cc065d6b03d991c9c5fd0ab87f6ab7583c1276fd871566f5d239b25",
-    "size": 1553,
+    "sha256": "670a5e795c7a891536667615abf569720fcf67aa3c63e3009fcef91b6fa0472a",
+    "size": 1511,
   },
   {
     "path": "valid/configs/system.ltx",

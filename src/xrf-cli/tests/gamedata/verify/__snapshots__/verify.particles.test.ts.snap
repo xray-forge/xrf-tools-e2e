@@ -39,29 +39,29 @@ exports[`gamedata verify particle libraries should record the report as a readab
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [
           {
-            "assetPath": "particles.xr",
             "message": "Failed to read particle library: Invalid error: Chunk 0x00000003 at position 18 declares 1088704 bytes, 482 remain before source end 500",
             "ruleId": "particles.library",
+            "subject": "particles.xr",
           },
         ],
+        "id": "particles",
         "status": "failed",
         "summary": "0/1 particle library files valid",
-        "verificationType": "particles",
       },
     ],
     "duration": "<duration>",
@@ -90,8 +90,8 @@ exports[`gamedata verify particle libraries should write the expected report and
   },
   {
     "path": "report.json",
-    "sha256": "a844d4ba482d761ef3c4f8f817a419babb7d3ed3889288795ca7b8e9ad02c708",
-    "size": 1731,
+    "sha256": "10c8ec7ccf115ebd09722a0b554e91ade1071de72e56fb2725b0c10118a33fe1",
+    "size": 1687,
   },
 ]
 `;

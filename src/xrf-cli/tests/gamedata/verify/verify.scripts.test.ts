@@ -22,10 +22,17 @@ describe("gamedata verify scripts", () => {
       .manifest()
       .filter((file) => file.path.startsWith("valid/") || file.path.startsWith("malformed/"));
 
-    valid = box.run("gamedata verify", [box.at("valid"), "--checks", "scripts", "--report", box.at("valid.json")]);
+    valid = box.run("gamedata verify", [
+      "--path",
+      box.at("valid"),
+      "--checks",
+      "scripts",
+      "--report",
+      box.at("valid.json"),
+    ]);
     malformed = box.run(
       "gamedata verify",
-      [box.at("malformed"), "--checks", "scripts", "--report", box.at("malformed.json")],
+      ["--path", box.at("malformed"), "--checks", "scripts", "--report", box.at("malformed.json")],
       { expectExit: 3 }
     );
     inputsAfter = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("malformed/"));
@@ -40,9 +47,9 @@ describe("gamedata verify scripts", () => {
         status: "passed",
         skippedMounts: [],
         checks: [
-          { verificationType: "coverage", status: "skipped", summary: "Every declared source opened", findings: [] },
-          { verificationType: "collisions", status: "skipped", summary: "No unreachable files", findings: [] },
-          { verificationType: "scripts", status: "passed", summary: "1/1 scripts valid", findings: [] },
+          { id: "coverage", status: "skipped", summary: "Every declared source opened", findings: [] },
+          { id: "collisions", status: "skipped", summary: "No unreachable files", findings: [] },
+          { id: "scripts", status: "passed", summary: "1/1 scripts valid", findings: [] },
         ],
       },
     });
@@ -57,16 +64,16 @@ describe("gamedata verify scripts", () => {
         status: "failed",
         skippedMounts: [],
         checks: [
-          { verificationType: "coverage", status: "skipped", summary: "Every declared source opened", findings: [] },
-          { verificationType: "collisions", status: "skipped", summary: "No unreachable files", findings: [] },
+          { id: "coverage", status: "skipped", summary: "Every declared source opened", findings: [] },
+          { id: "collisions", status: "skipped", summary: "No unreachable files", findings: [] },
           {
-            verificationType: "scripts",
+            id: "scripts",
             status: "failed",
             summary: "1/2 scripts valid",
             findings: [
               {
                 ruleId: "scripts.read",
-                assetPath: "scripts/broken.script",
+                subject: "scripts/broken.script",
                 message:
                   "Verify error: Failed to check LuaJIT script file: scripts\\broken.script, errors: error occurred while creating ast: unexpected token `=`. (starting from line 1, character 13 and ending on line 1, character 14)\nadditional information: expected an expression",
               },

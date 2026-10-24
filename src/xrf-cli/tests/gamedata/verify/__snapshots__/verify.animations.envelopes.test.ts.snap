@@ -24,9 +24,8 @@ exports[`gamedata verify animations envelopes should read, write back and evalua
     "Verified gamedata object motions, 1/1 valid",
     "Verified gamedata post-process effects, 1/1 valid",
     "Verified gamedata animations in <duration>, 0/0 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 0 HUD namespaces, 1/1 object motions valid, 1/1 post-process effects valid",
-    "",
-    "Project gamedata is valid",
-    "Gamedata project verified in <duration>",
+    "Gamedata project checked in <duration>",
+    "Gamedata project: passed",
   ],
 }
 `;
@@ -70,23 +69,23 @@ exports[`gamedata verify animations envelopes should record the reports as reada
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "animations",
         "status": "passed",
         "summary": "0/0 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 0 HUD namespaces, 1/1 object motions valid, 1/1 post-process effects valid",
-        "verificationType": "animations",
       },
     ],
     "duration": "<duration>",
@@ -140,54 +139,54 @@ exports[`gamedata verify animations envelopes should record the reports as reada
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [
           {
-            "assetPath": "anims/extra_chunk.anm",
             "message": "Does not write back to the bytes it was read from: 335 bytes read, 323 written, first difference at byte 323",
             "ruleId": "animations.object-motion-round-trip",
+            "subject": "anims/extra_chunk.anm",
           },
           {
-            "assetPath": "anims/noise_granularity.ppe",
             "message": "Noise granularity reaches 0.000 at time 1.000, which the engine refuses at full strength",
             "ruleId": "animations.post-process-noise-granularity",
+            "subject": "anims/noise_granularity.ppe",
           },
           {
-            "assetPath": "anims/non_finite.anm",
             "message": "Channel 'position x' evaluates to NaN at time 0.200",
             "ruleId": "animations.object-motion-value",
+            "subject": "anims/non_finite.anm",
           },
           {
-            "assetPath": "anims/non_finite.ppe",
             "message": "Channel 'colour map influence' evaluates to inf at time -5.000",
             "ruleId": "animations.post-process-value",
+            "subject": "anims/non_finite.ppe",
           },
           {
-            "assetPath": "anims/truncated.anm",
             "message": "Failed to read object motion: Invalid error: Chunk 0x00001100 at position 8 declares 315 bytes, 92 remain before source end 100",
             "ruleId": "animations.object-motion-read",
+            "subject": "anims/truncated.anm",
           },
           {
-            "assetPath": "anims/truncated.ppe",
             "message": "Failed to read post-process effect: IO error: failed to fill whole buffer",
             "ruleId": "animations.post-process-read",
+            "subject": "anims/truncated.ppe",
           },
         ],
+        "id": "animations",
         "status": "failed",
         "summary": "0/0 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 0 HUD namespaces, 0/3 object motions valid, 0/3 post-process effects valid",
-        "verificationType": "animations",
       },
     ],
     "duration": "<duration>",
@@ -206,16 +205,7 @@ exports[`gamedata verify animations envelopes should report each damaged motion 
 {
   "exitCode": 3,
   "stderr": [
-    "",
-    "Project gamedata is invalid",
-    "- 0/0 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 0 HUD namespaces, 0/3 object motions valid, 0/3 post-process effects valid",
-    "  - [animations] anims/extra_chunk.anm: Does not write back to the bytes it was read from: 335 bytes read, 323 written, first difference at byte 323",
-    "  - [animations] anims/noise_granularity.ppe: Noise granularity reaches 0.000 at time 1.000, which the engine refuses at full strength",
-    "  - [animations] anims/non_finite.anm: Channel 'position x' evaluates to NaN at time 0.200",
-    "  - [animations] anims/non_finite.ppe: Channel 'colour map influence' evaluates to inf at time -5.000",
-    "  - [animations] anims/truncated.anm: Failed to read object motion: Invalid error: Chunk 0x00001100 at position 8 declares 315 bytes, 92 remain before source end 100",
-    "  - [animations] anims/truncated.ppe: Failed to read post-process effect: IO error: failed to fill whole buffer",
-    "Gamedata project checked in <duration>",
+    "Check 'animations' is failed with 6 finding(s)",
     "Check failed: 6 finding(s)",
   ],
   "stdout": [
@@ -244,6 +234,7 @@ exports[`gamedata verify animations envelopes should report each damaged motion 
     "Failed to read post-process effect 'anims\\truncated.ppe': IO error: failed to fill whole buffer",
     "Verified gamedata post-process effects, 0/3 valid",
     "Verified gamedata animations in <duration>, 0/0 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 0 HUD namespaces, 0/3 object motions valid, 0/3 post-process effects valid",
+    "Gamedata project checked in <duration>",
   ],
 }
 `;
@@ -252,8 +243,8 @@ exports[`gamedata verify animations envelopes should write only its fixture and 
 [
   {
     "path": "damaged.json",
-    "sha256": "ed5f3f2b74fafd712713fb7edcc86d717d2ee5f79a31d1eebb19c058ff960412",
-    "size": 3050,
+    "sha256": "5743aaa2f14cd10ac88795d661d1a30da37e715c4dd63e03ff2c0454b4e77672",
+    "size": 2996,
   },
   {
     "path": "damaged/anims/extra_chunk.anm",
@@ -292,8 +283,8 @@ exports[`gamedata verify animations envelopes should write only its fixture and 
   },
   {
     "path": "valid.json",
-    "sha256": "62496a0574317fbeb480caabe94d2c18647e3bd2140488e68d07bc4ac36c1d27",
-    "size": 1551,
+    "sha256": "38f8d362ab05c97c695e5caab914c046c2c30497e9c2724b03830a01c3fc7928",
+    "size": 1509,
   },
   {
     "path": "valid/anims/camera_effects/weapon/ak74_shoot.anm",

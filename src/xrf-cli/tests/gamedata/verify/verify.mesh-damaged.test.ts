@@ -21,7 +21,8 @@ describe("gamedata verify meets a damaged mesh tree", () => {
       fs.readFileSync(gamedata("meshes/ogf/part_none.ogf")).subarray(0, 200)
     );
 
-    swept = box.run("gamedata verify", [root, "--checks", "meshes"], { expectExit: 3 });
+    // Verbose, because findings are listed under their check only then.
+    swept = box.run("gamedata verify", ["--path", root, "--checks", "meshes", "--verbose"], { expectExit: 3 });
   });
 
   // Names the broken asset with the reason, and still reports on the visuals around it.

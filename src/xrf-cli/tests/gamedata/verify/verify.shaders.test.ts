@@ -24,10 +24,17 @@ describe("gamedata verify renderer shaders", () => {
     box.write("damaged/shaders/r3/main.ps", MISSING_SOURCE);
     inputsBefore = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("damaged/"));
 
-    valid = box.run("gamedata verify", [box.at("valid"), "--checks", "shaders", "--report", box.at("valid.json")]);
+    valid = box.run("gamedata verify", [
+      "--path",
+      box.at("valid"),
+      "--checks",
+      "shaders",
+      "--report",
+      box.at("valid.json"),
+    ]);
     damaged = box.run(
       "gamedata verify",
-      [box.at("damaged"), "--checks", "shaders", "--report", box.at("damaged.json")],
+      ["--path", box.at("damaged"), "--checks", "shaders", "--report", box.at("damaged.json")],
       { expectExit: 3 }
     );
     inputsAfter = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("damaged/"));
@@ -42,10 +49,10 @@ describe("gamedata verify renderer shaders", () => {
         status: "passed",
         skippedMounts: [],
         checks: [
-          { verificationType: "coverage", status: "skipped", summary: "Every declared source opened", findings: [] },
-          { verificationType: "collisions", status: "skipped", summary: "No unreachable files", findings: [] },
+          { id: "coverage", status: "skipped", summary: "Every declared source opened", findings: [] },
+          { id: "collisions", status: "skipped", summary: "No unreachable files", findings: [] },
           {
-            verificationType: "shaders",
+            id: "shaders",
             status: "passed",
             summary: "1 shader scripts and 2 shader sources checked, 0 problems",
             findings: [],
@@ -64,16 +71,16 @@ describe("gamedata verify renderer shaders", () => {
         status: "failed",
         skippedMounts: [],
         checks: [
-          { verificationType: "coverage", status: "skipped", summary: "Every declared source opened", findings: [] },
-          { verificationType: "collisions", status: "skipped", summary: "No unreachable files", findings: [] },
+          { id: "coverage", status: "skipped", summary: "Every declared source opened", findings: [] },
+          { id: "collisions", status: "skipped", summary: "No unreachable files", findings: [] },
           {
-            verificationType: "shaders",
+            id: "shaders",
             status: "failed",
             summary: "1 shader scripts and 1 shader sources checked, 1 problems",
             findings: [
               {
                 ruleId: "shaders.include-missing",
-                assetPath: "shaders/r3/main.ps",
+                subject: "shaders/r3/main.ps",
                 message:
                   "Not found error: Shader shaders\\r3\\main.ps includes missing file 'shared/missing.h' on line 1",
               },

@@ -6,7 +6,7 @@ exports[`gamedata list selection should limit a listing to one subtree 1`] = `
   "stderr": [],
   "stdout": [
     "Listing <resources>/gamedata",
-    "  Directory <resources>/gamedata (gamedata)",
+    "  directory <resources>/gamedata (gamedata)",
     "  meshes\\ogf\\dev_bolt_hud.ogf [<resources>/gamedata]",
     "  meshes\\ogf\\notes_paper_1.ogf [<resources>/gamedata]",
     "  meshes\\ogf\\part_none.ogf [<resources>/gamedata]",
@@ -94,7 +94,11 @@ exports[`gamedata list selection should report only the subtree a prefix names 1
     ],
     "isShadowedIncluded": false,
     "mounts": [
-      "Directory <resources>/gamedata (gamedata)",
+      {
+        "kind": "directory",
+        "label": "gamedata",
+        "root": "<resources>/gamedata",
+      },
     ],
     "origin": "<resources>/gamedata",
     "shadowed": [],
@@ -108,8 +112,8 @@ exports[`gamedata list selection should write only its report 1`] = `
 [
   {
     "path": "meshes.json",
-    "sha256": "1c65dc1f79c628ccb8f0f9c62055ef86eaaeeec35b320e7e4241c473f3b1e852",
-    "size": 2004,
+    "sha256": "047f3755e5b23023f5cc17adae3d87fbe49ceba9559fb9fef69babd4e3052d6c",
+    "size": 2067,
   },
 ]
 `;

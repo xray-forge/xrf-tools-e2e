@@ -44,8 +44,16 @@ exports[`gamedata list source modes should record every supported source-mode re
     ],
     "isShadowedIncluded": false,
     "mounts": [
-      "Directory <sandbox>/install/gamedata (gamedata)",
-      "Archive   <sandbox>/install/database (database)",
+      {
+        "kind": "directory",
+        "label": "gamedata",
+        "root": "<sandbox>/install/gamedata",
+      },
+      {
+        "kind": "archive",
+        "label": "database",
+        "root": "<sandbox>/install/database",
+      },
     ],
     "origin": "<sandbox>/install",
     "shadowed": [],
@@ -99,8 +107,16 @@ exports[`gamedata list source modes should record every supported source-mode re
     ],
     "isShadowedIncluded": false,
     "mounts": [
-      "Directory <sandbox>/install/gamedata (gamedata)",
-      "Archive   <sandbox>/install/database (database)",
+      {
+        "kind": "directory",
+        "label": "gamedata",
+        "root": "<sandbox>/install/gamedata",
+      },
+      {
+        "kind": "archive",
+        "label": "database",
+        "root": "<sandbox>/install/database",
+      },
     ],
     "origin": "<sandbox>/install",
     "shadowed": [],
@@ -159,7 +175,11 @@ exports[`gamedata list source modes should record every supported source-mode re
     ],
     "isShadowedIncluded": false,
     "mounts": [
-      "Directory <sandbox>/install (install)",
+      {
+        "kind": "directory",
+        "label": "install",
+        "root": "<sandbox>/install",
+      },
     ],
     "origin": "<sandbox>/install",
     "shadowed": [],
@@ -213,7 +233,11 @@ exports[`gamedata list source modes should record every supported source-mode re
     ],
     "isShadowedIncluded": false,
     "mounts": [
-      "Archive   <sandbox>/install/database (database)",
+      {
+        "kind": "archive",
+        "label": "database",
+        "root": "<sandbox>/install/database",
+      },
     ],
     "origin": "<sandbox>/install/database",
     "shadowed": [],
@@ -267,7 +291,11 @@ exports[`gamedata list source modes should record every supported source-mode re
     ],
     "isShadowedIncluded": false,
     "mounts": [
-      "Archive   <sandbox>/install/database/gamedata.db (gamedata.db)",
+      {
+        "kind": "archive",
+        "label": "gamedata.db",
+        "root": "<sandbox>/install/database/gamedata.db",
+      },
     ],
     "origin": "<sandbox>/install/database",
     "shadowed": [],
@@ -281,18 +309,18 @@ exports[`gamedata list source modes should write the expected files 1`] = `
 [
   {
     "path": "auto-install.json",
-    "sha256": "d9b2cd9042e18f9fc28555cca53f210fa7d302481f9b224f4fb9622254222f56",
-    "size": 1160,
+    "sha256": "5a4b2bc0411fc3cb3726f0a8b3a5178070c87a947efcfc8d031c5a755ba0746f",
+    "size": 1284,
   },
   {
     "path": "auto-volumes.json",
-    "sha256": "1c835c713705e2297a1f991fd66e158984a6582ca6889ffd712b65a979448fd7",
-    "size": 1123,
+    "sha256": "1f0e5a65a57d54c498c216a1e77911fd71fc62aeafc508b5b04bbd036a45985b",
+    "size": 1184,
   },
   {
     "path": "directory.json",
-    "sha256": "e8f14965c46bf9427c16be7ba869a2d0fe9959f1ecb837a42c4c9f4580043bf2",
-    "size": 1194,
+    "sha256": "ad9b57044f06940b5786356dc43dc3fd05f18ee0c7688a4120a118a028e67bf5",
+    "size": 1257,
   },
   {
     "path": "install/database/gamedata.db",
@@ -311,8 +339,8 @@ exports[`gamedata list source modes should write the expected files 1`] = `
   },
   {
     "path": "installation.json",
-    "sha256": "d9b2cd9042e18f9fc28555cca53f210fa7d302481f9b224f4fb9622254222f56",
-    "size": 1160,
+    "sha256": "5a4b2bc0411fc3cb3726f0a8b3a5178070c87a947efcfc8d031c5a755ba0746f",
+    "size": 1284,
   },
   {
     "path": "stage/configs/archive_only.ltx",
@@ -326,8 +354,8 @@ exports[`gamedata list source modes should write the expected files 1`] = `
   },
   {
     "path": "volumes.json",
-    "sha256": "7c066e59be48236b2e8b8fde5c5bbed0b90c87e8a4c8012b14df873f060b8992",
-    "size": 1138,
+    "sha256": "fc45d3bb7cdfd52bdce3cf58859cda98a5c7f7a28be475ac5eb4cbf13d90ecd9",
+    "size": 1199,
   },
 ]
 `;

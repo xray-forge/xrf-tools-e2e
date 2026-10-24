@@ -6,7 +6,7 @@ exports[`gamedata list across mounts should list only loose files when asked 1`]
   "stderr": [],
   "stdout": [
     "Listing <sandbox>/install",
-    "  Directory <sandbox>/install/gamedata (gamedata)",
+    "  directory <sandbox>/install/gamedata (gamedata)",
     "  configs\\system.ltx [<sandbox>/install/gamedata]",
     "1 asset(s) across 1 mount(s) in <duration>",
   ],
@@ -57,8 +57,16 @@ exports[`gamedata list across mounts should record each source mode 1`] = `
     ],
     "isShadowedIncluded": false,
     "mounts": [
-      "Directory <sandbox>/install/gamedata (gamedata)",
-      "Archive   <sandbox>/install/database (database)",
+      {
+        "kind": "directory",
+        "label": "gamedata",
+        "root": "<sandbox>/install/gamedata",
+      },
+      {
+        "kind": "archive",
+        "label": "database",
+        "root": "<sandbox>/install/database",
+      },
     ],
     "origin": "<sandbox>/install",
     "shadowed": [],
@@ -112,8 +120,16 @@ exports[`gamedata list across mounts should record each source mode 2`] = `
     ],
     "isShadowedIncluded": true,
     "mounts": [
-      "Directory <sandbox>/install/gamedata (gamedata)",
-      "Archive   <sandbox>/install/database (database)",
+      {
+        "kind": "directory",
+        "label": "gamedata",
+        "root": "<sandbox>/install/gamedata",
+      },
+      {
+        "kind": "archive",
+        "label": "database",
+        "root": "<sandbox>/install/database",
+      },
     ],
     "origin": "<sandbox>/install",
     "shadowed": [
@@ -168,7 +184,11 @@ exports[`gamedata list across mounts should record each source mode 3`] = `
     ],
     "isShadowedIncluded": false,
     "mounts": [
-      "Directory <sandbox>/install/gamedata (gamedata)",
+      {
+        "kind": "directory",
+        "label": "gamedata",
+        "root": "<sandbox>/install/gamedata",
+      },
     ],
     "origin": "<sandbox>/install",
     "shadowed": [],
@@ -184,8 +204,8 @@ exports[`gamedata list across mounts should resolve an installation across both 
   "stderr": [],
   "stdout": [
     "Listing <sandbox>/install",
-    "  Directory <sandbox>/install/gamedata (gamedata)",
-    "  Archive   <sandbox>/install/database (database)",
+    "  directory <sandbox>/install/gamedata (gamedata)",
+    "  archive <sandbox>/install/database (database)",
     "  configs\\fonts.ltx [<sandbox>/install/database/gamedata.db (archive)]",
     "  configs\\system.ltx [<sandbox>/install/gamedata]",
     "2 asset(s) across 2 mount(s) in <duration>",
@@ -202,8 +222,8 @@ exports[`gamedata list across mounts should reveal the copy hidden by a higher-p
   ],
   "stdout": [
     "Listing <sandbox>/install",
-    "  Directory <sandbox>/install/gamedata (gamedata)",
-    "  Archive   <sandbox>/install/database (database)",
+    "  directory <sandbox>/install/gamedata (gamedata)",
+    "  archive <sandbox>/install/database (database)",
     "  configs\\fonts.ltx [<sandbox>/install/database/gamedata.db (archive)]",
     "  configs\\system.ltx [<sandbox>/install/gamedata]",
     "2 asset(s) across 2 mount(s) in <duration>",
@@ -230,18 +250,18 @@ exports[`gamedata list across mounts should write only its reports 1`] = `
   },
   {
     "path": "listing.json",
-    "sha256": "c0cdc622d527a7fd17c66c255cb90870318bfef38c345521518c44c761ab1a1e",
-    "size": 1153,
+    "sha256": "00220d1b26d5622c02965575b1e2e6c8dae0008f14209bcbb7f55c3bb8a86ce6",
+    "size": 1277,
   },
   {
     "path": "loose.json",
-    "sha256": "3e50d5ef52ab3fa9f3ef3507bf559f0dbd31de675ddb1602d43c8e00850e3522",
-    "size": 944,
+    "sha256": "2cd8850d0feb0f6c67e9366bd6e7c1580c026693b9d07197c89d978782affde5",
+    "size": 1007,
   },
   {
     "path": "shadowed.json",
-    "sha256": "7bd9ff1050ba074a4824556d78434c970222685d2088c28e5dd3e92f4d30afad",
-    "size": 1309,
+    "sha256": "e9a93b296f881a2258f4e81b30204eb810b50d55ca96e376955caf633ee4d54a",
+    "size": 1433,
   },
   {
     "path": "stage/configs/fonts.ltx",

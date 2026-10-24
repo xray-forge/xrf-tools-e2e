@@ -39,23 +39,23 @@ exports[`gamedata verify scripts should record readable reports and only expecte
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "scripts",
         "status": "passed",
         "summary": "1/1 scripts valid",
-        "verificationType": "scripts",
       },
     ],
     "duration": "<duration>",
@@ -109,30 +109,30 @@ exports[`gamedata verify scripts should record readable reports and only expecte
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [
           {
-            "assetPath": "scripts/broken.script",
             "message": "Verify error: Failed to check LuaJIT script file: scripts\\broken.script, errors: error occurred while creating ast: unexpected token \`=\`. (starting from line 1, character 13 and ending on line 1, character 14)
 additional information: expected an expression",
             "ruleId": "scripts.read",
+            "subject": "scripts/broken.script",
           },
         ],
+        "id": "scripts",
         "status": "failed",
         "summary": "1/2 scripts valid",
-        "verificationType": "scripts",
       },
     ],
     "duration": "<duration>",
@@ -151,8 +151,8 @@ exports[`gamedata verify scripts should record readable reports and only expecte
 [
   {
     "path": "malformed.json",
-    "sha256": "bfcd87c5e0153e23e5dfe30eda419f0d6e89ec13eb22e706d0da51cb0776f4ee",
-    "size": 1840,
+    "sha256": "98f31e3789222388fb63cee733e5547c00391956885b3ff059e2db73dd9e9c07",
+    "size": 1796,
   },
   {
     "path": "malformed/configs/system.ltx",
@@ -171,8 +171,8 @@ exports[`gamedata verify scripts should record readable reports and only expecte
   },
   {
     "path": "valid.json",
-    "sha256": "294b03374295652b3a51e8ee0b4f6fab30c208706830b49fca64e17921ccd265",
-    "size": 1407,
+    "sha256": "78322c90b9d023ab27c947324dfa26e04ab89df5ecaeb921af4ba5d7d1cf4051",
+    "size": 1365,
   },
   {
     "path": "valid/configs/system.ltx",

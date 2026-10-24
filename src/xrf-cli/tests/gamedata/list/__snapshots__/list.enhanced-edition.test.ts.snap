@@ -44,8 +44,16 @@ exports[`gamedata list enhanced edition should record both results 1`] = `
     ],
     "isShadowedIncluded": false,
     "mounts": [
-      "Directory <sandbox>/install/gamedata (gamedata)",
-      "Archive   <sandbox>/install/resources (resources)",
+      {
+        "kind": "directory",
+        "label": "gamedata",
+        "root": "<sandbox>/install/gamedata",
+      },
+      {
+        "kind": "archive",
+        "label": "resources",
+        "root": "<sandbox>/install/resources",
+      },
     ],
     "origin": "<sandbox>/install",
     "shadowed": [],
@@ -99,8 +107,16 @@ exports[`gamedata list enhanced edition should record both results 2`] = `
     ],
     "isShadowedIncluded": false,
     "mounts": [
-      "Directory <sandbox>/install/gamedata (gamedata)",
-      "Archive   <sandbox>/install/resources (resources)",
+      {
+        "kind": "directory",
+        "label": "gamedata",
+        "root": "<sandbox>/install/gamedata",
+      },
+      {
+        "kind": "archive",
+        "label": "resources",
+        "root": "<sandbox>/install/resources",
+      },
     ],
     "origin": "<sandbox>/install/gamedata/configs",
     "shadowed": [],
@@ -114,13 +130,13 @@ exports[`gamedata list enhanced edition should write the expected files 1`] = `
 [
   {
     "path": "auto.json",
-    "sha256": "682c7a2be03373cb2fb970c51506f859c9ffe89673a1754e5b0478790cd9abdd",
-    "size": 1162,
+    "sha256": "18721d913d3f1011237718fcd89051ab7e4871f77b5b0b3f8f08c5ec6514557e",
+    "size": 1286,
   },
   {
     "path": "containing.json",
-    "sha256": "96d98583a3219025b3141bdcc481c5a2b7587d93eeeb8ba92602bc4d70a59727",
-    "size": 1179,
+    "sha256": "c671c1074beda08ab2bcdb11ce17d0ea463df741480a26fc2151dbb3cb119d4f",
+    "size": 1303,
   },
   {
     "path": "install/fsgame_cop.ltx",

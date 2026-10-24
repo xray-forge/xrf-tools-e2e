@@ -179,7 +179,11 @@ exports[`gamedata list sources should report every asset the tree resolves 1`] =
     ],
     "isShadowedIncluded": false,
     "mounts": [
-      "Directory <resources>/gamedata (gamedata)",
+      {
+        "kind": "directory",
+        "label": "gamedata",
+        "root": "<resources>/gamedata",
+      },
     ],
     "origin": "<resources>/gamedata",
     "shadowed": [],
@@ -195,7 +199,7 @@ exports[`gamedata list sources should resolve the whole tree 1`] = `
   "stderr": [],
   "stdout": [
     "Listing <resources>/gamedata",
-    "  Directory <resources>/gamedata (gamedata)",
+    "  directory <resources>/gamedata (gamedata)",
     "  configs\\alife.ltx [<resources>/gamedata]",
     "  configs\\defines.ltx [<resources>/gamedata]",
     "  configs\\evaluation.ltx [<resources>/gamedata]",
@@ -234,8 +238,8 @@ exports[`gamedata list sources should write only its report 1`] = `
 [
   {
     "path": "listing.json",
-    "sha256": "a8bcd75024d9579a88981820c4345741843129d092e0ca5d33a7c95f8fbaa14d",
-    "size": 4989,
+    "sha256": "240be60293720d5d26e1f010ffd86f1749744d82af62c05bf625b9c916149c2f",
+    "size": 5052,
   },
 ]
 `;

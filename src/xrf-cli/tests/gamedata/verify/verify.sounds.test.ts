@@ -21,6 +21,7 @@ describe("gamedata verify sounds", () => {
     inputsBefore = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("missing/"));
 
     valid = box.run("gamedata verify", [
+      "--path",
       box.at("valid"),
       "--checks",
       "sounds",
@@ -30,7 +31,7 @@ describe("gamedata verify sounds", () => {
     ]);
     missing = box.run(
       "gamedata verify",
-      [box.at("missing"), "--checks", "sounds", "--strict", "--report", box.at("missing.json")],
+      ["--path", box.at("missing"), "--checks", "sounds", "--strict", "--report", box.at("missing.json")],
       { expectExit: 3 }
     );
     inputsAfter = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("missing/"));
@@ -45,10 +46,10 @@ describe("gamedata verify sounds", () => {
         status: "passed",
         skippedMounts: [],
         checks: [
-          { verificationType: "coverage", status: "skipped", summary: "Every declared source opened", findings: [] },
-          { verificationType: "collisions", status: "skipped", summary: "No unreachable files", findings: [] },
+          { id: "coverage", status: "skipped", summary: "Every declared source opened", findings: [] },
+          { id: "collisions", status: "skipped", summary: "No unreachable files", findings: [] },
           {
-            verificationType: "sounds",
+            id: "sounds",
             status: "passed",
             summary: "1/1 sounds valid; 1/1 sound references valid",
             findings: [],
@@ -67,16 +68,16 @@ describe("gamedata verify sounds", () => {
         status: "failed",
         skippedMounts: [],
         checks: [
-          { verificationType: "coverage", status: "skipped", summary: "Every declared source opened", findings: [] },
-          { verificationType: "collisions", status: "skipped", summary: "No unreachable files", findings: [] },
+          { id: "coverage", status: "skipped", summary: "Every declared source opened", findings: [] },
+          { id: "collisions", status: "skipped", summary: "No unreachable files", findings: [] },
           {
-            verificationType: "sounds",
+            id: "sounds",
             status: "failed",
             summary: "1/1 sounds valid; 0/1 sound references valid",
             findings: [
               {
                 ruleId: "sounds.references",
-                assetPath: "configs/system.ltx",
+                subject: "configs/system.ltx",
                 message: "Unknown sound reference: [test] snd_test = weapons\\missing",
               },
             ],

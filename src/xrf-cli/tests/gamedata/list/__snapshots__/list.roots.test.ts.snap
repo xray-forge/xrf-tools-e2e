@@ -49,8 +49,16 @@ exports[`gamedata list repeated roots should record the resolved roots 1`] = `
     ],
     "isShadowedIncluded": true,
     "mounts": [
-      "Directory <sandbox>/base (base)",
-      "Directory <sandbox>/override (override)",
+      {
+        "kind": "directory",
+        "label": "base",
+        "root": "<sandbox>/base",
+      },
+      {
+        "kind": "directory",
+        "label": "override",
+        "root": "<sandbox>/override",
+      },
     ],
     "origin": "<sandbox>/base, <sandbox>/override",
     "shadowed": [
@@ -110,7 +118,11 @@ exports[`gamedata list repeated roots should record the resolved roots 2`] = `
     ],
     "isShadowedIncluded": true,
     "mounts": [
-      "Directory <sandbox>/base (base)",
+      {
+        "kind": "directory",
+        "label": "base",
+        "root": "<sandbox>/base",
+      },
     ],
     "origin": "<sandbox>/base, <sandbox>/base",
     "shadowed": [],
@@ -134,13 +146,13 @@ exports[`gamedata list repeated roots should write the expected files 1`] = `
   },
   {
     "path": "identical.json",
-    "sha256": "e7dacc87ba0ab581cd9edc04f65c3148c40bb6982a0f491f9a20ef0b43406145",
-    "size": 1056,
+    "sha256": "69047ff2c4c1b0c0faa0872b9ed42a70446574d8274aa0c9a255717733bba949",
+    "size": 1119,
   },
   {
     "path": "overlay.json",
-    "sha256": "9fb3b92a6a83f80c8eb5fa531b2337b54069b53a84697bf3075ab756bd8195cc",
-    "size": 1383,
+    "sha256": "499e603e442e542bf266f0206ab95d3e1685397bfd1b913105fed9e32c17784d",
+    "size": 1509,
   },
   {
     "path": "override/configs/override.ltx",

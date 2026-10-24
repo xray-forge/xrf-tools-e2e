@@ -39,23 +39,23 @@ exports[`gamedata verify particle usage should record both reports as readable d
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "particles-usage",
         "status": "passed",
         "summary": "1/1 particle references valid; 0/0 spawn files readable; 0 custom data sections unparsed",
-        "verificationType": "particles-usage",
       },
     ],
     "duration": "<duration>",
@@ -109,29 +109,29 @@ exports[`gamedata verify particle usage should record both reports as readable d
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [
           {
-            "assetPath": "configs/particles.ltx",
             "message": "Unknown particle reference: [sr_particle] name = missing_particle",
             "ruleId": "particles-usage.reference",
+            "subject": "configs/particles.ltx",
           },
         ],
+        "id": "particles-usage",
         "status": "failed",
         "summary": "0/1 particle references valid; 0/0 spawn files readable; 0 custom data sections unparsed",
-        "verificationType": "particles-usage",
       },
     ],
     "duration": "<duration>",
@@ -150,8 +150,8 @@ exports[`gamedata verify particle usage should write the expected reports and fi
 [
   {
     "path": "missing.json",
-    "sha256": "d514b46d4b108ab40909a66b1d2753203b95e56256805aeb4ac4b0f90049d56e",
-    "size": 1740,
+    "sha256": "f3b01de7b6186eef642d4d8b05dd2c2b83283cffbcf0253f630c5caeb2010e88",
+    "size": 1696,
   },
   {
     "path": "missing/configs/particles.ltx",
@@ -170,8 +170,8 @@ exports[`gamedata verify particle usage should write the expected reports and fi
   },
   {
     "path": "valid.json",
-    "sha256": "b29efb69700a15f9bb1b0ad8c102f6b3a92ef20967e95efe8d3b0ba29ad2cfde",
-    "size": 1487,
+    "sha256": "74c61ba8227fc42d8d20e21a0c681ed2324bf85899654cd5ea336262ae90ce9e",
+    "size": 1445,
   },
   {
     "path": "valid/configs/particles.ltx",

@@ -32,12 +32,12 @@ describe("gamedata verify mesh texture references", () => {
 
     present = box.run(
       "gamedata verify",
-      [box.at("present"), "--checks", "meshes", "--report", box.at("present.json")],
+      ["--path", box.at("present"), "--checks", "meshes", "--report", box.at("present.json")],
       { expectExit: 0 }
     );
     missing = box.run(
       "gamedata verify",
-      [box.at("missing"), "--checks", "meshes", "--report", box.at("missing.json")],
+      ["--path", box.at("missing"), "--checks", "meshes", "--report", box.at("missing.json")],
       { expectExit: 3 }
     );
     inputsAfter = box.manifest().filter((file) => file.path.startsWith("present/") || file.path.startsWith("missing/"));
@@ -50,13 +50,13 @@ describe("gamedata verify mesh texture references", () => {
       outcome: "success",
       result: {
         checks: [
-          { findings: [], status: "skipped", summary: "Every declared source opened", verificationType: "coverage" },
-          { findings: [], status: "skipped", summary: "No unreachable files", verificationType: "collisions" },
+          { findings: [], status: "skipped", summary: "Every declared source opened", id: "coverage" },
+          { findings: [], status: "skipped", summary: "No unreachable files", id: "collisions" },
           {
             findings: [],
             status: "passed",
             summary: "1/1 shader libraries valid, 205 blender definitions; 1/1 meshes valid",
-            verificationType: "meshes",
+            id: "meshes",
           },
         ],
         status: "passed",
@@ -75,19 +75,19 @@ describe("gamedata verify mesh texture references", () => {
       outcome: "checkFailed",
       result: {
         checks: [
-          { findings: [], status: "skipped", summary: "Every declared source opened", verificationType: "coverage" },
-          { findings: [], status: "skipped", summary: "No unreachable files", verificationType: "collisions" },
+          { findings: [], status: "skipped", summary: "Every declared source opened", id: "coverage" },
+          { findings: [], status: "skipped", summary: "No unreachable files", id: "collisions" },
           {
             findings: [
               {
-                assetPath: MESH,
+                subject: MESH,
                 message: "Mesh references missing texture 'item\\item_notes'",
                 ruleId: "meshes.validation",
               },
             ],
             status: "failed",
             summary: "1/1 shader libraries valid, 205 blender definitions; 0/1 meshes valid",
-            verificationType: "meshes",
+            id: "meshes",
           },
         ],
         status: "failed",

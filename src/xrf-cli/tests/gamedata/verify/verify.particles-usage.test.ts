@@ -25,6 +25,7 @@ describe("gamedata verify particle usage", () => {
     inputsBefore = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("missing/"));
 
     valid = box.run("gamedata verify", [
+      "--path",
       box.at("valid"),
       "--checks",
       "particles-usage",
@@ -33,7 +34,7 @@ describe("gamedata verify particle usage", () => {
     ]);
     missing = box.run(
       "gamedata verify",
-      [box.at("missing"), "--checks", "particles-usage", "--report", box.at("missing.json")],
+      ["--path", box.at("missing"), "--checks", "particles-usage", "--report", box.at("missing.json")],
       { expectExit: 3 }
     );
     inputsAfter = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("missing/"));
@@ -46,14 +47,14 @@ describe("gamedata verify particle usage", () => {
       outcome: "success",
       result: {
         checks: [
-          { findings: [], status: "skipped", verificationType: "coverage" },
-          { findings: [], status: "skipped", verificationType: "collisions" },
+          { findings: [], status: "skipped", id: "coverage" },
+          { findings: [], status: "skipped", id: "collisions" },
           {
             duration: "<duration>",
             findings: [],
             status: "passed",
             summary: "1/1 particle references valid; 0/0 spawn files readable; 0 custom data sections unparsed",
-            verificationType: "particles-usage",
+            id: "particles-usage",
           },
         ],
         status: "passed",
@@ -68,20 +69,20 @@ describe("gamedata verify particle usage", () => {
       outcome: "checkFailed",
       result: {
         checks: [
-          { findings: [], status: "skipped", verificationType: "coverage" },
-          { findings: [], status: "skipped", verificationType: "collisions" },
+          { findings: [], status: "skipped", id: "coverage" },
+          { findings: [], status: "skipped", id: "collisions" },
           {
             duration: "<duration>",
             findings: [
               {
-                assetPath: "configs/particles.ltx",
+                subject: "configs/particles.ltx",
                 message: "Unknown particle reference: [sr_particle] name = missing_particle",
                 ruleId: "particles-usage.reference",
               },
             ],
             status: "failed",
             summary: "0/1 particle references valid; 0/0 spawn files readable; 0 custom data sections unparsed",
-            verificationType: "particles-usage",
+            id: "particles-usage",
           },
         ],
         status: "failed",

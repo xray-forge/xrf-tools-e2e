@@ -105,15 +105,31 @@ describe("gamedata verify environment", () => {
     );
     inputsBefore = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("broken/"));
 
-    valid = box.run("gamedata verify", [box.at("valid"), "--checks", "environment", "--report", box.at("valid.json")]);
+    valid = box.run("gamedata verify", [
+      "--path",
+      box.at("valid"),
+      "--checks",
+      "environment",
+      "--report",
+      box.at("valid.json"),
+    ]);
     broken = box.run(
       "gamedata verify",
-      [box.at("broken"), "--checks", "environment", "--report", box.at("broken.json")],
+      ["--path", box.at("broken"), "--checks", "environment", "--report", box.at("broken.json")],
       { expectExit: 3 }
     );
     extended = box.run(
       "gamedata verify",
-      [box.at("valid"), "--checks", "environment", "--engine", "extended", "--report", box.at("extended.json")],
+      [
+        "--path",
+        box.at("valid"),
+        "--checks",
+        "environment",
+        "--engine",
+        "extended",
+        "--report",
+        box.at("extended.json"),
+      ],
       { expectExit: 3 }
     );
     inputsAfter = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("broken/"));
@@ -126,14 +142,14 @@ describe("gamedata verify environment", () => {
       outcome: "success",
       result: {
         checks: [
-          { findings: [], status: "skipped", verificationType: "coverage" },
-          { findings: [], status: "skipped", verificationType: "collisions" },
+          { findings: [], status: "skipped", id: "coverage" },
+          { findings: [], status: "skipped", id: "collisions" },
           {
             duration: "<duration>",
             findings: [],
             status: "passed",
             summary: "7/7 environment configs valid",
-            verificationType: "environment",
+            id: "environment",
           },
         ],
         status: "passed",
@@ -148,20 +164,20 @@ describe("gamedata verify environment", () => {
       outcome: "checkFailed",
       result: {
         checks: [
-          { findings: [], status: "skipped", verificationType: "coverage" },
-          { findings: [], status: "skipped", verificationType: "collisions" },
+          { findings: [], status: "skipped", id: "coverage" },
+          { findings: [], status: "skipped", id: "collisions" },
           {
             duration: "<duration>",
             findings: [
               {
-                assetPath: "configs/environment/weathers/test.ltx",
+                subject: "configs/environment/weathers/test.ltx",
                 message: "Weather [00:00:00] references missing ambient [absent_ambient]",
                 ruleId: "environment.reference",
               },
             ],
             status: "failed",
             summary: "6/7 environment configs valid",
-            verificationType: "environment",
+            id: "environment",
           },
         ],
         status: "failed",
@@ -180,17 +196,17 @@ describe("gamedata verify environment", () => {
           {
             findings: [
               {
-                assetPath: "configs/environment/ambients.ltx",
+                subject: "configs/environment/ambients.ltx",
                 message: "Ambient [ambient_ok] is missing required field [effects]",
                 ruleId: "environment.engine",
               },
               {
-                assetPath: "configs/environment/sun_positions.ltx",
+                subject: "configs/environment/sun_positions.ltx",
                 message: "There is no environment\\sun_positions.ltx, which the engine stands the sun by",
                 ruleId: "environment.engine",
               },
             ],
-            verificationType: "environment",
+            id: "environment",
           },
         ],
       },

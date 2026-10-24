@@ -36,17 +36,22 @@ describe("gamedata verify meets unreachable files", () => {
 
     // Deliberately a check that has nothing to do with textures: a narrow selection must not hide a file the game
     // cannot load, which is the whole point of judging reachability beside the selection rather than inside it.
-    verify = box.run("gamedata verify", [box.at("gamedata"), "--checks", "ltx", "--report", box.at("report.json")], {
-      expectExit: 3,
-    });
+    verify = box.run(
+      "gamedata verify",
+      ["--path", box.at("gamedata"), "--checks", "ltx", "--report", box.at("report.json")],
+      {
+        expectExit: 3,
+      }
+    );
     emptyCheck = box.run(
       "gamedata verify",
-      [box.at("gamedata"), "--checks", "scripts", "--report", box.at("empty-check.json")],
+      ["--path", box.at("gamedata"), "--checks", "scripts", "--report", box.at("empty-check.json")],
       { expectExit: 3 }
     );
     unrelatedIgnore = box.run(
       "gamedata verify",
       [
+        "--path",
         box.at("gamedata"),
         "--checks",
         "scripts",
@@ -60,6 +65,7 @@ describe("gamedata verify meets unreachable files", () => {
     // The VFS applies ignored prefixes while indexing each mount. Excluding this whole logical subtree leaves neither
     // colliding entry in the selected namespace, so a clean aggregate report is the intended result.
     ignoredCollision = box.run("gamedata verify", [
+      "--path",
       box.at("gamedata"),
       "--checks",
       "scripts",
@@ -68,7 +74,14 @@ describe("gamedata verify meets unreachable files", () => {
       "--report",
       box.at("ignored-collision.json"),
     ]);
-    clean = box.run("gamedata verify", [box.at("clean"), "--checks", "scripts", "--report", box.at("clean.json")]);
+    clean = box.run("gamedata verify", [
+      "--path",
+      box.at("clean"),
+      "--checks",
+      "scripts",
+      "--report",
+      box.at("clean.json"),
+    ]);
   });
 
   // Both host paths, because either one alone leaves the reader unable to tell which file to remove or rename.
@@ -92,13 +105,13 @@ describe("gamedata verify meets unreachable files", () => {
       result: {
         status: "failed",
         checks: [
-          { verificationType: "coverage", status: "skipped", findings: [] },
+          { id: "coverage", status: "skipped", findings: [] },
           {
-            verificationType: "collisions",
+            id: "collisions",
             status: "failed",
-            findings: [{ ruleId: "collisions.unreachable", assetPath: "textures/k.dds" }],
+            findings: [{ ruleId: "collisions.unreachable", subject: "textures/k.dds" }],
           },
-          { verificationType: "scripts", status: "passed", findings: [] },
+          { id: "scripts", status: "passed", findings: [] },
         ],
       },
     });
@@ -112,14 +125,14 @@ describe("gamedata verify meets unreachable files", () => {
       result: {
         status: "failed",
         checks: [
-          { verificationType: "coverage", status: "skipped", summary: "Every declared source opened", findings: [] },
+          { id: "coverage", status: "skipped", summary: "Every declared source opened", findings: [] },
           {
-            verificationType: "collisions",
+            id: "collisions",
             status: "failed",
             summary: "1 file(s) cannot be reached, another file claims their path",
-            findings: [{ ruleId: "collisions.unreachable", assetPath: "textures/k.dds" }],
+            findings: [{ ruleId: "collisions.unreachable", subject: "textures/k.dds" }],
           },
-          { verificationType: "scripts", status: "passed", summary: "0/0 scripts valid", findings: [] },
+          { id: "scripts", status: "passed", summary: "0/0 scripts valid", findings: [] },
         ],
       },
     });
@@ -134,9 +147,9 @@ describe("gamedata verify meets unreachable files", () => {
         status: "passed",
         skippedMounts: [],
         checks: [
-          { verificationType: "coverage", status: "skipped", summary: "Every declared source opened", findings: [] },
-          { verificationType: "collisions", status: "skipped", summary: "No unreachable files", findings: [] },
-          { verificationType: "scripts", status: "passed", summary: "0/0 scripts valid", findings: [] },
+          { id: "coverage", status: "skipped", summary: "Every declared source opened", findings: [] },
+          { id: "collisions", status: "skipped", summary: "No unreachable files", findings: [] },
+          { id: "scripts", status: "passed", summary: "0/0 scripts valid", findings: [] },
         ],
       },
     });
@@ -150,9 +163,9 @@ describe("gamedata verify meets unreachable files", () => {
       result: {
         status: "passed",
         checks: [
-          { verificationType: "coverage", status: "skipped", findings: [] },
-          { verificationType: "collisions", status: "skipped", findings: [] },
-          { verificationType: "scripts", status: "passed", findings: [] },
+          { id: "coverage", status: "skipped", findings: [] },
+          { id: "collisions", status: "skipped", findings: [] },
+          { id: "scripts", status: "passed", findings: [] },
         ],
       },
     });

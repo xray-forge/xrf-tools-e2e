@@ -5,17 +5,7 @@ exports[`gamedata verify ignored prefixes should ignore a prefix that matches no
   "exitCode": 3,
   "stderr": [
     "Format issues with 7/7 files in <duration>",
-    "",
-    "Project gamedata is invalid",
-    "- 0/7 LTX files formatted; 0/32 sections valid",
-    "  - [ltx] <resources>/gamedata/configs/alife.ltx: LTX file needs formatting",
-    "  - [ltx] <resources>/gamedata/configs/defines.ltx: LTX file needs formatting",
-    "  - [ltx] <resources>/gamedata/configs/evaluation.ltx: LTX file needs formatting",
-    "  - [ltx] <resources>/gamedata/configs/fonts.ltx: LTX file needs formatting",
-    "  - [ltx] <resources>/gamedata/configs/game.ltx: LTX file needs formatting",
-    "  - [ltx] <resources>/gamedata/configs/misc/inventory_icons.ltx: LTX file needs formatting",
-    "  - [ltx] <resources>/gamedata/configs/system.ltx: LTX file needs formatting",
-    "Gamedata project checked in <duration>",
+    "Check 'ltx' is failed with 7 finding(s)",
     "Check failed: 7 finding(s)",
   ],
   "stdout": [
@@ -47,6 +37,7 @@ exports[`gamedata verify ignored prefixes should ignore a prefix that matches no
     "Verified 0.00%, 2 files, 0 sections, 0 fields",
     "Found 0 error(s)",
     "Verified gamedata ltx files in <duration>",
+    "Gamedata project checked in <duration>",
   ],
 }
 `;
@@ -56,17 +47,7 @@ exports[`gamedata verify ignored prefixes should leave a check alone when the pr
   "exitCode": 3,
   "stderr": [
     "Format issues with 7/7 files in <duration>",
-    "",
-    "Project gamedata is invalid",
-    "- 0/7 LTX files formatted; 0/32 sections valid",
-    "  - [ltx] <resources>/gamedata/configs/alife.ltx: LTX file needs formatting",
-    "  - [ltx] <resources>/gamedata/configs/defines.ltx: LTX file needs formatting",
-    "  - [ltx] <resources>/gamedata/configs/evaluation.ltx: LTX file needs formatting",
-    "  - [ltx] <resources>/gamedata/configs/fonts.ltx: LTX file needs formatting",
-    "  - [ltx] <resources>/gamedata/configs/game.ltx: LTX file needs formatting",
-    "  - [ltx] <resources>/gamedata/configs/misc/inventory_icons.ltx: LTX file needs formatting",
-    "  - [ltx] <resources>/gamedata/configs/system.ltx: LTX file needs formatting",
-    "Gamedata project checked in <duration>",
+    "Check 'ltx' is failed with 7 finding(s)",
     "Check failed: 7 finding(s)",
   ],
   "stdout": [
@@ -98,6 +79,7 @@ exports[`gamedata verify ignored prefixes should leave a check alone when the pr
     "Verified 0.00%, 2 files, 0 sections, 0 fields",
     "Found 0 error(s)",
     "Verified gamedata ltx files in <duration>",
+    "Gamedata project checked in <duration>",
   ],
 }
 `;
@@ -107,16 +89,7 @@ exports[`gamedata verify ignored prefixes should narrow a check to the unignored
   "exitCode": 3,
   "stderr": [
     "Format issues with 6/6 files in <duration>",
-    "",
-    "Project gamedata is invalid",
-    "- 0/6 LTX files formatted; 0/27 sections valid",
-    "  - [ltx] <resources>/gamedata/configs/alife.ltx: LTX file needs formatting",
-    "  - [ltx] <resources>/gamedata/configs/defines.ltx: LTX file needs formatting",
-    "  - [ltx] <resources>/gamedata/configs/evaluation.ltx: LTX file needs formatting",
-    "  - [ltx] <resources>/gamedata/configs/fonts.ltx: LTX file needs formatting",
-    "  - [ltx] <resources>/gamedata/configs/game.ltx: LTX file needs formatting",
-    "  - [ltx] <resources>/gamedata/configs/system.ltx: LTX file needs formatting",
-    "Gamedata project checked in <duration>",
+    "Check 'ltx' is failed with 6 finding(s)",
     "Check failed: 6 finding(s)",
   ],
   "stdout": [
@@ -147,6 +120,7 @@ exports[`gamedata verify ignored prefixes should narrow a check to the unignored
     "Verified 0.00%, 2 files, 0 sections, 0 fields",
     "Found 0 error(s)",
     "Verified gamedata ltx files in <duration>",
+    "Gamedata project checked in <duration>",
   ],
 }
 `;
@@ -156,16 +130,7 @@ exports[`gamedata verify ignored prefixes should narrow the LTX check when only 
   "exitCode": 3,
   "stderr": [
     "Format issues with 6/6 files in <duration>",
-    "",
-    "Project gamedata is invalid",
-    "- 0/6 LTX files formatted; 0/32 sections valid",
-    "  - [ltx] <resources>/gamedata/configs/alife.ltx: LTX file needs formatting",
-    "  - [ltx] <resources>/gamedata/configs/defines.ltx: LTX file needs formatting",
-    "  - [ltx] <resources>/gamedata/configs/evaluation.ltx: LTX file needs formatting",
-    "  - [ltx] <resources>/gamedata/configs/fonts.ltx: LTX file needs formatting",
-    "  - [ltx] <resources>/gamedata/configs/game.ltx: LTX file needs formatting",
-    "  - [ltx] <resources>/gamedata/configs/misc/inventory_icons.ltx: LTX file needs formatting",
-    "Gamedata project checked in <duration>",
+    "Check 'ltx' is failed with 6 finding(s)",
     "Check failed: 6 finding(s)",
   ],
   "stdout": [
@@ -196,6 +161,7 @@ exports[`gamedata verify ignored prefixes should narrow the LTX check when only 
     "Verified 0.00%, 6 files, 0 sections, 0 fields",
     "Found 0 error(s)",
     "Verified gamedata ltx files in <duration>",
+    "Gamedata project checked in <duration>",
   ],
 }
 `;

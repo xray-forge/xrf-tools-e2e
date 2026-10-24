@@ -22,10 +22,17 @@ describe("gamedata verify spawns", () => {
     box.copyTruncated(gamedata(SPAWN), `damaged/${SPAWN}`, 1024);
     inputsBefore = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("damaged/"));
 
-    valid = box.run("gamedata verify", [box.at("valid"), "--checks", "spawns", "--report", box.at("valid.json")]);
+    valid = box.run("gamedata verify", [
+      "--path",
+      box.at("valid"),
+      "--checks",
+      "spawns",
+      "--report",
+      box.at("valid.json"),
+    ]);
     damaged = box.run(
       "gamedata verify",
-      [box.at("damaged"), "--checks", "spawns", "--report", box.at("damaged.json")],
+      ["--path", box.at("damaged"), "--checks", "spawns", "--report", box.at("damaged.json")],
       { expectExit: 3 }
     );
     inputsAfter = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("damaged/"));
@@ -40,9 +47,9 @@ describe("gamedata verify spawns", () => {
         status: "passed",
         skippedMounts: [],
         checks: [
-          { verificationType: "coverage", status: "skipped", summary: "Every declared source opened", findings: [] },
-          { verificationType: "collisions", status: "skipped", summary: "No unreachable files", findings: [] },
-          { verificationType: "spawns", status: "passed", summary: "1/1 spawns valid", findings: [] },
+          { id: "coverage", status: "skipped", summary: "Every declared source opened", findings: [] },
+          { id: "collisions", status: "skipped", summary: "No unreachable files", findings: [] },
+          { id: "spawns", status: "passed", summary: "1/1 spawns valid", findings: [] },
         ],
       },
     });
@@ -57,16 +64,16 @@ describe("gamedata verify spawns", () => {
         status: "failed",
         skippedMounts: [],
         checks: [
-          { verificationType: "coverage", status: "skipped", summary: "Every declared source opened", findings: [] },
-          { verificationType: "collisions", status: "skipped", summary: "No unreachable files", findings: [] },
+          { id: "coverage", status: "skipped", summary: "Every declared source opened", findings: [] },
+          { id: "collisions", status: "skipped", summary: "No unreachable files", findings: [] },
           {
-            verificationType: "spawns",
+            id: "spawns",
             status: "failed",
             summary: "0/1 spawns valid",
             findings: [
               {
                 ruleId: "spawns.read",
-                assetPath: SPAWN,
+                subject: SPAWN,
                 message:
                   "Failed to read spawn file: Invalid error: Chunk 0x00000001 at position 60 declares 67940 bytes, 964 remain before source end 1024",
               },

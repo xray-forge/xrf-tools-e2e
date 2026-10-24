@@ -16,15 +16,27 @@ describe("gamedata verify ignored prefixes", () => {
   let nothingMatched: CliResult;
 
   beforeAll(() => {
-    partial = box.run("gamedata verify", [GAMEDATA, "--checks", "ltx", "--ignore", "configs/misc"], FINDINGS);
-    partialBackslash = box.run("gamedata verify", [GAMEDATA, "--checks", "ltx", "--ignore", "configs\\misc"], FINDINGS);
-    essentialFile = box.run(
+    partial = box.run("gamedata verify", ["--path", GAMEDATA, "--checks", "ltx", "--ignore", "configs/misc"], FINDINGS);
+    partialBackslash = box.run(
       "gamedata verify",
-      [GAMEDATA, "--checks", "ltx", "--ignore", "configs/system.ltx"],
+      ["--path", GAMEDATA, "--checks", "ltx", "--ignore", "configs\\misc"],
       FINDINGS
     );
-    otherSubtree = box.run("gamedata verify", [GAMEDATA, "--checks", "ltx", "--ignore", "meshes/ogf"], FINDINGS);
-    nothingMatched = box.run("gamedata verify", [GAMEDATA, "--checks", "ltx", "--ignore", "nonexistent"], FINDINGS);
+    essentialFile = box.run(
+      "gamedata verify",
+      ["--path", GAMEDATA, "--checks", "ltx", "--ignore", "configs/system.ltx"],
+      FINDINGS
+    );
+    otherSubtree = box.run(
+      "gamedata verify",
+      ["--path", GAMEDATA, "--checks", "ltx", "--ignore", "meshes/ogf"],
+      FINDINGS
+    );
+    nothingMatched = box.run(
+      "gamedata verify",
+      ["--path", GAMEDATA, "--checks", "ltx", "--ignore", "nonexistent"],
+      FINDINGS
+    );
   });
 
   it("should narrow a check to the unignored part of a subtree", () => {

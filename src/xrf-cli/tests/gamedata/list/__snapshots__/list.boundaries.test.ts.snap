@@ -39,7 +39,11 @@ exports[`gamedata list prefix boundaries should record the boundary and empty se
     ],
     "isShadowedIncluded": false,
     "mounts": [
-      "Directory <sandbox>/boundary (boundary)",
+      {
+        "kind": "directory",
+        "label": "boundary",
+        "root": "<sandbox>/boundary",
+      },
     ],
     "origin": "<sandbox>/boundary",
     "shadowed": [],
@@ -88,7 +92,11 @@ exports[`gamedata list prefix boundaries should record the boundary and empty se
     ],
     "isShadowedIncluded": false,
     "mounts": [
-      "Directory <sandbox>/boundary (boundary)",
+      {
+        "kind": "directory",
+        "label": "boundary",
+        "root": "<sandbox>/boundary",
+      },
     ],
     "origin": "<sandbox>/boundary",
     "shadowed": [],
@@ -131,7 +139,11 @@ exports[`gamedata list prefix boundaries should record the boundary and empty se
     "entries": [],
     "isShadowedIncluded": false,
     "mounts": [
-      "Directory <sandbox>/boundary (boundary)",
+      {
+        "kind": "directory",
+        "label": "boundary",
+        "root": "<sandbox>/boundary",
+      },
     ],
     "origin": "<sandbox>/boundary",
     "shadowed": [],
@@ -145,8 +157,8 @@ exports[`gamedata list prefix boundaries should write the expected files 1`] = `
 [
   {
     "path": "absent.json",
-    "sha256": "2a702fb3793eb41534c76c6e61dafab7ccb88e2484430498705f4ec74523333e",
-    "size": 791,
+    "sha256": "691afb2187fc95d559e46e93e172dbc12f03c5f1a06a3bf380fd4c4980e81f3c",
+    "size": 854,
   },
   {
     "path": "boundary/configs/kept.ltx",
@@ -160,13 +172,13 @@ exports[`gamedata list prefix boundaries should write the expected files 1`] = `
   },
   {
     "path": "ignore.json",
-    "sha256": "ff3db5ab602abaaf283f0776e15f778118c507660fdeef002e3f25e4f3f44f11",
-    "size": 934,
+    "sha256": "3f76603290e3529c6c3cd98279eb9987764fd456b039356b4a566e6c2dbaa1c5",
+    "size": 997,
   },
   {
     "path": "prefix.json",
-    "sha256": "efafaf599fba569048e292b2ac130c492a1a599be532c026b7f455f807639f1b",
-    "size": 927,
+    "sha256": "dbb158260d5485ab0bb540212224df6a305a319229489737429bcf5d4433cb80",
+    "size": 990,
   },
 ]
 `;

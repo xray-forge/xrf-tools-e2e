@@ -43,26 +43,41 @@ describe("gamedata verify meets a declared source it cannot open", () => {
 
     // Deliberately a check that has nothing to do with archives: a narrow selection must not turn an installation whose
     // whole archive set went unread into a passing run.
-    verify = box.run("gamedata verify", [box.at("install"), "--checks", "ltx", "--report", box.at("report.json")], {
-      expectExit: 1,
-    });
+    verify = box.run(
+      "gamedata verify",
+      ["--path", box.at("install"), "--checks", "ltx", "--report", box.at("report.json")],
+      {
+        expectExit: 1,
+      }
+    );
 
-    box.run("gamedata verify", [box.at("install"), "--checks", "ltx", "--silent", "--report", box.at("silent.json")], {
-      expectExit: 1,
-    });
+    box.run(
+      "gamedata verify",
+      ["--path", box.at("install"), "--checks", "ltx", "--silent", "--report", box.at("silent.json")],
+      {
+        expectExit: 1,
+      }
+    );
     emptyCheck = box.run(
       "gamedata verify",
-      [box.at("install"), "--checks", "scripts", "--report", box.at("empty-check.json")],
+      ["--path", box.at("install"), "--checks", "scripts", "--report", box.at("empty-check.json")],
       { expectExit: 1 }
     );
     // `db` names the mount directory on disk, not a logical asset prefix. Ignoring it must therefore leave the
     // declared archive source subject to the same open-and-coverage accounting.
     ignoredSource = box.run(
       "gamedata verify",
-      [box.at("install"), "--checks", "scripts", "--ignore", "db", "--report", box.at("ignore.json")],
+      ["--path", box.at("install"), "--checks", "scripts", "--ignore", "db", "--report", box.at("ignore.json")],
       { expectExit: 1 }
     );
-    clean = box.run("gamedata verify", [box.at("clean"), "--checks", "scripts", "--report", box.at("clean.json")]);
+    clean = box.run("gamedata verify", [
+      "--path",
+      box.at("clean"),
+      "--checks",
+      "scripts",
+      "--report",
+      box.at("clean.json"),
+    ]);
   });
 
   it("should warn which declared source went unread and answer non-zero", () => {
@@ -94,12 +109,12 @@ describe("gamedata verify meets a declared source it cannot open", () => {
         status: "incomplete",
         checks: [
           {
-            verificationType: "coverage",
+            id: "coverage",
             status: "incomplete",
-            findings: [{ ruleId: "coverage.skipped-mount", assetPath: "db" }],
+            findings: [{ ruleId: "coverage.skipped-mount", subject: "db" }],
           },
-          { verificationType: "collisions", status: "skipped", findings: [] },
-          { verificationType: "scripts", status: "passed", findings: [] },
+          { id: "collisions", status: "skipped", findings: [] },
+          { id: "scripts", status: "passed", findings: [] },
         ],
       },
     });
@@ -115,18 +130,18 @@ describe("gamedata verify meets a declared source it cannot open", () => {
         skippedMounts: [{ origin: "$arch_dir$" }],
         checks: [
           {
-            verificationType: "coverage",
+            id: "coverage",
             status: "incomplete",
             summary: "1 declared source(s) could not be opened, so no result covers them",
-            findings: [{ ruleId: "coverage.skipped-mount", assetPath: "db" }],
+            findings: [{ ruleId: "coverage.skipped-mount", subject: "db" }],
           },
           {
-            verificationType: "collisions",
+            id: "collisions",
             status: "skipped",
             summary: "No unreachable files",
             findings: [],
           },
-          { verificationType: "scripts", status: "passed", summary: "0/0 scripts valid", findings: [] },
+          { id: "scripts", status: "passed", summary: "0/0 scripts valid", findings: [] },
         ],
       },
     });
@@ -141,9 +156,9 @@ describe("gamedata verify meets a declared source it cannot open", () => {
         status: "passed",
         skippedMounts: [],
         checks: [
-          { verificationType: "coverage", status: "skipped", findings: [] },
-          { verificationType: "collisions", status: "skipped", findings: [] },
-          { verificationType: "scripts", status: "passed", findings: [] },
+          { id: "coverage", status: "skipped", findings: [] },
+          { id: "collisions", status: "skipped", findings: [] },
+          { id: "scripts", status: "passed", findings: [] },
         ],
       },
     });

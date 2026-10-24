@@ -39,23 +39,23 @@ exports[`gamedata verify texture files should write the expected reports and fil
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "textures",
         "status": "passed",
         "summary": "1/1 textures valid; 0/0 declared bumps resolved",
-        "verificationType": "textures",
       },
     ],
     "duration": "<duration>",
@@ -109,29 +109,29 @@ exports[`gamedata verify texture files should write the expected reports and fil
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [
           {
-            "assetPath": "textures/truncated.dds",
             "message": "Texture processing error: Failed to read DDS from memory: failed to fill whole buffer.",
             "ruleId": "textures.read",
+            "subject": "textures/truncated.dds",
           },
         ],
+        "id": "textures",
         "status": "failed",
         "summary": "1/2 textures valid; 0/0 declared bumps resolved",
-        "verificationType": "textures",
       },
     ],
     "duration": "<duration>",
@@ -150,8 +150,8 @@ exports[`gamedata verify texture files should write the expected reports and fil
 [
   {
     "path": "damaged.json",
-    "sha256": "eec44bd44d478766d747be1d732f6bc196805b5c92118770f9e0b46a62793a50",
-    "size": 1701,
+    "sha256": "42efbc38c1026b54c91d95bb1f413e62a995055ca1aaadecded00d3a86f4b401",
+    "size": 1657,
   },
   {
     "path": "damaged/configs/system.ltx",
@@ -170,8 +170,8 @@ exports[`gamedata verify texture files should write the expected reports and fil
   },
   {
     "path": "valid.json",
-    "sha256": "18fbce18ef3be60cf9308c7df7308f55085f66a200a4518f49cf55e0e3c7314b",
-    "size": 1438,
+    "sha256": "985f1e4312d888737f5b2163ae25515f74b01eb96babce36c3090d4215ac9d35",
+    "size": 1396,
   },
   {
     "path": "valid/configs/system.ltx",

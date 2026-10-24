@@ -14,10 +14,22 @@ describe("gamedata verify resolved DLTX schema", () => {
     box.write("patched/configs/mod_system_test.ltx", "![wpn_test]\r\ncost = expensive\r\n!rpm\r\n");
     inputs = box.manifest();
 
-    box.run("gamedata verify", [box.at("clean"), "--checks", "ltx", "--dltx", "--report", box.at("clean.json")]);
-    box.run("gamedata verify", [box.at("patched"), "--checks", "ltx", "--dltx", "--report", box.at("patched.json")], {
-      expectExit: 3,
-    });
+    box.run("gamedata verify", [
+      "--path",
+      box.at("clean"),
+      "--checks",
+      "ltx",
+      "--dltx",
+      "--report",
+      box.at("clean.json"),
+    ]);
+    box.run(
+      "gamedata verify",
+      ["--path", box.at("patched"), "--checks", "ltx", "--dltx", "--report", box.at("patched.json")],
+      {
+        expectExit: 3,
+      }
+    );
   });
 
   it("should validate the formatted section before any patch changes it", () => {
@@ -29,7 +41,7 @@ describe("gamedata verify resolved DLTX schema", () => {
         checks: expect.arrayContaining([
           {
             duration: "<duration>",
-            verificationType: "ltx",
+            id: "ltx",
             status: "passed",
             summary: "2/2 LTX files formatted; 1/1 sections valid",
             findings: [],
@@ -48,17 +60,17 @@ describe("gamedata verify resolved DLTX schema", () => {
         checks: expect.arrayContaining([
           {
             duration: "<duration>",
-            verificationType: "ltx",
+            id: "ltx",
             status: "failed",
             summary: "3/3 LTX files formatted; 0/1 sections valid",
             findings: [
               {
-                assetPath: "configs/system.ltx",
+                subject: "configs/system.ltx",
                 ruleId: "ltx.schema",
                 message: "[wpn_test] cost: Invalid value, unsigned 32 bit number is expected, got 'expensive'",
               },
               {
-                assetPath: "configs/system.ltx",
+                subject: "configs/system.ltx",
                 ruleId: "ltx.schema",
                 message: "[wpn_test] rpm: Required field was not provided",
               },

@@ -31,7 +31,15 @@ describe("gamedata list enhanced edition", () => {
     box.write("install/fsgame_cop.ltx", FSGAME_COP);
     before = inputs.map((input) => box.sha(input));
 
-    box.run("archive pack", [box.at("stage"), "--dest", box.at("install/resources"), "--name", "configs", "--silent"]);
+    box.run("archive pack", [
+      "--path",
+      box.at("stage"),
+      "--dest",
+      box.at("install/resources"),
+      "--name",
+      "configs",
+      "--silent",
+    ]);
     automatic = box.run("gamedata list", [
       "--path",
       box.at("install"),

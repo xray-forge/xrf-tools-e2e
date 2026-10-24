@@ -39,23 +39,23 @@ exports[`gamedata verify sounds should record readable reports and only expected
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "sounds",
         "status": "passed",
         "summary": "1/1 sounds valid; 1/1 sound references valid",
-        "verificationType": "sounds",
       },
     ],
     "duration": "<duration>",
@@ -109,29 +109,29 @@ exports[`gamedata verify sounds should record readable reports and only expected
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [
           {
-            "assetPath": "configs/system.ltx",
             "message": "Unknown sound reference: [test] snd_test = weapons\\missing",
             "ruleId": "sounds.references",
+            "subject": "configs/system.ltx",
           },
         ],
+        "id": "sounds",
         "status": "failed",
         "summary": "1/1 sounds valid; 0/1 sound references valid",
-        "verificationType": "sounds",
       },
     ],
     "duration": "<duration>",
@@ -150,8 +150,8 @@ exports[`gamedata verify sounds should record readable reports and only expected
 [
   {
     "path": "missing.json",
-    "sha256": "834f124ef1245fd5040abc4f6ba1941de3fc44067ec24e375765a8157d0ae8b9",
-    "size": 1670,
+    "sha256": "95c36ef7f41837dd2cb2c736f0a242c1f8ffc85a692cb6cc47885b85dcb5ea8e",
+    "size": 1626,
   },
   {
     "path": "missing/configs/system.ltx",
@@ -165,8 +165,8 @@ exports[`gamedata verify sounds should record readable reports and only expected
   },
   {
     "path": "valid.json",
-    "sha256": "dd1f078c8d96784ccf974bd8d90d62132cb06ed100394d0cd4d5467f1127196d",
-    "size": 1434,
+    "sha256": "9671967da705cf2b4c3ed9236a9ad91c4f8382414ad84fc4ceb6ec14b7a6dda2",
+    "size": 1392,
   },
   {
     "path": "valid/configs/system.ltx",

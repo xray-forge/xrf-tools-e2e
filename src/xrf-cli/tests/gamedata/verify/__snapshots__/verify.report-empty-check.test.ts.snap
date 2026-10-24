@@ -39,23 +39,23 @@ exports[`gamedata verify empty check report should report one check as a readabl
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "scripts",
         "status": "passed",
         "summary": "0/0 scripts valid",
-        "verificationType": "scripts",
       },
     ],
     "duration": "<duration>",
@@ -74,8 +74,8 @@ exports[`gamedata verify empty check report should write only the report 1`] = `
 [
   {
     "path": "scripts.json",
-    "sha256": "817a30c4f0c86d8609498d9c2326cc0a60de5c1a789dc2f264e7b757701f7430",
-    "size": 1410,
+    "sha256": "f42d89eba60b0fa9176e97a9e093f78209a43ee289511ad598456d0b8d2cdf28",
+    "size": 1368,
   },
 ]
 `;

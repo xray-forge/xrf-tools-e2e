@@ -39,7 +39,11 @@ exports[`gamedata list containing installation should record the discovered inst
     ],
     "isShadowedIncluded": false,
     "mounts": [
-      "Directory <sandbox>/install/gamedata (gamedata)",
+      {
+        "kind": "directory",
+        "label": "gamedata",
+        "root": "<sandbox>/install/gamedata",
+      },
     ],
     "origin": "<sandbox>/install/gamedata/configs",
     "shadowed": [],
@@ -53,8 +57,8 @@ exports[`gamedata list containing installation should write the expected files 1
 [
   {
     "path": "containing.json",
-    "sha256": "2ff7b1dfab22725c37ce8c9f36ca278ba5057be16d0fa8f947d377465f8d1412",
-    "size": 964,
+    "sha256": "c9b49ba89984e233ee1827dd45d74762874ec60f8032c0248ec7955bcd3bf4a6",
+    "size": 1027,
   },
   {
     "path": "install/fsgame.ltx",

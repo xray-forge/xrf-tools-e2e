@@ -13,9 +13,9 @@ describe("gamedata verify ignored check input", () => {
 
   beforeAll(() => {
     // Project identity is decided before inspection filters apply. Ignoring configs empties the LTX check.
-    ltx = box.run("gamedata verify", [GAMEDATA, "--checks", "ltx", "--ignore", "configs"]);
+    ltx = box.run("gamedata verify", ["--path", GAMEDATA, "--checks", "ltx", "--ignore", "configs"]);
     // The flag doing its job: a non-essential subtree is filtered out and the check finds nothing.
-    meshes = box.run("gamedata verify", [GAMEDATA, "--checks", "meshes", "--ignore", "meshes"]);
+    meshes = box.run("gamedata verify", ["--path", GAMEDATA, "--checks", "meshes", "--ignore", "meshes"]);
   });
 
   it("should empty the LTX check when the configs directory is ignored", () => {

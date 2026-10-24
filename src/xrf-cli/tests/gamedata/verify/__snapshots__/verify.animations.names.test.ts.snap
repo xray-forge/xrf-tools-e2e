@@ -39,23 +39,23 @@ exports[`gamedata verify named HUD animations should record the reports as reada
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "animations",
         "status": "passed",
         "summary": "1/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
-        "verificationType": "animations",
       },
     ],
     "duration": "<duration>",
@@ -109,29 +109,29 @@ exports[`gamedata verify named HUD animations should record the reports as reada
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "coverage",
         "status": "skipped",
         "summary": "Every declared source opened",
-        "verificationType": "coverage",
       },
       {
         "duration": "<duration>",
         "findings": [],
+        "id": "collisions",
         "status": "skipped",
         "summary": "No unreachable files",
-        "verificationType": "collisions",
       },
       {
         "duration": "<duration>",
         "findings": [
           {
-            "assetPath": "configs/system.ltx",
             "message": "Player HUD section [actor_hud] has invalid animations",
             "ruleId": "animations.player-hud",
+            "subject": "configs/system.ltx",
           },
         ],
+        "id": "animations",
         "status": "failed",
         "summary": "0/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
-        "verificationType": "animations",
       },
     ],
     "duration": "<duration>",
@@ -152,11 +152,7 @@ exports[`gamedata verify named HUD animations should report a missing named moti
   "stderr": [
     "Hud [actor_hud] weapon [wpn_test] anm_idle=missing -> animation motion is not found",
     "Hud [actor_hud] failed weapons check",
-    "",
-    "Project gamedata is invalid",
-    "- 0/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
-    "  - [animations] <sandbox>/missing/configs/system.ltx: Player HUD section [actor_hud] has invalid animations",
-    "Gamedata project checked in <duration>",
+    "Check 'animations' is failed with 1 finding(s)",
     "Check failed: 1 finding(s)",
   ],
   "stdout": [
@@ -180,6 +176,7 @@ exports[`gamedata verify named HUD animations should report a missing named moti
     "Verified gamedata object motions, 0/0 valid",
     "Verified gamedata post-process effects, 0/0 valid",
     "Verified gamedata animations in <duration>, 0/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
+    "Gamedata project checked in <duration>",
   ],
 }
 `;
@@ -208,9 +205,8 @@ exports[`gamedata verify named HUD animations should validate the named idle mot
     "Verified gamedata object motions, 0/0 valid",
     "Verified gamedata post-process effects, 0/0 valid",
     "Verified gamedata animations in <duration>, 1/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
-    "",
-    "Project gamedata is valid",
-    "Gamedata project verified in <duration>",
+    "Gamedata project checked in <duration>",
+    "Gamedata project: passed",
   ],
 }
 `;
@@ -219,8 +215,8 @@ exports[`gamedata verify named HUD animations should write only its fixture and 
 [
   {
     "path": "missing.json",
-    "sha256": "301612a84d087b58d8ec63470ff9aca9ae0dfa82866496b52a00dbfe72597102",
-    "size": 1787,
+    "sha256": "9c96fc04d351d3c9e3a5996367dc2cee7b211aae82a4bef04146c9ae8fde1cfc",
+    "size": 1743,
   },
   {
     "path": "missing/configs/system.ltx",
@@ -239,8 +235,8 @@ exports[`gamedata verify named HUD animations should write only its fixture and 
   },
   {
     "path": "valid.json",
-    "sha256": "ac0d6ec3f63aebc6e2550bce31cc8ce40f7bc66430317ff60c7fa3adb75b725b",
-    "size": 1553,
+    "sha256": "c20cee45cd5a702468ed393d05c132914bd73ea22ead6870d1c30d5da04f9cad",
+    "size": 1511,
   },
   {
     "path": "valid/configs/system.ltx",
