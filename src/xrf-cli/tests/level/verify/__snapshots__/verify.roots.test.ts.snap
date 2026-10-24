@@ -14,13 +14,13 @@ exports[`level verify roots should preserve fixture bytes and write only the req
 [
   {
     "path": "archived.json",
-    "sha256": "7c7cb0bac7e19847609c770629ad6d333f9add347f6b5a92e079170fef595a98",
-    "size": 948,
+    "sha256": "0f23eeeb9bf776b57db4681902b10383cee7ced9fe945f88ad3e7a85e8e3a7af",
+    "size": 1684,
   },
   {
     "path": "loose.json",
-    "sha256": "7c7cb0bac7e19847609c770629ad6d333f9add347f6b5a92e079170fef595a98",
-    "size": 948,
+    "sha256": "0f23eeeb9bf776b57db4681902b10383cee7ced9fe945f88ad3e7a85e8e3a7af",
+    "size": 1684,
   },
   {
     "path": "packed/levels.db",
@@ -77,7 +77,7 @@ exports[`level verify roots should read a level of mounted roots by its name 1`]
     "Sectors reach 0 visuals, 0 drawables reached by more than one, 1 reached by none",
     "0 static lights, none of them a sun",
     "Decoded geometry spans (0.0, 0.0, 0.0) to (1.0, 1.0, 0.0), widest texture coordinate 0.0 tiles",
-    "Verification passed, status: passed",
+    "Verification of the level: passed",
   ],
 }
 `;

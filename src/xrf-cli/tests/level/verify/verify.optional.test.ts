@@ -59,12 +59,9 @@ describe("level verify optional files", () => {
         status: "failed",
         checks: expect.arrayContaining([
           expect.objectContaining({
-            id: "read",
+            id: "level.read",
             status: "failed",
-            findings: expect.arrayContaining([
-              expect.objectContaining({ ruleId: "level.read" }),
-              expect.objectContaining({ ruleId: "level.visuals.read" }),
-            ]),
+            findings: [expect.objectContaining({ ruleId: "level.read" })],
           }),
         ]),
       },

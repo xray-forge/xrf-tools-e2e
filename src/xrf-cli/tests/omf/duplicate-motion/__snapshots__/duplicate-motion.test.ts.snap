@@ -66,6 +66,7 @@ exports[`omf duplicate-motion should report the duplicated motion 1`] = `
   "result": {
     "destination": "<sandbox>/duplicated.omf",
     "from": "idle",
+    "isDryRun": false,
     "isPlayOnce": false,
     "motions": 4,
     "source": "<resources>/gamedata/meshes/omf/wpn_svd_hud_animation.omf",
@@ -88,8 +89,8 @@ exports[`omf duplicate-motion should write the expected files 1`] = `
 [
   {
     "path": "duplicate.json",
-    "sha256": "999265397b617c96b5f291eae76114b9434d2f1a3c1cbabebe7fe4570c9fb66c",
-    "size": 740,
+    "sha256": "9c5d120f89ebeb2767c0601f8eb3cb747989c075db2dedc1c6c91a9276fb2ac4",
+    "size": 763,
   },
   {
     "path": "duplicated-once.omf",

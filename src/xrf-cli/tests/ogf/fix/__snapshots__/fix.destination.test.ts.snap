@@ -22,11 +22,9 @@ exports[`ogf fix destination should read back the same references with no residu
   "stderr": [],
   "stdout": [
     "Read ogf file <sandbox>/fixed.ogf",
-    "Ogf file information",
-    "Version: 4, model_type: 3, shader_id: 0, OgfBox { min: Vector3d { x: 0.0, y: 0.0, z: 0.0 }, max: Vector3d { x: 1.0, y: 1.0, z: 1.0 } } - OgfSphere { position: Vector3d { x: 0.0, y: 0.0, z: 0.0 }, radius: 1.0 }",
-    "Boundaries box: OgfBox { min: Vector3d { x: 0.0, y: 0.0, z: 0.0 }, max: Vector3d { x: 1.0, y: 1.0, z: 1.0 } }",
-    "Boundaries sphere: OgfSphere { position: Vector3d { x: 0.0, y: 0.0, z: 0.0 }, radius: 1.0 }",
-    "Motion refs: ["actors\\\\stalker_animation", "actors\\\\stalker_scripts_animation", "actors\\\\zombied_animation", "actors\\\\stalker_smart_cover_animation", "omf\\\\wpn_mp5_hud_animation"]",
+    "Version: 4, model type: 3, shader id: 0",
+    "Bounding box: [0, 0, 0] to [1, 1, 1], sphere: [0, 0, 0] radius 1",
+    "Motion refs: actors\\stalker_animation, actors\\stalker_scripts_animation, actors\\zombied_animation, actors\\stalker_smart_cover_animation, omf\\wpn_mp5_hud_animation",
   ],
 }
 `;

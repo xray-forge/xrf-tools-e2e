@@ -26,9 +26,13 @@ describe("ogf residue", () => {
     box.write("gamedata/configs/system.ltx", "");
     box.copyIn(gamedata("shaders.xr"), "gamedata/shaders.xr");
     box.copyIn(SOURCE, "gamedata/meshes/ogf/residue_split_motion_ref.ogf");
-    verify = box.run("gamedata verify", [box.at("gamedata"), "--checks", "meshes", "--report", box.at("verify.json")], {
-      expectExit: 3,
-    });
+    verify = box.run(
+      "gamedata verify",
+      ["--path", box.at("gamedata"), "--checks", "meshes", "--report", box.at("verify.json")],
+      {
+        expectExit: 3,
+      }
+    );
 
     patch = box.run("ogf patch-motion-refs", [
       "--path",

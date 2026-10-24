@@ -39,7 +39,7 @@ exports[`omf rename-motions strict map should report every input motion before r
   "outcome": "executionFailed",
   "result": {
     "destination": "<sandbox>/never-strict.omf",
-    "isDry": false,
+    "isDryRun": false,
     "motions": [
       "idle",
       "svd_shoot",
@@ -65,8 +65,8 @@ exports[`omf rename-motions strict map should write only the map, report, and pr
   },
   {
     "path": "strict.json",
-    "sha256": "608f1b58f7fb309a44b1c4b830d47640d1bc02a9ded1e95e6f8f61436b1d6776",
-    "size": 927,
+    "sha256": "2d581b0a3de11a77d9e92d1da064240ebaea6a41b43eab35d88e7f570ac77edb",
+    "size": 930,
   },
 ]
 `;

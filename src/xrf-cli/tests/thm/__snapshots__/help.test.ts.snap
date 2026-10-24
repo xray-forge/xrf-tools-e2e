@@ -6,9 +6,9 @@ exports[`thm command help should keep each leaf command's help stable 1`] = `
     "exitCode": 0,
     "stderr": [],
     "stdout": [
-      "Command to repoint the bump texture reference of provided thm file",
+      "Repoint the bump texture reference of a THM file",
       "",
-      "Usage: xrf-cli thm patch-bump [OPTIONS] --path <path>",
+      "Usage: xrf-cli thm patch-bump [OPTIONS] --path <path> <--to <to>|--off>",
       "",
       "Options:",
       "  -p, --path <path>    Path to thm file",

@@ -6,7 +6,7 @@ exports[`level command help should keep each leaf command's help stable 1`] = `
     "exitCode": 0,
     "stderr": [],
     "stdout": [
-      "Command to print information about a compiled level",
+      "Print what a compiled level holds",
       "",
       "Usage: xrf-cli level info [OPTIONS] <--path <path>|--root <root>>",
       "",
@@ -26,7 +26,7 @@ exports[`level command help should keep each leaf command's help stable 1`] = `
     "exitCode": 0,
     "stderr": [],
     "stdout": [
-      "Command to verify a compiled level's geometry can be drawn the way the renderer addresses it",
+      "Verify that a compiled level's geometry can be drawn the way the renderer addresses it",
       "",
       "Usage: xrf-cli level verify [OPTIONS] <--path <path>|--root <root>>",
       "",

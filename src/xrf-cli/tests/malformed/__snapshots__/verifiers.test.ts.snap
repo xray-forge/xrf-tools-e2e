@@ -4,10 +4,12 @@ exports[`verifiers meet damaged input should refuse a damaged particle container
 {
   "exitCode": 3,
   "stderr": [
-    "Provided particle file is invalid: Invalid error: Chunk 0x00000003 at position 18 declares 1088704 bytes, 482 remain before source end 500",
+    "<sandbox>/bad.xr is not a valid particles file: Invalid error: Chunk 0x00000003 at position 18 declares 1088704 bytes, 482 remain before source end 500",
     "Check failed: 1 finding(s)",
   ],
-  "stdout": [],
+  "stdout": [
+    "Verifying particles file <sandbox>/bad.xr",
+  ],
 }
 `;
 
@@ -15,10 +17,12 @@ exports[`verifiers meet damaged input should refuse a damaged spawn 1`] = `
 {
   "exitCode": 3,
   "stderr": [
-    "Provided spawn file is invalid: Invalid error: Chunk 0x00000001 at position 60 declares 67940 bytes, 340 remain before source end 400",
+    "<sandbox>/bad.spawn is not a valid spawn file: Invalid error: Chunk 0x00000001 at position 60 declares 67940 bytes, 340 remain before source end 400",
     "Check failed: 1 finding(s)",
   ],
-  "stdout": [],
+  "stdout": [
+    "Verifying spawn file <sandbox>/bad.spawn",
+  ],
 }
 `;
 
@@ -37,6 +41,7 @@ exports[`verifiers meet damaged input should report a damaged visual as a failed
 {
   "exitCode": 3,
   "stderr": [
+    "Check 'ogf.read' is failed with 1 finding(s)",
     "Check failed: 1 finding(s)",
   ],
   "stdout": [
@@ -48,7 +53,6 @@ exports[`verifiers meet damaged input should report a damaged visual as a failed
     "Unreadable files: 1, files with nothing drawable: 0, bounds disagreements: 0",
     "Texture references: 0 total, 0 resolved, 0 missing, 0 unreadable, 0 visuals with no root",
     "Distinct textures: 0, of which 0 carry no mip chain; 0 references resolved inside archives and were not read",
-    "Check 'read' is failed with 1 findings",
   ],
 }
 `;

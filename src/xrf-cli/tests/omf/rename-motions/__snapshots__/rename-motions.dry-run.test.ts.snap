@@ -40,7 +40,7 @@ exports[`omf rename-motions dry run should report the renamed labels without wri
   "outcome": "success",
   "result": {
     "destination": "<sandbox>/never-renamed.omf",
-    "isDry": true,
+    "isDryRun": true,
     "motions": [
       "stand",
       "fire",
@@ -56,8 +56,8 @@ exports[`omf rename-motions dry run should write only the map, report, and prese
 [
   {
     "path": "dry-run.json",
-    "sha256": "473dcb73fe89addb64e27e34bfa11c2ad335a8ef7d793cde5170d6100be69714",
-    "size": 764,
+    "sha256": "5bd22cdfa1516035d550c8b8242f0a54932610685bebbfdfa7726abc798c150e",
+    "size": 767,
   },
   {
     "path": "never-renamed.omf",

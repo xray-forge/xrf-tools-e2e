@@ -18,7 +18,7 @@ describe("thm patch-bump arguments", () => {
     const input = box.copyIn(SOURCE, "input.thm");
 
     inputBefore = box.sha("input.thm");
-    neither = box.run("thm patch-bump", ["--path", input, "--report", box.at("neither.json")], { expectExit: 1 });
+    neither = box.run("thm patch-bump", ["--path", input, "--report", box.at("neither.json")], { expectExit: 2 });
     both = box.run(
       "thm patch-bump",
       ["--path", input, "--to", "wpn\\wpn_pm\\wpn_pm_bump", "--off", "--report", box.at("both.json")],
@@ -26,10 +26,9 @@ describe("thm patch-bump arguments", () => {
     );
   });
 
-  it("should reject neither assignment nor disable during execution with an envelope", () => {
+  it("should reject neither assignment nor disable during argument parsing before a report exists", () => {
     expect(neither).toMatchSnapshot();
-    expect(box.json("neither.json")).toMatchSnapshot();
-    expect(box.json("neither.json")).toMatchObject({ exitCode: 1, outcome: "executionFailed", result: null });
+    expect(fs.existsSync(box.at("neither.json"))).toBe(false);
   });
 
   it("should reject both options during argument parsing before a report exists", () => {
@@ -41,7 +40,7 @@ describe("thm patch-bump arguments", () => {
     expect(box.sha("input.thm")).toBe(inputBefore);
   });
 
-  it("should write only the input and execution envelope", () => {
-    expect(box.manifest({ normalized: ["neither.json"] })).toMatchSnapshot();
+  it("should write only the input", () => {
+    expect(box.manifest()).toMatchSnapshot();
   });
 });

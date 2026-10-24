@@ -12,7 +12,7 @@ exports[`level verify optional files should pass a level compiled with no fast g
     "Sectors reach 0 visuals, 0 drawables reached by more than one, 1 reached by none",
     "0 static lights, none of them a sun",
     "Decoded geometry spans (0.0, 0.0, 0.0) to (1.0, 1.0, 0.0), widest texture coordinate 0.0 tiles",
-    "Verification passed, status: passed",
+    "Verification of the level: passed",
   ],
 }
 `;
@@ -21,8 +21,8 @@ exports[`level verify optional files should preserve fixture bytes and write onl
 [
   {
     "path": "no-bundle.json",
-    "sha256": "f78b7c95cbdb8753237da2f70141e5188bdfde30e760c8c3925fdd4688741c58",
-    "size": 1372,
+    "sha256": "8523a2d11b221e02a0ddbc82eaf9b9b1dc8a6da111a4c98290e2e7cccf43a562",
+    "size": 1681,
   },
   {
     "path": "no-bundle/level.geom",
@@ -36,8 +36,8 @@ exports[`level verify optional files should preserve fixture bytes and write onl
   },
   {
     "path": "no-geom.json",
-    "sha256": "7c7cb0bac7e19847609c770629ad6d333f9add347f6b5a92e079170fef595a98",
-    "size": 948,
+    "sha256": "557739a4942ede18059b5131c8045ce971b7037036ecdeade10e0cf7171d2637",
+    "size": 1684,
   },
   {
     "path": "no-geom/level",
@@ -51,8 +51,8 @@ exports[`level verify optional files should preserve fixture bytes and write onl
   },
   {
     "path": "no-geomx.json",
-    "sha256": "7c7cb0bac7e19847609c770629ad6d333f9add347f6b5a92e079170fef595a98",
-    "size": 948,
+    "sha256": "157c85dc41f567c54d4741ee59bf0d45192bfb934063fc71c85be7db0512bfa7",
+    "size": 1684,
   },
   {
     "path": "no-geomx/level",
@@ -71,9 +71,8 @@ exports[`level verify optional files should report an absent bundle rather than 
 {
   "exitCode": 3,
   "stderr": [
-    "[level.read] Level file was not found: <sandbox>/no-bundle/level",
-    "[level.visuals.read] Level file was not found: <sandbox>/no-bundle/level",
-    "Check failed: 2 finding(s)",
+    "Check 'level.read' is failed with 1 finding(s)",
+    "Check failed: 1 finding(s)",
   ],
   "stdout": [
     "Verifying compiled level <sandbox>/no-bundle",

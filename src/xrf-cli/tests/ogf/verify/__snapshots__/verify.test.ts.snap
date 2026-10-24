@@ -28,11 +28,52 @@ exports[`ogf verify should report the census and findings of the sweep 1`] = `
   "exitCode": 1,
   "outcome": "executionFailed",
   "result": {
+    "census": {
+      "boundsDisagreements": 0,
+      "distinctTextures": 0,
+      "files": 5,
+      "filesWithoutGeometry": 1,
+      "locatedTextureReferences": 0,
+      "malformedSubmeshes": 0,
+      "missingTextureReferences": 4,
+      "packedSubmeshes": 4,
+      "progressiveSubmeshes": 1,
+      "progressiveSubmeshesDrawingPartOfTheBuffer": 1,
+      "resolvedTextureReferences": 0,
+      "rootModelTypes": {
+        "MT_SKELETON_ANIM": 2,
+        "MT_SKELETON_RIGID": 3,
+      },
+      "skinnedSubmeshes": 4,
+      "submeshModelTypes": {
+        "MT_SKELETON_ANIM": 1,
+        "MT_SKELETON_GEOMDEF_PM": 1,
+        "MT_SKELETON_GEOMDEF_ST": 3,
+      },
+      "submeshes": 5,
+      "textureFormats": {},
+      "textureReferences": 4,
+      "textureSizes": {},
+      "textureSteps": {},
+      "texturesWithoutMipmaps": 0,
+      "unreadableFiles": 0,
+      "unreadableTextures": 0,
+      "unsupportedSubmeshes": 1,
+      "versions": {
+        "4": 5,
+      },
+      "vertexFormats": {
+        "0x00000001": 4,
+        "none": 1,
+      },
+      "verticesWithStraySkinWeights": 0,
+      "visualsWithoutRoot": 0,
+    },
     "checks": [
       {
         "duration": "<duration>",
         "findings": [],
-        "id": "read",
+        "id": "ogf.read",
         "status": "passed",
       },
       {
@@ -40,17 +81,17 @@ exports[`ogf verify should report the census and findings of the sweep 1`] = `
         "findings": [
           {
             "message": "Carries no geometry chunk",
-            "ruleId": "visuals.geometry.unsupported",
+            "ruleId": "ogf.geometry.unsupported",
             "subject": "residue_split_motion_ref.ogf#0",
           },
         ],
-        "id": "geometry",
+        "id": "ogf.geometry",
         "status": "incomplete",
       },
       {
         "duration": "<duration>",
         "findings": [],
-        "id": "bounds",
+        "id": "ogf.bounds",
         "status": "passed",
       },
       {
@@ -58,26 +99,26 @@ exports[`ogf verify should report the census and findings of the sweep 1`] = `
         "findings": [
           {
             "message": "'wpn\\wpn_bolt' does not resolve under <resources>/gamedata",
-            "ruleId": "visuals.textures.missing",
+            "ruleId": "ogf.textures.missing",
             "subject": "dev_bolt_hud.ogf#0",
           },
           {
             "message": "'item\\item_notes' does not resolve under <resources>/gamedata",
-            "ruleId": "visuals.textures.missing",
+            "ruleId": "ogf.textures.missing",
             "subject": "notes_paper_1.ogf#0",
           },
           {
             "message": "'glow\\glow_ghost' does not resolve under <resources>/gamedata",
-            "ruleId": "visuals.textures.missing",
+            "ruleId": "ogf.textures.missing",
             "subject": "part_none.ogf#0",
           },
           {
             "message": "'wpn\\wpn_pm' does not resolve under <resources>/gamedata",
-            "ruleId": "visuals.textures.missing",
+            "ruleId": "ogf.textures.missing",
             "subject": "wpn_pm_lod.ogf#0",
           },
         ],
-        "id": "textures",
+        "id": "ogf.textures",
         "status": "incomplete",
       },
     ],
@@ -90,6 +131,8 @@ exports[`ogf verify should resolve textures from a layered root 1`] = `
 {
   "exitCode": 1,
   "stderr": [
+    "Check 'ogf.geometry' is incomplete with 1 finding(s)",
+    "Check 'ogf.textures' is incomplete with 3 finding(s)",
     "Error: Verify error: Verification of ogf visuals did not complete, status: incomplete",
   ],
   "stdout": [
@@ -109,8 +152,6 @@ exports[`ogf verify should resolve textures from a layered root 1`] = `
     "Texture formats: DXT5: 1",
     "Textures resolved by: <resources>/base: 1",
     "Texture sizes: 4x4: 1",
-    "Check 'geometry' is incomplete with 1 findings",
-    "Check 'textures' is incomplete with 3 findings",
   ],
 }
 `;
@@ -119,6 +160,8 @@ exports[`ogf verify should sweep a directory 1`] = `
 {
   "exitCode": 1,
   "stderr": [
+    "Check 'ogf.geometry' is incomplete with 1 finding(s)",
+    "Check 'ogf.textures' is incomplete with 4 finding(s)",
     "Error: Verify error: Verification of ogf visuals did not complete, status: incomplete",
   ],
   "stdout": [
@@ -134,8 +177,6 @@ exports[`ogf verify should sweep a directory 1`] = `
     "Root model types: MT_SKELETON_ANIM: 2, MT_SKELETON_RIGID: 3",
     "Submesh model types: MT_SKELETON_ANIM: 1, MT_SKELETON_GEOMDEF_PM: 1, MT_SKELETON_GEOMDEF_ST: 3",
     "Vertex formats: 0x00000001: 4, none: 1",
-    "Check 'geometry' is incomplete with 1 findings",
-    "Check 'textures' is incomplete with 4 findings",
   ],
 }
 `;
@@ -144,6 +185,7 @@ exports[`ogf verify should verify a standalone visual 1`] = `
 {
   "exitCode": 1,
   "stderr": [
+    "Check 'ogf.textures' is incomplete with 1 finding(s)",
     "Error: Verify error: Verification of ogf visuals did not complete, status: incomplete",
   ],
   "stdout": [
@@ -159,7 +201,6 @@ exports[`ogf verify should verify a standalone visual 1`] = `
     "Root model types: MT_SKELETON_RIGID: 1",
     "Submesh model types: MT_SKELETON_GEOMDEF_ST: 1",
     "Vertex formats: 0x00000001: 1",
-    "Check 'textures' is incomplete with 1 findings",
   ],
 }
 `;
@@ -168,8 +209,8 @@ exports[`ogf verify should write a report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "4e021fc50da1e2d3962cc296fdac5b18f0aee2228c3f27b4a8304bb195946f45",
-    "size": 2193,
+    "sha256": "ae064ffd9f0756a28fa1d81a04e654b314a745ec7baab899943d73d78397d0ac",
+    "size": 3302,
   },
 ]
 `;

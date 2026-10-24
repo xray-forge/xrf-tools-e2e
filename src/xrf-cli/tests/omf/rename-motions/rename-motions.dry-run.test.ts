@@ -55,7 +55,7 @@ describe("omf rename-motions dry run", () => {
   it("should report the renamed labels without writing them", () => {
     expect(box.json("dry-run.json")).toMatchSnapshot();
     expect(box.json("dry-run.json")).toMatchObject({
-      result: { isDry: true, motions: ["stand", "fire", "svd_reload"], renamed: 2 },
+      result: { isDryRun: true, motions: ["stand", "fire", "svd_reload"], renamed: 2 },
     });
   });
 

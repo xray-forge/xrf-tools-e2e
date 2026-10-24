@@ -14,7 +14,7 @@ exports[`level verify report should expose decoded bounds and geometry layouts i
     "Decoded geometry spans (0.0, 0.0, 0.0) to (1.0, 1.0, 0.0), widest texture coordinate 0.0 tiles",
     "Layout positions only: 2 visuals",
     "MT_NORMAL: 1 visuals",
-    "Verification passed, status: passed",
+    "Verification of the level: passed",
   ],
 }
 `;
@@ -47,23 +47,59 @@ exports[`level verify report should pass every check for drawable geometry 1`] =
   "exitCode": 0,
   "outcome": "success",
   "result": {
+    "census": {
+      "bounds": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 0,
+        },
+      ],
+      "drawableVisuals": 1,
+      "fastpathVisuals": 1,
+      "hasSun": false,
+      "indices": 3,
+      "layouts": {
+        "positions only": 2,
+      },
+      "lights": 0,
+      "modelTypes": {
+        "MT_NORMAL": 1,
+      },
+      "orphanedDrawables": 1,
+      "portals": 0,
+      "sectorPortalReferences": 0,
+      "sectorVisuals": 0,
+      "sectors": 0,
+      "shaderEntries": 4,
+      "sharedDrawables": 0,
+      "strayNormals": 0,
+      "vertices": 3,
+      "visuals": 1,
+      "widestCoordinate": 0,
+    },
     "checks": [
       {
         "duration": "<duration>",
         "findings": [],
-        "id": "read",
+        "id": "level.read",
         "status": "passed",
       },
       {
         "duration": "<duration>",
         "findings": [],
-        "id": "ranges",
+        "id": "level.ranges",
         "status": "passed",
       },
       {
         "duration": "<duration>",
         "findings": [],
-        "id": "geometry",
+        "id": "level.geometry",
         "status": "passed",
       },
     ],
@@ -76,8 +112,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
 [
   {
     "path": "broken-geometry.json",
-    "sha256": "92ece402081e38b4a485a8158b6e0864d36c8b7c27f01ae1fbe45723e1a621f2",
-    "size": 1239,
+    "sha256": "ebc316605e2ac1e48e9b2cd65a1f4d5cdfee242e2ec1a9fe33b90e0d273ad136",
+    "size": 1776,
   },
   {
     "path": "broken-geometry/level",
@@ -91,8 +127,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "invalid-fastpath.json",
-    "sha256": "7426ab537c93deced05a8fab09c97b110a665b34a6a0131e8fc8ab3018964e59",
-    "size": 1215,
+    "sha256": "b2eefd01ef9fa12a00689052269bbc0f6f8f6b3c33b84bb0b28d9e66053b975f",
+    "size": 1951,
   },
   {
     "path": "invalid-fastpath/level",
@@ -111,8 +147,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "invalid-geometry.json",
-    "sha256": "3b10fc35a4a2750dbfe026482c894dd652b4f88a3ff03541d5e08648c6e61fd2",
-    "size": 1456,
+    "sha256": "72b90a8c95af2508f55109ff775bb79aa25dd87dd2e2dee1a4bbefada2ac799e",
+    "size": 2192,
   },
   {
     "path": "invalid-geometry/level",
@@ -131,8 +167,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "invalid-range.json",
-    "sha256": "719bf26925ef6a39cad625ae7a90b3cf7ebe51c4988b463d69814a08eaf0de4f",
-    "size": 1503,
+    "sha256": "82e5c8918cb9ea8e8a1c57dc9720d7d2b6a4386245e8227eaeddd7e5009b909a",
+    "size": 2239,
   },
   {
     "path": "invalid-range/level",
@@ -151,8 +187,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "invalid-shader.json",
-    "sha256": "24867fd9eecacf29dd0319e12c096c802ea26dbba2d07089c696b9132711babe",
-    "size": 1214,
+    "sha256": "b1a3a82a6b87250571d96dfe68be92d17fc799b1a4ef947ff92d612b0cb5f09f",
+    "size": 1950,
   },
   {
     "path": "invalid-shader/level",
@@ -171,8 +207,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "malformed-shader.json",
-    "sha256": "ec5379067d4363cba7adafc57ddb49e8eff6a73e3151600c13a654f66a4ba612",
-    "size": 1284,
+    "sha256": "7222a6dbd246c9789b49c30669c76d6cb23a4c70e0f683efb240076c144f2c4f",
+    "size": 2020,
   },
   {
     "path": "malformed-shader/level",
@@ -191,8 +227,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "minimal.json",
-    "sha256": "ed38707b6e6dc76da20df89aa6393ad443c882fa1aa1b65a56b0275948b358da",
-    "size": 1195,
+    "sha256": "730f73be4fa3d711a2b933b7973aeb20fbe089bf670ae7fd1a1858d36f425b11",
+    "size": 1702,
   },
   {
     "path": "minimal/level",
@@ -201,13 +237,13 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "missing.json",
-    "sha256": "78384b9c370ea31d33c48e5260da717efea79c23ad6620862ea65baf76684aa9",
-    "size": 1364,
+    "sha256": "7bbe049aaa57467da2e80d6b89183e5cb4e30ef9d8eeb75f05c8a78492803506",
+    "size": 1677,
   },
   {
     "path": "triangle.json",
-    "sha256": "7c7cb0bac7e19847609c770629ad6d333f9add347f6b5a92e079170fef595a98",
-    "size": 948,
+    "sha256": "0f23eeeb9bf776b57db4681902b10383cee7ced9fe945f88ad3e7a85e8e3a7af",
+    "size": 1684,
   },
   {
     "path": "triangle/level",
@@ -226,8 +262,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "truncated.json",
-    "sha256": "15a42fe985a8529c8cc0846edb91b6daea22e86af8fb8ba12a9fd42ea38c2aad",
-    "size": 1456,
+    "sha256": "e7b78979d3e79d45d7d569340a2fde7d93fa7d89b6e5795dc3713e9a4f54b3df",
+    "size": 1723,
   },
   {
     "path": "truncated/level",
@@ -241,8 +277,7 @@ exports[`level verify report should print all geometry findings and their failur
 {
   "exitCode": 3,
   "stderr": [
-    "[level.visuals.indices.out_of_range] Visual 0 draws index 3, past the 3 vertices it declares",
-    "[level.visuals.vertices.not_finite] Visual 0 carries a vertex at 0 whose position is not a finite number",
+    "Check 'level.geometry' is failed with 2 finding(s)",
     "Check failed: 2 finding(s)",
   ],
   "stdout": [
@@ -253,6 +288,10 @@ exports[`level verify report should print all geometry findings and their failur
     "Sectors reach 0 visuals, 0 drawables reached by more than one, 1 reached by none",
     "0 static lights, none of them a sun",
     "Decoded geometry spans (0.0, 0.0, 0.0) to (1.0, 1.0, 0.0), widest texture coordinate 0.0 tiles",
+    "Layout positions only: 2 visuals",
+    "MT_NORMAL: 1 visuals",
+    "  [level.visuals.indices.out_of_range] <sandbox>/invalid-geometry/level.geom: Visual 0 draws index 3, past the 3 vertices it declares",
+    "  [level.visuals.vertices.not_finite] <sandbox>/invalid-geometry/level.geom: Visual 0 carries a vertex at 0 whose position is not a finite number",
   ],
 }
 `;
@@ -285,6 +324,29 @@ exports[`level verify report should report broken-geometry findings with a check
   "exitCode": 3,
   "outcome": "checkFailed",
   "result": {
+    "census": {
+      "bounds": null,
+      "drawableVisuals": 0,
+      "fastpathVisuals": 0,
+      "hasSun": false,
+      "indices": 0,
+      "layouts": {},
+      "lights": 0,
+      "modelTypes": {
+        "MT_NORMAL": 1,
+      },
+      "orphanedDrawables": 1,
+      "portals": 0,
+      "sectorPortalReferences": 0,
+      "sectorVisuals": 0,
+      "sectors": 0,
+      "shaderEntries": 4,
+      "sharedDrawables": 0,
+      "strayNormals": 0,
+      "vertices": 0,
+      "visuals": 1,
+      "widestCoordinate": 0,
+    },
     "checks": [
       {
         "duration": "<duration>",
@@ -295,19 +357,19 @@ exports[`level verify report should report broken-geometry findings with a check
             "subject": "<sandbox>/broken-geometry/level.geom",
           },
         ],
-        "id": "read",
+        "id": "level.read",
         "status": "failed",
       },
       {
         "duration": "<duration>",
         "findings": [],
-        "id": "ranges",
+        "id": "level.ranges",
         "status": "passed",
       },
       {
         "duration": "<duration>",
         "findings": [],
-        "id": "geometry",
+        "id": "level.geometry",
         "status": "passed",
       },
     ],
@@ -344,17 +406,53 @@ exports[`level verify report should report invalid-fastpath findings with a chec
   "exitCode": 3,
   "outcome": "checkFailed",
   "result": {
+    "census": {
+      "bounds": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 0,
+        },
+      ],
+      "drawableVisuals": 1,
+      "fastpathVisuals": 1,
+      "hasSun": false,
+      "indices": 3,
+      "layouts": {
+        "positions only": 2,
+      },
+      "lights": 0,
+      "modelTypes": {
+        "MT_NORMAL": 1,
+      },
+      "orphanedDrawables": 1,
+      "portals": 0,
+      "sectorPortalReferences": 0,
+      "sectorVisuals": 0,
+      "sectors": 0,
+      "shaderEntries": 4,
+      "sharedDrawables": 0,
+      "strayNormals": 0,
+      "vertices": 3,
+      "visuals": 1,
+      "widestCoordinate": 0,
+    },
     "checks": [
       {
         "duration": "<duration>",
         "findings": [],
-        "id": "read",
+        "id": "level.read",
         "status": "passed",
       },
       {
         "duration": "<duration>",
         "findings": [],
-        "id": "ranges",
+        "id": "level.ranges",
         "status": "passed",
       },
       {
@@ -366,7 +464,7 @@ exports[`level verify report should report invalid-fastpath findings with a chec
             "subject": "<sandbox>/invalid-fastpath/level.geomx",
           },
         ],
-        "id": "geometry",
+        "id": "level.geometry",
         "status": "failed",
       },
     ],
@@ -403,17 +501,53 @@ exports[`level verify report should report invalid-geometry findings with a chec
   "exitCode": 3,
   "outcome": "checkFailed",
   "result": {
+    "census": {
+      "bounds": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 0,
+        },
+      ],
+      "drawableVisuals": 1,
+      "fastpathVisuals": 1,
+      "hasSun": false,
+      "indices": 3,
+      "layouts": {
+        "positions only": 2,
+      },
+      "lights": 0,
+      "modelTypes": {
+        "MT_NORMAL": 1,
+      },
+      "orphanedDrawables": 1,
+      "portals": 0,
+      "sectorPortalReferences": 0,
+      "sectorVisuals": 0,
+      "sectors": 0,
+      "shaderEntries": 4,
+      "sharedDrawables": 0,
+      "strayNormals": 0,
+      "vertices": 3,
+      "visuals": 1,
+      "widestCoordinate": 0,
+    },
     "checks": [
       {
         "duration": "<duration>",
         "findings": [],
-        "id": "read",
+        "id": "level.read",
         "status": "passed",
       },
       {
         "duration": "<duration>",
         "findings": [],
-        "id": "ranges",
+        "id": "level.ranges",
         "status": "passed",
       },
       {
@@ -430,7 +564,7 @@ exports[`level verify report should report invalid-geometry findings with a chec
             "subject": "<sandbox>/invalid-geometry/level.geom",
           },
         ],
-        "id": "geometry",
+        "id": "level.geometry",
         "status": "failed",
       },
     ],
@@ -467,11 +601,47 @@ exports[`level verify report should report invalid-range findings with a check-f
   "exitCode": 3,
   "outcome": "checkFailed",
   "result": {
+    "census": {
+      "bounds": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 0,
+        },
+      ],
+      "drawableVisuals": 1,
+      "fastpathVisuals": 1,
+      "hasSun": false,
+      "indices": 2,
+      "layouts": {
+        "positions only": 2,
+      },
+      "lights": 0,
+      "modelTypes": {
+        "MT_NORMAL": 1,
+      },
+      "orphanedDrawables": 1,
+      "portals": 0,
+      "sectorPortalReferences": 0,
+      "sectorVisuals": 0,
+      "sectors": 0,
+      "shaderEntries": 4,
+      "sharedDrawables": 0,
+      "strayNormals": 0,
+      "vertices": 4,
+      "visuals": 1,
+      "widestCoordinate": 0,
+    },
     "checks": [
       {
         "duration": "<duration>",
         "findings": [],
-        "id": "read",
+        "id": "level.read",
         "status": "passed",
       },
       {
@@ -488,13 +658,13 @@ exports[`level verify report should report invalid-range findings with a check-f
             "subject": "<sandbox>/invalid-range/level.geom",
           },
         ],
-        "id": "ranges",
+        "id": "level.ranges",
         "status": "failed",
       },
       {
         "duration": "<duration>",
         "findings": [],
-        "id": "geometry",
+        "id": "level.geometry",
         "status": "passed",
       },
     ],
@@ -531,11 +701,47 @@ exports[`level verify report should report invalid-shader findings with a check-
   "exitCode": 3,
   "outcome": "checkFailed",
   "result": {
+    "census": {
+      "bounds": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 0,
+        },
+      ],
+      "drawableVisuals": 1,
+      "fastpathVisuals": 1,
+      "hasSun": false,
+      "indices": 3,
+      "layouts": {
+        "positions only": 2,
+      },
+      "lights": 0,
+      "modelTypes": {
+        "MT_NORMAL": 1,
+      },
+      "orphanedDrawables": 1,
+      "portals": 0,
+      "sectorPortalReferences": 0,
+      "sectorVisuals": 0,
+      "sectors": 0,
+      "shaderEntries": 4,
+      "sharedDrawables": 0,
+      "strayNormals": 0,
+      "vertices": 3,
+      "visuals": 1,
+      "widestCoordinate": 0,
+    },
     "checks": [
       {
         "duration": "<duration>",
         "findings": [],
-        "id": "read",
+        "id": "level.read",
         "status": "passed",
       },
       {
@@ -547,13 +753,13 @@ exports[`level verify report should report invalid-shader findings with a check-
             "subject": "<sandbox>/invalid-shader/level",
           },
         ],
-        "id": "ranges",
+        "id": "level.ranges",
         "status": "failed",
       },
       {
         "duration": "<duration>",
         "findings": [],
-        "id": "geometry",
+        "id": "level.geometry",
         "status": "passed",
       },
     ],
@@ -590,11 +796,47 @@ exports[`level verify report should report malformed-shader findings with a chec
   "exitCode": 3,
   "outcome": "checkFailed",
   "result": {
+    "census": {
+      "bounds": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 0,
+        },
+      ],
+      "drawableVisuals": 1,
+      "fastpathVisuals": 1,
+      "hasSun": false,
+      "indices": 3,
+      "layouts": {
+        "positions only": 2,
+      },
+      "lights": 0,
+      "modelTypes": {
+        "MT_NORMAL": 1,
+      },
+      "orphanedDrawables": 1,
+      "portals": 0,
+      "sectorPortalReferences": 0,
+      "sectorVisuals": 0,
+      "sectors": 0,
+      "shaderEntries": 4,
+      "sharedDrawables": 0,
+      "strayNormals": 0,
+      "vertices": 3,
+      "visuals": 1,
+      "widestCoordinate": 0,
+    },
     "checks": [
       {
         "duration": "<duration>",
         "findings": [],
-        "id": "read",
+        "id": "level.read",
         "status": "passed",
       },
       {
@@ -606,13 +848,13 @@ exports[`level verify report should report malformed-shader findings with a chec
             "subject": "<sandbox>/malformed-shader/level",
           },
         ],
-        "id": "ranges",
+        "id": "level.ranges",
         "status": "failed",
       },
       {
         "duration": "<duration>",
         "findings": [],
-        "id": "geometry",
+        "id": "level.geometry",
         "status": "passed",
       },
     ],
@@ -649,6 +891,27 @@ exports[`level verify report should report minimal findings with a check-failure
   "exitCode": 3,
   "outcome": "checkFailed",
   "result": {
+    "census": {
+      "bounds": null,
+      "drawableVisuals": 0,
+      "fastpathVisuals": 0,
+      "hasSun": false,
+      "indices": 0,
+      "layouts": {},
+      "lights": 0,
+      "modelTypes": {},
+      "orphanedDrawables": 0,
+      "portals": 0,
+      "sectorPortalReferences": 0,
+      "sectorVisuals": 0,
+      "sectors": 0,
+      "shaderEntries": 0,
+      "sharedDrawables": 0,
+      "strayNormals": 0,
+      "vertices": 0,
+      "visuals": 0,
+      "widestCoordinate": 0,
+    },
     "checks": [
       {
         "duration": "<duration>",
@@ -659,19 +922,19 @@ exports[`level verify report should report minimal findings with a check-failure
             "subject": "<sandbox>/minimal/level",
           },
         ],
-        "id": "read",
+        "id": "level.read",
         "status": "failed",
       },
       {
         "duration": "<duration>",
         "findings": [],
-        "id": "ranges",
+        "id": "level.ranges",
         "status": "passed",
       },
       {
         "duration": "<duration>",
         "findings": [],
-        "id": "geometry",
+        "id": "level.geometry",
         "status": "passed",
       },
     ],
@@ -700,7 +963,7 @@ exports[`level verify report should report missing findings with a check-failure
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 2 finding(s)",
+  "error": "Check failed: 1 finding(s)",
   "execution": {
     "origin": "auto",
     "workers": "<workers>",
@@ -708,6 +971,27 @@ exports[`level verify report should report missing findings with a check-failure
   "exitCode": 3,
   "outcome": "checkFailed",
   "result": {
+    "census": {
+      "bounds": null,
+      "drawableVisuals": 0,
+      "fastpathVisuals": 0,
+      "hasSun": false,
+      "indices": 0,
+      "layouts": {},
+      "lights": 0,
+      "modelTypes": {},
+      "orphanedDrawables": 0,
+      "portals": 0,
+      "sectorPortalReferences": 0,
+      "sectorVisuals": 0,
+      "sectors": 0,
+      "shaderEntries": 0,
+      "sharedDrawables": 0,
+      "strayNormals": 0,
+      "vertices": 0,
+      "visuals": 0,
+      "widestCoordinate": 0,
+    },
     "checks": [
       {
         "duration": "<duration>",
@@ -717,25 +1001,20 @@ exports[`level verify report should report missing findings with a check-failure
             "ruleId": "level.read",
             "subject": "<sandbox>/missing/level",
           },
-          {
-            "message": "Level file was not found: <sandbox>/missing/level",
-            "ruleId": "level.visuals.read",
-            "subject": "<sandbox>/missing/level",
-          },
         ],
-        "id": "read",
+        "id": "level.read",
         "status": "failed",
       },
       {
         "duration": "<duration>",
         "findings": [],
-        "id": "ranges",
+        "id": "level.ranges",
         "status": "passed",
       },
       {
         "duration": "<duration>",
         "findings": [],
-        "id": "geometry",
+        "id": "level.geometry",
         "status": "passed",
       },
     ],
@@ -764,7 +1043,7 @@ exports[`level verify report should report truncated findings with a check-failu
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 2 finding(s)",
+  "error": "Check failed: 1 finding(s)",
   "execution": {
     "origin": "auto",
     "workers": "<workers>",
@@ -772,6 +1051,27 @@ exports[`level verify report should report truncated findings with a check-failu
   "exitCode": 3,
   "outcome": "checkFailed",
   "result": {
+    "census": {
+      "bounds": null,
+      "drawableVisuals": 0,
+      "fastpathVisuals": 0,
+      "hasSun": false,
+      "indices": 0,
+      "layouts": {},
+      "lights": 0,
+      "modelTypes": {},
+      "orphanedDrawables": 0,
+      "portals": 0,
+      "sectorPortalReferences": 0,
+      "sectorVisuals": 0,
+      "sectors": 0,
+      "shaderEntries": 0,
+      "sharedDrawables": 0,
+      "strayNormals": 0,
+      "vertices": 0,
+      "visuals": 0,
+      "widestCoordinate": 0,
+    },
     "checks": [
       {
         "duration": "<duration>",
@@ -781,25 +1081,20 @@ exports[`level verify report should report truncated findings with a check-failu
             "ruleId": "level.read",
             "subject": "<sandbox>/truncated/level",
           },
-          {
-            "message": "Invalid error: Chunk 0x00000001 at position 8 declares 4 bytes, 3 remain before source end 11",
-            "ruleId": "level.visuals.read",
-            "subject": "<sandbox>/truncated/level",
-          },
         ],
-        "id": "read",
+        "id": "level.read",
         "status": "failed",
       },
       {
         "duration": "<duration>",
         "findings": [],
-        "id": "ranges",
+        "id": "level.ranges",
         "status": "passed",
       },
       {
         "duration": "<duration>",
         "findings": [],
-        "id": "geometry",
+        "id": "level.geometry",
         "status": "passed",
       },
     ],

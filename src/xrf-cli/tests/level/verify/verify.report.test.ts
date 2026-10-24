@@ -5,23 +5,23 @@ import { envelopeAt, envelopeOf } from "#/xrf-cli/test/envelope";
 import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
 const FAILURES = [
-  { name: "missing", check: "read", rules: ["level.read", "level.visuals.read"] },
-  { name: "truncated", check: "read", rules: ["level.read", "level.visuals.read"] },
-  { name: "minimal", check: "read", rules: ["level.shaders.absent"] },
-  { name: "broken-geometry", check: "read", rules: ["level.geometry.read"] },
-  { name: "invalid-shader", check: "ranges", rules: ["level.visuals.shader.out_of_range"] },
-  { name: "malformed-shader", check: "ranges", rules: ["level.visuals.shader.malformed"] },
+  { name: "missing", check: "level.read", rules: ["level.read"] },
+  { name: "truncated", check: "level.read", rules: ["level.read"] },
+  { name: "minimal", check: "level.read", rules: ["level.shaders.absent"] },
+  { name: "broken-geometry", check: "level.read", rules: ["level.geometry.read"] },
+  { name: "invalid-shader", check: "level.ranges", rules: ["level.visuals.shader.out_of_range"] },
+  { name: "malformed-shader", check: "level.ranges", rules: ["level.visuals.shader.malformed"] },
   {
     name: "invalid-range",
-    check: "ranges",
+    check: "level.ranges",
     rules: ["level.visuals.indices.not_triangles", "level.visuals.vertices.unreadable"],
   },
   {
     name: "invalid-geometry",
-    check: "geometry",
+    check: "level.geometry",
     rules: ["level.visuals.indices.out_of_range", "level.visuals.vertices.not_finite"],
   },
-  { name: "invalid-fastpath", check: "geometry", rules: ["level.visuals.indices.out_of_range"] },
+  { name: "invalid-fastpath", check: "level.geometry", rules: ["level.visuals.indices.out_of_range"] },
 ];
 
 describe("level verify report", () => {
@@ -47,7 +47,8 @@ describe("level verify report", () => {
       box.run("level verify", ["--path", box.at(name), "--report", box.at(`${name}.json`)], { expectExit: 3 });
     }
 
-    failed = box.run("level verify", ["--path", box.at("invalid-geometry")], { expectExit: 3 });
+    // Verbose, because findings are listed under their check only then.
+    failed = box.run("level verify", ["--path", box.at("invalid-geometry"), "--verbose"], { expectExit: 3 });
     usage = box.run("level verify", [], { expectExit: 2 });
   });
 
@@ -58,9 +59,9 @@ describe("level verify report", () => {
       result: {
         status: "passed",
         checks: [
-          { id: "read", status: "passed", findings: [] },
-          { id: "ranges", status: "passed", findings: [] },
-          { id: "geometry", status: "passed", findings: [] },
+          { id: "level.read", status: "passed", findings: [] },
+          { id: "level.ranges", status: "passed", findings: [] },
+          { id: "level.geometry", status: "passed", findings: [] },
         ],
       },
     });

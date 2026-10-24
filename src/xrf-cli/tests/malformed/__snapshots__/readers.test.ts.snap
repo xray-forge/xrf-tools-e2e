@@ -92,6 +92,7 @@ exports[`readers reject damaged input should refuse an unparseable ltx 1`] = `
     "Check failed: 1 finding(s)",
   ],
   "stdout": [
+    "Verifying LTX configs in <sandbox>/configs",
     "Verify path: <sandbox>/configs",
     "Checked 1 files, 0 sections in <duration>",
     "No LTX sections were verified",
@@ -108,7 +109,7 @@ exports[`readers reject damaged input should refuse an unparseable translation s
     "Check failed: 1 finding(s)",
   ],
   "stdout": [
-    "Verifying translations in <sandbox>/translations (ContainingInstallation), language - all",
+    "Verifying translations in <sandbox>/translations (containing-installation), language - all",
     "Verifying 1 translation source(s)",
   ],
 }

@@ -56,7 +56,10 @@ exports[`omf repack roundtrip should verify in place 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
-  "stdout": [],
+  "stdout": [
+    "Repacked omf files, 1/1 byte identical, 0 failed to read or write",
+    "Every omf file repacked into identical bytes",
+  ],
 }
 `;
 
@@ -65,8 +68,8 @@ exports[`omf repack roundtrip should write a repacked container 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Repack omf file <resources>/gamedata/meshes/omf/wpn_svd_hud_animation.omf",
-    "Omf file repacked into <sandbox>/repacked.omf",
+    "Repacking <resources>/gamedata/meshes/omf/wpn_svd_hud_animation.omf into <sandbox>/repacked.omf",
+    "Repacked <sandbox>/repacked.omf in <duration>",
   ],
 }
 `;

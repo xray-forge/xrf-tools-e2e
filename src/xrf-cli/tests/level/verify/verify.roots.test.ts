@@ -27,7 +27,7 @@ describe("level verify roots", () => {
     fs.mkdirSync(box.at("root/levels/not_a_level"), { recursive: true });
     box.write("root/levels/not_a_level/lmap#1_1.dds", "picture");
 
-    box.run("archive pack", [box.at("root"), "--dest", box.at("packed"), "--name", "levels"]);
+    box.run("archive pack", ["--path", box.at("root"), "--dest", box.at("packed"), "--name", "levels"]);
 
     loose = box.run("level verify", [
       "--root",

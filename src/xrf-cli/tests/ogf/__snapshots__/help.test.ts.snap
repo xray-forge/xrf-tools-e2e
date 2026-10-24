@@ -6,7 +6,7 @@ exports[`ogf command help should keep each leaf command's help stable 1`] = `
     "exitCode": 0,
     "stderr": [],
     "stdout": [
-      "Command to rewrite ogf visuals into well-formed bytes, changing nothing the engine reads",
+      "Rewrite OGF visuals into well-formed bytes, changing nothing the engine reads",
       "",
       "Usage: xrf-cli ogf fix [OPTIONS] --path <path>",
       "",
@@ -26,12 +26,12 @@ exports[`ogf command help should keep each leaf command's help stable 1`] = `
     "exitCode": 0,
     "stderr": [],
     "stdout": [
-      "Command to print information about provided ogf file",
+      "Print what an OGF visual holds",
       "",
       "Usage: xrf-cli ogf info [OPTIONS] --path <path>",
       "",
       "Options:",
-      "  -p, --path <path>    Path to ogf file",
+      "  -p, --path <path>    Path to the OGF file",
       "  -s, --silent         Turn off logging",
       "  -v, --verbose        Turn on verbose logging",
       "      --json           Write the run's JSON report to stdout, moving human output to stderr",
@@ -43,7 +43,7 @@ exports[`ogf command help should keep each leaf command's help stable 1`] = `
     "exitCode": 0,
     "stderr": [],
     "stdout": [
-      "Command to rewrite motion refs of provided ogf file",
+      "Rewrite the motion refs of an OGF visual",
       "",
       "Usage: xrf-cli ogf patch-motion-refs [OPTIONS] --path <path> --refs <refs>...",
       "",
@@ -63,7 +63,7 @@ exports[`ogf command help should keep each leaf command's help stable 1`] = `
     "exitCode": 0,
     "stderr": [],
     "stdout": [
-      "Command to rename a texture reference of provided ogf file",
+      "Rename a texture reference of an OGF visual",
       "",
       "Usage: xrf-cli ogf patch-texture-refs [OPTIONS] --path <path> --from <from> --to <to>",
       "",
@@ -84,7 +84,7 @@ exports[`ogf command help should keep each leaf command's help stable 1`] = `
     "exitCode": 0,
     "stderr": [],
     "stdout": [
-      "Command to verify ogf visuals can be packed for rendering",
+      "Verify that OGF visuals can be packed for rendering",
       "",
       "Usage: xrf-cli ogf verify [OPTIONS] --path <path>",
       "",

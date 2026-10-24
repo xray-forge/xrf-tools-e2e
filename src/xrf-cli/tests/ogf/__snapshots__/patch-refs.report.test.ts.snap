@@ -33,6 +33,10 @@ exports[`ogf patch reports should report a dry run as one that wrote nothing 1`]
     "originalSize": 13867,
     "patchedCount": 1,
     "patchedSize": 13839,
+    "previousRefs": [
+      "dynamics\\devices\\dev_bolt\\dev_bolt_hud_animation",
+      "omf\\wpn_mp5_hud_animation",
+    ],
   },
 }
 `;
@@ -70,6 +74,10 @@ exports[`ogf patch reports should report what a motion-refs patch rewrote 1`] = 
     "originalSize": 13867,
     "patchedCount": 1,
     "patchedSize": 13839,
+    "previousRefs": [
+      "dynamics\\devices\\dev_bolt\\dev_bolt_hud_animation",
+      "omf\\wpn_mp5_hud_animation",
+    ],
   },
 }
 `;
@@ -107,6 +115,9 @@ exports[`ogf patch reports should report what a texture-refs patch rewrote 1`] =
     "originalSize": 13867,
     "patchedCount": 1,
     "patchedSize": 13875,
+    "previousRefs": [
+      "wpn\\wpn_bolt",
+    ],
   },
 }
 `;

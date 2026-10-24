@@ -56,7 +56,7 @@ exports[`omf rename-motions success should report renamed motions 1`] = `
   "outcome": "success",
   "result": {
     "destination": "<sandbox>/renamed.omf",
-    "isDry": false,
+    "isDryRun": false,
     "motions": [
       "stand",
       "fire",
@@ -77,8 +77,8 @@ exports[`omf rename-motions success should write the expected files 1`] = `
   },
   {
     "path": "rename.json",
-    "sha256": "912b253053c3b60e335c57d2275828dfc95596e6040c794e48e72d7b8e5fa4ff",
-    "size": 759,
+    "sha256": "ece03f70de7743bcde5eb2e8a9c921a664b11920bc8bfcefa56b6cbf177b93f3",
+    "size": 762,
   },
   {
     "path": "renamed.omf",

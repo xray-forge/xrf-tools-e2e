@@ -105,7 +105,7 @@ exports[`omf filter-motions should report a filter dry run as one that wrote not
   "outcome": "success",
   "result": {
     "destination": "<sandbox>/never-written.omf",
-    "isDry": true,
+    "isDryRun": true,
     "kept": [
       "idle",
     ],
@@ -144,7 +144,7 @@ exports[`omf filter-motions should report which motions a filter kept 1`] = `
   "outcome": "success",
   "result": {
     "destination": "<sandbox>/kept-idle.omf",
-    "isDry": false,
+    "isDryRun": false,
     "kept": [
       "idle",
     ],
@@ -158,13 +158,13 @@ exports[`omf filter-motions should write the expected files 1`] = `
 [
   {
     "path": "filter-dry.json",
-    "sha256": "dbcfffdcd01120328343b86750e94e4d1d8a70d7bc3c63b41caf24e80ca4dc39",
-    "size": 724,
+    "sha256": "b1cfbe7e445691f1e7bd1b50c55532d0a454c2ec17e8c9cb126ba2ad1fce67a5",
+    "size": 727,
   },
   {
     "path": "filter.json",
-    "sha256": "47f1df6480b25808a64d6b2b2398e05539f86734b3fe43bc9b0dfaad0ff8be40",
-    "size": 721,
+    "sha256": "f55ec5aadf0a4ac43de1ecb3e1ede4142bc4ab1290096505b0552f422f38e45c",
+    "size": 724,
   },
   {
     "path": "kept-idle.omf",

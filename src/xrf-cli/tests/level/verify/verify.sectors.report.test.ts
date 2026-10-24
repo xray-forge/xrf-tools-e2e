@@ -17,9 +17,10 @@ describe("level verify sectors and portals", () => {
     }
 
     valid = box.run("level verify", ["--path", box.at("sectors"), "--report", box.at("sectors.json")]);
+    // Verbose, because findings are listed under their check only then.
     invalid = box.run(
       "level verify",
-      ["--path", box.at("invalid-sectors"), "--report", box.at("invalid-sectors.json")],
+      ["--path", box.at("invalid-sectors"), "--report", box.at("invalid-sectors.json"), "--verbose"],
       { expectExit: 3 }
     );
     box.run("level verify", ["--path", box.at("truncated-portals"), "--report", box.at("truncated-portals.json")], {
@@ -34,9 +35,9 @@ describe("level verify sectors and portals", () => {
       result: {
         status: "passed",
         checks: [
-          { id: "read", status: "passed", findings: [] },
-          { id: "ranges", status: "passed", findings: [] },
-          { id: "geometry", status: "passed", findings: [] },
+          { id: "level.read", status: "passed", findings: [] },
+          { id: "level.ranges", status: "passed", findings: [] },
+          { id: "level.geometry", status: "passed", findings: [] },
         ],
       },
     });
@@ -61,9 +62,9 @@ describe("level verify sectors and portals", () => {
       result: {
         status: "failed",
         checks: [
-          { id: "read", status: "passed", findings: [] },
+          { id: "level.read", status: "passed", findings: [] },
           {
-            id: "ranges",
+            id: "level.ranges",
             status: "failed",
             findings: [
               { ruleId: "level.portals.sector.out_of_range" },
@@ -73,7 +74,7 @@ describe("level verify sectors and portals", () => {
             ],
           },
           {
-            id: "geometry",
+            id: "level.geometry",
             status: "failed",
             findings: [
               { ruleId: "level.portals.not_a_polygon", message: expect.stringContaining("spans 2 vertices") },
@@ -98,7 +99,7 @@ describe("level verify sectors and portals", () => {
         status: "failed",
         checks: expect.arrayContaining([
           expect.objectContaining({
-            id: "read",
+            id: "level.read",
             status: "failed",
             findings: [
               expect.objectContaining({
