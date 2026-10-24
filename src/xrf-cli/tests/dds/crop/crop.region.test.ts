@@ -15,9 +15,9 @@ describe("dds crop regions", () => {
 
   beforeAll(() => {
     corner = box.run("dds crop", [
-      "--source",
+      "--path",
       SHEET,
-      "--output",
+      "--dest",
       box.at("corner.dds"),
       "--x",
       "0",
@@ -32,9 +32,9 @@ describe("dds crop regions", () => {
     ]);
 
     offset = box.run("dds crop", [
-      "--source",
+      "--path",
       SHEET,
-      "--output",
+      "--dest",
       box.at("offset.dds"),
       "--x",
       "64",

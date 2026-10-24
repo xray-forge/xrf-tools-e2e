@@ -34,7 +34,7 @@ describe("sprite unpack-description escaping sprite ids", () => {
       results.push(
         box.run(
           "sprite unpack-description",
-          ["--description", description, "--base", gamedata("textures"), "--output", box.at(`out-${index}`)],
+          ["--description", description, "--base", gamedata("textures"), "--dest", box.at(`out-${index}`)],
           { expectExit: 1 }
         )
       );

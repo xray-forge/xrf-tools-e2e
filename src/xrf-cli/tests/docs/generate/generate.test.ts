@@ -34,11 +34,11 @@ describe("docs generate", () => {
     // The only command that needs no input: the pages are rendered from the clap definitions, so
     // this covers the whole registered surface at once. Any command gaining, losing, or renaming an
     // argument moves a page hash in the manifest below.
-    generated = box.run("docs generate", ["--output", box.at("docs")]);
-    check = box.run("docs generate", ["--output", box.at("docs"), "--check"]);
+    generated = box.run("docs generate", ["--dest", box.at("docs")]);
+    check = box.run("docs generate", ["--dest", box.at("docs"), "--check"]);
 
     box.write("drifted/README.md", "# Not the generated docs\n");
-    drifted = box.run("docs generate", ["--output", box.at("drifted"), "--check"], { expectExit: 3 });
+    drifted = box.run("docs generate", ["--dest", box.at("drifted"), "--check"], { expectExit: 3 });
   });
 
   it("should generate a page per command group", () => {

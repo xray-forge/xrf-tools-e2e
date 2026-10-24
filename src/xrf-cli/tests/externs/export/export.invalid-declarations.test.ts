@@ -29,15 +29,29 @@ describe("externs export invalid declarations", () => {
     // A name declared twice is content the check judged, which the failure contract answers with 3.
     duplicate = box.run(
       "externs export",
-      [box.at("duplicate"), "--check", box.at("externs.json"), "--report", box.at("duplicate.json")],
+      [
+        "--path",
+        box.at("duplicate"),
+        "--dest",
+        box.at("externs.json"),
+        "--check",
+        "--report",
+        box.at("duplicate.json"),
+      ],
       { expectExit: 3 }
     );
 
     // So is a declaration source the parser cannot read a contract from at all.
-    malformed = box.run("externs export", [box.at("malformed"), "--check", box.at("externs.json")], { expectExit: 3 });
+    malformed = box.run(
+      "externs export",
+      ["--path", box.at("malformed"), "--dest", box.at("externs.json"), "--check"],
+      { expectExit: 3 }
+    );
 
     // A root that cannot be walked was never judged, so it stays an execution failure.
-    missingRoot = box.run("externs export", [box.at("absent"), "--check", box.at("externs.json")], { expectExit: 1 });
+    missingRoot = box.run("externs export", ["--path", box.at("absent"), "--dest", box.at("externs.json"), "--check"], {
+      expectExit: 1,
+    });
   });
 
   it("should reject a duplicate declaration as a check failure", () => {

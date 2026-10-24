@@ -15,7 +15,9 @@ describe("dds make-bump pair", () => {
 
   beforeAll(() => {
     generated = box.run("dds make-bump", [
+      "--path",
       HEIGHT,
+      "--dest",
       box.at("wall"),
       "--gloss-constant",
       "0.6",

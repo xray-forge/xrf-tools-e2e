@@ -12,39 +12,31 @@ describe("tooling reports", () => {
   const box = new Sandbox(__filename);
 
   beforeAll(() => {
-    box.run("docs generate", ["--output", box.at("docs"), "--silent", "--report", box.at("docs.json")]);
-    box.run("docs generate", [
-      "--output",
-      box.at("docs"),
-      "--check",
-      "--silent",
-      "--report",
-      box.at("docs-check.json"),
-    ]);
+    box.run("docs generate", ["--dest", box.at("docs"), "--silent", "--report", box.at("docs.json")]);
+    box.run("docs generate", ["--dest", box.at("docs"), "--check", "--silent", "--report", box.at("docs-check.json")]);
 
     box.write("drifted/README.md", "# Not the generated docs\n");
-    box.run(
-      "docs generate",
-      ["--output", box.at("drifted"), "--check", "--silent", "--report", box.at("drifted.json")],
-      {
-        expectExit: 3,
-      }
-    );
+    box.run("docs generate", ["--dest", box.at("drifted"), "--check", "--silent", "--report", box.at("drifted.json")], {
+      expectExit: 3,
+    });
 
     box.run("externs export", [
+      "--path",
       DECLARATIONS,
       "--format",
       "json",
-      "--output",
+      "--dest",
       box.at("externs.json"),
       "--silent",
       "--report",
       box.at("externs-report.json"),
     ]);
     box.run("externs export", [
+      "--path",
       DECLARATIONS,
-      "--check",
+      "--dest",
       box.at("externs.json"),
+      "--check",
       "--silent",
       "--report",
       box.at("externs-check.json"),

@@ -17,9 +17,9 @@ describe("equipment sprite roundtrip", () => {
     unpacked = box.run("sprite unpack-equipment", [
       "--system-ltx",
       SYSTEM_LTX,
-      "--source",
+      "--path",
       SHEET,
-      "--output",
+      "--dest",
       box.at("icons"),
       "--report",
       box.at("unpack.json"),
@@ -28,9 +28,9 @@ describe("equipment sprite roundtrip", () => {
     packed = box.run("sprite pack-equipment", [
       "--system-ltx",
       SYSTEM_LTX,
-      "--source",
+      "--path",
       box.at("icons"),
-      "--output",
+      "--dest",
       box.at("repacked.dds"),
       "--report",
       box.at("pack.json"),

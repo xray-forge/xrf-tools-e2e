@@ -36,7 +36,7 @@ describe("sprite unpack-equipment escaping section names", () => {
       results.push(
         box.run(
           "sprite unpack-equipment",
-          ["--system-ltx", systemLtx, "--source", SHEET, "--output", box.at(`out-${index}`)],
+          ["--system-ltx", systemLtx, "--path", SHEET, "--dest", box.at(`out-${index}`)],
           { expectExit: 1 }
         )
       );

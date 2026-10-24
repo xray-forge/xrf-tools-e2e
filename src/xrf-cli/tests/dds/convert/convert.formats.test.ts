@@ -27,7 +27,9 @@ describe("dds convert formats", () => {
 
   beforeAll(() => {
     compressed = box.run("dds convert", [
+      "--path",
       SHEET,
+      "--dest",
       box.at("bc1.dds"),
       "--format",
       "bc1",
@@ -38,7 +40,9 @@ describe("dds convert formats", () => {
     ]);
 
     uncompressed = box.run("dds convert", [
+      "--path",
       SHEET,
+      "--dest",
       box.at("rgba8.dds"),
       "--format",
       "rgba8",
@@ -48,7 +52,17 @@ describe("dds convert formats", () => {
       box.at("rgba8.json"),
     ]);
 
-    flat = box.run("dds convert", [SHEET, box.at("flat.dds"), "--format", "bc3", "--quality", "fast", "--no-mipmaps"]);
+    flat = box.run("dds convert", [
+      "--path",
+      SHEET,
+      "--dest",
+      box.at("flat.dds"),
+      "--format",
+      "bc3",
+      "--quality",
+      "fast",
+      "--no-mipmaps",
+    ]);
 
     compressedInfo = box.run("dds info", ["--path", box.at("bc1.dds")]);
   });
@@ -94,7 +108,9 @@ describe("dds convert formats", () => {
   // finds out about until a modder does.
   it.each(CANDIDATES)("should write and read back $name", ({ flag, name, header }) => {
     const written = box.run("dds convert", [
+      "--path",
       SHEET,
+      "--dest",
       box.at(`${flag}.dds`),
       "--format",
       flag,

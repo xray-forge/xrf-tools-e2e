@@ -13,7 +13,9 @@ describe("dds make-bump gloss", () => {
 
   beforeAll(() => {
     dark = box.run("dds make-bump", [
+      "--path",
       HEIGHT,
+      "--dest",
       box.at("matte"),
       "--gloss-constant",
       "0.05",
@@ -23,7 +25,9 @@ describe("dds make-bump gloss", () => {
       box.at("matte.json"),
     ]);
 
-    refused = box.run("dds make-bump", [HEIGHT, box.at("invalid"), "--gloss-constant", "4"], { expectExit: 1 });
+    refused = box.run("dds make-bump", ["--path", HEIGHT, "--dest", box.at("invalid"), "--gloss-constant", "4"], {
+      expectExit: 1,
+    });
   });
 
   // The SDK answers -1000 for a gloss this dark and keeps the files it wrote, because a matte

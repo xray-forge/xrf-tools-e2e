@@ -23,12 +23,12 @@ exports[`equipment sprite roundtrip should pack the icons back into a sheet 1`] 
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Starting packing the equipment sprite, parallel",
+    "Packing the equipment sprite",
     "System ltx: <resources>/gamedata/configs/system.ltx",
-    "Source icons dir: <sandbox>/icons",
-    "Output dir: <sandbox>/repacked.dds",
+    "Source icons folder: <sandbox>/icons",
+    "Sprite file: <sandbox>/repacked.dds",
     "Packed 4 icons in BC3RgbaUnorm format",
-    "Saved the packed equipment sprite <sandbox>/repacked.dds",
+    "Saved the packed equipment sprite <sandbox>/repacked.dds in <duration>",
   ],
 }
 `;
@@ -120,7 +120,7 @@ exports[`equipment sprite roundtrip should unpack only the opted-in icons 1`] = 
     "Source DDS file details: 256x64, mip-maps: 0, format: None",
     "Unpacking the equipment sprite into: <sandbox>/icons",
     "Unpacked 4 icons",
-    "Unpacked the equipment sprite into icons named by its LTX sections",
+    "Unpacked the equipment sprite into icons named by its LTX sections in <duration>",
   ],
 }
 `;

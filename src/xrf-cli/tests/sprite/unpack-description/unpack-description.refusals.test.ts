@@ -20,7 +20,7 @@ describe("sprite unpack-description unknown file", () => {
         DESCRIPTION,
         "--base",
         gamedata("textures"),
-        "--output",
+        "--dest",
         box.at("unknown"),
         "--file",
         "no_such_file",

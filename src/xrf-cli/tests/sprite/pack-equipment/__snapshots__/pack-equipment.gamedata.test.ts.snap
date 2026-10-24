@@ -5,12 +5,12 @@ exports[`sprite pack-equipment gamedata resolution should resolve a custom icon 
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Starting packing the equipment sprite, parallel",
+    "Packing the equipment sprite",
     "System ltx: <sandbox>/custom.ltx",
-    "Source icons dir: <sandbox>/icons",
-    "Output dir: <sandbox>/with-gamedata.dds",
+    "Source icons folder: <sandbox>/icons",
+    "Sprite file: <sandbox>/with-gamedata.dds",
     "Packed 2 icons in BC3RgbaUnorm format",
-    "Saved the packed equipment sprite <sandbox>/with-gamedata.dds",
+    "Saved the packed equipment sprite <sandbox>/with-gamedata.dds in <duration>",
   ],
 }
 `;
@@ -22,12 +22,12 @@ exports[`sprite pack-equipment gamedata resolution should skip a custom icon pat
     "Skip icon <sandbox>/../../resources/textures/ui/ui_test_sheet.dds / 'test_icon_custom', reason: IO error: <missing path>",
   ],
   "stdout": [
-    "Starting packing the equipment sprite, parallel",
+    "Packing the equipment sprite",
     "System ltx: <sandbox>/custom.ltx",
-    "Source icons dir: <sandbox>/icons",
-    "Output dir: <sandbox>/without-gamedata.dds",
+    "Source icons folder: <sandbox>/icons",
+    "Sprite file: <sandbox>/without-gamedata.dds",
     "Packed 1 icons in BC3RgbaUnorm format",
-    "Saved the packed equipment sprite <sandbox>/without-gamedata.dds",
+    "Saved the packed equipment sprite <sandbox>/without-gamedata.dds in <duration>",
   ],
 }
 `;

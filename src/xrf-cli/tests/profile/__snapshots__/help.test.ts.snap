@@ -6,7 +6,7 @@ exports[`profile command help should keep each leaf command's help stable 1`] = 
     "exitCode": 0,
     "stderr": [],
     "stdout": [
-      "Command to measure one invocation across builds, interleaved",
+      "Measure one invocation across builds, interleaved",
       "",
       "Usage: xrf-cli profile run [OPTIONS] --binary <binary> -- <arguments>...",
       "",

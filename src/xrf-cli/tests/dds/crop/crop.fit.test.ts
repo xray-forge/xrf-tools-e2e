@@ -14,9 +14,9 @@ describe("dds crop fit", () => {
 
   beforeAll(() => {
     fitted = box.run("dds crop", [
-      "--source",
+      "--path",
       SHEET,
-      "--output",
+      "--dest",
       box.at("fitted.dds"),
       "--x",
       "0",

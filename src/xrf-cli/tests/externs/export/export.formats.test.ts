@@ -13,9 +13,9 @@ describe("externs export formats", () => {
   let html: CliResult;
 
   beforeAll(() => {
-    json = box.run("externs export", [DECLARATIONS, "--format", "json", "--output", box.at("externs.json")]);
-    xml = box.run("externs export", [DECLARATIONS, "--format", "xml", "--output", box.at("externs.xml")]);
-    html = box.run("externs export", [DECLARATIONS, "--format", "html", "--output", box.at("externs.html")]);
+    json = box.run("externs export", ["--path", DECLARATIONS, "--format", "json", "--dest", box.at("externs.json")]);
+    xml = box.run("externs export", ["--path", DECLARATIONS, "--format", "xml", "--dest", box.at("externs.xml")]);
+    html = box.run("externs export", ["--path", DECLARATIONS, "--format", "html", "--dest", box.at("externs.html")]);
   });
 
   it("should export json", () => {

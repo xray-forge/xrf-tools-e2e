@@ -19,7 +19,7 @@ describe("sprite unpack-description file selection", () => {
       DESCRIPTION,
       "--base",
       gamedata("textures"),
-      "--output",
+      "--dest",
       box.at("all"),
     ]);
 
@@ -28,7 +28,7 @@ describe("sprite unpack-description file selection", () => {
       DESCRIPTION,
       "--base",
       gamedata("textures"),
-      "--output",
+      "--dest",
       box.at("selected"),
       "--file",
       "ui_test_sheet",

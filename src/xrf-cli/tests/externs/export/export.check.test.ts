@@ -12,15 +12,19 @@ describe("externs export drift detection", () => {
   let drifted: CliResult;
 
   beforeAll(() => {
-    box.run("externs export", [DECLARATIONS, "--format", "json", "--output", box.at("externs.json")]);
+    box.run("externs export", ["--path", DECLARATIONS, "--format", "json", "--dest", box.at("externs.json")]);
 
     // Checking the artifact that was just written must agree with it.
-    check = box.run("externs export", [DECLARATIONS, "--check", box.at("externs.json")]);
+    check = box.run("externs export", ["--path", DECLARATIONS, "--dest", box.at("externs.json"), "--check"]);
 
     // A manifest that no longer matches the declarations is what --check exists to catch.
-    drifted = box.run("externs export", [DECLARATIONS, "--check", box.write("drifted.json", '{ "exports": {} }\n')], {
-      expectExit: 3,
-    });
+    drifted = box.run(
+      "externs export",
+      ["--path", DECLARATIONS, "--dest", box.write("drifted.json", '{ "exports": {} }\n'), "--check"],
+      {
+        expectExit: 3,
+      }
+    );
   });
 
   it("should accept an artifact that matches", () => {

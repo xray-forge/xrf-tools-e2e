@@ -23,8 +23,10 @@ exports[`description sprite roundtrip should pack the regions back into a sheet 
   "exitCode": 0,
   "stderr": [],
   "stdout": [
+    "Packing texture descriptions <resources>/gamedata/configs/ui/textures_descr/ui_test_sheet.xml, from <sandbox>/unpacked to <sandbox>/packed",
     "Packing for 1 files",
     "Packed 1 files",
+    "Packed 1 sheet(s) with 4 sprite(s) in <duration>",
   ],
 }
 `;
@@ -60,8 +62,11 @@ exports[`description sprite roundtrip should report the description packing and 
     "base": "<resources>/gamedata/textures",
     "description": "<resources>/gamedata/configs/ui/textures_descr/ui_test_sheet.xml",
     "destination": "<sandbox>/unpacked",
-    "files": [],
-    "isStrict": false,
+    "duration": "<duration>",
+    "files": 1,
+    "skippedFiles": 0,
+    "skippedSprites": 0,
+    "sprites": 4,
   },
 }
 `;
@@ -97,8 +102,11 @@ exports[`description sprite roundtrip should report the description packing and 
     "base": "<sandbox>/unpacked",
     "description": "<resources>/gamedata/configs/ui/textures_descr/ui_test_sheet.xml",
     "destination": "<sandbox>/packed",
-    "files": [],
-    "isStrict": false,
+    "duration": "<duration>",
+    "files": 1,
+    "skippedFiles": 0,
+    "skippedSprites": 0,
+    "sprites": 4,
   },
 }
 `;
@@ -109,9 +117,10 @@ exports[`description sprite roundtrip should unpack every described region 1`] =
   "stderr": [],
   "stdout": [
     "Workers: <workers> (auto)",
-    "Unpacking texture descriptions: <resources>/gamedata/configs/ui/textures_descr/ui_test_sheet.xml, from <resources>/gamedata/textures to <sandbox>/unpacked",
+    "Unpacking texture descriptions <resources>/gamedata/configs/ui/textures_descr/ui_test_sheet.xml, from <resources>/gamedata/textures to <sandbox>/unpacked",
     "Unpacking for 1 files",
     "Unpacked 1 files",
+    "Unpacked 4 sprite(s) from 1 sheet(s) in <duration>",
   ],
 }
 `;
@@ -120,8 +129,8 @@ exports[`description sprite roundtrip should write the expected files 1`] = `
 [
   {
     "path": "pack.json",
-    "sha256": "1198a27a62d271c70fd0687e5f4819ba09c1d75b59b0bc2e4db367444dcad4e6",
-    "size": 735,
+    "sha256": "af29debaf8ddcfaf6fdcc53d28cb9072b27278a37a1fe10b948e728248663e57",
+    "size": 807,
   },
   {
     "path": "packed/ui/ui_test_sheet.dds",
@@ -130,8 +139,8 @@ exports[`description sprite roundtrip should write the expected files 1`] = `
   },
   {
     "path": "unpack.json",
-    "sha256": "688c35b8809f77cdd63d4c6d66516a1c69b8bb6d5825e09157b8b2562c5d7c4d",
-    "size": 750,
+    "sha256": "03f4874578452d195b2353d077e410e2ea07919e207975df526b507a9cf51b80",
+    "size": 822,
   },
   {
     "path": "unpacked/ui/ui_test_sheet/ui_test_end.dds",

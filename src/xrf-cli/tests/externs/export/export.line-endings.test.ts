@@ -14,19 +14,21 @@ describe("externs export line endings", () => {
     // Both endings are asked for explicitly. The default follows the platform, so on Windows a
     // crlf run is byte-identical to the default one and would prove nothing on its own.
     crlf = box.run("externs export", [
+      "--path",
       DECLARATIONS,
       "--format",
       "json",
-      "--output",
+      "--dest",
       box.at("crlf.json"),
       "--line-endings",
       "crlf",
     ]);
     box.run("externs export", [
+      "--path",
       DECLARATIONS,
       "--format",
       "json",
-      "--output",
+      "--dest",
       box.at("lf.json"),
       "--line-endings",
       "lf",

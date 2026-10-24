@@ -9,7 +9,7 @@ exports[`sprite unpack-description escaping sprite ids should refuse every id th
     ],
     "stdout": [
       "Workers: <workers> (auto)",
-      "Unpacking texture descriptions: <sandbox>/descriptions/escape-0.xml, from <resources>/gamedata/textures to <sandbox>/out-0",
+      "Unpacking texture descriptions <sandbox>/descriptions/escape-0.xml, from <resources>/gamedata/textures to <sandbox>/out-0",
     ],
   },
   {
@@ -19,7 +19,7 @@ exports[`sprite unpack-description escaping sprite ids should refuse every id th
     ],
     "stdout": [
       "Workers: <workers> (auto)",
-      "Unpacking texture descriptions: <sandbox>/descriptions/escape-1.xml, from <resources>/gamedata/textures to <sandbox>/out-1",
+      "Unpacking texture descriptions <sandbox>/descriptions/escape-1.xml, from <resources>/gamedata/textures to <sandbox>/out-1",
     ],
   },
   {
@@ -29,7 +29,7 @@ exports[`sprite unpack-description escaping sprite ids should refuse every id th
     ],
     "stdout": [
       "Workers: <workers> (auto)",
-      "Unpacking texture descriptions: <sandbox>/descriptions/escape-2.xml, from <resources>/gamedata/textures to <sandbox>/out-2",
+      "Unpacking texture descriptions <sandbox>/descriptions/escape-2.xml, from <resources>/gamedata/textures to <sandbox>/out-2",
     ],
   },
   {
@@ -39,7 +39,7 @@ exports[`sprite unpack-description escaping sprite ids should refuse every id th
     ],
     "stdout": [
       "Workers: <workers> (auto)",
-      "Unpacking texture descriptions: <sandbox>/descriptions/escape-3.xml, from <resources>/gamedata/textures to <sandbox>/out-3",
+      "Unpacking texture descriptions <sandbox>/descriptions/escape-3.xml, from <resources>/gamedata/textures to <sandbox>/out-3",
     ],
   },
 ]

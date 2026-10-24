@@ -22,9 +22,9 @@ describe("dds crop bounds", () => {
     sourceBefore = sha(SHEET);
 
     edge = box.run("dds crop", [
-      "--source",
+      "--path",
       SHEET,
-      "--output",
+      "--dest",
       box.at("edge.dds"),
       "--x",
       "192",
@@ -41,9 +41,9 @@ describe("dds crop bounds", () => {
     outOfBounds = box.run(
       "dds crop",
       [
-        "--source",
+        "--path",
         SHEET,
-        "--output",
+        "--dest",
         box.at("never-written.dds"),
         "--x",
         "192",
@@ -62,20 +62,7 @@ describe("dds crop bounds", () => {
     destinationBefore = box.sha("preserved.dds");
     onePixelOverflow = box.run(
       "dds crop",
-      [
-        "--source",
-        SHEET,
-        "--output",
-        box.at("preserved.dds"),
-        "--x",
-        "193",
-        "--y",
-        "0",
-        "--width",
-        "64",
-        "--height",
-        "64",
-      ],
+      ["--path", SHEET, "--dest", box.at("preserved.dds"), "--x", "193", "--y", "0", "--width", "64", "--height", "64"],
       { expectExit: 1 }
     );
   });
