@@ -161,6 +161,7 @@ exports[`particle list should report each effect's sprite, particles and action 
         "timeLimit": null,
       },
     ],
+    "total": 6,
   },
 }
 `;
@@ -169,8 +170,8 @@ exports[`particle list should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "08dc13f2df63539347bc636c599c01b6be4ab599624d634489c07c46e4877150",
-    "size": 3239,
+    "sha256": "0924fe5c062d63ff47400650fc317e110e28fb9a8120544b50c8025187c49af1",
+    "size": 3255,
   },
 ]
 `;

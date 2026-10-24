@@ -27,7 +27,7 @@ exports[`dialog command help should keep each leaf command's help stable 1`] = `
     "exitCode": 0,
     "stderr": [],
     "stdout": [
-      "Command to read dialog xml and report what it holds",
+      "Read dialog XML and report what it holds",
       "",
       "Usage: xrf-cli dialog info [OPTIONS] --path <path>...",
       "",

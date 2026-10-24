@@ -13,11 +13,11 @@ describe("translation build reporting", () => {
   let report: CliResult;
 
   beforeAll(() => {
-    piped = box.run("translation build", ["--path", SOURCE, "--output", box.at("piped"), "--json"]);
+    piped = box.run("translation build", ["--path", SOURCE, "--dest", box.at("piped"), "--json"]);
     report = box.run("translation build", [
       "--path",
       SOURCE,
-      "--output",
+      "--dest",
       box.at("reported"),
       "--report",
       box.at("report.json"),

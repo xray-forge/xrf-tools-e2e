@@ -4,7 +4,10 @@ exports[`spawn repack should repack in one step 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
-  "stdout": [],
+  "stdout": [
+    "Repacking <resources>/gamedata/spawns/all.spawn into <sandbox>/repacked.spawn",
+    "Repacked <sandbox>/repacked.spawn in <duration>",
+  ],
 }
 `;
 
@@ -12,7 +15,10 @@ exports[`spawn repack should report the second pass the same way 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
-  "stdout": [],
+  "stdout": [
+    "Repacking <sandbox>/repacked.spawn into <sandbox>/twice.spawn",
+    "Repacked <sandbox>/twice.spawn in <duration>",
+  ],
 }
 `;
 

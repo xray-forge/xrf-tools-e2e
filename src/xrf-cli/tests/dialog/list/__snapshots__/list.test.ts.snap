@@ -126,6 +126,7 @@ exports[`dialog list should report each dialog with its conditions and no offers
     "findings": [],
     "language": "eng",
     "profile": null,
+    "total": 6,
   },
 }
 `;
@@ -166,8 +167,8 @@ exports[`dialog list should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "3fa60e407c1adcfe7103f53b09a28ea37e6c9191cff1b63b0d8f4d31e24576fb",
-    "size": 2680,
+    "sha256": "03839a8632f91f387505e17db2fe811e2bca8374dd60a34c53d5ec123f226f02",
+    "size": 2696,
   },
 ]
 `;

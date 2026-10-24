@@ -17,6 +17,7 @@ exports[`ltx format roundtrip should not change what the files mean 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
+    "Verifying LTX configs in <sandbox>/configs",
     "Verify path: <sandbox>/configs",
     "Checked 7 files, 32 sections in <duration>",
     "Verified 0.00%, 2 files, 0 sections, 0 fields",

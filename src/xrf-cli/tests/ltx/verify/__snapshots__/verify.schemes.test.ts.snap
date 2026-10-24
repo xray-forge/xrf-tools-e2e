@@ -16,6 +16,7 @@ exports[`ltx verify schemes should report every finding with its section, field 
     "Check failed: 9 finding(s)",
   ],
   "stdout": [
+    "Verifying LTX configs in <resources>/ltx-schemes/configs",
     "Verify path: <resources>/ltx-schemes/configs",
     "Checked 5 files, 8 sections in <duration>",
     "Verified 87.50%, 2 files, 7 sections, 21 fields",

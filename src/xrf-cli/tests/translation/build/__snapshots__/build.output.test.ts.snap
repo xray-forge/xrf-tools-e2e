@@ -5,7 +5,7 @@ exports[`translation build output selection and ordering should build every lang
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Building translations in <resources>/translations (ContainingInstallation), language - all, sorted - true",
+    "Building translations in <resources>/translations (containing-installation), language - all, sorted - true",
     "Building 2 translation source(s)",
     "Built translation files in <duration>",
   ],
@@ -17,7 +17,7 @@ exports[`translation build output selection and ordering should build one langua
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Building translations in <resources>/translations (ContainingInstallation), language - eng, sorted - true",
+    "Building translations in <resources>/translations (containing-installation), language - eng, sorted - true",
     "Building 2 translation source(s)",
     "Built translation files in <duration>",
   ],
@@ -29,7 +29,7 @@ exports[`translation build output selection and ordering should build without so
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Building translations in <resources>/translations (ContainingInstallation), language - all, sorted - false",
+    "Building translations in <resources>/translations (containing-installation), language - all, sorted - false",
     "Building 2 translation source(s)",
     "Built translation files in <duration>",
   ],

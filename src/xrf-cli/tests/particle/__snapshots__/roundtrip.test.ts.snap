@@ -4,7 +4,10 @@ exports[`particles roundtrip should pack back into a container 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
-  "stdout": [],
+  "stdout": [
+    "Packing <sandbox>/unpacked into <sandbox>/repacked.xr",
+    "Packed <sandbox>/repacked.xr in <duration>",
+  ],
 }
 `;
 
@@ -62,7 +65,10 @@ exports[`particles roundtrip should unpack to ltx files 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
-  "stdout": [],
+  "stdout": [
+    "Unpacking <resources>/gamedata/particles.xr into <sandbox>/unpacked",
+    "Unpacked <sandbox>/unpacked in <duration>",
+  ],
 }
 `;
 
@@ -106,7 +112,10 @@ exports[`particles roundtrip should verify the packed container 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
-  "stdout": [],
+  "stdout": [
+    "Verifying particles file <resources>/gamedata/particles.xr",
+    "<resources>/gamedata/particles.xr is a valid particles file",
+  ],
 }
 `;
 
@@ -149,7 +158,10 @@ exports[`particles roundtrip should verify the unpacked form 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
-  "stdout": [],
+  "stdout": [
+    "Verifying particles file <sandbox>/unpacked",
+    "<sandbox>/unpacked is a valid particles file",
+  ],
 }
 `;
 

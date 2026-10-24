@@ -4,7 +4,10 @@ exports[`particle unpack force should prune nested stale files when forced 1`] =
 {
   "exitCode": 0,
   "stderr": [],
-  "stdout": [],
+  "stdout": [
+    "Unpacking <resources>/gamedata/particles.xr into <sandbox>/unpacked",
+    "Unpacked <sandbox>/unpacked in <duration>",
+  ],
 }
 `;
 
@@ -12,7 +15,7 @@ exports[`particle unpack force should refuse an existing unpack destination 1`] 
 {
   "exitCode": 1,
   "stderr": [
-    "Error: IO error: Unpack output directory already exists, use --force to prune destination folder",
+    "Error: IO error: <sandbox>/unpacked already exists, use --force to replace it",
   ],
   "stdout": [],
 }
@@ -22,7 +25,10 @@ exports[`particle unpack force should unpack into an empty destination 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
-  "stdout": [],
+  "stdout": [
+    "Unpacking <resources>/gamedata/particles.xr into <sandbox>/unpacked",
+    "Unpacked <sandbox>/unpacked in <duration>",
+  ],
 }
 `;
 

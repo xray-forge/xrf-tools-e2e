@@ -170,6 +170,7 @@ exports[`dialog list --profile should report the profile, the characters it reso
       ],
       "id": "snag",
     },
+    "total": 4,
   },
 }
 `;
@@ -191,8 +192,8 @@ exports[`dialog list --profile should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "df36104c2f8ed17973e0d7eb3ccc53fd343a639d4c5395d7c1a98c193ea1bc75",
-    "size": 2779,
+    "sha256": "9f54a97f76b405096b0d0261437943860b5d967afcfb3e8dedd3c2ec66846f7d",
+    "size": 2795,
   },
 ]
 `;

@@ -83,7 +83,7 @@ exports[`translation build reporting should write a structured report 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Building translations in <resources>/translations (ContainingInstallation), language - all, sorted - true",
+    "Building translations in <resources>/translations (containing-installation), language - all, sorted - true",
     "Building 2 translation source(s)",
     "Built translation files in <duration>",
   ],

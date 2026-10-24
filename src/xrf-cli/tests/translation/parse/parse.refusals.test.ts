@@ -14,7 +14,7 @@ describe("translation parse guards the language it was given", () => {
     expect(
       box.run(
         "translation parse",
-        [...MOD_ARGS, "--prefix", "configs\\text", "--language", "pol", "--output", box.at("refused")],
+        [...MOD_ARGS, "--prefix", "configs\\text", "--language", "pol", "--dest", box.at("refused")],
         { expectExit: 1 }
       )
     ).toMatchSnapshot();
@@ -23,7 +23,7 @@ describe("translation parse guards the language it was given", () => {
   // One run files everything it reads under one language key, and `all` is not one.
   it("should refuse the all language", () => {
     expect(
-      box.run("translation parse", [...MOD_ARGS, "--language", "all", "--output", box.at("refused")], {
+      box.run("translation parse", [...MOD_ARGS, "--language", "all", "--dest", box.at("refused")], {
         expectExit: 1,
       })
     ).toMatchSnapshot();

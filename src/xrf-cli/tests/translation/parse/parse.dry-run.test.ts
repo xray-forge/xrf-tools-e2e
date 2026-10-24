@@ -18,7 +18,7 @@ describe("translation parse previews without writing", () => {
       "directory",
       "--language",
       "eng",
-      "--output",
+      "--dest",
       box.at("sources"),
       "--dry-run",
     ]);
@@ -38,7 +38,7 @@ describe("translation parse previews without writing", () => {
       "directory",
       "--language",
       "eng",
-      "--output",
+      "--dest",
       box.at("seeded"),
       "--dry-run",
     ]);

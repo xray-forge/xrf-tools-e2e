@@ -18,7 +18,7 @@ describe("translation parse reads a gamedata tree", () => {
       "directory",
       "--language",
       "ukr",
-      "--output",
+      "--dest",
       box.at("sources"),
     ]);
   });

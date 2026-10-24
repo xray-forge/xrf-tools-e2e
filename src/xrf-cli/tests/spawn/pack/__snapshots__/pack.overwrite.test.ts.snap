@@ -4,7 +4,7 @@ exports[`spawn pack overwrite should refuse an existing packed file 1`] = `
 {
   "exitCode": 1,
   "stderr": [
-    "Error: IO error: Pack output file already exists, use --force to prune destination",
+    "Error: IO error: <sandbox>/packed.spawn already exists, use --force to replace it",
   ],
   "stdout": [],
 }
@@ -14,7 +14,10 @@ exports[`spawn pack overwrite should replace changed output with canonical spawn
 {
   "exitCode": 0,
   "stderr": [],
-  "stdout": [],
+  "stdout": [
+    "Packing <sandbox>/unpacked into <sandbox>/packed.spawn",
+    "Packed <sandbox>/packed.spawn in <duration>",
+  ],
 }
 `;
 

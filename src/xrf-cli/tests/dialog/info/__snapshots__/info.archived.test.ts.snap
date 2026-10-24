@@ -3,9 +3,11 @@
 exports[`dialog info over an installation should sweep an installation across both mounts 1`] = `
 {
   "exitCode": 0,
-  "stderr": [],
+  "stderr": [
+    "Check 'dialog.schema' is failed with 1 finding(s)",
+  ],
   "stdout": [
-    "Reading dialogs in <sandbox>/install (ContainingInstallation)",
+    "Reading dialogs in <sandbox>/install (containing-installation)",
     "Swept 2 files in <duration>, 0 unreadable, 1 archived",
     "Dialogs: 4 total, 1 with no phrases, 1 with a priority",
     "Phrases: 8 total, 5 links, 3 final, 2 without text, 0 outside a phrase list",
@@ -13,7 +15,6 @@ exports[`dialog info over an installation should sweep an installation across bo
     "Encodings: UTF-8: 1, windows-1251: 1",
     "Dialog elements: dont_has_info: 1, has_info: 1, init_func: 1, precondition: 1",
     "Phrase elements: action: 1, disable_info: 1, give_info: 1, go_back: 1, has_info: 1, is_final: 3, next: 5, script_text: 1, text: 7",
-    "Check 'dialog.schema' is failed with 1 findings",
     "  [dialog.unknown-element] configs\\gameplay\\dialogs_zaton.xml: zat_b30_test_owl_about_stash#1: unknown element 'go_back'",
     "Read 2 files, status: failed",
   ],

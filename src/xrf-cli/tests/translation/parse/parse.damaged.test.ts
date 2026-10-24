@@ -21,7 +21,7 @@ describe("translation parse meets damaged input", () => {
       ...MOD_ARGS,
       "--language",
       "eng",
-      "--output",
+      "--dest",
       box.at("sources"),
       "--report",
       box.at("report.json"),
@@ -29,13 +29,11 @@ describe("translation parse meets damaged input", () => {
 
     // The same payload the other way out: one compact envelope on stdout, human output on stderr, so
     // a caller can pipe the document straight into a tool without the log lines corrupting it.
-    piped = box.run("translation parse", [...MOD_ARGS, "--language", "eng", "--output", box.at("piped"), "--json"]);
+    piped = box.run("translation parse", [...MOD_ARGS, "--language", "eng", "--dest", box.at("piped"), "--json"]);
 
-    strict = box.run(
-      "translation parse",
-      [...MOD_ARGS, "--language", "eng", "--output", box.at("strict"), "--strict"],
-      { expectExit: 3 }
-    );
+    strict = box.run("translation parse", [...MOD_ARGS, "--language", "eng", "--dest", box.at("strict"), "--strict"], {
+      expectExit: 3,
+    });
   });
 
   it("should keep going and report what it could not read", () => {

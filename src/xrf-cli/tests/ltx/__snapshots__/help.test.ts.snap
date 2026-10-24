@@ -6,7 +6,7 @@ exports[`ltx command help should keep each leaf command's help stable 1`] = `
     "exitCode": 0,
     "stderr": [],
     "stdout": [
-      "Command to format ltx and ini files",
+      "Format LTX and INI files",
       "",
       "Usage: xrf-cli ltx format [OPTIONS] --path <path>...",
       "",
@@ -64,7 +64,7 @@ exports[`ltx command help should keep each leaf command's help stable 1`] = `
     "exitCode": 0,
     "stderr": [],
     "stdout": [
-      "Command for verification of ltx and ini files",
+      "Verify LTX and INI configs",
       "",
       "Usage: xrf-cli ltx verify [OPTIONS] --path <path>",
       "",

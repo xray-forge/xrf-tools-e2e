@@ -31,7 +31,7 @@ exports[`translation verify should fail under strict when translations are missi
     "Check failed: 24 finding(s)",
   ],
   "stdout": [
-    "Verifying translations in <resources>/translations (ContainingInstallation), language - all",
+    "Verifying translations in <resources>/translations (containing-installation), language - all",
     "Verifying 2 translation source(s)",
     "Verified translation files in <duration>, 4 checked, 24 missing",
   ],
@@ -43,7 +43,7 @@ exports[`translation verify should find nothing missing in a complete language 1
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Verifying translations in <resources>/translations (ContainingInstallation), language - eng",
+    "Verifying translations in <resources>/translations (containing-installation), language - eng",
     "Verifying 2 translation source(s)",
     "Verified translation files in <duration>, 4 checked, 0 missing",
   ],
@@ -80,7 +80,7 @@ exports[`translation verify should report gaps across every language 1`] = `
     "Translation key missing: st_ui_quit ukr in st_ui.json",
   ],
   "stdout": [
-    "Verifying translations in <resources>/translations (ContainingInstallation), language - all",
+    "Verifying translations in <resources>/translations (containing-installation), language - all",
     "Verifying 2 translation source(s)",
     "Verified translation files in <duration>, 4 checked, 24 missing",
   ],
@@ -115,7 +115,7 @@ exports[`translation verify should report the gaps it found 1`] = `
   "exitCode": 0,
   "outcome": "success",
   "result": {
-    "checkedTranslationsCount": 4,
+    "checkedTranslations": 4,
     "checks": [
       {
         "duration": "<duration>",
@@ -344,7 +344,7 @@ exports[`translation verify should report the gaps it found 1`] = `
         "missing": 1,
       },
     ],
-    "missingTranslationsCount": 24,
+    "missingTranslations": 24,
     "status": "failed",
   },
 }
@@ -380,7 +380,7 @@ exports[`translation verify should write a structured report 1`] = `
     "Translation key missing: st_ui_quit ukr in st_ui.json",
   ],
   "stdout": [
-    "Verifying translations in <resources>/translations (ContainingInstallation), language - all",
+    "Verifying translations in <resources>/translations (containing-installation), language - all",
     "Verifying 2 translation source(s)",
     "Verified translation files in <duration>, 4 checked, 24 missing",
   ],
@@ -391,8 +391,8 @@ exports[`translation verify should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "a6214f8e25d4959085025c08929ccb09d14fd76da916ff46f2812dc0193cfc28",
-    "size": 7424,
+    "sha256": "0be3bf396f42aa502e056019f25a10fa1f10d2cf5afabf33cb5f0921bd2d83f2",
+    "size": 7414,
   },
 ]
 `;

@@ -4,7 +4,10 @@ exports[`particle repack and particle re-unpack should re-unpack an unpacked dir
 {
   "exitCode": 0,
   "stderr": [],
-  "stdout": [],
+  "stdout": [
+    "Re-unpacking <sandbox>/unpacked into <sandbox>/re-unpacked",
+    "Re-unpacked <sandbox>/re-unpacked in <duration>",
+  ],
 }
 `;
 
@@ -48,7 +51,10 @@ exports[`particle repack and particle re-unpack should repack a container in one
 {
   "exitCode": 0,
   "stderr": [],
-  "stdout": [],
+  "stdout": [
+    "Repacking <resources>/gamedata/particles.xr into <sandbox>/repacked.xr",
+    "Repacked <sandbox>/repacked.xr in <duration>",
+  ],
 }
 `;
 
@@ -92,7 +98,10 @@ exports[`particle repack and particle re-unpack should unpack the source contain
 {
   "exitCode": 0,
   "stderr": [],
-  "stdout": [],
+  "stdout": [
+    "Unpacking <resources>/gamedata/particles.xr into <sandbox>/unpacked",
+    "Unpacked <sandbox>/unpacked in <duration>",
+  ],
 }
 `;
 

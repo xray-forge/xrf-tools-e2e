@@ -5,6 +5,7 @@ exports[`ltx verify should report section and field coverage 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
+    "Verifying LTX configs in <resources>/gamedata/configs",
     "Verify path: <resources>/gamedata/configs",
     "Checked 7 files, 32 sections in <duration>",
     "Verified 0.00%, 2 files, 0 sections, 0 fields",

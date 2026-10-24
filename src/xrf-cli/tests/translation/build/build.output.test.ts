@@ -16,9 +16,9 @@ describe("translation build output selection and ordering", () => {
     // JSON is the only source format, so every file here compiles the same way: one multi-language
     // map into one string table per language. XML used to be a source too — neutral files copied to
     // every language, and `.eng.xml` files built into one — and is not any more.
-    all = box.run("translation build", ["--path", SOURCE, "--output", box.at("all")]);
-    single = box.run("translation build", ["--path", SOURCE, "--output", box.at("eng"), "--language", "eng"]);
-    unsorted = box.run("translation build", ["--path", SOURCE, "--output", box.at("unsorted"), "--no-sort"]);
+    all = box.run("translation build", ["--path", SOURCE, "--dest", box.at("all")]);
+    single = box.run("translation build", ["--path", SOURCE, "--dest", box.at("eng"), "--language", "eng"]);
+    unsorted = box.run("translation build", ["--path", SOURCE, "--dest", box.at("unsorted"), "--no-sort"]);
   });
 
   it("should build every language", () => {

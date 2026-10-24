@@ -3,9 +3,11 @@
 exports[`dialog info should count what the dialogs hold 1`] = `
 {
   "exitCode": 0,
-  "stderr": [],
+  "stderr": [
+    "Check 'dialog.schema' is failed with 1 finding(s)",
+  ],
   "stdout": [
-    "Reading dialogs in <resources>/gamedata (ContainingInstallation)",
+    "Reading dialogs in <resources>/gamedata (containing-installation)",
     "Swept 2 files in <duration>, 0 unreadable, 0 archived",
     "Dialogs: 4 total, 1 with no phrases, 1 with a priority",
     "Phrases: 8 total, 5 links, 3 final, 2 without text, 0 outside a phrase list",
@@ -13,7 +15,6 @@ exports[`dialog info should count what the dialogs hold 1`] = `
     "Encodings: UTF-8: 1, windows-1251: 1",
     "Dialog elements: dont_has_info: 1, has_info: 1, init_func: 1, precondition: 1",
     "Phrase elements: action: 1, disable_info: 1, give_info: 1, go_back: 1, has_info: 1, is_final: 3, next: 5, script_text: 1, text: 7",
-    "Check 'dialog.schema' is failed with 1 findings",
     "Read 2 files, status: failed",
   ],
 }
@@ -23,10 +24,11 @@ exports[`dialog info should fail under strict when a file is off schema 1`] = `
 {
   "exitCode": 3,
   "stderr": [
+    "Check 'dialog.schema' is failed with 1 finding(s)",
     "Check failed: 1 finding(s)",
   ],
   "stdout": [
-    "Reading dialogs in <resources>/gamedata (ContainingInstallation)",
+    "Reading dialogs in <resources>/gamedata (containing-installation)",
     "Swept 2 files in <duration>, 0 unreadable, 0 archived",
     "Dialogs: 4 total, 1 with no phrases, 1 with a priority",
     "Phrases: 8 total, 5 links, 3 final, 2 without text, 0 outside a phrase list",
@@ -34,7 +36,6 @@ exports[`dialog info should fail under strict when a file is off schema 1`] = `
     "Encodings: UTF-8: 1, windows-1251: 1",
     "Dialog elements: dont_has_info: 1, has_info: 1, init_func: 1, precondition: 1",
     "Phrase elements: action: 1, disable_info: 1, give_info: 1, go_back: 1, has_info: 1, is_final: 3, next: 5, script_text: 1, text: 7",
-    "Check 'dialog.schema' is failed with 1 findings",
   ],
 }
 `;
@@ -42,9 +43,11 @@ exports[`dialog info should fail under strict when a file is off schema 1`] = `
 exports[`dialog info should name each finding under verbose output 1`] = `
 {
   "exitCode": 0,
-  "stderr": [],
+  "stderr": [
+    "Check 'dialog.schema' is failed with 1 finding(s)",
+  ],
   "stdout": [
-    "Reading dialogs in <resources>/gamedata (ContainingInstallation)",
+    "Reading dialogs in <resources>/gamedata (containing-installation)",
     "Swept 2 files in <duration>, 0 unreadable, 0 archived",
     "Dialogs: 4 total, 1 with no phrases, 1 with a priority",
     "Phrases: 8 total, 5 links, 3 final, 2 without text, 0 outside a phrase list",
@@ -52,7 +55,6 @@ exports[`dialog info should name each finding under verbose output 1`] = `
     "Encodings: UTF-8: 1, windows-1251: 1",
     "Dialog elements: dont_has_info: 1, has_info: 1, init_func: 1, precondition: 1",
     "Phrase elements: action: 1, disable_info: 1, give_info: 1, go_back: 1, has_info: 1, is_final: 3, next: 5, script_text: 1, text: 7",
-    "Check 'dialog.schema' is failed with 1 findings",
     "  [dialog.unknown-element] configs\\gameplay\\dialogs_zaton.xml: zat_b30_test_owl_about_stash#1: unknown element 'go_back'",
     "Read 2 files, status: failed",
   ],
@@ -63,16 +65,13 @@ exports[`dialog info should refuse a prefix holding no dialogs 1`] = `
 {
   "exitCode": 1,
   "stderr": [
-    "Error: Verify error: No dialog files were read under <resources>/gamedata, status: skipped",
+    "Error: Verify error: Reading dialogs in <resources>/gamedata did not complete, status: skipped",
   ],
   "stdout": [
-    "Reading dialogs in <resources>/gamedata (ContainingInstallation)",
+    "Reading dialogs in <resources>/gamedata (containing-installation)",
     "Swept 0 files in <duration>, 0 unreadable, 0 archived",
     "Dialogs: 0 total, 0 with no phrases, 0 with a priority",
     "Phrases: 0 total, 0 links, 0 final, 0 without text, 0 outside a phrase list",
-    "Encodings:",
-    "Dialog elements:",
-    "Phrase elements:",
   ],
 }
 `;
@@ -105,6 +104,42 @@ exports[`dialog info should report the census and checks it found 1`] = `
   "exitCode": 0,
   "outcome": "success",
   "result": {
+    "census": {
+      "archivedFiles": 0,
+      "dialogElements": {
+        "dont_has_info": 1,
+        "has_info": 1,
+        "init_func": 1,
+        "precondition": 1,
+      },
+      "dialogs": 4,
+      "dialogsWithPriority": 1,
+      "dialogsWithoutPhrases": 1,
+      "encodings": {
+        "UTF-8": 1,
+        "windows-1251": 1,
+      },
+      "files": 2,
+      "finalPhrases": 3,
+      "largestDialogId": "zat_test_trader_start",
+      "largestDialogPhrases": 4,
+      "links": 5,
+      "phraseElements": {
+        "action": 1,
+        "disable_info": 1,
+        "give_info": 1,
+        "go_back": 1,
+        "has_info": 1,
+        "is_final": 3,
+        "next": 5,
+        "script_text": 1,
+        "text": 7,
+      },
+      "phrases": 8,
+      "phrasesOutsidePhraseList": 0,
+      "phrasesWithoutText": 2,
+      "unreadableFiles": 0,
+    },
     "checks": [
       {
         "duration": "<duration>",
@@ -134,6 +169,7 @@ exports[`dialog info should report the failure even when silenced 1`] = `
 {
   "exitCode": 3,
   "stderr": [
+    "Check 'dialog.schema' is failed with 1 finding(s)",
     "Check failed: 1 finding(s)",
   ],
   "stdout": [],
@@ -143,7 +179,9 @@ exports[`dialog info should report the failure even when silenced 1`] = `
 exports[`dialog info should say nothing when silenced 1`] = `
 {
   "exitCode": 0,
-  "stderr": [],
+  "stderr": [
+    "Check 'dialog.schema' is failed with 1 finding(s)",
+  ],
   "stdout": [],
 }
 `;
@@ -151,9 +189,11 @@ exports[`dialog info should say nothing when silenced 1`] = `
 exports[`dialog info should write a structured report 1`] = `
 {
   "exitCode": 0,
-  "stderr": [],
+  "stderr": [
+    "Check 'dialog.schema' is failed with 1 finding(s)",
+  ],
   "stdout": [
-    "Reading dialogs in <resources>/gamedata (ContainingInstallation)",
+    "Reading dialogs in <resources>/gamedata (containing-installation)",
     "Swept 2 files in <duration>, 0 unreadable, 0 archived",
     "Dialogs: 4 total, 1 with no phrases, 1 with a priority",
     "Phrases: 8 total, 5 links, 3 final, 2 without text, 0 outside a phrase list",
@@ -161,7 +201,6 @@ exports[`dialog info should write a structured report 1`] = `
     "Encodings: UTF-8: 1, windows-1251: 1",
     "Dialog elements: dont_has_info: 1, has_info: 1, init_func: 1, precondition: 1",
     "Phrase elements: action: 1, disable_info: 1, give_info: 1, go_back: 1, has_info: 1, is_final: 3, next: 5, script_text: 1, text: 7",
-    "Check 'dialog.schema' is failed with 1 findings",
     "Read 2 files, status: failed",
   ],
 }
@@ -171,8 +210,8 @@ exports[`dialog info should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "ac461831548ed081a7a305a087f463a72616e2b9470d732398c306a8d8664083",
-    "size": 1060,
+    "sha256": "e0838f6c7e298e81cbe22eb2d036dd823696a6dc8a33ca942897607ed85107e5",
+    "size": 1904,
   },
 ]
 `;

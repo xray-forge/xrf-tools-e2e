@@ -9,6 +9,7 @@ exports[`ltx verify schemes --dltx should fail the resolved section with the fla
     "Check failed: 2 finding(s)",
   ],
   "stdout": [
+    "Verifying LTX configs in <resources>/ltx-schemes-dltx/configs",
     "Verify path: <resources>/ltx-schemes-dltx/configs",
     "Checked 4 files, 2 sections in <duration>",
     "Verified 50.00%, 1 files, 1 sections, 2 fields",
@@ -25,6 +26,7 @@ exports[`ltx verify schemes --dltx should refuse the patch file and judge the se
     "Check failed: 1 finding(s)",
   ],
   "stdout": [
+    "Verifying LTX configs in <resources>/ltx-schemes-dltx/configs",
     "Verify path: <resources>/ltx-schemes-dltx/configs",
     "Checked 4 files, 2 sections in <duration>",
     "Verified 50.00%, 2 files, 1 sections, 3 fields",

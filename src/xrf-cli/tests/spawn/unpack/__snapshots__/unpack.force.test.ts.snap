@@ -5,10 +5,8 @@ exports[`spawn unpack force should prune nested stale files and restore the cano
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Starting parsing spawn file: <resources>/gamedata/spawns/all.spawn",
-    "Unpack destination: <sandbox>/unpacked",
-    "Read spawn file took: <duration>",
-    "Export spawn file took: <duration>",
+    "Unpacking <resources>/gamedata/spawns/all.spawn into <sandbox>/unpacked",
+    "Unpacked <sandbox>/unpacked in <duration>",
   ],
 }
 `;
@@ -17,12 +15,9 @@ exports[`spawn unpack force should refuse an existing unpack destination 1`] = `
 {
   "exitCode": 1,
   "stderr": [
-    "Error: IO error: Unpack output directory already exists, use --force to prune destination folder",
+    "Error: IO error: <sandbox>/unpacked already exists, use --force to replace it",
   ],
-  "stdout": [
-    "Starting parsing spawn file: <resources>/gamedata/spawns/all.spawn",
-    "Unpack destination: <sandbox>/unpacked",
-  ],
+  "stdout": [],
 }
 `;
 

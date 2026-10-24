@@ -18,13 +18,13 @@ describe("translation parse", () => {
   beforeAll(() => {
     // Named at the mod root with a language: the run resolves `configs\text` and then the language's
     // own directory below it, rather than making the caller spell out a prefix.
-    english = box.run("translation parse", [...MOD_ARGS, "--language", "eng", "--output", box.at("merged")]);
-    ukrainian = box.run("translation parse", [...MOD_ARGS, "--language", "ukr", "--output", box.at("merged")]);
-    again = box.run("translation parse", [...MOD_ARGS, "--language", "eng", "--output", box.at("merged")]);
+    english = box.run("translation parse", [...MOD_ARGS, "--language", "eng", "--dest", box.at("merged")]);
+    ukrainian = box.run("translation parse", [...MOD_ARGS, "--language", "ukr", "--dest", box.at("merged")]);
+    again = box.run("translation parse", [...MOD_ARGS, "--language", "eng", "--dest", box.at("merged")]);
 
     // The same two languages the other way round, to prove the result does not remember the order.
-    box.run("translation parse", [...MOD_ARGS, "--language", "ukr", "--output", box.at("reversed")]);
-    box.run("translation parse", [...MOD_ARGS, "--language", "eng", "--output", box.at("reversed")]);
+    box.run("translation parse", [...MOD_ARGS, "--language", "ukr", "--dest", box.at("reversed")]);
+    box.run("translation parse", [...MOD_ARGS, "--language", "eng", "--dest", box.at("reversed")]);
   });
 
   it("should import the first language", () => {

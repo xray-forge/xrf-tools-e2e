@@ -4,7 +4,10 @@ exports[`spawn roundtrip should pack it back 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
-  "stdout": [],
+  "stdout": [
+    "Packing <sandbox>/unpacked into <sandbox>/repacked.spawn",
+    "Packed <sandbox>/repacked.spawn in <duration>",
+  ],
 }
 `;
 
@@ -141,10 +144,8 @@ exports[`spawn roundtrip should unpack the whole game spawn 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Starting parsing spawn file: <resources>/gamedata/spawns/all.spawn",
-    "Unpack destination: <sandbox>/unpacked",
-    "Read spawn file took: <duration>",
-    "Export spawn file took: <duration>",
+    "Unpacking <resources>/gamedata/spawns/all.spawn into <sandbox>/unpacked",
+    "Unpacked <sandbox>/unpacked in <duration>",
   ],
 }
 `;
@@ -153,7 +154,10 @@ exports[`spawn roundtrip should verify the source 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
-  "stdout": [],
+  "stdout": [
+    "Verifying spawn file <resources>/gamedata/spawns/all.spawn",
+    "<resources>/gamedata/spawns/all.spawn is a valid spawn file",
+  ],
 }
 `;
 

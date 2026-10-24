@@ -24,7 +24,7 @@ describe("dialog info over an installation", () => {
     // Packed from a staging tree shaped like a gamedata root, so the entry lands on the logical
     // path the loose copy would have used.
     box.copyIn(gamedata("configs/gameplay/dialogs.xml"), "stage/configs/gameplay/dialogs.xml");
-    box.run("archive pack", [box.at("stage"), "--dest", box.at("install/database"), "--name", "gamedata"]);
+    box.run("archive pack", ["--path", box.at("stage"), "--dest", box.at("install/database"), "--name", "gamedata"]);
 
     box.copyIn(gamedata("configs/gameplay/dialogs_zaton.xml"), "install/gamedata/configs/gameplay/dialogs_zaton.xml");
     box.write("install/fsgame.ltx", FSGAME);
