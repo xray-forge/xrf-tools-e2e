@@ -83,7 +83,6 @@ describe("gamedata list across mounts", () => {
     expect(box.json("listing.json")).toMatchObject({
       result: {
         origin: install,
-        total: 2,
         entries: [
           { container: archive, isArchived: true, logicalPath: "configs\\fonts.ltx" },
           { container: looseRoot, isArchived: false, logicalPath: "configs\\system.ltx" },
@@ -95,7 +94,6 @@ describe("gamedata list across mounts", () => {
       result: {
         origin: install,
         isShadowedIncluded: true,
-        total: 2,
         entries: [
           { container: archive, isArchived: true, logicalPath: "configs\\fonts.ltx" },
           { container: looseRoot, isArchived: false, logicalPath: "configs\\system.ltx" },
@@ -106,7 +104,6 @@ describe("gamedata list across mounts", () => {
     expect(box.json("loose.json")).toMatchObject({
       result: {
         origin: install,
-        total: 1,
         entries: [{ container: looseRoot, isArchived: false, logicalPath: "configs\\system.ltx" }],
         shadowed: [],
       },

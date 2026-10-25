@@ -75,7 +75,6 @@ describe("dds crop bounds", () => {
     expect(box.json("edge.json")).toMatchSnapshot();
     expect(box.json("edge.json")).toMatchObject({
       exitCode: 0,
-      outcome: "success",
       result: {
         height: 64,
         regionHeight: 64,

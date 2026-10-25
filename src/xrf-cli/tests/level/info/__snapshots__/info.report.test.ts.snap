@@ -20,16 +20,10 @@ exports[`level info report should describe the visual and buffer counts in verbo
 exports[`level info report should distinguish absent optional chunks from empty geometry 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -37,13 +31,10 @@ exports[`level info report should distinguish absent optional chunks from empty 
     "info",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "detailGeometry": null,
     "geometry": null,
@@ -56,7 +47,6 @@ exports[`level info report should distinguish absent optional chunks from empty 
       "lightmapped": 0,
       "malformed": 0,
       "references": 0,
-      "total": 0,
     },
     "structure": {
       "hasSun": false,
@@ -74,8 +64,8 @@ exports[`level info report should preserve the authored inputs and write only th
 [
   {
     "path": "broken-geometry.json",
-    "sha256": "7fc7ce15ecc3f793917233bb5933a4022dd939cb45e72ac1838739e5a03bde48",
-    "size": 624,
+    "sha256": "11fd3f3bb489c3a247a8492ac390f160ac6406fa66cb10ca84a37e36caf60343",
+    "size": 394,
   },
   {
     "path": "broken-geometry/level",
@@ -89,8 +79,8 @@ exports[`level info report should preserve the authored inputs and write only th
   },
   {
     "path": "minimal.json",
-    "sha256": "7664bc3b40340e26601f9c56fdf7fd425c4f66d22724a74e460c98ea984a9e69",
-    "size": 934,
+    "sha256": "2cad45a1e81a069f6ecb79310070da7ba2e9b184eaf122ff058f01fd073401ee",
+    "size": 695,
   },
   {
     "path": "minimal/level",
@@ -99,13 +89,13 @@ exports[`level info report should preserve the authored inputs and write only th
   },
   {
     "path": "missing.json",
-    "sha256": "f95b2d9303ae12a99add28cc9e75dc47bd91d37634d7a0be9d094db1fe5fb66a",
-    "size": 596,
+    "sha256": "ef97023c9b11a79f7a0432a20a60940a3f1c16c9566db0083dab1c5862b2bdd3",
+    "size": 366,
   },
   {
     "path": "triangle.json",
-    "sha256": "d4116cfcbc99f3190a6169f20d2647f0621bae3aeab60632ec26f6abbd6ea5a2",
-    "size": 1727,
+    "sha256": "442d16557fbb188a4042909772e7d9fc49286e227c7ee7b6aa3037b37e530693",
+    "size": 1372,
   },
   {
     "path": "triangle/level",
@@ -124,8 +114,8 @@ exports[`level info report should preserve the authored inputs and write only th
   },
   {
     "path": "truncated.json",
-    "sha256": "cc0be478934466dbdc7d8f9c6ed06bad0877c0ced0a53ff76b0a0c4dc8557f46",
-    "size": 621,
+    "sha256": "267de22857c248a18105f5457db87cccbaa54e81dd21d99e03aff0611eb5f4f8",
+    "size": 391,
   },
   {
     "path": "truncated/level",
@@ -138,16 +128,10 @@ exports[`level info report should preserve the authored inputs and write only th
 exports[`level info report should reject broken-geometry input without a partial result 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -157,28 +141,19 @@ exports[`level info report should reject broken-geometry input without a partial
   "duration": "<duration>",
   "error": "Invalid error: Chunk 0x0000000a at position 76 declares 14 bytes, 13 remain before source end 89",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 1,
-  "outcome": "executionFailed",
-  "result": null,
 }
 `;
 
 exports[`level info report should reject missing input without a partial result 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -188,28 +163,19 @@ exports[`level info report should reject missing input without a partial result 
   "duration": "<duration>",
   "error": "Not found error: Level bundle was not found: <sandbox>/missing/level",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 1,
-  "outcome": "executionFailed",
-  "result": null,
 }
 `;
 
 exports[`level info report should reject truncated input without a partial result 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -219,28 +185,19 @@ exports[`level info report should reject truncated input without a partial resul
   "duration": "<duration>",
   "error": "Invalid error: Chunk 0x00000001 at position 8 declares 4 bytes, 3 remain before source end 11",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 1,
-  "outcome": "executionFailed",
-  "result": null,
 }
 `;
 
 exports[`level info report should report one drawable triangle and both geometry files 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -248,13 +205,10 @@ exports[`level info report should report one drawable triangle and both geometry
     "info",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "detailGeometry": {
       "indexBuffers": 1,
@@ -268,8 +222,6 @@ exports[`level info report should report one drawable triangle and both geometry
         },
       ],
       "slideWindows": 0,
-      "vertexBuffers": 1,
-      "vertices": 3,
     },
     "geometry": {
       "indexBuffers": 1,
@@ -283,8 +235,6 @@ exports[`level info report should report one drawable triangle and both geometry
         },
       ],
       "slideWindows": 0,
-      "vertexBuffers": 1,
-      "vertices": 3,
     },
     "header": {
       "xrlcQuality": 1,
@@ -295,7 +245,6 @@ exports[`level info report should report one drawable triangle and both geometry
       "lightmapped": 1,
       "malformed": 1,
       "references": 2,
-      "total": 4,
     },
     "structure": {
       "hasSun": false,
@@ -313,7 +262,6 @@ exports[`level info report should report one drawable triangle and both geometry
       },
       "textured": 0,
       "total": 1,
-      "triangles": 1,
       "uniqueRanges": 1,
       "vertices": 3,
     },

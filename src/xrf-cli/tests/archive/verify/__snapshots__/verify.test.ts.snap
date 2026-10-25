@@ -5,7 +5,7 @@ exports[`archive verify should read and validate every payload 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Verified 14 file(s) in <duration>",
+    "Verification of 14 archive file(s): passed",
   ],
 }
 `;

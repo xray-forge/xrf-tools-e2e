@@ -36,7 +36,6 @@ describe("level verify optional files", () => {
   it("should pass a level compiled with no fast geometry", () => {
     expect(envelopeAt(box.at("no-geomx.json"))).toMatchObject({
       exitCode: 0,
-      outcome: "success",
       result: { status: "passed" },
     });
     expect(withoutFastGeometry).toMatchSnapshot();
@@ -54,7 +53,6 @@ describe("level verify optional files", () => {
   it("should report an absent bundle rather than passing with nothing to check", () => {
     expect(envelopeAt(box.at("no-bundle.json"))).toMatchObject({
       exitCode: 3,
-      outcome: "checkFailed",
       result: {
         status: "failed",
         checks: expect.arrayContaining([

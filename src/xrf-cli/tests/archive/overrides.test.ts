@@ -44,11 +44,9 @@ describe("volume set overrides", () => {
 
   it("should report the overridden path beside the verdict, and nothing as unreachable", () => {
     expect(box.json("verify.json")).toMatchObject({
-      outcome: "success",
       result: {
         checked: 2,
-        collisions: [],
-        findings: [],
+        checks: [expect.objectContaining({ findings: [], id: "archive.payloads" })],
         overrides: [
           {
             container: "<sandbox>/db/patch.db",
@@ -57,6 +55,7 @@ describe("volume set overrides", () => {
           },
         ],
         status: "passed",
+        unreachable: [],
       },
     });
     expect(box.json("verify.json")).toMatchSnapshot();
@@ -68,7 +67,6 @@ describe("volume set overrides", () => {
         collisions: [],
         entries: [{ isArchived: true, logicalPath }],
         shadowed: [{ container: "<sandbox>/db/base.db", isArchived: true, logicalPath }],
-        total: 1,
       },
     });
     expect(box.json("listing.json")).toMatchSnapshot();

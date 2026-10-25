@@ -3,16 +3,10 @@
 exports[`gamedata list enhanced edition should record both results 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`gamedata list enhanced edition should record both results 1`] = `
     "list",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "collisions": [],
     "duration": "<duration>",
@@ -58,7 +49,6 @@ exports[`gamedata list enhanced edition should record both results 1`] = `
     "origin": "<sandbox>/install",
     "shadowed": [],
     "skipped": [],
-    "total": 2,
   },
 }
 `;
@@ -66,16 +56,10 @@ exports[`gamedata list enhanced edition should record both results 1`] = `
 exports[`gamedata list enhanced edition should record both results 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -83,13 +67,10 @@ exports[`gamedata list enhanced edition should record both results 2`] = `
     "list",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "collisions": [],
     "duration": "<duration>",
@@ -121,7 +102,6 @@ exports[`gamedata list enhanced edition should record both results 2`] = `
     "origin": "<sandbox>/install/gamedata/configs",
     "shadowed": [],
     "skipped": [],
-    "total": 2,
   },
 }
 `;
@@ -130,13 +110,13 @@ exports[`gamedata list enhanced edition should write the expected files 1`] = `
 [
   {
     "path": "auto.json",
-    "sha256": "18721d913d3f1011237718fcd89051ab7e4871f77b5b0b3f8f08c5ec6514557e",
-    "size": 1286,
+    "sha256": "79a92a7115ad260ac863bd4413af0af5b298c5344d90ad3780e0c47309d0d572",
+    "size": 1049,
   },
   {
     "path": "containing.json",
-    "sha256": "c671c1074beda08ab2bcdb11ce17d0ea463df741480a26fc2151dbb3cb119d4f",
-    "size": 1303,
+    "sha256": "3313b6a568f1c5ebbcc121431eecc21af11ac54a532bafcaf97212fff102f407",
+    "size": 1066,
   },
   {
     "path": "install/fsgame_cop.ltx",

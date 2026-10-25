@@ -3,16 +3,10 @@
 exports[`ogf info report should report a lod visual, which carries no motion refs 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`ogf info report should report a lod visual, which carries no motion ref
     "info",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "bones": [
       {
@@ -82,16 +73,10 @@ exports[`ogf info report should report a lod visual, which carries no motion ref
 exports[`ogf info report should report a visual's bones, bounds and material 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -99,13 +84,10 @@ exports[`ogf info report should report a visual's bones, bounds and material 1`]
     "info",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "bones": [
       {

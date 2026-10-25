@@ -3,16 +3,10 @@
 exports[`dds info report should report a compressed texture's format and mip chain 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`dds info report should report a compressed texture's format and mip cha
     "info",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "bitsPerPixel": null,
     "blockSize": 8,
@@ -51,16 +42,10 @@ exports[`dds info report should report a compressed texture's format and mip cha
 exports[`dds info report should report an uncompressed ui texture 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -68,13 +53,10 @@ exports[`dds info report should report an uncompressed ui texture 1`] = `
     "info",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "bitsPerPixel": null,
     "blockSize": 16,

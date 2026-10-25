@@ -47,7 +47,6 @@ describe("gamedata verify mesh texture references", () => {
     expect(present).toMatchSnapshot();
     expect(box.json("present.json")).toMatchObject({
       exitCode: 0,
-      outcome: "success",
       result: {
         checks: [
           { findings: [], status: "skipped", summary: "Every declared source opened", id: "coverage" },
@@ -72,7 +71,6 @@ describe("gamedata verify mesh texture references", () => {
     expect(missing.stderr).toContain("Check failed: 1 finding(s)");
     expect(box.json("missing.json")).toMatchObject({
       exitCode: 3,
-      outcome: "checkFailed",
       result: {
         checks: [
           { findings: [], status: "skipped", summary: "Every declared source opened", id: "coverage" },

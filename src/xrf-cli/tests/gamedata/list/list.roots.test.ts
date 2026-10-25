@@ -53,7 +53,6 @@ describe("gamedata list repeated roots", () => {
 
     expect(report.result).toMatchObject({
       isShadowedIncluded: true,
-      total: 3,
       entries: [
         { container: base, isArchived: false, logicalPath: "configs\\base.ltx" },
         { container: override, isArchived: false, logicalPath: "configs\\override.ltx" },
@@ -74,7 +73,6 @@ describe("gamedata list repeated roots", () => {
 
     expect(report.result).toMatchObject({
       isShadowedIncluded: true,
-      total: 2,
       entries: [
         { container: base, isArchived: false, logicalPath: "configs\\base.ltx" },
         { container: base, isArchived: false, logicalPath: "configs\\system.ltx" },

@@ -3,16 +3,10 @@
 exports[`archive extract precedence should write the expected files 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`archive extract precedence should write the expected files 1`] = `
     "extract",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "destination": "<sandbox>/exact.dds",
     "name": "textures\\wpn\\exact.dds",
@@ -38,16 +29,10 @@ exports[`archive extract precedence should write the expected files 1`] = `
 exports[`archive extract precedence should write the expected files 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -55,13 +40,10 @@ exports[`archive extract precedence should write the expected files 2`] = `
     "extract",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "destination": "<sandbox>/base-case.dds",
     "name": "textures\\wpn\\case-only.dds",
@@ -73,16 +55,10 @@ exports[`archive extract precedence should write the expected files 2`] = `
 exports[`archive extract precedence should write the expected files 3`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -90,13 +66,10 @@ exports[`archive extract precedence should write the expected files 3`] = `
     "extract",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "destination": "<sandbox>/patch-case.dds",
     "name": "textures\\wpn\\CASE-ONLY.DDS",
@@ -119,8 +92,8 @@ exports[`archive extract precedence should write the expected files 4`] = `
   },
   {
     "path": "base-case-report.json",
-    "sha256": "98d850ea64592581e9557e49d52c6ec05428e6b399f78c272b3c0c9c337ffccd",
-    "size": 633,
+    "sha256": "40d22cd3c72031c44bc8081a129365e17dad0fe4be352eeeb04d955b8d8fb9a8",
+    "size": 412,
   },
   {
     "path": "base-case.dds",
@@ -139,8 +112,8 @@ exports[`archive extract precedence should write the expected files 4`] = `
   },
   {
     "path": "exact-report.json",
-    "sha256": "292168ee29928cce983df49d5ada4d486936785107c061cbcc6de1481963ca02",
-    "size": 625,
+    "sha256": "ec744f42c6ed5b18e91a82cf8ad03865390836ea06c8021fe34edb2715df1b91",
+    "size": 404,
   },
   {
     "path": "exact.dds",
@@ -149,8 +122,8 @@ exports[`archive extract precedence should write the expected files 4`] = `
   },
   {
     "path": "patch-case-report.json",
-    "sha256": "6a419cbb734f30bf3bcb6d991c374e9be47add4b9ff904332f3b3e1db40e0b30",
-    "size": 634,
+    "sha256": "4f67402a44020b960435abba4d38671ad1b08a00ed11f300e044bd9fe54fc4ac",
+    "size": 413,
   },
   {
     "path": "patch-case.dds",

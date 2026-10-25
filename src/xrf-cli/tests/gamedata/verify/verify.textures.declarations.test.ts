@@ -37,7 +37,6 @@ describe("gamedata verify ineffective texture declarations", () => {
     ] as const) {
       expect(box.json(report)).toMatchObject({
         exitCode,
-        outcome: exitCode === 0 ? "success" : "checkFailed",
         result: {
           status,
           checks: expect.arrayContaining([

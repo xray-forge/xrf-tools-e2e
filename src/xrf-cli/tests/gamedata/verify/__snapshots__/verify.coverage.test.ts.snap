@@ -3,16 +3,10 @@
 exports[`gamedata verify meets a declared source it cannot open should carry the lost coverage as its own check and as a stable record 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -22,11 +16,9 @@ exports[`gamedata verify meets a declared source it cannot open should carry the
   "duration": "<duration>",
   "error": "Verify error: Gamedata project did not complete, status: incomplete",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 1,
-  "outcome": "executionFailed",
   "result": {
     "cache": {
       "bytes": 22,
@@ -85,16 +77,10 @@ exports[`gamedata verify meets a declared source it cannot open should carry the
 exports[`gamedata verify meets a declared source it cannot open should preserve its inputs and write readable reports 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -104,11 +90,9 @@ exports[`gamedata verify meets a declared source it cannot open should preserve 
   "duration": "<duration>",
   "error": "Verify error: Gamedata project did not complete, status: incomplete",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 1,
-  "outcome": "executionFailed",
   "result": {
     "cache": {
       "bytes": 22,
@@ -167,16 +151,10 @@ exports[`gamedata verify meets a declared source it cannot open should preserve 
 exports[`gamedata verify meets a declared source it cannot open should preserve its inputs and write readable reports 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -186,11 +164,9 @@ exports[`gamedata verify meets a declared source it cannot open should preserve 
   "duration": "<duration>",
   "error": "Verify error: Gamedata project did not complete, status: incomplete",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 1,
-  "outcome": "executionFailed",
   "result": {
     "cache": {
       "bytes": 22,
@@ -249,16 +225,10 @@ exports[`gamedata verify meets a declared source it cannot open should preserve 
 exports[`gamedata verify meets a declared source it cannot open should preserve its inputs and write readable reports 3`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -266,13 +236,10 @@ exports[`gamedata verify meets a declared source it cannot open should preserve 
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "cache": {
       "bytes": 22,
@@ -320,8 +287,8 @@ exports[`gamedata verify meets a declared source it cannot open should preserve 
 [
   {
     "path": "clean.json",
-    "sha256": "c7ddd89dcbaad7c223da7003ba9ee0975560b5c821a412c969710b0a03386e50",
-    "size": 1366,
+    "sha256": "624cfad4884afe6ec65062dfb422d053065b38ae2b9fbb57eb141e0359d215c7",
+    "size": 1145,
   },
   {
     "path": "clean/fsgame.ltx",
@@ -335,13 +302,13 @@ exports[`gamedata verify meets a declared source it cannot open should preserve 
   },
   {
     "path": "empty-check.json",
-    "sha256": "a9df4eb31cf1a605d20aa5147033e39b5e8fc7034e5372b2444dbc71118f879d",
-    "size": 2032,
+    "sha256": "c347d2af9e8a52532362227b0c8ceea190a46604a997dd8f05340d889248c392",
+    "size": 1820,
   },
   {
     "path": "ignore.json",
-    "sha256": "a9df4eb31cf1a605d20aa5147033e39b5e8fc7034e5372b2444dbc71118f879d",
-    "size": 2032,
+    "sha256": "c347d2af9e8a52532362227b0c8ceea190a46604a997dd8f05340d889248c392",
+    "size": 1820,
   },
   {
     "path": "install/db/files.db0",
@@ -360,13 +327,13 @@ exports[`gamedata verify meets a declared source it cannot open should preserve 
   },
   {
     "path": "report.json",
-    "sha256": "b413eafbece1ad54c1d7609dd67d402d8ca7d5fcf531795cc5eff8d1b6142b51",
-    "size": 2054,
+    "sha256": "df400d31c90941d7cfa8cf0de0575b79aaadecb5460790abc917b532ff0f7278",
+    "size": 1842,
   },
   {
     "path": "silent.json",
-    "sha256": "b413eafbece1ad54c1d7609dd67d402d8ca7d5fcf531795cc5eff8d1b6142b51",
-    "size": 2054,
+    "sha256": "df400d31c90941d7cfa8cf0de0575b79aaadecb5460790abc917b532ff0f7278",
+    "size": 1842,
   },
 ]
 `;

@@ -79,7 +79,8 @@ describe("archive extract refusals", () => {
 
   it("should refuse a missing logical file without replacing its destination", () => {
     expect(missing.stderr.join("\n")).toContain("Cannot extract 'configs\\missing.ltx'");
-    expect(box.json("missing-report.json")).toMatchObject({ exitCode: 1, outcome: "executionFailed", result: null });
+    expect(box.json("missing-report.json")).toMatchObject({ exitCode: 1 });
+    expect(box.json("missing-report.json")).not.toHaveProperty("result");
     expect(box.sha("destination/missing.ltx")).toBe(missingSentinel);
   });
 
@@ -89,9 +90,8 @@ describe("archive extract refusals", () => {
     expect(box.json("blocked-report.json")).toMatchObject({
       error: expect.stringMatching(/^IO error:/),
       exitCode: 1,
-      outcome: "executionFailed",
-      result: null,
     });
+    expect(box.json("blocked-report.json")).not.toHaveProperty("result");
     expect(box.sha("destination/blocked/sentinel.ltx")).toBe(blockedSentinel);
   });
 

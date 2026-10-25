@@ -3,16 +3,10 @@
 exports[`gamedata list prefix boundaries should record the boundary and empty selections 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`gamedata list prefix boundaries should record the boundary and empty se
     "list",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "collisions": [],
     "duration": "<duration>",
@@ -48,7 +39,6 @@ exports[`gamedata list prefix boundaries should record the boundary and empty se
     "origin": "<sandbox>/boundary",
     "shadowed": [],
     "skipped": [],
-    "total": 1,
   },
 }
 `;
@@ -56,16 +46,10 @@ exports[`gamedata list prefix boundaries should record the boundary and empty se
 exports[`gamedata list prefix boundaries should record the boundary and empty selections 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -73,13 +57,10 @@ exports[`gamedata list prefix boundaries should record the boundary and empty se
     "list",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "collisions": [],
     "duration": "<duration>",
@@ -101,7 +82,6 @@ exports[`gamedata list prefix boundaries should record the boundary and empty se
     "origin": "<sandbox>/boundary",
     "shadowed": [],
     "skipped": [],
-    "total": 1,
   },
 }
 `;
@@ -109,16 +89,10 @@ exports[`gamedata list prefix boundaries should record the boundary and empty se
 exports[`gamedata list prefix boundaries should record the boundary and empty selections 3`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -126,13 +100,10 @@ exports[`gamedata list prefix boundaries should record the boundary and empty se
     "list",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "collisions": [],
     "duration": "<duration>",
@@ -148,7 +119,6 @@ exports[`gamedata list prefix boundaries should record the boundary and empty se
     "origin": "<sandbox>/boundary",
     "shadowed": [],
     "skipped": [],
-    "total": 0,
   },
 }
 `;
@@ -157,8 +127,8 @@ exports[`gamedata list prefix boundaries should write the expected files 1`] = `
 [
   {
     "path": "absent.json",
-    "sha256": "691afb2187fc95d559e46e93e172dbc12f03c5f1a06a3bf380fd4c4980e81f3c",
-    "size": 854,
+    "sha256": "9fb5f40ca333446375634ca2201bcf6e74e6ba3f116249406ac42de95e9f017c",
+    "size": 617,
   },
   {
     "path": "boundary/configs/kept.ltx",
@@ -172,13 +142,13 @@ exports[`gamedata list prefix boundaries should write the expected files 1`] = `
   },
   {
     "path": "ignore.json",
-    "sha256": "3f76603290e3529c6c3cd98279eb9987764fd456b039356b4a566e6c2dbaa1c5",
-    "size": 997,
+    "sha256": "54601f0e81dd337590c3b64269ecc48e1a92921bc879c7a0149fc74d71c204b2",
+    "size": 760,
   },
   {
     "path": "prefix.json",
-    "sha256": "dbb158260d5485ab0bb540212224df6a305a319229489737429bcf5d4433cb80",
-    "size": 990,
+    "sha256": "06efc6918c4a115c0a4cccc3deca1de1acf9c0cb20e42ea5ca576b065c9bc5e0",
+    "size": 753,
   },
 ]
 `;

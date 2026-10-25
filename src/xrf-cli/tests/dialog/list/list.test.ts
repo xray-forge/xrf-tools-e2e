@@ -47,7 +47,7 @@ describe("dialog list", () => {
     const envelope: CommandEnvelope = envelopeAt(box.at("report.json"));
 
     expect(envelope.command).toEqual(["dialog", "list"]);
-    expect(envelope.outcome).toBe("success");
+    expect(envelope.exitCode).toBe(0);
   });
 
   it("should report each dialog with its conditions and no offers", () => {

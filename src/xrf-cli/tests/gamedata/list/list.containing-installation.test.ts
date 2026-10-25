@@ -28,7 +28,6 @@ describe("gamedata list containing installation", () => {
     const report: CommandEnvelope = envelopeAt(box.at("containing.json"));
 
     expect(report.result).toMatchObject({
-      total: 1,
       entries: [
         {
           container: box.at("install/gamedata").replaceAll("\\", "/"),

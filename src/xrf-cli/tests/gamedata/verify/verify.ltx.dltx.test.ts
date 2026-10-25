@@ -35,7 +35,6 @@ describe("gamedata verify resolved DLTX schema", () => {
   it("should validate the formatted section before any patch changes it", () => {
     expect(box.json("clean.json")).toMatchObject({
       exitCode: 0,
-      outcome: "success",
       result: {
         status: "passed",
         checks: expect.arrayContaining([
@@ -54,7 +53,6 @@ describe("gamedata verify resolved DLTX schema", () => {
   it("should reject the patched value and removed required field at their declaring section", () => {
     expect(box.json("patched.json")).toMatchObject({
       exitCode: 3,
-      outcome: "checkFailed",
       result: {
         status: "failed",
         checks: expect.arrayContaining([

@@ -556,7 +556,7 @@ exports[`docs generate should render gamedata.md 1`] = `
   "| ------ | -------- | ------- | ----------- |",
   "| \`-p, --path <path>\` | yes |  | Path to the assembled gamedata root |",
   "| \`-i, --ignore <ignore>...\` |  | \`.git,.idea,particles_unpacked,textures_unpacked,.gitignore,.gitattributes,README.md,LICENSE\` | Root entries to skip, replacing the defaults. Repeat to skip several |",
-  "| \`--checks <checks>...\` |  |  | List of checks to perform. Accepts multiple values separated by \`,\`. |",
+  "| \`--checks <checks>...\` |  |  | Checks to run, comma-separated or repeated; every check when omitted. Accepts multiple values separated by \`,\`. |",
   "| \`--strict\` |  |  | Fully validate expensive asset payloads |",
   "| \`--trace-reads\` |  |  | Account for every asset read, reporting redundancy against unique paths |",
   "| \`--dltx\` |  |  | Resolve configs with the Monolith/Anomaly DLTX patch dialect, applying mod_&lt;base&gt;_*.ltx files |",
@@ -758,7 +758,7 @@ exports[`docs generate should render ogf.md 1`] = `
   "| ------ | -------- | ------- | ----------- |",
   "| \`-p, --path <path>\` | yes |  | Path to ogf file |",
   "| \`-d, --dest <dest>\` |  |  | Path to resulting ogf file, defaults to in place rewrite of the source file |",
-  "| \`-r, --refs <refs>...\` | yes |  | Motion refs to store in the ogf file |",
+  "| \`--refs <refs>...\` | yes |  | Motion refs to store in the ogf file |",
   "| \`--dry-run\` |  |  | Validate the rewrite and report the result without writing any file |",
   "| \`-s, --silent\` |  |  | Turn off logging |",
   "| \`-v, --verbose\` |  |  | Turn on verbose logging |",
@@ -1427,7 +1427,7 @@ exports[`docs generate should render translation.md 1`] = `
   "| \`-l, --language <language>\` | yes |  | Language every entry read by this run is filed under. Raw xml carries no language, so it is declared rather than guessed |",
   "| \`-d, --dest <dest>\` | yes |  | Directory the json sources are written to, merging with any already there |",
   "| \`--file <file>\` |  |  | Restrict the run to one string table, by file name |",
-  "| \`--overwrite\` |  |  | Replace existing text that differs, instead of keeping what is already there |",
+  "| \`-f, --force\` |  |  | Replace existing text that differs, instead of keeping what is already there |",
   "| \`--dry-run\` |  |  | Report what would be written without writing it |",
   "| \`--strict\` |  |  | Answer with a check failure when anything was unreadable or off schema |",
   "| \`--refuse-links\` |  |  | Refuse to write through links or junctions already below the destination, instead of following them |",
@@ -1494,8 +1494,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/gamedata.md",
-    "sha256": "0abfaecd6cf8a8918c0b137a9059632d73dbdb44340bf08e1aac38f3d16f570f",
-    "size": 2997,
+    "sha256": "ec96ee943eda31008c36dee0651fc9fb34fc82f2e51666e986b03b7a43c0fa2a",
+    "size": 3040,
   },
   {
     "path": "docs/level.md",
@@ -1509,8 +1509,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/ogf.md",
-    "sha256": "29b8d0376b631f56c900e6eb97be9fc1a286376e2a44838a39a3a69a4e367fa3",
-    "size": 4017,
+    "sha256": "b7cf14cfb40931d87f1cb7fe9392c2aaf625d19e18274089180aa374c6617932",
+    "size": 4013,
   },
   {
     "path": "docs/omf.md",
@@ -1544,7 +1544,7 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/translation.md",
-    "sha256": "b57c9c7ab6b95480ea5d76159d3729b7b4bb98c48a2b1b2cda251019fa00d6d5",
+    "sha256": "e5c7006cd3d668826977d27f7d5ee071e63f13e4ce321a0e5de0ae43c14c2f0b",
     "size": 6210,
   },
   {

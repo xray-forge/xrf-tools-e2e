@@ -28,16 +28,10 @@ exports[`gamedata verify mesh texture references should accept a mesh whose refe
 exports[`gamedata verify mesh texture references should record each report as a readable document 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -45,13 +39,10 @@ exports[`gamedata verify mesh texture references should record each report as a 
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "cache": {
       "bytes": 22,
@@ -98,16 +89,10 @@ exports[`gamedata verify mesh texture references should record each report as a 
 exports[`gamedata verify mesh texture references should record each report as a readable document 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -115,13 +100,10 @@ exports[`gamedata verify mesh texture references should record each report as a 
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "cache": {
       "bytes": 22,
@@ -204,8 +186,8 @@ exports[`gamedata verify mesh texture references should write only its fixture a
 [
   {
     "path": "missing.json",
-    "sha256": "cf8bfc7b380cc402c9bafa6b5a405391d306b7b31b50f006b055d236269161b5",
-    "size": 1652,
+    "sha256": "beaa8ca951892e023c9da65c5ca21eeb8cb48771668ec1f3ff78aef4d6948636",
+    "size": 1403,
   },
   {
     "path": "missing/configs/system.ltx",
@@ -224,8 +206,8 @@ exports[`gamedata verify mesh texture references should write only its fixture a
   },
   {
     "path": "present.json",
-    "sha256": "abe5b60ac00d8ef60981623f72899784d8c3f76614100736f9889abd787482d0",
-    "size": 1417,
+    "sha256": "00298e620ecc98e3afa4c81608fbd066984072285eb863761c02fd1c20159a59",
+    "size": 1196,
   },
   {
     "path": "present/configs/system.ltx",

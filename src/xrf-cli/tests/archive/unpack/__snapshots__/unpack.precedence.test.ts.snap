@@ -3,16 +3,10 @@
 exports[`archive unpack precedence should write the expected files 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`archive unpack precedence should write the expected files 1`] = `
     "unpack",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "requested",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "archives": [
       "<sandbox>/archives/base.db",
@@ -47,16 +38,10 @@ exports[`archive unpack precedence should write the expected files 1`] = `
 exports[`archive unpack precedence should write the expected files 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -64,13 +49,10 @@ exports[`archive unpack precedence should write the expected files 2`] = `
     "unpack",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "requested",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "archives": [
       "<sandbox>/archives/base.db",
@@ -107,8 +89,8 @@ exports[`archive unpack precedence should write the expected files 3`] = `
   },
   {
     "path": "parallel-report.json",
-    "sha256": "96157c9bb20e67db2cced5dac71de4b0b32606cb4f5120984840cb2a47c9ad3f",
-    "size": 869,
+    "sha256": "3fcc7aba02409549d729cc5522060fe90ec04f8569da0e71d38afe5660b7b607",
+    "size": 643,
   },
   {
     "path": "parallel/gamedata/configs/system.ltx",
@@ -122,8 +104,8 @@ exports[`archive unpack precedence should write the expected files 3`] = `
   },
   {
     "path": "serial-report.json",
-    "sha256": "bd2ef4ea47650b06e7dcb9f18543ec4118ee64fb2da9e24cefb31e735503b82c",
-    "size": 867,
+    "sha256": "5eee3cb9e9970dcd5b9140de8dec85a0da63738a656b48b2ebf50b0c2d4be8fb",
+    "size": 641,
   },
   {
     "path": "serial/gamedata/configs/system.ltx",

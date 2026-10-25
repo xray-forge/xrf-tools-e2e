@@ -30,16 +30,10 @@ exports[`omf rename-motions success should rename motions through a map 1`] = `
 exports[`omf rename-motions success should report renamed motions 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -47,13 +41,10 @@ exports[`omf rename-motions success should report renamed motions 1`] = `
     "rename-motions",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "destination": "<sandbox>/renamed.omf",
     "isDryRun": false,
@@ -77,8 +68,8 @@ exports[`omf rename-motions success should write the expected files 1`] = `
   },
   {
     "path": "rename.json",
-    "sha256": "ece03f70de7743bcde5eb2e8a9c921a664b11920bc8bfcefa56b6cbf177b93f3",
-    "size": 762,
+    "sha256": "af16687784fdd6dfbb7e1dd8907a71b8589f034a0af09d93fd68d1b8ed95687e",
+    "size": 541,
   },
   {
     "path": "renamed.omf",

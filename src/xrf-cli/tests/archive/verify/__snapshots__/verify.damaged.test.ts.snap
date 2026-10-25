@@ -3,16 +3,10 @@
 exports[`archive verify damaged volume should record the readable archive reports 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`archive verify damaged volume should record the readable archive report
     "list",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "entries": [
       {
@@ -38,7 +29,6 @@ exports[`archive verify damaged volume should record the readable archive report
         "source": "<sandbox>/packed/fixture.db",
       },
     ],
-    "total": 1,
   },
 }
 `;
@@ -46,16 +36,10 @@ exports[`archive verify damaged volume should record the readable archive report
 exports[`archive verify damaged volume should record the readable archive reports 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -63,13 +47,10 @@ exports[`archive verify damaged volume should record the readable archive report
     "info",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "directories": 0,
     "files": 1,
@@ -92,16 +73,10 @@ exports[`archive verify damaged volume should record the readable archive report
 exports[`archive verify damaged volume should record the readable archive reports 3`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -109,19 +84,23 @@ exports[`archive verify damaged volume should record the readable archive report
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "checked": 1,
-    "collisions": [],
-    "findings": [],
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "archive.payloads",
+        "status": "passed",
+      },
+    ],
     "overrides": [],
     "status": "passed",
+    "unreachable": [],
   },
 }
 `;
@@ -129,16 +108,10 @@ exports[`archive verify damaged volume should record the readable archive report
 exports[`archive verify damaged volume should record the readable archive reports 4`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -146,24 +119,29 @@ exports[`archive verify damaged volume should record the readable archive report
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "checked": 1,
-    "collisions": [],
-    "findings": [
+    "checks": [
       {
-        "message": "Read error: Failed to decompress 'payload.ltx' from '<sandbox>/damaged/payload.db': input overrun.",
-        "name": "payload.ltx",
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "Read error: Failed to decompress 'payload.ltx' from '<sandbox>/damaged/payload.db': input overrun.",
+            "ruleId": "archive.payload",
+            "subject": "payload.ltx",
+          },
+        ],
+        "id": "archive.payloads",
+        "status": "failed",
       },
     ],
     "overrides": [],
     "status": "failed",
+    "unreachable": [],
   },
 }
 `;
@@ -182,18 +160,18 @@ exports[`archive verify damaged volume should write the expected files 1`] = `
   },
   {
     "path": "intact.json",
-    "sha256": "c0b6df5e96f365f89ad748ababc959608d3dde077c10655ba2854daeda3a677b",
-    "size": 631,
+    "sha256": "b885fb6dbd3118189f175b97aa77983ab58ed279682a8e0667270542f0143903",
+    "size": 549,
   },
   {
     "path": "listing.json",
-    "sha256": "b78843fd482ec5376e046220cad47eda6bfd3aca0fcd26e155feed7be96fc5d6",
-    "size": 773,
+    "sha256": "1a1c47b0bcd789b54219b15b1853199c3705a05f3b1ea5c230b4ae38dd2a9fb0",
+    "size": 536,
   },
   {
     "path": "opened.json",
-    "sha256": "da285c580fb8db4eeb18e988e9ab08031bfcfc2e968fd5dcbd11fa4d51114439",
-    "size": 852,
+    "sha256": "080aea6bb45056f36e87efeeab109ab667dc7719c165e90ce79e41ff2e72d917",
+    "size": 631,
   },
   {
     "path": "packed/fixture.db",
@@ -207,8 +185,8 @@ exports[`archive verify damaged volume should write the expected files 1`] = `
   },
   {
     "path": "verify.json",
-    "sha256": "608227c3f90ec44ce83d0568575d9173c956278d125f1d59346353ecdfddb814",
-    "size": 831,
+    "sha256": "0a855dfe50dbbef6e7fd0faf118f6e8173845ef0249f4f8915a5c0732ed5b1d9",
+    "size": 785,
   },
 ]
 `;

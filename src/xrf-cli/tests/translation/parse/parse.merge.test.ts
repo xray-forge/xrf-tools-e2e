@@ -33,7 +33,7 @@ describe("translation parse merges into authored sources", () => {
       box.at("sources"),
       "--file",
       "st_ui.xml",
-      "--overwrite",
+      "--force",
     ]);
   });
 

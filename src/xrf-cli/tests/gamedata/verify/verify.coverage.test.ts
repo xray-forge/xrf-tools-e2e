@@ -89,7 +89,6 @@ describe("gamedata verify meets a declared source it cannot open", () => {
   it("should report the run as an execution failure rather than a check verdict", () => {
     const envelope: CommandEnvelope = envelopeAt(box.at("report.json"));
 
-    expect(envelope.outcome).toBe("executionFailed");
     expect(envelope.exitCode).toBe(1);
     expect(envelope.error).toContain("incomplete");
   });
@@ -104,7 +103,6 @@ describe("gamedata verify meets a declared source it cannot open", () => {
     expect(emptyCheck.exitCode).toBe(1);
     expect(box.json("empty-check.json")).toMatchObject({
       exitCode: 1,
-      outcome: "executionFailed",
       result: {
         status: "incomplete",
         checks: [
@@ -124,7 +122,6 @@ describe("gamedata verify meets a declared source it cannot open", () => {
     expect(ignoredSource.exitCode).toBe(1);
     expect(box.json("ignore.json")).toMatchObject({
       exitCode: 1,
-      outcome: "executionFailed",
       result: {
         status: "incomplete",
         skippedMounts: [{ origin: "$arch_dir$" }],
@@ -151,7 +148,6 @@ describe("gamedata verify meets a declared source it cannot open", () => {
     expect(clean.exitCode).toBe(0);
     expect(box.json("clean.json")).toMatchObject({
       exitCode: 0,
-      outcome: "success",
       result: {
         status: "passed",
         skippedMounts: [],

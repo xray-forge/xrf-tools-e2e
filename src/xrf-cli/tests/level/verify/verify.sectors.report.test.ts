@@ -31,7 +31,6 @@ describe("level verify sectors and portals", () => {
   it("should accept linked sectors and portals with three and six vertices", () => {
     expect(envelopeAt(box.at("sectors.json"))).toMatchObject({
       exitCode: 0,
-      outcome: "success",
       result: {
         status: "passed",
         checks: [
@@ -55,10 +54,9 @@ describe("level verify sectors and portals", () => {
   });
 
   it("should report invalid roots, portal references and both portal sides together", () => {
+    expect(envelopeAt(box.at("invalid-sectors.json"))).not.toHaveProperty("error");
     expect(envelopeAt(box.at("invalid-sectors.json"))).toMatchObject({
       exitCode: 3,
-      outcome: "checkFailed",
-      error: "Check failed: 6 finding(s)",
       result: {
         status: "failed",
         checks: [
@@ -94,7 +92,6 @@ describe("level verify sectors and portals", () => {
   it("should reject a partial portal record as a read finding", () => {
     expect(envelopeAt(box.at("truncated-portals.json"))).toMatchObject({
       exitCode: 3,
-      outcome: "checkFailed",
       result: {
         status: "failed",
         checks: expect.arrayContaining([

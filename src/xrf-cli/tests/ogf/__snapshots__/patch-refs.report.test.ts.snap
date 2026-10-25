@@ -3,16 +3,10 @@
 exports[`ogf patch reports should report a dry run as one that wrote nothing 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`ogf patch reports should report a dry run as one that wrote nothing 1`]
     "patch-motion-refs",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "discardedSize": 0,
     "isDryRun": true,
@@ -44,16 +35,10 @@ exports[`ogf patch reports should report a dry run as one that wrote nothing 1`]
 exports[`ogf patch reports should report what a motion-refs patch rewrote 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -61,13 +46,10 @@ exports[`ogf patch reports should report what a motion-refs patch rewrote 1`] = 
     "patch-motion-refs",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "discardedSize": 0,
     "isDryRun": false,
@@ -85,16 +67,10 @@ exports[`ogf patch reports should report what a motion-refs patch rewrote 1`] = 
 exports[`ogf patch reports should report what a texture-refs patch rewrote 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -102,13 +78,10 @@ exports[`ogf patch reports should report what a texture-refs patch rewrote 1`] =
     "patch-texture-refs",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "discardedSize": 0,
     "isDryRun": false,

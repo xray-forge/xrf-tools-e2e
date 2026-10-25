@@ -25,8 +25,10 @@ describe("gamedata verify execution width", () => {
   });
 
   it("should really have run at two different widths", () => {
-    expect(envelopeAt(box.at("sequential.json")).execution).toEqual({ workers: 1, origin: "requested" });
-    expect(envelopeAt(box.at("wide.json")).execution).toEqual({ workers: 8, origin: "requested" });
+    expect(envelopeAt(box.at("sequential.json")).execution).toEqual({ workers: 1 });
+    expect(envelopeAt(box.at("wide.json")).execution).toEqual({ workers: 8 });
+    // Only the console line says the width came from `-j` rather than from the host.
+    expect(sequential.stdout.join("\n")).toContain("(requested)");
   });
 
   it("should have retained something worth comparing", () => {

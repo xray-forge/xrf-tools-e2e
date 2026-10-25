@@ -3,16 +3,10 @@
 exports[`gamedata verify empty check report should report one check as a readable document 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`gamedata verify empty check report should report one check as a readabl
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "cache": {
       "bytes": 8535,
@@ -74,8 +65,8 @@ exports[`gamedata verify empty check report should write only the report 1`] = `
 [
   {
     "path": "scripts.json",
-    "sha256": "f42d89eba60b0fa9176e97a9e093f78209a43ee289511ad598456d0b8d2cdf28",
-    "size": 1368,
+    "sha256": "a4ac33861818a9019038ed914699ad13f1dbc8c252acf158ae2cdd03e957e5ee",
+    "size": 1147,
   },
 ]
 `;

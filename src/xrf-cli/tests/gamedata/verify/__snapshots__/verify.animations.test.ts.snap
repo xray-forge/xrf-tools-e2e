@@ -3,16 +3,10 @@
 exports[`gamedata verify animations should record the reports as readable documents 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`gamedata verify animations should record the reports as readable docume
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "cache": {
       "bytes": 294,
@@ -73,16 +64,10 @@ exports[`gamedata verify animations should record the reports as readable docume
 exports[`gamedata verify animations should record the reports as readable documents 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -90,13 +75,10 @@ exports[`gamedata verify animations should record the reports as readable docume
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "cache": {
       "bytes": 135,
@@ -215,8 +197,8 @@ exports[`gamedata verify animations should write only its fixture and reports 1`
 [
   {
     "path": "damaged.json",
-    "sha256": "6073dd14ca56986fea2d152c42b58d3de0e67206c03d3ef63e227de87f65900e",
-    "size": 1743,
+    "sha256": "c4b6e04e79f2ba73867e8496a293acd3bcc6d1f0ee7976f994e8197d60b2800c",
+    "size": 1494,
   },
   {
     "path": "damaged/configs/system.ltx",
@@ -235,8 +217,8 @@ exports[`gamedata verify animations should write only its fixture and reports 1`
   },
   {
     "path": "valid.json",
-    "sha256": "670a5e795c7a891536667615abf569720fcf67aa3c63e3009fcef91b6fa0472a",
-    "size": 1511,
+    "sha256": "0c20134ac9269d289ce8a6a9226fc2fa881bd0acbb5b8ab67a4712ea6afe8ed8",
+    "size": 1290,
   },
   {
     "path": "valid/configs/system.ltx",

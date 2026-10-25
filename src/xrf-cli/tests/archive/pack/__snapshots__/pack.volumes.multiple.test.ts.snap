@@ -3,16 +3,10 @@
 exports[`archive pack multiple indexed volumes should write the expected files and reports 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`archive pack multiple indexed volumes should write the expected files a
     "pack",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "collectDuration": "<duration>",
     "duration": "<duration>",
@@ -58,16 +49,10 @@ exports[`archive pack multiple indexed volumes should write the expected files a
 exports[`archive pack multiple indexed volumes should write the expected files and reports 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -75,13 +60,10 @@ exports[`archive pack multiple indexed volumes should write the expected files a
     "unpack",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "archives": [
       "<sandbox>/packed/fixture.db0",
@@ -103,16 +85,10 @@ exports[`archive pack multiple indexed volumes should write the expected files a
 exports[`archive pack multiple indexed volumes should write the expected files and reports 3`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -120,13 +96,10 @@ exports[`archive pack multiple indexed volumes should write the expected files a
     "unpack",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "archives": [
       "<sandbox>/packed/fixture.db2",
@@ -167,13 +140,13 @@ exports[`archive pack multiple indexed volumes should write the expected files a
   },
   {
     "path": "last-report.json",
-    "sha256": "6b4cadb772c53a160bf57136c62502701b8b2dae0836f0d56e4f9f9d925a5ea4",
-    "size": 834,
+    "sha256": "7dc3aa5add3252cf338d256db411a7f4b0ac79b4bd8e815b07b09e25e77ef11a",
+    "size": 613,
   },
   {
     "path": "pack-report.json",
-    "sha256": "4921dd4d883b20a527bafab71d100c5d2cb1f9e46600aa83793acc74346555d0",
-    "size": 1166,
+    "sha256": "81ea705b0f9fc71e9ba05b900421c231a6b115fad746ec4062ddea59b87f3aab",
+    "size": 945,
   },
   {
     "path": "packed/fixture.db0",
@@ -192,8 +165,8 @@ exports[`archive pack multiple indexed volumes should write the expected files a
   },
   {
     "path": "set-report.json",
-    "sha256": "a117c541189e1769640304b31b363883c7d596e657eaae49abc0c352b7ea1b8b",
-    "size": 910,
+    "sha256": "4c72c8f5efa8ce3ba273c0b3547e7fc4096f899c4bf40119a7f59a8a75948f8c",
+    "size": 689,
   },
   {
     "path": "source/payload-a.bin",

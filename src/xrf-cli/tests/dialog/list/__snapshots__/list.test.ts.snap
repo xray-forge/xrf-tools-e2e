@@ -19,16 +19,10 @@ exports[`dialog list should list every dialog with its file, phrase count and op
 exports[`dialog list should report each dialog with its conditions and no offers 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -36,13 +30,10 @@ exports[`dialog list should report each dialog with its conditions and no offers
     "list",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "dialogs": [
       {
@@ -126,7 +117,6 @@ exports[`dialog list should report each dialog with its conditions and no offers
     "findings": [],
     "language": "eng",
     "profile": null,
-    "total": 6,
   },
 }
 `;
@@ -167,8 +157,8 @@ exports[`dialog list should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "03839a8632f91f387505e17db2fe811e2bca8374dd60a34c53d5ec123f226f02",
-    "size": 2696,
+    "sha256": "7a31a1d85a58f7bccdbcde4fbf50b30ea6032d976cd9635699e917582c17a303",
+    "size": 2459,
   },
 ]
 `;

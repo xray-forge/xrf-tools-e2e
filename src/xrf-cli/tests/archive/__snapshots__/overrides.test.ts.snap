@@ -3,16 +3,10 @@
 exports[`volume set overrides should report the overridden path beside the verdict, and nothing as unreachable 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,17 +14,20 @@ exports[`volume set overrides should report the overridden path beside the verdi
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "checked": 2,
-    "collisions": [],
-    "findings": [],
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "archive.payloads",
+        "status": "passed",
+      },
+    ],
     "overrides": [
       {
         "container": "<sandbox>/db/patch.db",
@@ -41,6 +38,7 @@ exports[`volume set overrides should report the overridden path beside the verdi
       },
     ],
     "status": "passed",
+    "unreachable": [],
   },
 }
 `;
@@ -48,16 +46,10 @@ exports[`volume set overrides should report the overridden path beside the verdi
 exports[`volume set overrides should report the same buried copy from the listing 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -65,13 +57,10 @@ exports[`volume set overrides should report the same buried copy from the listin
     "list",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "collisions": [],
     "duration": "<duration>",
@@ -99,7 +88,6 @@ exports[`volume set overrides should report the same buried copy from the listin
       },
     ],
     "skipped": [],
-    "total": 1,
   },
 }
 `;
@@ -111,7 +99,7 @@ exports[`volume set overrides should verify clean and still name what the patch 
   "stdout": [
     "1 path(s) are held more than once, burying 1 cop(ies):",
     "  'textures\\wpn\\wpn_ak74.dds' answers from <sandbox>/db/patch.db (archive), hiding 1 cop(ies)",
-    "Verified 2 file(s) in <duration>",
+    "Verification of 2 archive file(s): passed",
   ],
 }
 `;
@@ -135,8 +123,8 @@ exports[`volume set overrides should write the expected files 1`] = `
   },
   {
     "path": "listing.json",
-    "sha256": "5891020de154b99c48c74724b2900052797ce2b3c2063404c917238fb4352745",
-    "size": 1128,
+    "sha256": "4db6d42cb7132799e80a3f5162cdc2b2d1937d75e239bc289859f353068dc6d1",
+    "size": 891,
   },
   {
     "path": "patch/Textures/Wpn/WPN_AK74.DDS",
@@ -145,8 +133,8 @@ exports[`volume set overrides should write the expected files 1`] = `
   },
   {
     "path": "verify.json",
-    "sha256": "330b4142809284370c72a26d30f63c75ad7d8a0036a4867fa23ff0cc7b1f210a",
-    "size": 815,
+    "sha256": "9b72540e69909e9c871186462cabb06cc115dd1cf096b6c09d0b032564b10ea2",
+    "size": 733,
   },
 ]
 `;

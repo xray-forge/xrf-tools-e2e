@@ -4,8 +4,8 @@ exports[`level info structure should preserve fixture bytes and write only the r
 [
   {
     "path": "by-name.json",
-    "sha256": "6f7aa364d51b05a6e44f623407b6cdd22d22256f5e7dd9f0e9b02bff87cffc26",
-    "size": 1726,
+    "sha256": "b7ed1e2ecb0e86f2ca42dff30a98882b06ccae240024e400555ff328c5502eb6",
+    "size": 1371,
   },
   {
     "path": "root/levels/zaton/level",
@@ -24,8 +24,8 @@ exports[`level info structure should preserve fixture bytes and write only the r
   },
   {
     "path": "structure.json",
-    "sha256": "6f7aa364d51b05a6e44f623407b6cdd22d22256f5e7dd9f0e9b02bff87cffc26",
-    "size": 1726,
+    "sha256": "b7ed1e2ecb0e86f2ca42dff30a98882b06ccae240024e400555ff328c5502eb6",
+    "size": 1371,
   },
   {
     "path": "triangle/level",
@@ -44,8 +44,8 @@ exports[`level info structure should preserve fixture bytes and write only the r
   },
   {
     "path": "without-structure.json",
-    "sha256": "d4116cfcbc99f3190a6169f20d2647f0621bae3aeab60632ec26f6abbd6ea5a2",
-    "size": 1727,
+    "sha256": "442d16557fbb188a4042909772e7d9fc49286e227c7ee7b6aa3037b37e530693",
+    "size": 1372,
   },
 ]
 `;

@@ -14,13 +14,13 @@ exports[`level verify roots should preserve fixture bytes and write only the req
 [
   {
     "path": "archived.json",
-    "sha256": "0f23eeeb9bf776b57db4681902b10383cee7ced9fe945f88ad3e7a85e8e3a7af",
-    "size": 1684,
+    "sha256": "9121d0dabe6c9df38fb9d787e3e4eb5aa6f34d49233506aa5fe73c3398cf39dd",
+    "size": 1462,
   },
   {
     "path": "loose.json",
-    "sha256": "0f23eeeb9bf776b57db4681902b10383cee7ced9fe945f88ad3e7a85e8e3a7af",
-    "size": 1684,
+    "sha256": "9121d0dabe6c9df38fb9d787e3e4eb5aa6f34d49233506aa5fe73c3398cf39dd",
+    "size": 1462,
   },
   {
     "path": "packed/levels.db",

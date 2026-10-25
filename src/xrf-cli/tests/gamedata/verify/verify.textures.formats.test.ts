@@ -49,7 +49,6 @@ describe("gamedata verify DDS format compatibility", () => {
   it("should accept a readable BC1 texture", () => {
     expect(box.json("supported.json")).toMatchObject({
       exitCode: 0,
-      outcome: "success",
       result: {
         status: "passed",
         checks: [
@@ -69,7 +68,6 @@ describe("gamedata verify DDS format compatibility", () => {
   it("should report unsupported BC4 as validation rather than a read error", () => {
     expect(box.json("unsupported.json")).toMatchObject({
       exitCode: 3,
-      outcome: "checkFailed",
       result: {
         status: "failed",
         checks: [

@@ -3,16 +3,10 @@
 exports[`gamedata verify texture files should write the expected reports and files 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`gamedata verify texture files should write the expected reports and fil
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "cache": {
       "bytes": 0,
@@ -73,16 +64,10 @@ exports[`gamedata verify texture files should write the expected reports and fil
 exports[`gamedata verify texture files should write the expected reports and files 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -90,13 +75,10 @@ exports[`gamedata verify texture files should write the expected reports and fil
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "cache": {
       "bytes": 0,
@@ -150,8 +132,8 @@ exports[`gamedata verify texture files should write the expected reports and fil
 [
   {
     "path": "damaged.json",
-    "sha256": "42efbc38c1026b54c91d95bb1f413e62a995055ca1aaadecded00d3a86f4b401",
-    "size": 1657,
+    "sha256": "6d17f59fdf4979782696d746ff5ad5b317da9ba6c6ca9239bc275e56628c8ff1",
+    "size": 1408,
   },
   {
     "path": "damaged/configs/system.ltx",
@@ -170,8 +152,8 @@ exports[`gamedata verify texture files should write the expected reports and fil
   },
   {
     "path": "valid.json",
-    "sha256": "985f1e4312d888737f5b2163ae25515f74b01eb96babce36c3090d4215ac9d35",
-    "size": 1396,
+    "sha256": "e3dbdd1cee2959627ad03883adae9c86f009ec9dfaffa8c04abd592242c10d6e",
+    "size": 1175,
   },
   {
     "path": "valid/configs/system.ltx",

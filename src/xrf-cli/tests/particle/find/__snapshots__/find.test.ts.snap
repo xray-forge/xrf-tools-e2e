@@ -27,16 +27,10 @@ exports[`particle find should refuse an action type the library format has not 1
 exports[`particle find should report the groups playing an effect and the one spawning it as a birth child 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -44,13 +38,10 @@ exports[`particle find should report the groups playing an effect and the one sp
     "find",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "actions": [],
     "effects": [
@@ -168,8 +159,8 @@ exports[`particle find should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "864c64548492a4aaf792c5a14cb18b1482b79a1870492352f45f996d72020f42",
-    "size": 3860,
+    "sha256": "1cdeeedb334b784e1c3baca0ba7a31f564742eb14d5c3a7e4d59a638641f5162",
+    "size": 3639,
   },
 ]
 `;

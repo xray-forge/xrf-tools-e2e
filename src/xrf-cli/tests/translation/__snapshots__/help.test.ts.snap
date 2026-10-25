@@ -80,7 +80,7 @@ exports[`translation command help should keep each leaf command's help stable 1`
       "      --report <PATH>        Write the run's JSON report to a file",
       "  -d, --dest <dest>          Directory the json sources are written to, merging with any already there",
       "      --file <file>          Restrict the run to one string table, by file name",
-      "      --overwrite            Replace existing text that differs, instead of keeping what is already there",
+      "  -f, --force                Replace existing text that differs, instead of keeping what is already there",
       "      --dry-run              Report what would be written without writing it",
       "      --strict               Answer with a check failure when anything was unreadable or off schema",
       "      --refuse-links         Refuse to write through links or junctions already below the destination, instead of following them",

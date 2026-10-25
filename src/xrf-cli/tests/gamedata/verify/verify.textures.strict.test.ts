@@ -59,7 +59,6 @@ describe("gamedata verify texture companion strictness", () => {
     ] as const) {
       expect(box.json(report)).toMatchObject({
         exitCode,
-        outcome: exitCode === 0 ? "success" : "checkFailed",
         result: {
           status,
           checks: expect.arrayContaining([
@@ -86,7 +85,6 @@ describe("gamedata verify texture companion strictness", () => {
     expect(cleanStrict.exitCode).toBe(0);
     expect(box.json("clean-strict.json")).toMatchObject({
       exitCode: 0,
-      outcome: "success",
       result: {
         status: "passed",
         checks: expect.arrayContaining([

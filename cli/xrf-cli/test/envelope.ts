@@ -2,44 +2,32 @@ import * as fs from "node:fs";
 
 import { expect } from "@jest/globals";
 
-import type { Nullable } from "../../types";
+import type { Optional } from "../../types";
 
 import type { CliResult } from "./sandbox";
 
 /**
- * How a run ended, in the words the machine contract uses.
- */
-export type CommandOutcome = "success" | "checkFailed" | "executionFailed";
-
-/**
- * The envelope every command answers with when a machine-readable report was asked for.
- *
- * @remarks
- * Deliberately unversioned: everything in it is something the CLI already promises through its exit
- * contract. What a command wants to say beyond that lives in `result`, which is that command's own
- * shape and is pinned beside it rather than here.
- */
-/**
- * How much of the machine a run was bounded to, and whether anybody chose it.
+ * How much of the machine a run was bounded to.
  *
  * @remarks
  * Carried by every run, including the commands that declare no `--jobs`: every command runs inside a
  * pool whether or not it offers a say in how wide that pool is. `workers` is normalized out of
- * recordings because it describes the host; `origin` is not, because it describes the command line.
+ * recordings because it describes the host. Whether a `-j` chose it is on the `Workers:` console line.
  */
 export interface ExecutionPlan {
   workers: number;
-  origin: "auto" | "requested";
 }
 
+/**
+ * The envelope every command answers with when a machine-readable report was asked for.
+ */
 export interface CommandEnvelope {
   command: Array<string>;
   duration: number;
-  error: Nullable<string>;
+  error?: Optional<string>;
   execution: ExecutionPlan;
   exitCode: number;
-  outcome: CommandOutcome;
-  result: unknown;
+  result?: unknown;
 }
 
 /**

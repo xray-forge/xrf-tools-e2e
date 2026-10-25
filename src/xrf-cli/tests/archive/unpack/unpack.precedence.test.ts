@@ -44,11 +44,11 @@ describe("archive unpack precedence", () => {
     expect(serial.exitCode).toBe(0);
     expect(parallel.exitCode).toBe(0);
     expect(envelopeAt(box.at("serial-report.json"))).toMatchObject({
-      execution: { origin: "requested", workers: 1 },
+      execution: { workers: 1 },
       result: { filesTotal: 2, filesUnpacked: 1, unpackedSize: 17 },
     });
     expect(envelopeAt(box.at("parallel-report.json"))).toMatchObject({
-      execution: { origin: "requested", workers: 2 },
+      execution: { workers: 2 },
       result: { filesTotal: 2, filesUnpacked: 1, unpackedSize: 17 },
     });
   });

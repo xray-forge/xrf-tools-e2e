@@ -65,16 +65,10 @@ exports[`archive pack verbose output should keep the normal summary compact 1`] 
 exports[`archive pack verbose output should report the run as a readable document 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -82,13 +76,10 @@ exports[`archive pack verbose output should report the run as a readable documen
     "pack",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "collectDuration": "<duration>",
     "duration": "<duration>",
@@ -122,8 +113,8 @@ exports[`archive pack verbose output should write the expected files 1`] = `
   },
   {
     "path": "reported.json",
-    "sha256": "db500cdb7a28fa8ad5c4e12365a5f8536c267e69cdab4525fe17bdfa211420b1",
-    "size": 1001,
+    "sha256": "de0cbb366b567a9b20f3af29b38b9190abea1cbbe348a190bfd091a5694eb89d",
+    "size": 780,
   },
   {
     "path": "reported/a.db",

@@ -3,16 +3,10 @@
 exports[`archive extract refusals should write the expected files 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -22,28 +16,19 @@ exports[`archive extract refusals should write the expected files 1`] = `
   "duration": "<duration>",
   "error": "Not found error: Cannot extract 'configs\\missing.ltx' - no such file in the archive.",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 1,
-  "outcome": "executionFailed",
-  "result": null,
 }
 `;
 
 exports[`archive extract refusals should write the expected files 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -53,12 +38,9 @@ exports[`archive extract refusals should write the expected files 2`] = `
   "duration": "<duration>",
   "error": Any<String>,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 1,
-  "outcome": "executionFailed",
-  "result": null,
 }
 `;
 
@@ -89,8 +71,8 @@ exports[`archive extract refusals should write the expected files 3`] = `
   },
   {
     "path": "missing-report.json",
-    "sha256": "d2b8aaa42888204bb8131ebc4f580d4cf8eea0f61a2eaa0fe501890debbf8610",
-    "size": 618,
+    "sha256": "8c62d226c4ea2a69376382c6b1dd812082557304b5828ca3d1c62d6e610b3a42",
+    "size": 388,
   },
   {
     "path": "packed/fixture.db",

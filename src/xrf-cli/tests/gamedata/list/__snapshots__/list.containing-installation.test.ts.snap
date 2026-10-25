@@ -3,16 +3,10 @@
 exports[`gamedata list containing installation should record the discovered installation 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`gamedata list containing installation should record the discovered inst
     "list",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "collisions": [],
     "duration": "<duration>",
@@ -48,7 +39,6 @@ exports[`gamedata list containing installation should record the discovered inst
     "origin": "<sandbox>/install/gamedata/configs",
     "shadowed": [],
     "skipped": [],
-    "total": 1,
   },
 }
 `;
@@ -57,8 +47,8 @@ exports[`gamedata list containing installation should write the expected files 1
 [
   {
     "path": "containing.json",
-    "sha256": "c9b49ba89984e233ee1827dd45d74762874ec60f8032c0248ec7955bcd3bf4a6",
-    "size": 1027,
+    "sha256": "df8d245017443afa328aa1dbb5b74842ab4d31ca4dc548889e25b1b3399cc2a6",
+    "size": 790,
   },
   {
     "path": "install/fsgame.ltx",

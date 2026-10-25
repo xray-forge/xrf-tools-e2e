@@ -52,16 +52,10 @@ exports[`dialog list --profile should refuse a profile whose class no character 
 exports[`dialog list --profile should report the profile, the characters it resolves to and each way a dialog is offered 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -69,13 +63,10 @@ exports[`dialog list --profile should report the profile, the characters it reso
     "list",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "dialogs": [
       {
@@ -170,7 +161,6 @@ exports[`dialog list --profile should report the profile, the characters it reso
       ],
       "id": "snag",
     },
-    "total": 4,
   },
 }
 `;
@@ -192,8 +182,8 @@ exports[`dialog list --profile should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "9f54a97f76b405096b0d0261437943860b5d967afcfb3e8dedd3c2ec66846f7d",
-    "size": 2795,
+    "sha256": "d17a4d4c2e7c2baecf767f9aa5ddeb570d16f1c820840b87977cde098176e59b",
+    "size": 2558,
   },
 ]
 `;

@@ -41,16 +41,10 @@ exports[`dds convert formats should describe the converted texture 1`] = `
 exports[`dds convert formats should report what the format cost 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -58,13 +52,10 @@ exports[`dds convert formats should report what the format cost 1`] = `
     "convert",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "candidates": [],
     "destination": "<sandbox>/bc1.dds",
@@ -122,8 +113,8 @@ exports[`dds convert formats should write the expected files 1`] = `
   },
   {
     "path": "bc1.json",
-    "sha256": "65a42f6db190cd65d73b3d4654a5e189d851549d6095c5b36ff9804b271e3831",
-    "size": 1301,
+    "sha256": "d02c8157f1d45e3ab99aa240000b43d32f7d82712c3bb0b148567ce2c3c25502",
+    "size": 1080,
   },
   {
     "path": "bc2.dds",
@@ -132,8 +123,8 @@ exports[`dds convert formats should write the expected files 1`] = `
   },
   {
     "path": "bc2.json",
-    "sha256": "57c85e051f83073360bfec043b84469543575ba0d36c0747abb36daed294b102",
-    "size": 1301,
+    "sha256": "e44434e163a588711c667ec68c1c9c49b9a264667c8f7be2a492a994d55e0946",
+    "size": 1080,
   },
   {
     "path": "bc3.dds",
@@ -142,8 +133,8 @@ exports[`dds convert formats should write the expected files 1`] = `
   },
   {
     "path": "bc3.json",
-    "sha256": "2c8a6254f7a67fb4d1acd50acd170b4bf31160de5de5d0978e607638b149d53f",
-    "size": 1303,
+    "sha256": "6202291964c0db087f8021752f4442557de618fe4a0c77404a2453e397ff02b4",
+    "size": 1082,
   },
   {
     "path": "bc7.dds",
@@ -152,8 +143,8 @@ exports[`dds convert formats should write the expected files 1`] = `
   },
   {
     "path": "bc7.json",
-    "sha256": "8b2775946984eb75a4772d0be9a9edf1efff1aadb1fe8cbcc173aaa67a084c6b",
-    "size": 1307,
+    "sha256": "c38a09bfc5034b34958f9876589c385e35cf4c1f82cb6a27abb2c4c26728c42d",
+    "size": 1086,
   },
   {
     "path": "flat.dds",
@@ -162,28 +153,28 @@ exports[`dds convert formats should write the expected files 1`] = `
   },
   {
     "path": "info-bc1.json",
-    "sha256": "c71799ed00a53c90f1aca0d8ea9340bb0384c77d32f6a869f1b9cf1bc625009c",
-    "size": 886,
+    "sha256": "8535adc64572c4e3384e28df992326c8d1a337eacf5517211fdf85179d374111",
+    "size": 665,
   },
   {
     "path": "info-bc2.json",
-    "sha256": "1df50366733ff079a600462772b824fab4e60f24a696fa5fb5ac3b3551a0f154",
-    "size": 889,
+    "sha256": "d466364a532ada868820c9281cec0415096dfac50e9204e6aa01d693e6000a79",
+    "size": 668,
   },
   {
     "path": "info-bc3.json",
-    "sha256": "20194f9cf22ad4602d94991e50c2413fb370157789e6314d5838b4e0bb0346a5",
-    "size": 889,
+    "sha256": "f5db8fd3af69df37ecfced329adcfe19c19f13f3e887e978f4bb1da182c594c8",
+    "size": 668,
   },
   {
     "path": "info-bc7.json",
-    "sha256": "6b974b4196098b2fa882a9382b881701b05010a7793933488c4b14a8ffd70042",
-    "size": 894,
+    "sha256": "37bdfae5e3b9338202d4c995d615b274468ea570c6ca72dd748b6140d6aef0dc",
+    "size": 673,
   },
   {
     "path": "info-rgba8.json",
-    "sha256": "e14f2a5a9ee55fd439dcf6e261eb63bf0908049dd044d0d02d4e7844fa621362",
-    "size": 891,
+    "sha256": "4c3938fe0e8bf4aa77915e261afdd9fd8ec6a108a6cf67029bc0a54f4007606d",
+    "size": 670,
   },
   {
     "path": "rgba8.dds",
@@ -192,8 +183,8 @@ exports[`dds convert formats should write the expected files 1`] = `
   },
   {
     "path": "rgba8.json",
-    "sha256": "5b04bb0941759a64bb4b9ab7a48e46913dc36ed7683b28a270a1a1dc7458897a",
-    "size": 1237,
+    "sha256": "203a84f0bfcf4347187f591c85035880f0b49d55a8c101c7ac1a1a9a89983f9b",
+    "size": 1016,
   },
 ]
 `;

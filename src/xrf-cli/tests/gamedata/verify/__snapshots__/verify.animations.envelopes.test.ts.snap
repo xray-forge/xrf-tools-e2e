@@ -33,16 +33,10 @@ exports[`gamedata verify animations envelopes should read, write back and evalua
 exports[`gamedata verify animations envelopes should record the reports as readable documents 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -50,13 +44,10 @@ exports[`gamedata verify animations envelopes should record the reports as reada
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "cache": {
       "bytes": 0,
@@ -103,16 +94,10 @@ exports[`gamedata verify animations envelopes should record the reports as reada
 exports[`gamedata verify animations envelopes should record the reports as readable documents 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -120,13 +105,10 @@ exports[`gamedata verify animations envelopes should record the reports as reada
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 6 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "cache": {
       "bytes": 0,
@@ -243,8 +225,8 @@ exports[`gamedata verify animations envelopes should write only its fixture and 
 [
   {
     "path": "damaged.json",
-    "sha256": "5743aaa2f14cd10ac88795d661d1a30da37e715c4dd63e03ff2c0454b4e77672",
-    "size": 2996,
+    "sha256": "934dd9e33edd6080ce0e1d304111ca461c9557b401c8eb2545e25be85f93da5b",
+    "size": 2747,
   },
   {
     "path": "damaged/anims/extra_chunk.anm",
@@ -283,8 +265,8 @@ exports[`gamedata verify animations envelopes should write only its fixture and 
   },
   {
     "path": "valid.json",
-    "sha256": "38f8d362ab05c97c695e5caab914c046c2c30497e9c2724b03830a01c3fc7928",
-    "size": 1509,
+    "sha256": "b37b48b923ea95775999977052ab9188bfabd22fc07ee250be080d2099bcc826",
+    "size": 1288,
   },
   {
     "path": "valid/anims/camera_effects/weapon/ak74_shoot.anm",

@@ -5,7 +5,7 @@ exports[`externs export drift detection should accept an artifact that matches 1
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Extern artifact '<sandbox>/externs.json' matches 3 declarations.",
+    "Extern artifact '<sandbox>/externs.json' against 3 declarations: passed",
   ],
 }
 `;
@@ -14,7 +14,7 @@ exports[`externs export drift detection should reject an artifact that drifted 1
 {
   "exitCode": 3,
   "stderr": [
-    "Verify error: Extern JSON artifact '<sandbox>/drifted.json' does not match the parsed declaration manifest.",
+    "Check 'externs.artifact' is failed with 1 finding(s)",
     "Check failed: 1 finding(s)",
   ],
   "stdout": [],

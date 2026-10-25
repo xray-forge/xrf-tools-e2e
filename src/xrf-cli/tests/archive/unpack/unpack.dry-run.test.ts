@@ -34,7 +34,6 @@ describe("archive unpack dry run", () => {
     expect(box.json("dry-report.json")).toMatchObject({
       command: ["archive", "unpack"],
       exitCode: 0,
-      outcome: "success",
       result: expect.objectContaining({
         directories: 2,
         files: 1,

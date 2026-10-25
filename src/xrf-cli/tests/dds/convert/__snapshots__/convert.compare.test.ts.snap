@@ -13,16 +13,10 @@ exports[`dds convert comparison should convert while weighing the alternatives 1
 exports[`dds convert comparison should report every candidate against the same levels 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -30,13 +24,10 @@ exports[`dds convert comparison should report every candidate against the same l
     "convert",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "candidates": [
       {
@@ -193,8 +184,8 @@ exports[`dds convert comparison should write the expected files 1`] = `
   },
   {
     "path": "compared.json",
-    "sha256": "b7e39d7fae6df3b8c78e27ebc73b3acd322322a75885dc4d61510a4a7eab301b",
-    "size": 3780,
+    "sha256": "c26b5bfa22109d56fd48ed01b3f15c7db6ddc4aa4109f6a385d62aa25adb18d3",
+    "size": 3559,
   },
 ]
 `;

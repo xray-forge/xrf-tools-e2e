@@ -64,7 +64,7 @@ describe("translation verify", () => {
     const envelope: CommandEnvelope = envelopeOf(piped);
 
     expect(envelope.command).toEqual(["translation", "verify"]);
-    expect(envelope.outcome).toBe("success");
+    expect(envelope.exitCode).toBe(0);
     expect(JSON.stringify(envelope.result)).toContain("translations.missing");
   });
 

@@ -14,16 +14,10 @@ exports[`particles roundtrip should pack back into a container 1`] = `
 exports[`particles roundtrip should pack back into a container 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -31,13 +25,10 @@ exports[`particles roundtrip should pack back into a container 2`] = `
     "pack",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "destination": "<sandbox>/repacked.xr",
     "readDuration": "<duration>",
@@ -75,16 +66,10 @@ exports[`particles roundtrip should unpack to ltx files 1`] = `
 exports[`particles roundtrip should unpack to ltx files 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -92,13 +77,10 @@ exports[`particles roundtrip should unpack to ltx files 2`] = `
     "unpack",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "destination": "<sandbox>/unpacked",
     "readDuration": "<duration>",
@@ -114,7 +96,7 @@ exports[`particles roundtrip should verify the packed container 1`] = `
   "stderr": [],
   "stdout": [
     "Verifying particles file <resources>/gamedata/particles.xr",
-    "<resources>/gamedata/particles.xr is a valid particles file",
+    "Verification of <resources>/gamedata/particles.xr: passed",
   ],
 }
 `;
@@ -122,16 +104,10 @@ exports[`particles roundtrip should verify the packed container 1`] = `
 exports[`particles roundtrip should verify the packed container 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -139,17 +115,21 @@ exports[`particles roundtrip should verify the packed container 2`] = `
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
-    "findings": [],
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "particles.read",
+        "status": "passed",
+      },
+    ],
+    "path": "<resources>/gamedata/particles.xr",
     "status": "passed",
-    "subject": "<resources>/gamedata/particles.xr",
   },
 }
 `;
@@ -160,7 +140,7 @@ exports[`particles roundtrip should verify the unpacked form 1`] = `
   "stderr": [],
   "stdout": [
     "Verifying particles file <sandbox>/unpacked",
-    "<sandbox>/unpacked is a valid particles file",
+    "Verification of <sandbox>/unpacked: passed",
   ],
 }
 `;
@@ -168,16 +148,10 @@ exports[`particles roundtrip should verify the unpacked form 1`] = `
 exports[`particles roundtrip should verify the unpacked form 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -185,17 +159,21 @@ exports[`particles roundtrip should verify the unpacked form 2`] = `
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
-    "findings": [],
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "particles.read",
+        "status": "passed",
+      },
+    ],
+    "path": "<sandbox>/unpacked",
     "status": "passed",
-    "subject": "<sandbox>/unpacked",
   },
 }
 `;
@@ -204,8 +182,8 @@ exports[`particles roundtrip should write the expected files 1`] = `
 [
   {
     "path": "pack.json",
-    "sha256": "c9d6f11a35e51bf3e56ef7908cade0fcd23ae61ab2ec51ff1fde28659417315d",
-    "size": 674,
+    "sha256": "1d5453c8592798c32c42068fe79e59f6bade69a30cfedb51d24a92adc82ed5ee",
+    "size": 453,
   },
   {
     "path": "repacked.xr",
@@ -214,8 +192,8 @@ exports[`particles roundtrip should write the expected files 1`] = `
   },
   {
     "path": "unpack.json",
-    "sha256": "884dd9375f774a87a128dd7a6f982b0cd0c79ff387fa362ce4a398802760cc25",
-    "size": 688,
+    "sha256": "f5f0706b0f682784f1c36261e80fff606acbf3e470b2e48b3e491a07e91a5a3c",
+    "size": 467,
   },
   {
     "path": "unpacked-again/effects.ltx",
@@ -249,13 +227,13 @@ exports[`particles roundtrip should write the expected files 1`] = `
   },
   {
     "path": "verify-unpacked.json",
-    "sha256": "aa18b87d441cc6bc61c7df54c8a0e30cb030df9e0c272d463cc429cdd55e3d81",
-    "size": 608,
+    "sha256": "7627e76cab5a530114b56c8401461020befeefeb18f8657f511e44cc2c502bc7",
+    "size": 520,
   },
   {
     "path": "verify.json",
-    "sha256": "1a3f607caf9ea0b84c0041c247b86586ddff27c8e2b586684c6156ea02ac252a",
-    "size": 623,
+    "sha256": "08c47798d7983b728108291c2a75e60b49821d7f0e6a7175d701a2cfedd71143",
+    "size": 535,
   },
 ]
 `;

@@ -3,16 +3,10 @@
 exports[`ogf verify should report the census and findings of the sweep 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -22,11 +16,9 @@ exports[`ogf verify should report the census and findings of the sweep 1`] = `
   "duration": "<duration>",
   "error": "Verify error: Verification of ogf visuals did not complete, status: incomplete",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 1,
-  "outcome": "executionFailed",
   "result": {
     "census": {
       "boundsDisagreements": 0,
@@ -209,8 +201,8 @@ exports[`ogf verify should write a report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "ae064ffd9f0756a28fa1d81a04e654b314a745ec7baab899943d73d78397d0ac",
-    "size": 3302,
+    "sha256": "1d9dc142b2de77e2f119fc9dd5387f6571cb48dabaf00f580d04c468a0b6ec74",
+    "size": 3090,
   },
 ]
 `;

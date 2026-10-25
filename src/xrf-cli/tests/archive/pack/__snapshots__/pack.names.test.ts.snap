@@ -41,16 +41,10 @@ exports[`archive pack names and aliases should preserve an empty nested file and
 exports[`archive pack names and aliases should record the report as a readable document 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -58,13 +52,10 @@ exports[`archive pack names and aliases should record the report as a readable d
     "pack",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "collectDuration": "<duration>",
     "duration": "<duration>",
@@ -93,8 +84,8 @@ exports[`archive pack names and aliases should write the expected files 1`] = `
 [
   {
     "path": "pack.json",
-    "sha256": "6eabaea6d44444cb7f570b462dcc93ea6f9defc053e18a7a7a00b68b4dd85496",
-    "size": 1003,
+    "sha256": "fb848b9da4155ec7d549af6171a7eae99236a50edd8dfcd6a4ab258414273d4d",
+    "size": 782,
   },
   {
     "path": "packed/fixture.db",

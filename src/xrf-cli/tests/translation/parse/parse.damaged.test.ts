@@ -61,7 +61,7 @@ describe("translation parse meets damaged input", () => {
     const envelope: CommandEnvelope = envelopeOf(piped);
 
     expect(envelope.command).toEqual(["translation", "parse"]);
-    expect(envelope.outcome).toBe("success");
+    expect(envelope.exitCode).toBe(0);
     expect(JSON.stringify(envelope.result)).toContain("translations.unreadable");
   });
 

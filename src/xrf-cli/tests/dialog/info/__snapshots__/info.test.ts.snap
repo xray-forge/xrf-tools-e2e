@@ -79,16 +79,10 @@ exports[`dialog info should refuse a prefix holding no dialogs 1`] = `
 exports[`dialog info should report the census and checks it found 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -96,13 +90,10 @@ exports[`dialog info should report the census and checks it found 1`] = `
     "info",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "census": {
       "archivedFiles": 0,
@@ -210,8 +201,8 @@ exports[`dialog info should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "e0838f6c7e298e81cbe22eb2d036dd823696a6dc8a33ca942897607ed85107e5",
-    "size": 1904,
+    "sha256": "da0cbab2a4973dee2e2cc69bdbdfe430a1151c3a08162beb5d81cb01f38776f0",
+    "size": 1683,
   },
 ]
 `;

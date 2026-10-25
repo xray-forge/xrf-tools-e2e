@@ -46,7 +46,7 @@ describe("particle list", () => {
     const envelope: CommandEnvelope = envelopeAt(box.at("report.json"));
 
     expect(envelope.command).toEqual(["particle", "list"]);
-    expect(envelope.outcome).toBe("success");
+    expect(envelope.exitCode).toBe(0);
   });
 
   it("should write only the report", () => {

@@ -14,7 +14,7 @@ exports[`externs export invalid declarations should reject a duplicate declarati
 {
   "exitCode": 3,
   "stderr": [
-    "Invalid error: Duplicate extern 'xr_effects.give_item' declared in 'externs.ts' and 'externs.ts'.",
+    "Check 'externs.artifact' is failed with 1 finding(s)",
     "Check failed: 1 finding(s)",
   ],
   "stdout": [],
@@ -25,7 +25,7 @@ exports[`externs export invalid declarations should reject malformed declaration
 {
   "exitCode": 3,
   "stderr": [
-    "Parsing error: Failed to parse TypeScript <sandbox>/malformed/externs.ts:1:55: Expression expected.",
+    "Check 'externs.artifact' is failed with 1 finding(s)",
     "Check failed: 1 finding(s)",
   ],
   "stdout": [],
@@ -35,16 +35,10 @@ exports[`externs export invalid declarations should reject malformed declaration
 exports[`externs export invalid declarations should report what the declarations were judged on 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -52,21 +46,28 @@ exports[`externs export invalid declarations should report what the declarations
     "export",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "Invalid error: Duplicate extern 'xr_effects.give_item' declared in 'externs.ts' and 'externs.ts'.",
+            "ruleId": "externs.declarations",
+            "subject": "<sandbox>/duplicate",
+          },
+        ],
+        "id": "externs.artifact",
+        "status": "failed",
+      },
+    ],
     "destination": "<sandbox>/externs.json",
     "externs": 0,
-    "findings": [
-      "Invalid error: Duplicate extern 'xr_effects.give_item' declared in 'externs.ts' and 'externs.ts'.",
-    ],
     "format": "json",
-    "isCheck": true,
     "source": "<sandbox>/duplicate",
     "status": "failed",
   },
@@ -77,8 +78,8 @@ exports[`externs export invalid declarations should write the expected files 1`]
 [
   {
     "path": "duplicate.json",
-    "sha256": "7ee6f649e54dd00539f383071370c6b9da9942fa7994c57be7710e959d4294a7",
-    "size": 852,
+    "sha256": "eb602bb4ee9bb517a601c69c9cbc5da08988d432be6ff9688a187a9c1ee6db04",
+    "size": 857,
   },
   {
     "path": "duplicate/externs.ts",

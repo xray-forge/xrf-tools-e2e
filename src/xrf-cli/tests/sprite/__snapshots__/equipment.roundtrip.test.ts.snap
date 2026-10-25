@@ -36,16 +36,10 @@ exports[`equipment sprite roundtrip should pack the icons back into a sheet 1`] 
 exports[`equipment sprite roundtrip should report the sliced icons and repacked sheet as readable documents 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -53,13 +47,10 @@ exports[`equipment sprite roundtrip should report the sliced icons and repacked 
     "unpack-equipment",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "declaredMipmapLevels": null,
     "destination": "<sandbox>/icons",
@@ -75,16 +66,10 @@ exports[`equipment sprite roundtrip should report the sliced icons and repacked 
 exports[`equipment sprite roundtrip should report the sliced icons and repacked sheet as readable documents 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -92,13 +77,10 @@ exports[`equipment sprite roundtrip should report the sliced icons and repacked 
     "pack-equipment",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "duration": "<duration>",
     "outcome": "completed",
@@ -149,8 +131,8 @@ exports[`equipment sprite roundtrip should write the expected files 1`] = `
   },
   {
     "path": "pack.json",
-    "sha256": "f5618a7885313346badc75f85679424f1e0a376fe63b699f8aadd7d4b49782a2",
-    "size": 723,
+    "sha256": "5e9dfaa68979edf271de67612729d6ed57853f4a0a43c54325493829c06eb6e6",
+    "size": 502,
   },
   {
     "path": "repacked.dds",
@@ -159,8 +141,8 @@ exports[`equipment sprite roundtrip should write the expected files 1`] = `
   },
   {
     "path": "unpack.json",
-    "sha256": "7870f18dd309148ffc68747f083f7d3f9e5a2153d7de2b21d6674ec03bc62721",
-    "size": 793,
+    "sha256": "56e24e498ed40a3627dbc5ba900cadeceb3487e95b83b4aa9dd5796a3456b80b",
+    "size": 572,
   },
 ]
 `;

@@ -79,16 +79,10 @@ exports[`omf filter-motions should report a dry run without writing 1`] = `
 exports[`omf filter-motions should report a filter dry run as one that wrote nothing 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -96,13 +90,10 @@ exports[`omf filter-motions should report a filter dry run as one that wrote not
     "filter-motions",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "destination": "<sandbox>/never-written.omf",
     "isDryRun": true,
@@ -118,16 +109,10 @@ exports[`omf filter-motions should report a filter dry run as one that wrote not
 exports[`omf filter-motions should report which motions a filter kept 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -135,13 +120,10 @@ exports[`omf filter-motions should report which motions a filter kept 1`] = `
     "filter-motions",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "destination": "<sandbox>/kept-idle.omf",
     "isDryRun": false,
@@ -158,13 +140,13 @@ exports[`omf filter-motions should write the expected files 1`] = `
 [
   {
     "path": "filter-dry.json",
-    "sha256": "b1cfbe7e445691f1e7bd1b50c55532d0a454c2ec17e8c9cb126ba2ad1fce67a5",
-    "size": 727,
+    "sha256": "2d09fe2fc07a5e082382f9fb305ef12c5058ab10d4ff62f20815751512db8b10",
+    "size": 506,
   },
   {
     "path": "filter.json",
-    "sha256": "f55ec5aadf0a4ac43de1ecb3e1ede4142bc4ab1290096505b0552f422f38e45c",
-    "size": 724,
+    "sha256": "2414809df3ec527ed486f065fab8e58feb9acc428e8e81dcab2f699b43e337f2",
+    "size": 503,
   },
   {
     "path": "kept-idle.omf",

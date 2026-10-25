@@ -3,16 +3,10 @@
 exports[`gamedata verify resolved DLTX schema should write the expected reports and files 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`gamedata verify resolved DLTX schema should write the expected reports 
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "cache": {
       "bytes": 105,
@@ -73,16 +64,10 @@ exports[`gamedata verify resolved DLTX schema should write the expected reports 
 exports[`gamedata verify resolved DLTX schema should write the expected reports and files 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -90,13 +75,10 @@ exports[`gamedata verify resolved DLTX schema should write the expected reports 
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 2 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "cache": {
       "bytes": 142,
@@ -155,8 +137,8 @@ exports[`gamedata verify resolved DLTX schema should write the expected reports 
 [
   {
     "path": "clean.json",
-    "sha256": "fede75464a1ac36cb69636645172bca326b0ba78532d1d94fa6f230966d06d76",
-    "size": 1389,
+    "sha256": "263c47178ca2a196adee0ed9b80e02adf9bc2d8acb78cecdb31469e6a90c0e55",
+    "size": 1168,
   },
   {
     "path": "clean/configs/system.ltx",
@@ -170,8 +152,8 @@ exports[`gamedata verify resolved DLTX schema should write the expected reports 
   },
   {
     "path": "patched.json",
-    "sha256": "713a62fcae3d07c71dfde4876f19f1ee3fd9a71c572878ae49e4df55ff6b95ac",
-    "size": 1819,
+    "sha256": "a323df09181afdc6b354869c5e685055562cb741411a092ebfee8f611e1b4d62",
+    "size": 1570,
   },
   {
     "path": "patched/configs/mod_system_test.ltx",

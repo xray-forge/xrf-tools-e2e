@@ -22,16 +22,10 @@ exports[`level verify report should expose decoded bounds and geometry layouts i
 exports[`level verify report should pass every check for drawable geometry 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -39,13 +33,10 @@ exports[`level verify report should pass every check for drawable geometry 1`] =
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "census": {
       "bounds": [
@@ -65,7 +56,7 @@ exports[`level verify report should pass every check for drawable geometry 1`] =
       "hasSun": false,
       "indices": 3,
       "layouts": {
-        "positions only": 2,
+        "positionsOnly": 2,
       },
       "lights": 0,
       "modelTypes": {
@@ -112,8 +103,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
 [
   {
     "path": "broken-geometry.json",
-    "sha256": "ebc316605e2ac1e48e9b2cd65a1f4d5cdfee242e2ec1a9fe33b90e0d273ad136",
-    "size": 1776,
+    "sha256": "65c1a5ccd7b03a8fdb8905bf0157c57f5ab42f7e8fceff1718c281bb90b9d631",
+    "size": 1527,
   },
   {
     "path": "broken-geometry/level",
@@ -127,8 +118,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "invalid-fastpath.json",
-    "sha256": "b2eefd01ef9fa12a00689052269bbc0f6f8f6b3c33b84bb0b28d9e66053b975f",
-    "size": 1951,
+    "sha256": "d6cc960fed49336bfb0ae5275143ad5a246080a4c522557c8941c14f20e07e1d",
+    "size": 1701,
   },
   {
     "path": "invalid-fastpath/level",
@@ -147,8 +138,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "invalid-geometry.json",
-    "sha256": "72b90a8c95af2508f55109ff775bb79aa25dd87dd2e2dee1a4bbefada2ac799e",
-    "size": 2192,
+    "sha256": "0f92318e10883d0acd501c695f12ddb2a7277f45457c7216e679db72cdcde900",
+    "size": 1942,
   },
   {
     "path": "invalid-geometry/level",
@@ -167,8 +158,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "invalid-range.json",
-    "sha256": "82e5c8918cb9ea8e8a1c57dc9720d7d2b6a4386245e8227eaeddd7e5009b909a",
-    "size": 2239,
+    "sha256": "769febf7205408d5da9bdf78582fa80726aa28b157b98b1fdd75d920e7be1a4e",
+    "size": 1989,
   },
   {
     "path": "invalid-range/level",
@@ -187,8 +178,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "invalid-shader.json",
-    "sha256": "b1a3a82a6b87250571d96dfe68be92d17fc799b1a4ef947ff92d612b0cb5f09f",
-    "size": 1950,
+    "sha256": "37eb9ffaf153dd7aac0065002398ec949aa666a848f81aec52e0b53011d29ba0",
+    "size": 1700,
   },
   {
     "path": "invalid-shader/level",
@@ -207,8 +198,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "malformed-shader.json",
-    "sha256": "7222a6dbd246c9789b49c30669c76d6cb23a4c70e0f683efb240076c144f2c4f",
-    "size": 2020,
+    "sha256": "230cbf3122abba38fb68f01ed6fc4da8dc9e77b64c327d5d74b9582c3ac84d84",
+    "size": 1770,
   },
   {
     "path": "malformed-shader/level",
@@ -227,8 +218,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "minimal.json",
-    "sha256": "730f73be4fa3d711a2b933b7973aeb20fbe089bf670ae7fd1a1858d36f425b11",
-    "size": 1702,
+    "sha256": "0ad84a6065bfabdee20405f15b28cb7d20c28e02bb806cf3fade8bd4d71db1af",
+    "size": 1453,
   },
   {
     "path": "minimal/level",
@@ -237,13 +228,13 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "missing.json",
-    "sha256": "7bbe049aaa57467da2e80d6b89183e5cb4e30ef9d8eeb75f05c8a78492803506",
-    "size": 1677,
+    "sha256": "cce8f795173df45f581e70431623592863743d48a95dc588bcc13a09970059c9",
+    "size": 1428,
   },
   {
     "path": "triangle.json",
-    "sha256": "0f23eeeb9bf776b57db4681902b10383cee7ced9fe945f88ad3e7a85e8e3a7af",
-    "size": 1684,
+    "sha256": "9121d0dabe6c9df38fb9d787e3e4eb5aa6f34d49233506aa5fe73c3398cf39dd",
+    "size": 1462,
   },
   {
     "path": "triangle/level",
@@ -262,8 +253,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "truncated.json",
-    "sha256": "e7b78979d3e79d45d7d569340a2fde7d93fa7d89b6e5795dc3713e9a4f54b3df",
-    "size": 1723,
+    "sha256": "8a1ac4f44df00ee32489bb9490244c412ee40adab7176960a4d5f3d4880ec2ce",
+    "size": 1474,
   },
   {
     "path": "truncated/level",
@@ -299,16 +290,10 @@ exports[`level verify report should print all geometry findings and their failur
 exports[`level verify report should report broken-geometry findings with a check-failure exit 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -316,13 +301,10 @@ exports[`level verify report should report broken-geometry findings with a check
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "census": {
       "bounds": null,
@@ -381,16 +363,10 @@ exports[`level verify report should report broken-geometry findings with a check
 exports[`level verify report should report invalid-fastpath findings with a check-failure exit 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -398,13 +374,10 @@ exports[`level verify report should report invalid-fastpath findings with a chec
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "census": {
       "bounds": [
@@ -424,7 +397,7 @@ exports[`level verify report should report invalid-fastpath findings with a chec
       "hasSun": false,
       "indices": 3,
       "layouts": {
-        "positions only": 2,
+        "positionsOnly": 2,
       },
       "lights": 0,
       "modelTypes": {
@@ -476,16 +449,10 @@ exports[`level verify report should report invalid-fastpath findings with a chec
 exports[`level verify report should report invalid-geometry findings with a check-failure exit 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -493,13 +460,10 @@ exports[`level verify report should report invalid-geometry findings with a chec
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 2 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "census": {
       "bounds": [
@@ -519,7 +483,7 @@ exports[`level verify report should report invalid-geometry findings with a chec
       "hasSun": false,
       "indices": 3,
       "layouts": {
-        "positions only": 2,
+        "positionsOnly": 2,
       },
       "lights": 0,
       "modelTypes": {
@@ -576,16 +540,10 @@ exports[`level verify report should report invalid-geometry findings with a chec
 exports[`level verify report should report invalid-range findings with a check-failure exit 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -593,13 +551,10 @@ exports[`level verify report should report invalid-range findings with a check-f
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 2 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "census": {
       "bounds": [
@@ -619,7 +574,7 @@ exports[`level verify report should report invalid-range findings with a check-f
       "hasSun": false,
       "indices": 2,
       "layouts": {
-        "positions only": 2,
+        "positionsOnly": 2,
       },
       "lights": 0,
       "modelTypes": {
@@ -676,16 +631,10 @@ exports[`level verify report should report invalid-range findings with a check-f
 exports[`level verify report should report invalid-shader findings with a check-failure exit 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -693,13 +642,10 @@ exports[`level verify report should report invalid-shader findings with a check-
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "census": {
       "bounds": [
@@ -719,7 +665,7 @@ exports[`level verify report should report invalid-shader findings with a check-
       "hasSun": false,
       "indices": 3,
       "layouts": {
-        "positions only": 2,
+        "positionsOnly": 2,
       },
       "lights": 0,
       "modelTypes": {
@@ -771,16 +717,10 @@ exports[`level verify report should report invalid-shader findings with a check-
 exports[`level verify report should report malformed-shader findings with a check-failure exit 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -788,13 +728,10 @@ exports[`level verify report should report malformed-shader findings with a chec
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "census": {
       "bounds": [
@@ -814,7 +751,7 @@ exports[`level verify report should report malformed-shader findings with a chec
       "hasSun": false,
       "indices": 3,
       "layouts": {
-        "positions only": 2,
+        "positionsOnly": 2,
       },
       "lights": 0,
       "modelTypes": {
@@ -866,16 +803,10 @@ exports[`level verify report should report malformed-shader findings with a chec
 exports[`level verify report should report minimal findings with a check-failure exit 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -883,13 +814,10 @@ exports[`level verify report should report minimal findings with a check-failure
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "census": {
       "bounds": null,
@@ -946,16 +874,10 @@ exports[`level verify report should report minimal findings with a check-failure
 exports[`level verify report should report missing findings with a check-failure exit 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -963,13 +885,10 @@ exports[`level verify report should report missing findings with a check-failure
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "census": {
       "bounds": null,
@@ -1026,16 +945,10 @@ exports[`level verify report should report missing findings with a check-failure
 exports[`level verify report should report truncated findings with a check-failure exit 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -1043,13 +956,10 @@ exports[`level verify report should report truncated findings with a check-failu
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "census": {
       "bounds": null,

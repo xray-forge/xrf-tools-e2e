@@ -63,7 +63,6 @@ describe("level verify roots", () => {
   it("should read a level of mounted roots by its name", () => {
     expect(envelopeAt(box.at("loose.json"))).toMatchObject({
       exitCode: 0,
-      outcome: "success",
       result: { status: "passed" },
     });
     expect(loose.stdout).toEqual(expect.arrayContaining(["Verifying compiled level levels\\triangle"]));
@@ -73,7 +72,6 @@ describe("level verify roots", () => {
   it("should read the same level out of an archive volume", () => {
     expect(envelopeAt(box.at("archived.json"))).toMatchObject({
       exitCode: 0,
-      outcome: "success",
       result: { status: "passed" },
     });
   });

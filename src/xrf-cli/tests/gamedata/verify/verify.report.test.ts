@@ -38,7 +38,6 @@ describe("gamedata verify full run", () => {
     const envelope: CommandEnvelope = envelopeAt(box.at("report.json"));
 
     expect(envelope.command).toEqual(["gamedata", "verify"]);
-    expect(envelope.outcome).toBe("checkFailed");
     expect(envelope.exitCode).toBe(3);
     expect(JSON.stringify(envelope.result)).toContain("checks");
   });

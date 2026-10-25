@@ -15,16 +15,10 @@ exports[`ogf fix idempotence should leave a visual it already fixed alone 1`] = 
 exports[`ogf fix idempotence should report nothing left to discard 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -32,21 +26,15 @@ exports[`ogf fix idempotence should report nothing left to discard 1`] = `
     "fix",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "checked": 1,
-    "discardedSize": 0,
-    "failed": 0,
     "files": [],
     "findings": [],
     "isDryRun": false,
-    "normalized": 0,
     "unchanged": 1,
   },
 }
@@ -56,8 +44,8 @@ exports[`ogf fix idempotence should write only the fixed visual and report 1`] =
 [
   {
     "path": "again.json",
-    "sha256": "440770aaa2b2d8fea0c65d8802feb8b9de29c396841a868b7f740e0d37723ad6",
-    "size": 679,
+    "sha256": "731c32f159a77b4ef7d4bcebdbd45b9065f27b7eda1af05277862f558128fb2a",
+    "size": 396,
   },
   {
     "path": "meshes/residue.ogf",

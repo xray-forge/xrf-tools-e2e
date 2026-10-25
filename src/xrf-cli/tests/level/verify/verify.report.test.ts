@@ -55,7 +55,6 @@ describe("level verify report", () => {
   it("should pass every check for drawable geometry", () => {
     expect(envelopeAt(box.at("triangle.json"))).toMatchObject({
       exitCode: 0,
-      outcome: "success",
       result: {
         status: "passed",
         checks: [
@@ -80,7 +79,6 @@ describe("level verify report", () => {
   it.each(FAILURES)("should report $name findings with a check-failure exit", ({ name, check, rules }) => {
     expect(envelopeAt(box.at(`${name}.json`))).toMatchObject({
       exitCode: 3,
-      outcome: "checkFailed",
       result: {
         status: "failed",
         checks: expect.arrayContaining([

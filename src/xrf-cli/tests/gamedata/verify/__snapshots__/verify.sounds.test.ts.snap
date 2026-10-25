@@ -3,16 +3,10 @@
 exports[`gamedata verify sounds should record readable reports and only expected artifacts 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`gamedata verify sounds should record readable reports and only expected
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "cache": {
       "bytes": 37,
@@ -73,16 +64,10 @@ exports[`gamedata verify sounds should record readable reports and only expected
 exports[`gamedata verify sounds should record readable reports and only expected artifacts 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -90,13 +75,10 @@ exports[`gamedata verify sounds should record readable reports and only expected
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "cache": {
       "bytes": 36,
@@ -150,8 +132,8 @@ exports[`gamedata verify sounds should record readable reports and only expected
 [
   {
     "path": "missing.json",
-    "sha256": "95c36ef7f41837dd2cb2c736f0a242c1f8ffc85a692cb6cc47885b85dcb5ea8e",
-    "size": 1626,
+    "sha256": "357de5c7bf318d9831118404f615878f292a788599acbc015e92894dbf370106",
+    "size": 1377,
   },
   {
     "path": "missing/configs/system.ltx",
@@ -165,8 +147,8 @@ exports[`gamedata verify sounds should record readable reports and only expected
   },
   {
     "path": "valid.json",
-    "sha256": "9671967da705cf2b4c3ed9236a9ad91c4f8382414ad84fc4ceb6ec14b7a6dda2",
-    "size": 1392,
+    "sha256": "6a73dc1b6eb9168f4b1b5a967d23030aa5c426f53e68df9ea131ef9751de1229",
+    "size": 1171,
   },
   {
     "path": "valid/configs/system.ltx",

@@ -93,16 +93,10 @@ exports[`translation verify should report gaps across every language 1`] = `
 exports[`translation verify should report the gaps it found 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -110,13 +104,10 @@ exports[`translation verify should report the gaps it found 1`] = `
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "checkedTranslations": 4,
     "checks": [
@@ -248,7 +239,6 @@ exports[`translation verify should report the gaps it found 1`] = `
         "status": "failed",
       },
     ],
-    "duration": "<duration>",
     "languages": [
       {
         "checked": 2,
@@ -395,8 +385,8 @@ exports[`translation verify should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "0be3bf396f42aa502e056019f25a10fa1f10d2cf5afabf33cb5f0921bd2d83f2",
-    "size": 7414,
+    "sha256": "1569af11ce45ac4c2d0be713c24673f1617404fada7a82ba5245d9cd8e955b63",
+    "size": 7163,
   },
 ]
 `;

@@ -17,16 +17,10 @@ exports[`archive unpack dry run should report the unpack it would perform 1`] = 
 exports[`archive unpack dry run should report the unpack it would perform 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -34,13 +28,10 @@ exports[`archive unpack dry run should report the unpack it would perform 2`] = 
     "unpack",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "archives": 1,
     "destination": "<sandbox>/destination",
@@ -68,8 +59,8 @@ exports[`archive unpack dry run should write the expected files 1`] = `
   },
   {
     "path": "dry-report.json",
-    "sha256": "b0d609fefd3fda24213a28183a9274dfcbd3a0b6f56547290c205de192de0f91",
-    "size": 740,
+    "sha256": "f7a5d5fa5888848c1784190304275eeaa44eb2aaca72c292a5ed4f82b3975796",
+    "size": 519,
   },
   {
     "path": "packed/fixture.db",

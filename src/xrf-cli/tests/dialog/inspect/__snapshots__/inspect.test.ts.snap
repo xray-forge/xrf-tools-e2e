@@ -67,16 +67,10 @@ exports[`dialog inspect should refuse a file that does not declare the dialog 1`
 exports[`dialog inspect should report every element of every phrase in document order 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -84,13 +78,10 @@ exports[`dialog inspect should report every element of every phrase in document 
     "inspect",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "alsoDeclaredIn": [],
     "dialog": {
@@ -211,8 +202,8 @@ exports[`dialog inspect should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "314520c6a07c8b04982a0805a0ff742f50dcc4cd8f9ff3b7e1af512630cb7cd7",
-    "size": 3171,
+    "sha256": "6cb616ef8cd4becb3a1a13691ede20857e7943c4cb5ac63b683d8558951a4c38",
+    "size": 2950,
   },
 ]
 `;

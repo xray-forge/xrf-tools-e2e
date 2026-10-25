@@ -3,16 +3,10 @@
 exports[`gamedata verify particle usage should record both reports as readable documents 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`gamedata verify particle usage should record both reports as readable d
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "cache": {
       "bytes": 52,
@@ -73,16 +64,10 @@ exports[`gamedata verify particle usage should record both reports as readable d
 exports[`gamedata verify particle usage should record both reports as readable documents 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -90,13 +75,10 @@ exports[`gamedata verify particle usage should record both reports as readable d
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "cache": {
       "bytes": 38,
@@ -150,8 +132,8 @@ exports[`gamedata verify particle usage should write the expected reports and fi
 [
   {
     "path": "missing.json",
-    "sha256": "f3b01de7b6186eef642d4d8b05dd2c2b83283cffbcf0253f630c5caeb2010e88",
-    "size": 1696,
+    "sha256": "a316a397cdf73bf9932b40e483e3967890bf97db773daa7246a272dd9fe68e6e",
+    "size": 1447,
   },
   {
     "path": "missing/configs/particles.ltx",
@@ -170,8 +152,8 @@ exports[`gamedata verify particle usage should write the expected reports and fi
   },
   {
     "path": "valid.json",
-    "sha256": "74c61ba8227fc42d8d20e21a0c681ed2324bf85899654cd5ea336262ae90ce9e",
-    "size": 1445,
+    "sha256": "74a8d1348dca083db72f08cc7932807a3e0f5def6981685b7fb84544c6968263",
+    "size": 1224,
   },
   {
     "path": "valid/configs/particles.ltx",

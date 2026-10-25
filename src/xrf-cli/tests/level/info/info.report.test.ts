@@ -32,10 +32,10 @@ describe("level info report", () => {
   it("should report one drawable triangle and both geometry files", () => {
     expect(envelopeAt(box.at("triangle.json")).result).toMatchObject({
       header: { xrlcVersion: 14, xrlcQuality: 1 },
-      shaders: { total: 4, references: 2, lightmapped: 1, empty: 1, malformed: 1 },
-      visuals: { total: 1, drawable: 1, fastpath: 1, vertices: 3, indices: 3, triangles: 1 },
-      geometry: { vertexBuffers: 1, indexBuffers: 1, vertices: 3, indices: 3 },
-      detailGeometry: { vertexBuffers: 1, indexBuffers: 1, vertices: 3, indices: 3 },
+      shaders: { references: 2, lightmapped: 1, empty: 1, malformed: 1 },
+      visuals: { total: 1, drawable: 1, fastpath: 1, vertices: 3, indices: 3 },
+      geometry: { indexBuffers: 1, indices: 3, layouts: [expect.objectContaining({ buffers: 1, vertices: 3 })] },
+      detailGeometry: { indexBuffers: 1, indices: 3, layouts: [expect.objectContaining({ buffers: 1, vertices: 3 })] },
     });
     expect(box.json("triangle.json")).toMatchSnapshot();
   });
@@ -56,10 +56,9 @@ describe("level info report", () => {
   it.each(failures)("should reject %s input without a partial result", (name: string) => {
     expect(envelopeAt(box.at(`${name}.json`))).toMatchObject({
       exitCode: 1,
-      outcome: "executionFailed",
       error: expect.any(String),
-      result: null,
     });
+    expect(envelopeAt(box.at(`${name}.json`))).not.toHaveProperty("result");
     expect(box.json(`${name}.json`)).toMatchSnapshot();
   });
 

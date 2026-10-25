@@ -22,16 +22,10 @@ exports[`particle list should list the groups holding a name with how many effec
 exports[`particle list should report each effect's sprite, particles and action types 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -39,13 +33,10 @@ exports[`particle list should report each effect's sprite, particles and action 
     "list",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "entries": [
       {
@@ -161,7 +152,6 @@ exports[`particle list should report each effect's sprite, particles and action 
         "timeLimit": null,
       },
     ],
-    "total": 6,
   },
 }
 `;
@@ -170,8 +160,8 @@ exports[`particle list should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "0924fe5c062d63ff47400650fc317e110e28fb9a8120544b50c8025187c49af1",
-    "size": 3255,
+    "sha256": "fa39df40e1c87575b18b2ffa99eeca033b7301a8a96bc76552971ed6f0f3bd31",
+    "size": 3018,
   },
 ]
 `;

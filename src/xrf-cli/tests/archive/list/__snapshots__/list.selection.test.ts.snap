@@ -3,16 +3,10 @@
 exports[`archive list selection should record both machine-readable selectors 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`archive list selection should record both machine-readable selectors 1`
     "list",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "entries": [
       {
@@ -46,7 +37,6 @@ exports[`archive list selection should record both machine-readable selectors 1`
         "source": "<sandbox>/packed/fixture.db",
       },
     ],
-    "total": 2,
   },
 }
 `;
@@ -54,16 +44,10 @@ exports[`archive list selection should record both machine-readable selectors 1`
 exports[`archive list selection should record both machine-readable selectors 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -71,13 +55,10 @@ exports[`archive list selection should record both machine-readable selectors 2`
     "list",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "entries": [
       {
@@ -89,7 +70,6 @@ exports[`archive list selection should record both machine-readable selectors 2`
         "source": "<sandbox>/packed/fixture.db",
       },
     ],
-    "total": 1,
   },
 }
 `;
@@ -98,13 +78,13 @@ exports[`archive list selection should write the expected files 1`] = `
 [
   {
     "path": "directories.json",
-    "sha256": "e9fb20a5ac054168431b2f3b27119e66f8119fb92648bd5386064a7626efc015",
-    "size": 763,
+    "sha256": "6bc59298a52a9ddfaba46582cc833ced47a0e02f6b4d5aae3622908845d4f8f2",
+    "size": 526,
   },
   {
     "path": "files.json",
-    "sha256": "12a1cef15d19a49271a977c60fa63b55a0fb1a6fab255d31b9c9df31147b1f95",
-    "size": 974,
+    "sha256": "0bd1a417d2973f26ed73738897bb22939a9cc3117486c0a486bb4ed81bfe2929",
+    "size": 737,
   },
   {
     "path": "packed/fixture.db",

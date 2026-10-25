@@ -16,16 +16,10 @@ exports[`gamedata list across mounts should list only loose files when asked 1`]
 exports[`gamedata list across mounts should record each source mode 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -33,13 +27,10 @@ exports[`gamedata list across mounts should record each source mode 1`] = `
     "list",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "collisions": [],
     "duration": "<duration>",
@@ -71,7 +62,6 @@ exports[`gamedata list across mounts should record each source mode 1`] = `
     "origin": "<sandbox>/install",
     "shadowed": [],
     "skipped": [],
-    "total": 2,
   },
 }
 `;
@@ -79,16 +69,10 @@ exports[`gamedata list across mounts should record each source mode 1`] = `
 exports[`gamedata list across mounts should record each source mode 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -96,13 +80,10 @@ exports[`gamedata list across mounts should record each source mode 2`] = `
     "list",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "collisions": [],
     "duration": "<duration>",
@@ -140,7 +121,6 @@ exports[`gamedata list across mounts should record each source mode 2`] = `
       },
     ],
     "skipped": [],
-    "total": 2,
   },
 }
 `;
@@ -148,16 +128,10 @@ exports[`gamedata list across mounts should record each source mode 2`] = `
 exports[`gamedata list across mounts should record each source mode 3`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -165,13 +139,10 @@ exports[`gamedata list across mounts should record each source mode 3`] = `
     "list",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "collisions": [],
     "duration": "<duration>",
@@ -193,7 +164,6 @@ exports[`gamedata list across mounts should record each source mode 3`] = `
     "origin": "<sandbox>/install",
     "shadowed": [],
     "skipped": [],
-    "total": 1,
   },
 }
 `;
@@ -250,18 +220,18 @@ exports[`gamedata list across mounts should write only its reports 1`] = `
   },
   {
     "path": "listing.json",
-    "sha256": "00220d1b26d5622c02965575b1e2e6c8dae0008f14209bcbb7f55c3bb8a86ce6",
-    "size": 1277,
+    "sha256": "55401981ea099d550027f750f820ae0f32ea816acaf1216febf722410a1e320c",
+    "size": 1040,
   },
   {
     "path": "loose.json",
-    "sha256": "2cd8850d0feb0f6c67e9366bd6e7c1580c026693b9d07197c89d978782affde5",
-    "size": 1007,
+    "sha256": "b8adfabc06a053fde422ebcdcfa8b3b3c02a7d42320daa8523ca500c1d61d638",
+    "size": 770,
   },
   {
     "path": "shadowed.json",
-    "sha256": "e9a93b296f881a2258f4e81b30204eb810b50d55ca96e376955caf633ee4d54a",
-    "size": 1433,
+    "sha256": "76e1bfeecb3c072ef632065b69a593e1fec8ea98ba65add14deca35c32b84327",
+    "size": 1196,
   },
   {
     "path": "stage/configs/fonts.ltx",

@@ -27,7 +27,6 @@ describe("gamedata verify particle libraries", () => {
     expect(damaged.exitCode).toBe(3);
     expect(box.json("report.json")).toMatchObject({
       exitCode: 3,
-      outcome: "checkFailed",
       result: {
         checks: [
           { findings: [], status: "skipped", id: "coverage" },

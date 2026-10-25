@@ -3,16 +3,10 @@
 exports[`gamedata list sources should report every asset the tree resolves 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`gamedata list sources should report every asset the tree resolves 1`] =
     "list",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "collisions": [],
     "duration": "<duration>",
@@ -188,7 +179,6 @@ exports[`gamedata list sources should report every asset the tree resolves 1`] =
     "origin": "<resources>/gamedata",
     "shadowed": [],
     "skipped": [],
-    "total": 29,
   },
 }
 `;
@@ -238,8 +228,8 @@ exports[`gamedata list sources should write only its report 1`] = `
 [
   {
     "path": "listing.json",
-    "sha256": "240be60293720d5d26e1f010ffd86f1749744d82af62c05bf625b9c916149c2f",
-    "size": 5052,
+    "sha256": "6448fbeb2e6b64b21ffb9537574f85e92ac1788644c2ad0b3ed153cc74c92bb3",
+    "size": 4814,
   },
 ]
 `;

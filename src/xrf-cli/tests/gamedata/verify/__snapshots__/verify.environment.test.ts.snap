@@ -3,16 +3,10 @@
 exports[`gamedata verify environment should record the reports as readable documents 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`gamedata verify environment should record the reports as readable docum
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "cache": {
       "bytes": 1988,
@@ -73,16 +64,10 @@ exports[`gamedata verify environment should record the reports as readable docum
 exports[`gamedata verify environment should record the reports as readable documents 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -90,13 +75,10 @@ exports[`gamedata verify environment should record the reports as readable docum
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "cache": {
       "bytes": 1992,
@@ -149,16 +131,10 @@ exports[`gamedata verify environment should record the reports as readable docum
 exports[`gamedata verify environment should record the reports as readable documents 3`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -166,13 +142,10 @@ exports[`gamedata verify environment should record the reports as readable docum
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 2 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "cache": {
       "bytes": 1988,
@@ -231,8 +204,8 @@ exports[`gamedata verify environment should write the expected reports and files
 [
   {
     "path": "broken.json",
-    "sha256": "18fccda5214c22b650a41e6c48a9072ed438ee6c5d2c7ac74031fe3b1b8bf056",
-    "size": 1644,
+    "sha256": "5db48d39126141c77702e8c6829d961e36223c13da71979cb0e3be05e9ccc3a7",
+    "size": 1395,
   },
   {
     "path": "broken/configs/environment/ambients.ltx",
@@ -301,13 +274,13 @@ exports[`gamedata verify environment should write the expected reports and files
   },
   {
     "path": "extended.json",
-    "sha256": "af2a3a3d62a9dbec3ca217241da3723e6266deeb20bc3f3cf5ace7e137aa0d59",
-    "size": 1866,
+    "sha256": "82a1f65ed8bae5d5854294ec2852c607e822aedc52233a5b76bbe04db1596e0d",
+    "size": 1617,
   },
   {
     "path": "valid.json",
-    "sha256": "dc2f135eb7b3cdb1a030cd09c96d7c341fccb81bc10731d6d5de058a49ed77cd",
-    "size": 1384,
+    "sha256": "2ec0bfebdcf13ed07bb4b9f503184dc743715b864aa7aa04d28cb3bf90d17c17",
+    "size": 1163,
   },
   {
     "path": "valid/configs/environment/ambients.ltx",

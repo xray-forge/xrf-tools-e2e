@@ -63,10 +63,9 @@ describe("archive find selection", () => {
     const report: CommandEnvelope = envelopeAt(box.at("case.json"));
 
     expect(caseInsensitive.exitCode).toBe(0);
-    expect(report).toMatchObject({ command: ["archive", "find"], outcome: "success", exitCode: 0 });
+    expect(report).toMatchObject({ command: ["archive", "find"], exitCode: 0 });
     expect(report.result).toMatchObject({
       query: "CoPy",
-      total: 1,
       entries: [{ name: "nested\\system_copy.ltx", sharedWith: ["nested\\System_Alpha.ltx"] }],
     });
   });
@@ -75,7 +74,7 @@ describe("archive find selection", () => {
     const report: CommandEnvelope = envelopeAt(box.at("absent.json"));
 
     expect(noMatch.exitCode).toBe(0);
-    expect(report.result).toEqual({ entries: [], query: "absent", total: 0 });
+    expect(report.result).toEqual({ entries: [], query: "absent" });
   });
 
   it("should keep multiple file matches in logical-name order", () => {
@@ -83,7 +82,6 @@ describe("archive find selection", () => {
 
     expect(ordered.exitCode).toBe(0);
     expect(report.result).toMatchObject({
-      total: 3,
       entries: [{ name: "nested\\System_Alpha.ltx" }, { name: "nested\\system_copy.ltx" }, { name: "zeta.ltx" }],
     });
   });
@@ -95,7 +93,6 @@ describe("archive find selection", () => {
     expect(report.result).toEqual({
       entries: [expect.objectContaining({ isDirectory: true, name: "nested\\" })],
       query: "nested",
-      total: 1,
     });
   });
 

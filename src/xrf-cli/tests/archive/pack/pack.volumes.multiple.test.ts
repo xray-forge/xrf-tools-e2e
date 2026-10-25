@@ -87,12 +87,10 @@ describe("archive pack multiple indexed volumes", () => {
   it("should report the complete and selected restore counts", () => {
     expect(box.json("set-report.json")).toMatchObject({
       exitCode: 0,
-      outcome: "success",
       result: { filesUnpacked: 3, unpackedSize: PAYLOAD_BYTES * PAYLOADS.length },
     });
     expect(box.json("last-report.json")).toMatchObject({
       exitCode: 0,
-      outcome: "success",
       result: { filesUnpacked: 1, unpackedSize: PAYLOAD_BYTES },
     });
   });

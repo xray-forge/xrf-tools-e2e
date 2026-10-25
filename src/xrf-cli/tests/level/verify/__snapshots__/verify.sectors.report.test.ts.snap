@@ -3,16 +3,10 @@
 exports[`level verify sectors and portals should accept linked sectors and portals with three and six vertices 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`level verify sectors and portals should accept linked sectors and porta
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "census": {
       "bounds": [
@@ -46,7 +37,7 @@ exports[`level verify sectors and portals should accept linked sectors and porta
       "hasSun": true,
       "indices": 3,
       "layouts": {
-        "positions only": 2,
+        "positionsOnly": 2,
       },
       "lights": 2,
       "modelTypes": {
@@ -110,8 +101,8 @@ exports[`level verify sectors and portals should preserve fixture bytes and writ
 [
   {
     "path": "invalid-sectors.json",
-    "sha256": "cffaf36ba651036b83effa40f8bcf27c7afc04ada49ca770572e74a22ea11640",
-    "size": 3108,
+    "sha256": "6d7023efdfb6bf230168472b5ada8532866b7a4566e2dc794f48d9392557bdd9",
+    "size": 2858,
   },
   {
     "path": "invalid-sectors/level",
@@ -130,8 +121,8 @@ exports[`level verify sectors and portals should preserve fixture bytes and writ
   },
   {
     "path": "sectors.json",
-    "sha256": "94972ab34582e920e093174a185c5ea4f18ef826076bef8b9e5269492068d3e3",
-    "size": 1683,
+    "sha256": "557c86d2f37f68ecf3c6f4574aa3ca96e61db85eaaf74c7a03fc42946c8cba66",
+    "size": 1461,
   },
   {
     "path": "sectors/level",
@@ -150,8 +141,8 @@ exports[`level verify sectors and portals should preserve fixture bytes and writ
   },
   {
     "path": "truncated-portals.json",
-    "sha256": "78f473cca48c73abf83d125f00f8f60d4c2e85eb29de299a6d30d63232d79405",
-    "size": 1969,
+    "sha256": "062cfebeb0ba2d0a7631e88acc4b28633504e808cbfa90ae328657eebb07392b",
+    "size": 1719,
   },
   {
     "path": "truncated-portals/level",
@@ -202,16 +193,10 @@ exports[`level verify sectors and portals should print every sector and portal f
 exports[`level verify sectors and portals should reject a partial portal record as a read finding 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -219,13 +204,10 @@ exports[`level verify sectors and portals should reject a partial portal record 
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "census": {
       "bounds": [
@@ -245,7 +227,7 @@ exports[`level verify sectors and portals should reject a partial portal record 
       "hasSun": false,
       "indices": 3,
       "layouts": {
-        "positions only": 2,
+        "positionsOnly": 2,
       },
       "lights": 0,
       "modelTypes": {
@@ -297,16 +279,10 @@ exports[`level verify sectors and portals should reject a partial portal record 
 exports[`level verify sectors and portals should report invalid roots, portal references and both portal sides together 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -314,13 +290,10 @@ exports[`level verify sectors and portals should report invalid roots, portal re
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 6 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "census": {
       "bounds": [
@@ -340,7 +313,7 @@ exports[`level verify sectors and portals should report invalid roots, portal re
       "hasSun": true,
       "indices": 3,
       "layouts": {
-        "positions only": 2,
+        "positionsOnly": 2,
       },
       "lights": 2,
       "modelTypes": {

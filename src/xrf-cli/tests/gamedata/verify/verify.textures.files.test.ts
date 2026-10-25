@@ -35,7 +35,6 @@ describe("gamedata verify texture files", () => {
   it("should validate a readable DDS with nonzero checked work", () => {
     expect(valid.exitCode).toBe(0);
     expect(box.json("valid.json")).toMatchObject({
-      outcome: "success",
       result: {
         status: "passed",
         checks: expect.arrayContaining([
@@ -54,7 +53,6 @@ describe("gamedata verify texture files", () => {
   it("should name the truncated texture while still validating its readable neighbor", () => {
     expect(damaged.exitCode).toBe(3);
     expect(box.json("damaged.json")).toMatchObject({
-      outcome: "checkFailed",
       result: {
         status: "failed",
         checks: expect.arrayContaining([

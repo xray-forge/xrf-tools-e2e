@@ -20,16 +20,10 @@ exports[`omf commands meet scrambled motion labels should filter motions and lea
 exports[`omf commands meet scrambled motion labels should keep the clean bank free of divergence 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -37,13 +31,10 @@ exports[`omf commands meet scrambled motion labels should keep the clean bank fr
     "info",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "bones": 7,
     "motions": [
@@ -139,7 +130,7 @@ exports[`omf commands meet scrambled motion labels should repack a scrambled ban
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "{"build":{"version": "<build>","kind": "<build>","commit": "<build>","reference": "<build>","isDirty": "<build>","builtAt": "<build>","target": "<build>","rustc": "<build>","profile": "<build>","optimization": "<build>","runId": "<build>"},"command":["omf","repack"],"duration": "<duration>","error":null,"execution":{"workers": "<workers>","origin":"auto"},"exitCode":0,"outcome":"success","result":{"checked":1,"failed":0,"findings":[],"identical":1,"malformed":0,"mismatched":0,"status":"passed"}}",
+    "{"build":{"version": "<build>","kind": "<build>","commit": "<build>","isDirty": "<build>","profile": "<build>"},"command":["omf","repack"],"duration": "<duration>","execution":{"workers": "<workers>"},"exitCode":0,"result":{"checked":1,"checks":[{"duration": "<duration>","findings":[],"id":"omf.roundtrip","status":"passed"}],"status":"passed"}}",
   ],
 }
 `;

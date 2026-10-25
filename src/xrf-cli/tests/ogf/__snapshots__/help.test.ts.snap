@@ -53,7 +53,7 @@ exports[`ogf command help should keep each leaf command's help stable 1`] = `
       "  -d, --dest <dest>     Path to resulting ogf file, defaults to in place rewrite of the source file",
       "  -v, --verbose         Turn on verbose logging",
       "      --json            Write the run's JSON report to stdout, moving human output to stderr",
-      "  -r, --refs <refs>...  Motion refs to store in the ogf file",
+      "      --refs <refs>...  Motion refs to store in the ogf file",
       "      --dry-run         Validate the rewrite and report the result without writing any file",
       "      --report <PATH>   Write the run's JSON report to a file",
       "  -h, --help            Print help",

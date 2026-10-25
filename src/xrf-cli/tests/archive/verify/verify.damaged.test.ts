@@ -61,7 +61,7 @@ describe("archive verify damaged volume", () => {
 
     expect(entry.sizeCompressed).toBeLessThan(entry.sizeReal);
     expect(opened.exitCode).toBe(0);
-    expect(openedReport.outcome).toBe("success");
+    expect(openedReport.exitCode).toBe(0);
   });
 
   it("should report a readable volume with a corrupt payload as a failed verification", () => {
@@ -70,9 +70,17 @@ describe("archive verify damaged volume", () => {
     expect(verified.exitCode).toBe(3);
     expect(report).toMatchObject({
       command: ["archive", "verify"],
-      outcome: "checkFailed",
       exitCode: 3,
-      result: { checked: 1, findings: [expect.objectContaining({ name: "payload.ltx" })] },
+      result: {
+        checked: 1,
+        checks: [
+          expect.objectContaining({
+            findings: [expect.objectContaining({ ruleId: "archive.payload", subject: "payload.ltx" })],
+            id: "archive.payloads",
+          }),
+        ],
+        status: "failed",
+      },
     });
   });
 
@@ -82,9 +90,8 @@ describe("archive verify damaged volume", () => {
     expect(intact.exitCode).toBe(0);
     expect(report).toMatchObject({
       command: ["archive", "verify"],
-      outcome: "success",
       exitCode: 0,
-      result: { checked: 1, findings: [], status: "passed" },
+      result: { checked: 1, checks: [expect.objectContaining({ findings: [] })], status: "passed" },
     });
   });
 
@@ -94,10 +101,9 @@ describe("archive verify damaged volume", () => {
     expect(unreadable.exitCode).toBe(1);
     expect(report).toMatchObject({
       command: ["archive", "info"],
-      outcome: "executionFailed",
       exitCode: 1,
-      result: null,
     });
+    expect(report).not.toHaveProperty("result");
   });
 
   it("should leave both input volumes unchanged while reading them", () => {

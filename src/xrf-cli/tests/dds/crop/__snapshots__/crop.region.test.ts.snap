@@ -41,16 +41,10 @@ exports[`dds crop regions should report the cropped dimensions 1`] = `
 exports[`dds crop regions should report the region a crop produced 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -58,13 +52,10 @@ exports[`dds crop regions should report the region a crop produced 1`] = `
     "crop",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "destination": "<sandbox>/corner.dds",
     "height": 64,
@@ -87,8 +78,8 @@ exports[`dds crop regions should write the expected files 1`] = `
   },
   {
     "path": "crop.json",
-    "sha256": "2e0ad571134225e8255fd5c017c46e6442964a4580b9edd76029c49b3b522d28",
-    "size": 749,
+    "sha256": "65d0729927adde206d292c34d3c265ef50036ee90ee56272eed9db3b7abd7595",
+    "size": 528,
   },
   {
     "path": "offset.dds",

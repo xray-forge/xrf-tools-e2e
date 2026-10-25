@@ -3,16 +3,10 @@
 exports[`ltx verify --dltx report should report a clean verification under the dialect 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`ltx verify --dltx report should report a clean verification under the d
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "checkedFields": 3,
     "checkedSections": 1,
@@ -46,16 +37,10 @@ exports[`ltx verify --dltx report should report a clean verification under the d
 exports[`ltx verify --dltx report should report the errors standard rules find in patch files 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -63,13 +48,10 @@ exports[`ltx verify --dltx report should report the errors standard rules find i
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 2 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "checkedFields": 2,
     "checkedSections": 1,

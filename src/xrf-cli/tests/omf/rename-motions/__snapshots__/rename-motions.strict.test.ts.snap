@@ -13,16 +13,10 @@ exports[`omf rename-motions strict map should reject an incomplete map under str
 exports[`omf rename-motions strict map should report every input motion before refusing 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -32,11 +26,9 @@ exports[`omf rename-motions strict map should report every input motion before r
   "duration": "<duration>",
   "error": "Invalid error: Refused to rename <resources>/gamedata/meshes/omf/wpn_svd_hud_animation.omf in strict mode, 1 motions are missing from the map: svd_reload",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 1,
-  "outcome": "executionFailed",
   "result": {
     "destination": "<sandbox>/never-strict.omf",
     "isDryRun": false,
@@ -65,8 +57,8 @@ exports[`omf rename-motions strict map should write only the map, report, and pr
   },
   {
     "path": "strict.json",
-    "sha256": "2d581b0a3de11a77d9e92d1da064240ebaea6a41b43eab35d88e7f570ac77edb",
-    "size": 930,
+    "sha256": "1132080ad661220e9d290dade484cfcb4d5a123eaebe91e1df66529cc90564cc",
+    "size": 718,
   },
 ]
 `;

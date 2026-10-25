@@ -5,7 +5,7 @@ exports[`archive verify directory should validate every file from every archive 
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Verified 16 file(s) in <duration>",
+    "Verification of 16 archive file(s): passed",
   ],
 }
 `;

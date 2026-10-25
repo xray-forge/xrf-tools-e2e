@@ -92,7 +92,6 @@ describe("gamedata verify meets unreachable files", () => {
   it("should carry the collision as its own check", () => {
     const envelope: CommandEnvelope = envelopeAt(box.at("report.json"));
 
-    expect(envelope.outcome).toBe("checkFailed");
     expect(envelope.exitCode).toBe(3);
     expect(box.json("report.json")).toMatchSnapshot();
   });
@@ -101,7 +100,6 @@ describe("gamedata verify meets unreachable files", () => {
     expect(emptyCheck.exitCode).toBe(3);
     expect(box.json("empty-check.json")).toMatchObject({
       exitCode: 3,
-      outcome: "checkFailed",
       result: {
         status: "failed",
         checks: [
@@ -121,7 +119,6 @@ describe("gamedata verify meets unreachable files", () => {
     expect(unrelatedIgnore.exitCode).toBe(3);
     expect(box.json("unrelated-ignore.json")).toMatchObject({
       exitCode: 3,
-      outcome: "checkFailed",
       result: {
         status: "failed",
         checks: [
@@ -142,7 +139,6 @@ describe("gamedata verify meets unreachable files", () => {
     expect(ignoredCollision.exitCode).toBe(0);
     expect(box.json("ignored-collision.json")).toMatchObject({
       exitCode: 0,
-      outcome: "success",
       result: {
         status: "passed",
         skippedMounts: [],
@@ -159,7 +155,6 @@ describe("gamedata verify meets unreachable files", () => {
     expect(clean.exitCode).toBe(0);
     expect(box.json("clean.json")).toMatchObject({
       exitCode: 0,
-      outcome: "success",
       result: {
         status: "passed",
         checks: [

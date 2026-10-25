@@ -3,16 +3,10 @@
 exports[`gamedata verify named HUD animations should record the reports as readable documents 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`gamedata verify named HUD animations should record the reports as reada
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "cache": {
       "bytes": 426,
@@ -73,16 +64,10 @@ exports[`gamedata verify named HUD animations should record the reports as reada
 exports[`gamedata verify named HUD animations should record the reports as readable documents 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -90,13 +75,10 @@ exports[`gamedata verify named HUD animations should record the reports as reada
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "cache": {
       "bytes": 429,
@@ -215,8 +197,8 @@ exports[`gamedata verify named HUD animations should write only its fixture and 
 [
   {
     "path": "missing.json",
-    "sha256": "9c96fc04d351d3c9e3a5996367dc2cee7b211aae82a4bef04146c9ae8fde1cfc",
-    "size": 1743,
+    "sha256": "9999cd5dd459b19203434ec6b6c71f777278a020aede0adabdf8c3f14a41c268",
+    "size": 1494,
   },
   {
     "path": "missing/configs/system.ltx",
@@ -235,8 +217,8 @@ exports[`gamedata verify named HUD animations should write only its fixture and 
   },
   {
     "path": "valid.json",
-    "sha256": "c20cee45cd5a702468ed393d05c132914bd73ea22ead6870d1c30d5da04f9cad",
-    "size": 1511,
+    "sha256": "11984684dd320a2fab29662538a9e8fa2fb1a71c89f171ccb133fe3ee0496ab7",
+    "size": 1290,
   },
   {
     "path": "valid/configs/system.ltx",

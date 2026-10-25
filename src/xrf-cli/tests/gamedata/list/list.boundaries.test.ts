@@ -54,11 +54,9 @@ describe("gamedata list prefix boundaries", () => {
     const boundary = box.at("boundary").replaceAll("\\", "/");
 
     expect(prefixed.result).toMatchObject({
-      total: 1,
       entries: [{ container: boundary, logicalPath: "configs\\kept.ltx" }],
     });
     expect(ignored.result).toMatchObject({
-      total: 1,
       entries: [{ container: boundary, logicalPath: "configs_backup\\kept.ltx" }],
     });
   });
@@ -72,7 +70,7 @@ describe("gamedata list prefix boundaries", () => {
   it("should return an empty successful listing for a prefix with no match", () => {
     const absent: CommandEnvelope = envelopeAt(box.at("absent.json"));
 
-    expect(absent.result).toMatchObject({ entries: [], shadowed: [], total: 0 });
+    expect(absent.result).toMatchObject({ entries: [], shadowed: [] });
   });
 
   it("should leave authored inputs unchanged", () => {

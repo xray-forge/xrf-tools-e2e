@@ -3,16 +3,10 @@
 exports[`gamedata verify weapons should record readable reports and only expected artifacts 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`gamedata verify weapons should record readable reports and only expecte
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "cache": {
       "bytes": 3730,
@@ -73,16 +64,10 @@ exports[`gamedata verify weapons should record readable reports and only expecte
 exports[`gamedata verify weapons should record readable reports and only expected artifacts 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -90,13 +75,10 @@ exports[`gamedata verify weapons should record readable reports and only expecte
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "cache": {
       "bytes": 3725,
@@ -150,8 +132,8 @@ exports[`gamedata verify weapons should record readable reports and only expecte
 [
   {
     "path": "missing.json",
-    "sha256": "110a3b1546cf503ab032927ef1c8a2b49014ffd1f5a65901a7fc3ff951097b8f",
-    "size": 1580,
+    "sha256": "999a4eddaaf3882f833c026ee60cb3b505712978369546c463f5d85e464b7ff5",
+    "size": 1331,
   },
   {
     "path": "missing/configs/system.ltx",
@@ -175,8 +157,8 @@ exports[`gamedata verify weapons should record readable reports and only expecte
   },
   {
     "path": "valid.json",
-    "sha256": "b76c682f7bba98c2b172c55085d78f2b8ca128c951ee759b64053c592c246482",
-    "size": 1368,
+    "sha256": "25f1bf3ba4a3cc6d5e1b343b095bf102a504d87838d721fec6c76d8bb2ea7232",
+    "size": 1147,
   },
   {
     "path": "valid/configs/system.ltx",

@@ -56,16 +56,10 @@ exports[`particle inspect should fail on a missing name, naming the names holdin
 exports[`particle inspect should report the group whole, as the library holds it 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -73,13 +67,10 @@ exports[`particle inspect should report the group whole, as the library holds it
     "inspect",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "effect": null,
     "group": {
@@ -145,8 +136,8 @@ exports[`particle inspect should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "394ef037dfdcb7246d4a8dc6761c2f044efdc5c2dfce58437c47127e3a23eb36",
-    "size": 2143,
+    "sha256": "21c32184053557c0b2db854a3e33575ddf7353b38166a8767c14238b0dfdf8c0",
+    "size": 1922,
   },
 ]
 `;

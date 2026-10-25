@@ -5,7 +5,7 @@ exports[`sprite verify-equipment identical icon sharing should accept a grid who
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Inventory icon grid is clean, no overlapping rects",
+    "Inventory icon grid: passed",
   ],
 }
 `;
@@ -13,16 +13,10 @@ exports[`sprite verify-equipment identical icon sharing should accept a grid who
 exports[`sprite verify-equipment identical icon sharing should report the clean icon grid verdict as a readable document 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -30,17 +24,21 @@ exports[`sprite verify-equipment identical icon sharing should report the clean 
     "verify-equipment",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
-    "findings": [],
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "equipment.overlaps",
+        "status": "passed",
+      },
+    ],
     "status": "passed",
-    "subject": "<resources>/gamedata/configs/system.ltx",
+    "systemLtx": "<resources>/gamedata/configs/system.ltx",
   },
 }
 `;
@@ -49,8 +47,8 @@ exports[`sprite verify-equipment identical icon sharing should write the expecte
 [
   {
     "path": "verify.json",
-    "sha256": "0c988c65c1c997c6eaebfff30ccf5cd27cebba02bc9b756137c4d971e6a0b1f5",
-    "size": 637,
+    "sha256": "097f507a2b35cc75ffe601fdaf695fe883d79a76e7763c68d05b468560f97a44",
+    "size": 558,
   },
 ]
 `;

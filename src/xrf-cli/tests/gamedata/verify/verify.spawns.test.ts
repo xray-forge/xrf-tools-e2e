@@ -42,7 +42,6 @@ describe("gamedata verify spawns", () => {
     expect(valid.exitCode).toBe(0);
     expect(box.json("valid.json")).toMatchObject({
       exitCode: 0,
-      outcome: "success",
       result: {
         status: "passed",
         skippedMounts: [],
@@ -59,7 +58,6 @@ describe("gamedata verify spawns", () => {
     expect(damaged.exitCode).toBe(3);
     expect(box.json("damaged.json")).toMatchObject({
       exitCode: 3,
-      outcome: "checkFailed",
       result: {
         status: "failed",
         skippedMounts: [],

@@ -3,16 +3,10 @@
 exports[`gamedata verify DDS format compatibility should record the reports and expected artifacts 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`gamedata verify DDS format compatibility should record the reports and 
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "cache": {
       "bytes": 0,
@@ -73,16 +64,10 @@ exports[`gamedata verify DDS format compatibility should record the reports and 
 exports[`gamedata verify DDS format compatibility should record the reports and expected artifacts 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -90,13 +75,10 @@ exports[`gamedata verify DDS format compatibility should record the reports and 
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "cache": {
       "bytes": 0,
@@ -150,8 +132,8 @@ exports[`gamedata verify DDS format compatibility should record the reports and 
 [
   {
     "path": "supported.json",
-    "sha256": "985f1e4312d888737f5b2163ae25515f74b01eb96babce36c3090d4215ac9d35",
-    "size": 1396,
+    "sha256": "e3dbdd1cee2959627ad03883adae9c86f009ec9dfaffa8c04abd592242c10d6e",
+    "size": 1175,
   },
   {
     "path": "supported/configs/system.ltx",
@@ -165,8 +147,8 @@ exports[`gamedata verify DDS format compatibility should record the reports and 
   },
   {
     "path": "unsupported.json",
-    "sha256": "18f2e6f4519c1e54016341094c2cfbfa34a99f21ecba55266c70e82bb2929526",
-    "size": 1601,
+    "sha256": "a08e923e78211ef32b07c373c4da8d81976efb3af34b3b97b17f7d84e67966c2",
+    "size": 1352,
   },
   {
     "path": "unsupported/configs/system.ltx",

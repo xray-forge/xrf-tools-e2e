@@ -3,16 +3,10 @@
 exports[`ltx verify schemes report should report every finding and the coverage it reached 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`ltx verify schemes report should report every finding and the coverage 
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 9 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "checkedFields": 21,
     "checkedSections": 7,

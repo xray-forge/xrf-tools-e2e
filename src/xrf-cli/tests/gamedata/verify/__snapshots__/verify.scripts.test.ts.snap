@@ -3,16 +3,10 @@
 exports[`gamedata verify scripts should record readable reports and only expected artifacts 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`gamedata verify scripts should record readable reports and only expecte
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "cache": {
       "bytes": 0,
@@ -73,16 +64,10 @@ exports[`gamedata verify scripts should record readable reports and only expecte
 exports[`gamedata verify scripts should record readable reports and only expected artifacts 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -90,13 +75,10 @@ exports[`gamedata verify scripts should record readable reports and only expecte
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "cache": {
       "bytes": 0,
@@ -151,8 +133,8 @@ exports[`gamedata verify scripts should record readable reports and only expecte
 [
   {
     "path": "malformed.json",
-    "sha256": "98f31e3789222388fb63cee733e5547c00391956885b3ff059e2db73dd9e9c07",
-    "size": 1796,
+    "sha256": "7d9e6dd3767e38ac32707bb6dd5c193cbcc28786ac7fe5d22c17c13c3500aea4",
+    "size": 1547,
   },
   {
     "path": "malformed/configs/system.ltx",
@@ -171,8 +153,8 @@ exports[`gamedata verify scripts should record readable reports and only expecte
   },
   {
     "path": "valid.json",
-    "sha256": "78322c90b9d023ab27c947324dfa26e04ab89df5ecaeb921af4ba5d7d1cf4051",
-    "size": 1365,
+    "sha256": "c8575e6b192e4f7b19fe644f064cdfad4c9b3d09399f4b535669f1a26260086b",
+    "size": 1144,
   },
   {
     "path": "valid/configs/system.ltx",

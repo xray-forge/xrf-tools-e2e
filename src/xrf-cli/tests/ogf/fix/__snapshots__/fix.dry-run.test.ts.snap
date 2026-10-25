@@ -19,16 +19,10 @@ exports[`ogf fix dry run should report a dry run without writing 1`] = `
 exports[`ogf fix dry run should report what a dry run would discard 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -36,24 +30,17 @@ exports[`ogf fix dry run should report what a dry run would discard 1`] = `
     "fix",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "checked": 1,
-    "discardedSize": 34,
-    "failed": 0,
     "files": [
       {
         "cause": "split-motion-ref",
         "destination": "<resources>/gamedata/meshes/ogf/residue_split_motion_ref.ogf",
         "discardedReference": "actors\\stalker_scenario_animation",
-        "discardedSize": 34,
-        "isWritten": false,
         "normalizedSize": 210,
         "originalSize": 244,
         "source": "<resources>/gamedata/meshes/ogf/residue_split_motion_ref.ogf",
@@ -61,7 +48,6 @@ exports[`ogf fix dry run should report what a dry run would discard 1`] = `
     ],
     "findings": [],
     "isDryRun": true,
-    "normalized": 1,
     "unchanged": 0,
   },
 }
@@ -71,8 +57,8 @@ exports[`ogf fix dry run should write only its report 1`] = `
 [
   {
     "path": "dry-run.json",
-    "sha256": "7b506035dbf908635cc33a076ddce656cea7d1368e68ac48ffb3da84e83e3ab4",
-    "size": 1090,
+    "sha256": "18130698487241e34b3b0b3f565b82114b93e9ba86e0e32fe0a92efe5d975f1d",
+    "size": 749,
   },
 ]
 `;

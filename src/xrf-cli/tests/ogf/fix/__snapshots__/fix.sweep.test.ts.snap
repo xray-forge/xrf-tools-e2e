@@ -3,16 +3,10 @@
 exports[`ogf fix sweep should report the sweep beside its findings 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -22,22 +16,16 @@ exports[`ogf fix sweep should report the sweep beside its findings 1`] = `
   "duration": "<duration>",
   "error": "Verify error: Failed to fix 1 of 3 ogf visual(s)",
   "execution": {
-    "origin": "requested",
     "workers": "<workers>",
   },
   "exitCode": 1,
-  "outcome": "executionFailed",
   "result": {
     "checked": 3,
-    "discardedSize": 34,
-    "failed": 1,
     "files": [
       {
         "cause": "split-motion-ref",
         "destination": "<sandbox>/meshes/residue.ogf",
         "discardedReference": "actors\\stalker_scenario_animation",
-        "discardedSize": 34,
-        "isWritten": true,
         "normalizedSize": 210,
         "originalSize": 244,
         "source": "<sandbox>/meshes/residue.ogf",
@@ -50,7 +38,6 @@ exports[`ogf fix sweep should report the sweep beside its findings 1`] = `
       },
     ],
     "isDryRun": false,
-    "normalized": 1,
     "unchanged": 1,
   },
 }
@@ -93,8 +80,8 @@ exports[`ogf fix sweep should write only the sweep inputs and report 1`] = `
   },
   {
     "path": "tree.json",
-    "sha256": "f8f5c0438c01e182e26c7eef15083506cd85604af04cc8418caeff7b6f18abb0",
-    "size": 1290,
+    "sha256": "0e9c57a20eac6f29479cec104338b444f6650b9af4a5fe253566dcdc83a9bab8",
+    "size": 954,
   },
 ]
 `;

@@ -25,16 +25,10 @@ exports[`spawn repack should report the second pass the same way 1`] = `
 exports[`spawn repack should report what repacking read and wrote 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -42,13 +36,10 @@ exports[`spawn repack should report what repacking read and wrote 1`] = `
     "repack",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "destination": "<sandbox>/repacked.spawn",
     "readDuration": "<duration>",
@@ -67,8 +58,8 @@ exports[`spawn repack should write the expected files 1`] = `
   },
   {
     "path": "report.json",
-    "sha256": "5ca1ac7616e27cb7c14bf806a71168a6b9e4ba28052b0391099f5dbaef242f1c",
-    "size": 695,
+    "sha256": "0491b53678978cd0807bea4ae5f0516332a21b0d9696f98c40b918e265b8978c",
+    "size": 474,
   },
   {
     "path": "twice.spawn",

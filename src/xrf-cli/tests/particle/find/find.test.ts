@@ -47,7 +47,7 @@ describe("particle find", () => {
     const envelope: CommandEnvelope = envelopeAt(box.at("report.json"));
 
     expect(envelope.command).toEqual(["particle", "find"]);
-    expect(envelope.outcome).toBe("success");
+    expect(envelope.exitCode).toBe(0);
     expect(groups.exitCode).toBe(0);
   });
 

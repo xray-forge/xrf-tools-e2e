@@ -4,7 +4,7 @@ exports[`verifiers meet damaged input should refuse a damaged particle container
 {
   "exitCode": 3,
   "stderr": [
-    "<sandbox>/bad.xr is not a valid particles file: Invalid error: Chunk 0x00000003 at position 18 declares 1088704 bytes, 482 remain before source end 500",
+    "Check 'particles.read' is failed with 1 finding(s)",
     "Check failed: 1 finding(s)",
   ],
   "stdout": [
@@ -17,7 +17,7 @@ exports[`verifiers meet damaged input should refuse a damaged spawn 1`] = `
 {
   "exitCode": 3,
   "stderr": [
-    "<sandbox>/bad.spawn is not a valid spawn file: Invalid error: Chunk 0x00000001 at position 60 declares 67940 bytes, 340 remain before source end 400",
+    "Check 'spawn.read' is failed with 1 finding(s)",
     "Check failed: 1 finding(s)",
   ],
   "stdout": [
@@ -30,7 +30,7 @@ exports[`verifiers meet damaged input should refuse an unparseable icon configur
 {
   "exitCode": 3,
   "stderr": [
-    "Provided system ltx is invalid: Ltx parse error: 2:1 Failed to parse section statement without closing bracket ']'",
+    "Check 'equipment.overlaps' is failed with 1 finding(s)",
     "Check failed: 1 finding(s)",
   ],
   "stdout": [],

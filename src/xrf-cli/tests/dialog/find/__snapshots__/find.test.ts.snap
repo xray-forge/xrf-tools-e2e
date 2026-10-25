@@ -65,16 +65,10 @@ exports[`dialog find should refuse a search naming nothing to find 1`] = `
 exports[`dialog find should report every reference with its file, dialog, phrase, element and whether it is read 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -82,13 +76,10 @@ exports[`dialog find should report every reference with its file, dialog, phrase
     "find",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "functors": [
       "give_vodka",
@@ -172,8 +163,8 @@ exports[`dialog find should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "d2b4c1587a2109f9bc9f4fc238f2c3609b9f7e550109808cffa62af3a540c713",
-    "size": 2176,
+    "sha256": "df170b23657df80b00103bf95b20a187de1bbcd60947a9e9c0bd2e107f81c986",
+    "size": 1955,
   },
 ]
 `;

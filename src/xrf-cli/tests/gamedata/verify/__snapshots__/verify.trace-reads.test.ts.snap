@@ -3,16 +3,10 @@
 exports[`gamedata verify read tracing should record the trace and expected artifacts 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`gamedata verify read tracing should record the trace and expected artif
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "cache": {
       "bytes": 77,
@@ -102,13 +93,13 @@ exports[`gamedata verify read tracing should record the trace and expected artif
   },
   {
     "path": "normal.json",
-    "sha256": "fa99a6b24d310675eada5f93f788026a81b591343f7ba46978ade2e42fd4ed40",
-    "size": 1388,
+    "sha256": "aa15bbda5b0b1da073d035520fbc3786ecca6df9fd2159f9a705d5bf9ccf1f70",
+    "size": 1167,
   },
   {
     "path": "traced.json",
-    "sha256": "c2adcb070b7cc345aa231ea8ea802c857cf28336c6fc9bab2dd8efc3aa5ef07a",
-    "size": 1734,
+    "sha256": "3e99979a3347bf109af68346e2531a4d45ad095265c2802f0a2a62041039bc48",
+    "size": 1513,
   },
 ]
 `;

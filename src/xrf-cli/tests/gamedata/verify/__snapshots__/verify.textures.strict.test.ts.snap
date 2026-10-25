@@ -3,16 +3,10 @@
 exports[`gamedata verify texture companion strictness should write readable reports and a complete manifest 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`gamedata verify texture companion strictness should write readable repo
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "cache": {
       "bytes": 0,
@@ -79,16 +70,10 @@ exports[`gamedata verify texture companion strictness should write readable repo
 exports[`gamedata verify texture companion strictness should write readable reports and a complete manifest 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -96,13 +81,10 @@ exports[`gamedata verify texture companion strictness should write readable repo
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "cache": {
       "bytes": 0,
@@ -155,16 +137,10 @@ exports[`gamedata verify texture companion strictness should write readable repo
 exports[`gamedata verify texture companion strictness should write readable reports and a complete manifest 3`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -172,13 +148,10 @@ exports[`gamedata verify texture companion strictness should write readable repo
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "cache": {
       "bytes": 0,
@@ -226,8 +199,8 @@ exports[`gamedata verify texture companion strictness should write readable repo
 [
   {
     "path": "clean-strict.json",
-    "sha256": "7eb12b83c880e88754646cb460a5ca3740d3ab15712a8fd72fbc787718e9c2b4",
-    "size": 1396,
+    "sha256": "5c6e70333edd788d00ebbc69e81cadc1e87dcc1b46c9c06f469739106cafd041",
+    "size": 1175,
   },
   {
     "path": "clean/configs/system.ltx",
@@ -266,13 +239,13 @@ exports[`gamedata verify texture companion strictness should write readable repo
   },
   {
     "path": "ordinary.json",
-    "sha256": "1de404e915151563db95299a59a660c720cd10cdc927087a93f0187d41363022",
-    "size": 1703,
+    "sha256": "eca5e702ae98b7ad987db292b9e10701b01451f1e4ecc1c13c18f4cc45815c32",
+    "size": 1482,
   },
   {
     "path": "strict.json",
-    "sha256": "3a081851ae251e86ca6c2e70b1e4e28b6ac17e1e2fd968099e434fa501c360e3",
-    "size": 1731,
+    "sha256": "b895fe7288142e1c669e14c8c68c9c571bce113329afa0e3c8ed99e24a7cdded",
+    "size": 1482,
   },
 ]
 `;

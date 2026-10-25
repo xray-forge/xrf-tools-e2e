@@ -3,16 +3,10 @@
 exports[`translation build reporting should report the build it ran 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`translation build reporting should report the build it ran 1`] = `
     "build",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "duration": "<duration>",
     "files": 16,
@@ -174,8 +165,8 @@ exports[`translation build reporting should write the expected files 1`] = `
   },
   {
     "path": "report.json",
-    "sha256": "14c88abac976adf8764ebbeb9611063da3e3e108fd161070adc4c6446c4df251",
-    "size": 1327,
+    "sha256": "afbf084a0a2c749e1b53c2d76637477425c96ab213b305c0ec86b9e65b2e1a5c",
+    "size": 1106,
   },
   {
     "path": "reported/eng/st_items.xml",

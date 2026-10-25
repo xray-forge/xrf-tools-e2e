@@ -35,16 +35,10 @@ exports[`spawn roundtrip should report object, patrol, and graph counts 1`] = `
 exports[`spawn roundtrip should report the source verdict 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -52,17 +46,21 @@ exports[`spawn roundtrip should report the source verdict 1`] = `
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
-    "findings": [],
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "spawn.read",
+        "status": "passed",
+      },
+    ],
+    "path": "<resources>/gamedata/spawns/all.spawn",
     "status": "passed",
-    "subject": "<resources>/gamedata/spawns/all.spawn",
   },
 }
 `;
@@ -70,16 +68,10 @@ exports[`spawn roundtrip should report the source verdict 1`] = `
 exports[`spawn roundtrip should report what packing read and wrote 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -87,13 +79,10 @@ exports[`spawn roundtrip should report what packing read and wrote 1`] = `
     "pack",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "destination": "<sandbox>/repacked.spawn",
     "readDuration": "<duration>",
@@ -106,16 +95,10 @@ exports[`spawn roundtrip should report what packing read and wrote 1`] = `
 exports[`spawn roundtrip should report what unpacking read and wrote 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -123,13 +106,10 @@ exports[`spawn roundtrip should report what unpacking read and wrote 1`] = `
     "unpack",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "destination": "<sandbox>/unpacked",
     "readDuration": "<duration>",
@@ -156,7 +136,7 @@ exports[`spawn roundtrip should verify the source 1`] = `
   "stderr": [],
   "stdout": [
     "Verifying spawn file <resources>/gamedata/spawns/all.spawn",
-    "<resources>/gamedata/spawns/all.spawn is a valid spawn file",
+    "Verification of <resources>/gamedata/spawns/all.spawn: passed",
   ],
 }
 `;
@@ -165,8 +145,8 @@ exports[`spawn roundtrip should write the expected files 1`] = `
 [
   {
     "path": "pack.json",
-    "sha256": "26d21da841c999836a5e37e7c2b95d2205600e0ce945a9673a367d2cac5a34bb",
-    "size": 674,
+    "sha256": "2614b22a93c425762a857740787f2f39ee06b3e50349a2da42e695d8fff42277",
+    "size": 453,
   },
   {
     "path": "repacked.spawn",
@@ -175,8 +155,8 @@ exports[`spawn roundtrip should write the expected files 1`] = `
   },
   {
     "path": "unpack.json",
-    "sha256": "a9fc81ae11491a598c25a0a90eae098f454281b4249cdcec2571ddaa13df5044",
-    "size": 689,
+    "sha256": "721e270770d31d8a8ac3f8585c539417f6748c9e49e6b1e38280907128bb14e3",
+    "size": 468,
   },
   {
     "path": "unpacked/alife_spawns.ltx",
@@ -240,8 +220,8 @@ exports[`spawn roundtrip should write the expected files 1`] = `
   },
   {
     "path": "verify.json",
-    "sha256": "d8ca899eeb9da4df83bb2a3bc38fb507262495435d432d387ce0cd772ab21213",
-    "size": 624,
+    "sha256": "1fe4419e5c9df952830a2ea3530490e1264e02c4232f2a051ea0ef6eed5a8ebe",
+    "size": 532,
   },
 ]
 `;

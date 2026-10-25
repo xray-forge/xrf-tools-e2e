@@ -62,7 +62,7 @@ describe("dialog info", () => {
     const envelope: CommandEnvelope = envelopeAt(box.at("report.json"));
 
     expect(envelope.command).toEqual(["dialog", "info"]);
-    expect(envelope.outcome).toBe("success");
+    expect(envelope.exitCode).toBe(0);
     expect(JSON.stringify(envelope.result)).toContain("dialog.schema");
   });
 

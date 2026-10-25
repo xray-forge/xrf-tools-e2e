@@ -14,16 +14,10 @@ exports[`archive list shared payloads should name a match's sharers even when th
 exports[`archive list shared payloads should report every entry's sharers as derived from the descriptors 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -31,13 +25,10 @@ exports[`archive list shared payloads should report every entry's sharers as der
     "list",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "entries": [
       {
@@ -165,7 +156,6 @@ exports[`archive list shared payloads should report every entry's sharers as der
         "source": "<sandbox>/packed/fixture.db",
       },
     ],
-    "total": 15,
   },
 }
 `;
@@ -199,8 +189,8 @@ exports[`archive list shared payloads should write the expected files 1`] = `
 [
   {
     "path": "listing.json",
-    "sha256": "06db36bcff2ff3267d83a07a4560ab0cc132418cc45dfd0cab0f30ea84dffb88",
-    "size": 4017,
+    "sha256": "128416e733726e110ecc67a89ffcfce097498d3734a6a5c1e98fd432d4591cab",
+    "size": 3779,
   },
   {
     "path": "packed/fixture.db",

@@ -37,7 +37,7 @@ exports[`gamedata command help should keep each leaf command's help stable 1`] =
       "  -s, --silent              Turn off logging",
       "  -i, --ignore <ignore>...  Root entries to skip, replacing the defaults. Repeat to skip several [default: .git .idea particles_unpacked textures_unpacked .gitignore .gitattributes README.md LICENSE]",
       "  -v, --verbose             Turn on verbose logging",
-      "      --checks <checks>...  List of checks to perform",
+      "      --checks <checks>...  Checks to run, comma-separated or repeated; every check when omitted",
       "      --json                Write the run's JSON report to stdout, moving human output to stderr",
       "      --report <PATH>       Write the run's JSON report to a file",
       "      --strict              Fully validate expensive asset payloads",

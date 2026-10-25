@@ -33,16 +33,10 @@ exports[`dds crop bounds should refuse a region that runs past the edge 1`] = `
 exports[`dds crop bounds should report the exact-edge region and output dimensions 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -50,13 +44,10 @@ exports[`dds crop bounds should report the exact-edge region and output dimensio
     "crop",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "destination": "<sandbox>/edge.dds",
     "height": 64,
@@ -79,8 +70,8 @@ exports[`dds crop bounds should write the edge crop and preserved output 1`] = `
   },
   {
     "path": "edge.json",
-    "sha256": "f38a50f5458222a8abe87029caddfd021bf4d1993025453c77ed6d9a65b21d79",
-    "size": 749,
+    "sha256": "06a98e4d6e3db5910ef0affb35fa4ccb66922d36c04e42ecc87febfaec025c8f",
+    "size": 528,
   },
   {
     "path": "preserved.dds",

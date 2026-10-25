@@ -14,7 +14,7 @@ const DURATION_PATTERN = /\b\d+(\.\d+)?\s?(ms|milliseconds|seconds|secs|sec|minu
  * @remarks
  * The number is whatever the host offered, so it differs between two correct runs on two machines. The origin beside
  * it is left standing: `auto` or `requested` follows from the command line rather than from the host, and it is the
- * part that says whether a `-j` reached the run at all.
+ * only record of whether a `-j` reached the run at all, since the report's `execution` block carries the width alone.
  */
 const WORKERS_PATTERN = /\b(Workers: )\d+\b/g;
 
@@ -101,12 +101,10 @@ const JSON_BUILD_MEMBER_PATTERN =
 const JSON_EXECUTION_BLOCK_PATTERN = /"execution":\s*{[^{}]*}/g;
 
 /**
- * The one member of an `execution` block that describes the host rather than the run.
+ * The member of an `execution` block, which describes the host rather than the run.
  *
  * @remarks
- * `workers` is whatever this machine offered, so a recording carrying it would describe one machine. `origin` stays
- * asserted: it is decided by the command line, and losing it would stop the recordings noticing that a requested
- * width silently became an automatic one.
+ * `workers` is whatever this machine offered, so a recording carrying it would describe one machine.
  */
 const JSON_WORKERS_MEMBER_PATTERN = /"(workers)":\s*\d+/g;
 

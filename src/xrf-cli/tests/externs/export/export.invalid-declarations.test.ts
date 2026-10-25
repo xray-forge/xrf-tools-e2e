@@ -72,7 +72,6 @@ describe("externs export invalid declarations", () => {
     const envelope: CommandEnvelope = envelopeAt(box.at("duplicate.json"));
 
     expect(envelope.command).toEqual(["externs", "export"]);
-    expect(envelope.outcome).toBe("checkFailed");
     expect(envelope.exitCode).toBe(3);
   });
 

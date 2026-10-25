@@ -99,10 +99,9 @@ describe("CLI reporting contract", () => {
       const envelope: CommandEnvelope = envelopeOf(succeeding(["--json"]));
 
       expect(envelope.command).toEqual(["archive", "info"]);
-      expect(envelope.outcome).toBe("success");
       expect(envelope.exitCode).toBe(0);
-      expect(envelope.error).toBeNull();
-      expect(envelope.result).not.toBeNull();
+      expect(envelope).not.toHaveProperty("error");
+      expect(envelope.result).toBeDefined();
     });
 
     // The requirement the whole contract exists for: a run that fails is still readable by a
@@ -111,19 +110,18 @@ describe("CLI reporting contract", () => {
       const envelope: CommandEnvelope = envelopeOf(failingCheck(["--json"]));
 
       expect(envelope.command).toEqual(["dialog", "info"]);
-      expect(envelope.outcome).toBe("checkFailed");
       expect(envelope.exitCode).toBe(3);
-      expect(envelope.error).toMatch(/finding/);
+      // A verdict is not an error: the findings in `result` are the whole explanation.
+      expect(envelope).not.toHaveProperty("error");
       expect(JSON.stringify(envelope.result)).toContain("dialog.unknown-attribute");
     });
 
     it("should answer a run that could not do its job with an envelope too", () => {
       const envelope: CommandEnvelope = envelopeOf(failingExecution(["--json"]));
 
-      expect(envelope.outcome).toBe("executionFailed");
       expect(envelope.exitCode).toBe(1);
-      expect(envelope.error).not.toBeNull();
-      expect(envelope.result).toBeNull();
+      expect(envelope.error).toEqual(expect.any(String));
+      expect(envelope).not.toHaveProperty("result");
     });
 
     // Human output is not dropped in pipe mode, only moved: a long run still shows progress on a
@@ -144,8 +142,8 @@ describe("CLI reporting contract", () => {
       const envelope: CommandEnvelope = envelopeAt(box.at("report.json"));
 
       expect(envelope.command).toEqual(["archive", "info"]);
-      expect(envelope.outcome).toBe("success");
-      expect(envelope.result).not.toBeNull();
+      expect(envelope.exitCode).toBe(0);
+      expect(envelope.result).toBeDefined();
     });
 
     it("should write a report for a failing check as well", () => {
@@ -153,7 +151,6 @@ describe("CLI reporting contract", () => {
 
       const envelope: CommandEnvelope = envelopeAt(box.at("failed.json"));
 
-      expect(envelope.outcome).toBe("checkFailed");
       expect(envelope.exitCode).toBe(3);
     });
 

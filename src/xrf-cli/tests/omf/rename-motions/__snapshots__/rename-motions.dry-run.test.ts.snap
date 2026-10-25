@@ -14,16 +14,10 @@ exports[`omf rename-motions dry run should report a dry run without writing 1`] 
 exports[`omf rename-motions dry run should report the renamed labels without writing them 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -31,13 +25,10 @@ exports[`omf rename-motions dry run should report the renamed labels without wri
     "rename-motions",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "destination": "<sandbox>/never-renamed.omf",
     "isDryRun": true,
@@ -56,8 +47,8 @@ exports[`omf rename-motions dry run should write only the map, report, and prese
 [
   {
     "path": "dry-run.json",
-    "sha256": "5bd22cdfa1516035d550c8b8242f0a54932610685bebbfdfa7726abc798c150e",
-    "size": 767,
+    "sha256": "cd1759a1c195468dc410e4550f2333bc80a944631a104bf8022529e729c05bc5",
+    "size": 546,
   },
   {
     "path": "never-renamed.omf",

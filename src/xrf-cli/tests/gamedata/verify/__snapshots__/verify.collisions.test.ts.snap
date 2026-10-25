@@ -39,16 +39,10 @@ exports[`gamedata verify meets unreachable files should answer non-zero and name
 exports[`gamedata verify meets unreachable files should carry the collision as its own check 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -56,13 +50,10 @@ exports[`gamedata verify meets unreachable files should carry the collision as i
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "cache": {
       "bytes": 22,
@@ -115,16 +106,10 @@ exports[`gamedata verify meets unreachable files should carry the collision as i
 exports[`gamedata verify meets unreachable files should preserve its inputs and write readable reports 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -132,13 +117,10 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "cache": {
       "bytes": 22,
@@ -191,16 +173,10 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
 exports[`gamedata verify meets unreachable files should preserve its inputs and write readable reports 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -208,13 +184,10 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "cache": {
       "bytes": 22,
@@ -267,16 +240,10 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
 exports[`gamedata verify meets unreachable files should preserve its inputs and write readable reports 3`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -284,13 +251,10 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "cache": {
       "bytes": 22,
@@ -337,16 +301,10 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
 exports[`gamedata verify meets unreachable files should preserve its inputs and write readable reports 4`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -354,13 +312,10 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "cache": {
       "bytes": 22,
@@ -408,8 +363,8 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
 [
   {
     "path": "clean.json",
-    "sha256": "c7ddd89dcbaad7c223da7003ba9ee0975560b5c821a412c969710b0a03386e50",
-    "size": 1366,
+    "sha256": "624cfad4884afe6ec65062dfb422d053065b38ae2b9fbb57eb141e0359d215c7",
+    "size": 1145,
   },
   {
     "path": "clean/configs/system.ltx",
@@ -423,8 +378,8 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
   },
   {
     "path": "empty-check.json",
-    "sha256": "94a8c99f7800c38f6c0007ef87541c08854be83b5af67b127cf84ad8f8396dc6",
-    "size": 1694,
+    "sha256": "15f5a52c5326f995a95a5481dec0bb91452a733ffb7e029a38afd50cce7785b5",
+    "size": 1445,
   },
   {
     "path": "gamedata/configs/system.ltx",
@@ -443,18 +398,18 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
   },
   {
     "path": "ignored-collision.json",
-    "sha256": "c7ddd89dcbaad7c223da7003ba9ee0975560b5c821a412c969710b0a03386e50",
-    "size": 1366,
+    "sha256": "624cfad4884afe6ec65062dfb422d053065b38ae2b9fbb57eb141e0359d215c7",
+    "size": 1145,
   },
   {
     "path": "report.json",
-    "sha256": "cc643d534b6eee3abbf81cea21ccec0a861cf2eb48a5514850d4e38e7a292308",
-    "size": 1716,
+    "sha256": "a7f0f9c38741bc0f27f51f93c6e19bdcf4470d51066cede5619a5359c1c9259b",
+    "size": 1467,
   },
   {
     "path": "unrelated-ignore.json",
-    "sha256": "94a8c99f7800c38f6c0007ef87541c08854be83b5af67b127cf84ad8f8396dc6",
-    "size": 1694,
+    "sha256": "15f5a52c5326f995a95a5481dec0bb91452a733ffb7e029a38afd50cce7785b5",
+    "size": 1445,
   },
 ]
 `;

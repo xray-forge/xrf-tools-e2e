@@ -36,7 +36,6 @@ describe("gamedata verify read tracing", () => {
   it("should trace physical reads of both validated inputs", () => {
     expect(box.json("traced.json")).toMatchObject({
       exitCode: 0,
-      outcome: "success",
       result: {
         status: "passed",
         checks: [

@@ -13,16 +13,10 @@ exports[`thm patch-bump dry run should report a dry run without writing 1`] = `
 exports[`thm patch-bump dry run should report the intended original and patched sizes 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -30,13 +24,10 @@ exports[`thm patch-bump dry run should report the intended original and patched 
     "patch-bump",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "isDryRun": true,
     "originalSize": 138,
@@ -51,8 +42,8 @@ exports[`thm patch-bump dry run should write only the report and preserved desti
 [
   {
     "path": "dry.json",
-    "sha256": "a1a6e0bdf0d35827b1001ecc6156adef4d30fb795ab45a92ac0121ca42f22739",
-    "size": 644,
+    "sha256": "bcac61a2f2d85c3423602b18a0902462e12ffb5fe759f1ce15e7f560ad5afae1",
+    "size": 423,
   },
   {
     "path": "never-written.thm",

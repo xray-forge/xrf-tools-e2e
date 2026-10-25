@@ -3,16 +3,10 @@
 exports[`ltx verify schemes --dltx report should report a valid section and an unreadable patch under standard rules 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`ltx verify schemes --dltx report should report a valid section and an u
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "checkedFields": 3,
     "checkedSections": 1,
@@ -52,16 +43,10 @@ exports[`ltx verify schemes --dltx report should report a valid section and an u
 exports[`ltx verify schemes --dltx report should report the scheme findings the dialect uncovered 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -69,13 +54,10 @@ exports[`ltx verify schemes --dltx report should report the scheme findings the 
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 2 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "checkedFields": 2,
     "checkedSections": 1,

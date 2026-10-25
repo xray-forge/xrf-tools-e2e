@@ -3,16 +3,10 @@
 exports[`gamedata verify texture bump declarations should write a readable report and complete manifest 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`gamedata verify texture bump declarations should write a readable repor
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 2 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "cache": {
       "bytes": 0,
@@ -125,8 +116,8 @@ exports[`gamedata verify texture bump declarations should write a readable repor
   },
   {
     "path": "report.json",
-    "sha256": "bf045e7cab61616431ef6588d639e5fcc1cc358152e00f9523fbb6a57e876df8",
-    "size": 2012,
+    "sha256": "36099ab0a2355f73b63218f3c2f5a65dc9a1f7b4dfae03a1586c11bbae8d7b69",
+    "size": 1763,
   },
 ]
 `;

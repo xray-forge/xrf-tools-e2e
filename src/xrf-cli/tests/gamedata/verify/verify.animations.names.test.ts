@@ -69,7 +69,6 @@ describe("gamedata verify named HUD animations", () => {
     expect(valid).toMatchSnapshot();
     expect(box.json("valid.json")).toMatchObject({
       exitCode: 0,
-      outcome: "success",
       result: {
         checks: [
           { findings: [], status: "skipped", id: "coverage" },
@@ -91,7 +90,6 @@ describe("gamedata verify named HUD animations", () => {
     expect(missing).toMatchSnapshot();
     expect(box.json("missing.json")).toMatchObject({
       exitCode: 3,
-      outcome: "checkFailed",
       result: {
         checks: [
           { findings: [], status: "skipped", id: "coverage" },

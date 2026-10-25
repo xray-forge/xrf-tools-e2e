@@ -39,14 +39,12 @@ describe("archive list selection", () => {
     expect(files.exitCode).toBe(0);
     expect(directories.exitCode).toBe(0);
     expect(fileReport.result).toMatchObject({
-      total: 2,
       entries: [
         { name: "nested\\alpha.ltx", isDirectory: false },
         { name: "zeta.ltx", isDirectory: false },
       ],
     });
     expect(directoryReport.result).toMatchObject({
-      total: 1,
       entries: [{ name: "nested\\", isDirectory: true }],
     });
   });

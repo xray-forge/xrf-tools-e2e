@@ -3,16 +3,10 @@
 exports[`gamedata verify particle libraries should record the report as a readable document 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`gamedata verify particle libraries should record the report as a readab
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "cache": {
       "bytes": 0,
@@ -90,8 +81,8 @@ exports[`gamedata verify particle libraries should write the expected report and
   },
   {
     "path": "report.json",
-    "sha256": "10c8ec7ccf115ebd09722a0b554e91ade1071de72e56fb2725b0c10118a33fe1",
-    "size": 1687,
+    "sha256": "72562067e95104f1c432a39de868647f3b138c4e2d50baae17322a819316f36a",
+    "size": 1438,
   },
 ]
 `;

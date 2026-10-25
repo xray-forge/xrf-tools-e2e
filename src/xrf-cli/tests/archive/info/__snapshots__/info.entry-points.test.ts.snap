@@ -3,16 +3,10 @@
 exports[`archive info entry points should record the discovered volume roots 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`archive info entry points should record the discovered volume roots 1`]
     "info",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "directories": 0,
     "files": 2,
@@ -72,8 +63,8 @@ exports[`archive info entry points should write the expected files 1`] = `
   },
   {
     "path": "info.json",
-    "sha256": "596432c3dae1696b15cd96c2c67c2c9ae62d870ea01b7eac917fe75c44145bb6",
-    "size": 1021,
+    "sha256": "2e2c4978390b4cd20bcaee0c899c3d8d488a73748b7757640b5538d31bf2a6ab",
+    "size": 800,
   },
   {
     "path": "restored/gamedata/configs/config.ltx",

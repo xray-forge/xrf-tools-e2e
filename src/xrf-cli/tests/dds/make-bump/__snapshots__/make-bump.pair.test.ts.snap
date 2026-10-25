@@ -13,16 +13,10 @@ exports[`dds make-bump pair should generate the pair 1`] = `
 exports[`dds make-bump pair should report both halves and the gloss 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -30,13 +24,10 @@ exports[`dds make-bump pair should report both halves and the gloss 1`] = `
     "make-bump",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "bump": "<sandbox>/wall_bump.dds",
     "companion": "<sandbox>/wall_bump#.dds",
@@ -87,8 +78,8 @@ exports[`dds make-bump pair should write the expected files 1`] = `
 [
   {
     "path": "bump.json",
-    "sha256": "efea419f298d5adec1d5b2ac5146a9b74562dee3f5060cf63ea9f5ebcac3ec0c",
-    "size": 744,
+    "sha256": "f7c4389a0548aa2efd5f516e536b2fbc5858377f5de32255d3cdd0fa6dfa9692",
+    "size": 523,
   },
   {
     "path": "wall_bump#.dds",

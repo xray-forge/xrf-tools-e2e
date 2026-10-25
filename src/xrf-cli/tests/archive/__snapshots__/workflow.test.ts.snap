@@ -19,7 +19,7 @@ exports[`archive workflow should describe and verify the packed archive 2`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Verified 14 file(s) in <duration>",
+    "Verification of 14 archive file(s): passed",
   ],
 }
 `;

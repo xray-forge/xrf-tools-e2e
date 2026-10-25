@@ -3,16 +3,10 @@
 exports[`gamedata verify renderer shaders should record readable reports and only expected artifacts 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`gamedata verify renderer shaders should record readable reports and onl
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "cache": {
       "bytes": 0,
@@ -73,16 +64,10 @@ exports[`gamedata verify renderer shaders should record readable reports and onl
 exports[`gamedata verify renderer shaders should record readable reports and only expected artifacts 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -90,13 +75,10 @@ exports[`gamedata verify renderer shaders should record readable reports and onl
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "cache": {
       "bytes": 0,
@@ -150,8 +132,8 @@ exports[`gamedata verify renderer shaders should record readable reports and onl
 [
   {
     "path": "damaged.json",
-    "sha256": "54cf7b6d9c51432d1ea69273e928372c0c5dbf5c7c9538f2c0315d3f98cbc48b",
-    "size": 1681,
+    "sha256": "b005cd246c12f72e1f5e228f66edc1a822c9bbdd5ac80475ff63b219419cb92b",
+    "size": 1432,
   },
   {
     "path": "damaged/configs/system.ltx",
@@ -175,8 +157,8 @@ exports[`gamedata verify renderer shaders should record readable reports and onl
   },
   {
     "path": "valid.json",
-    "sha256": "2a0a6a56b5dc4116fd57a45a32376762293ee1c014fe30d26a662b8f539baa36",
-    "size": 1405,
+    "sha256": "af988535a0ed6cc9e5ebe65c4b598ba5eb385765fa6014f8a31ead21b0d9db76",
+    "size": 1184,
   },
   {
     "path": "valid/configs/system.ltx",

@@ -35,7 +35,6 @@ describe("ogf fix destination", () => {
     expect(sourceInfo.exitCode).toBe(0);
     expect(box.json("source.json")).toMatchObject({
       exitCode: 0,
-      outcome: "success",
       result: {
         motionRefs: [
           "actors\\stalker_animation",

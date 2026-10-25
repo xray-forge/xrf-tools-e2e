@@ -3,16 +3,10 @@
 exports[`gamedata verify ineffective texture declarations should write the expected reports and files 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`gamedata verify ineffective texture declarations should write the expec
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "cache": {
       "bytes": 0,
@@ -84,16 +75,10 @@ exports[`gamedata verify ineffective texture declarations should write the expec
 exports[`gamedata verify ineffective texture declarations should write the expected reports and files 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -101,13 +86,10 @@ exports[`gamedata verify ineffective texture declarations should write the expec
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 2 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "cache": {
       "bytes": 0,
@@ -181,13 +163,13 @@ exports[`gamedata verify ineffective texture declarations should write the expec
   },
   {
     "path": "ordinary.json",
-    "sha256": "ff5098efaac4339efa9c47fcbbf09c817adfd76f1046a4dec30eddaa61c86c52",
-    "size": 1914,
+    "sha256": "cfce81685152dffbb619e554192d5e6a6f6522b56e4600c4fffe67fbeb47e492",
+    "size": 1693,
   },
   {
     "path": "strict.json",
-    "sha256": "0132be3a1a1994aa4980ed2ef06202ee9e692b55d2ea88df53a524d9273b3097",
-    "size": 1942,
+    "sha256": "3524da02d11f7087d050d1f04f41c8b150ea144c32c004438c32d69aeccb9b7e",
+    "size": 1693,
   },
 ]
 `;

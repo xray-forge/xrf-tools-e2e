@@ -3,16 +3,10 @@
 exports[`gamedata verify spawns should record readable reports and only expected artifacts 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`gamedata verify spawns should record readable reports and only expected
     "verify",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "cache": {
       "bytes": 0,
@@ -73,16 +64,10 @@ exports[`gamedata verify spawns should record readable reports and only expected
 exports[`gamedata verify spawns should record readable reports and only expected artifacts 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -90,13 +75,10 @@ exports[`gamedata verify spawns should record readable reports and only expected
     "verify",
   ],
   "duration": "<duration>",
-  "error": "Check failed: 1 finding(s)",
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 3,
-  "outcome": "checkFailed",
   "result": {
     "cache": {
       "bytes": 0,
@@ -150,8 +132,8 @@ exports[`gamedata verify spawns should record readable reports and only expected
 [
   {
     "path": "damaged.json",
-    "sha256": "f70839f162a2e267a7ea6e416a35e53e34a341b9c5c9f7755f743ae06637ef60",
-    "size": 1659,
+    "sha256": "2bc51e9d46d677977ea31b1a12cf336ba468bb34648626ef8984e6fef39a7008",
+    "size": 1410,
   },
   {
     "path": "damaged/configs/system.ltx",
@@ -165,8 +147,8 @@ exports[`gamedata verify spawns should record readable reports and only expected
   },
   {
     "path": "valid.json",
-    "sha256": "89a398383e1d6b0e1ba80d8ad1dbcb4d18ab204b6239f016480acf547984254e",
-    "size": 1363,
+    "sha256": "edc6e3badbd590644ff998ef5f271792452b65af59f861cfdbccc74abd20684f",
+    "size": 1142,
   },
   {
     "path": "valid/configs/system.ltx",

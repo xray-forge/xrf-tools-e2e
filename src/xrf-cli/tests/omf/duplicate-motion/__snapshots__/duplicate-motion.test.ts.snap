@@ -39,16 +39,10 @@ exports[`omf duplicate-motion should read back the duplicated motion 1`] = `
 exports[`omf duplicate-motion should report the duplicated motion 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -56,13 +50,10 @@ exports[`omf duplicate-motion should report the duplicated motion 1`] = `
     "duplicate-motion",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "destination": "<sandbox>/duplicated.omf",
     "from": "idle",
@@ -89,8 +80,8 @@ exports[`omf duplicate-motion should write the expected files 1`] = `
 [
   {
     "path": "duplicate.json",
-    "sha256": "9c5d120f89ebeb2767c0601f8eb3cb747989c075db2dedc1c6c91a9276fb2ac4",
-    "size": 763,
+    "sha256": "65d31b0e3d14dc923ff0a4e07233162e39053443feb85311f58dabfb9dbe526c",
+    "size": 542,
   },
   {
     "path": "duplicated-once.omf",

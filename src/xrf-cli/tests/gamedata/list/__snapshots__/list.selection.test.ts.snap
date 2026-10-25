@@ -23,16 +23,10 @@ exports[`gamedata list selection should limit a listing to one subtree 1`] = `
 exports[`gamedata list selection should report only the subtree a prefix names 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -40,13 +34,10 @@ exports[`gamedata list selection should report only the subtree a prefix names 1
     "list",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "collisions": [],
     "duration": "<duration>",
@@ -103,7 +94,6 @@ exports[`gamedata list selection should report only the subtree a prefix names 1
     "origin": "<resources>/gamedata",
     "shadowed": [],
     "skipped": [],
-    "total": 8,
   },
 }
 `;
@@ -112,8 +102,8 @@ exports[`gamedata list selection should write only its report 1`] = `
 [
   {
     "path": "meshes.json",
-    "sha256": "047f3755e5b23023f5cc17adae3d87fbe49ceba9559fb9fef69babd4e3052d6c",
-    "size": 2067,
+    "sha256": "67bb54d52956dcb15549aadca69924debb702b40d2378520d0bcaf0a8612d54f",
+    "size": 1830,
   },
 ]
 `;

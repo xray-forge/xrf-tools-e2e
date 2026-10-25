@@ -47,7 +47,6 @@ describe("gamedata verify texture bump declarations", () => {
     expect(verification.exitCode).toBe(3);
     expect(box.json("report.json")).toMatchObject({
       exitCode: 3,
-      outcome: "checkFailed",
       result: {
         status: "failed",
         checks: expect.arrayContaining([

@@ -3,16 +3,10 @@
 exports[`archive find selection should record each machine-readable selection 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`archive find selection should record each machine-readable selection 1`
     "find",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "entries": [
       {
@@ -41,7 +32,6 @@ exports[`archive find selection should record each machine-readable selection 1`
       },
     ],
     "query": "CoPy",
-    "total": 1,
   },
 }
 `;
@@ -49,16 +39,10 @@ exports[`archive find selection should record each machine-readable selection 1`
 exports[`archive find selection should record each machine-readable selection 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -66,17 +50,13 @@ exports[`archive find selection should record each machine-readable selection 2`
     "find",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "entries": [],
     "query": "absent",
-    "total": 0,
   },
 }
 `;
@@ -84,16 +64,10 @@ exports[`archive find selection should record each machine-readable selection 2`
 exports[`archive find selection should record each machine-readable selection 3`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -101,13 +75,10 @@ exports[`archive find selection should record each machine-readable selection 3`
     "find",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "entries": [
       {
@@ -140,7 +111,6 @@ exports[`archive find selection should record each machine-readable selection 3`
       },
     ],
     "query": ".ltx",
-    "total": 3,
   },
 }
 `;
@@ -148,16 +118,10 @@ exports[`archive find selection should record each machine-readable selection 3`
 exports[`archive find selection should record each machine-readable selection 4`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -165,13 +129,10 @@ exports[`archive find selection should record each machine-readable selection 4`
     "find",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "entries": [
       {
@@ -184,7 +145,6 @@ exports[`archive find selection should record each machine-readable selection 4`
       },
     ],
     "query": "nested",
-    "total": 1,
   },
 }
 `;
@@ -193,23 +153,23 @@ exports[`archive find selection should write the expected files 1`] = `
 [
   {
     "path": "absent.json",
-    "sha256": "3a496ef8de3f3f010c47e662043b2fd8fe51382dce6f99106838cfc3f1172295",
-    "size": 582,
+    "sha256": "3e1f737086924dedf7337e50803c93d8d2c63bc47925fc4a4e3363672b5c55b5",
+    "size": 345,
   },
   {
     "path": "case.json",
-    "sha256": "a20685f9828d05c554dbc228e7540e0b80f07308e31457ade5652031224840cd",
-    "size": 846,
+    "sha256": "c939934fb9cf79eb53d0d615a3634be03a81cf52cb9123cc4a2c27397c93dc93",
+    "size": 609,
   },
   {
     "path": "directories.json",
-    "sha256": "6e3461baf663bc3d25e7aed3f1aaa74e700973484c75d4f99531fdf196133ab3",
-    "size": 786,
+    "sha256": "da80170bb021b031b00b6a3bf8c4fde8b2032085ebbadfc0499e3f5438aefa55",
+    "size": 549,
   },
   {
     "path": "ordered.json",
-    "sha256": "48dfd56c7d35841bf03825f15b2d5111abdda2ee86f7102e574fbd0e5587c7b9",
-    "size": 1309,
+    "sha256": "49ac79910b6f5c62275f604892a094c3303ddbbeb503dd0c9e2b5b18944ce44a",
+    "size": 1072,
   },
   {
     "path": "packed/fixture.db",

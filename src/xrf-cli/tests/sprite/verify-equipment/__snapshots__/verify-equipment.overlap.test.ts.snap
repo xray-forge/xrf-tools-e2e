@@ -4,8 +4,7 @@ exports[`sprite verify-equipment partial overlap should reject a partial overlap
 {
   "exitCode": 3,
   "stderr": [
-    "Overlapping icon rects at 1:1, 1 cell(s) shared by 'icon_a' and 'icon_b'",
-    "Found 1 overlapping icon rect pair(s)",
+    "Check 'equipment.overlaps' is failed with 1 finding(s)",
     "Check failed: 1 finding(s)",
   ],
   "stdout": [],

@@ -44,7 +44,6 @@ describe("gamedata verify particle usage", () => {
     expect(valid.exitCode).toBe(0);
     expect(box.json("valid.json")).toMatchObject({
       exitCode: 0,
-      outcome: "success",
       result: {
         checks: [
           { findings: [], status: "skipped", id: "coverage" },
@@ -66,7 +65,6 @@ describe("gamedata verify particle usage", () => {
     expect(missing.exitCode).toBe(3);
     expect(box.json("missing.json")).toMatchObject({
       exitCode: 3,
-      outcome: "checkFailed",
       result: {
         checks: [
           { findings: [], status: "skipped", id: "coverage" },

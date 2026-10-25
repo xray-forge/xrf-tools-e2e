@@ -32,7 +32,7 @@ describe("translation build reporting", () => {
     const pipedEnvelope = envelopeOf(piped);
 
     expect(pipedEnvelope.command).toEqual(["translation", "build"]);
-    expect(pipedEnvelope.outcome).toBe("success");
+    expect(pipedEnvelope.exitCode).toBe(0);
 
     const reportedEnvelope = box.json("report.json");
 

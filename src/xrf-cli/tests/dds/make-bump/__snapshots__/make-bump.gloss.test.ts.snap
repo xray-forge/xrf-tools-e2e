@@ -13,16 +13,10 @@ exports[`dds make-bump gloss should refuse a gloss outside the range a gloss is 
 exports[`dds make-bump gloss should report the verdict rather than failing on it 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -30,13 +24,10 @@ exports[`dds make-bump gloss should report the verdict rather than failing on it
     "make-bump",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "bump": "<sandbox>/matte_bump.dds",
     "companion": "<sandbox>/matte_bump#.dds",
@@ -63,8 +54,8 @@ exports[`dds make-bump gloss should write the expected files 1`] = `
 [
   {
     "path": "matte.json",
-    "sha256": "bad586c753e677adafb21ed08bd63381bc9b3e2697db3e088c32eb671a42a29a",
-    "size": 745,
+    "sha256": "5a4afe4ea3818d4e66ea2bf6cb768d19b71f3ddd9654a79bd514fb5798ffc3b1",
+    "size": 524,
   },
   {
     "path": "matte_bump#.dds",

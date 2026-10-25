@@ -23,16 +23,10 @@ exports[`thm patch-bump assignment and disable should clear an assigned referenc
 exports[`thm patch-bump assignment and disable should clear an assigned reference back to the baseline bytes 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -40,13 +34,10 @@ exports[`thm patch-bump assignment and disable should clear an assigned referenc
     "patch-bump",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "isDryRun": false,
     "originalSize": 160,
@@ -70,16 +61,10 @@ exports[`thm patch-bump assignment and disable should leave an already empty bum
 exports[`thm patch-bump assignment and disable should report clearing the baseline declaration 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -87,13 +72,10 @@ exports[`thm patch-bump assignment and disable should report clearing the baseli
     "patch-bump",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "isDryRun": false,
     "originalSize": 138,
@@ -107,16 +89,10 @@ exports[`thm patch-bump assignment and disable should report clearing the baseli
 exports[`thm patch-bump assignment and disable should report the bump it replaced 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -124,13 +100,10 @@ exports[`thm patch-bump assignment and disable should report the bump it replace
     "patch-bump",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "isDryRun": false,
     "originalSize": 138,
@@ -145,8 +118,8 @@ exports[`thm patch-bump assignment and disable should write the expected files 1
 [
   {
     "path": "assigned.json",
-    "sha256": "4bfb20d0ef3e9ba50afef017704f043f3e0a3714138752f206db731944c3354b",
-    "size": 645,
+    "sha256": "dab7b7fd6fecc261bc7f7420e0e4b1abb75f39d0854539309f8186ff70b72370",
+    "size": 424,
   },
   {
     "path": "assigned.thm",
@@ -155,8 +128,8 @@ exports[`thm patch-bump assignment and disable should write the expected files 1
   },
   {
     "path": "cleared.json",
-    "sha256": "a0228d9aa295a208b187bd36083aaf969ff6cd38470d40757cbe517a5baaf451",
-    "size": 645,
+    "sha256": "78abeee1c915fecbe45fcf09b82f34a63fcbcc41537cb7f58ad5a84952e6c82f",
+    "size": 424,
   },
   {
     "path": "cleared.thm",
@@ -165,8 +138,8 @@ exports[`thm patch-bump assignment and disable should write the expected files 1
   },
   {
     "path": "disabled-assigned.json",
-    "sha256": "00c6b6c7fb0e56b6c03b70e8e9f57e0987af630748fac0982a13603a121312f0",
-    "size": 669,
+    "sha256": "f38ca02f1d04413d08c5d3d142cb01a9db4a741eb09c3d24691ac909965a0518",
+    "size": 448,
   },
   {
     "path": "disabled-assigned.thm",

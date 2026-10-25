@@ -3,16 +3,10 @@
 exports[`gamedata list source modes should record every supported source-mode result 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`gamedata list source modes should record every supported source-mode re
     "list",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "collisions": [],
     "duration": "<duration>",
@@ -58,7 +49,6 @@ exports[`gamedata list source modes should record every supported source-mode re
     "origin": "<sandbox>/install",
     "shadowed": [],
     "skipped": [],
-    "total": 2,
   },
 }
 `;
@@ -66,16 +56,10 @@ exports[`gamedata list source modes should record every supported source-mode re
 exports[`gamedata list source modes should record every supported source-mode result 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -83,13 +67,10 @@ exports[`gamedata list source modes should record every supported source-mode re
     "list",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "collisions": [],
     "duration": "<duration>",
@@ -121,7 +102,6 @@ exports[`gamedata list source modes should record every supported source-mode re
     "origin": "<sandbox>/install",
     "shadowed": [],
     "skipped": [],
-    "total": 2,
   },
 }
 `;
@@ -129,16 +109,10 @@ exports[`gamedata list source modes should record every supported source-mode re
 exports[`gamedata list source modes should record every supported source-mode result 3`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -146,13 +120,10 @@ exports[`gamedata list source modes should record every supported source-mode re
     "list",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "collisions": [],
     "duration": "<duration>",
@@ -184,7 +155,6 @@ exports[`gamedata list source modes should record every supported source-mode re
     "origin": "<sandbox>/install",
     "shadowed": [],
     "skipped": [],
-    "total": 3,
   },
 }
 `;
@@ -192,16 +162,10 @@ exports[`gamedata list source modes should record every supported source-mode re
 exports[`gamedata list source modes should record every supported source-mode result 4`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -209,13 +173,10 @@ exports[`gamedata list source modes should record every supported source-mode re
     "list",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "collisions": [],
     "duration": "<duration>",
@@ -242,7 +203,6 @@ exports[`gamedata list source modes should record every supported source-mode re
     "origin": "<sandbox>/install/database",
     "shadowed": [],
     "skipped": [],
-    "total": 2,
   },
 }
 `;
@@ -250,16 +210,10 @@ exports[`gamedata list source modes should record every supported source-mode re
 exports[`gamedata list source modes should record every supported source-mode result 5`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -267,13 +221,10 @@ exports[`gamedata list source modes should record every supported source-mode re
     "list",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "collisions": [],
     "duration": "<duration>",
@@ -300,7 +251,6 @@ exports[`gamedata list source modes should record every supported source-mode re
     "origin": "<sandbox>/install/database",
     "shadowed": [],
     "skipped": [],
-    "total": 2,
   },
 }
 `;
@@ -309,18 +259,18 @@ exports[`gamedata list source modes should write the expected files 1`] = `
 [
   {
     "path": "auto-install.json",
-    "sha256": "5a4b2bc0411fc3cb3726f0a8b3a5178070c87a947efcfc8d031c5a755ba0746f",
-    "size": 1284,
+    "sha256": "ef5a0ef64bcb7366223b5a539aa0d8675f04ba316c066bc17930871955dd07ff",
+    "size": 1047,
   },
   {
     "path": "auto-volumes.json",
-    "sha256": "1f0e5a65a57d54c498c216a1e77911fd71fc62aeafc508b5b04bbd036a45985b",
-    "size": 1184,
+    "sha256": "0447841d290150c9d23faedf6018cb6877bdc7a98ee703ea7ab067b688402b4d",
+    "size": 947,
   },
   {
     "path": "directory.json",
-    "sha256": "ad9b57044f06940b5786356dc43dc3fd05f18ee0c7688a4120a118a028e67bf5",
-    "size": 1257,
+    "sha256": "6bb8ffe38de653498bd28645f378740477863c0e158118d9363507ca33a4db4c",
+    "size": 1020,
   },
   {
     "path": "install/database/gamedata.db",
@@ -339,8 +289,8 @@ exports[`gamedata list source modes should write the expected files 1`] = `
   },
   {
     "path": "installation.json",
-    "sha256": "5a4b2bc0411fc3cb3726f0a8b3a5178070c87a947efcfc8d031c5a755ba0746f",
-    "size": 1284,
+    "sha256": "ef5a0ef64bcb7366223b5a539aa0d8675f04ba316c066bc17930871955dd07ff",
+    "size": 1047,
   },
   {
     "path": "stage/configs/archive_only.ltx",
@@ -354,8 +304,8 @@ exports[`gamedata list source modes should write the expected files 1`] = `
   },
   {
     "path": "volumes.json",
-    "sha256": "fc45d3bb7cdfd52bdce3cf58859cda98a5c7f7a28be475ac5eb4cbf13d90ecd9",
-    "size": 1199,
+    "sha256": "3d8f6e08e3a337acf44a29888da52cde0435444859175da05a28aaf108c1916e",
+    "size": 962,
   },
 ]
 `;

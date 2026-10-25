@@ -54,7 +54,6 @@ describe("gamedata verify animations", () => {
     expect(valid).toMatchSnapshot();
     expect(box.json("valid.json")).toMatchObject({
       exitCode: 0,
-      outcome: "success",
       result: {
         checks: [
           { findings: [], status: "skipped", id: "coverage" },
@@ -76,7 +75,6 @@ describe("gamedata verify animations", () => {
     expect(damaged).toMatchSnapshot();
     expect(box.json("damaged.json")).toMatchObject({
       exitCode: 3,
-      outcome: "checkFailed",
       result: {
         checks: [
           { findings: [], status: "skipped", id: "coverage" },

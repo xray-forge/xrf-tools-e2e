@@ -64,7 +64,6 @@ describe("gamedata list enhanced edition", () => {
     expect(automatic.exitCode).toBe(0);
     expect(report.result).toMatchObject({
       origin: box.at("install"),
-      total: 2,
       entries: [
         {
           container: box.at("install/resources/configs.db").replaceAll("\\", "/"),
@@ -84,7 +83,6 @@ describe("gamedata list enhanced edition", () => {
     expect(containing.exitCode).toBe(0);
     expect(envelopeAt(box.at("containing.json")).result).toMatchObject({
       origin: box.at("install/gamedata/configs"),
-      total: 2,
     });
   });
 

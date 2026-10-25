@@ -98,7 +98,6 @@ describe("gamedata list source modes", () => {
     expect(installation.exitCode).toBe(0);
     expect(report.result).toMatchObject({
       origin: box.at("install"),
-      total: 2,
       entries: [
         { container: archive, isArchived: true, logicalPath: "configs\\archive_only.ltx" },
         { container: loose, isArchived: false, logicalPath: "configs\\system.ltx" },
@@ -114,7 +113,6 @@ describe("gamedata list source modes", () => {
     expect(directory.exitCode).toBe(0);
     expect(report.result).toMatchObject({
       origin: box.at("install"),
-      total: 3,
       entries: [
         { container: install, isArchived: false, logicalPath: "database\\gamedata.db" },
         { container: install, isArchived: false, logicalPath: "fsgame.ltx" },
@@ -131,7 +129,6 @@ describe("gamedata list source modes", () => {
     expect(volumes.exitCode).toBe(0);
     expect(report.result).toMatchObject({
       origin: box.at("install/database"),
-      total: 2,
       entries: [
         { container: archive, isArchived: true, logicalPath: "configs\\archive_only.ltx" },
         { container: archive, isArchived: true, logicalPath: "configs\\system.ltx" },
@@ -141,7 +138,6 @@ describe("gamedata list source modes", () => {
     expect(box.json("volumes.json")).toMatchObject({
       result: {
         origin: "<sandbox>/install/database",
-        total: 2,
         entries: [
           {
             container: "<sandbox>/install/database/gamedata.db",

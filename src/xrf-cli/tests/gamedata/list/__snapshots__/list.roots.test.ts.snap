@@ -3,16 +3,10 @@
 exports[`gamedata list repeated roots should record the resolved roots 1`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -20,13 +14,10 @@ exports[`gamedata list repeated roots should record the resolved roots 1`] = `
     "list",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "collisions": [],
     "duration": "<duration>",
@@ -69,7 +60,6 @@ exports[`gamedata list repeated roots should record the resolved roots 1`] = `
       },
     ],
     "skipped": [],
-    "total": 3,
   },
 }
 `;
@@ -77,16 +67,10 @@ exports[`gamedata list repeated roots should record the resolved roots 1`] = `
 exports[`gamedata list repeated roots should record the resolved roots 2`] = `
 {
   "build": {
-    "builtAt": "<build>",
     "commit": "<build>",
     "isDirty": "<build>",
     "kind": "<build>",
-    "optimization": "<build>",
     "profile": "<build>",
-    "reference": "<build>",
-    "runId": "<build>",
-    "rustc": "<build>",
-    "target": "<build>",
     "version": "<build>",
   },
   "command": [
@@ -94,13 +78,10 @@ exports[`gamedata list repeated roots should record the resolved roots 2`] = `
     "list",
   ],
   "duration": "<duration>",
-  "error": null,
   "execution": {
-    "origin": "auto",
     "workers": "<workers>",
   },
   "exitCode": 0,
-  "outcome": "success",
   "result": {
     "collisions": [],
     "duration": "<duration>",
@@ -127,7 +108,6 @@ exports[`gamedata list repeated roots should record the resolved roots 2`] = `
     "origin": "<sandbox>/base, <sandbox>/base",
     "shadowed": [],
     "skipped": [],
-    "total": 2,
   },
 }
 `;
@@ -146,13 +126,13 @@ exports[`gamedata list repeated roots should write the expected files 1`] = `
   },
   {
     "path": "identical.json",
-    "sha256": "69047ff2c4c1b0c0faa0872b9ed42a70446574d8274aa0c9a255717733bba949",
-    "size": 1119,
+    "sha256": "f57312f745e47648e1cd917e1d1e1ce723a27806b93b9e646e188f235d5352d1",
+    "size": 882,
   },
   {
     "path": "overlay.json",
-    "sha256": "499e603e442e542bf266f0206ab95d3e1685397bfd1b913105fed9e32c17784d",
-    "size": 1509,
+    "sha256": "66f2aaea862394437ed951a518c6561e30a46301182feff8984566b9624b2abd",
+    "size": 1272,
   },
   {
     "path": "override/configs/override.ltx",
