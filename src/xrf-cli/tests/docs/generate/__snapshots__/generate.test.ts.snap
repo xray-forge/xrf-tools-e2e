@@ -5,7 +5,7 @@ exports[`docs generate should accept pages it just wrote 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "CLI documentation in <sandbox>/docs is up to date (17 pages)",
+    "CLI documentation in <sandbox>/docs is up to date (18 pages)",
   ],
 }
 `;
@@ -15,7 +15,7 @@ exports[`docs generate should generate a page per command group 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Generated 17 documentation pages in <sandbox>/docs",
+    "Generated 18 documentation pages in <sandbox>/docs",
   ],
 }
 `;
@@ -38,6 +38,7 @@ exports[`docs generate should list every group and command in the index 1`] = `
   "| [Docs](docs.md) | [\`docs generate\`](docs.md#xrf-cli-docs-generate) |",
   "| [Externs](externs.md) | [\`externs export\`](externs.md#xrf-cli-externs-export) |",
   "| [Gamedata](gamedata.md) | [\`gamedata list\`](gamedata.md#xrf-cli-gamedata-list), [\`gamedata verify\`](gamedata.md#xrf-cli-gamedata-verify) |",
+  "| [Game materials](gamemtl.md) | [\`gamemtl info\`](gamemtl.md#xrf-cli-gamemtl-info) |",
   "| [Level](level.md) | [\`level info\`](level.md#xrf-cli-level-info), [\`level verify\`](level.md#xrf-cli-level-verify) |",
   "| [LTX](ltx.md) | [\`ltx format\`](ltx.md#xrf-cli-ltx-format), [\`ltx inspect\`](ltx.md#xrf-cli-ltx-inspect), [\`ltx list\`](ltx.md#xrf-cli-ltx-list), [\`ltx verify\`](ltx.md#xrf-cli-ltx-verify) |",
   "| [OGF](ogf.md) | [\`ogf fix\`](ogf.md#xrf-cli-ogf-fix), [\`ogf info\`](ogf.md#xrf-cli-ogf-info), [\`ogf patch-motion-refs\`](ogf.md#xrf-cli-ogf-patch-motion-refs), [\`ogf patch-texture-refs\`](ogf.md#xrf-cli-ogf-patch-texture-refs), [\`ogf verify\`](ogf.md#xrf-cli-ogf-verify) |",
@@ -65,6 +66,7 @@ exports[`docs generate should reject pages that drifted 1`] = `
     "  missing: docs.md",
     "  missing: externs.md",
     "  missing: gamedata.md",
+    "  missing: gamemtl.md",
     "  missing: level.md",
     "  missing: ltx.md",
     "  missing: ogf.md",
@@ -75,7 +77,7 @@ exports[`docs generate should reject pages that drifted 1`] = `
     "  missing: sprite.md",
     "  missing: thm.md",
     "  missing: translation.md",
-    "Check failed: 17 finding(s)",
+    "Check failed: 18 finding(s)",
   ],
   "stdout": [],
 }
@@ -1464,8 +1466,8 @@ exports[`docs generate should write the expected pages 1`] = `
 [
   {
     "path": "docs/README.md",
-    "sha256": "d4d8f79a5d5b079c81637a9cb5badfee188b8f19f9cac6d26828c0d089de84f3",
-    "size": 4179,
+    "sha256": "98f697249e8896d85ca5e0886466d5b6799b29dda27a4ff92a6a7a9ae8a0f4c2",
+    "size": 4264,
   },
   {
     "path": "docs/archive.md",
@@ -1496,6 +1498,11 @@ exports[`docs generate should write the expected pages 1`] = `
     "path": "docs/gamedata.md",
     "sha256": "ec96ee943eda31008c36dee0651fc9fb34fc82f2e51666e986b03b7a43c0fa2a",
     "size": 3040,
+  },
+  {
+    "path": "docs/gamemtl.md",
+    "sha256": "c76045075507ba697fea5a5d34bf8cc83011313c479e03e33fa6d6a1177a8818",
+    "size": 721,
   },
   {
     "path": "docs/level.md",

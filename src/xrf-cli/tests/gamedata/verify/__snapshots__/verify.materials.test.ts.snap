@@ -1,0 +1,351 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata verify materials should fail a tree holding no library 1`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "Game material library was not read: Not found error: no asset 'gamemtl.xr' in the project",
+    "Check 'materials' is failed with 1 finding(s)",
+    "Check failed: 1 finding(s)",
+  ],
+  "stdout": [
+    "Workers: <workers> (auto)",
+    "Opening gamedata project",
+    "Root: <sandbox>/absent, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
+    "Engine: vanilla (no Anomaly or Atmosfear signs)",
+    "Verifying gamedata project: <sandbox>/absent",
+    "Verifying modules:",
+    "  -materials",
+    "",
+    "Verify declared source coverage:",
+    "Verified declared source coverage in <duration>, 0 unopened source(s)",
+    "Verify path collisions:",
+    "Verified gamedata path collisions in <duration>, 0 unreachable file(s)",
+    "Verify materials:",
+    "Verified gamedata materials in <duration>, Game material library unreadable",
+    "Gamedata project checked in <duration>",
+  ],
+}
+`;
+
+exports[`gamedata verify materials should pass a library the engine loads and a config naming one of its materials in any case 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Workers: <workers> (auto)",
+    "Opening gamedata project",
+    "Root: <sandbox>/valid, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
+    "Engine: vanilla (no Anomaly or Atmosfear signs)",
+    "Verifying gamedata project: <sandbox>/valid",
+    "Verifying modules:",
+    "  -materials",
+    "",
+    "Verify declared source coverage:",
+    "Verified declared source coverage in <duration>, 0 unopened source(s)",
+    "Verify path collisions:",
+    "Verified gamedata path collisions in <duration>, 0 unreachable file(s)",
+    "Verify materials:",
+    "Verified gamedata materials in <duration>, 7 materials, 1 pairs; 9/9 material references valid",
+    "Gamedata project checked in <duration>",
+    "Gamedata project: passed",
+  ],
+}
+`;
+
+exports[`gamedata verify materials should record the reports as readable documents 1`] = `
+{
+  "build": {
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "profile": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "execution": {
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "result": {
+    "cache": {
+      "bytes": 38,
+      "entries": 1,
+      "hits": 1,
+      "misses": 2,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "coverage",
+        "status": "skipped",
+        "summary": "Every declared source opened",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "collisions",
+        "status": "skipped",
+        "summary": "No unreachable files",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "materials",
+        "status": "passed",
+        "summary": "7 materials, 1 pairs; 9/9 material references valid",
+      },
+    ],
+    "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
+    "skippedMounts": [],
+    "status": "passed",
+  },
+}
+`;
+
+exports[`gamedata verify materials should record the reports as readable documents 2`] = `
+{
+  "build": {
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "profile": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "execution": {
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "result": {
+    "cache": {
+      "bytes": 39,
+      "entries": 1,
+      "hits": 1,
+      "misses": 2,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "coverage",
+        "status": "skipped",
+        "summary": "Every declared source opened",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "collisions",
+        "status": "skipped",
+        "summary": "No unreachable files",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "Unknown game material: [m_dog] material = creatures\\unknown",
+            "ruleId": "materials.reference",
+            "subject": "configs/system.ltx",
+          },
+          {
+            "message": "The engine asserts material 'default_object' is dynamic, and the library defines it as static",
+            "ruleId": "materials.engine",
+            "subject": "gamemtl.xr",
+          },
+          {
+            "message": "The engine looks up material 'objects\\knife', which the library does not define",
+            "ruleId": "materials.engine",
+            "subject": "gamemtl.xr",
+          },
+          {
+            "message": "Pair materials\\earth - 42 lists 7 step sounds, more than the 6 the engine loads",
+            "ruleId": "materials.list",
+            "subject": "gamemtl.xr",
+          },
+          {
+            "message": "Wallmark texture 'wm\\missing' named by 1 pairs is missing",
+            "ruleId": "materials.mark",
+            "subject": "gamemtl.xr",
+          },
+          {
+            "message": "Pair materials\\earth - 42 names material 42, which the library does not define",
+            "ruleId": "materials.pair",
+            "subject": "gamemtl.xr",
+          },
+        ],
+        "id": "materials",
+        "status": "failed",
+        "summary": "6 materials, 1 pairs; 4/9 material references valid",
+      },
+    ],
+    "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
+    "skippedMounts": [],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`gamedata verify materials should record the reports as readable documents 3`] = `
+{
+  "build": {
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "profile": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "execution": {
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "result": {
+    "cache": {
+      "bytes": 0,
+      "entries": 1,
+      "hits": 0,
+      "misses": 1,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "coverage",
+        "status": "skipped",
+        "summary": "Every declared source opened",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "collisions",
+        "status": "skipped",
+        "summary": "No unreachable files",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "Failed to read game material library: Not found error: no asset 'gamemtl.xr' in the project",
+            "ruleId": "materials.library",
+            "subject": "gamemtl.xr",
+          },
+        ],
+        "id": "materials",
+        "status": "failed",
+        "summary": "Game material library unreadable",
+      },
+    ],
+    "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
+    "skippedMounts": [],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`gamedata verify materials should record the reports as readable documents 4`] = `
+[
+  {
+    "path": "absent.json",
+    "sha256": "2eeba2fcc7aa98d80ee5a0b84e679cd516202a730f046bad5d85e270d9e8b5b9",
+    "size": 1391,
+  },
+  {
+    "path": "absent/configs/system.ltx",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+  },
+  {
+    "path": "broken.json",
+    "sha256": "96c25b4ed3bdede42d2e9e76e111812c8868fdffba5a218bdded6dbb047aadca",
+    "size": 2424,
+  },
+  {
+    "path": "broken/configs/system.ltx",
+    "sha256": "de33eb0acb14f4dd6dfa9b83af695b5591063739bc3a89b9713f5c980b8c071d",
+    "size": 39,
+  },
+  {
+    "path": "broken/gamemtl.xr",
+    "sha256": "51586cf2b799cfad8a6d99bb443a1708384d8397fcaade59fd38d99f3e875999",
+    "size": 1065,
+  },
+  {
+    "path": "valid.json",
+    "sha256": "2ce30f8b0247e1b07a6043c4583d2a36c736b58fecb38fcc249c98b33f0164c6",
+    "size": 1181,
+  },
+  {
+    "path": "valid/configs/system.ltx",
+    "sha256": "a4263f383822689c4a0768b874df31190e9be9e9f51e0e3f1cc55768dfca06bf",
+    "size": 38,
+  },
+  {
+    "path": "valid/gamemtl.xr",
+    "sha256": "50ab8b338b99a46834c0ddc7d7a1cfe9213bc83dafb1f1d394a26563fd329b4a",
+    "size": 1217,
+  },
+  {
+    "path": "valid/textures/wm/wm_hit.dds",
+    "sha256": "3c353eaac54b08b29f50c8f2fb7bf68ef3d2b103c1a7ad9334fd4cb862e02e13",
+    "size": 144,
+  },
+]
+`;
+
+exports[`gamedata verify materials should report each engine assertion the library and the configs would raise 1`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "Check 'materials' is failed with 6 finding(s)",
+    "Check failed: 6 finding(s)",
+  ],
+  "stdout": [
+    "Workers: <workers> (auto)",
+    "Opening gamedata project",
+    "Root: <sandbox>/broken, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
+    "Engine: vanilla (no Anomaly or Atmosfear signs)",
+    "Verifying gamedata project: <sandbox>/broken",
+    "Verifying modules:",
+    "  -materials",
+    "",
+    "Verify declared source coverage:",
+    "Verified declared source coverage in <duration>, 0 unopened source(s)",
+    "Verify path collisions:",
+    "Verified gamedata path collisions in <duration>, 0 unreachable file(s)",
+    "Verify materials:",
+    "Verified gamedata materials in <duration>, 6 materials, 1 pairs; 4/9 material references valid",
+    "Gamedata project checked in <duration>",
+  ],
+}
+`;

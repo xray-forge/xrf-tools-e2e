@@ -6,6 +6,7 @@ exports[`gamedata verify full run should answer non-zero and report only the fai
   "stderr": [
     "There is no [thunderbolt_common] section, where the engine reads where thunderbolts strike from: <resources>/gamedata/configs/system.ltx",
     "No weather cycles under environment\\weathers, where the engine requires at least one: configs/environment/weathers",
+    "Game material library was not read: Not found error: no asset 'gamemtl.xr' in the project",
     "Cannot read OGF texture: wpn\\wpn_bolt",
     "Mesh motion refs not found by path: dynamics\\devices\\dev_bolt\\dev_bolt_hud_animation",
     "Not matching bones count in ogf and reference omf: 2 <-> 7 : wpn_body,body <-> wpn_body,body,trigger,zatvor,lock,wpn_silencer,magazin",
@@ -24,10 +25,11 @@ exports[`gamedata verify full run should answer non-zero and report only the fai
     "Check 'environment' is failed with 2 finding(s)",
     "Check 'levels' is failed with 10 finding(s)",
     "Check 'ltx' is failed with 7 finding(s)",
+    "Check 'materials' is failed with 1 finding(s)",
     "Check 'meshes' is failed with 11 finding(s)",
     "Check 'particles' is failed with 964 finding(s)",
     "Check 'shaders' is failed with 1 finding(s)",
-    "Check failed: 995 finding(s)",
+    "Check failed: 996 finding(s)",
   ],
   "stdout": [],
 }
@@ -37,8 +39,8 @@ exports[`gamedata verify full run should write a findings report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "a589cb13990bc8fbc4f88937c7010020de24493054c0e9f19b672fb455918d93",
-    "size": 238679,
+    "sha256": "32574088cdb28a39fc1016cb196d8f063c108ed37e4d261be8cc55edf422c57a",
+    "size": 239093,
   },
 ]
 `;

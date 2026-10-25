@@ -1,0 +1,176 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata verify material usage should record the report as a readable document 1`] = `
+{
+  "build": {
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "profile": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "execution": {
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "result": {
+    "cache": {
+      "bytes": 0,
+      "entries": 1,
+      "hits": 1,
+      "misses": 6,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "coverage",
+        "status": "skipped",
+        "summary": "Every declared source opened",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "collisions",
+        "status": "skipped",
+        "summary": "No unreachable files",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "Mesh bone 'link' is made of static game material 'objects\\clothes', and the engine asserts a bone's is dynamic",
+            "ruleId": "meshes.game-material",
+            "subject": "meshes/ogf/notes_paper_1.ogf",
+          },
+        ],
+        "id": "meshes",
+        "status": "failed",
+        "summary": "1/1 shader libraries valid, 205 blender definitions; 0/1 meshes valid",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "Unknown particle reference: collide particles of 1 pairs = missing_particle",
+            "ruleId": "particles-usage.reference",
+            "subject": "gamemtl.xr",
+          },
+        ],
+        "id": "particles-usage",
+        "status": "failed",
+        "summary": "1/2 particle references valid; 0/0 spawn files readable; 0 custom data sections unparsed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "Unknown sound reference: step sounds of 2 pairs = weapons\\missing",
+            "ruleId": "sounds.references",
+            "subject": "gamemtl.xr",
+          },
+        ],
+        "id": "sounds",
+        "status": "failed",
+        "summary": "1/1 sounds valid; 1/2 sound references valid",
+      },
+    ],
+    "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
+    "skippedMounts": [],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`gamedata verify material usage should record the report as a readable document 2`] = `
+[
+  {
+    "path": "report.json",
+    "sha256": "26f31afd0d3bb931924c04427a4b8fb934f094518e90569759aa81c0914d06a5",
+    "size": 2332,
+  },
+  {
+    "path": "tree/configs/system.ltx",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+  },
+  {
+    "path": "tree/gamemtl.xr",
+    "sha256": "9b868c4d96a0cb9ecc4636cfe5e77e614a99687026b2bd8244f8f816debab6bf",
+    "size": 1199,
+  },
+  {
+    "path": "tree/meshes/ogf/notes_paper_1.ogf",
+    "sha256": "ef49409071d4f3be76c82e6ffa995c2386d50aad5e5eff7663df11133d0c5a6b",
+    "size": 1976,
+  },
+  {
+    "path": "tree/particles.xr",
+    "sha256": "0786f7746df643a37b6420b652744270d1fdc15787740bad1c1c33b222a81037",
+    "size": 1184775,
+  },
+  {
+    "path": "tree/shaders.xr",
+    "sha256": "526e9363e42764c56a39bae72de854d89d65dfc1fe9aca0231e576456b8720c9",
+    "size": 191315,
+  },
+  {
+    "path": "tree/sounds/weapons/no_sound.ogg",
+    "sha256": "b74d4e310bb86f67bbffecd969223aa697eb25f5b36cc74551858e8fb5cb6742",
+    "size": 3573,
+  },
+  {
+    "path": "tree/textures/item/item_notes.dds",
+    "sha256": "3c353eaac54b08b29f50c8f2fb7bf68ef3d2b103c1a7ad9334fd4cb862e02e13",
+    "size": 144,
+  },
+]
+`;
+
+exports[`gamedata verify material usage should report a bone made of a static material, a missing pair particle and a missing pair sound 1`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "Mesh is not valid: meshes\\ogf\\notes_paper_1.ogf",
+    "Unknown particle reference: collide particles of 1 pairs = missing_particle (gamemtl.xr)",
+    "Check 'meshes' is failed with 1 finding(s)",
+    "Check 'particles-usage' is failed with 1 finding(s)",
+    "Check 'sounds' is failed with 1 finding(s)",
+    "Check failed: 3 finding(s)",
+  ],
+  "stdout": [
+    "Workers: <workers> (auto)",
+    "Opening gamedata project",
+    "Root: <sandbox>/tree, ignored: [.git, .idea, particles_unpacked, textures_unpacked, .gitignore, .gitattributes, README.md, LICENSE]",
+    "Engine: vanilla (no Anomaly or Atmosfear signs)",
+    "Verifying gamedata project: <sandbox>/tree",
+    "Verifying modules:",
+    "  -meshes",
+    "  -particles-usage",
+    "  -sounds",
+    "",
+    "Verify declared source coverage:",
+    "Verified declared source coverage in <duration>, 0 unopened source(s)",
+    "Verify path collisions:",
+    "Verified gamedata path collisions in <duration>, 0 unreachable file(s)",
+    "Verify meshes:",
+    "Verified gamedata meshes in <duration>, 1/1 shader libraries valid, 205 blender definitions; 0/1 meshes valid",
+    "Verify particles usage:",
+    "Verified gamedata particles usage in <duration>, 1/2 valid references, 0/0 spawn files inspected, 0 unparsed custom data sections",
+    "Verify sounds:",
+    "Verified gamedata sounds in <duration>, 1/1 sounds valid; 1/2 sound references valid",
+    "Gamedata project checked in <duration>",
+  ],
+}
+`;

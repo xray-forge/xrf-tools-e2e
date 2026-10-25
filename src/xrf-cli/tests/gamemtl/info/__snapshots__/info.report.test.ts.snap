@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamemtl info report should report the counts and the game of the vanilla library 1`] = `
+{
+  "build": {
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "profile": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamemtl",
+    "info",
+  ],
+  "duration": "<duration>",
+  "execution": {
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "result": {
+    "dynamicMaterials": 29,
+    "game": "callOfPripyat",
+    "inheritingPairs": 984,
+    "materials": 63,
+    "pairs": 1421,
+    "version": 1,
+  },
+}
+`;

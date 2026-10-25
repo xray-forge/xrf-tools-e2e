@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamemtl info should refuse a path holding nothing 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Not found error: Game material library was not read: <sandbox>/absent.xr, error: <missing path>",
+  ],
+  "stdout": [
+    "Read game material library <sandbox>/absent.xr",
+  ],
+}
+`;
+
+exports[`gamemtl info should refuse a version the engine does not load 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Not implemented error: Unexpected game material library version 2 on read, only version 1 is implemented",
+  ],
+  "stdout": [
+    "Read game material library <sandbox>/version.xr",
+  ],
+}
+`;
+
+exports[`gamemtl info should report the game, materials and pairs of the vanilla library 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read game material library <resources>/gamemtl/gamemtl.xr",
+    "Game material library information:",
+    "Version: 1",
+    "Game: Call of Pripyat",
+    "Materials count: 63, dynamic: 29",
+    "Pairs count: 1421, inheriting: 984",
+  ],
+}
+`;
+
+exports[`gamemtl info should take a library without newer chunks for the first game 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read game material library <sandbox>/soc.xr",
+    "Game material library information:",
+    "Version: 1",
+    "Game: Shadow of Chernobyl",
+    "Materials count: 5, dynamic: 1",
+    "Pairs count: 1, inheriting: 0",
+  ],
+}
+`;
+
+exports[`gamemtl info should write only its fixtures 1`] = `
+[
+  {
+    "path": "soc.xr",
+    "sha256": "fb9f03a42d29e4ee78a43cf6e79574704d15dc911c3af12d68a51637017370ea",
+    "size": 762,
+  },
+  {
+    "path": "version.xr",
+    "sha256": "865c7162dfeafd8efa839bdeb8c696af0954d385d6608a3a9c4506d7f72de2f8",
+    "size": 26,
+  },
+]
+`;
