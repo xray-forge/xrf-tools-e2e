@@ -6,6 +6,7 @@ exports[`ltx verify schemes --dltx should fail the resolved section with the fla
   "stderr": [
     "Ltx scheme error in '<resources>/ltx-schemes-dltx/configs/items/w_ak74.ltx' resolved from '<resources>/ltx-schemes-dltx/configs/system.ltx' [wpn_ak74] cost : Invalid value, unsigned 32 bit number is expected, got 'expensive'",
     "Ltx scheme error in '<resources>/ltx-schemes-dltx/configs/items/w_ak74.ltx' resolved from '<resources>/ltx-schemes-dltx/configs/system.ltx' [wpn_ak74] rpm : Required field was not provided",
+    "Check 'ltx' is failed with 2 finding(s)",
     "Check failed: 2 finding(s)",
   ],
   "stdout": [
@@ -13,7 +14,7 @@ exports[`ltx verify schemes --dltx should fail the resolved section with the fla
     "Verify path: <resources>/ltx-schemes-dltx/configs",
     "Checked 4 files, 2 sections in <duration>",
     "Verified 50.00%, 1 files, 1 sections, 2 fields",
-    "Found 2 error(s)",
+    "Found 2 finding(s)",
   ],
 }
 `;
@@ -22,7 +23,8 @@ exports[`ltx verify schemes --dltx should refuse the patch file and judge the se
 {
   "exitCode": 3,
   "stderr": [
-    "Verify error: Cannot read <resources>/ltx-schemes-dltx/configs/mod_system_xxx.ltx: Ltx parse error: 4:1 Found DLTX section '![wpn_ak74]', which needs the dltx dialect; rerun with --dltx to evaluate patch files",
+    "Ltx unreadable entry in '<resources>/ltx-schemes-dltx/configs/mod_system_xxx.ltx' : Ltx parse error: 4:1 Found DLTX section '![wpn_ak74]', which needs the dltx dialect; rerun with --dltx to evaluate patch files",
+    "Check 'ltx' is failed with 1 finding(s)",
     "Check failed: 1 finding(s)",
   ],
   "stdout": [
@@ -30,7 +32,7 @@ exports[`ltx verify schemes --dltx should refuse the patch file and judge the se
     "Verify path: <resources>/ltx-schemes-dltx/configs",
     "Checked 4 files, 2 sections in <duration>",
     "Verified 50.00%, 2 files, 1 sections, 3 fields",
-    "Found 1 error(s)",
+    "Found 1 finding(s)",
   ],
 }
 `;

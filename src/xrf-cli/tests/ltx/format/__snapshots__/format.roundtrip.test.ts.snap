@@ -21,7 +21,8 @@ exports[`ltx format roundtrip should not change what the files mean 1`] = `
     "Verify path: <sandbox>/configs",
     "Checked 7 files, 32 sections in <duration>",
     "Verified 0.00%, 2 files, 0 sections, 0 fields",
-    "Found 0 error(s)",
+    "Found 0 finding(s)",
+    "LTX verification: passed",
   ],
 }
 `;

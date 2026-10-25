@@ -6,12 +6,13 @@ import { beforeAll, describe, expect, it } from "@jest/globals";
 import { type Optional } from "#/types";
 import { Sandbox } from "#/xrf-cli/test/sandbox";
 
-interface ISchemeFinding {
-  LtxScheme: { at: string };
+interface IVerifyFinding {
+  ruleId: string;
+  subject: string;
 }
 
-interface ISchemeReport {
-  result: { errors: Array<ISchemeFinding> };
+interface IVerifyReport {
+  result: { checks: Array<{ findings: Array<IVerifyFinding> }> };
 }
 
 /**
@@ -20,7 +21,7 @@ interface ISchemeReport {
 describe("ltx verify report paths", () => {
   const box = new Sandbox(__filename);
 
-  let at: string;
+  let subject: string;
 
   beforeAll(() => {
     fs.mkdirSync(box.at("project/nested"), { recursive: true });
@@ -31,19 +32,19 @@ describe("ltx verify report paths", () => {
       expectExit: 3,
     });
 
-    const report: ISchemeReport = JSON.parse(fs.readFileSync(box.at("report.json"), "utf8")) as ISchemeReport;
+    const report: IVerifyReport = JSON.parse(fs.readFileSync(box.at("report.json"), "utf8")) as IVerifyReport;
 
-    const finding: Optional<ISchemeFinding> = report.result.errors[0];
+    const finding: Optional<IVerifyFinding> = report.result.checks[0]?.findings[0];
 
-    if (!finding) {
+    if (finding?.ruleId !== "ltx.scheme") {
       throw new Error("Expected verification to report one scheme finding");
     }
 
-    at = finding.LtxScheme.at;
+    subject = finding.subject;
   });
 
   it("should name the file the finding was raised in", () => {
-    expect(at).toContain("broken.ltx");
+    expect(subject).toContain("broken.ltx");
   });
 
   it("should render the location with this platform's separators", () => {
@@ -51,7 +52,7 @@ describe("ltx verify report paths", () => {
     // the negative assertion unfalsifiable.
     const foreign: string = process.platform === "win32" ? path.posix.sep : path.win32.sep;
 
-    expect(at).toContain(["nested", "broken.ltx"].join(path.sep));
-    expect(at).not.toContain(["nested", "broken.ltx"].join(foreign));
+    expect(subject).toContain(["nested", "broken.ltx"].join(path.sep));
+    expect(subject).not.toContain(["nested", "broken.ltx"].join(foreign));
   });
 });

@@ -50,7 +50,7 @@ exports[`gamedata verify ignored check input should empty the LTX check when the
     "Verify path: <resources>/gamedata/configs",
     "Checked 0 files, 0 sections in <duration>",
     "No LTX sections were verified",
-    "Found 0 error(s)",
+    "Found 0 finding(s)",
     "Verified gamedata ltx files in <duration>",
     "Gamedata project checked in <duration>",
     "Gamedata project: passed",

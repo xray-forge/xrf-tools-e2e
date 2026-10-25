@@ -21,18 +21,24 @@ exports[`ltx verify schemes --dltx report should report a valid section and an u
   "result": {
     "checkedFields": 3,
     "checkedSections": 1,
-    "duration": "<duration>",
-    "errors": [
+    "checks": [
       {
-        "Verify": {
-          "message": "Cannot read <resources>/ltx-schemes-dltx/configs/mod_system_xxx.ltx: Ltx parse error: 4:1 Found DLTX section '![wpn_ak74]', which needs the dltx dialect; rerun with --dltx to evaluate patch files",
-        },
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "Ltx parse error: 4:1 Found DLTX section '![wpn_ak74]', which needs the dltx dialect; rerun with --dltx to evaluate patch files",
+            "ruleId": "ltx.unreadable",
+            "subject": "<resources>/ltx-schemes-dltx/configs/mod_system_xxx.ltx",
+          },
+        ],
+        "id": "ltx",
+        "status": "failed",
       },
     ],
     "invalidSections": 0,
-    "outcome": "completed",
     "skippedSections": 1,
     "startupDuration": "<duration>",
+    "status": "failed",
     "totalFiles": 2,
     "totalSections": 2,
     "validSections": 1,
@@ -61,31 +67,29 @@ exports[`ltx verify schemes --dltx report should report the scheme findings the 
   "result": {
     "checkedFields": 2,
     "checkedSections": 1,
-    "duration": "<duration>",
-    "errors": [
+    "checks": [
       {
-        "LtxScheme": {
-          "at": "<resources>/ltx-schemes-dltx/configs/items/w_ak74.ltx",
-          "entry": "<resources>/ltx-schemes-dltx/configs/system.ltx",
-          "field": "cost",
-          "message": "Invalid value, unsigned 32 bit number is expected, got 'expensive'",
-          "section": "wpn_ak74",
-        },
-      },
-      {
-        "LtxScheme": {
-          "at": "<resources>/ltx-schemes-dltx/configs/items/w_ak74.ltx",
-          "entry": "<resources>/ltx-schemes-dltx/configs/system.ltx",
-          "field": "rpm",
-          "message": "Required field was not provided",
-          "section": "wpn_ak74",
-        },
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "[wpn_ak74] cost: Invalid value, unsigned 32 bit number is expected, got 'expensive'",
+            "ruleId": "ltx.scheme",
+            "subject": "<resources>/ltx-schemes-dltx/configs/items/w_ak74.ltx",
+          },
+          {
+            "message": "[wpn_ak74] rpm: Required field was not provided",
+            "ruleId": "ltx.scheme",
+            "subject": "<resources>/ltx-schemes-dltx/configs/items/w_ak74.ltx",
+          },
+        ],
+        "id": "ltx",
+        "status": "failed",
       },
     ],
     "invalidSections": 1,
-    "outcome": "completed",
     "skippedSections": 1,
     "startupDuration": "<duration>",
+    "status": "failed",
     "totalFiles": 1,
     "totalSections": 2,
     "validSections": 0,

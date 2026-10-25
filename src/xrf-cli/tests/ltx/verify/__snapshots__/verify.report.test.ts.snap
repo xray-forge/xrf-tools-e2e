@@ -21,12 +21,18 @@ exports[`ltx verify report should report the coverage a verification reached 1`]
   "result": {
     "checkedFields": 0,
     "checkedSections": 0,
-    "duration": "<duration>",
-    "errors": [],
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "ltx",
+        "status": "passed",
+      },
+    ],
     "invalidSections": 0,
-    "outcome": "completed",
     "skippedSections": 32,
     "startupDuration": "<duration>",
+    "status": "passed",
     "totalFiles": 2,
     "totalSections": 32,
     "validSections": 0,

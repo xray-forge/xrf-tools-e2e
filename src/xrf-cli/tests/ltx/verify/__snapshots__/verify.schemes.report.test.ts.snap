@@ -21,94 +21,64 @@ exports[`ltx verify schemes report should report every finding and the coverage 
   "result": {
     "checkedFields": 21,
     "checkedSections": 7,
-    "duration": "<duration>",
-    "errors": [
+    "checks": [
       {
-        "LtxScheme": {
-          "at": "<resources>/ltx-schemes/configs/standalone.ltx",
-          "entry": "<resources>/ltx-schemes/configs/standalone.ltx",
-          "field": "cost",
-          "message": "Invalid value, unsigned 32 bit number is expected, got 'free'",
-          "section": "ammo_9x18",
-        },
-      },
-      {
-        "LtxScheme": {
-          "at": "<resources>/ltx-schemes/configs/standalone.ltx",
-          "entry": "<resources>/ltx-schemes/configs/standalone.ltx",
-          "field": "box_size",
-          "message": "Invalid value, unsigned 8 bit number is expected, got '300'",
-          "section": "ammo_9x18",
-        },
-      },
-      {
-        "LtxScheme": {
-          "at": "<resources>/ltx-schemes/configs/items/w_broken.ltx",
-          "entry": "<resources>/ltx-schemes/configs/system.ltx",
-          "field": "cost",
-          "message": "Invalid value, unsigned 32 bit number is expected, got 'expensive'",
-          "section": "wpn_broken",
-        },
-      },
-      {
-        "LtxScheme": {
-          "at": "<resources>/ltx-schemes/configs/items/w_broken.ltx",
-          "entry": "<resources>/ltx-schemes/configs/system.ltx",
-          "field": "kind",
-          "message": "Invalid value, one of possible values [pistol,rifle,shotgun] expected, got 'launcher'",
-          "section": "wpn_broken",
-        },
-      },
-      {
-        "LtxScheme": {
-          "at": "<resources>/ltx-schemes/configs/items/w_broken.ltx",
-          "entry": "<resources>/ltx-schemes/configs/system.ltx",
-          "field": "unexpected_field",
-          "message": "Unexpected field, definition is required in strict mode",
-          "section": "wpn_broken",
-        },
-      },
-      {
-        "LtxScheme": {
-          "at": "<resources>/ltx-schemes/configs/items/w_broken.ltx",
-          "entry": "<resources>/ltx-schemes/configs/system.ltx",
-          "field": "ammo_class",
-          "message": "Required field was not provided",
-          "section": "wpn_broken",
-        },
-      },
-      {
-        "LtxScheme": {
-          "at": "<resources>/ltx-schemes/configs/items/w_broken.ltx",
-          "entry": "<resources>/ltx-schemes/configs/system.ltx",
-          "field": "ammo_class",
-          "message": "Required field was not provided",
-          "section": "wpn_incomplete",
-        },
-      },
-      {
-        "LtxScheme": {
-          "at": "<resources>/ltx-schemes/configs/items/w_broken.ltx",
-          "entry": "<resources>/ltx-schemes/configs/system.ltx",
-          "field": "kind",
-          "message": "Required field was not provided",
-          "section": "wpn_incomplete",
-        },
-      },
-      {
-        "LtxScheme": {
-          "at": "<resources>/ltx-schemes/configs/items/w_broken.ltx",
-          "entry": "<resources>/ltx-schemes/configs/system.ltx",
-          "field": "*",
-          "message": "Required schema '$no_such_scheme' definition is not found",
-          "section": "wpn_undeclared_scheme",
-        },
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "[wpn_broken] ammo_class: Required field was not provided",
+            "ruleId": "ltx.scheme",
+            "subject": "<resources>/ltx-schemes/configs/items/w_broken.ltx",
+          },
+          {
+            "message": "[wpn_broken] cost: Invalid value, unsigned 32 bit number is expected, got 'expensive'",
+            "ruleId": "ltx.scheme",
+            "subject": "<resources>/ltx-schemes/configs/items/w_broken.ltx",
+          },
+          {
+            "message": "[wpn_broken] kind: Invalid value, one of possible values [pistol,rifle,shotgun] expected, got 'launcher'",
+            "ruleId": "ltx.scheme",
+            "subject": "<resources>/ltx-schemes/configs/items/w_broken.ltx",
+          },
+          {
+            "message": "[wpn_broken] unexpected_field: Unexpected field, definition is required in strict mode",
+            "ruleId": "ltx.scheme",
+            "subject": "<resources>/ltx-schemes/configs/items/w_broken.ltx",
+          },
+          {
+            "message": "[wpn_incomplete] ammo_class: Required field was not provided",
+            "ruleId": "ltx.scheme",
+            "subject": "<resources>/ltx-schemes/configs/items/w_broken.ltx",
+          },
+          {
+            "message": "[wpn_incomplete] kind: Required field was not provided",
+            "ruleId": "ltx.scheme",
+            "subject": "<resources>/ltx-schemes/configs/items/w_broken.ltx",
+          },
+          {
+            "message": "[wpn_undeclared_scheme]: Required schema '$no_such_scheme' definition is not found",
+            "ruleId": "ltx.scheme",
+            "subject": "<resources>/ltx-schemes/configs/items/w_broken.ltx",
+          },
+          {
+            "message": "[ammo_9x18] box_size: Invalid value, unsigned 8 bit number is expected, got '300'",
+            "ruleId": "ltx.scheme",
+            "subject": "<resources>/ltx-schemes/configs/standalone.ltx",
+          },
+          {
+            "message": "[ammo_9x18] cost: Invalid value, unsigned 32 bit number is expected, got 'free'",
+            "ruleId": "ltx.scheme",
+            "subject": "<resources>/ltx-schemes/configs/standalone.ltx",
+          },
+        ],
+        "id": "ltx",
+        "status": "failed",
       },
     ],
     "invalidSections": 4,
-    "outcome": "completed",
     "skippedSections": 1,
     "startupDuration": "<duration>",
+    "status": "failed",
     "totalFiles": 2,
     "totalSections": 8,
     "validSections": 3,

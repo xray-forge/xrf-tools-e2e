@@ -51,7 +51,8 @@ describe("ltx verify schemes", () => {
   });
 
   it("should report a section asking for a scheme nothing declares", () => {
-    expect(said).toContain("[wpn_undeclared_scheme] * : Required schema '$no_such_scheme' definition is not found");
+    // About the section as a whole, so no field is named.
+    expect(said).toContain("[wpn_undeclared_scheme] : Required schema '$no_such_scheme' definition is not found");
   });
 
   it("should judge a section against a `*` declaration when the scheme has one", () => {

@@ -9,7 +9,8 @@ exports[`ltx verify --dltx should accept the same tree with the flag 1`] = `
     "Verify path: <resources>/gamedata-dltx/configs",
     "Checked 6 files, 3 sections in <duration>",
     "Verified 33.33%, 1 files, 1 sections, 3 fields",
-    "Found 0 error(s)",
+    "Found 0 finding(s)",
+    "LTX verification: passed",
   ],
 }
 `;
@@ -18,8 +19,9 @@ exports[`ltx verify --dltx should refuse patch files without the flag 1`] = `
 {
   "exitCode": 3,
   "stderr": [
-    "Verify error: Cannot read <resources>/gamedata-dltx/configs/mod_system_aaa.ltx: Ltx parse error: 3:1 Found DLTX section '![wpn_ak74]', which needs the dltx dialect; rerun with --dltx to evaluate patch files",
-    "Verify error: Cannot read <resources>/gamedata-dltx/configs/mod_system_xxx.ltx: Ltx parse error: 3:1 Found DLTX section '![wpn_ak74]', which needs the dltx dialect; rerun with --dltx to evaluate patch files",
+    "Ltx unreadable entry in '<resources>/gamedata-dltx/configs/mod_system_aaa.ltx' : Ltx parse error: 3:1 Found DLTX section '![wpn_ak74]', which needs the dltx dialect; rerun with --dltx to evaluate patch files",
+    "Ltx unreadable entry in '<resources>/gamedata-dltx/configs/mod_system_xxx.ltx' : Ltx parse error: 3:1 Found DLTX section '![wpn_ak74]', which needs the dltx dialect; rerun with --dltx to evaluate patch files",
+    "Check 'ltx' is failed with 2 finding(s)",
     "Check failed: 2 finding(s)",
   ],
   "stdout": [
@@ -27,7 +29,7 @@ exports[`ltx verify --dltx should refuse patch files without the flag 1`] = `
     "Verify path: <resources>/gamedata-dltx/configs",
     "Checked 6 files, 3 sections in <duration>",
     "Verified 33.33%, 3 files, 1 sections, 2 fields",
-    "Found 2 error(s)",
+    "Found 2 finding(s)",
   ],
 }
 `;

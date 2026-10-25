@@ -367,7 +367,7 @@ exports[`gamedata verify meets a declared source it cannot open should warn whic
     "Verify path: <sandbox>/install/configs",
     "Checked 1 files, 1 sections in <duration>",
     "Verified 0.00%, 1 files, 0 sections, 0 fields",
-    "Found 0 error(s)",
+    "Found 0 finding(s)",
     "Verified gamedata ltx files in <duration>",
     "Gamedata project checked in <duration>",
   ],

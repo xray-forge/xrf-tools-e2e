@@ -21,12 +21,18 @@ exports[`ltx verify --dltx report should report a clean verification under the d
   "result": {
     "checkedFields": 3,
     "checkedSections": 1,
-    "duration": "<duration>",
-    "errors": [],
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "ltx",
+        "status": "passed",
+      },
+    ],
     "invalidSections": 0,
-    "outcome": "completed",
     "skippedSections": 2,
     "startupDuration": "<duration>",
+    "status": "passed",
     "totalFiles": 1,
     "totalSections": 3,
     "validSections": 1,
@@ -55,23 +61,29 @@ exports[`ltx verify --dltx report should report the errors standard rules find i
   "result": {
     "checkedFields": 2,
     "checkedSections": 1,
-    "duration": "<duration>",
-    "errors": [
+    "checks": [
       {
-        "Verify": {
-          "message": "Cannot read <resources>/gamedata-dltx/configs/mod_system_aaa.ltx: Ltx parse error: 3:1 Found DLTX section '![wpn_ak74]', which needs the dltx dialect; rerun with --dltx to evaluate patch files",
-        },
-      },
-      {
-        "Verify": {
-          "message": "Cannot read <resources>/gamedata-dltx/configs/mod_system_xxx.ltx: Ltx parse error: 3:1 Found DLTX section '![wpn_ak74]', which needs the dltx dialect; rerun with --dltx to evaluate patch files",
-        },
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "Ltx parse error: 3:1 Found DLTX section '![wpn_ak74]', which needs the dltx dialect; rerun with --dltx to evaluate patch files",
+            "ruleId": "ltx.unreadable",
+            "subject": "<resources>/gamedata-dltx/configs/mod_system_aaa.ltx",
+          },
+          {
+            "message": "Ltx parse error: 3:1 Found DLTX section '![wpn_ak74]', which needs the dltx dialect; rerun with --dltx to evaluate patch files",
+            "ruleId": "ltx.unreadable",
+            "subject": "<resources>/gamedata-dltx/configs/mod_system_xxx.ltx",
+          },
+        ],
+        "id": "ltx",
+        "status": "failed",
       },
     ],
     "invalidSections": 0,
-    "outcome": "completed",
     "skippedSections": 2,
     "startupDuration": "<duration>",
+    "status": "failed",
     "totalFiles": 3,
     "totalSections": 3,
     "validSections": 1,
