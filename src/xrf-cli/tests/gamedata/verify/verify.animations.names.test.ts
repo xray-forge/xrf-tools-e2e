@@ -98,7 +98,8 @@ describe("gamedata verify named HUD animations", () => {
             findings: [
               {
                 subject: "configs/system.ltx",
-                message: "Player HUD section [actor_hud] has invalid animations",
+                message:
+                  "Player HUD section [actor_hud] has no motion 'missing', which weapon [wpn_test] plays as anm_idle",
                 ruleId: "animations.player-hud",
               },
             ],

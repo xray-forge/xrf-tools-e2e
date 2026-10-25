@@ -106,7 +106,12 @@ exports[`gamedata verify animations should record the reports as readable docume
         "duration": "<duration>",
         "findings": [
           {
-            "message": "Player HUD section [actor_hud] has invalid animations",
+            "message": "Player HUD section [actor_hud] has no animations",
+            "ruleId": "animations.player-hud",
+            "subject": "configs/system.ltx",
+          },
+          {
+            "message": "Player HUD section [actor_hud] motion bank 'meshes\\dynamics\\devices\\dev_bolt\\dev_bolt_hud_animation.omf' does not read: Invalid error: Incomplete chunk header at position 79, expected 8 bytes but only 1 remain",
             "ruleId": "animations.player-hud",
             "subject": "configs/system.ltx",
           },
@@ -132,10 +137,10 @@ exports[`gamedata verify animations should report a damaged linked motion bank t
 {
   "exitCode": 3,
   "stderr": [
-    "Failed to read linked visual: [actor_hud] - meshes\\dynamics\\devices\\dev_bolt\\dev_bolt_hud_animation.omf - Invalid error: Incomplete chunk header at position 79, expected 8 bytes but only 1 remain",
-    "Hud [actor_hud] contains no animations",
-    "Check 'animations' is failed with 1 finding(s)",
-    "Check failed: 1 finding(s)",
+    "Player HUD section [actor_hud] motion bank 'meshes\\dynamics\\devices\\dev_bolt\\dev_bolt_hud_animation.omf' does not read: Invalid error: Incomplete chunk header at position 79, expected 8 bytes but only 1 remain",
+    "Player HUD section [actor_hud] has no animations",
+    "Check 'animations' is failed with 2 finding(s)",
+    "Check failed: 2 finding(s)",
   ],
   "stdout": [
     "Workers: <workers> (auto)",
@@ -151,7 +156,6 @@ exports[`gamedata verify animations should report a damaged linked motion bank t
     "Verify path collisions:",
     "Verified gamedata path collisions in <duration>, 0 unreachable file(s)",
     "Verify animations:",
-    "Player hud config [actor_hud] is invalid",
     "Verified gamedata huds, 0/1 valid",
     "Verified gamedata hud items, 0/0 valid",
     "Verified gamedata hud motion namespaces, 0 collisions across 1 huds",
@@ -197,8 +201,8 @@ exports[`gamedata verify animations should write only its fixture and reports 1`
 [
   {
     "path": "damaged.json",
-    "sha256": "c4b6e04e79f2ba73867e8496a293acd3bcc6d1f0ee7976f994e8197d60b2800c",
-    "size": 1494,
+    "sha256": "aac4f74508fe0ba383d9394382fc041a55cb25cfadcf5c58e4b59223f8719d94",
+    "size": 1845,
   },
   {
     "path": "damaged/configs/system.ltx",

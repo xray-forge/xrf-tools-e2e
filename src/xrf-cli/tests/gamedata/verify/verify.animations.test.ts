@@ -83,7 +83,13 @@ describe("gamedata verify animations", () => {
             findings: [
               {
                 subject: "configs/system.ltx",
-                message: "Player HUD section [actor_hud] has invalid animations",
+                message: "Player HUD section [actor_hud] has no animations",
+                ruleId: "animations.player-hud",
+              },
+              {
+                subject: "configs/system.ltx",
+                message:
+                  "Player HUD section [actor_hud] motion bank 'meshes\\dynamics\\devices\\dev_bolt\\dev_bolt_hud_animation.omf' does not read: Invalid error: Incomplete chunk header at position 79, expected 8 bytes but only 1 remain",
                 ruleId: "animations.player-hud",
               },
             ],

@@ -70,7 +70,7 @@ describe("gamedata verify scripts", () => {
             summary: "1/2 scripts valid",
             findings: [
               {
-                ruleId: "scripts.read",
+                ruleId: "scripts.syntax",
                 subject: "scripts/broken.script",
                 message:
                   "Verify error: Failed to check LuaJIT script file: scripts\\broken.script, errors: error occurred while creating ast: unexpected token `=`. (starting from line 1, character 13 and ending on line 1, character 14)\nadditional information: expected an expression",

@@ -23,7 +23,7 @@ exports[`gamedata verify weapons should record readable reports and only expecte
       "bytes": 3730,
       "entries": 3,
       "hits": 1,
-      "misses": 5,
+      "misses": 4,
       "refused": 0,
     },
     "checks": [
@@ -84,7 +84,7 @@ exports[`gamedata verify weapons should record readable reports and only expecte
       "bytes": 3725,
       "entries": 3,
       "hits": 1,
-      "misses": 4,
+      "misses": 3,
       "refused": 0,
     },
     "checks": [
@@ -106,7 +106,7 @@ exports[`gamedata verify weapons should record readable reports and only expecte
         "duration": "<duration>",
         "findings": [
           {
-            "message": "Weapon section [wpn_test] is invalid",
+            "message": "Weapon section [wpn_test] visual 'dynamics\\devices\\dev_bolt\\missing' is not found",
             "ruleId": "weapons.validation",
             "subject": "configs/system.ltx",
           },
@@ -132,8 +132,8 @@ exports[`gamedata verify weapons should record readable reports and only expecte
 [
   {
     "path": "missing.json",
-    "sha256": "999a4eddaaf3882f833c026ee60cb3b505712978369546c463f5d85e464b7ff5",
-    "size": 1331,
+    "sha256": "0c2ec986bab935fe1a43f3071867ee142c577e7bffd98c56e58eb63d091d80b8",
+    "size": 1379,
   },
   {
     "path": "missing/configs/system.ltx",
@@ -157,7 +157,7 @@ exports[`gamedata verify weapons should record readable reports and only expecte
   },
   {
     "path": "valid.json",
-    "sha256": "25f1bf3ba4a3cc6d5e1b343b095bf102a504d87838d721fec6c76d8bb2ea7232",
+    "sha256": "fe148ee33389917defa5801100a9327a6892c96ea0ee0084ed433f8f60d90ad7",
     "size": 1147,
   },
   {

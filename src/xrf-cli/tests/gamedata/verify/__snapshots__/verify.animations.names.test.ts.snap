@@ -106,7 +106,7 @@ exports[`gamedata verify named HUD animations should record the reports as reada
         "duration": "<duration>",
         "findings": [
           {
-            "message": "Player HUD section [actor_hud] has invalid animations",
+            "message": "Player HUD section [actor_hud] has no motion 'missing', which weapon [wpn_test] plays as anm_idle",
             "ruleId": "animations.player-hud",
             "subject": "configs/system.ltx",
           },
@@ -132,8 +132,7 @@ exports[`gamedata verify named HUD animations should report a missing named moti
 {
   "exitCode": 3,
   "stderr": [
-    "Hud [actor_hud] weapon [wpn_test] anm_idle=missing -> animation motion is not found",
-    "Hud [actor_hud] failed weapons check",
+    "Player HUD section [actor_hud] has no motion 'missing', which weapon [wpn_test] plays as anm_idle",
     "Check 'animations' is failed with 1 finding(s)",
     "Check failed: 1 finding(s)",
   ],
@@ -151,7 +150,6 @@ exports[`gamedata verify named HUD animations should report a missing named moti
     "Verify path collisions:",
     "Verified gamedata path collisions in <duration>, 0 unreachable file(s)",
     "Verify animations:",
-    "Player hud config [actor_hud] is invalid",
     "Verified gamedata huds, 0/1 valid",
     "Verified gamedata hud items, 0/0 valid",
     "Verified gamedata hud motion namespaces, 0 collisions across 1 huds",
@@ -197,8 +195,8 @@ exports[`gamedata verify named HUD animations should write only its fixture and 
 [
   {
     "path": "missing.json",
-    "sha256": "9999cd5dd459b19203434ec6b6c71f777278a020aede0adabdf8c3f14a41c268",
-    "size": 1494,
+    "sha256": "f0bf8f079e7d1d6a15debe0d366dc4c4d0c4baf0c3c8b83e0643850b19540f80",
+    "size": 1538,
   },
   {
     "path": "missing/configs/system.ltx",

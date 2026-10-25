@@ -96,7 +96,7 @@ describe("gamedata verify weapons", () => {
               {
                 ruleId: "weapons.validation",
                 subject: "configs/system.ltx",
-                message: "Weapon section [wpn_test] is invalid",
+                message: "Weapon section [wpn_test] visual 'dynamics\\devices\\dev_bolt\\missing' is not found",
               },
             ],
           },
