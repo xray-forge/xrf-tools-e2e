@@ -10,6 +10,8 @@ describe("dds make-bump gloss", () => {
 
   let dark: CliResult;
   let refused: CliResult;
+  let fromAlpha: CliResult;
+  let conflicting: CliResult;
 
   beforeAll(() => {
     dark = box.run("dds make-bump", [
@@ -28,6 +30,24 @@ describe("dds make-bump gloss", () => {
     refused = box.run("dds make-bump", ["--path", HEIGHT, "--dest", box.at("invalid"), "--gloss-constant", "4"], {
       expectExit: 1,
     });
+
+    fromAlpha = box.run("dds make-bump", [
+      "--path",
+      HEIGHT,
+      "--dest",
+      box.at("sourced"),
+      "--gloss-alpha",
+      "--quality",
+      "fast",
+      "--report",
+      box.at("sourced.json"),
+    ]);
+
+    conflicting = box.run(
+      "dds make-bump",
+      ["--path", HEIGHT, "--dest", box.at("conflicting"), "--gloss-alpha", "--gloss-constant", "0.5"],
+      { expectExit: 2 }
+    );
   });
 
   // The SDK answers -1000 for a gloss this dark and keeps the files it wrote, because a matte
@@ -44,7 +64,17 @@ describe("dds make-bump gloss", () => {
     expect(refused).toMatchSnapshot();
   });
 
+  // The SDK's bump source carries its gloss in its alpha, so the measured power is that alpha's mean.
+  it("should read the gloss from the height's own alpha", () => {
+    expect(fromAlpha).toMatchSnapshot();
+    expect(box.json("sourced.json")).toMatchSnapshot();
+  });
+
+  it("should refuse a second gloss beside the height's alpha", () => {
+    expect(conflicting).toMatchSnapshot();
+  });
+
   it("should write the expected files", () => {
-    expect(box.manifest({ normalized: ["matte.json"] })).toMatchSnapshot();
+    expect(box.manifest({ normalized: ["matte.json", "sourced.json"] })).toMatchSnapshot();
   });
 });

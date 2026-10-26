@@ -83,12 +83,12 @@ exports[`dds make-bump pair should write the expected files 1`] = `
   },
   {
     "path": "wall_bump#.dds",
-    "sha256": "a4e700b4713f728bc3b997fe8504161824b9ff1abe9b258caa35e60677362ea3",
+    "sha256": "625af015f9acf9737cf2c492f4e6be6e228900d0fd68749dffb34d6e08ddcaf6",
     "size": 22032,
   },
   {
     "path": "wall_bump.dds",
-    "sha256": "a6b024e7719cc0693fd2ace609c83c983e7efba505bfa03d61e892c01ddd43f8",
+    "sha256": "2ffbb7393276ee16c93ca6f0a17f1513bb474e7703ef545c3fc2d5ae38499d70",
     "size": 22032,
   },
 ]

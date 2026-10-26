@@ -1,10 +1,62 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`dds make-bump gloss should read the gloss from the height's own alpha 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Generated <sandbox>/sourced_bump.dds and <sandbox>/sourced_bump#.dds from <resources>/gamedata/textures/ui/ui_test_sheet.dds",
+  ],
+}
+`;
+
+exports[`dds make-bump gloss should read the gloss from the height's own alpha 2`] = `
+{
+  "build": {
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "profile": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "dds",
+    "make-bump",
+  ],
+  "duration": "<duration>",
+  "execution": {
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "result": {
+    "bump": "<sandbox>/sourced_bump.dds",
+    "companion": "<sandbox>/sourced_bump#.dds",
+    "glossPower": 0.3010692000389099,
+    "isGlossTooDark": false,
+    "source": "<resources>/gamedata/textures/ui/ui_test_sheet.dds",
+  },
+}
+`;
+
 exports[`dds make-bump gloss should refuse a gloss outside the range a gloss is measured in 1`] = `
 {
   "exitCode": 1,
   "stderr": [
     "Error: Invalid error: Gloss level 4 is outside the 0 to 1 range a gloss is measured in",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`dds make-bump gloss should refuse a second gloss beside the height's alpha 1`] = `
+{
+  "exitCode": 2,
+  "stderr": [
+    "error: the argument '--gloss-alpha' cannot be used with '--gloss-constant <gloss-constant>'",
+    "",
+    "Usage: xrf-cli dds make-bump --path <path> --dest <dest> --gloss-alpha",
+    "",
+    "For more information, try '--help'.",
   ],
   "stdout": [],
 }
@@ -59,12 +111,27 @@ exports[`dds make-bump gloss should write the expected files 1`] = `
   },
   {
     "path": "matte_bump#.dds",
-    "sha256": "a4e700b4713f728bc3b997fe8504161824b9ff1abe9b258caa35e60677362ea3",
+    "sha256": "625af015f9acf9737cf2c492f4e6be6e228900d0fd68749dffb34d6e08ddcaf6",
     "size": 22032,
   },
   {
     "path": "matte_bump.dds",
-    "sha256": "934b99a8572567dd8c9470e1b6baa793b297e0451072bd7ab1ebcaeda42df4ff",
+    "sha256": "c9d844ffc3bc2889a492fa5fbd10c998dcf26aad08d0cac764438af1dfbecdd3",
+    "size": 22032,
+  },
+  {
+    "path": "sourced.json",
+    "sha256": "5130d0ee31ed78d11a166a6935c468be77b5ffa463fb6e0d173df5d72180dbc2",
+    "size": 529,
+  },
+  {
+    "path": "sourced_bump#.dds",
+    "sha256": "1bffffcf66100e2ab96361c02ee09406c00a9c4a2a24b6e301da73360681d68d",
+    "size": 22032,
+  },
+  {
+    "path": "sourced_bump.dds",
+    "sha256": "4f51dec58c2e718195c55a61719e6b43ad2578a1071c5e7b1a1a7226870c8ba5",
     "size": 22032,
   },
 ]
