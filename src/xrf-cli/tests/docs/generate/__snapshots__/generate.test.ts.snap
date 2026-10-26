@@ -349,6 +349,7 @@ exports[`docs generate should render dds.md 1`] = `
   "| ------ | -------- | ------- | ----------- |",
   "| \`-p, --path <path>\` | yes |  | Path of the height map the relief is read from, averaged across its colour channels |",
   "| \`-d, --dest <dest>\` | yes |  | Path of the texture the pair belongs to, without the \`_bump\` suffix or an extension |",
+  "| \`--gloss-alpha\` |  |  | Read the gloss from the height map's own alpha, where the SDK's bump source carries it |",
   "| \`--gloss <gloss>\` |  |  | Path of a gloss mask, averaged across its colour channels |",
   "| \`--gloss-constant <gloss-constant>\` |  |  | One gloss level for the whole surface, from 0 to 1, for a texture with no mask |",
   "| \`--normal-map <normal-map>\` |  |  | Path of a normal map to use instead of deriving one from the height, of the same size |",
@@ -1440,7 +1441,7 @@ exports[`docs generate should render translation.md 1`] = `
   "",
   "## \`xrf-cli translation verify\`",
   "",
-  "Verify that translation sources are well formed and translated into every language",
+  "Verify that translation sources build to tables the game loads as written, and are translated into every language",
   "",
   "\`\`\`txt",
   "xrf-cli translation verify [OPTIONS] --path <path>...",
@@ -1452,7 +1453,7 @@ exports[`docs generate should render translation.md 1`] = `
   "| \`--source <source>\` |  | \`containing-installation\` | How to read the path: auto treats it as an installation only when it declares one, directory ignores any declaration, volumes mounts every archive volume beneath it, installation requires one, containing-installation searches parent directories for one. Possible values: \`auto\`, \`directory\`, \`volumes\`, \`installation\`, \`containing-installation\`. |",
   "| \`--prefix <prefix>\` |  |  | Limit to one logical subtree, such as translations |",
   "| \`-l, --language <language>\` |  | \`all\` | Language to verify, or all of them |",
-  "| \`--strict\` |  |  | Answer with a check failure when any translation is missing |",
+  "| \`--strict\` |  |  | Also answer with a check failure when any translation is missing |",
   "| \`-s, --silent\` |  |  | Turn off logging |",
   "| \`-v, --verbose\` |  |  | Turn on verbose logging |",
   "| \`--json\` |  |  | Write the run's JSON report to stdout, moving human output to stderr |",
@@ -1476,8 +1477,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/dds.md",
-    "sha256": "90ae3feff34cd49822ab69e8c8af4736d87c7b80cd070fd8109150e77a965d97",
-    "size": 5003,
+    "sha256": "084f1becde58304e8f80f7405b3c8ede2f086531adf761884ba55de62cf276f1",
+    "size": 5118,
   },
   {
     "path": "docs/dialog.md",
@@ -1551,8 +1552,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/translation.md",
-    "sha256": "e5c7006cd3d668826977d27f7d5ee071e63f13e4ce321a0e5de0ae43c14c2f0b",
-    "size": 6210,
+    "sha256": "9eabe3ab0c4a3b44c5fedbbfaa0cda9e517bbf286755f11f2a8e920a3a53d528",
+    "size": 6246,
   },
   {
     "path": "drifted/README.md",

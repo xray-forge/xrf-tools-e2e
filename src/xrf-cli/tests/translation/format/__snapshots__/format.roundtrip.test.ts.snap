@@ -29,8 +29,8 @@ exports[`translation format roundtrip should not change what the sources mean 1`
   "stdout": [
     "Verifying translations in <sandbox>/translations (containing-installation), language - eng",
     "Verifying 2 translation source(s)",
-    "Verified translation files in <duration>, 4 checked, 0 missing",
-    "Translation sources are well formed",
+    "Verified translation files in <duration>, 4 checked, 0 missing, 0 the game would refuse or mangle",
+    "Translation verification: passed",
   ],
 }
 `;

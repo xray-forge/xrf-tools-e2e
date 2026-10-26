@@ -91,7 +91,7 @@ exports[`translation command help should keep each leaf command's help stable 1`
     "exitCode": 0,
     "stderr": [],
     "stdout": [
-      "Verify that translation sources are well formed and translated into every language",
+      "Verify that translation sources build to tables the game loads as written, and are translated into every language",
       "",
       "Usage: xrf-cli translation verify [OPTIONS] --path <path>...",
       "",
@@ -104,7 +104,7 @@ exports[`translation command help should keep each leaf command's help stable 1`
       "      --prefix <prefix>      Limit to one logical subtree, such as translations",
       "  -l, --language <language>  Language to verify, or all of them [default: all]",
       "      --report <PATH>        Write the run's JSON report to a file",
-      "      --strict               Answer with a check failure when any translation is missing",
+      "      --strict               Also answer with a check failure when any translation is missing",
       "  -h, --help                 Print help",
     ],
   },

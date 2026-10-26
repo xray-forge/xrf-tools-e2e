@@ -40,12 +40,12 @@ exports[`translation build output selection and ordering should write the expect
 [
   {
     "path": "all/eng/st_items.xml",
-    "sha256": "daa924e9eb3b36bdd9a4d38914e20d150673cd00cfe9cafc1bc2a4a2cfc7e47c",
+    "sha256": "d70da5d7c307bad777aa91f47a1f8992b773e2144480f3e797dd3d52fc8fd691",
     "size": 210,
   },
   {
     "path": "all/eng/st_ui.xml",
-    "sha256": "034b0c3d26679feaa1727519ac9eea9eb04a9d3693814f13c23411ccb9ae99b0",
+    "sha256": "f0d49e12e06cef42e17f968fe20feffaa9bd42bbd1442a1f5e45f9ffd6ad61a7",
     "size": 207,
   },
   {
@@ -60,12 +60,12 @@ exports[`translation build output selection and ordering should write the expect
   },
   {
     "path": "all/ger/st_items.xml",
-    "sha256": "f3c0eb362e8ee9ef38fa610b936b522e580f8565441f212c15862b8e747e576e",
+    "sha256": "988c0b511ab8a5e9f9775c1d1d6abb814bd68ec0fccad6202d379f865b51f501",
     "size": 217,
   },
   {
     "path": "all/ger/st_ui.xml",
-    "sha256": "c4085931823bfb6a8e9babc066093a9328b21d75e29592eb965640a2d56b0223",
+    "sha256": "5739dba84948027055ea0e12477e5e255af0af300bb73fdf3734f6551233c6e1",
     "size": 214,
   },
   {
@@ -120,22 +120,22 @@ exports[`translation build output selection and ordering should write the expect
   },
   {
     "path": "eng/eng/st_items.xml",
-    "sha256": "daa924e9eb3b36bdd9a4d38914e20d150673cd00cfe9cafc1bc2a4a2cfc7e47c",
+    "sha256": "d70da5d7c307bad777aa91f47a1f8992b773e2144480f3e797dd3d52fc8fd691",
     "size": 210,
   },
   {
     "path": "eng/eng/st_ui.xml",
-    "sha256": "034b0c3d26679feaa1727519ac9eea9eb04a9d3693814f13c23411ccb9ae99b0",
+    "sha256": "f0d49e12e06cef42e17f968fe20feffaa9bd42bbd1442a1f5e45f9ffd6ad61a7",
     "size": 207,
   },
   {
     "path": "unsorted/eng/st_items.xml",
-    "sha256": "8d17e94efde02c833cae0e4abae8e0577cadcacd89f71994457815a9781e18c4",
+    "sha256": "34190ad3b25491df86c455285b6f743fcac864cf9723ea060330a311f59a788e",
     "size": 210,
   },
   {
     "path": "unsorted/eng/st_ui.xml",
-    "sha256": "523d07c96ecf48c7ba073c8565d864ea4618e30eabd4d2335f90ed5c081473e7",
+    "sha256": "9fdd53431a0d19c04571bead9009b6477b047d08a20ad6a5dbba5455c0653068",
     "size": 207,
   },
   {
@@ -150,12 +150,12 @@ exports[`translation build output selection and ordering should write the expect
   },
   {
     "path": "unsorted/ger/st_items.xml",
-    "sha256": "72edbbd0da4c7d81dc26b503091e5ee8433683d1fa9d19e82604089c2a90d6cf",
+    "sha256": "201ea4b48fe305f7b823f6370143cb5d7f96a976c171496e8e15e599eb57c543",
     "size": 217,
   },
   {
     "path": "unsorted/ger/st_ui.xml",
-    "sha256": "ed3fc32802744d1751d72777206002c28f87590cc18e8d4eaca784f5ea4a0760",
+    "sha256": "fa369c71ee75a53c06942c734efff99ca6314871265e1540324a5cd4de917d9e",
     "size": 214,
   },
   {

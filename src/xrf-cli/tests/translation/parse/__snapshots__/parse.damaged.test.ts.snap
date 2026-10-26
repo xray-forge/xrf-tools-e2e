@@ -4,7 +4,7 @@ exports[`translation parse meets damaged input should fail under strict 1`] = `
 {
   "exitCode": 3,
   "stderr": [
-    "Check failed: 3 finding(s)",
+    "Check failed: 4 finding(s)",
   ],
   "stdout": [
     "Parsing translations at configs\\text\\eng as 'eng'",
@@ -78,6 +78,11 @@ exports[`translation parse meets damaged input should report what it read and ch
           "duration": "<duration>",
           "findings": [
             {
+              "message": "The game never loads this table: it opens every table by name in the language directory",
+              "ruleId": "translations.nested",
+              "subject": "configs\\text\\eng\\nested\\st_items.xml",
+            },
+            {
               "message": "Could not read this file, so its strings were not imported: Invalid error: Expected a 'string_table' document, found 'openxray'",
               "ruleId": "translations.unreadable",
               "subject": "configs\\text\\eng\\openxray.xml",
@@ -127,8 +132,8 @@ exports[`translation parse meets damaged input should write the expected files 1
   },
   {
     "path": "report.json",
-    "sha256": "632c375ca532b58179e3894a20438c24c8ab81b1793cf6d64bb4b745ee6b7fa2",
-    "size": 1794,
+    "sha256": "b8f00836e36a114fc52af18ba10edc66f94742cd57b7c52460213f9719519008",
+    "size": 2054,
   },
   {
     "path": "sources/nested/st_items.json",

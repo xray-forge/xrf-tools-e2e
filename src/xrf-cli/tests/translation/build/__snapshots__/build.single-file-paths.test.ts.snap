@@ -37,12 +37,12 @@ exports[`translation build single-file source paths should write the expected fi
 [
   {
     "path": "absolute/eng/st_test.xml",
-    "sha256": "2faeefa3e144af86acc20f3e79aeb94a5451af26a25cf2ec8b81d048ad931a30",
+    "sha256": "c0cdbdce946fbbc99fb4ebeb211c65b9a8696df4e4f392cf671463000dc8d194",
     "size": 136,
   },
   {
     "path": "climbing/eng/st_test.xml",
-    "sha256": "2faeefa3e144af86acc20f3e79aeb94a5451af26a25cf2ec8b81d048ad931a30",
+    "sha256": "c0cdbdce946fbbc99fb4ebeb211c65b9a8696df4e4f392cf671463000dc8d194",
     "size": 136,
   },
   {
@@ -57,7 +57,7 @@ exports[`translation build single-file source paths should write the expected fi
   },
   {
     "path": "relative/eng/st_test.xml",
-    "sha256": "2faeefa3e144af86acc20f3e79aeb94a5451af26a25cf2ec8b81d048ad931a30",
+    "sha256": "c0cdbdce946fbbc99fb4ebeb211c65b9a8696df4e4f392cf671463000dc8d194",
     "size": 136,
   },
 ]

@@ -34,7 +34,7 @@ exports[`translation verify should fail under strict when translations are missi
   "stdout": [
     "Verifying translations in <resources>/translations (containing-installation), language - all",
     "Verifying 2 translation source(s)",
-    "Verified translation files in <duration>, 4 checked, 24 missing",
+    "Verified translation files in <duration>, 4 checked, 24 missing, 0 the game would refuse or mangle",
   ],
 }
 `;
@@ -46,8 +46,8 @@ exports[`translation verify should find nothing missing in a complete language 1
   "stdout": [
     "Verifying translations in <resources>/translations (containing-installation), language - eng",
     "Verifying 2 translation source(s)",
-    "Verified translation files in <duration>, 4 checked, 0 missing",
-    "Translation sources are well formed",
+    "Verified translation files in <duration>, 4 checked, 0 missing, 0 the game would refuse or mangle",
+    "Translation verification: passed",
   ],
 }
 `;
@@ -84,8 +84,8 @@ exports[`translation verify should report gaps across every language 1`] = `
   "stdout": [
     "Verifying translations in <resources>/translations (containing-installation), language - all",
     "Verifying 2 translation source(s)",
-    "Verified translation files in <duration>, 4 checked, 24 missing",
-    "Translation sources are well formed",
+    "Verified translation files in <duration>, 4 checked, 24 missing, 0 the game would refuse or mangle",
+    "Translation verification: passed",
   ],
 }
 `;
@@ -238,7 +238,14 @@ exports[`translation verify should report the gaps it found 1`] = `
         "id": "translations",
         "status": "failed",
       },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "translations.engine",
+        "status": "passed",
+      },
     ],
+    "engineProblems": 0,
     "languages": [
       {
         "checked": 2,
@@ -375,8 +382,8 @@ exports[`translation verify should write a structured report 1`] = `
   "stdout": [
     "Verifying translations in <resources>/translations (containing-installation), language - all",
     "Verifying 2 translation source(s)",
-    "Verified translation files in <duration>, 4 checked, 24 missing",
-    "Translation sources are well formed",
+    "Verified translation files in <duration>, 4 checked, 24 missing, 0 the game would refuse or mangle",
+    "Translation verification: passed",
   ],
 }
 `;
@@ -385,8 +392,8 @@ exports[`translation verify should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "1569af11ce45ac4c2d0be713c24673f1617404fada7a82ba5245d9cd8e955b63",
-    "size": 7163,
+    "sha256": "ec5100d4f9ecfd67e154eea995c25a1020c522d9cc6f77c552402366d0085e83",
+    "size": 7327,
   },
 ]
 `;

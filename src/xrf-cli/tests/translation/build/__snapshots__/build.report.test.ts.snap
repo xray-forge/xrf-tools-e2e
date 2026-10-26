@@ -85,12 +85,12 @@ exports[`translation build reporting should write the expected files 1`] = `
 [
   {
     "path": "piped/eng/st_items.xml",
-    "sha256": "daa924e9eb3b36bdd9a4d38914e20d150673cd00cfe9cafc1bc2a4a2cfc7e47c",
+    "sha256": "d70da5d7c307bad777aa91f47a1f8992b773e2144480f3e797dd3d52fc8fd691",
     "size": 210,
   },
   {
     "path": "piped/eng/st_ui.xml",
-    "sha256": "034b0c3d26679feaa1727519ac9eea9eb04a9d3693814f13c23411ccb9ae99b0",
+    "sha256": "f0d49e12e06cef42e17f968fe20feffaa9bd42bbd1442a1f5e45f9ffd6ad61a7",
     "size": 207,
   },
   {
@@ -105,12 +105,12 @@ exports[`translation build reporting should write the expected files 1`] = `
   },
   {
     "path": "piped/ger/st_items.xml",
-    "sha256": "f3c0eb362e8ee9ef38fa610b936b522e580f8565441f212c15862b8e747e576e",
+    "sha256": "988c0b511ab8a5e9f9775c1d1d6abb814bd68ec0fccad6202d379f865b51f501",
     "size": 217,
   },
   {
     "path": "piped/ger/st_ui.xml",
-    "sha256": "c4085931823bfb6a8e9babc066093a9328b21d75e29592eb965640a2d56b0223",
+    "sha256": "5739dba84948027055ea0e12477e5e255af0af300bb73fdf3734f6551233c6e1",
     "size": 214,
   },
   {
@@ -170,12 +170,12 @@ exports[`translation build reporting should write the expected files 1`] = `
   },
   {
     "path": "reported/eng/st_items.xml",
-    "sha256": "daa924e9eb3b36bdd9a4d38914e20d150673cd00cfe9cafc1bc2a4a2cfc7e47c",
+    "sha256": "d70da5d7c307bad777aa91f47a1f8992b773e2144480f3e797dd3d52fc8fd691",
     "size": 210,
   },
   {
     "path": "reported/eng/st_ui.xml",
-    "sha256": "034b0c3d26679feaa1727519ac9eea9eb04a9d3693814f13c23411ccb9ae99b0",
+    "sha256": "f0d49e12e06cef42e17f968fe20feffaa9bd42bbd1442a1f5e45f9ffd6ad61a7",
     "size": 207,
   },
   {
@@ -190,12 +190,12 @@ exports[`translation build reporting should write the expected files 1`] = `
   },
   {
     "path": "reported/ger/st_items.xml",
-    "sha256": "f3c0eb362e8ee9ef38fa610b936b522e580f8565441f212c15862b8e747e576e",
+    "sha256": "988c0b511ab8a5e9f9775c1d1d6abb814bd68ec0fccad6202d379f865b51f501",
     "size": 217,
   },
   {
     "path": "reported/ger/st_ui.xml",
-    "sha256": "c4085931823bfb6a8e9babc066093a9328b21d75e29592eb965640a2d56b0223",
+    "sha256": "5739dba84948027055ea0e12477e5e255af0af300bb73fdf3734f6551233c6e1",
     "size": 214,
   },
   {
