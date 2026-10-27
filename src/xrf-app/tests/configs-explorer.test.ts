@@ -14,7 +14,7 @@ const ROOT_FIELD_KEY: string = "xrf.form.configs-explorer.root";
 
 describe("configs explorer", () => {
   before(async () => {
-    await $('[data-testid="application-launcher-catalog"]').waitForExist({ timeout: 10_000 });
+    await $('[data-testid="tool-launcher-catalog"]').waitForExist({ timeout: 10_000 });
 
     // The path field is read-only and only a native dialog writes it, so the remembered value is the way in.
     await browser.execute(
@@ -23,7 +23,7 @@ describe("configs explorer", () => {
       CONFIGS
     );
 
-    await $('[data-testid="application-launcher-catalog"] [aria-label="Configs explorer"]').click();
+    await $('[data-testid="tool-launcher-catalog"] [aria-label="Configs explorer"]').click();
     await $("button=Open").click();
 
     await $('[data-testid="configs-menu"]').waitForExist({ timeout: 20_000 });
@@ -147,6 +147,6 @@ describe("configs explorer", () => {
   it("returns to the launcher without leaving the project open", async () => {
     await closeTool();
 
-    await expect($('[data-testid="application-launcher-catalog"]')).toBeDisplayed();
+    await expect($('[data-testid="tool-launcher-catalog"]')).toBeDisplayed();
   });
 });
