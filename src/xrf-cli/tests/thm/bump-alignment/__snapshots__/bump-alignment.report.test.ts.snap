@@ -1,0 +1,191 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`thm bump-alignment report should find a bump drawn from its own diffuse aligned 1`] = `
+{
+  "build": {
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "profile": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "thm",
+    "bump-alignment",
+  ],
+  "duration": "<duration>",
+  "execution": {
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "result": {
+    "sets": [
+      {
+        "bump": "props\\lost_bump",
+        "bumpFile": null,
+        "descriptor": "textures\\props\\lost.thm",
+        "diffuse": "textures\\props\\lost.dds",
+        "isBorrowed": false,
+        "status": "missingBump",
+      },
+      {
+        "alignment": {
+          "bumpSize": [
+            256,
+            64,
+          ],
+          "chance": 0.16180983185768127,
+          "correlation": 0.1475263237953186,
+          "diffuseSize": [
+            256,
+            64,
+          ],
+          "lift": -0.014283508062362671,
+          "verdict": "mismatched",
+        },
+        "bump": "sheet_bump",
+        "bumpFile": "textures\\sheet_bump.dds",
+        "descriptor": "textures\\props\\patch.thm",
+        "diffuse": "textures\\props\\patch.dds",
+        "isBorrowed": true,
+        "status": "measured",
+      },
+      {
+        "bump": "sheet_bump",
+        "bumpFile": "textures\\sheet_bump.dds",
+        "descriptor": "textures\\props\\removed.thm",
+        "diffuse": null,
+        "isBorrowed": true,
+        "status": "missingDiffuse",
+      },
+      {
+        "alignment": {
+          "bumpSize": [
+            256,
+            64,
+          ],
+          "chance": 0.2599247992038727,
+          "correlation": 0.6843417286872864,
+          "diffuseSize": [
+            256,
+            64,
+          ],
+          "lift": 0.4244169294834137,
+          "verdict": "aligned",
+        },
+        "bump": "sheet_bump",
+        "bumpFile": "textures\\sheet_bump.dds",
+        "descriptor": "textures\\sheet.thm",
+        "diffuse": "textures\\sheet.dds",
+        "isBorrowed": false,
+        "status": "measured",
+      },
+    ],
+    "summary": {
+      "aligned": 1,
+      "alignedLift": 0.10000000149011612,
+      "borrowed": 2,
+      "descriptors": 4,
+      "doubtful": 0,
+      "featureless": 0,
+      "measured": 2,
+      "mismatched": 1,
+      "mismatchedLift": 0.029999999329447746,
+      "mismatchedOwn": 0,
+      "missingBumps": 1,
+      "missingDiffuses": 1,
+      "sets": 4,
+      "unread": 0,
+    },
+  },
+}
+`;
+
+exports[`thm bump-alignment report should refuse a mount mode it does not know 1`] = `
+{
+  "exitCode": 2,
+  "stderr": [
+    "error: invalid value 'nowhere' for '--source <source>'",
+    "  [possible values: auto, directory, volumes, installation, containing-installation]",
+    "",
+    "For more information, try '--help'.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`thm bump-alignment report should tell a borrowed bump, a removed texture and a missing bump apart 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Comparing the bumps texture descriptors declare with their diffuses",
+    "4 descriptors, 4 declaring a bump; 2 sets compared, 1 missing a diffuse, 1 missing a bump, 0 unread",
+    "1 aligned, 0 doubtful, 1 mismatched (0 with their own bump), 0 featureless; 2 borrow another's bump",
+    "textures\\props\\lost.thm: no root holds its bump props\\lost_bump",
+    "textures\\props\\patch.thm: mismatched with sheet_bump, lift -0.01",
+    "textures\\props\\removed.thm: no root holds its diffuse",
+    "textures\\sheet.thm: aligned with sheet_bump, lift 0.42",
+  ],
+}
+`;
+
+exports[`thm bump-alignment report should write the bump pair and only the requested reports 1`] = `
+[
+  {
+    "path": "aligned.json",
+    "sha256": "e14fb226db63c94eec7307e5dfbf1b9452879e9e84245d867d07ab94d953a350",
+    "size": 2343,
+  },
+  {
+    "path": "narrowed.json",
+    "sha256": "fbe7445c8d61cffc642f7412fcc627073d90f1599e0ccaca79813c2f40e25bbb",
+    "size": 1774,
+  },
+  {
+    "path": "root/textures/props/lost.dds",
+    "sha256": "7c3b7b767f4d9aec695041276d13db7c6798e1485004f213a668716d22021a5a",
+    "size": 16512,
+  },
+  {
+    "path": "root/textures/props/lost.thm",
+    "sha256": "6f781381fe33247182427b39f14cd488e06e7a014498f18b3b9175de73c9d20d",
+    "size": 44,
+  },
+  {
+    "path": "root/textures/props/patch.dds",
+    "sha256": "c84ba3fe321d1e18cdb4f73a6cf50ee4b0b1bbce1792dc51d247035df9f0de08",
+    "size": 16512,
+  },
+  {
+    "path": "root/textures/props/patch.thm",
+    "sha256": "8c1fac66e574c50620883c7eecde387fa141ca99fb7d2d8caf4141743bf16d41",
+    "size": 39,
+  },
+  {
+    "path": "root/textures/props/removed.thm",
+    "sha256": "8c1fac66e574c50620883c7eecde387fa141ca99fb7d2d8caf4141743bf16d41",
+    "size": 39,
+  },
+  {
+    "path": "root/textures/sheet.dds",
+    "sha256": "7c3b7b767f4d9aec695041276d13db7c6798e1485004f213a668716d22021a5a",
+    "size": 16512,
+  },
+  {
+    "path": "root/textures/sheet.thm",
+    "sha256": "8c1fac66e574c50620883c7eecde387fa141ca99fb7d2d8caf4141743bf16d41",
+    "size": 39,
+  },
+  {
+    "path": "root/textures/sheet_bump#.dds",
+    "sha256": "625af015f9acf9737cf2c492f4e6be6e228900d0fd68749dffb34d6e08ddcaf6",
+    "size": 22032,
+  },
+  {
+    "path": "root/textures/sheet_bump.dds",
+    "sha256": "d7fa8f62d1bfd070c34042747e689b0541732b9711bb8a018ff5da4961a68ed6",
+    "size": 22032,
+  },
+]
+`;
