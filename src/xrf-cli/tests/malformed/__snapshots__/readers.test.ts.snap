@@ -88,7 +88,8 @@ exports[`readers reject damaged input should refuse an unparseable ltx 1`] = `
 {
   "exitCode": 3,
   "stderr": [
-    "Verify error: Cannot read <sandbox>/configs/broken.ltx: Ltx parse error: 2:1 Failed to parse section statement without closing bracket ']'",
+    "Ltx unreadable entry in '<sandbox>/configs/broken.ltx' : Ltx parse error: 2:1 Failed to parse section statement without closing bracket ']'",
+    "Check 'ltx' is failed with 1 finding(s)",
     "Check failed: 1 finding(s)",
   ],
   "stdout": [
@@ -96,7 +97,7 @@ exports[`readers reject damaged input should refuse an unparseable ltx 1`] = `
     "Verify path: <sandbox>/configs",
     "Checked 1 files, 0 sections in <duration>",
     "No LTX sections were verified",
-    "Found 1 error(s)",
+    "Found 1 finding(s)",
   ],
 }
 `;
