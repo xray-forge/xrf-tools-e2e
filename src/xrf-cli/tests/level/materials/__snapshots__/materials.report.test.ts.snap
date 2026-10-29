@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`level materials report should refuse a level without the collision form its materials are read from 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Not found error: Level file was not found: levels\\triangle\\level.cform",
+  ],
+  "stdout": [
+    "Reading the materials beneath compiled level levels\\triangle",
+  ],
+}
+`;
+
+exports[`level materials report should require a level 1`] = `
+{
+  "exitCode": 2,
+  "stderr": [
+    "error: the following required arguments were not provided:",
+    "  <--path <path>|--root <root>>",
+    "",
+    "Usage: xrf-cli level materials <--path <path>|--root <root>>",
+    "",
+    "For more information, try '--help'.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`level materials report should write only the requested report 1`] = `
+[
+  {
+    "path": "missing.json",
+    "sha256": "cb00ca57f77b7f298b0331b3c16faae74cf3285412c5b56b06300b664f11302f",
+    "size": 375,
+  },
+  {
+    "path": "root/levels/triangle/level",
+    "sha256": "3a400ff6f2067edf9d43cd4d6c9ca2fd46df220e173830ef73dc7794e358297c",
+    "size": 205,
+  },
+  {
+    "path": "root/levels/triangle/level.geom",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "root/levels/triangle/level.geomx",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+]
+`;
