@@ -1,0 +1,188 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`level albedo report should list each texture's measure in verbose output 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Measuring the albedo of compiled level levels\\triangle",
+    "2 surfaces, 0 writing no albedo; 1 base textures, 1 measured",
+    "Against linear 0.03 to 0.9: 1 dark, 0 within, 0 bright; median albedo 0.000, median coarse spread 8.54 stops",
+    "stone: median 0.000 (0.000 to 0.081), 86% dark, 0% bright, spread 8.54 stops",
+  ],
+}
+`;
+
+exports[`level albedo report should measure each base texture once, naming the shaders drawing it 1`] = `
+{
+  "build": {
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "profile": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "level",
+    "albedo",
+  ],
+  "duration": "<duration>",
+  "execution": {
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "result": {
+    "level": "levels\\triangle",
+    "summary": {
+      "bright": 0,
+      "brightShare": 0,
+      "ceiling": 0.8999999761581421,
+      "dark": 1,
+      "darkShare": 0.85504150390625,
+      "floor": 0.029999999329447746,
+      "measured": 1,
+      "medianAlbedo": 0.00012653569865506142,
+      "medianCoarseSpread": 8.535906791687012,
+      "surfaces": 2,
+      "textures": 1,
+      "unlitSurfaces": 0,
+      "within": 0,
+    },
+    "textures": [
+      {
+        "albedo": {
+          "brightShare": 0,
+          "coarseSpread": 8.535906791687012,
+          "darkShare": 0.85504150390625,
+          "height": 64,
+          "high": 0.08084438741207123,
+          "low": 0.00005692175909643993,
+          "mean": [
+            0.013574854470789433,
+            0.012773098424077034,
+            0.01254876609891653,
+          ],
+          "median": 0.00012653569865506142,
+          "texels": 16384,
+          "verdict": "dark",
+          "width": 256,
+        },
+        "alphaReference": null,
+        "file": "textures\\stone.dds",
+        "isTerrain": false,
+        "reference": "stone",
+        "shaders": [
+          "default",
+        ],
+        "status": "measured",
+      },
+    ],
+  },
+}
+`;
+
+exports[`level albedo report should refuse a level directory, which holds no textures to resolve 1`] = `
+{
+  "build": {
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "profile": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "level",
+    "albedo",
+  ],
+  "duration": "<duration>",
+  "error": "Invalid error: The albedo report finds a level's textures through mounted roots: name it with --root and --level",
+  "execution": {
+    "workers": "<workers>",
+  },
+  "exitCode": 1,
+}
+`;
+
+exports[`level albedo report should report a texture no root holds as missing rather than failing 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [
+    "stone: no root holds it",
+  ],
+  "stdout": [
+    "Measuring the albedo of compiled level levels\\triangle",
+    "2 surfaces, 0 writing no albedo; 1 base textures, 0 measured",
+    "Against linear 0.03 to 0.9: 0 dark, 0 within, 0 bright; median albedo 0.000, median coarse spread 0.00 stops",
+  ],
+}
+`;
+
+exports[`level albedo report should require a level 1`] = `
+{
+  "exitCode": 2,
+  "stderr": [
+    "error: the following required arguments were not provided:",
+    "  <--path <path>|--root <root>>",
+    "",
+    "Usage: xrf-cli level albedo <--path <path>|--root <root>>",
+    "",
+    "For more information, try '--help'.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`level albedo report should write only the requested reports 1`] = `
+[
+  {
+    "path": "bare/levels/triangle/level",
+    "sha256": "3a400ff6f2067edf9d43cd4d6c9ca2fd46df220e173830ef73dc7794e358297c",
+    "size": 205,
+  },
+  {
+    "path": "bare/levels/triangle/level.geom",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "bare/levels/triangle/level.geomx",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "directory.json",
+    "sha256": "1be45624692f1df4fa8417f73b145d7b4775794d65115f3fceb8640bef428472",
+    "size": 412,
+  },
+  {
+    "path": "measured.json",
+    "sha256": "0dc1ae4d6af8ba408c4bafc3d0cd4721643c7ac97459d5f53a2b6a06b0c7dc76",
+    "size": 1491,
+  },
+  {
+    "path": "missing.json",
+    "sha256": "07eced55e7765501b29127ec517036fe1b706a9f4d5eb881ee4cc167acd31c4a",
+    "size": 922,
+  },
+  {
+    "path": "root/levels/triangle/level",
+    "sha256": "3a400ff6f2067edf9d43cd4d6c9ca2fd46df220e173830ef73dc7794e358297c",
+    "size": 205,
+  },
+  {
+    "path": "root/levels/triangle/level.geom",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "root/levels/triangle/level.geomx",
+    "sha256": "7b8b4db201d312adf0620af0a8d361c2adc1a9f495a87dd704b75a22b5e6002c",
+    "size": 90,
+  },
+  {
+    "path": "root/textures/stone.dds",
+    "sha256": "7c3b7b767f4d9aec695041276d13db7c6798e1485004f213a668716d22021a5a",
+    "size": 16512,
+  },
+]
+`;
