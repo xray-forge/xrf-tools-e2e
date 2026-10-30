@@ -4,8 +4,8 @@ exports[`level info structure should preserve fixture bytes and write only the r
 [
   {
     "path": "by-name.json",
-    "sha256": "b7ed1e2ecb0e86f2ca42dff30a98882b06ccae240024e400555ff328c5502eb6",
-    "size": 1371,
+    "sha256": "4dcdcdc6610a9f8774501956801bd024f5be90b2a0ebd48b03bda5b3006babb1",
+    "size": 1477,
   },
   {
     "path": "root/levels/zaton/level",
@@ -24,8 +24,8 @@ exports[`level info structure should preserve fixture bytes and write only the r
   },
   {
     "path": "structure.json",
-    "sha256": "b7ed1e2ecb0e86f2ca42dff30a98882b06ccae240024e400555ff328c5502eb6",
-    "size": 1371,
+    "sha256": "4dcdcdc6610a9f8774501956801bd024f5be90b2a0ebd48b03bda5b3006babb1",
+    "size": 1477,
   },
   {
     "path": "triangle/level",
@@ -44,8 +44,8 @@ exports[`level info structure should preserve fixture bytes and write only the r
   },
   {
     "path": "without-structure.json",
-    "sha256": "442d16557fbb188a4042909772e7d9fc49286e227c7ee7b6aa3037b37e530693",
-    "size": 1372,
+    "sha256": "41efe9767947cd1816d568cf91ca2ee96bf53e5edaab2395721f36eb7b1d9e9f",
+    "size": 1478,
   },
 ]
 `;
@@ -60,6 +60,7 @@ exports[`level info structure should report the sectors, portals and lights the 
     "2 sectors, 2 portals, 2 static lights, one of them the sun",
     "Shader table entries: 4",
     "Visuals: 1, drawable: 1, with fast path: 1",
+    "Trees: 0 of 0 types, from 0 parts",
     "level.geom: 1 vertex buffers, 1 index buffers, 0 slide windows",
     "level.geomx: 1 vertex buffers, 1 index buffers, 0 slide windows",
   ],
