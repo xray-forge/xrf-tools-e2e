@@ -10,7 +10,6 @@ exports[`level info report should describe the visual and buffer counts in verbo
     "0 sectors, 0 portals, 0 static lights",
     "Shader table entries: 4",
     "Visuals: 1, drawable: 1, with fast path: 1",
-    "Trees: 0 of 0 types, from 0 parts",
     "[0] MT_NORMAL, shader id 2, vb 0 [0..3), ib 0 [0..3), 1 tris",
     "level.geom: 1 vertex buffers, 1 index buffers, 0 slide windows",
     "level.geomx: 1 vertex buffers, 1 index buffers, 0 slide windows",
@@ -95,8 +94,8 @@ exports[`level info report should preserve the authored inputs and write only th
   },
   {
     "path": "triangle.json",
-    "sha256": "41efe9767947cd1816d568cf91ca2ee96bf53e5edaab2395721f36eb7b1d9e9f",
-    "size": 1478,
+    "sha256": "442d16557fbb188a4042909772e7d9fc49286e227c7ee7b6aa3037b37e530693",
+    "size": 1372,
   },
   {
     "path": "triangle/level",
@@ -263,12 +262,6 @@ exports[`level info report should report one drawable triangle and both geometry
       },
       "textured": 0,
       "total": 1,
-      "trees": {
-        "kinds": [],
-        "parts": 0,
-        "trees": 0,
-        "types": 0,
-      },
       "uniqueRanges": 1,
       "vertices": 3,
     },
