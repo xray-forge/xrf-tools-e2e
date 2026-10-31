@@ -39,8 +39,8 @@ exports[`gamedata verify full run should write a findings report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "32574088cdb28a39fc1016cb196d8f063c108ed37e4d261be8cc55edf422c57a",
-    "size": 239093,
+    "sha256": "3f50be00e42e9d06af8b08da501106c96609225634e8d23a8a134d838ea61581",
+    "size": 239098,
   },
 ]
 `;
