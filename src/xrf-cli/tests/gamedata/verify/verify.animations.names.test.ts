@@ -77,7 +77,7 @@ describe("gamedata verify named HUD animations", () => {
             findings: [],
             status: "passed",
             summary:
-              "1/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
+              "1/1 player HUD sections valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
             id: "animations",
           },
         ],
@@ -99,13 +99,13 @@ describe("gamedata verify named HUD animations", () => {
               {
                 subject: "configs/system.ltx",
                 message:
-                  "Player HUD section [actor_hud] has no motion 'missing', which weapon [wpn_test] plays as anm_idle",
+                  "Motion 'missing', asked for by [wpn_test_hud] as anm_idle, is missing from player HUD section [actor_hud] under its own name and as 'missing1' to 'missing8': the engine asserts on it when it binds the HUD to those hands",
                 ruleId: "animations.player-hud",
               },
             ],
             status: "failed",
             summary:
-              "0/1 HUD animations valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
+              "0/1 player HUD sections valid, 0/0 HUD item animations valid, 0 motion collisions across 1 HUD namespaces, 0/0 object motions valid, 0/0 post-process effects valid",
             id: "animations",
           },
         ],
