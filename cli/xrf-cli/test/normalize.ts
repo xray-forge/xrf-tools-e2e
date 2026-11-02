@@ -89,7 +89,12 @@ const JSON_BUILD_BLOCK_PATTERN = /"build":\s*{[^{}]*}/g;
  * one golden describe one source.
  */
 const JSON_BUILD_MEMBER_PATTERN =
-  /"(version|kind|commit|reference|isDirty|builtAt|target|rustc|profile|optimization|runId)":\s*(?:"(?:[^"\\]|\\.)*"|true|false|null)/g;
+  /"(version|kind|commit|reference|isDirty|builtAt|target|rustc|profile|optimization)":\s*(?:"(?:[^"\\]|\\.)*"|true|false|null)/g;
+
+/**
+ * The workflow run a `build` block names, with the comma joining it to its neighbour.
+ */
+const JSON_BUILD_RUN_PATTERN = /,\s*"runId":\s*(?:"(?:[^"\\]|\\.)*"|null)|"runId":\s*(?:"(?:[^"\\]|\\.)*"|null),\s*/g;
 
 /**
  * The `execution` block of a report envelope, carried by every run whether or not it declared `--jobs`.
@@ -170,7 +175,7 @@ export function normalizeText(text: string, sandboxRoot: string): Array<string> 
   normalized = normalized.replace(JSON_SPEED_PATTERN, '$1"speed": "<speed>"');
   normalized = normalized.replace(SPEED_PATTERN, "<speed>");
   normalized = normalized.replace(JSON_BUILD_BLOCK_PATTERN, (block) =>
-    block.replace(JSON_BUILD_MEMBER_PATTERN, '"$1": "<build>"')
+    block.replace(JSON_BUILD_RUN_PATTERN, "").replace(JSON_BUILD_MEMBER_PATTERN, '"$1": "<build>"')
   );
   normalized = normalized.replace(JSON_EXECUTION_BLOCK_PATTERN, (block) =>
     block.replace(JSON_WORKERS_MEMBER_PATTERN, '"$1": "<workers>"')
