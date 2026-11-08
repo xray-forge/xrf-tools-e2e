@@ -63,6 +63,7 @@ exports[`ltx find should deposit the same records through --json and a report 1`
     "dialect": "dltx",
     "query": {
       "field": "cost",
+      "isSectionCaseFolded": true,
       "section": "wpn_ak74",
       "value": null,
     },
@@ -122,8 +123,8 @@ exports[`ltx find should write only the archive it packed and the report 1`] = `
   },
   {
     "path": "report.json",
-    "sha256": "afaf6ecd246ba68665b3f90b062b5a4db7a11e47bd9f2132bd667a2e08fdf479",
-    "size": 1526,
+    "sha256": "960fb8f7c84162b2c739dc6a906a3c55f66ab0190fa2f511c07a0a3af4775958",
+    "size": 1561,
   },
   {
     "path": "stage/configs/items/w_ak74.ltx",

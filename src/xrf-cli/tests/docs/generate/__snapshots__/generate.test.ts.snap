@@ -683,7 +683,7 @@ exports[`docs generate should render ltx.md 1`] = `
   "| Option | Required | Default | Description |",
   "| ------ | -------- | ------- | ----------- |",
   "| \`-p, --path <path>\` | yes |  | Path to a folder with ltx files, or to a game installation root holding fsgame.ltx (fsgame_&lt;game&gt;.ltx in an Enhanced Edition) |",
-  "| \`--section <section>\` |  |  | Section to find, without brackets or operation prefix. Matches the whole name, case-sensitively |",
+  "| \`--section <section>\` |  |  | Section to find, without brackets or operation prefix. Matches the whole name, case-sensitively, except under --dltx, which lowercases section names as the engine does |",
   "| \`--field <field>\` |  |  | Field to find, without operation prefix. Matches the whole name, case-sensitively |",
   "| \`--value <value>\` |  |  | Text a written value must contain, case-sensitively |",
   "| \`--dltx\` |  |  | Resolve configs with the Monolith/Anomaly DLTX patch dialect, applying mod_&lt;base&gt;_*.ltx files |",
@@ -1590,8 +1590,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/ltx.md",
-    "sha256": "75292ae5f90071a4276c6472daf8b8fb686a81c4c37a37c406b47b685f9dcf55",
-    "size": 4439,
+    "sha256": "84f103f0319ed08966956062ce09510081b73ba667bcca38fb646b137242b801",
+    "size": 4511,
   },
   {
     "path": "docs/object.md",

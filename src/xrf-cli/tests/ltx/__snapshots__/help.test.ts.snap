@@ -13,7 +13,7 @@ exports[`ltx command help should keep each leaf command's help stable 1`] = `
       "Options:",
       "  -p, --path <path>        Path to a folder with ltx files, or to a game installation root holding fsgame.ltx (fsgame_<game>.ltx in an Enhanced Edition)",
       "  -s, --silent             Turn off logging",
-      "      --section <section>  Section to find, without brackets or operation prefix. Matches the whole name, case-sensitively",
+      "      --section <section>  Section to find, without brackets or operation prefix. Matches the whole name, case-sensitively, except under --dltx, which lowercases section names as the engine does",
       "  -v, --verbose            Turn on verbose logging",
       "      --field <field>      Field to find, without operation prefix. Matches the whole name, case-sensitively",
       "      --json               Write the run's JSON report to stdout, moving human output to stderr",

@@ -40,6 +40,8 @@ describe("ltx find", () => {
   let standard: CliResult;
   let piped: CliResult;
   let inspect: CliResult;
+  let folded: CliResult;
+  let exact: CliResult;
 
   const said = (result: CliResult): string => [...result.stdout, ...result.stderr].join("\n");
 
@@ -74,6 +76,16 @@ describe("ltx find", () => {
       box.at("report.json"),
     ]);
     inspect = box.run("ltx inspect", ["--path", install, "--dltx", "wpn_ak74"]);
+    folded = box.run("ltx find", ["--path", install, "--dltx", "--section", "WPN_AK74"]);
+    exact = box.run("ltx find", ["--path", install, "--section", "WPN_AK74"]);
+  });
+
+  it("should compare section names the way the chosen dialect resolves them", () => {
+    // DLTX lowercases every section name it reads, so `WPN_AK74` is the section the patches edit.
+    // Standard LTX looks a section up as bracketed, so the same query names a section nothing writes.
+    expect(said(folded)).toContain("configs\\items\\w_ak74.ltx:1 [wpn_ak74]:wpn_base - declaration [archived]");
+    expect(said(folded)).toContain("Found 3 statement(s)");
+    expect(said(exact)).toContain("Found 0 statement(s)");
   });
 
   it("should find a section where it is declared and where it is patched", () => {
