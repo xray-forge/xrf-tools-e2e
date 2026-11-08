@@ -5,7 +5,7 @@ exports[`docs generate should accept pages it just wrote 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "CLI documentation in <sandbox>/docs is up to date (19 pages)",
+    "CLI documentation in <sandbox>/docs is up to date (18 pages)",
   ],
 }
 `;
@@ -15,7 +15,7 @@ exports[`docs generate should generate a page per command group 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Generated 19 documentation pages in <sandbox>/docs",
+    "Generated 18 documentation pages in <sandbox>/docs",
   ],
 }
 `;
@@ -45,7 +45,6 @@ exports[`docs generate should list every group and command in the index 1`] = `
   "| [OGF](ogf.md) | [\`ogf fix\`](ogf.md#xrf-cli-ogf-fix), [\`ogf info\`](ogf.md#xrf-cli-ogf-info), [\`ogf patch-motion-refs\`](ogf.md#xrf-cli-ogf-patch-motion-refs), [\`ogf patch-texture-refs\`](ogf.md#xrf-cli-ogf-patch-texture-refs), [\`ogf verify\`](ogf.md#xrf-cli-ogf-verify) |",
   "| [OMF](omf.md) | [\`omf duplicate-motion\`](omf.md#xrf-cli-omf-duplicate-motion), [\`omf filter-motions\`](omf.md#xrf-cli-omf-filter-motions), [\`omf info\`](omf.md#xrf-cli-omf-info), [\`omf rename-motions\`](omf.md#xrf-cli-omf-rename-motions), [\`omf repack\`](omf.md#xrf-cli-omf-repack) |",
   "| [Particle](particle.md) | [\`particle find\`](particle.md#xrf-cli-particle-find), [\`particle info\`](particle.md#xrf-cli-particle-info), [\`particle inspect\`](particle.md#xrf-cli-particle-inspect), [\`particle list\`](particle.md#xrf-cli-particle-list), [\`particle pack\`](particle.md#xrf-cli-particle-pack), [\`particle repack\`](particle.md#xrf-cli-particle-repack), [\`particle re-unpack\`](particle.md#xrf-cli-particle-re-unpack), [\`particle unpack\`](particle.md#xrf-cli-particle-unpack), [\`particle verify\`](particle.md#xrf-cli-particle-verify) |",
-  "| [Profile](profile.md) | [\`profile run\`](profile.md#xrf-cli-profile-run) |",
   "| [Spawn](spawn.md) | [\`spawn info\`](spawn.md#xrf-cli-spawn-info), [\`spawn pack\`](spawn.md#xrf-cli-spawn-pack), [\`spawn repack\`](spawn.md#xrf-cli-spawn-repack), [\`spawn re-unpack\`](spawn.md#xrf-cli-spawn-re-unpack), [\`spawn unpack\`](spawn.md#xrf-cli-spawn-unpack), [\`spawn verify\`](spawn.md#xrf-cli-spawn-verify) |",
   "| [Sprite](sprite.md) | [\`sprite pack-description\`](sprite.md#xrf-cli-sprite-pack-description), [\`sprite pack-equipment\`](sprite.md#xrf-cli-sprite-pack-equipment), [\`sprite unpack-description\`](sprite.md#xrf-cli-sprite-unpack-description), [\`sprite unpack-equipment\`](sprite.md#xrf-cli-sprite-unpack-equipment), [\`sprite verify-equipment\`](sprite.md#xrf-cli-sprite-verify-equipment) |",
   "| [THM](thm.md) | [\`thm bump-alignment\`](thm.md#xrf-cli-thm-bump-alignment), [\`thm patch-bump\`](thm.md#xrf-cli-thm-patch-bump) |",
@@ -74,12 +73,11 @@ exports[`docs generate should reject pages that drifted 1`] = `
     "  missing: ogf.md",
     "  missing: omf.md",
     "  missing: particle.md",
-    "  missing: profile.md",
     "  missing: spawn.md",
     "  missing: sprite.md",
     "  missing: thm.md",
     "  missing: translation.md",
-    "Check failed: 19 finding(s)",
+    "Check failed: 18 finding(s)",
   ],
   "stdout": [],
 }
@@ -1545,8 +1543,8 @@ exports[`docs generate should write the expected pages 1`] = `
 [
   {
     "path": "docs/README.md",
-    "sha256": "599baf88878b6776441ea88a73b3a9529812f3cf011fd827882a0d5f6fde2b1f",
-    "size": 4655,
+    "sha256": "c74d4b9c2a0fe40a40591ad8d3234e8c1b5391cd274c32fac8c0e2741805ea79",
+    "size": 4579,
   },
   {
     "path": "docs/archive.md",
@@ -1595,8 +1593,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/object.md",
-    "sha256": "d74d4fe9021216bf3dcb024c784142c7c8a711d91b12ae80f074c5c60c5f8ab4",
-    "size": 2652,
+    "sha256": "cc8888be2b62355284d85fc8619894c71fc951cb338cf9faacc82f7aad022ad6",
+    "size": 2967,
   },
   {
     "path": "docs/ogf.md",
@@ -1612,11 +1610,6 @@ exports[`docs generate should write the expected pages 1`] = `
     "path": "docs/particle.md",
     "sha256": "6d54997a76679386364fa89fb691f909c63cf8b9697376a4ff2a56e3c2a7b4a9",
     "size": 7113,
-  },
-  {
-    "path": "docs/profile.md",
-    "sha256": "61bd29ae07e508fe3727b4f080afed5de295c562dd7dd3138807369ff218f595",
-    "size": 1013,
   },
   {
     "path": "docs/spawn.md",
