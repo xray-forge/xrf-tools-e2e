@@ -2,6 +2,27 @@
 
 exports[`ltx command help should keep each leaf command's help stable 1`] = `
 {
+  "find": {
+    "exitCode": 0,
+    "stderr": [],
+    "stdout": [
+      "Find where a section or field is written, declared or patched, across every config a project holds",
+      "",
+      "Usage: xrf-cli ltx find [OPTIONS] --path <path> <--section <section>|--field <field>|--value <value>>",
+      "",
+      "Options:",
+      "  -p, --path <path>        Path to a folder with ltx files, or to a game installation root holding fsgame.ltx (fsgame_<game>.ltx in an Enhanced Edition)",
+      "  -s, --silent             Turn off logging",
+      "      --section <section>  Section to find, without brackets or operation prefix. Matches the whole name, case-sensitively",
+      "  -v, --verbose            Turn on verbose logging",
+      "      --field <field>      Field to find, without operation prefix. Matches the whole name, case-sensitively",
+      "      --json               Write the run's JSON report to stdout, moving human output to stderr",
+      "      --report <PATH>      Write the run's JSON report to a file",
+      "      --value <value>      Text a written value must contain, case-sensitively",
+      "      --dltx               Resolve configs with the Monolith/Anomaly DLTX patch dialect, applying mod_<base>_*.ltx files",
+      "  -h, --help               Print help",
+    ],
+  },
   "format": {
     "exitCode": 0,
     "stderr": [],

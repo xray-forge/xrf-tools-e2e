@@ -5,7 +5,7 @@ exports[`docs generate should accept pages it just wrote 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "CLI documentation in <sandbox>/docs is up to date (18 pages)",
+    "CLI documentation in <sandbox>/docs is up to date (19 pages)",
   ],
 }
 `;
@@ -15,7 +15,7 @@ exports[`docs generate should generate a page per command group 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
-    "Generated 18 documentation pages in <sandbox>/docs",
+    "Generated 19 documentation pages in <sandbox>/docs",
   ],
 }
 `;
@@ -40,7 +40,8 @@ exports[`docs generate should list every group and command in the index 1`] = `
   "| [Gamedata](gamedata.md) | [\`gamedata list\`](gamedata.md#xrf-cli-gamedata-list), [\`gamedata verify\`](gamedata.md#xrf-cli-gamedata-verify) |",
   "| [Game materials](gamemtl.md) | [\`gamemtl info\`](gamemtl.md#xrf-cli-gamemtl-info) |",
   "| [Level](level.md) | [\`level albedo\`](level.md#xrf-cli-level-albedo), [\`level info\`](level.md#xrf-cli-level-info), [\`level materials\`](level.md#xrf-cli-level-materials), [\`level verify\`](level.md#xrf-cli-level-verify) |",
-  "| [LTX](ltx.md) | [\`ltx format\`](ltx.md#xrf-cli-ltx-format), [\`ltx inspect\`](ltx.md#xrf-cli-ltx-inspect), [\`ltx list\`](ltx.md#xrf-cli-ltx-list), [\`ltx verify\`](ltx.md#xrf-cli-ltx-verify) |",
+  "| [LTX](ltx.md) | [\`ltx find\`](ltx.md#xrf-cli-ltx-find), [\`ltx format\`](ltx.md#xrf-cli-ltx-format), [\`ltx inspect\`](ltx.md#xrf-cli-ltx-inspect), [\`ltx list\`](ltx.md#xrf-cli-ltx-list), [\`ltx verify\`](ltx.md#xrf-cli-ltx-verify) |",
+  "| [Object](object.md) | [\`object compile\`](object.md#xrf-cli-object-compile), [\`object decompile\`](object.md#xrf-cli-object-decompile), [\`object verify\`](object.md#xrf-cli-object-verify) |",
   "| [OGF](ogf.md) | [\`ogf fix\`](ogf.md#xrf-cli-ogf-fix), [\`ogf info\`](ogf.md#xrf-cli-ogf-info), [\`ogf patch-motion-refs\`](ogf.md#xrf-cli-ogf-patch-motion-refs), [\`ogf patch-texture-refs\`](ogf.md#xrf-cli-ogf-patch-texture-refs), [\`ogf verify\`](ogf.md#xrf-cli-ogf-verify) |",
   "| [OMF](omf.md) | [\`omf duplicate-motion\`](omf.md#xrf-cli-omf-duplicate-motion), [\`omf filter-motions\`](omf.md#xrf-cli-omf-filter-motions), [\`omf info\`](omf.md#xrf-cli-omf-info), [\`omf rename-motions\`](omf.md#xrf-cli-omf-rename-motions), [\`omf repack\`](omf.md#xrf-cli-omf-repack) |",
   "| [Particle](particle.md) | [\`particle find\`](particle.md#xrf-cli-particle-find), [\`particle info\`](particle.md#xrf-cli-particle-info), [\`particle inspect\`](particle.md#xrf-cli-particle-inspect), [\`particle list\`](particle.md#xrf-cli-particle-list), [\`particle pack\`](particle.md#xrf-cli-particle-pack), [\`particle repack\`](particle.md#xrf-cli-particle-repack), [\`particle re-unpack\`](particle.md#xrf-cli-particle-re-unpack), [\`particle unpack\`](particle.md#xrf-cli-particle-unpack), [\`particle verify\`](particle.md#xrf-cli-particle-verify) |",
@@ -69,6 +70,7 @@ exports[`docs generate should reject pages that drifted 1`] = `
     "  missing: gamemtl.md",
     "  missing: level.md",
     "  missing: ltx.md",
+    "  missing: object.md",
     "  missing: ogf.md",
     "  missing: omf.md",
     "  missing: particle.md",
@@ -77,7 +79,7 @@ exports[`docs generate should reject pages that drifted 1`] = `
     "  missing: sprite.md",
     "  missing: thm.md",
     "  missing: translation.md",
-    "Check failed: 18 finding(s)",
+    "Check failed: 19 finding(s)",
   ],
   "stdout": [],
 }
@@ -669,6 +671,26 @@ exports[`docs generate should render ltx.md 1`] = `
   "# LTX commands",
   "",
   "<!-- ANCHOR: commands -->",
+  "",
+  "## \`xrf-cli ltx find\`",
+  "",
+  "Find where a section or field is written, declared or patched, across every config a project holds",
+  "",
+  "\`\`\`txt",
+  "xrf-cli ltx find [OPTIONS] --path <path> <--section <section>|--field <field>|--value <value>>",
+  "\`\`\`",
+  "",
+  "| Option | Required | Default | Description |",
+  "| ------ | -------- | ------- | ----------- |",
+  "| \`-p, --path <path>\` | yes |  | Path to a folder with ltx files, or to a game installation root holding fsgame.ltx (fsgame_&lt;game&gt;.ltx in an Enhanced Edition) |",
+  "| \`--section <section>\` |  |  | Section to find, without brackets or operation prefix. Matches the whole name, case-sensitively |",
+  "| \`--field <field>\` |  |  | Field to find, without operation prefix. Matches the whole name, case-sensitively |",
+  "| \`--value <value>\` |  |  | Text a written value must contain, case-sensitively |",
+  "| \`--dltx\` |  |  | Resolve configs with the Monolith/Anomaly DLTX patch dialect, applying mod_&lt;base&gt;_*.ltx files |",
+  "| \`-s, --silent\` |  |  | Turn off logging |",
+  "| \`-v, --verbose\` |  |  | Turn on verbose logging |",
+  "| \`--json\` |  |  | Write the run's JSON report to stdout, moving human output to stderr |",
+  "| \`--report <PATH>\` |  |  | Write the run's JSON report to a file |",
   "",
   "## \`xrf-cli ltx format\`",
   "",
@@ -1523,8 +1545,8 @@ exports[`docs generate should write the expected pages 1`] = `
 [
   {
     "path": "docs/README.md",
-    "sha256": "cde44095236f11f5a019d88063890222885b7fca759e2df3d205c63f349a9065",
-    "size": 4427,
+    "sha256": "599baf88878b6776441ea88a73b3a9529812f3cf011fd827882a0d5f6fde2b1f",
+    "size": 4655,
   },
   {
     "path": "docs/archive.md",
@@ -1568,8 +1590,13 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/ltx.md",
-    "sha256": "4ed6d3229f66a24b9ae4d223e19df498fca2e908a736f1fce307ef16d005ae70",
-    "size": 3250,
+    "sha256": "75292ae5f90071a4276c6472daf8b8fb686a81c4c37a37c406b47b685f9dcf55",
+    "size": 4439,
+  },
+  {
+    "path": "docs/object.md",
+    "sha256": "d74d4fe9021216bf3dcb024c784142c7c8a711d91b12ae80f074c5c60c5f8ab4",
+    "size": 2652,
   },
   {
     "path": "docs/ogf.md",

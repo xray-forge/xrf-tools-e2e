@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ltx find should deposit the same records through --json and a report 1`] = `
+{
+  "build": {
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "profile": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "ltx",
+    "find",
+  ],
+  "duration": "<duration>",
+  "execution": {
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "result": {
+    "declarations": [
+      {
+        "isPatch": false,
+        "isPhysical": false,
+        "kind": "field",
+        "line": 3,
+        "name": "cost",
+        "operation": "",
+        "path": "configs\\items\\w_ak74.ltx",
+        "section": "wpn_ak74",
+        "sectionOperation": "",
+        "source": "<sandbox>/install/database/gamedata.db (archive)",
+        "value": "4000",
+      },
+      {
+        "isPatch": true,
+        "isPhysical": true,
+        "kind": "field",
+        "line": 4,
+        "name": "cost",
+        "operation": "",
+        "path": "configs\\mod_system_aaa.ltx",
+        "section": "wpn_ak74",
+        "sectionOperation": "!",
+        "source": "<sandbox>/install/gamedata",
+        "value": "5000",
+      },
+      {
+        "isPatch": true,
+        "isPhysical": true,
+        "kind": "field",
+        "line": 4,
+        "name": "cost",
+        "operation": "",
+        "path": "configs\\mod_system_xxx.ltx",
+        "section": "wpn_ak74",
+        "sectionOperation": "!",
+        "source": "<sandbox>/install/gamedata",
+        "value": "9000",
+      },
+    ],
+    "dialect": "dltx",
+    "query": {
+      "field": "cost",
+      "section": "wpn_ak74",
+      "value": null,
+    },
+    "unreadable": [],
+  },
+}
+`;
+
+exports[`ltx find should find a section where it is declared and where it is patched 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Find path: <sandbox>/install",
+    "Source: directory <sandbox>/install/gamedata (gamedata)",
+    "Source: archive <sandbox>/install/database (database)",
+    "configs\\items\\w_ak74.ltx:1 [wpn_ak74]:wpn_base - declaration [archived]",
+    "configs\\mod_system_aaa.ltx:3 ![wpn_ak74] - patch",
+    "configs\\mod_system_xxx.ltx:3 ![wpn_ak74] - patch",
+    "Found 3 statement(s) in 3 config(s): 1 declaration(s), 2 patch(es)",
+    "Resolved values: ltx inspect --path <sandbox>/install --dltx wpn_ak74",
+  ],
+}
+`;
+
+exports[`ltx find should write only the archive it packed and the report 1`] = `
+[
+  {
+    "path": "install/database/gamedata.db",
+    "sha256": "3a82683fa6ecac5d7ff629e023c71cb4678b48fdc3ab309a0e8608743b0346d9",
+    "size": 287,
+  },
+  {
+    "path": "install/fsgame.ltx",
+    "sha256": "4b7138c7180f66c160bf06a5f0b73927f1484d316b0558be67405307bda0875e",
+    "size": 122,
+  },
+  {
+    "path": "install/gamedata/configs/mod_system_aaa.ltx",
+    "sha256": "17eb06cd725eff32bfa832ce6e88d3305d88a26357926b9adc5757e11f97aa49",
+    "size": 127,
+  },
+  {
+    "path": "install/gamedata/configs/mod_system_xxx.ltx",
+    "sha256": "89f55269dc5a6032cd0d005f73a7c7e36dbc42dd9343ece8e616a26d1fa54a3f",
+    "size": 145,
+  },
+  {
+    "path": "install/gamedata/configs/system.ltx",
+    "sha256": "9c316a6521c725a5b9241d6bc26a934117bf663bbd40b640c7eb5fafd2b0f4b2",
+    "size": 194,
+  },
+  {
+    "path": "install/gamedata/configs/weapons.scheme.ltx",
+    "sha256": "c3fbc5709e50966a9371dd5bf7e63ce31f8de98472faa39daf995acf81ef69f7",
+    "size": 358,
+  },
+  {
+    "path": "report.json",
+    "sha256": "afaf6ecd246ba68665b3f90b062b5a4db7a11e47bd9f2132bd667a2e08fdf479",
+    "size": 1526,
+  },
+  {
+    "path": "stage/configs/items/w_ak74.ltx",
+    "sha256": "e32c0c1d31c661975bc01cfb54fe4a433ff939418a622789cb3109ba1f6a1549",
+    "size": 69,
+  },
+  {
+    "path": "stage/configs/items/w_base.ltx",
+    "sha256": "25e6fe74bfc03d8780ff8c1ed48d0ad8f88e364fa28f936f9f20352a04a9da74",
+    "size": 53,
+  },
+]
+`;
