@@ -55,6 +55,16 @@ describe("ltx inspect dltx", () => {
     expect(said).toContain("declared in items\\w_ak74.ltx");
   });
 
+  it("should find a section only a patch file creates", () => {
+    // `@[wpn_created]` creates the section in whichever root the patch file attaches to, and nothing
+    // records which one that is. The search for a declaring entry point cannot narrow past it, so it
+    // falls back to trying every entry point rather than reporting the section undeclared.
+    const created: CliResult = box.run("ltx inspect", ["--path", gamedataDltx("configs"), "--dltx", "wpn_created"]);
+
+    expect(created.stdout.join("\n")).toContain("[wpn_created] resolved from system.ltx (dltx)");
+    expect(created.stdout.join("\n")).toContain("set by mod_system_xxx.ltx (depth -400)");
+  });
+
   it("should refuse the same tree under standard rules rather than half-resolving it", () => {
     // Without the flag the patch files are entry points of their own, and standard LTX has no
     // operation prefixes, so it refuses them rather than reading `![wpn_ak74]` as a section name.
