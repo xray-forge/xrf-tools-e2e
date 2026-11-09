@@ -631,6 +631,7 @@ exports[`docs generate should render level.md 1`] = `
   "| ------ | -------- | ------- | ----------- |",
   "| \`-p, --path <path>\` | yes |  | Path to the level's directory, holding level, build.lights, level.game, level.ps_static and the rest |",
   "| \`-d, --dest <dest>\` | yes |  | Path of the .level to write; its parts go in the directory beside it named after it, its sidecar beside it, and its name is the level's |",
+  "| \`--spawn <spawn>\` |  |  | Root spawn whose objects on the level replace level.spawn's entities, read from spawns/&lt;spawn&gt;.spawn beside the level's levels directory; all.spawn by default where it exists |",
   "| \`-f, --force\` |  |  | Overwrite an existing .level, its parts and its sidecar |",
   "| \`-s, --silent\` |  |  | Turn off logging |",
   "| \`-v, --verbose\` |  |  | Turn on verbose logging |",
@@ -1619,8 +1620,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/level.md",
-    "sha256": "2923424c94f2e10766287db404f05e4b44b19916cf00c91b5e055fd2f6f63095",
-    "size": 7462,
+    "sha256": "6ce3c22db4c2e5942a0792c1bcba7ceebd2d67d8c838ddc66151fe432cbafa54",
+    "size": 7673,
   },
   {
     "path": "docs/ltx.md",
