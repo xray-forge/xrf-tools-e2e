@@ -632,6 +632,10 @@ exports[`docs generate should render level.md 1`] = `
   "| \`-p, --path <path>\` | yes |  | Path to the level's directory, holding level, build.lights, level.game, level.ps_static and the rest |",
   "| \`-d, --dest <dest>\` | yes |  | Path of the .level to write; its parts go in the directory beside it named after it, its sidecar beside it, and its name is the level's |",
   "| \`--objects <objects>\` |  |  | Objects root ($objects$) the scene's .object files are written under, at levels/&lt;level&gt;/; by default the objects directory beside the destination's directory, as the SDK lays out rawdata/levels and rawdata/objects |",
+  "| \`--surfaces <surfaces>\` |  | \`infer\` | How the geometry's surfaces are dressed: infer each game material from the collision face beneath and a compiler shader fitting what the level shows, or give every surface the editor's defaults. Possible values: \`infer\`, \`defaults\`. |",
+  "| \`--game-materials <game-materials>\` |  |  | Game material library naming the collision materials; gamemtl.xr in the level's gamedata by default |",
+  "| \`--compiler-shaders <compiler-shaders>\` |  |  | Compiler shader library inferred compiler shaders are chosen from; shaders_xrlc.xr in the level's gamedata by default |",
+  "| \`--library <library>...\` |  |  | Object library root, such as an SDK's rawdata/objects, whose surfaces' pairings of engine and compiler shaders break ties between compiler shaders that fit; repeatable |",
   "| \`--spawn <spawn>\` |  |  | Root spawn whose objects on the level replace level.spawn's entities, read from spawns/&lt;spawn&gt;.spawn beside the level's levels directory; all.spawn by default where it exists |",
   "| \`-f, --force\` |  |  | Overwrite an existing .level, its parts, its sidecar and its objects |",
   "| \`-s, --silent\` |  |  | Turn off logging |",
@@ -1621,8 +1625,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/level.md",
-    "sha256": "2b768a41385e34d3ac60514c6841e9b1a8f329d10ea9a8e68a06502b75be9bb3",
-    "size": 8000,
+    "sha256": "11a1eaf4ac024171f13cc7a7a21c19f31f1972915ec734f6947f5cf86f6aa3bd",
+    "size": 8799,
   },
   {
     "path": "docs/ltx.md",
