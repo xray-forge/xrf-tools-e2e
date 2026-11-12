@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`level compile details should refuse a step the SDK runs without the SDK 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: The ai step runs the SDK's compiler; name the SDK's editors directory",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`level compile details should refuse to overwrite level.details unless forced 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: <sandbox>/gamedata/levels/test_level/level.details exists; force the compile to overwrite it",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`level compile details should write level.details beside the build files and only the requested reports 1`] = `
+[
+  {
+    "path": "gamedata/levels/test_level/build.cform",
+    "sha256": "a7e6b39fca2bf7682c72602df8dbf5c1b20248b3f299794e080bc80e1d4dbec5",
+    "size": 404,
+  },
+  {
+    "path": "gamedata/levels/test_level/build.details",
+    "sha256": "a699c9ac3b66ef5ee951d97379d7ac17393535c03b3e0fad1d79562b0c659115",
+    "size": 128,
+  },
+  {
+    "path": "gamedata/levels/test_level/build.lights",
+    "sha256": "a6993e358e815e42935e42ffd2162fc0b9a2d0afad221b523001b5120219eed0",
+    "size": 232,
+  },
+  {
+    "path": "gamedata/levels/test_level/build.prj",
+    "sha256": "0daaa8d594a5af0f1f20da91f4a875b03af93dbc60c017b6b79c4b41f3421975",
+    "size": 472,
+  },
+  {
+    "path": "gamedata/levels/test_level/level.details",
+    "sha256": "b2b295751ad762be46abc5b07eb98eb4f20801a65aaa9de858a884a9dbb8d71e",
+    "size": 128,
+  },
+  {
+    "path": "gamedata/shaders_xrlc.xr",
+    "sha256": "cfb7f36c1cfc0723656359a3d7128ddebfe50c3a3dde281814b4efce4a0ec6a8",
+    "size": 144,
+  },
+  {
+    "path": "gamedata/textures/ground.thm",
+    "sha256": "77ee3540db2d9cfc5126c8afc2b5a91c40223e9586f75dee85ab4bb0aa9f86ce",
+    "size": 138,
+  },
+  {
+    "path": "lit.json",
+    "sha256": "7176473e419f1c5a6c8e9a31f3210edd864103c70d466d7577d657e0e4298ae0",
+    "size": 672,
+  },
+  {
+    "path": "refused.json",
+    "sha256": "33c307fdd572fd9471e6c1184d85d8a7abe7e2a1aabd4928c3cbff9eb3d134dc",
+    "size": 408,
+  },
+  {
+    "path": "sdkless.json",
+    "sha256": "81b7d50eb7b0b7a00827da0b07a5cb9d2f451d1bcc53e0ee4f0b6c4bdf9be7bc",
+    "size": 385,
+  },
+]
+`;
