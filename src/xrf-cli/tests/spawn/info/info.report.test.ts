@@ -18,7 +18,7 @@ describe("spawn info report", () => {
     box.run("spawn info", ["--path", gamedata("spawns/all.spawn"), "--silent", "--report", box.at("report.json")]);
   });
 
-  it("should report the identity and census of a spawn file", () => {
+  it("should report the kind, identity and census of a root spawn", () => {
     expect(box.json("report.json")).toMatchSnapshot();
   });
 });

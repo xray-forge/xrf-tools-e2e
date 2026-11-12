@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`spawn info refusals should refuse a file of neither spawn kind, naming both 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: Expected a root spawn opening with its header chunk, or a level's spawn list of spawn packets: <resources>/gamedata/particles.xr is neither, Missing terminator error: Null terminator is not found in buffer, no data to be read",
+  ],
+  "stdout": [
+    "Read spawn file <resources>/gamedata/particles.xr",
+  ],
+}
+`;
