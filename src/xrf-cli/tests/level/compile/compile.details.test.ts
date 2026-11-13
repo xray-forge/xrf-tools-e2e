@@ -7,9 +7,10 @@ import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 /**
  * Lighting a level's details with `level compile --steps details`, no SDK named.
  *
- * `details-build` is a game data tree written by `xrf-level-compiler`'s own tests through the tools' writers: one
+ * `compile-build` is a game data tree written by `xrf-level-compiler`'s own tests through the tools' writers: one
  * shadow-casting compiler shader, one opaque texture's `.thm`, and a level directory of a five-slot grid (two slots
- * lit, one touching no face, one emptied, one unplanted) over a ground and a roof, under a sun and a red point light.
+ * lit, one touching no face, one emptied, one unplanted) over a ground and a roof, under a sun and a red point light,
+ * with a four-node AI map beside them.
  *
  * Every run asks for the CPU, the reference: the default, `auto`, traces on whatever GPU the machine has, so its report
  * names that GPU. The GPU backend's agreement with the CPU is `xrf-level-compiler`'s tests'.
@@ -23,7 +24,7 @@ describe("level compile details", () => {
   let sdkless: CliResult;
 
   beforeAll(() => {
-    box.copyIn(resource("levels/details-build"), "gamedata");
+    box.copyIn(resource("levels/compile-build"), "gamedata");
 
     const level: string = box.at("gamedata/levels/test_level");
     const details: Array<string> = ["--path", level, "--steps", "details", "--backend", "cpu"];
@@ -31,7 +32,7 @@ describe("level compile details", () => {
     lit = box.run("level compile", [...details, "--report", box.at("lit.json")]);
     refused = box.run("level compile", [...details, "--report", box.at("refused.json")], { expectExit: 1 });
     forced = box.run("level compile", [...details, "--force"]);
-    sdkless = box.run("level compile", ["--path", level, "--steps", "ai", "--report", box.at("sdkless.json")], {
+    sdkless = box.run("level compile", ["--path", level, "--steps", "geometry", "--report", box.at("sdkless.json")], {
       expectExit: 1,
     });
   });
@@ -64,7 +65,7 @@ describe("level compile details", () => {
   it("should refuse a step the SDK runs without the SDK", () => {
     expect(envelopeAt(box.at("sdkless.json"))).toMatchObject({
       exitCode: 1,
-      error: expect.stringContaining("The ai step runs the SDK's compiler"),
+      error: expect.stringContaining("The geometry step runs the SDK's compiler"),
     });
     expect(sdkless).toMatchSnapshot();
   });

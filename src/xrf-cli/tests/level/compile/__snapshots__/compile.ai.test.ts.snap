@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`level compile ai should compile the map with full covers, checked as a graph, without the SDK 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "ai: 4 nodes, full covers traced on the CPU, the identity derived; one-way nodes 0, parts 1 in <duration>",
+    "Compiled <sandbox>/gamedata/levels/test_level (ai)",
+  ],
+}
+`;
+
+exports[`level compile ai should write level.ai beside the build files and only the requested reports 1`] = `
+[
+  {
+    "path": "draft.json",
+    "sha256": "163105f26acae618d8143bb619936c5500d5731d0dda8430cc1b25f3367f982a",
+    "size": 1471,
+  },
+  {
+    "path": "draft/build.aimap",
+    "sha256": "a0b4dec3de236e75c5ee4cb5d634de47b156ae3f073514e2a444a3ccac934a8a",
+    "size": 158,
+  },
+  {
+    "path": "draft/level.ai",
+    "sha256": "e923feaba3764ec82d537199f29b4666750b1592e0a4184a3de52d9b770adf13",
+    "size": 148,
+  },
+  {
+    "path": "forced.json",
+    "sha256": "397cb65f56bb2e985e84a1d1ef9348101d594436b427e57b7c5c809059c8bcf2",
+    "size": 1489,
+  },
+  {
+    "path": "full.json",
+    "sha256": "05019f82a753e82adb9ecd4a3a8614f877ea4dcac3516715859e4af64d5caca8",
+    "size": 1492,
+  },
+  {
+    "path": "gamedata/levels/test_level/build.aimap",
+    "sha256": "a0b4dec3de236e75c5ee4cb5d634de47b156ae3f073514e2a444a3ccac934a8a",
+    "size": 158,
+  },
+  {
+    "path": "gamedata/levels/test_level/build.cform",
+    "sha256": "a7e6b39fca2bf7682c72602df8dbf5c1b20248b3f299794e080bc80e1d4dbec5",
+    "size": 404,
+  },
+  {
+    "path": "gamedata/levels/test_level/build.details",
+    "sha256": "a699c9ac3b66ef5ee951d97379d7ac17393535c03b3e0fad1d79562b0c659115",
+    "size": 128,
+  },
+  {
+    "path": "gamedata/levels/test_level/build.lights",
+    "sha256": "a6993e358e815e42935e42ffd2162fc0b9a2d0afad221b523001b5120219eed0",
+    "size": 232,
+  },
+  {
+    "path": "gamedata/levels/test_level/build.prj",
+    "sha256": "0daaa8d594a5af0f1f20da91f4a875b03af93dbc60c017b6b79c4b41f3421975",
+    "size": 472,
+  },
+  {
+    "path": "gamedata/levels/test_level/level.ai",
+    "sha256": "5b3a85529ac781c75a9143742441e0da55d4a05c908b9ef0a94818f77d7844aa",
+    "size": 148,
+  },
+  {
+    "path": "gamedata/shaders_xrlc.xr",
+    "sha256": "cfb7f36c1cfc0723656359a3d7128ddebfe50c3a3dde281814b4efce4a0ec6a8",
+    "size": 144,
+  },
+  {
+    "path": "gamedata/textures/ground.thm",
+    "sha256": "77ee3540db2d9cfc5126c8afc2b5a91c40223e9586f75dee85ab4bb0aa9f86ce",
+    "size": 138,
+  },
+  {
+    "path": "refused.json",
+    "sha256": "8086bf2f66c449e41382d72d88f439328c1a8e4e7cd70eb414e137299361c081",
+    "size": 403,
+  },
+]
+`;

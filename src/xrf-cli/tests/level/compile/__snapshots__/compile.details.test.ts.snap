@@ -4,7 +4,7 @@ exports[`level compile details should refuse a step the SDK runs without the SDK
 {
   "exitCode": 1,
   "stderr": [
-    "Error: Invalid error: The ai step runs the SDK's compiler; name the SDK's editors directory",
+    "Error: Invalid error: The geometry step runs the SDK's compiler; name the SDK's editors directory",
   ],
   "stdout": [],
 }
@@ -22,6 +22,11 @@ exports[`level compile details should refuse to overwrite level.details unless f
 
 exports[`level compile details should write level.details beside the build files and only the requested reports 1`] = `
 [
+  {
+    "path": "gamedata/levels/test_level/build.aimap",
+    "sha256": "a0b4dec3de236e75c5ee4cb5d634de47b156ae3f073514e2a444a3ccac934a8a",
+    "size": 158,
+  },
   {
     "path": "gamedata/levels/test_level/build.cform",
     "sha256": "a7e6b39fca2bf7682c72602df8dbf5c1b20248b3f299794e080bc80e1d4dbec5",
@@ -69,8 +74,8 @@ exports[`level compile details should write level.details beside the build files
   },
   {
     "path": "sdkless.json",
-    "sha256": "81b7d50eb7b0b7a00827da0b07a5cb9d2f451d1bcc53e0ee4f0b6c4bdf9be7bc",
-    "size": 385,
+    "sha256": "e39444d4f8110eb26828a6502ee509048a0f3397ef0e34312af9b7b1080d7266",
+    "size": 391,
   },
 ]
 `;
