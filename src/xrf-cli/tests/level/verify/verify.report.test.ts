@@ -61,6 +61,9 @@ describe("level verify report", () => {
           { id: "level.read", status: "passed", findings: [] },
           { id: "level.ranges", status: "passed", findings: [] },
           { id: "level.geometry", status: "passed", findings: [] },
+          { id: "level.ai.read", status: "skipped", findings: [] },
+          { id: "level.ai.links", status: "skipped", findings: [] },
+          { id: "level.ai.graph", status: "skipped", findings: [] },
         ],
       },
     });

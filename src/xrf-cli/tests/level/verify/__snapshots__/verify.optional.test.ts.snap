@@ -12,6 +12,7 @@ exports[`level verify optional files should pass a level compiled with no fast g
     "Sectors reach 0 visuals, 0 drawables reached by more than one, 1 reached by none",
     "0 static lights, none of them a sun",
     "Decoded geometry spans (0.0, 0.0, 0.0) to (1.0, 1.0, 0.0), widest texture coordinate 0.0 tiles",
+    "No AI map was checked",
     "Verification of the level: passed",
   ],
 }
@@ -21,8 +22,8 @@ exports[`level verify optional files should preserve fixture bytes and write onl
 [
   {
     "path": "no-bundle.json",
-    "sha256": "e72e9b6046d8f09aaf52e89139fe526069c56ccca3bb6a18a08d36f650639d9a",
-    "size": 1432,
+    "sha256": "53a52209ed9ce8ddcf96ce5617d06d2a4ea3dc65776cbefd062621c2c598c833",
+    "size": 1858,
   },
   {
     "path": "no-bundle/level.geom",
@@ -36,8 +37,8 @@ exports[`level verify optional files should preserve fixture bytes and write onl
   },
   {
     "path": "no-geom.json",
-    "sha256": "32396c79b39ac1a3c160bf8f5b7fce55fe07e6765cc8198c6891b09735261e1f",
-    "size": 1462,
+    "sha256": "3e545c514aecba535704748eda606ca657677664c1769cc5f63338f0ec5ea2c2",
+    "size": 1902,
   },
   {
     "path": "no-geom/level",
@@ -51,8 +52,8 @@ exports[`level verify optional files should preserve fixture bytes and write onl
   },
   {
     "path": "no-geomx.json",
-    "sha256": "49069203d3e28a0066ce5badc34cc0f4397fa6784cb578e9eccca0f75bcdec25",
-    "size": 1462,
+    "sha256": "7ee939c8b033545431e694b79870b43262b7e6899db7baae28fc82c4b34e8584",
+    "size": 1902,
   },
   {
     "path": "no-geomx/level",
@@ -81,6 +82,7 @@ exports[`level verify optional files should report an absent bundle rather than 
     "0 sectors joined by 0 portals, named 0 times between them",
     "Sectors reach 0 visuals, 0 drawables reached by more than one, 0 reached by none",
     "0 static lights, none of them a sun",
+    "No AI map was checked",
   ],
 }
 `;

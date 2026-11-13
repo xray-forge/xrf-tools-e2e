@@ -4,6 +4,13 @@ import { resource } from "#/xrf-cli/test/constants";
 import { envelopeAt } from "#/xrf-cli/test/envelope";
 import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
+/** The AI map's checks of a level that ships no map: each skipped. */
+const NO_AI_MAP = [
+  { id: "level.ai.read", status: "skipped", findings: [] },
+  { id: "level.ai.links", status: "skipped", findings: [] },
+  { id: "level.ai.graph", status: "skipped", findings: [] },
+];
+
 describe("level verify sectors and portals", () => {
   const box = new Sandbox(__filename);
   const scenarios: Array<string> = ["sectors", "invalid-sectors", "truncated-portals"];
@@ -37,6 +44,7 @@ describe("level verify sectors and portals", () => {
           { id: "level.read", status: "passed", findings: [] },
           { id: "level.ranges", status: "passed", findings: [] },
           { id: "level.geometry", status: "passed", findings: [] },
+          ...NO_AI_MAP,
         ],
       },
     });
@@ -79,6 +87,7 @@ describe("level verify sectors and portals", () => {
               { ruleId: "level.portals.not_a_polygon", message: expect.stringContaining("spans 7 vertices") },
             ],
           },
+          ...NO_AI_MAP,
         ],
       },
     });

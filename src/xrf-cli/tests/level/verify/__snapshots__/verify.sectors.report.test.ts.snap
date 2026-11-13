@@ -19,19 +19,20 @@ exports[`level verify sectors and portals should accept linked sectors and porta
   },
   "exitCode": 0,
   "result": {
+    "aiCensus": null,
     "census": {
-      "bounds": [
-        {
-          "x": 0,
-          "y": 0,
-          "z": 0,
-        },
-        {
+      "bounds": {
+        "max": {
           "x": 1,
           "y": 1,
           "z": 0,
         },
-      ],
+        "min": {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+        },
+      },
       "drawableVisuals": 1,
       "fastpathVisuals": 1,
       "hasSun": true,
@@ -74,6 +75,24 @@ exports[`level verify sectors and portals should accept linked sectors and porta
         "id": "level.geometry",
         "status": "passed",
       },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.read",
+        "status": "skipped",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.links",
+        "status": "skipped",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.graph",
+        "status": "skipped",
+      },
     ],
     "status": "passed",
   },
@@ -92,6 +111,7 @@ exports[`level verify sectors and portals should count sectors, portal reference
     "Sectors reach 2 visuals, 1 drawables reached by more than one, 0 reached by none",
     "2 static lights, one of them the sun",
     "Decoded geometry spans (0.0, 0.0, 0.0) to (1.0, 1.0, 0.0), widest texture coordinate 0.0 tiles",
+    "No AI map was checked",
     "Verification of the level: passed",
   ],
 }
@@ -101,8 +121,8 @@ exports[`level verify sectors and portals should preserve fixture bytes and writ
 [
   {
     "path": "invalid-sectors.json",
-    "sha256": "6d7023efdfb6bf230168472b5ada8532866b7a4566e2dc794f48d9392557bdd9",
-    "size": 2858,
+    "sha256": "b6722ba531e19a4a934c9b30db5c95acd4ae258e213c1ff03a2edfe586407655",
+    "size": 3298,
   },
   {
     "path": "invalid-sectors/level",
@@ -121,8 +141,8 @@ exports[`level verify sectors and portals should preserve fixture bytes and writ
   },
   {
     "path": "sectors.json",
-    "sha256": "557c86d2f37f68ecf3c6f4574aa3ca96e61db85eaaf74c7a03fc42946c8cba66",
-    "size": 1461,
+    "sha256": "69982a535d9bd727efe2c4ffdd123fdea5466128428785cafbbe19b783ba60c3",
+    "size": 1901,
   },
   {
     "path": "sectors/level",
@@ -141,8 +161,8 @@ exports[`level verify sectors and portals should preserve fixture bytes and writ
   },
   {
     "path": "truncated-portals.json",
-    "sha256": "062cfebeb0ba2d0a7631e88acc4b28633504e808cbfa90ae328657eebb07392b",
-    "size": 1719,
+    "sha256": "8c8191d278634775e2375b2753f43eb2d9b9fbc67ce4359111e2075e1a8f4f35",
+    "size": 2159,
   },
   {
     "path": "truncated-portals/level",
@@ -180,6 +200,7 @@ exports[`level verify sectors and portals should print every sector and portal f
     "Decoded geometry spans (0.0, 0.0, 0.0) to (1.0, 1.0, 0.0), widest texture coordinate 0.0 tiles",
     "Layout positions only: 2 visuals",
     "MT_NORMAL: 1 visuals",
+    "No AI map was checked",
     "  [level.portals.sector.out_of_range] <sandbox>/invalid-sectors/level: Portal 0 joins sector 2 on its front, past the 2 the level holds",
     "  [level.portals.sector.out_of_range] <sandbox>/invalid-sectors/level: Portal 0 joins sector 3 on its back, past the 2 the level holds",
     "  [level.sectors.portal.out_of_range] <sandbox>/invalid-sectors/level: Sector 0 names portal 2, past the 2 the level holds",
@@ -209,19 +230,20 @@ exports[`level verify sectors and portals should reject a partial portal record 
   },
   "exitCode": 3,
   "result": {
+    "aiCensus": null,
     "census": {
-      "bounds": [
-        {
-          "x": 0,
-          "y": 0,
-          "z": 0,
-        },
-        {
+      "bounds": {
+        "max": {
           "x": 1,
           "y": 1,
           "z": 0,
         },
-      ],
+        "min": {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+        },
+      },
       "drawableVisuals": 1,
       "fastpathVisuals": 1,
       "hasSun": false,
@@ -270,6 +292,24 @@ exports[`level verify sectors and portals should reject a partial portal record 
         "id": "level.geometry",
         "status": "passed",
       },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.read",
+        "status": "skipped",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.links",
+        "status": "skipped",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.graph",
+        "status": "skipped",
+      },
     ],
     "status": "failed",
   },
@@ -295,19 +335,20 @@ exports[`level verify sectors and portals should report invalid roots, portal re
   },
   "exitCode": 3,
   "result": {
+    "aiCensus": null,
     "census": {
-      "bounds": [
-        {
-          "x": 0,
-          "y": 0,
-          "z": 0,
-        },
-        {
+      "bounds": {
+        "max": {
           "x": 1,
           "y": 1,
           "z": 0,
         },
-      ],
+        "min": {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+        },
+      },
       "drawableVisuals": 1,
       "fastpathVisuals": 1,
       "hasSun": true,
@@ -381,6 +422,24 @@ exports[`level verify sectors and portals should report invalid roots, portal re
         ],
         "id": "level.geometry",
         "status": "failed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.read",
+        "status": "skipped",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.links",
+        "status": "skipped",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.graph",
+        "status": "skipped",
       },
     ],
     "status": "failed",

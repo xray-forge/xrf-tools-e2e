@@ -712,7 +712,7 @@ exports[`docs generate should render level.md 1`] = `
   "",
   "## \`xrf-cli level verify\`",
   "",
-  "Verify that a compiled level's geometry can be drawn the way the renderer addresses it",
+  "Verify that a compiled level's geometry can be drawn the way the renderer addresses it, and that its AI map is a graph the engine can walk",
   "",
   "\`\`\`txt",
   "xrf-cli level verify [OPTIONS] <--path <path>|--root <root>>",
@@ -1654,8 +1654,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/level.md",
-    "sha256": "fa6819dbae1ebc9dcd7fd32fdeef2df78668861eaef7a2ac2897568a984f9d46",
-    "size": 13177,
+    "sha256": "69c3e424d2a75e6311a3d24ee7131f3692a76210671826dff29f3561b102ceee",
+    "size": 13229,
   },
   {
     "path": "docs/ltx.md",

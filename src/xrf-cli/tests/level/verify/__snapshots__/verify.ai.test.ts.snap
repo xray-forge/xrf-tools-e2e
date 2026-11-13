@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`level verify AI map should fail a map with a node linked to itself 1`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "Check 'level.ai.links' is failed with 1 finding(s)",
+    "Check failed: 1 finding(s)",
+  ],
+  "stdout": [
+    "Verifying compiled level <sandbox>/ai-self-link",
+    "Read 1 visuals in <duration>, 1 drawable and 1 with a fast path",
+    "Addressed 3 vertices and 3 indices against a 4 entry shader table",
+    "0 sectors joined by 0 portals, named 0 times between them",
+    "Sectors reach 0 visuals, 0 drawables reached by more than one, 1 reached by none",
+    "0 static lights, none of them a sun",
+    "Decoded geometry spans (0.0, 0.0, 0.0) to (1.0, 1.0, 0.0), widest texture coordinate 0.0 tiles",
+    "Layout positions only: 2 visuals",
+    "MT_NORMAL: 1 visuals",
+    "AI map of 1 nodes and 1 links in <duration>: 0 one-way to 0 nodes, 1 to themselves; 1 parts, the largest 1 nodes",
+    "  [level.ai.self-link] <sandbox>/ai-self-link/level.ai: 1 links name the node they leave, which xrAI refuses: nodes 0 at (0.0, 0.0, 0.0)",
+  ],
+}
+`;
+
+exports[`level verify AI map should pass a map with a one-way link and a detached part, warning of both 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [
+    "Check 'level.ai.graph' is passed with 2 finding(s)",
+  ],
+  "stdout": [
+    "Verifying compiled level <sandbox>/ai-graph",
+    "Read 1 visuals in <duration>, 1 drawable and 1 with a fast path",
+    "Addressed 3 vertices and 3 indices against a 4 entry shader table",
+    "0 sectors joined by 0 portals, named 0 times between them",
+    "Sectors reach 0 visuals, 0 drawables reached by more than one, 1 reached by none",
+    "0 static lights, none of them a sun",
+    "Decoded geometry spans (0.0, 0.0, 0.0) to (1.0, 1.0, 0.0), widest texture coordinate 0.0 tiles",
+    "Layout positions only: 2 visuals",
+    "MT_NORMAL: 1 visuals",
+    "AI map of 5 nodes and 5 links in <duration>: 1 one-way to 1 nodes, 0 to themselves; 2 parts, the largest 3 nodes",
+    "  [level.ai.disconnected] <sandbox>/ai-graph/level.ai: 2 nodes lie outside the largest of 2 parts no link joins; a node of each other part: 3 at (2.1, 0.0, 0.0)",
+    "  [level.ai.one-way] <sandbox>/ai-graph/level.ai: 1 links have no link back, reaching 1 nodes: 2 at (1.4, 0.0, 0.0)",
+    "Verification of the level: passed",
+  ],
+}
+`;

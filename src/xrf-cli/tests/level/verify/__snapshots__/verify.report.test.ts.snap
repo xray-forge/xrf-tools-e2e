@@ -14,6 +14,7 @@ exports[`level verify report should expose decoded bounds and geometry layouts i
     "Decoded geometry spans (0.0, 0.0, 0.0) to (1.0, 1.0, 0.0), widest texture coordinate 0.0 tiles",
     "Layout positions only: 2 visuals",
     "MT_NORMAL: 1 visuals",
+    "No AI map was checked",
     "Verification of the level: passed",
   ],
 }
@@ -38,19 +39,20 @@ exports[`level verify report should pass every check for drawable geometry 1`] =
   },
   "exitCode": 0,
   "result": {
+    "aiCensus": null,
     "census": {
-      "bounds": [
-        {
-          "x": 0,
-          "y": 0,
-          "z": 0,
-        },
-        {
+      "bounds": {
+        "max": {
           "x": 1,
           "y": 1,
           "z": 0,
         },
-      ],
+        "min": {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+        },
+      },
       "drawableVisuals": 1,
       "fastpathVisuals": 1,
       "hasSun": false,
@@ -93,6 +95,24 @@ exports[`level verify report should pass every check for drawable geometry 1`] =
         "id": "level.geometry",
         "status": "passed",
       },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.read",
+        "status": "skipped",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.links",
+        "status": "skipped",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.graph",
+        "status": "skipped",
+      },
     ],
     "status": "passed",
   },
@@ -103,8 +123,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
 [
   {
     "path": "broken-geometry.json",
-    "sha256": "65c1a5ccd7b03a8fdb8905bf0157c57f5ab42f7e8fceff1718c281bb90b9d631",
-    "size": 1527,
+    "sha256": "267a8ceef3f522d0cbfbe9b220326e4ffc57d02d8ac32e130b64d915762641ab",
+    "size": 1953,
   },
   {
     "path": "broken-geometry/level",
@@ -118,8 +138,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "invalid-fastpath.json",
-    "sha256": "d6cc960fed49336bfb0ae5275143ad5a246080a4c522557c8941c14f20e07e1d",
-    "size": 1701,
+    "sha256": "c30e64253f09396d14e8c19387534154a8272a00ae4067273b932fb33f8b4d75",
+    "size": 2141,
   },
   {
     "path": "invalid-fastpath/level",
@@ -138,8 +158,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "invalid-geometry.json",
-    "sha256": "0f92318e10883d0acd501c695f12ddb2a7277f45457c7216e679db72cdcde900",
-    "size": 1942,
+    "sha256": "bdc96469a25715a4df53fe08784fac429ac182dec33deaceee48a0b623c86314",
+    "size": 2384,
   },
   {
     "path": "invalid-geometry/level",
@@ -158,8 +178,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "invalid-range.json",
-    "sha256": "769febf7205408d5da9bdf78582fa80726aa28b157b98b1fdd75d920e7be1a4e",
-    "size": 1989,
+    "sha256": "e7bfcba9dfd9a4b5d3f6154c76973a20da05982b2a4674650a3ffa2780a4cd7c",
+    "size": 2429,
   },
   {
     "path": "invalid-range/level",
@@ -178,8 +198,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "invalid-shader.json",
-    "sha256": "37eb9ffaf153dd7aac0065002398ec949aa666a848f81aec52e0b53011d29ba0",
-    "size": 1700,
+    "sha256": "b469de6134da1f71d5887a72d5e4a1764905dae1f6f453eee9350d57cefe26de",
+    "size": 2140,
   },
   {
     "path": "invalid-shader/level",
@@ -198,8 +218,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "malformed-shader.json",
-    "sha256": "230cbf3122abba38fb68f01ed6fc4da8dc9e77b64c327d5d74b9582c3ac84d84",
-    "size": 1770,
+    "sha256": "15b5fc7ad7db9b6f7d937d567eef7240a3a2fe75e5fbd4e1eb2c4a1d102a7301",
+    "size": 2210,
   },
   {
     "path": "malformed-shader/level",
@@ -218,8 +238,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "minimal.json",
-    "sha256": "0ad84a6065bfabdee20405f15b28cb7d20c28e02bb806cf3fade8bd4d71db1af",
-    "size": 1453,
+    "sha256": "1a8c233eef5e7523726265b9ec8007da5d2fec4abfe0b4f56df817f70a9eed06",
+    "size": 1879,
   },
   {
     "path": "minimal/level",
@@ -228,13 +248,13 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "missing.json",
-    "sha256": "cce8f795173df45f581e70431623592863743d48a95dc588bcc13a09970059c9",
-    "size": 1428,
+    "sha256": "b8e9278998a5933075342e09f23957eb68c51608145fe97be4d3785a6062bc3a",
+    "size": 1854,
   },
   {
     "path": "triangle.json",
-    "sha256": "9121d0dabe6c9df38fb9d787e3e4eb5aa6f34d49233506aa5fe73c3398cf39dd",
-    "size": 1462,
+    "sha256": "a184b3d78712f25a924a663a75a18f57d8b4df12d5a8caf7589dc44dd635e075",
+    "size": 1902,
   },
   {
     "path": "triangle/level",
@@ -253,8 +273,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "truncated.json",
-    "sha256": "8a1ac4f44df00ee32489bb9490244c412ee40adab7176960a4d5f3d4880ec2ce",
-    "size": 1474,
+    "sha256": "cfe01ae80bb35849a78b3c3ea38827519469d7a319f031aca26833105853ccb4",
+    "size": 1900,
   },
   {
     "path": "truncated/level",
@@ -278,9 +298,10 @@ exports[`level verify report should print all geometry findings and their failur
     "0 sectors joined by 0 portals, named 0 times between them",
     "Sectors reach 0 visuals, 0 drawables reached by more than one, 1 reached by none",
     "0 static lights, none of them a sun",
-    "Decoded geometry spans (0.0, 0.0, 0.0) to (1.0, 1.0, 0.0), widest texture coordinate 0.0 tiles",
+    "Decoded geometry spans (NaN, 0.0, 0.0) to (NaN, 1.0, 0.0), widest texture coordinate 0.0 tiles",
     "Layout positions only: 2 visuals",
     "MT_NORMAL: 1 visuals",
+    "No AI map was checked",
     "  [level.visuals.indices.out_of_range] <sandbox>/invalid-geometry/level.geom: Visual 0 draws index 3, past the 3 vertices it declares",
     "  [level.visuals.vertices.not_finite] <sandbox>/invalid-geometry/level.geom: Visual 0 carries a vertex at 0 whose position is not a finite number",
   ],
@@ -306,6 +327,7 @@ exports[`level verify report should report broken-geometry findings with a check
   },
   "exitCode": 3,
   "result": {
+    "aiCensus": null,
     "census": {
       "bounds": null,
       "drawableVisuals": 0,
@@ -354,6 +376,24 @@ exports[`level verify report should report broken-geometry findings with a check
         "id": "level.geometry",
         "status": "passed",
       },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.read",
+        "status": "skipped",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.links",
+        "status": "skipped",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.graph",
+        "status": "skipped",
+      },
     ],
     "status": "failed",
   },
@@ -379,19 +419,20 @@ exports[`level verify report should report invalid-fastpath findings with a chec
   },
   "exitCode": 3,
   "result": {
+    "aiCensus": null,
     "census": {
-      "bounds": [
-        {
-          "x": 0,
-          "y": 0,
-          "z": 0,
-        },
-        {
+      "bounds": {
+        "max": {
           "x": 1,
           "y": 1,
           "z": 0,
         },
-      ],
+        "min": {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+        },
+      },
       "drawableVisuals": 1,
       "fastpathVisuals": 1,
       "hasSun": false,
@@ -440,6 +481,24 @@ exports[`level verify report should report invalid-fastpath findings with a chec
         "id": "level.geometry",
         "status": "failed",
       },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.read",
+        "status": "skipped",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.links",
+        "status": "skipped",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.graph",
+        "status": "skipped",
+      },
     ],
     "status": "failed",
   },
@@ -465,19 +524,20 @@ exports[`level verify report should report invalid-geometry findings with a chec
   },
   "exitCode": 3,
   "result": {
+    "aiCensus": null,
     "census": {
-      "bounds": [
-        {
-          "x": 0,
-          "y": 0,
-          "z": 0,
-        },
-        {
-          "x": 1,
+      "bounds": {
+        "max": {
+          "x": null,
           "y": 1,
           "z": 0,
         },
-      ],
+        "min": {
+          "x": null,
+          "y": 0,
+          "z": 0,
+        },
+      },
       "drawableVisuals": 1,
       "fastpathVisuals": 1,
       "hasSun": false,
@@ -531,6 +591,24 @@ exports[`level verify report should report invalid-geometry findings with a chec
         "id": "level.geometry",
         "status": "failed",
       },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.read",
+        "status": "skipped",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.links",
+        "status": "skipped",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.graph",
+        "status": "skipped",
+      },
     ],
     "status": "failed",
   },
@@ -556,19 +634,20 @@ exports[`level verify report should report invalid-range findings with a check-f
   },
   "exitCode": 3,
   "result": {
+    "aiCensus": null,
     "census": {
-      "bounds": [
-        {
-          "x": 0,
-          "y": 0,
-          "z": 0,
-        },
-        {
+      "bounds": {
+        "max": {
           "x": 1,
           "y": 1,
           "z": 0,
         },
-      ],
+        "min": {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+        },
+      },
       "drawableVisuals": 1,
       "fastpathVisuals": 1,
       "hasSun": false,
@@ -622,6 +701,24 @@ exports[`level verify report should report invalid-range findings with a check-f
         "id": "level.geometry",
         "status": "passed",
       },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.read",
+        "status": "skipped",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.links",
+        "status": "skipped",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.graph",
+        "status": "skipped",
+      },
     ],
     "status": "failed",
   },
@@ -647,19 +744,20 @@ exports[`level verify report should report invalid-shader findings with a check-
   },
   "exitCode": 3,
   "result": {
+    "aiCensus": null,
     "census": {
-      "bounds": [
-        {
-          "x": 0,
-          "y": 0,
-          "z": 0,
-        },
-        {
+      "bounds": {
+        "max": {
           "x": 1,
           "y": 1,
           "z": 0,
         },
-      ],
+        "min": {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+        },
+      },
       "drawableVisuals": 1,
       "fastpathVisuals": 1,
       "hasSun": false,
@@ -708,6 +806,24 @@ exports[`level verify report should report invalid-shader findings with a check-
         "id": "level.geometry",
         "status": "passed",
       },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.read",
+        "status": "skipped",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.links",
+        "status": "skipped",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.graph",
+        "status": "skipped",
+      },
     ],
     "status": "failed",
   },
@@ -733,19 +849,20 @@ exports[`level verify report should report malformed-shader findings with a chec
   },
   "exitCode": 3,
   "result": {
+    "aiCensus": null,
     "census": {
-      "bounds": [
-        {
-          "x": 0,
-          "y": 0,
-          "z": 0,
-        },
-        {
+      "bounds": {
+        "max": {
           "x": 1,
           "y": 1,
           "z": 0,
         },
-      ],
+        "min": {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+        },
+      },
       "drawableVisuals": 1,
       "fastpathVisuals": 1,
       "hasSun": false,
@@ -794,6 +911,24 @@ exports[`level verify report should report malformed-shader findings with a chec
         "id": "level.geometry",
         "status": "passed",
       },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.read",
+        "status": "skipped",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.links",
+        "status": "skipped",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.graph",
+        "status": "skipped",
+      },
     ],
     "status": "failed",
   },
@@ -819,6 +954,7 @@ exports[`level verify report should report minimal findings with a check-failure
   },
   "exitCode": 3,
   "result": {
+    "aiCensus": null,
     "census": {
       "bounds": null,
       "drawableVisuals": 0,
@@ -865,6 +1001,24 @@ exports[`level verify report should report minimal findings with a check-failure
         "id": "level.geometry",
         "status": "passed",
       },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.read",
+        "status": "skipped",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.links",
+        "status": "skipped",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.graph",
+        "status": "skipped",
+      },
     ],
     "status": "failed",
   },
@@ -890,6 +1044,7 @@ exports[`level verify report should report missing findings with a check-failure
   },
   "exitCode": 3,
   "result": {
+    "aiCensus": null,
     "census": {
       "bounds": null,
       "drawableVisuals": 0,
@@ -936,6 +1091,24 @@ exports[`level verify report should report missing findings with a check-failure
         "id": "level.geometry",
         "status": "passed",
       },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.read",
+        "status": "skipped",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.links",
+        "status": "skipped",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.graph",
+        "status": "skipped",
+      },
     ],
     "status": "failed",
   },
@@ -961,6 +1134,7 @@ exports[`level verify report should report truncated findings with a check-failu
   },
   "exitCode": 3,
   "result": {
+    "aiCensus": null,
     "census": {
       "bounds": null,
       "drawableVisuals": 0,
@@ -1006,6 +1180,24 @@ exports[`level verify report should report truncated findings with a check-failu
         "findings": [],
         "id": "level.geometry",
         "status": "passed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.read",
+        "status": "skipped",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.links",
+        "status": "skipped",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "level.ai.graph",
+        "status": "skipped",
       },
     ],
     "status": "failed",
