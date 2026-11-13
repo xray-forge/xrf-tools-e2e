@@ -10,6 +10,9 @@ import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
  * `details-build` is a game data tree written by `xrf-level-compiler`'s own tests through the tools' writers: one
  * shadow-casting compiler shader, one opaque texture's `.thm`, and a level directory of a five-slot grid (two slots
  * lit, one touching no face, one emptied, one unplanted) over a ground and a roof, under a sun and a red point light.
+ *
+ * Every run asks for the CPU, the reference: the default, `auto`, traces on whatever GPU the machine has, so its report
+ * names that GPU. The GPU backend's agreement with the CPU is `xrf-level-compiler`'s tests'.
  */
 describe("level compile details", () => {
   const box = new Sandbox(__filename);
@@ -23,12 +26,11 @@ describe("level compile details", () => {
     box.copyIn(resource("levels/details-build"), "gamedata");
 
     const level: string = box.at("gamedata/levels/test_level");
+    const details: Array<string> = ["--path", level, "--steps", "details", "--backend", "cpu"];
 
-    lit = box.run("level compile", ["--path", level, "--steps", "details", "--report", box.at("lit.json")]);
-    refused = box.run("level compile", ["--path", level, "--steps", "details", "--report", box.at("refused.json")], {
-      expectExit: 1,
-    });
-    forced = box.run("level compile", ["--path", level, "--steps", "details", "--force"]);
+    lit = box.run("level compile", [...details, "--report", box.at("lit.json")]);
+    refused = box.run("level compile", [...details, "--report", box.at("refused.json")], { expectExit: 1 });
+    forced = box.run("level compile", [...details, "--force"]);
     sdkless = box.run("level compile", ["--path", level, "--steps", "ai", "--report", box.at("sdkless.json")], {
       expectExit: 1,
     });
@@ -43,7 +45,7 @@ describe("level compile details", () => {
         steps: [
           {
             step: "details",
-            run: { kind: "detailLighter", slots: { unplanted: 1, emptied: 1, untouched: 1, lit: 2 } },
+            run: { kind: "detailLighter", slots: { unplanted: 1, emptied: 1, untouched: 1, lit: 2 }, gpu: null },
           },
         ],
       },

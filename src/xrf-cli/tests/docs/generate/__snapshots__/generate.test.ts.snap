@@ -641,6 +641,7 @@ exports[`docs generate should render level.md 1`] = `
   "| \`--textures <textures>...\` |  |  | Textures root with a .thm for every texture build.prj names, and the images of those with alpha; repeatable, each file from the first root holding it, though the SDK's steps take one; the game data's textures by default |",
   "| \`--work <work>\` |  |  | Directory the SDK's compilers run in, with their fsgame.ltx and logs; one in the system's temporary directory |",
   "| \`-f, --force\` |  |  | Overwrite level.details where the level's directory already holds it |",
+  "| \`--backend <backend>\` |  | \`auto\` | What traces the details step's shadow rays: auto, the GPU where one traces rays, else the CPU; gpu, the GPU's ray queries alone, on D3D12 where dxc/dxcompiler.dll stands beside the CLI, else on Vulkan; cpu, the reference, every slot within one step of the GPU's. Possible values: \`cpu\`, \`gpu\`, \`auto\`. |",
   "| \`-s, --silent\` |  |  | Turn off logging |",
   "| \`-v, --verbose\` |  |  | Turn on verbose logging |",
   "| \`--json\` |  |  | Write the run's JSON report to stdout, moving human output to stderr |",
@@ -1653,8 +1654,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/level.md",
-    "sha256": "dcecbf5f903c41658d29732ca115e5301d67f26dcd1dcc814e81edb540a5a44b",
-    "size": 12835,
+    "sha256": "fa6819dbae1ebc9dcd7fd32fdeef2df78668861eaef7a2ac2897568a984f9d46",
+    "size": 13177,
   },
   {
     "path": "docs/ltx.md",

@@ -59,8 +59,8 @@ exports[`level compile details should write level.details beside the build files
   },
   {
     "path": "lit.json",
-    "sha256": "7176473e419f1c5a6c8e9a31f3210edd864103c70d466d7577d657e0e4298ae0",
-    "size": 672,
+    "sha256": "b61fc149d7abdbaf17e5a954c2f0f83ab12159504c6f461cb8e95aa7955f6d14",
+    "size": 695,
   },
   {
     "path": "refused.json",
