@@ -25,7 +25,7 @@ exports[`spawn pack overwrite should write the expected files 1`] = `
 [
   {
     "path": "packed.spawn",
-    "sha256": "273c85c97dcf2a9351d81e389a483ab0bad207314ec3a05c081fe2caf3916105",
+    "sha256": "14a85a4b6216ff8b1137a5f2ce2c268b4200d814d383aa0f0addc9103f41f987",
     "size": 1053148,
   },
   {
@@ -65,8 +65,8 @@ exports[`spawn pack overwrite should write the expected files 1`] = `
   },
   {
     "path": "unpacked/graphs_vertices.ltx",
-    "sha256": "7b5ec59a6ac91f6d0072309acf5adafca6c6f90d3a699ecd52a2ec6b617ec1e1",
-    "size": 236785,
+    "sha256": "7d087b92ee372eef1c259af8f7b3c32b9bffd8c65ed130f83d656d749c98b716",
+    "size": 233422,
   },
   {
     "path": "unpacked/header.ltx",
