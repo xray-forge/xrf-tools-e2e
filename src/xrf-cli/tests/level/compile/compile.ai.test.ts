@@ -5,7 +5,7 @@ import { envelopeAt } from "#/xrf-cli/test/envelope";
 import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
 /**
- * Compiling a level's AI map with `level compile --steps ai`, no SDK named.
+ * Compiling a level's AI map with `level compile --steps ai`.
  *
  * `compile-build`'s level holds a four-node map (`build.aimap`, `xrf-level-compiler`'s AI tests' own) beside the ray
  * model and build project its covers are traced against. Every run asks for the CPU, the reference: `auto` traces on
@@ -44,12 +44,11 @@ describe("level compile ai", () => {
     ]);
   });
 
-  it("should compile the map with full covers, checked as a graph, without the SDK", () => {
+  it("should compile the map with full covers, checked as a graph", () => {
     expect(full.exitCode).toBe(0);
     expect(envelopeAt(box.at("full.json"))).toMatchObject({
       exitCode: 0,
       result: {
-        work: null,
         steps: [
           {
             step: "ai",

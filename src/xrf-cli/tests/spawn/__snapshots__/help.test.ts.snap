@@ -2,6 +2,28 @@
 
 exports[`spawn command help should keep each leaf command's help stable 1`] = `
 {
+  "build": {
+    "exitCode": 0,
+    "stderr": [],
+    "stdout": [
+      "Build a root spawn from a gamedata root's levels, as SDK 0.7's xrAI -s does: each level's level.ai, level.spawn and level.game into one spawn with the game graph, its cross tables, the entities, artefact points and patrols, written as \`spawns/<out>.spawn\`. The same levels give the same file",
+      "",
+      "Usage: xrf-cli spawn build [OPTIONS] --path <path> --out <out>",
+      "",
+      "Options:",
+      "  -p, --path <path>        Gamedata root holding configs/game_levels.ltx and the levels' directories under levels/",
+      "  -s, --silent             Turn off logging",
+      "      --levels <levels>    Levels to build, by directory name, comma-separated or repeated; by default every level the game lists whose directory holds level.ai, level.spawn and level.game",
+      "  -v, --verbose            Turn on verbose logging",
+      "      --json               Write the run's JSON report to stdout, moving human output to stderr",
+      "      --out <out>          Name of the spawn to write, \`spawns/<out>.spawn\`; \`all\` is the game's own",
+      "      --report <PATH>      Write the run's JSON report to a file",
+      "      --start <start>      Level the actor starts on, where it is not the actor's own: it moves to that level's first game vertex",
+      "      --strict-separators  Refuse the build where a restrictor flagged for the separator check cuts an AI map apart, rather than report it",
+      "  -f, --force              Overwrite spawns/all.spawn, the game's own spawn, where it already exists",
+      "  -h, --help               Print help",
+    ],
+  },
   "info": {
     "exitCode": 0,
     "stderr": [],

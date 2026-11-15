@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`level compile ai should compile the map with full covers, checked as a graph, without the SDK 1`] = `
+exports[`level compile ai should compile the map with full covers, checked as a graph 1`] = `
 {
   "exitCode": 0,
   "stderr": [],
@@ -15,8 +15,8 @@ exports[`level compile ai should write level.ai beside the build files and only 
 [
   {
     "path": "draft.json",
-    "sha256": "163105f26acae618d8143bb619936c5500d5731d0dda8430cc1b25f3367f982a",
-    "size": 1471,
+    "sha256": "bed33710c7b9e660af91d416f91e1d81dfcb8ec768fcea1fe48d685c0cd514d7",
+    "size": 1453,
   },
   {
     "path": "draft/build.aimap",
@@ -30,13 +30,13 @@ exports[`level compile ai should write level.ai beside the build files and only 
   },
   {
     "path": "forced.json",
-    "sha256": "397cb65f56bb2e985e84a1d1ef9348101d594436b427e57b7c5c809059c8bcf2",
-    "size": 1489,
+    "sha256": "5728c281ff64ec7b8da8ff8ff9591203f55e4040bab719b5dcf023775ff54f60",
+    "size": 1471,
   },
   {
     "path": "full.json",
-    "sha256": "05019f82a753e82adb9ecd4a3a8614f877ea4dcac3516715859e4af64d5caca8",
-    "size": 1492,
+    "sha256": "1453cbc39ebc2c2775518b4c4b6986e4389ed917557e907b19f035aad9689533",
+    "size": 1474,
   },
   {
     "path": "gamedata/levels/test_level/build.aimap",

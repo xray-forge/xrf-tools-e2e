@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`level compile details should refuse a step the SDK runs without the SDK 1`] = `
+exports[`level compile details should refuse the light step without the geometry step before running anything 1`] = `
 {
   "exitCode": 1,
   "stderr": [
-    "Error: Invalid error: The geometry step runs the SDK's compiler; name the SDK's editors directory",
+    "Error: Invalid error: The light step runs only with the geometry step, in the same compile",
   ],
   "stdout": [],
 }
@@ -63,19 +63,19 @@ exports[`level compile details should write level.details beside the build files
     "size": 138,
   },
   {
+    "path": "light-alone.json",
+    "sha256": "06619ad6ba6e47fa4e740eacac50366e3287b8ec8276114ebf7f653998bfbf81",
+    "size": 384,
+  },
+  {
     "path": "lit.json",
-    "sha256": "b61fc149d7abdbaf17e5a954c2f0f83ab12159504c6f461cb8e95aa7955f6d14",
-    "size": 695,
+    "sha256": "77a46c2f68dab3bf981bf3a36a19b1c12486e13160d64f7343142dad9de09d3b",
+    "size": 677,
   },
   {
     "path": "refused.json",
     "sha256": "33c307fdd572fd9471e6c1184d85d8a7abe7e2a1aabd4928c3cbff9eb3d134dc",
     "size": 408,
-  },
-  {
-    "path": "sdkless.json",
-    "sha256": "e39444d4f8110eb26828a6502ee509048a0f3397ef0e34312af9b7b1080d7266",
-    "size": 391,
   },
 ]
 `;
