@@ -40,7 +40,7 @@ exports[`archive pack volumes should write the expected files 1`] = `
   },
   {
     "path": "split/gamedata.db1",
-    "sha256": "d3635e11fbe37fa44c67bdec491bc18e3ffe99b7348a5752b42c6ce43c7b35f4",
+    "sha256": "013ce25eff87adcf033222ea9e5f7126f2c1694a27e792e7b7b8b01e98bb7429",
     "size": 1070478,
   },
 ]

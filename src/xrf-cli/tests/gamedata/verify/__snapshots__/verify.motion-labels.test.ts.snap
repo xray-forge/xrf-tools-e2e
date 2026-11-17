@@ -188,7 +188,7 @@ exports[`gamedata verify meets diverging motion labels should write nothing of i
   },
   {
     "path": "gamedata/spawns/all.spawn",
-    "sha256": "273c85c97dcf2a9351d81e389a483ab0bad207314ec3a05c081fe2caf3916105",
+    "sha256": "14a85a4b6216ff8b1137a5f2ce2c268b4200d814d383aa0f0addc9103f41f987",
     "size": 1053148,
   },
   {
