@@ -1,0 +1,53 @@
+[appendrandom]
+        AppendRandomMaxRotation          = 0.000000, 0.000000, 0.000000
+        AppendRandomMaxScale             = 1.000000, 1.000000, 1.000000
+        AppendRandomMinRotation          = 0.000000, 0.000000, 0.000000
+        AppendRandomMinScale             = 1.000000, 1.000000, 1.000000
+        AppendRandomObjects_size         = 0
+ 
+[guid]
+        guid_g0                          = 81985529216486895
+        guid_g1                          = 1147797409030816545
+ 
+[main]
+        flags                            = 0
+        objects_count                    = 3
+        version                          = 0
+ 
+[modif]
+        name                             =
+        time                             = 0
+ 
+[object_0]
+        clsid                            = 2
+        co_flags                         = 0
+        flags                            = 0
+        name                             = ground
+        position                         = 0.000000, 0.000000, 0.000000
+        reference_name                   = levels\chain\ground
+        rotation                         = 0.000000, 0.000000, 0.000000
+        scale                            = 1.000000, 1.000000, 1.000000
+        version                          = 18
+ 
+[object_1]
+        clsid                            = 2
+        co_flags                         = 0
+        flags                            = 0
+        name                             = box_0
+        position                         = 2.000000, 0.000000, 1.000000
+        reference_name                   = levels\chain\box
+        rotation                         = 0.000000, 0.000000, 0.000000
+        scale                            = 1.000000, 1.000000, 1.000000
+        version                          = 18
+ 
+[object_2]
+        clsid                            = 2
+        co_flags                         = 0
+        flags                            = 0
+        name                             = box_1
+        position                         = -2.000000, 0.000000, -2.500000
+        reference_name                   = levels\chain\box
+        rotation                         = 0.000000, 0.000000, 0.000000
+        scale                            = 1.000000, 1.000000, 1.000000
+        version                          = 18
+ 

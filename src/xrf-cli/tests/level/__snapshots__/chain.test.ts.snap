@@ -1,0 +1,209 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`level chain should build the level's root spawn and read it back 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Built <sandbox>/gamedata/spawns/chain.spawn from chain: 1 objects, 0 artefact points, 0 patrols, 0 warnings",
+  ],
+}
+`;
+
+exports[`level chain should build the level's root spawn and read it back 2`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Verifying spawn file <sandbox>/gamedata/spawns/chain.spawn",
+    "Verification of <sandbox>/gamedata/spawns/chain.spawn: passed",
+  ],
+}
+`;
+
+exports[`level chain should build the scene into the compiler's files and the game's 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Built <sandbox>/rawdata/levels/chain.level into <sandbox>/gamedata/levels/chain: build.aimap (new), build.details (new), build.prj (new), build_details.dds (new), level.env_mod (new), level.fog_vol (new), level.game (new), level.ltx (new), level.spawn (new)",
+  ],
+}
+`;
+
+exports[`level chain should compile every step on the CPU 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "geometry: 2 static visuals of 24 triangles, 0 trees, 0 visuals progressive, 1 sectors in <duration>",
+    "light: vertices and trees lit, 1 lightmap charts on 1 pages, 0 textures lit implicitly, traced on the CPU in <duration>",
+    "details: 15 slots lit, 0 touching no face, 0 emptied, 1 unplanted, traced on the CPU in <duration>",
+    "ai: 221 nodes, full covers traced on the CPU, the identity derived; one-way nodes 0, parts 1 in <duration>",
+    "Compiled <sandbox>/gamedata/levels/chain (geometry, light, details, ai)",
+  ],
+}
+`;
+
+exports[`level chain should read the compiled level back, lightmapped and vertex-lit geometry and its AI map passing 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Verifying compiled level <sandbox>/gamedata/levels/chain",
+    "Read 3 visuals in <duration>, 2 drawable and 2 with a fast path",
+    "Addressed 45 vertices and 72 indices against a 3 entry shader table",
+    "1 sectors joined by 0 portals, named 0 times between them",
+    "Sectors reach 3 visuals, 0 drawables reached by more than one, 0 reached by none",
+    "2 static lights, one of them the sun",
+    "Decoded geometry spans (-6.0, 0.0, -6.0) to (6.0, 1.0, 6.0), widest texture coordinate 6.0 tiles",
+    "AI map of 221 nodes and 812 links in <duration>: 0 one-way to 0 nodes, 0 to themselves; 1 parts, the largest 221 nodes",
+    "Verification of the level: passed",
+  ],
+}
+`;
+
+exports[`level chain should write the level's files and the spawn 1`] = `
+[
+  {
+    "path": "gamedata/configs/game_levels.ltx",
+    "size": 90,
+  },
+  {
+    "path": "gamedata/gamemtl.xr",
+    "size": 817,
+  },
+  {
+    "path": "gamedata/levels/chain/build.aimap",
+    "size": 4498,
+  },
+  {
+    "path": "gamedata/levels/chain/build.cform",
+    "size": 1552,
+  },
+  {
+    "path": "gamedata/levels/chain/build.details",
+    "size": 544,
+  },
+  {
+    "path": "gamedata/levels/chain/build.lights",
+    "size": 3768,
+  },
+  {
+    "path": "gamedata/levels/chain/build.prj",
+    "size": 29252,
+  },
+  {
+    "path": "gamedata/levels/chain/build_details.dds",
+    "size": 43832,
+  },
+  {
+    "path": "gamedata/levels/chain/level",
+    "size": 710,
+  },
+  {
+    "path": "gamedata/levels/chain/level.ai",
+    "size": 5139,
+  },
+  {
+    "path": "gamedata/levels/chain/level.cform",
+    "size": 672,
+  },
+  {
+    "path": "gamedata/levels/chain/level.details",
+    "size": 544,
+  },
+  {
+    "path": "gamedata/levels/chain/level.env_mod",
+    "size": 12,
+  },
+  {
+    "path": "gamedata/levels/chain/level.fog_vol",
+    "size": 6,
+  },
+  {
+    "path": "gamedata/levels/chain/level.game",
+    "size": 16,
+  },
+  {
+    "path": "gamedata/levels/chain/level.geom",
+    "size": 1756,
+  },
+  {
+    "path": "gamedata/levels/chain/level.geomx",
+    "size": 468,
+  },
+  {
+    "path": "gamedata/levels/chain/level.ltx",
+    "size": 138,
+  },
+  {
+    "path": "gamedata/levels/chain/level.spawn",
+    "size": 400,
+  },
+  {
+    "path": "gamedata/levels/chain/lmap#1_1.dds",
+    "size": 1048704,
+  },
+  {
+    "path": "gamedata/levels/chain/lmap#1_2.dds",
+    "size": 1048704,
+  },
+  {
+    "path": "gamedata/shaders_xrlc.xr",
+    "size": 288,
+  },
+  {
+    "path": "gamedata/spawns/chain.spawn",
+    "size": 2400,
+  },
+  {
+    "path": "gamedata/textures/chain/box.thm",
+    "size": 138,
+  },
+  {
+    "path": "gamedata/textures/chain/ground.thm",
+    "size": 138,
+  },
+  {
+    "path": "gamedata/textures/detail/detail_grass.dds",
+    "size": 4224,
+  },
+  {
+    "path": "rawdata/levels/chain.level",
+    "size": 1640,
+  },
+  {
+    "path": "rawdata/levels/chain/ai_map.part",
+    "size": 4803,
+  },
+  {
+    "path": "rawdata/levels/chain/detail_object.part",
+    "size": 510,
+  },
+  {
+    "path": "rawdata/levels/chain/light.part",
+    "size": 1807,
+  },
+  {
+    "path": "rawdata/levels/chain/scene_object.part",
+    "size": 2341,
+  },
+  {
+    "path": "rawdata/levels/chain/spawn.part",
+    "size": 7211,
+  },
+  {
+    "path": "rawdata/objects/detail/grass.object",
+    "size": 711,
+  },
+  {
+    "path": "rawdata/objects/levels/chain/box.object",
+    "size": 1642,
+  },
+  {
+    "path": "rawdata/objects/levels/chain/ground.object",
+    "size": 570,
+  },
+]
+`;
