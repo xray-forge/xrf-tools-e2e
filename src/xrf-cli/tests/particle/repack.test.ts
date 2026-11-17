@@ -42,10 +42,10 @@ describe("particle repack and particle re-unpack", () => {
     expect(box.json("re-unpack.json")).toMatchSnapshot();
   });
 
-  // Same as the roundtrip test states: the packer is deterministic but does not reproduce the
-  // vanilla container byte for byte, so a one-step repack cannot either.
-  it("should not reproduce the source byte for byte", () => {
-    expect(box.sha("repacked.xr")).not.toBe(sha(SOURCE));
+  // As the roundtrip test states, a sorted shipped library packs back to the same bytes, so a
+  // one-step repack does too.
+  it("should reproduce the source byte for byte", () => {
+    expect(box.sha("repacked.xr")).toBe(sha(SOURCE));
   });
 
   // Re-unpacking rewrites the unpacked form through the same reader and writer, so the data has to

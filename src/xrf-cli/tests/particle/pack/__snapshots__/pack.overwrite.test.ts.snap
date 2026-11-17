@@ -50,7 +50,7 @@ exports[`particle pack overwrite should write the expected files 1`] = `
 [
   {
     "path": "packed.xr",
-    "sha256": "4b78a17cd22fea8dc7ebad99ae423079bc9933157d68a37e6d48eed2e0b3c0ae",
+    "sha256": "0786f7746df643a37b6420b652744270d1fdc15787740bad1c1c33b222a81037",
     "size": 1184775,
   },
   {

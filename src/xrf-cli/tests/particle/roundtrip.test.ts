@@ -70,13 +70,13 @@ describe("particles roundtrip", () => {
     expect(box.json("pack.json")).toMatchSnapshot();
   });
 
-  // The packer is deterministic but does not reproduce the vanilla container byte for byte. Stating
-  // that here keeps it a known, reviewed fact: if the packer ever becomes byte exact, this fails.
-  it("should not reproduce the source byte for byte", () => {
-    expect(box.sha("repacked.xr")).not.toBe(sha(SOURCE));
+  // The packer writes chunks in the SDK's order, so a shipped library, sorted as the SDK saves it,
+  // packs back to the same bytes.
+  it("should reproduce the source byte for byte", () => {
+    expect(box.sha("repacked.xr")).toBe(sha(SOURCE));
   });
 
-  // The property that actually matters: the bytes may differ, the data may not.
+  // Unpacking the repacked container has to give back the same data.
   it("should preserve every effect", () => {
     expect(box.sha("unpacked-again/effects.ltx")).toBe(box.sha("unpacked/effects.ltx"));
   });
