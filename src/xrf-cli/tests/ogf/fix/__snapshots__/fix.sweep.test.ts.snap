@@ -33,7 +33,7 @@ exports[`ogf fix sweep should report the sweep beside its findings 1`] = `
     ],
     "findings": [
       {
-        "message": "Invalid error: Chunk 0x656b6c61 at position 227 declares 1668505458 bytes, 28 remain before source end 255",
+        "message": "Invalid error: Chunk 0x00000011 at position 13875 declares 4343 bytes, 9 remain before source end 13884",
         "source": "<sandbox>/meshes/unaccountable.ogf",
       },
     ],
@@ -48,7 +48,7 @@ exports[`ogf fix sweep should sweep a directory and fail for what it refused 1`]
   "exitCode": 1,
   "stderr": [
     "Discarding uncounted motion reference 'actors\\stalker_scenario_animation' from <sandbox>/meshes/residue.ogf",
-    "Failed to fix <sandbox>/meshes/unaccountable.ogf: Invalid error: Chunk 0x656b6c61 at position 227 declares 1668505458 bytes, 28 remain before source end 255",
+    "Failed to fix <sandbox>/meshes/unaccountable.ogf: Invalid error: Chunk 0x00000011 at position 13875 declares 4343 bytes, 9 remain before source end 13884",
     "Error: Verify error: Failed to fix 1 of 3 ogf visual(s)",
   ],
   "stdout": [
@@ -75,13 +75,13 @@ exports[`ogf fix sweep should write only the sweep inputs and report 1`] = `
   },
   {
     "path": "meshes/unaccountable.ogf",
-    "sha256": "446db474afb2e6a6dbe82a3f2c971dfd8b89dddd140ef6415b702503368f308f",
-    "size": 255,
+    "sha256": "541bd62001d22d79dbba4211a78e359a517650a77caf7da10097552e7aba0b3b",
+    "size": 13884,
   },
   {
     "path": "tree.json",
-    "sha256": "0e9c57a20eac6f29479cec104338b444f6650b9af4a5fe253566dcdc83a9bab8",
-    "size": 954,
+    "sha256": "33b5a71933e7bcc70958a53595870265bc4dbac054aa0043d07e6344cf701dab",
+    "size": 951,
   },
 ]
 `;

@@ -1,8 +1,7 @@
-import * as fs from "node:fs";
-
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
 import { gamedata } from "#/xrf-cli/test/constants";
+import { appendCutShortUserData } from "#/xrf-cli/test/ogf";
 import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
 /**
@@ -34,15 +33,14 @@ describe("readers reject damaged input", () => {
       fail
     );
 
-    const unaccountable: string = box.copyIn(
-      gamedata("meshes/ogf/residue_split_motion_ref.ogf"),
-      "unaccountable-residue.ogf"
+    unaccountableResidue = box.run(
+      "ogf info",
+      [
+        "--path",
+        appendCutShortUserData(box.copyIn(gamedata("meshes/ogf/dev_bolt_hud.ogf"), "unaccountable-residue.ogf")),
+      ],
+      fail
     );
-
-    // The source's tail is accepted only because it completes exactly one split motion ref. Bytes
-    // after its terminator make that explanation impossible, so the strict chunk error must stay.
-    fs.appendFileSync(unaccountable, "unaccounted");
-    unaccountableResidue = box.run("ogf info", ["--path", unaccountable], fail);
 
     omf = box.run(
       "omf info",

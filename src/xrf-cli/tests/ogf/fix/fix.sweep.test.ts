@@ -1,8 +1,7 @@
-import * as fs from "node:fs";
-
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
 import { gamedata } from "#/xrf-cli/test/constants";
+import { appendCutShortUserData } from "#/xrf-cli/test/ogf";
 import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
 const RESIDUE = gamedata("meshes/ogf/residue_split_motion_ref.ogf");
@@ -18,7 +17,7 @@ describe("ogf fix sweep", () => {
   beforeAll(() => {
     box.copyIn(RESIDUE, "meshes/residue.ogf");
     box.copyIn(CLEAN, "meshes/nested/clean.ogf");
-    fs.appendFileSync(box.copyIn(RESIDUE, "meshes/unaccountable.ogf"), "unaccounted");
+    appendCutShortUserData(box.copyIn(CLEAN, "meshes/unaccountable.ogf"));
     cleanBefore = box.sha("meshes/nested/clean.ogf");
     refusedBefore = box.sha("meshes/unaccountable.ogf");
 
