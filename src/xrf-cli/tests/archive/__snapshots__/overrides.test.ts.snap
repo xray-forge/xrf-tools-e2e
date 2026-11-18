@@ -97,6 +97,7 @@ exports[`volume set overrides should verify clean and still name what the patch 
   "exitCode": 0,
   "stderr": [],
   "stdout": [
+    "Workers: <workers> (auto)",
     "1 path(s) are held more than once, burying 1 cop(ies):",
     "  'textures\\wpn\\wpn_ak74.dds' answers from <sandbox>/db/patch.db (archive), hiding 1 cop(ies)",
     "Verification of 2 archive file(s): passed",

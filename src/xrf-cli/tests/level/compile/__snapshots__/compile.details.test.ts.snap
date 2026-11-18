@@ -6,7 +6,9 @@ exports[`level compile details should refuse the light step without the geometry
   "stderr": [
     "Error: Invalid error: The light step runs only with the geometry step, in the same compile",
   ],
-  "stdout": [],
+  "stdout": [
+    "Workers: <workers> (auto)",
+  ],
 }
 `;
 
@@ -16,7 +18,9 @@ exports[`level compile details should refuse to overwrite level.details unless f
   "stderr": [
     "Error: IO error: <sandbox>/gamedata/levels/test_level already holds what this run writes (level.details); force it to replace them",
   ],
-  "stdout": [],
+  "stdout": [
+    "Workers: <workers> (auto)",
+  ],
 }
 `;
 

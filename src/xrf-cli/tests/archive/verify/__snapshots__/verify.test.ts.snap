@@ -5,6 +5,7 @@ exports[`archive verify should read and validate every payload 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
+    "Workers: <workers> (auto)",
     "Verification of 14 archive file(s): passed",
   ],
 }

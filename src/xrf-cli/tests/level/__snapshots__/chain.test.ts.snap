@@ -5,6 +5,7 @@ exports[`level chain should build the level's root spawn and read it back 1`] = 
   "exitCode": 0,
   "stderr": [],
   "stdout": [
+    "Workers: <workers> (requested)",
     "Built <sandbox>/gamedata/spawns/chain.spawn from chain: 1 objects, 0 artefact points, 0 patrols, 0 warnings",
   ],
 }
@@ -36,6 +37,7 @@ exports[`level chain should compile every step on the CPU 1`] = `
   "exitCode": 0,
   "stderr": [],
   "stdout": [
+    "Workers: <workers> (auto)",
     "geometry: 2 static visuals of 24 triangles, 0 trees, 0 visuals progressive, 1 sectors in <duration>",
     "light: vertices and trees lit, 1 lightmap charts on 1 pages, 0 textures lit implicitly, traced on the CPU in <duration>",
     "details: 15 slots lit, 0 touching no face, 0 emptied, 1 unplanted, traced on the CPU in <duration>",

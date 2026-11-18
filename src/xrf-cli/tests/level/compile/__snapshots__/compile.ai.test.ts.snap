@@ -5,6 +5,7 @@ exports[`level compile ai should compile the map with full covers, checked as a 
   "exitCode": 0,
   "stderr": [],
   "stdout": [
+    "Workers: <workers> (auto)",
     "ai: 4 nodes, full covers traced on the CPU, the identity derived; one-way nodes 0, parts 1 in <duration>",
     "Compiled <sandbox>/gamedata/levels/test_level (ai)",
   ],

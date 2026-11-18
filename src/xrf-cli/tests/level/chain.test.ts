@@ -31,7 +31,7 @@ describe("level chain", () => {
   let spawn: CliResult;
   let spawnVerify: CliResult;
 
-  const compiled = (directory: string, report: string): CliResult =>
+  const compiled = (directory: string, report: string, jobs: string): CliResult =>
     box.run("level compile", [
       "--path",
       directory,
@@ -43,6 +43,8 @@ describe("level chain", () => {
       "cpu",
       "--gamedata",
       box.at("gamedata"),
+      "-j",
+      jobs,
       "--report",
       box.at(report),
     ]);
@@ -52,6 +54,7 @@ describe("level chain", () => {
     box.copyIn(resource("levels/chain/gamedata"), "gamedata");
     writeGameMaterials(box.at("gamedata/gamemtl.xr"), ENGINE_MATERIALS);
 
+    // No --textures: the build reads gamedata/textures beside the rawdata, where a decompile writes them.
     build = box.run("level build", [
       "--path",
       box.at("rawdata/levels/chain.level"),
@@ -59,21 +62,22 @@ describe("level chain", () => {
       level,
       "--game-materials",
       box.at("gamedata/gamemtl.xr"),
-      "--textures",
-      box.at("gamedata/textures"),
       "--report",
       box.at("build.json"),
     ]);
     fs.cpSync(level, again, { recursive: true });
 
-    compile = compiled(level, "compile.json");
-    compiled(again, "compile-again.json");
+    // The same build compiled on every worker and on one gives the same bytes.
+    compile = compiled(level, "compile.json", "auto");
+    compiled(again, "compile-again.json", "1");
     verify = box.run("level verify", ["--path", level, "--report", box.at("verify.json")]);
     spawn = box.run("spawn build", [
-      "--path",
+      "--gamedata",
       box.at("gamedata"),
-      "--out",
-      "chain",
+      "--dest",
+      box.at("gamedata/spawns/chain.spawn"),
+      "-j",
+      "1",
       "--start",
       "chain",
       "--report",
