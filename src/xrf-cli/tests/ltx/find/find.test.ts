@@ -80,12 +80,11 @@ describe("ltx find", () => {
     exact = box.run("ltx find", ["--path", install, "--section", "WPN_AK74"]);
   });
 
-  it("should compare section names the way the chosen dialect resolves them", () => {
-    // DLTX lowercases every section name it reads, so `WPN_AK74` is the section the patches edit.
-    // Standard LTX looks a section up as bracketed, so the same query names a section nothing writes.
+  it("should compare section names in any case, as both dialects lowercase them as the engine does", () => {
+    // `WPN_AK74` is the section the patches edit, under DLTX and under standard rules alike.
     expect(said(folded)).toContain("configs\\items\\w_ak74.ltx:1 [wpn_ak74]:wpn_base - declaration [archived]");
     expect(said(folded)).toContain("Found 3 statement(s)");
-    expect(said(exact)).toContain("Found 0 statement(s)");
+    expect(said(exact)).toContain("configs\\items\\w_ak74.ltx:1 [wpn_ak74]:wpn_base - declaration [archived]");
   });
 
   it("should find a section where it is declared and where it is patched", () => {
