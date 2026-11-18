@@ -46,6 +46,7 @@ exports[`dds command help should keep each leaf command's help stable 1`] = `
       "      --height <height>          Height of the region, in pixels",
       "      --fit-width <fit-width>    Scale the cropped region to this width, preserving aspect and letterboxing",
       "      --fit-height <fit-height>  Scale the cropped region to this height, preserving aspect and letterboxing",
+      "  -f, --force                    Overwrite the dds file where it already exists; without it, one there is refused before reading",
       "  -h, --help                     Print help",
     ],
   },

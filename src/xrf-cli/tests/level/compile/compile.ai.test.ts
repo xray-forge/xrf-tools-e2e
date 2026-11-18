@@ -71,7 +71,7 @@ describe("level compile ai", () => {
     expect(refused.exitCode).toBe(1);
     expect(envelopeAt(box.at("refused.json"))).toMatchObject({
       exitCode: 1,
-      error: expect.stringContaining("force the compile to overwrite it"),
+      error: expect.stringContaining("already holds what this run writes (level.ai); force it to replace them"),
     });
     expect(forced.exitCode).toBe(0);
     expect(envelopeAt(box.at("forced.json"))).toMatchObject({

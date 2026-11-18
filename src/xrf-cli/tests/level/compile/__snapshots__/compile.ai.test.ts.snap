@@ -80,8 +80,8 @@ exports[`level compile ai should write level.ai beside the build files and only 
   },
   {
     "path": "refused.json",
-    "sha256": "8086bf2f66c449e41382d72d88f439328c1a8e4e7cd70eb414e137299361c081",
-    "size": 403,
+    "sha256": "0df0c0afbd867f352631089f022314ebb46524c8a569518a2188a8e0d14a9f75",
+    "size": 419,
   },
 ]
 `;

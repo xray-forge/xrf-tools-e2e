@@ -14,6 +14,7 @@ describe("dds crop bounds", () => {
   let edge: CliResult;
   let outOfBounds: CliResult;
   let onePixelOverflow: CliResult;
+  let unforced: CliResult;
   let sourceBefore: string;
   let destinationBefore: string;
   let destinationWasAbsent: boolean;
@@ -62,7 +63,26 @@ describe("dds crop bounds", () => {
     destinationBefore = box.sha("preserved.dds");
     onePixelOverflow = box.run(
       "dds crop",
-      ["--path", SHEET, "--dest", box.at("preserved.dds"), "--x", "193", "--y", "0", "--width", "64", "--height", "64"],
+      [
+        "--path",
+        SHEET,
+        "--dest",
+        box.at("preserved.dds"),
+        "--force",
+        "--x",
+        "193",
+        "--y",
+        "0",
+        "--width",
+        "64",
+        "--height",
+        "64",
+      ],
+      { expectExit: 1 }
+    );
+    unforced = box.run(
+      "dds crop",
+      ["--path", SHEET, "--dest", box.at("PRESERVED.dds"), "--x", "0", "--y", "0", "--width", "64", "--height", "64"],
       { expectExit: 1 }
     );
   });
@@ -92,6 +112,11 @@ describe("dds crop bounds", () => {
 
   it("should refuse a region that exceeds the edge by one pixel", () => {
     expect(onePixelOverflow).toMatchSnapshot();
+  });
+
+  it("should refuse an output already there in any case of its name unless forced", () => {
+    expect(unforced.exitCode).toBe(1);
+    expect(unforced.stderr.join("\n")).toContain("already holds what this run writes (preserved.dds)");
   });
 
   it("should not create an absent output on refusal", () => {

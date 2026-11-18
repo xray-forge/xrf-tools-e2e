@@ -29,6 +29,8 @@ describe("docs generate", () => {
   let generated: CliResult;
   let check: CliResult;
   let drifted: CliResult;
+  let foreign: CliResult;
+  let forced: CliResult;
 
   beforeAll(() => {
     // The only command that needs no input: the pages are rendered from the clap definitions, so
@@ -39,6 +41,17 @@ describe("docs generate", () => {
 
     box.write("drifted/README.md", "# Not the generated docs\n");
     drifted = box.run("docs generate", ["--dest", box.at("drifted"), "--check"], { expectExit: 3 });
+
+    // A page without the generated header is someone else's: refused unforced, left alone forced.
+    box.write("foreign/notes.md", "# Notes\n");
+    foreign = box.run("docs generate", ["--dest", box.at("foreign")], { expectExit: 1 });
+    forced = box.run("docs generate", ["--dest", box.at("foreign"), "--force"]);
+  });
+
+  it("should refuse a directory holding a page it did not generate unless forced", () => {
+    expect(foreign.stderr.join("\n")).toContain("did not generate (notes.md)");
+    expect(forced.exitCode).toBe(0);
+    expect(box.text("foreign/notes.md")).toEqual(["# Notes"]);
   });
 
   it("should generate a page per command group", () => {

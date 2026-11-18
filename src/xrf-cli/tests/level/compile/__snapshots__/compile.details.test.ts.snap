@@ -14,7 +14,7 @@ exports[`level compile details should refuse to overwrite level.details unless f
 {
   "exitCode": 1,
   "stderr": [
-    "Error: Invalid error: <sandbox>/gamedata/levels/test_level/level.details exists; force the compile to overwrite it",
+    "Error: IO error: <sandbox>/gamedata/levels/test_level already holds what this run writes (level.details); force it to replace them",
   ],
   "stdout": [],
 }
@@ -74,8 +74,8 @@ exports[`level compile details should write level.details beside the build files
   },
   {
     "path": "refused.json",
-    "sha256": "33c307fdd572fd9471e6c1184d85d8a7abe7e2a1aabd4928c3cbff9eb3d134dc",
-    "size": 408,
+    "sha256": "26f85dd7aecda197d7b7c06d06b1f2f0262a2ef9a5b9a7899e7f6ab07dbd4272",
+    "size": 424,
   },
 ]
 `;

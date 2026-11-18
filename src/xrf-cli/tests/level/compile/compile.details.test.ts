@@ -57,7 +57,7 @@ describe("level compile details", () => {
   it("should refuse to overwrite level.details unless forced", () => {
     expect(envelopeAt(box.at("refused.json"))).toMatchObject({
       exitCode: 1,
-      error: expect.stringContaining("force the compile to overwrite it"),
+      error: expect.stringContaining("already holds what this run writes (level.details); force it to replace them"),
     });
     expect(refused).toMatchSnapshot();
     expect(forced.exitCode).toBe(0);

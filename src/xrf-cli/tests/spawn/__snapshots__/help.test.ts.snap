@@ -22,7 +22,7 @@ exports[`spawn command help should keep each leaf command's help stable 1`] = `
       "      --out <out>                  Name of the spawn to write, \`<out>.spawn\`; \`all\` is the game's own",
       "      --start <start>              Level the actor starts on, where it is not the actor's own: it moves to that level's first game vertex",
       "      --strict-separators          Refuse the build where a restrictor flagged for the separator check cuts an AI map apart, rather than report it",
-      "  -f, --force                      Overwrite all.spawn, the game's own spawn, where the spawn's directory already holds it",
+      "  -f, --force                      Overwrite the spawn where its directory already holds it, the name compared without case",
       "  -h, --help                       Print help",
     ],
   },

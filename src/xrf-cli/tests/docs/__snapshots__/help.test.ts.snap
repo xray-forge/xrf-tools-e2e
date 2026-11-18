@@ -15,6 +15,7 @@ exports[`docs command help should keep each leaf command's help stable 1`] = `
       "  -s, --silent         Turn off logging",
       "  -c, --check          Verify existing documentation is up to date instead of writing it",
       "  -v, --verbose        Turn on verbose logging",
+      "  -f, --force          Write where the directory holds Markdown pages this command did not generate, replacing those of the same name and leaving the others; without it, one there is refused before any is written",
       "      --json           Write the run's JSON report to stdout, moving human output to stderr",
       "      --report <PATH>  Write the run's JSON report to a file",
       "  -h, --help           Print help",

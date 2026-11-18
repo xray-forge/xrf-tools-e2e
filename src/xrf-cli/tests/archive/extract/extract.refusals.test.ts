@@ -9,6 +9,7 @@ describe("archive extract refusals", () => {
 
   let missing: CliResult;
   let blocked: CliResult;
+  let existing: CliResult;
   let conflictingSelectors: CliResult;
   let missingSentinel: string;
   let blockedSentinel: string;
@@ -42,6 +43,7 @@ describe("archive extract refusals", () => {
         "configs\\missing.ltx",
         "--dest",
         box.at("destination/missing.ltx"),
+        "--force",
         "--report",
         box.at("missing-report.json"),
       ],
@@ -58,6 +60,18 @@ describe("archive extract refusals", () => {
         box.at("destination/blocked"),
         "--report",
         box.at("blocked-report.json"),
+      ],
+      { expectExit: 1 }
+    );
+    existing = box.run(
+      "archive extract",
+      [
+        "--path",
+        box.at("packed/fixture.db"),
+        "--file",
+        "configs\\one.ltx",
+        "--dest",
+        box.at("destination/MISSING.ltx"),
       ],
       { expectExit: 1 }
     );
@@ -81,6 +95,11 @@ describe("archive extract refusals", () => {
     expect(missing.stderr.join("\n")).toContain("Cannot extract 'configs\\missing.ltx'");
     expect(box.json("missing-report.json")).toMatchObject({ exitCode: 1 });
     expect(box.json("missing-report.json")).not.toHaveProperty("result");
+    expect(box.sha("destination/missing.ltx")).toBe(missingSentinel);
+  });
+
+  it("should refuse a destination already there in any case of its name unless forced", () => {
+    expect(existing.stderr.join("\n")).toContain("already holds what this run writes (missing.ltx)");
     expect(box.sha("destination/missing.ltx")).toBe(missingSentinel);
   });
 
