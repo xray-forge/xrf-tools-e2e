@@ -24,14 +24,13 @@ describe("level compile ai", () => {
     box.copyIn(resource("levels/compile-build/levels/test_level/build.aimap"), "draft/build.aimap");
 
     const level: string = box.at("gamedata/levels/test_level");
-    const ai: Array<string> = ["--path", level, "--steps", "ai", "--backend", "cpu"];
+    const ai: Array<string> = [level, "--steps", "ai", "--backend", "cpu"];
 
     full = box.run("level compile", [...ai, "--report", box.at("full.json")]);
     refused = box.run("level compile", [...ai, "--report", box.at("refused.json")], { expectExit: 1 });
     forced = box.run("level compile", [...ai, "--force", "--report", box.at("forced.json")]);
     // A directory of the nodes alone, no ray model and no game data: what none needs.
     draft = box.run("level compile", [
-      "--path",
       box.at("draft"),
       "--steps",
       "ai",

@@ -18,7 +18,7 @@ describe("ltx list", () => {
   let said: string;
 
   beforeAll(() => {
-    listed = box.run("ltx list", ["--path", ltxSchemes("configs")]);
+    listed = box.run("ltx list", [ltxSchemes("configs")]);
     said = [...listed.stdout, ...listed.stderr].join("\n");
   });
 
@@ -42,7 +42,7 @@ describe("ltx list", () => {
     // The shape `xrf-engine` ships: one scheme root includes every declaration and they inherit across each other, so
     // a declaration resolves only through that root. Its role says it is a scheme and nothing about which resolution
     // judges it, which is why the includers are recorded for every role rather than inside one of them.
-    const assembled: CliResult = box.run("ltx list", ["--path", ltxSchemeAssembly("configs")]);
+    const assembled: CliResult = box.run("ltx list", [ltxSchemeAssembly("configs")]);
     const listing: string = assembled.stdout.join("\n");
 
     expect(listing).toContain("$scheme\\items.scheme.ltx - scheme, included by $scheme\\scheme.ltx");
@@ -50,8 +50,8 @@ describe("ltx list", () => {
   });
 
   it("should read a patch file as an attachment only under the dialect that has them", () => {
-    const dltx: CliResult = box.run("ltx list", ["--path", gamedataDltx("configs"), "--dltx"]);
-    const standard: CliResult = box.run("ltx list", ["--path", gamedataDltx("configs")]);
+    const dltx: CliResult = box.run("ltx list", [gamedataDltx("configs"), "--dltx"]);
+    const standard: CliResult = box.run("ltx list", [gamedataDltx("configs")]);
 
     // The same six files either way. What changes is what they are to the project: standard LTX has
     // no notion of one config patching another, so a `mod_*.ltx` stands on its own and would be
@@ -61,7 +61,7 @@ describe("ltx list", () => {
   });
 
   it("should deposit the same inventory through a report", () => {
-    box.run("ltx list", ["--path", ltxSchemes("configs"), "--silent", "--report", box.at("report.json")]);
+    box.run("ltx list", [ltxSchemes("configs"), "--silent", "--report", box.at("report.json")]);
 
     expect(box.json("report.json")).toMatchSnapshot();
   });

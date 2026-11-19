@@ -19,7 +19,7 @@ describe("ltx inspect dltx", () => {
   let said: string;
 
   beforeAll(() => {
-    inspect = box.run("ltx inspect", ["--path", gamedataDltx("configs"), "--dltx", "wpn_ak74"]);
+    inspect = box.run("ltx inspect", [gamedataDltx("configs"), "--dltx", "--section", "wpn_ak74"]);
     said = [...inspect.stdout, ...inspect.stderr].join("\n");
   });
 
@@ -59,7 +59,7 @@ describe("ltx inspect dltx", () => {
     // `@[wpn_created]` creates the section in whichever root the patch file attaches to, and nothing
     // records which one that is. The search for a declaring entry point cannot narrow past it, so it
     // falls back to trying every entry point rather than reporting the section undeclared.
-    const created: CliResult = box.run("ltx inspect", ["--path", gamedataDltx("configs"), "--dltx", "wpn_created"]);
+    const created: CliResult = box.run("ltx inspect", [gamedataDltx("configs"), "--dltx", "--section", "wpn_created"]);
 
     expect(created.stdout.join("\n")).toContain("[wpn_created] resolved from system.ltx (dltx)");
     expect(created.stdout.join("\n")).toContain("set by mod_system_xxx.ltx (depth -400)");
@@ -70,7 +70,7 @@ describe("ltx inspect dltx", () => {
     // operation prefixes, so it refuses them rather than reading `![wpn_ak74]` as a section name.
     const standard: CliResult = box.run(
       "ltx inspect",
-      ["--path", gamedataDltx("configs"), "wpn_ak74", "--entry", "mod_system_xxx.ltx"],
+      [gamedataDltx("configs"), "--section", "wpn_ak74", "--entry", "mod_system_xxx.ltx"],
       { expectExit: 1 }
     );
 
@@ -83,9 +83,9 @@ describe("ltx inspect dltx", () => {
 
   it("should deposit the same explanation through a report", () => {
     box.run("ltx inspect", [
-      "--path",
       gamedataDltx("configs"),
       "--dltx",
+      "--section",
       "wpn_ak74",
       "--silent",
       "--report",

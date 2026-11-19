@@ -19,11 +19,11 @@ describe("level info report", () => {
       box.copyIn(resource(`levels/${name}`), name);
     }
 
-    verbose = box.run("level info", ["--path", box.at("triangle"), "--verbose", "--report", box.at("triangle.json")]);
-    box.run("level info", ["--path", box.at("minimal"), "--report", box.at("minimal.json")]);
+    verbose = box.run("level info", [box.at("triangle"), "--verbose", "--report", box.at("triangle.json")]);
+    box.run("level info", [box.at("minimal"), "--report", box.at("minimal.json")]);
 
     for (const name of failures) {
-      box.run("level info", ["--path", box.at(name), "--report", box.at(`${name}.json`)], { expectExit: 1 });
+      box.run("level info", [box.at(name), "--report", box.at(`${name}.json`)], { expectExit: 1 });
     }
 
     usage = box.run("level info", [], { expectExit: 2 });

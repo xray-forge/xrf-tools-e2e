@@ -26,11 +26,11 @@ describe("level verify optional files", () => {
     box.copyIn(resource("levels/triangle"), "no-geom");
     fs.rmSync(box.at("no-geom/level.geom"));
 
-    withoutFastGeometry = box.run("level verify", ["--path", box.at("no-geomx"), "--report", box.at("no-geomx.json")]);
-    withoutBundle = box.run("level verify", ["--path", box.at("no-bundle"), "--report", box.at("no-bundle.json")], {
+    withoutFastGeometry = box.run("level verify", [box.at("no-geomx"), "--report", box.at("no-geomx.json")]);
+    withoutBundle = box.run("level verify", [box.at("no-bundle"), "--report", box.at("no-bundle.json")], {
       expectExit: 3,
     });
-    withoutGeometry = box.run("level verify", ["--path", box.at("no-geom"), "--report", box.at("no-geom.json")]);
+    withoutGeometry = box.run("level verify", [box.at("no-geom"), "--report", box.at("no-geom.json")]);
   });
 
   it("should pass a level compiled with no fast geometry", () => {

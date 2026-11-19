@@ -36,19 +36,19 @@ describe("level verify report", () => {
   beforeAll(() => {
     box.copyIn(resource("levels/triangle"), "triangle");
 
-    verbose = box.run("level verify", ["--path", box.at("triangle"), "--verbose", "--report", box.at("triangle.json")]);
-    json = box.run("level verify", ["--path", box.at("triangle"), "--silent", "--json"]);
+    verbose = box.run("level verify", [box.at("triangle"), "--verbose", "--report", box.at("triangle.json")]);
+    json = box.run("level verify", [box.at("triangle"), "--silent", "--json"]);
 
     for (const { name } of FAILURES) {
       if (name !== "missing") {
         box.copyIn(resource(`levels/${name}`), name);
       }
 
-      box.run("level verify", ["--path", box.at(name), "--report", box.at(`${name}.json`)], { expectExit: 3 });
+      box.run("level verify", [box.at(name), "--report", box.at(`${name}.json`)], { expectExit: 3 });
     }
 
     // Verbose, because findings are listed under their check only then.
-    failed = box.run("level verify", ["--path", box.at("invalid-geometry"), "--verbose"], { expectExit: 3 });
+    failed = box.run("level verify", [box.at("invalid-geometry"), "--verbose"], { expectExit: 3 });
     usage = box.run("level verify", [], { expectExit: 2 });
   });
 

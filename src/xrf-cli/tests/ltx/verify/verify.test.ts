@@ -10,7 +10,7 @@ describe("ltx verify", () => {
 
   beforeAll(() => {
     // The command takes a configs root rather than a single file.
-    verify = box.run("ltx verify", ["--path", gamedata("configs")]);
+    verify = box.run("ltx verify", [gamedata("configs")]);
   });
 
   it("should report section and field coverage", () => {

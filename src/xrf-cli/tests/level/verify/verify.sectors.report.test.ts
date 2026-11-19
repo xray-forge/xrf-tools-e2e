@@ -23,14 +23,14 @@ describe("level verify sectors and portals", () => {
       box.copyIn(resource(`levels/${name}`), name);
     }
 
-    valid = box.run("level verify", ["--path", box.at("sectors"), "--report", box.at("sectors.json")]);
+    valid = box.run("level verify", [box.at("sectors"), "--report", box.at("sectors.json")]);
     // Verbose, because findings are listed under their check only then.
     invalid = box.run(
       "level verify",
-      ["--path", box.at("invalid-sectors"), "--report", box.at("invalid-sectors.json"), "--verbose"],
+      [box.at("invalid-sectors"), "--report", box.at("invalid-sectors.json"), "--verbose"],
       { expectExit: 3 }
     );
-    box.run("level verify", ["--path", box.at("truncated-portals"), "--report", box.at("truncated-portals.json")], {
+    box.run("level verify", [box.at("truncated-portals"), "--report", box.at("truncated-portals.json")], {
       expectExit: 3,
     });
   });

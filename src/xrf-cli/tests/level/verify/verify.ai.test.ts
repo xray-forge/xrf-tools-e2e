@@ -15,19 +15,11 @@ describe("level verify AI map", () => {
     box.copyIn(resource("levels/ai-self-link"), "ai-self-link");
     box.copyIn(resource("levels/triangle"), "triangle");
 
-    warnings = box.run("level verify", [
-      "--path",
-      box.at("ai-graph"),
-      "--verbose",
-      "--report",
-      box.at("ai-graph.json"),
-    ]);
-    selfLink = box.run(
-      "level verify",
-      ["--path", box.at("ai-self-link"), "--verbose", "--report", box.at("ai-self-link.json")],
-      { expectExit: 3 }
-    );
-    box.run("level verify", ["--path", box.at("triangle"), "--report", box.at("triangle.json")]);
+    warnings = box.run("level verify", [box.at("ai-graph"), "--verbose", "--report", box.at("ai-graph.json")]);
+    selfLink = box.run("level verify", [box.at("ai-self-link"), "--verbose", "--report", box.at("ai-self-link.json")], {
+      expectExit: 3,
+    });
+    box.run("level verify", [box.at("triangle"), "--report", box.at("triangle.json")]);
   });
 
   it("should pass a map with a one-way link and a detached part, warning of both", () => {

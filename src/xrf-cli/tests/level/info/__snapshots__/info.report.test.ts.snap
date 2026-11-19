@@ -274,9 +274,9 @@ exports[`level info report should require a level directory 1`] = `
   "exitCode": 2,
   "stderr": [
     "error: the following required arguments were not provided:",
-    "  <--path <path>|--root <root>>",
+    "  <path|--root <root>>",
     "",
-    "Usage: xrf-cli level info <--path <path>|--root <root>>",
+    "Usage: xrf-cli level info <path|--root <root>>",
     "",
     "For more information, try '--help'.",
   ],

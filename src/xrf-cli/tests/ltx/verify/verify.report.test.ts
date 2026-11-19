@@ -10,7 +10,7 @@ describe("ltx verify report", () => {
   const box = new Sandbox(__filename);
 
   beforeAll(() => {
-    box.run("ltx verify", ["--path", gamedata("configs"), "--silent", "--report", box.at("report.json")]);
+    box.run("ltx verify", [gamedata("configs"), "--silent", "--report", box.at("report.json")]);
   });
 
   it("should report the coverage a verification reached", () => {

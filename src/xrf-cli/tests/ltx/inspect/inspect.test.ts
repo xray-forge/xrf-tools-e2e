@@ -19,7 +19,7 @@ describe("ltx inspect", () => {
   let said: string;
 
   beforeAll(() => {
-    child = box.run("ltx inspect", ["--path", ltxSchemes("configs"), "wpn_child"]);
+    child = box.run("ltx inspect", [ltxSchemes("configs"), "--section", "wpn_child"]);
     said = [...child.stdout, ...child.stderr].join("\n");
   });
 
@@ -48,7 +48,7 @@ describe("ltx inspect", () => {
   });
 
   it("should refuse a section no entry point declares", () => {
-    const missing: CliResult = box.run("ltx inspect", ["--path", ltxSchemes("configs"), "wpn_nothing"], {
+    const missing: CliResult = box.run("ltx inspect", [ltxSchemes("configs"), "--section", "wpn_nothing"], {
       expectExit: 1,
     });
 
@@ -59,8 +59,8 @@ describe("ltx inspect", () => {
 
   it("should deposit the same explanation through a report", () => {
     box.run("ltx inspect", [
-      "--path",
       ltxSchemes("configs"),
+      "--section",
       "wpn_child",
       "--silent",
       "--report",

@@ -19,7 +19,7 @@ describe("ltx format roundtrip", () => {
     checkBefore = box.run("ltx format", [configs, "--check"], { expectExit: 3 });
     format = box.run("ltx format", [configs]);
     checkAfter = box.run("ltx format", [configs, "--check"]);
-    verify = box.run("ltx verify", ["--path", configs]);
+    verify = box.run("ltx verify", [configs]);
   });
 
   it("should reject unformatted configs", () => {

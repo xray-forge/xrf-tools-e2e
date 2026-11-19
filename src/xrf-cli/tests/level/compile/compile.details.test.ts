@@ -27,16 +27,14 @@ describe("level compile details", () => {
     box.copyIn(resource("levels/compile-build"), "gamedata");
 
     const level: string = box.at("gamedata/levels/test_level");
-    const details: Array<string> = ["--path", level, "--steps", "details", "--backend", "cpu"];
+    const details: Array<string> = [level, "--steps", "details", "--backend", "cpu"];
 
     lit = box.run("level compile", [...details, "--report", box.at("lit.json")]);
     refused = box.run("level compile", [...details, "--report", box.at("refused.json")], { expectExit: 1 });
     forced = box.run("level compile", [...details, "--force"]);
-    lightAlone = box.run(
-      "level compile",
-      ["--path", level, "--steps", "light", "--report", box.at("light-alone.json")],
-      { expectExit: 1 }
-    );
+    lightAlone = box.run("level compile", [level, "--steps", "light", "--report", box.at("light-alone.json")], {
+      expectExit: 1,
+    });
   });
 
   it("should light the details, reporting how it met the slots", () => {

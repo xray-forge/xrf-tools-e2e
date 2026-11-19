@@ -15,14 +15,12 @@ describe("ltx verify schemes --dltx report", () => {
   const box = new Sandbox(__filename);
 
   beforeAll(() => {
-    box.run("ltx verify", ["--path", ltxSchemesDltx("configs"), "--silent", "--report", box.at("standard.json")], {
+    box.run("ltx verify", [ltxSchemesDltx("configs"), "--silent", "--report", box.at("standard.json")], {
       expectExit: 3,
     });
-    box.run(
-      "ltx verify",
-      ["--path", ltxSchemesDltx("configs"), "--dltx", "--silent", "--report", box.at("dltx.json")],
-      { expectExit: 3 }
-    );
+    box.run("ltx verify", [ltxSchemesDltx("configs"), "--dltx", "--silent", "--report", box.at("dltx.json")], {
+      expectExit: 3,
+    });
   });
 
   it("should report a valid section and an unreadable patch under standard rules", () => {

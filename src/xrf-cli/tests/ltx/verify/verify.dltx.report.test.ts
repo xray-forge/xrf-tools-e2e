@@ -16,10 +16,10 @@ describe("ltx verify --dltx report", () => {
 
   beforeAll(() => {
     // A failed check, not a broken command: the errors are what this snapshot records.
-    box.run("ltx verify", ["--path", gamedataDltx("configs"), "--silent", "--report", box.at("standard.json")], {
+    box.run("ltx verify", [gamedataDltx("configs"), "--silent", "--report", box.at("standard.json")], {
       expectExit: 3,
     });
-    box.run("ltx verify", ["--path", gamedataDltx("configs"), "--dltx", "--silent", "--report", box.at("dltx.json")]);
+    box.run("ltx verify", [gamedataDltx("configs"), "--dltx", "--silent", "--report", box.at("dltx.json")]);
   });
 
   it("should report the errors standard rules find in patch files", () => {

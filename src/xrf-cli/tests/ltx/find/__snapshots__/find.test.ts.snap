@@ -84,7 +84,7 @@ exports[`ltx find should find a section where it is declared and where it is pat
     "configs\\mod_system_aaa.ltx:3 ![wpn_ak74] - patch",
     "configs\\mod_system_xxx.ltx:3 ![wpn_ak74] - patch",
     "Found 3 statement(s) in 3 config(s): 1 declaration(s), 2 patch(es)",
-    "Resolved values: ltx inspect --path <sandbox>/install --dltx wpn_ak74",
+    "Resolved values: ltx inspect <sandbox>/install --dltx --section wpn_ak74",
   ],
 }
 `;

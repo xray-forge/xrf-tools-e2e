@@ -122,9 +122,9 @@ exports[`level albedo report should require a level 1`] = `
   "exitCode": 2,
   "stderr": [
     "error: the following required arguments were not provided:",
-    "  <--path <path>|--root <root>>",
+    "  <path|--root <root>>",
     "",
-    "Usage: xrf-cli level albedo <--path <path>|--root <root>>",
+    "Usage: xrf-cli level albedo <path|--root <root>>",
     "",
     "For more information, try '--help'.",
   ],

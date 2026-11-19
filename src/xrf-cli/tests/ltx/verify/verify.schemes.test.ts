@@ -15,8 +15,8 @@ describe("ltx verify schemes", () => {
 
   beforeAll(() => {
     // Exit 3 is a failed check rather than a broken command: the findings are what this suite reads.
-    verify = box.run("ltx verify", ["--path", ltxSchemes("configs")], { expectExit: 3 });
-    verbose = box.run("ltx verify", ["--path", ltxSchemes("configs"), "--verbose"], { expectExit: 3 });
+    verify = box.run("ltx verify", [ltxSchemes("configs")], { expectExit: 3 });
+    verbose = box.run("ltx verify", [ltxSchemes("configs"), "--verbose"], { expectExit: 3 });
 
     said = [...verify.stdout, ...verify.stderr].join("\n");
   });

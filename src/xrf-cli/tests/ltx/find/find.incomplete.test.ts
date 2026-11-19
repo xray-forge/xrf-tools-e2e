@@ -20,7 +20,7 @@ describe("ltx find over a config that does not parse", () => {
     // A header never closed.
     box.write("configs/broken.ltx", "[wpn_broken\ncost = 200\n");
 
-    search = box.run("ltx find", ["--path", box.at("configs"), "--field", "cost", "--report", box.at("report.json")], {
+    search = box.run("ltx find", [box.at("configs"), "--field", "cost", "--report", box.at("report.json")], {
       expectExit: 1,
     });
   });

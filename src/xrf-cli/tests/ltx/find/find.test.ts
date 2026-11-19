@@ -59,12 +59,11 @@ describe("ltx find", () => {
 
     const install: string = box.at("install");
 
-    section = box.run("ltx find", ["--path", install, "--dltx", "--section", "wpn_ak74"]);
-    field = box.run("ltx find", ["--path", install, "--dltx", "--section", "wpn_ak74", "--field", "cost"]);
-    standard = box.run("ltx find", ["--path", install, "--field", "ammo_class"]);
-    piped = box.run("ltx find", ["--path", install, "--dltx", "--section", "wpn_ak74", "--field", "cost", "--json"]);
+    section = box.run("ltx find", [install, "--dltx", "--section", "wpn_ak74"]);
+    field = box.run("ltx find", [install, "--dltx", "--section", "wpn_ak74", "--field", "cost"]);
+    standard = box.run("ltx find", [install, "--field", "ammo_class"]);
+    piped = box.run("ltx find", [install, "--dltx", "--section", "wpn_ak74", "--field", "cost", "--json"]);
     box.run("ltx find", [
-      "--path",
       install,
       "--dltx",
       "--section",
@@ -75,9 +74,9 @@ describe("ltx find", () => {
       "--report",
       box.at("report.json"),
     ]);
-    inspect = box.run("ltx inspect", ["--path", install, "--dltx", "wpn_ak74"]);
-    folded = box.run("ltx find", ["--path", install, "--dltx", "--section", "WPN_AK74"]);
-    exact = box.run("ltx find", ["--path", install, "--section", "WPN_AK74"]);
+    inspect = box.run("ltx inspect", [install, "--dltx", "--section", "wpn_ak74"]);
+    folded = box.run("ltx find", [install, "--dltx", "--section", "WPN_AK74"]);
+    exact = box.run("ltx find", [install, "--section", "WPN_AK74"]);
   });
 
   it("should compare section names in any case, as both dialects lowercase them as the engine does", () => {
@@ -128,7 +127,7 @@ describe("ltx find", () => {
 
     expect(values).toEqual(["4000", "5000", "9000"]);
     expect(said(field)).not.toContain("set by");
-    expect(said(field)).toContain("Resolved values: ltx inspect --path");
+    expect(said(field)).toContain("Resolved values: ltx inspect ");
     expect(said(inspect)).toContain("set by mod_system_xxx.ltx (depth -400)");
   });
 

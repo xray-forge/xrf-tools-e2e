@@ -22,8 +22,8 @@ describe("ltx verify schemes --dltx", () => {
   let said: string;
 
   beforeAll(() => {
-    standard = box.run("ltx verify", ["--path", ltxSchemesDltx("configs")], { expectExit: 3 });
-    dltx = box.run("ltx verify", ["--path", ltxSchemesDltx("configs"), "--dltx"], { expectExit: 3 });
+    standard = box.run("ltx verify", [ltxSchemesDltx("configs")], { expectExit: 3 });
+    dltx = box.run("ltx verify", [ltxSchemesDltx("configs"), "--dltx"], { expectExit: 3 });
 
     said = [...dltx.stdout, ...dltx.stderr].join("\n");
   });

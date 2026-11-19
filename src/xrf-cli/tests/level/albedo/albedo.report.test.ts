@@ -29,7 +29,7 @@ describe("level albedo report", () => {
       ...["--root", box.at("bare"), "--level", "triangle", "--source", "directory"],
       ...["--report", box.at("missing.json")],
     ]);
-    box.run("level albedo", ["--path", box.at("root/levels/triangle"), "--report", box.at("directory.json")], {
+    box.run("level albedo", [box.at("root/levels/triangle"), "--report", box.at("directory.json")], {
       expectExit: 1,
     });
     usage = box.run("level albedo", [], { expectExit: 2 });

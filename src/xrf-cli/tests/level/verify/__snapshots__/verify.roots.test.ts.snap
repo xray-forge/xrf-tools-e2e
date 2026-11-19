@@ -98,9 +98,9 @@ exports[`level verify roots should refuse a level name without roots to look in 
   "exitCode": 2,
   "stderr": [
     "error: the following required arguments were not provided:",
-    "  <--path <path>|--root <root>>",
+    "  <path|--root <root>>",
     "",
-    "Usage: xrf-cli level verify --level <level> <--path <path>|--root <root>>",
+    "Usage: xrf-cli level verify --level <level> <path|--root <root>>",
     "",
     "For more information, try '--help'.",
   ],

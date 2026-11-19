@@ -33,7 +33,6 @@ describe("level chain", () => {
 
   const compiled = (directory: string, report: string, jobs: string): CliResult =>
     box.run("level compile", [
-      "--path",
       directory,
       "--steps",
       "geometry,light,details,ai",
@@ -56,7 +55,6 @@ describe("level chain", () => {
 
     // No --textures: the build reads gamedata/textures beside the rawdata, where a decompile writes them.
     build = box.run("level build", [
-      "--path",
       box.at("rawdata/levels/chain.level"),
       "--dest",
       level,
@@ -70,7 +68,7 @@ describe("level chain", () => {
     // The same build compiled on every worker and on one gives the same bytes.
     compile = compiled(level, "compile.json", "auto");
     compiled(again, "compile-again.json", "1");
-    verify = box.run("level verify", ["--path", level, "--report", box.at("verify.json")]);
+    verify = box.run("level verify", [level, "--report", box.at("verify.json")]);
     spawn = box.run("spawn build", [
       box.at("gamedata"),
       "--dest",

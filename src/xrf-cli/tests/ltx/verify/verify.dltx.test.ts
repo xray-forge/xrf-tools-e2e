@@ -20,8 +20,8 @@ describe("ltx verify --dltx", () => {
   beforeAll(() => {
     // Exit 3 is a failed check rather than a broken command: standard rules found real errors, which
     // is the behaviour under test.
-    standard = box.run("ltx verify", ["--path", gamedataDltx("configs")], { expectExit: 3 });
-    dltx = box.run("ltx verify", ["--path", gamedataDltx("configs"), "--dltx"]);
+    standard = box.run("ltx verify", [gamedataDltx("configs")], { expectExit: 3 });
+    dltx = box.run("ltx verify", [gamedataDltx("configs"), "--dltx"]);
   });
 
   it("should refuse patch files without the flag", () => {

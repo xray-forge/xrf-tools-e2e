@@ -18,7 +18,7 @@ describe("level info structure", () => {
     box.copyIn(resource("levels/sectors"), "root/levels/zaton");
     box.copyIn(resource("levels/triangle"), "triangle");
 
-    structure = box.run("level info", ["--path", box.at("root/levels/zaton"), "--report", box.at("structure.json")]);
+    structure = box.run("level info", [box.at("root/levels/zaton"), "--report", box.at("structure.json")]);
     byName = box.run("level info", [
       "--root",
       box.at("root"),
@@ -29,12 +29,7 @@ describe("level info structure", () => {
       "--report",
       box.at("by-name.json"),
     ]);
-    withoutStructure = box.run("level info", [
-      "--path",
-      box.at("triangle"),
-      "--report",
-      box.at("without-structure.json"),
-    ]);
+    withoutStructure = box.run("level info", [box.at("triangle"), "--report", box.at("without-structure.json")]);
   });
 
   it("should report the sectors, portals and lights the bundle carries", () => {

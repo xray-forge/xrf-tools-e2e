@@ -50,7 +50,7 @@ describe("readers reject damaged input", () => {
     // The two verifiers below judge the damaged file rather than failing to run, so they answer
     // the check verdict 3 where the readers above answer the operational 1.
     box.write("configs/broken.ltx", "[unterminated\nkey = value\n");
-    ltx = box.run("ltx verify", ["--path", box.at("configs")], { expectExit: 3 });
+    ltx = box.run("ltx verify", [box.at("configs")], { expectExit: 3 });
 
     box.write("translations/broken.json", '{ "st_x": { "eng": }\n');
     translation = box.run("translation verify", [box.at("translations")], { expectExit: 3 });

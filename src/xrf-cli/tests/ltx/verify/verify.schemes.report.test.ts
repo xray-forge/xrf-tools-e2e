@@ -16,7 +16,7 @@ describe("ltx verify schemes report", () => {
   const box = new Sandbox(__filename);
 
   beforeAll(() => {
-    box.run("ltx verify", ["--path", ltxSchemes("configs"), "--silent", "--report", box.at("report.json")], {
+    box.run("ltx verify", [ltxSchemes("configs"), "--silent", "--report", box.at("report.json")], {
       expectExit: 3,
     });
   });

@@ -28,7 +28,7 @@ describe("ltx verify report paths", () => {
     fs.writeFileSync(box.at("project/nested/broken.ltx"), "[demo]\n$scheme = undeclared_scheme\n");
 
     // A missing scheme declaration is the cheapest finding that carries a location.
-    box.run("ltx verify", ["--path", box.at("project"), "--silent", "--report", box.at("report.json")], {
+    box.run("ltx verify", [box.at("project"), "--silent", "--report", box.at("report.json")], {
       expectExit: 3,
     });
 
