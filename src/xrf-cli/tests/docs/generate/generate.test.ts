@@ -1,3 +1,5 @@
+import * as fs from "node:fs";
+
 import { beforeAll, describe, expect, it } from "@jest/globals";
 
 import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
@@ -12,8 +14,10 @@ const PAGES: ReadonlyArray<string> = [
   "docs.md",
   "externs.md",
   "gamedata.md",
+  "gamemtl.md",
   "level.md",
   "ltx.md",
+  "object.md",
   "ogf.md",
   "omf.md",
   "particle.md",
@@ -72,6 +76,16 @@ describe("docs generate", () => {
   // catches a page appearing or disappearing.
   it.each(PAGES)("should render %s", (page: string) => {
     expect(box.text(`docs/${page}`)).toMatchSnapshot();
+  });
+
+  // The list above pins only the pages it names, so a new command group's page would otherwise publish unread.
+  it("should render every group page the list above pins", () => {
+    const written: Array<string> = fs
+      .readdirSync(box.at("docs"))
+      .filter((name: string) => name !== "README.md")
+      .sort();
+
+    expect(written).toEqual([...PAGES].sort());
   });
 
   // The index is generated too, and it is the one page whose content is a claim about the others:
