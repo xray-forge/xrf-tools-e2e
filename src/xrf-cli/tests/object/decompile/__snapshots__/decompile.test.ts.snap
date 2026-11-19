@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`object decompile should decompile the skeleton into an object 1`] = `
+{
+  "build": {
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "profile": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "object",
+    "decompile",
+  ],
+  "duration": "<duration>",
+  "execution": {
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "result": {
+    "bones": 2,
+    "destination": "<sandbox>/objects/bolt.object",
+    "faces": 192,
+    "inferred": [
+      "surfaceNames",
+      "surfaceCompilerShaders",
+      "surfaceGameMaterials",
+      "meshName",
+      "boneLengths",
+      "smoothing",
+      "twoSidedSurfaces",
+    ],
+    "points": 98,
+    "sidecar": "<sandbox>/objects/bolt.object.xrf.json",
+    "source": "<resources>/gamedata/meshes/ogf/dev_bolt_hud.ogf",
+    "surfaces": 1,
+    "twoSidedFaces": 0,
+  },
+}
+`;
+
+exports[`object decompile should decompile the skeleton into an object 2`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Decompiled <resources>/gamedata/meshes/ogf/dev_bolt_hud.ogf into <sandbox>/objects/bolt.object: 1 surfaces, 98 points, 192 faces (0 two-sided), 2 bones; provenance in <sandbox>/objects/bolt.object.xrf.json",
+  ],
+}
+`;
+
+exports[`object decompile should record where the object came from beside it 1`] = `
+{
+  "decompiledAt": "<time>",
+  "inferred": [
+    "surfaceNames",
+    "surfaceCompilerShaders",
+    "surfaceGameMaterials",
+    "meshName",
+    "boneLengths",
+    "smoothing",
+    "twoSidedSurfaces",
+  ],
+  "source": "<resources>/gamedata/meshes/ogf/dev_bolt_hud.ogf",
+  "sourceSha256": "2c41c8c88a51e20277009d457b479083e7b3719b959d1576d1e2e3208c2cd224",
+  "tangents": "actorEditor",
+  "tool": "xrf-cli object decompile",
+  "toolVersion": "<version>",
+}
+`;
+
+exports[`object decompile should refuse an object already there unforced, writing nothing 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: IO error: <sandbox>/objects already holds what this run writes (bolt.object, bolt.object.xrf.json); force it to replace them",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`object decompile should replace the object and its sidecar forced 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Decompiled <resources>/gamedata/meshes/ogf/dev_bolt_hud.ogf into <sandbox>/objects/bolt.object: 1 surfaces, 98 points, 192 faces (0 two-sided), 2 bones; provenance in <sandbox>/objects/bolt.object.xrf.json",
+  ],
+}
+`;
+
+exports[`object decompile should write the object, its sidecar and only the requested reports 1`] = `
+[
+  {
+    "path": "first.json",
+    "sha256": "afec186ff59062e4de26d376f287a5196dcb9d138d503c25815e0810274521cd",
+    "size": 769,
+  },
+  {
+    "path": "forced.json",
+    "sha256": "afec186ff59062e4de26d376f287a5196dcb9d138d503c25815e0810274521cd",
+    "size": 769,
+  },
+  {
+    "path": "objects/bolt.object",
+    "sha256": "7b512ccf06638d4dc5086790bd1aad58772a567a5d2b3c141eb4b80913ec86ec",
+    "size": 24437,
+  },
+  {
+    "path": "objects/bolt.object.xrf.json",
+  },
+  {
+    "path": "refused.json",
+    "sha256": "1b681e2d2e757ac04e7f6a19291cae955a2cc35e6402c5db7a1578eca2778959",
+    "size": 428,
+  },
+]
+`;

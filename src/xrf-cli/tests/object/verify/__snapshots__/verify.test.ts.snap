@@ -1,0 +1,194 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`object verify should fail an object against another model with exit 3, naming each difference 1`] = `
+{
+  "build": {
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "profile": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "object",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "execution": {
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "result": {
+    "census": {
+      "children": 1,
+      "faces": 192,
+      "facesMatched": 0,
+      "referenceChildren": 1,
+      "referenceFaces": 44,
+      "referenceFlatFaces": 0,
+      "vertices": 194,
+      "verticesMatched": 0,
+      "verticesNormalOnly": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "model type: "MT_SKELETON_ANIM", the reference's "MT_SKELETON_RIGID"",
+            "ruleId": "object.model",
+            "subject": null,
+          },
+          {
+            "message": "motion references: Some(["dynamics\\\\devices\\\\dev_bolt\\\\dev_bolt_hud_animation", "omf\\\\wpn_mp5_hud_animation"]), the reference's None",
+            "ruleId": "object.model",
+            "subject": null,
+          },
+        ],
+        "id": "object.model",
+        "status": "failed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "bone 0: wpn_body under '', the reference's lod under ''",
+            "ruleId": "object.skeleton",
+            "subject": null,
+          },
+          {
+            "message": "bone wpn_body: joint differ",
+            "ruleId": "object.skeleton",
+            "subject": null,
+          },
+          {
+            "message": "bones: 2 compiled, 1 in the reference",
+            "ruleId": "object.skeleton",
+            "subject": null,
+          },
+        ],
+        "id": "object.skeleton",
+        "status": "failed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "object.motions",
+        "status": "passed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "bounds Aabb { min: Vector3d { x: -0.016617509, y: -0.043978497, z: -0.016535774 }, max: Vector3d { x: 0.016760565, y: 0.03416283, z: 0.016411088 } }, the reference's Aabb { min: Vector3d { x: -0.014848642, y: 0.00026218838, z: -0.05770045 }, max: Vector3d { x: 0.016226405, y: 0.13977794, z: 0.114246435 } }",
+            "ruleId": "object.geometry",
+            "subject": null,
+          },
+          {
+            "message": "the reference's wpn\\wpn_pm / models\\model is not compiled",
+            "ruleId": "object.geometry",
+            "subject": null,
+          },
+          {
+            "message": "wpn\\wpn_bolt / models\\model is not drawn by the reference",
+            "ruleId": "object.geometry",
+            "subject": null,
+          },
+        ],
+        "id": "object.geometry",
+        "status": "failed",
+      },
+    ],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`object verify should fail an object against another model with exit 3, naming each difference 2`] = `
+{
+  "exitCode": 3,
+  "stderr": [
+    "Check 'object.model' is failed with 2 finding(s)",
+    "Check 'object.skeleton' is failed with 3 finding(s)",
+    "Check 'object.geometry' is failed with 3 finding(s)",
+    "Check failed: 8 finding(s)",
+  ],
+  "stdout": [
+    "Verifying <sandbox>/bolt.object against <resources>/gamedata/meshes/ogf/wpn_pm_lod.ogf",
+    "Children 1 against 1; vertices matched 0 of 194 (0 more but for their normal); reference faces drawn 0 of 44 (0 with two corners at one position)",
+  ],
+}
+`;
+
+exports[`object verify should pass an object against the OGF it was decompiled from 1`] = `
+{
+  "build": {
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "profile": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "object",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "execution": {
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "result": {
+    "census": {
+      "children": 1,
+      "faces": 192,
+      "facesMatched": 192,
+      "referenceChildren": 1,
+      "referenceFaces": 192,
+      "referenceFlatFaces": 0,
+      "vertices": 194,
+      "verticesMatched": 194,
+      "verticesNormalOnly": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "object.model",
+        "status": "passed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "object.skeleton",
+        "status": "passed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "object.motions",
+        "status": "passed",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "object.geometry",
+        "status": "passed",
+      },
+    ],
+    "status": "passed",
+  },
+}
+`;
+
+exports[`object verify should pass an object against the OGF it was decompiled from 2`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Verifying <sandbox>/bolt.object against <resources>/gamedata/meshes/ogf/dev_bolt_hud.ogf",
+    "Children 1 against 1; vertices matched 194 of 194 (0 more but for their normal); reference faces drawn 192 of 192 (0 with two corners at one position)",
+    "Verification of the object: passed",
+  ],
+}
+`;

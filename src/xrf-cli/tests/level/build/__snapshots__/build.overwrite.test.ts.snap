@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`level build overwrite should build into an empty directory 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Built <sandbox>/rawdata/levels/chain.level into <sandbox>/gamedata/levels/chain: build.aimap (new), build.details (new), build.prj (new), build_details.dds (new), level.env_mod (new), level.fog_vol (new), level.game (new), level.ltx (new), level.spawn (new)",
+  ],
+}
+`;
+
+exports[`level build overwrite should refuse a directory holding the build's files unforced, naming them 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: IO error: <sandbox>/gamedata/levels/chain already holds what this run writes (level.env_mod, level.fog_vol, level.game, level.snd_static, level.spawn, 5 more); force it to replace them",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`level build overwrite should refuse before reading the scene 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: IO error: <sandbox>/gamedata/levels/chain already holds what this run writes (level.env_mod, level.fog_vol, level.game, level.snd_static, level.spawn, 5 more); force it to replace them",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`level build overwrite should replace the files forced, removing its own stale file and keeping the user's 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Removed what an earlier build wrote and this one does not: level.snd_static",
+    "Built <sandbox>/rawdata/levels/chain.level into <sandbox>/gamedata/levels/chain: build.aimap (same), build.details (same), build.prj (same), build_details.dds (same), level.env_mod (same), level.fog_vol (same), level.game (changed), level.ltx (same), level.spawn (same)",
+  ],
+}
+`;
+
+exports[`level build overwrite should write the build's files and only the requested reports 1`] = `
+[
+  {
+    "path": "first.json",
+    "sha256": "d6be006c6f5d645d3c413e0e9abcf56ccc4cfc4e34ef7a50ca87582a23e1aa69",
+    "size": 1871,
+  },
+  {
+    "path": "forced.json",
+    "sha256": "e1742b4cb496e27509ec26cb56609824e2dfd80be2cf4ef8b37506a2bdc8de7e",
+    "size": 1913,
+  },
+  {
+    "path": "gamedata/levels/chain/build.aimap",
+    "sha256": "8a142b0885bef079db2fd500b08bcec91d9a07eb0e4e6c106ce2e2130d542629",
+    "size": 4498,
+  },
+  {
+    "path": "gamedata/levels/chain/build.details",
+    "sha256": "4a29e0e9ba1ec0a9bd7c41ed6ba7e92f61b8c080e1bf8b79bf45b34a2291c497",
+    "size": 544,
+  },
+  {
+    "path": "gamedata/levels/chain/build.prj",
+    "sha256": "054fa1272072112880762b247dd667020c817486559366e4e7d28041cc3d1523",
+    "size": 29252,
+  },
+  {
+    "path": "gamedata/levels/chain/build_details.dds",
+    "sha256": "a0329bda3e13feca63459600b87db3599f03e2dd347e3f6438f81a0208c8b847",
+    "size": 43832,
+  },
+  {
+    "path": "gamedata/levels/chain/level.env_mod",
+    "sha256": "5c46bfd7cb30073765e4cf6499d6f68c99c732b668654064363d195557db25e8",
+    "size": 12,
+  },
+  {
+    "path": "gamedata/levels/chain/level.fog_vol",
+    "sha256": "287a3387a6a65e0b5483d02992ed2649ef4a9f48d79c7c1d3484acfaec7367d3",
+    "size": 6,
+  },
+  {
+    "path": "gamedata/levels/chain/level.game",
+    "sha256": "c3d7e5cf3d22745953a4c1d91240b8739235550b6f7af1dea7b2e80734ee57b2",
+    "size": 16,
+  },
+  {
+    "path": "gamedata/levels/chain/level.ltx",
+    "sha256": "cc0b0d505915c8fa68dea7c3a04a49bbcac0c7531563fb3f421ee80b59c72e5f",
+    "size": 138,
+  },
+  {
+    "path": "gamedata/levels/chain/level.spawn",
+    "sha256": "3f92c53d3ccdbcb7c0f17d09a9b36497784aa657ad96405815404d658d149670",
+    "size": 400,
+  },
+  {
+    "path": "gamedata/levels/chain/notes.txt",
+    "sha256": "86e1790f812ac90c0892754eeb75e2a679831f93ac8ba5ec9f627393e0a728ca",
+    "size": 14,
+  },
+  {
+    "path": "refused.json",
+    "sha256": "458cee8fc9d978e89e68a9952cc6391c0ce77b1770a3e26abbc2ea20c9c8cf17",
+    "size": 483,
+  },
+  {
+    "path": "unread.json",
+    "sha256": "458cee8fc9d978e89e68a9952cc6391c0ce77b1770a3e26abbc2ea20c9c8cf17",
+    "size": 483,
+  },
+]
+`;

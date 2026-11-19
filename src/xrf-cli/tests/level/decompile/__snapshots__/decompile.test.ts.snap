@@ -1,0 +1,243 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`level decompile should decompile the compiled level into a scene, its objects and their sidecars 1`] = `
+{
+  "build": {
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "profile": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "level",
+    "decompile",
+  ],
+  "duration": "<duration>",
+  "execution": {
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "result": {
+    "destination": "<sandbox>/scene/rawdata/levels/chain.level",
+    "geometry": {
+      "breakables": 0,
+      "breakablesWithoutPart": 0,
+      "collisionFaces": 24,
+      "collisionOnlyFaces": 0,
+      "decalTriangles": 0,
+      "emptySectors": 0,
+      "faces": 24,
+      "impostors": 0,
+      "instanceCollisionFaces": 0,
+      "instanceObjects": 0,
+      "instanceTriangles": 0,
+      "instances": 0,
+      "ladders": 0,
+      "laddersOfDefaultMaterial": 0,
+      "libraryTreeModels": 0,
+      "needleTriangles": 0,
+      "objects": 1,
+      "occluderPolygons": 0,
+      "repeatedTriangles": 0,
+      "soundOccluderPolygons": 0,
+      "staticTriangles": 24,
+      "surfaces": {
+        "compilerShaders": 2,
+        "exactTriangles": 24,
+        "tracedTriangles": 0,
+        "uncollidedTriangles": 0,
+        "unknownGameMaterials": 0,
+      },
+      "treeCollisionFaces": 0,
+      "treeImpostors": 0,
+      "treeModels": 0,
+      "treePlacements": 0,
+      "treeTriangles": 0,
+      "twoSidedFaces": 0,
+      "unmatchedSoundOcclusionFactors": 0,
+    },
+    "inferred": [
+      "objectNames",
+      "levelOptions",
+      "buildParameters",
+      "camera",
+      "mapBound",
+      "sectorShells",
+      "surfaceDress",
+      "lightBrightness",
+      "lightFuzzyPoints",
+      "lightControls",
+      "aiMapSettings",
+    ],
+    "objectsRoot": "<sandbox>/scene/rawdata/objects",
+    "refused": [
+      {
+        "file": "level.details",
+        "object": "detail object 0",
+        "reason": "No library detail object draws its 8 vertices and 4 triangles; the level keeps only its place in the atlas, not its texture, so its corners plant nothing",
+      },
+    ],
+    "removed": [],
+    "rootSpawn": null,
+    "sidecar": "<sandbox>/scene/rawdata/levels/chain.level.xrf.json",
+    "source": "<sandbox>/gamedata/levels/chain",
+    "sources": [
+      "build.lights",
+      "build_details.dds",
+      "level",
+      "level.ai",
+      "level.cform",
+      "level.details",
+      "level.env_mod",
+      "level.fog_vol",
+      "level.game",
+      "level.geom",
+      "level.ltx",
+      "level.spawn",
+    ],
+    "textures": 0,
+    "texturesRoot": "<sandbox>/scene/rawdata/../gamedata/textures",
+    "tools": [
+      {
+        "name": "ai_map",
+        "objects": null,
+      },
+      {
+        "name": "fog_volume",
+        "objects": 0,
+      },
+      {
+        "name": "glow",
+        "objects": 0,
+      },
+      {
+        "name": "light",
+        "objects": 1,
+      },
+      {
+        "name": "scene_object",
+        "objects": 1,
+      },
+      {
+        "name": "sector",
+        "objects": 1,
+      },
+      {
+        "name": "shape",
+        "objects": 1,
+      },
+      {
+        "name": "spawn",
+        "objects": 3,
+      },
+      {
+        "name": "way",
+        "objects": 0,
+      },
+    ],
+  },
+}
+`;
+
+exports[`level decompile should decompile the compiled level into a scene, its objects and their sidecars 2`] = `
+{
+  "exitCode": 0,
+  "stderr": [
+    "Refused 1 things the scene cannot hold as read, each named in the sidecar with its reason: what the scene left out, or kept another way",
+  ],
+  "stdout": [
+    "Workers: <workers> (requested)",
+    "Surfaces: game materials from 24 triangles on a collision face and 0 traced to one, 0 on none; 2 compiler shaders chosen, each with its reason in the sidecar",
+    "Static geometry: 1 objects under <sandbox>/scene/rawdata/objects, 24 faces from 24 triangles (0 two-sided folds, 0 repeats dropped); 0 tree placements of 0 tree models, 0 of them library trees, 0 with impostor strips under <sandbox>/scene/rawdata/../gamedata/textures; 0 collision faces no render triangle draws",
+    "Decompiled <sandbox>/gamedata/levels/chain into <sandbox>/scene/rawdata/levels/chain.level from 12 files: ai_map, fog_volume 0, glow 0, light 1, scene_object 1, sector 1, shape 1, spawn 3, way 0; provenance in <sandbox>/scene/rawdata/levels/chain.level.xrf.json",
+  ],
+}
+`;
+
+exports[`level decompile should refuse a scene already there unforced, leaving every file as it was 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: IO error: <sandbox>/scene/rawdata/levels already holds what this run writes (chain.level, chain.level.xrf.json, chain/ai_map.part, chain/fog_volume.part, chain/glow.part, 7 more); force it to replace them",
+  ],
+  "stdout": [
+    "Workers: <workers> (requested)",
+  ],
+}
+`;
+
+exports[`level decompile should replace the scene forced, removing its own stale part and object and keeping the user's file 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [
+    "Refused 1 things the scene cannot hold as read, each named in the sidecar with its reason: what the scene left out, or kept another way",
+  ],
+  "stdout": [
+    "Workers: <workers> (requested)",
+    "Removed what an earlier decompile wrote and this one does not: <sandbox>/scene/rawdata/levels/chain/stale.part, <sandbox>/scene/rawdata/objects/levels/chain/chain_stale.object",
+    "Surfaces: game materials from 24 triangles on a collision face and 0 traced to one, 0 on none; 2 compiler shaders chosen, each with its reason in the sidecar",
+    "Static geometry: 1 objects under <sandbox>/scene/rawdata/objects, 24 faces from 24 triangles (0 two-sided folds, 0 repeats dropped); 0 tree placements of 0 tree models, 0 of them library trees, 0 with impostor strips under <sandbox>/scene/rawdata/../gamedata/textures; 0 collision faces no render triangle draws",
+    "Decompiled <sandbox>/gamedata/levels/chain into <sandbox>/scene/rawdata/levels/chain.level from 12 files: ai_map, fog_volume 0, glow 0, light 1, scene_object 1, sector 1, shape 1, spawn 3, way 0; provenance in <sandbox>/scene/rawdata/levels/chain.level.xrf.json",
+  ],
+}
+`;
+
+exports[`level decompile should write the scene's files 1`] = `
+[
+  {
+    "path": "scene/rawdata/levels/chain.level",
+    "size": 1643,
+  },
+  {
+    "path": "scene/rawdata/levels/chain.level.xrf.json",
+  },
+  {
+    "path": "scene/rawdata/levels/chain/ai_map.part",
+    "size": 4803,
+  },
+  {
+    "path": "scene/rawdata/levels/chain/fog_volume.part",
+    "size": 345,
+  },
+  {
+    "path": "scene/rawdata/levels/chain/glow.part",
+    "size": 391,
+  },
+  {
+    "path": "scene/rawdata/levels/chain/light.part",
+    "size": 1810,
+  },
+  {
+    "path": "scene/rawdata/levels/chain/scene_object.part",
+    "size": 1311,
+  },
+  {
+    "path": "scene/rawdata/levels/chain/sector.part",
+    "size": 1144,
+  },
+  {
+    "path": "scene/rawdata/levels/chain/shape.part",
+    "size": 1210,
+  },
+  {
+    "path": "scene/rawdata/levels/chain/spawn.part",
+    "size": 7214,
+  },
+  {
+    "path": "scene/rawdata/levels/chain/way.part",
+    "size": 345,
+  },
+  {
+    "path": "scene/rawdata/objects/levels/chain/chain_sector_0.object",
+    "size": 3473,
+  },
+  {
+    "path": "scene/rawdata/objects/levels/chain/chain_sector_0.object.xrf.json",
+  },
+  {
+    "path": "scene/rawdata/objects/levels/chain/notes.txt",
+    "size": 14,
+  },
+]
+`;

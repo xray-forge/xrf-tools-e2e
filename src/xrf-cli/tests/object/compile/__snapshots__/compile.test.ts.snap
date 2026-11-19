@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`object compile should compile an object into a detail model where the destination is a .dm 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Compiled <resources>/levels/chain/rawdata/objects/detail/grass.object into <sandbox>/out/grass.dm: 1 children, 8 vertices, 4 faces (0 dropped), 0 bones, no tangents",
+  ],
+}
+`;
+
+exports[`object compile should compile an object into a static visual 1`] = `
+{
+  "build": {
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "profile": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "object",
+    "compile",
+  ],
+  "duration": "<duration>",
+  "execution": {
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "result": {
+    "bones": 0,
+    "bytes": 1182,
+    "children": 1,
+    "destination": "<sandbox>/out/box.ogf",
+    "droppedFaces": 0,
+    "faces": 10,
+    "source": "<resources>/levels/chain/rawdata/objects/levels/chain/box.object",
+    "tangents": null,
+    "vertices": 20,
+  },
+}
+`;
+
+exports[`object compile should compile an object into a static visual 2`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Compiled <resources>/levels/chain/rawdata/objects/levels/chain/box.object into <sandbox>/out/box.ogf: 1 children, 20 vertices, 10 faces (0 dropped), 0 bones, no tangents",
+  ],
+}
+`;
+
+exports[`object compile should refuse an output already there unforced, writing nothing 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: IO error: <sandbox>/out already holds what this run writes (box.ogf); force it to replace them",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`object compile should replace the output forced 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Compiled <resources>/levels/chain/rawdata/objects/levels/chain/box.object into <sandbox>/out/box.ogf: 1 children, 20 vertices, 10 faces (0 dropped), 0 bones, no tangents",
+  ],
+}
+`;
+
+exports[`object compile should write the models and only the requested reports 1`] = `
+[
+  {
+    "path": "back/grass.dm",
+    "sha256": "d76731763a64ad0daec743dc4032e2ecea92b123feb24668cb58f8addfbbd859",
+    "size": 238,
+  },
+  {
+    "path": "back/grass.object",
+    "sha256": "b915c47d62edefb88f47a97b0f4c849ed1d39101a276ca76a68f78d0f7c8ac3e",
+    "size": 711,
+  },
+  {
+    "path": "back/grass.object.xrf.json",
+  },
+  {
+    "path": "box.json",
+    "sha256": "074c4ffed6f80efc9ed4cd2eba6e3d4aabc6edb64fc6c38c4d43ae3aaa7b05b5",
+    "size": 567,
+  },
+  {
+    "path": "grass.json",
+    "sha256": "05b0b1fc1289f354d54d21a3ac84452fc270cac52f4399c6c2a93a5f90998dd6",
+    "size": 561,
+  },
+  {
+    "path": "out/box.ogf",
+    "sha256": "cb54d75b927b521a0ece3929b38f025e78f59211e30f9d065c6f2bc5c83def91",
+    "size": 1182,
+  },
+  {
+    "path": "out/grass.dm",
+    "sha256": "d76731763a64ad0daec743dc4032e2ecea92b123feb24668cb58f8addfbbd859",
+    "size": 238,
+  },
+  {
+    "path": "refused.json",
+    "sha256": "d801b39b8d97bd2957673fb36342d87ab4b89d0d1d93cda3419f14c033879bdc",
+    "size": 396,
+  },
+]
+`;
