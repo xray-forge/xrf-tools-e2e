@@ -37,14 +37,14 @@ describe("omf filter-motions", () => {
       box.at("filter-dry.json"),
     ]);
 
-    // --keep takes several names after one flag rather than being repeated; passing it twice is a
-    // usage error, so this is the only way to keep more than one motion by name.
+    // --keep takes one name per flag and is repeated to keep more than one motion by name.
     keptSeveral = box.run("omf filter-motions", [
       SOURCE,
       "--dest",
       box.at("kept-two.omf"),
       "--keep",
       "idle",
+      "--keep",
       "svd_shoot",
     ]);
 

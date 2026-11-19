@@ -18,12 +18,12 @@ describe("translation format roundtrip", () => {
     const sources = box.copyIn(resource("translations"), "translations");
 
     // The fixture is authored the way a person types one: ids out of order and entries on a single line.
-    checkBefore = box.run("translation format", ["--path", sources, "--check"], { expectExit: 3 });
-    format = box.run("translation format", ["--path", sources]);
+    checkBefore = box.run("translation format", [sources, "--check"], { expectExit: 3 });
+    format = box.run("translation format", [sources]);
     afterFirst = box.sha("translations/st_items.json");
-    checkAfter = box.run("translation format", ["--path", sources, "--check"]);
-    formatAgain = box.run("translation format", ["--path", sources]);
-    verify = box.run("translation verify", ["--path", sources, "-l", "eng"]);
+    checkAfter = box.run("translation format", [sources, "--check"]);
+    formatAgain = box.run("translation format", [sources]);
+    verify = box.run("translation verify", [sources, "-l", "eng"]);
   });
 
   it("should reject unformatted sources", () => {

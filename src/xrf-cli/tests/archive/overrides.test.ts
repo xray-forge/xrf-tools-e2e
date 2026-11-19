@@ -26,15 +26,7 @@ describe("volume set overrides", () => {
     verified = box.run("archive verify", [box.at("db"), "--report", box.at("verify.json")]);
     // `auto` mounts the directory as one volume set, which is the shape `archive verify` reads and the application
     // opens. `volumes` would mount each file as its own source, where the pair is shadowing between mounts instead.
-    box.run("gamedata list", [
-      "--path",
-      box.at("db"),
-      "--source",
-      "auto",
-      "--shadowed",
-      "--report",
-      box.at("listing.json"),
-    ]);
+    box.run("gamedata list", [box.at("db"), "--source", "auto", "--shadowed", "--report", box.at("listing.json")]);
   });
 
   it("should verify clean and still name what the patch buried", () => {

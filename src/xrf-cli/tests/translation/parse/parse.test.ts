@@ -6,7 +6,7 @@ import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 const MOD = resource("mod-text");
 
 /** Points at the mod root and lets the run resolve the text tree and language directory below it. */
-const MOD_ARGS: Array<string> = ["--path", MOD, "--source", "directory"];
+const MOD_ARGS: Array<string> = [MOD, "--source", "directory"];
 
 describe("translation parse", () => {
   const box = new Sandbox(__filename);

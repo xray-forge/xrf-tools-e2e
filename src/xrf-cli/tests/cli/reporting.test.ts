@@ -42,7 +42,7 @@ describe("CLI reporting contract", () => {
    * @returns Completed invocation, expected to exit 3.
    */
   function failingCheck(args: Array<string> = []): CliResult {
-    return box.run("dialog info", ["--path", dialogs, "--source", "directory", "--strict", ...args], {
+    return box.run("dialog info", [dialogs, "--source", "directory", "--strict", ...args], {
       expectExit: 3,
     });
   }
@@ -180,7 +180,7 @@ describe("CLI reporting contract", () => {
     it("should answer an undeliverable report with 1 even when the check itself failed", () => {
       const result: CliResult = box.run(
         "dialog info",
-        ["--path", dialogs, "--source", "directory", "--strict", "--report", box.at("missing/failed.json")],
+        [dialogs, "--source", "directory", "--strict", "--report", box.at("missing/failed.json")],
         { expectExit: 1 }
       );
 

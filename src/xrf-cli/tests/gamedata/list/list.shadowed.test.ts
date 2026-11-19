@@ -48,15 +48,9 @@ describe("gamedata list across mounts", () => {
 
     before = inputs.map((input) => box.sha(input));
 
-    listed = box.run("gamedata list", ["--path", box.at("install"), "--report", box.at("listing.json")]);
-    shadowed = box.run("gamedata list", [
-      "--path",
-      box.at("install"),
-      "--shadowed",
-      "--report",
-      box.at("shadowed.json"),
-    ]);
-    loose = box.run("gamedata list", ["--path", box.at("install"), "--loose", "--report", box.at("loose.json")]);
+    listed = box.run("gamedata list", [box.at("install"), "--report", box.at("listing.json")]);
+    shadowed = box.run("gamedata list", [box.at("install"), "--shadowed", "--report", box.at("shadowed.json")]);
+    loose = box.run("gamedata list", [box.at("install"), "--loose", "--report", box.at("loose.json")]);
   });
 
   // Two mounts, and each asset reports which one answered for it.

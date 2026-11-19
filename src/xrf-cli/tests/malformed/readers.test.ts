@@ -53,7 +53,7 @@ describe("readers reject damaged input", () => {
     ltx = box.run("ltx verify", ["--path", box.at("configs")], { expectExit: 3 });
 
     box.write("translations/broken.json", '{ "st_x": { "eng": }\n');
-    translation = box.run("translation verify", ["--path", box.at("translations")], { expectExit: 3 });
+    translation = box.run("translation verify", [box.at("translations")], { expectExit: 3 });
   });
 
   it("should refuse a truncated visual", () => {

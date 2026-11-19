@@ -24,13 +24,12 @@ describe("dialog list --profile", () => {
   let verbose: CliResult;
 
   beforeAll(() => {
-    snag = box.run("dialog list", ["--path", TREE, "--source", "directory", "--profile", "snag"]);
-    pinned = box.run("dialog list", ["--path", TREE, "--source", "directory", "--profile", "snag_pinned"]);
-    novice = box.run("dialog list", ["--path", TREE, "--source", "directory", "--profile", "novice"]);
-    verbose = box.run("dialog list", ["--path", TREE, "--source", "directory", "--profile", "snag", "--verbose"]);
+    snag = box.run("dialog list", [TREE, "--source", "directory", "--profile", "snag"]);
+    pinned = box.run("dialog list", [TREE, "--source", "directory", "--profile", "snag_pinned"]);
+    novice = box.run("dialog list", [TREE, "--source", "directory", "--profile", "novice"]);
+    verbose = box.run("dialog list", [TREE, "--source", "directory", "--profile", "snag", "--verbose"]);
 
     box.run("dialog list", [
-      "--path",
       TREE,
       "--source",
       "directory",
@@ -72,13 +71,13 @@ describe("dialog list --profile", () => {
 
   it("should refuse a profile the tree does not declare", () => {
     expect(
-      box.run("dialog list", ["--path", TREE, "--source", "directory", "--profile", "stranger"], { expectExit: 1 })
+      box.run("dialog list", [TREE, "--source", "directory", "--profile", "stranger"], { expectExit: 1 })
     ).toMatchSnapshot();
   });
 
   it("should refuse a profile whose class no character carries", () => {
     expect(
-      box.run("dialog list", ["--path", TREE, "--source", "directory", "--profile", "nobody"], { expectExit: 1 })
+      box.run("dialog list", [TREE, "--source", "directory", "--profile", "nobody"], { expectExit: 1 })
     ).toMatchSnapshot();
   });
 

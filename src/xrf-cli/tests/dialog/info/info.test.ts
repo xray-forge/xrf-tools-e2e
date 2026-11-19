@@ -23,17 +23,17 @@ describe("dialog info", () => {
   let elsewhere: CliResult;
 
   beforeAll(() => {
-    swept = box.run("dialog info", ["--path", GAMEDATA]);
-    prefixed = box.run("dialog info", ["--path", GAMEDATA, "--prefix", "configs\\gameplay"]);
-    detailed = box.run("dialog info", ["--path", GAMEDATA, "--verbose"]);
-    report = box.run("dialog info", ["--path", GAMEDATA, "--report", box.at("report.json")]);
+    swept = box.run("dialog info", [GAMEDATA]);
+    prefixed = box.run("dialog info", [GAMEDATA, "--prefix", "configs\\gameplay"]);
+    detailed = box.run("dialog info", [GAMEDATA, "--verbose"]);
+    report = box.run("dialog info", [GAMEDATA, "--report", box.at("report.json")]);
 
     // Findings are chatter, so a silent run says nothing at all until the verdict is a failure.
-    silent = box.run("dialog info", ["--path", GAMEDATA, "--silent"]);
+    silent = box.run("dialog info", [GAMEDATA, "--silent"]);
 
     // Only the subtree named by the prefix is searched, and no dialog lives under meshes. Nothing
     // swept is not a pass: it answers the operational 1 rather than reporting a clean tree.
-    elsewhere = box.run("dialog info", ["--path", GAMEDATA, "--prefix", "meshes"], { expectExit: 1 });
+    elsewhere = box.run("dialog info", [GAMEDATA, "--prefix", "meshes"], { expectExit: 1 });
   });
 
   it("should count what the dialogs hold", () => {
@@ -73,12 +73,12 @@ describe("dialog info", () => {
   // Reporting is the default and answers success even with findings, so a tally can be run
   // casually. Strict is the mode that judges, and it answers the check failure 3.
   it("should fail under strict when a file is off schema", () => {
-    expect(box.run("dialog info", ["--path", GAMEDATA, "--strict"], { expectExit: 3 })).toMatchSnapshot();
+    expect(box.run("dialog info", [GAMEDATA, "--strict"], { expectExit: 3 })).toMatchSnapshot();
   });
 
   // A failure still reports its verdict at every verbosity, which is what a script reads.
   it("should report the failure even when silenced", () => {
-    expect(box.run("dialog info", ["--path", GAMEDATA, "--silent", "--strict"], { expectExit: 3 })).toMatchSnapshot();
+    expect(box.run("dialog info", [GAMEDATA, "--silent", "--strict"], { expectExit: 3 })).toMatchSnapshot();
   });
 
   it("should refuse a prefix holding no dialogs", () => {

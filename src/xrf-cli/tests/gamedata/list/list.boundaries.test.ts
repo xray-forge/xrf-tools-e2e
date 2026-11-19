@@ -14,7 +14,6 @@ describe("gamedata list prefix boundaries", () => {
     before = inputs.map((input) => box.sha(input));
 
     box.run("gamedata list", [
-      "--path",
       box.at("boundary"),
       "--source",
       "directory",
@@ -25,7 +24,6 @@ describe("gamedata list prefix boundaries", () => {
       box.at("prefix.json"),
     ]);
     box.run("gamedata list", [
-      "--path",
       box.at("boundary"),
       "--source",
       "directory",
@@ -36,7 +34,6 @@ describe("gamedata list prefix boundaries", () => {
       box.at("ignore.json"),
     ]);
     box.run("gamedata list", [
-      "--path",
       box.at("boundary"),
       "--source",
       "directory",

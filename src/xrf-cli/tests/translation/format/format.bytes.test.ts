@@ -14,8 +14,8 @@ describe("translation format line endings", () => {
     const sources = box.copyIn(resource("translations"), "translations");
 
     // Line endings are unjudged unless asserted; asserting the spelling the files do not use arms the check.
-    box.run("translation format", ["--path", sources]);
-    assertedEndings = box.run("translation format", ["--path", sources, "--check", "--line-endings", "crlf"], {
+    box.run("translation format", [sources]);
+    assertedEndings = box.run("translation format", [sources, "--check", "--line-endings", "crlf"], {
       expectExit: 3,
     });
   });

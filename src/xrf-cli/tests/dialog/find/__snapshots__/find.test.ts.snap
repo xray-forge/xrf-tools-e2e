@@ -54,7 +54,7 @@ exports[`dialog find should refuse a search naming nothing to find 1`] = `
     "error: the following required arguments were not provided:",
     "  <--info <info>|--functor <functor>>",
     "",
-    "Usage: xrf-cli dialog find --path <path>... --source <source> <--info <info>|--functor <functor>>",
+    "Usage: xrf-cli dialog find --source <source> <--info <info>|--functor <functor>> <path>...",
     "",
     "For more information, try '--help'.",
   ],

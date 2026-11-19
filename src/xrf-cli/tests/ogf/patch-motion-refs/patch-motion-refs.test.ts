@@ -41,6 +41,7 @@ describe("ogf patch-motion-refs", () => {
       box.at("several.ogf"),
       "--refs",
       "dynamics\\devices\\dev_bolt\\first",
+      "--refs",
       "dynamics\\devices\\dev_bolt\\second",
     ]);
 

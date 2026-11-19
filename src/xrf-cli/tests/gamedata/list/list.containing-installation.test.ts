@@ -15,13 +15,7 @@ describe("gamedata list containing installation", () => {
     box.write("install/fsgame.ltx", FSGAME);
     before = inputs.map((input) => box.sha(input));
 
-    box.run("gamedata list", [
-      "--path",
-      box.at("install/gamedata/configs"),
-      "--silent",
-      "--report",
-      box.at("containing.json"),
-    ]);
+    box.run("gamedata list", [box.at("install/gamedata/configs"), "--silent", "--report", box.at("containing.json")]);
   });
 
   it("should discover an installation from a descendant path", () => {

@@ -3,7 +3,7 @@ import { beforeAll, describe, expect, it } from "@jest/globals";
 import { resource } from "#/xrf-cli/test/constants";
 import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
-const MOD_ARGS: Array<string> = ["--path", resource("mod-text"), "--source", "directory"];
+const MOD_ARGS: Array<string> = [resource("mod-text"), "--source", "directory"];
 
 describe("translation parse merges into authored sources", () => {
   const box = new Sandbox(__filename);

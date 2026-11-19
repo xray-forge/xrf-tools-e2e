@@ -25,13 +25,15 @@ describe("gamedata verify check selection", () => {
     // time is what shows that a non-zero answer comes from a named check rather than the whole run.
     scripts = box.run("gamedata verify", [GAMEDATA, "--checks", "scripts"]);
 
-    // Several checks after one flag, which is how a caller narrows a run to the part of the tree
-    // they touched rather than running all thirteen.
-    several = box.run("gamedata verify", [GAMEDATA, "--checks", "ltx", "scripts"], { expectExit: 3 });
+    // Several checks in one comma-separated flag, which is how a caller narrows a run to the part of
+    // the tree they touched rather than running all thirteen.
+    several = box.run("gamedata verify", [GAMEDATA, "--checks", "ltx,scripts"], { expectExit: 3 });
 
     // Repetition is accepted as an ergonomic command line spelling, but selection runs a check once
     // in first-requested order rather than paying the full verification cost twice.
-    repeated = box.run("gamedata verify", [GAMEDATA, "--checks", "ltx", "ltx", "scripts"], { expectExit: 3 });
+    repeated = box.run("gamedata verify", [GAMEDATA, "--checks", "ltx", "--checks", "ltx,scripts"], {
+      expectExit: 3,
+    });
 
     unknown = box.run("gamedata verify", [GAMEDATA, "--checks", "unknown"], { expectExit: 2 });
     coverage = box.run("gamedata verify", [GAMEDATA, "--checks", "coverage"], { expectExit: 2 });

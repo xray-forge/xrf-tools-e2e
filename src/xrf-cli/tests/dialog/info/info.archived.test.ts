@@ -29,8 +29,8 @@ describe("dialog info over an installation", () => {
     box.copyIn(gamedata("configs/gameplay/dialogs_zaton.xml"), "install/gamedata/configs/gameplay/dialogs_zaton.xml");
     box.write("install/fsgame.ltx", FSGAME);
 
-    installation = box.run("dialog info", ["--path", box.at("install"), "--verbose"]);
-    loose = box.run("dialog info", ["--path", gamedata(), "--verbose"]);
+    installation = box.run("dialog info", [box.at("install"), "--verbose"]);
+    loose = box.run("dialog info", [gamedata(), "--verbose"]);
   });
 
   it("should sweep an installation across both mounts", () => {

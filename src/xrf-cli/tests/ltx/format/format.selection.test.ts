@@ -24,11 +24,11 @@ describe("ltx format selection", () => {
     selectedBefore = box.raw("inputs/selected.txt");
     neighborBefore = box.raw("inputs/neighbor.ltx");
 
-    directoryFormat = box.run("ltx format", ["--path", inputs]);
+    directoryFormat = box.run("ltx format", [inputs]);
     selectedAfterDirectoryFormat = box.raw("inputs/selected.txt");
     neighborAfterDirectoryFormat = box.raw("inputs/neighbor.ltx");
 
-    explicitFormat = box.run("ltx format", ["--path", box.at("inputs/selected.txt")]);
+    explicitFormat = box.run("ltx format", [box.at("inputs/selected.txt")]);
   });
 
   it("should format only the LTX neighbor from a directory", () => {

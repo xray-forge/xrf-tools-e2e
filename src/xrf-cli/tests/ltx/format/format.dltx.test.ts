@@ -19,7 +19,7 @@ describe("ltx format on patch files", () => {
   beforeAll(() => {
     box.copyIn(gamedataDltx("configs"), "configs");
 
-    check = box.run("ltx format", ["--path", box.at("configs"), "--check"]);
+    check = box.run("ltx format", [box.at("configs"), "--check"]);
   });
 
   it("should judge patch files without being told the dialect", () => {
@@ -31,7 +31,7 @@ describe("ltx format on patch files", () => {
   });
 
   it("should keep an override prefix outside the brackets when rewriting", () => {
-    expect(box.run("ltx format", ["--path", box.at("configs")]).exitCode).toBe(0);
+    expect(box.run("ltx format", [box.at("configs")]).exitCode).toBe(0);
     expect(box.text("configs/mod_system_xxx.ltx")).toContain("![wpn_ak74]");
   });
 });

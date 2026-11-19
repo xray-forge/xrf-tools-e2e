@@ -12,7 +12,6 @@ describe("translation parse reads a gamedata tree", () => {
     // The shared gamedata fixture, whose string tables sit where a shipped game keeps them, so the
     // run has to resolve `configs\text` and then the language directory to find anything.
     imported = box.run("translation parse", [
-      "--path",
       gamedata(),
       "--source",
       "directory",

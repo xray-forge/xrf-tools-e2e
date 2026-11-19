@@ -35,7 +35,6 @@ describe("gamedata list source modes", () => {
     box.run("archive pack", [box.at("stage"), "--dest", box.at("install/database"), "--name", "gamedata", "--silent"]);
     packedHash = box.sha("install/database/gamedata.db");
     automatic = box.run("gamedata list", [
-      "--path",
       box.at("install"),
       "--source",
       "auto",
@@ -44,7 +43,6 @@ describe("gamedata list source modes", () => {
       box.at("auto-install.json"),
     ]);
     installation = box.run("gamedata list", [
-      "--path",
       box.at("install"),
       "--source",
       "installation",
@@ -53,7 +51,6 @@ describe("gamedata list source modes", () => {
       box.at("installation.json"),
     ]);
     directory = box.run("gamedata list", [
-      "--path",
       box.at("install"),
       "--source",
       "directory",
@@ -62,7 +59,6 @@ describe("gamedata list source modes", () => {
       box.at("directory.json"),
     ]);
     automaticVolumes = box.run("gamedata list", [
-      "--path",
       box.at("install/database"),
       "--source",
       "auto",
@@ -71,7 +67,6 @@ describe("gamedata list source modes", () => {
       box.at("auto-volumes.json"),
     ]);
     volumes = box.run("gamedata list", [
-      "--path",
       box.at("install/database"),
       "--source",
       "volumes",

@@ -9,16 +9,8 @@ describe("gamedata list selection", () => {
   let prefixed: CliResult;
 
   beforeAll(() => {
-    prefixed = box.run("gamedata list", ["--path", gamedata(), "--prefix", "meshes"]);
-    box.run("gamedata list", [
-      "--path",
-      gamedata(),
-      "--prefix",
-      "meshes",
-      "--silent",
-      "--report",
-      box.at("meshes.json"),
-    ]);
+    prefixed = box.run("gamedata list", [gamedata(), "--prefix", "meshes"]);
+    box.run("gamedata list", [gamedata(), "--prefix", "meshes", "--silent", "--report", box.at("meshes.json")]);
   });
 
   it("should limit a listing to one subtree", () => {

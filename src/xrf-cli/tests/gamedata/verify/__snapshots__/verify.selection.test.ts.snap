@@ -29,7 +29,7 @@ exports[`gamedata verify check selection should reject an unknown check 1`] = `
 {
   "exitCode": 2,
   "stderr": [
-    "error: invalid value 'unknown' for '--checks <checks>...': Unexpected error: Unexpected verification type 'unknown' provided",
+    "error: invalid value 'unknown' for '--checks <checks>': Unexpected error: Unexpected verification type 'unknown' provided",
     "",
     "For more information, try '--help'.",
   ],
@@ -41,7 +41,7 @@ exports[`gamedata verify check selection should reject the always-run coverage a
 {
   "exitCode": 2,
   "stderr": [
-    "error: invalid value 'coverage' for '--checks <checks>...': Unexpected error: Unexpected verification type 'coverage' provided",
+    "error: invalid value 'coverage' for '--checks <checks>': Unexpected error: Unexpected verification type 'coverage' provided",
     "",
     "For more information, try '--help'.",
   ],
@@ -53,7 +53,7 @@ exports[`gamedata verify check selection should reject the always-run coverage a
 {
   "exitCode": 2,
   "stderr": [
-    "error: invalid value 'collisions' for '--checks <checks>...': Unexpected error: Unexpected verification type 'collisions' provided",
+    "error: invalid value 'collisions' for '--checks <checks>': Unexpected error: Unexpected verification type 'collisions' provided",
     "",
     "For more information, try '--help'.",
   ],

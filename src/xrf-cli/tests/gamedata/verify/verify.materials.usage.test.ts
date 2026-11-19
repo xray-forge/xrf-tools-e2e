@@ -39,7 +39,7 @@ describe("gamedata verify material usage", () => {
 
     result = box.run(
       "gamedata verify",
-      [box.at("tree"), "--checks", "meshes", "particles-usage", "sounds", "--report", box.at("report.json")],
+      [box.at("tree"), "--checks", "meshes,particles-usage,sounds", "--report", box.at("report.json")],
       { expectExit: 3 }
     );
   });

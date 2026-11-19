@@ -33,18 +33,18 @@ describe("ltx format samples", () => {
 
     manifestBeforeCheck = box.manifest();
 
-    check = box.run("ltx format", ["--path", samples, "--check"], { expectExit: 3 });
+    check = box.run("ltx format", [samples, "--check"], { expectExit: 3 });
     manifestAfterCheck = box.manifest();
 
-    format = box.run("ltx format", ["--path", samples]);
+    format = box.run("ltx format", [samples]);
 
     for (const sample of SAMPLES) {
       after[sample] = box.raw(`samples/${sample}`);
     }
 
     manifestAfterFormat = box.manifest();
-    recheck = box.run("ltx format", ["--path", samples, "--check"]);
-    formatAgain = box.run("ltx format", ["--path", samples]);
+    recheck = box.run("ltx format", [samples, "--check"]);
+    formatAgain = box.run("ltx format", [samples]);
     manifestAfterIdempotentFormat = box.manifest();
   });
 

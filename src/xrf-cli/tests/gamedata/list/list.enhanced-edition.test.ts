@@ -33,7 +33,6 @@ describe("gamedata list enhanced edition", () => {
 
     box.run("archive pack", [box.at("stage"), "--dest", box.at("install/resources"), "--name", "configs", "--silent"]);
     automatic = box.run("gamedata list", [
-      "--path",
       box.at("install"),
       "--source",
       "auto",
@@ -42,7 +41,6 @@ describe("gamedata list enhanced edition", () => {
       box.at("auto.json"),
     ]);
     containing = box.run("gamedata list", [
-      "--path",
       box.at("install/gamedata/configs"),
       "--silent",
       "--report",

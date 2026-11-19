@@ -21,9 +21,9 @@ describe("dialog list", () => {
   let report: CliResult;
 
   beforeAll(() => {
-    listed = box.run("dialog list", ["--path", TREE, "--source", "directory"]);
-    untranslated = box.run("dialog list", ["--path", TREE, "--source", "directory", "--language", "ukr"]);
-    report = box.run("dialog list", ["--path", TREE, "--source", "directory", "--report", box.at("report.json")]);
+    listed = box.run("dialog list", [TREE, "--source", "directory"]);
+    untranslated = box.run("dialog list", [TREE, "--source", "directory", "--language", "ukr"]);
+    report = box.run("dialog list", [TREE, "--source", "directory", "--report", box.at("report.json")]);
   });
 
   it("should list every dialog with its file, phrase count and opening line", () => {

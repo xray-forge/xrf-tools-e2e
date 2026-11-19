@@ -22,32 +22,32 @@ describe("dialog inspect", () => {
   let slashed: CliResult;
 
   beforeAll(() => {
-    explained = box.run("dialog inspect", ["--path", TREE, "--source", "directory", "snag_cache_dialog"]);
-    shadowed = box.run("dialog inspect", ["--path", TREE, "--source", "directory", "actor_break_dialog"]);
+    explained = box.run("dialog inspect", [TREE, "--source", "directory", "--dialog", "snag_cache_dialog"]);
+    shadowed = box.run("dialog inspect", [TREE, "--source", "directory", "--dialog", "actor_break_dialog"]);
     overlay = box.run("dialog inspect", [
-      "--path",
       TREE,
       "--source",
       "directory",
+      "--dialog",
       "actor_break_dialog",
       "--file",
       "configs\\gameplay\\DIALOGS_OVERLAY.xml",
     ]);
     slashed = box.run("dialog inspect", [
-      "--path",
       TREE,
       "--source",
       "directory",
+      "--dialog",
       "actor_break_dialog",
       "--file",
       "configs/gameplay/dialogs_overlay.xml",
     ]);
 
     box.run("dialog inspect", [
-      "--path",
       TREE,
       "--source",
       "directory",
+      "--dialog",
       "snag_cache_dialog",
       "--silent",
       "--report",
@@ -80,7 +80,7 @@ describe("dialog inspect", () => {
 
   it("should refuse a dialog no file declares", () => {
     expect(
-      box.run("dialog inspect", ["--path", TREE, "--source", "directory", "nothing"], { expectExit: 1 })
+      box.run("dialog inspect", [TREE, "--source", "directory", "--dialog", "nothing"], { expectExit: 1 })
     ).toMatchSnapshot();
   });
 
@@ -89,10 +89,10 @@ describe("dialog inspect", () => {
       box.run(
         "dialog inspect",
         [
-          "--path",
           TREE,
           "--source",
           "directory",
+          "--dialog",
           "snag_cache_dialog",
           "--file",
           "configs\\gameplay\\dialogs_overlay.xml",

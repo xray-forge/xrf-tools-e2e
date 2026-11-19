@@ -21,9 +21,7 @@ describe("gamedata list repeated roots", () => {
     before = inputs.map((input) => box.sha(input));
 
     box.run("gamedata list", [
-      "--path",
       box.at("base"),
-      "--path",
       box.at("override"),
       "--source",
       "directory",
@@ -33,9 +31,7 @@ describe("gamedata list repeated roots", () => {
       box.at("overlay.json"),
     ]);
     box.run("gamedata list", [
-      "--path",
       box.at("base"),
-      "--path",
       box.at("base"),
       "--source",
       "directory",

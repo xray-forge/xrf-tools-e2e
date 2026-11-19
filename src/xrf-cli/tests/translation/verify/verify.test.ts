@@ -17,13 +17,13 @@ describe("translation verify", () => {
   beforeAll(() => {
     // The json source deliberately translates only some languages, so a full check reports the
     // gaps. Without --strict that is a report rather than a failure.
-    all = box.run("translation verify", ["--path", SOURCE]);
-    english = box.run("translation verify", ["--path", SOURCE, "--language", "eng"]);
-    report = box.run("translation verify", ["--path", SOURCE, "--report", box.at("report.json")]);
+    all = box.run("translation verify", [SOURCE]);
+    english = box.run("translation verify", [SOURCE, "--language", "eng"]);
+    report = box.run("translation verify", [SOURCE, "--report", box.at("report.json")]);
 
     // The same payload the other way out: one compact envelope on stdout, human output on stderr, so
     // a caller can pipe the document into a tool without the log lines corrupting it.
-    piped = box.run("translation verify", ["--path", SOURCE, "--json"]);
+    piped = box.run("translation verify", [SOURCE, "--json"]);
   });
 
   it("should report gaps across every language", () => {
@@ -41,7 +41,7 @@ describe("translation verify", () => {
 
   // Strict turns the same gaps into a non-zero answer, which is what a build pipeline would gate on.
   it("should fail under strict when translations are missing", () => {
-    expect(box.run("translation verify", ["--path", SOURCE, "--strict"], { expectExit: 3 })).toMatchSnapshot();
+    expect(box.run("translation verify", [SOURCE, "--strict"], { expectExit: 3 })).toMatchSnapshot();
   });
 
   // The command's own counts and findings reach a caller under the shared envelope's `result`,

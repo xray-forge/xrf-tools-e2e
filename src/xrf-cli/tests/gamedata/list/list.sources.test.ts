@@ -10,9 +10,9 @@ describe("gamedata list sources", () => {
   let loose: CliResult;
 
   beforeAll(() => {
-    listed = box.run("gamedata list", ["--path", gamedata()]);
-    loose = box.run("gamedata list", ["--path", gamedata(), "--loose"]);
-    box.run("gamedata list", ["--path", gamedata(), "--silent", "--report", box.at("listing.json")]);
+    listed = box.run("gamedata list", [gamedata()]);
+    loose = box.run("gamedata list", [gamedata(), "--loose"]);
+    box.run("gamedata list", [gamedata(), "--silent", "--report", box.at("listing.json")]);
   });
 
   it("should resolve the whole tree", () => {

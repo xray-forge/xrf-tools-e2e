@@ -31,15 +31,14 @@ describe("translation build single-file source paths", () => {
     );
 
     relative = box.run("translation build", [
-      "--path",
       path.posix.join("input", "st_test.json"),
       "--dest",
       box.at("relative"),
       "--language",
       "eng",
     ]);
-    climbing = box.run("translation build", ["--path", climb, "--dest", box.at("climbing"), "--language", "eng"]);
-    absolute = box.run("translation build", ["--path", source, "--dest", box.at("absolute"), "--language", "eng"]);
+    climbing = box.run("translation build", [climb, "--dest", box.at("climbing"), "--language", "eng"]);
+    absolute = box.run("translation build", [source, "--dest", box.at("absolute"), "--language", "eng"]);
   });
 
   it("should build a source named relative to the working directory", () => {

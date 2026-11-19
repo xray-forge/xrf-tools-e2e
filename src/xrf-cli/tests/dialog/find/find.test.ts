@@ -22,10 +22,9 @@ describe("dialog find", () => {
   let nothing: CliResult;
 
   beforeAll(() => {
-    unGiven = box.run("dialog find", ["--path", TREE, "--source", "directory", "--info", "tech_drink_first_time"]);
-    givenAndTaken = box.run("dialog find", ["--path", TREE, "--source", "directory", "--info", "tech_have_one_dose"]);
+    unGiven = box.run("dialog find", [TREE, "--source", "directory", "--info", "tech_drink_first_time"]);
+    givenAndTaken = box.run("dialog find", [TREE, "--source", "directory", "--info", "tech_have_one_dose"]);
     functors = box.run("dialog find", [
-      "--path",
       TREE,
       "--source",
       "directory",
@@ -34,10 +33,9 @@ describe("dialog find", () => {
       "--functor",
       "dialogs_zaton.give_vodka",
     ]);
-    nothing = box.run("dialog find", ["--path", TREE, "--source", "directory", "--info", "nobody_checks_this"]);
+    nothing = box.run("dialog find", [TREE, "--source", "directory", "--info", "nobody_checks_this"]);
 
     box.run("dialog find", [
-      "--path",
       TREE,
       "--source",
       "directory",
@@ -72,7 +70,7 @@ describe("dialog find", () => {
   });
 
   it("should refuse a search naming nothing to find", () => {
-    expect(box.run("dialog find", ["--path", TREE, "--source", "directory"], { expectExit: 2 })).toMatchSnapshot();
+    expect(box.run("dialog find", [TREE, "--source", "directory"], { expectExit: 2 })).toMatchSnapshot();
   });
 
   it("should write only the report", () => {

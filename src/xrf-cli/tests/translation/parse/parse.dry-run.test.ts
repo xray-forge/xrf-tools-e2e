@@ -12,7 +12,6 @@ describe("translation parse previews without writing", () => {
 
   beforeAll(() => {
     dry = box.run("translation parse", [
-      "--path",
       resource("mod-text"),
       "--source",
       "directory",
@@ -32,7 +31,6 @@ describe("translation parse previews without writing", () => {
     existingSource = box.sha("seeded/st_items.json");
 
     seeded = box.run("translation parse", [
-      "--path",
       resource("mod-text"),
       "--source",
       "directory",

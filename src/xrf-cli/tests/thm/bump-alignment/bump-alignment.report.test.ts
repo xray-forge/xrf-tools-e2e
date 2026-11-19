@@ -36,11 +36,11 @@ describe("thm bump-alignment report", () => {
     writeTextureDescriptor(box.at("root/textures/props/lost.thm"), { bump: "props\\lost_bump" });
 
     verbose = box.run("thm bump-alignment", [
-      ...["--path", box.at("root"), "--source", "directory"],
+      ...[box.at("root"), "--source", "directory"],
       ...["--verbose", "--report", box.at("aligned.json")],
     ]);
     box.run("thm bump-alignment", [
-      ...["--path", box.at("root"), "--source", "directory", "--prefix", "textures\\props"],
+      ...[box.at("root"), "--source", "directory", "--prefix", "textures\\props"],
       ...["--report", box.at("narrowed.json")],
     ]);
     usage = box.run("thm bump-alignment", ["--source", "nowhere"], { expectExit: 2 });
