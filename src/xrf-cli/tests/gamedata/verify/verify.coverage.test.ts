@@ -43,41 +43,26 @@ describe("gamedata verify meets a declared source it cannot open", () => {
 
     // Deliberately a check that has nothing to do with archives: a narrow selection must not turn an installation whose
     // whole archive set went unread into a passing run.
-    verify = box.run(
-      "gamedata verify",
-      ["--path", box.at("install"), "--checks", "ltx", "--report", box.at("report.json")],
-      {
-        expectExit: 1,
-      }
-    );
+    verify = box.run("gamedata verify", [box.at("install"), "--checks", "ltx", "--report", box.at("report.json")], {
+      expectExit: 1,
+    });
 
-    box.run(
-      "gamedata verify",
-      ["--path", box.at("install"), "--checks", "ltx", "--silent", "--report", box.at("silent.json")],
-      {
-        expectExit: 1,
-      }
-    );
+    box.run("gamedata verify", [box.at("install"), "--checks", "ltx", "--silent", "--report", box.at("silent.json")], {
+      expectExit: 1,
+    });
     emptyCheck = box.run(
       "gamedata verify",
-      ["--path", box.at("install"), "--checks", "scripts", "--report", box.at("empty-check.json")],
+      [box.at("install"), "--checks", "scripts", "--report", box.at("empty-check.json")],
       { expectExit: 1 }
     );
     // `db` names the mount directory on disk, not a logical asset prefix. Ignoring it must therefore leave the
     // declared archive source subject to the same open-and-coverage accounting.
     ignoredSource = box.run(
       "gamedata verify",
-      ["--path", box.at("install"), "--checks", "scripts", "--ignore", "db", "--report", box.at("ignore.json")],
+      [box.at("install"), "--checks", "scripts", "--ignore", "db", "--report", box.at("ignore.json")],
       { expectExit: 1 }
     );
-    clean = box.run("gamedata verify", [
-      "--path",
-      box.at("clean"),
-      "--checks",
-      "scripts",
-      "--report",
-      box.at("clean.json"),
-    ]);
+    clean = box.run("gamedata verify", [box.at("clean"), "--checks", "scripts", "--report", box.at("clean.json")]);
   });
 
   it("should warn which declared source went unread and answer non-zero", () => {

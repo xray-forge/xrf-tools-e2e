@@ -16,10 +16,10 @@ describe("translation initialize", () => {
     // It rewrites its sources in place, so it works on a copy and never touches the corpus.
     const sources = box.copyIn(resource("translations"), "translations");
 
-    first = box.run("translation initialize", ["--path", sources]);
+    first = box.run("translation initialize", [sources]);
     afterFirst = box.sha("translations/st_items.json");
-    second = box.run("translation initialize", ["--path", sources]);
-    piped = box.run("translation initialize", ["--path", sources, "--json"]);
+    second = box.run("translation initialize", [sources]);
+    piped = box.run("translation initialize", [sources, "--json"]);
   });
 
   // Every language the project knows about gains a null entry, which is what turns a silent gap

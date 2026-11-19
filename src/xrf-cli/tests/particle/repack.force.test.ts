@@ -22,28 +22,22 @@ describe("particle repack and particle re-unpack force", () => {
   const reUnpacked = (): Array<ManifestFile> => box.manifest().filter((file) => file.path.startsWith("re-unpacked/"));
 
   beforeAll(() => {
-    box.run("particle repack", ["--path", SOURCE, "--dest", box.at("repacked.xr")]);
+    box.run("particle repack", [SOURCE, "--dest", box.at("repacked.xr")]);
     repackedBeforeRefusal = box.sha("repacked.xr");
-    repackRefused = box.run("particle repack", ["--path", SOURCE, "--dest", box.at("repacked.xr")], { expectExit: 1 });
+    repackRefused = box.run("particle repack", [SOURCE, "--dest", box.at("repacked.xr")], { expectExit: 1 });
     repackedAfterRefusal = box.sha("repacked.xr");
-    repackForced = box.run("particle repack", ["--path", SOURCE, "--dest", box.at("repacked.xr"), "--force"]);
+    repackForced = box.run("particle repack", [SOURCE, "--dest", box.at("repacked.xr"), "--force"]);
 
-    box.run("particle unpack", ["--path", SOURCE, "--dest", box.at("unpacked")]);
-    box.run("particle re-unpack", ["--path", box.at("unpacked"), "--dest", box.at("re-unpacked")]);
+    box.run("particle unpack", [SOURCE, "--dest", box.at("unpacked")]);
+    box.run("particle re-unpack", [box.at("unpacked"), "--dest", box.at("re-unpacked")]);
     reUnpackedBeforeStaleFile = reUnpacked();
 
     box.write("re-unpacked/stale/sentinel.ltx", "stale destination bytes\n");
-    reUnpackRefused = box.run("particle re-unpack", ["--path", box.at("unpacked"), "--dest", box.at("re-unpacked")], {
+    reUnpackRefused = box.run("particle re-unpack", [box.at("unpacked"), "--dest", box.at("re-unpacked")], {
       expectExit: 1,
     });
     reUnpackedAfterRefusal = reUnpacked();
-    reUnpackForced = box.run("particle re-unpack", [
-      "--path",
-      box.at("unpacked"),
-      "--dest",
-      box.at("re-unpacked"),
-      "--force",
-    ]);
+    reUnpackForced = box.run("particle re-unpack", [box.at("unpacked"), "--dest", box.at("re-unpacked"), "--force"]);
     reUnpackedAfterForce = reUnpacked();
   });
 

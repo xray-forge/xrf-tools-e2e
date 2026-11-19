@@ -19,7 +19,6 @@ describe("sprite pack-equipment strict mode", () => {
     box.run("sprite unpack-equipment", [
       "--system-ltx",
       SYSTEM_LTX,
-      "--path",
       gamedata("textures/ui/ui_test_sheet.dds"),
       "--dest",
       box.at("icons"),
@@ -33,7 +32,6 @@ describe("sprite pack-equipment strict mode", () => {
     lenient = box.run("sprite pack-equipment", [
       "--system-ltx",
       SYSTEM_LTX,
-      "--path",
       box.at("icons"),
       "--dest",
       box.at("lenient.dds"),
@@ -41,7 +39,7 @@ describe("sprite pack-equipment strict mode", () => {
 
     strict = box.run(
       "sprite pack-equipment",
-      ["--system-ltx", SYSTEM_LTX, "--path", box.at("icons"), "--dest", box.at("strict.dds"), "--strict"],
+      ["--system-ltx", SYSTEM_LTX, box.at("icons"), "--dest", box.at("strict.dds"), "--strict"],
       { expectExit: 1 }
     );
   });

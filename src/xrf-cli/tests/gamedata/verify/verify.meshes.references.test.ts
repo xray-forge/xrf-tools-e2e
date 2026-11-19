@@ -32,12 +32,12 @@ describe("gamedata verify mesh texture references", () => {
 
     present = box.run(
       "gamedata verify",
-      ["--path", box.at("present"), "--checks", "meshes", "--report", box.at("present.json")],
+      [box.at("present"), "--checks", "meshes", "--report", box.at("present.json")],
       { expectExit: 0 }
     );
     missing = box.run(
       "gamedata verify",
-      ["--path", box.at("missing"), "--checks", "meshes", "--report", box.at("missing.json")],
+      [box.at("missing"), "--checks", "meshes", "--report", box.at("missing.json")],
       { expectExit: 3 }
     );
     inputsAfter = box.manifest().filter((file) => file.path.startsWith("present/") || file.path.startsWith("missing/"));

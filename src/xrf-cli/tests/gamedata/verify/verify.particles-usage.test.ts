@@ -25,7 +25,6 @@ describe("gamedata verify particle usage", () => {
     inputsBefore = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("missing/"));
 
     valid = box.run("gamedata verify", [
-      "--path",
       box.at("valid"),
       "--checks",
       "particles-usage",
@@ -34,7 +33,7 @@ describe("gamedata verify particle usage", () => {
     ]);
     missing = box.run(
       "gamedata verify",
-      ["--path", box.at("missing"), "--checks", "particles-usage", "--report", box.at("missing.json")],
+      [box.at("missing"), "--checks", "particles-usage", "--report", box.at("missing.json")],
       { expectExit: 3 }
     );
     inputsAfter = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("missing/"));

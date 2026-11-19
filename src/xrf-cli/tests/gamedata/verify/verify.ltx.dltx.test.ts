@@ -14,22 +14,10 @@ describe("gamedata verify resolved DLTX schema", () => {
     box.write("patched/configs/mod_system_test.ltx", "![wpn_test]\r\ncost = expensive\r\n!rpm\r\n");
     inputs = box.manifest();
 
-    box.run("gamedata verify", [
-      "--path",
-      box.at("clean"),
-      "--checks",
-      "ltx",
-      "--dltx",
-      "--report",
-      box.at("clean.json"),
-    ]);
-    box.run(
-      "gamedata verify",
-      ["--path", box.at("patched"), "--checks", "ltx", "--dltx", "--report", box.at("patched.json")],
-      {
-        expectExit: 3,
-      }
-    );
+    box.run("gamedata verify", [box.at("clean"), "--checks", "ltx", "--dltx", "--report", box.at("clean.json")]);
+    box.run("gamedata verify", [box.at("patched"), "--checks", "ltx", "--dltx", "--report", box.at("patched.json")], {
+      expectExit: 3,
+    });
   });
 
   it("should validate the formatted section before any patch changes it", () => {

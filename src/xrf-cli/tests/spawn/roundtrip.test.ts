@@ -14,20 +14,12 @@ describe("spawn roundtrip", () => {
   let pack: CliResult;
 
   beforeAll(() => {
-    info = box.run("spawn info", ["--path", ALL_SPAWN]);
-    verify = box.run("spawn verify", ["--path", ALL_SPAWN, "--report", box.at("verify.json")]);
+    info = box.run("spawn info", [ALL_SPAWN]);
+    verify = box.run("spawn verify", [ALL_SPAWN, "--report", box.at("verify.json")]);
 
     // Produces twelve files: alife and artefact spawns, patrols, and the level graphs.
-    unpack = box.run("spawn unpack", [
-      "--path",
-      ALL_SPAWN,
-      "--dest",
-      box.at("unpacked"),
-      "--report",
-      box.at("unpack.json"),
-    ]);
+    unpack = box.run("spawn unpack", [ALL_SPAWN, "--dest", box.at("unpacked"), "--report", box.at("unpack.json")]);
     pack = box.run("spawn pack", [
-      "--path",
       box.at("unpacked"),
       "--dest",
       box.at("repacked.spawn"),

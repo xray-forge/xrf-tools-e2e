@@ -29,17 +29,10 @@ describe("gamedata verify DDS format compatibility", () => {
     fs.writeFileSync(box.at("unsupported/textures/format.dds"), texture);
     inputs = box.manifest();
 
-    box.run("gamedata verify", [
-      "--path",
-      box.at("supported"),
-      "--checks",
-      "textures",
-      "--report",
-      box.at("supported.json"),
-    ]);
+    box.run("gamedata verify", [box.at("supported"), "--checks", "textures", "--report", box.at("supported.json")]);
     box.run(
       "gamedata verify",
-      ["--path", box.at("unsupported"), "--checks", "textures", "--report", box.at("unsupported.json")],
+      [box.at("unsupported"), "--checks", "textures", "--report", box.at("unsupported.json")],
       {
         expectExit: 3,
       }

@@ -10,7 +10,7 @@ describe("particle info report", () => {
   const box = new Sandbox(__filename);
 
   beforeAll(() => {
-    box.run("particle info", ["--path", gamedata("particles.xr"), "--silent", "--report", box.at("report.json")]);
+    box.run("particle info", [gamedata("particles.xr"), "--silent", "--report", box.at("report.json")]);
   });
 
   it("should report the effect and group counts of a library", () => {

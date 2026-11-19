@@ -19,9 +19,8 @@ describe("particle list", () => {
   let groups: CliResult;
 
   beforeAll(() => {
-    groups = box.run("particle list", ["--path", LIBRARY, "--kind", "group", "--name", "CAMPFIRE"]);
+    groups = box.run("particle list", [LIBRARY, "--kind", "group", "--name", "CAMPFIRE"]);
     box.run("particle list", [
-      "--path",
       LIBRARY,
       "--kind",
       "effect",

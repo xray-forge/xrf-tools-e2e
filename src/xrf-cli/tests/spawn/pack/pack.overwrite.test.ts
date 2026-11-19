@@ -18,12 +18,12 @@ describe("spawn pack overwrite", () => {
   let changedOutput: string;
 
   beforeAll(() => {
-    box.run("spawn unpack", ["--path", ALL_SPAWN, "--dest", box.at("unpacked")]);
-    box.run("spawn pack", ["--path", box.at("unpacked"), "--dest", box.at("packed.spawn")]);
+    box.run("spawn unpack", [ALL_SPAWN, "--dest", box.at("unpacked")]);
+    box.run("spawn pack", [box.at("unpacked"), "--dest", box.at("packed.spawn")]);
 
     publishedBefore = box.sha("packed.spawn");
     inputBeforeRefusal = box.manifest();
-    refused = box.run("spawn pack", ["--path", box.at("unpacked"), "--dest", box.at("packed.spawn")], {
+    refused = box.run("spawn pack", [box.at("unpacked"), "--dest", box.at("packed.spawn")], {
       expectExit: 1,
     });
     publishedAfterRefusal = box.sha("packed.spawn");
@@ -31,7 +31,7 @@ describe("spawn pack overwrite", () => {
 
     box.write("packed.spawn", "changed packed bytes");
     changedOutput = box.sha("packed.spawn");
-    forced = box.run("spawn pack", ["--path", box.at("unpacked"), "--dest", box.at("packed.spawn"), "--force"]);
+    forced = box.run("spawn pack", [box.at("unpacked"), "--dest", box.at("packed.spawn"), "--force"]);
   });
 
   it("should refuse an existing packed file", () => {

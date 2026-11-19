@@ -22,16 +22,16 @@ describe("spawn unpack force", () => {
 
   beforeAll(() => {
     sourceBefore = sha(ALL_SPAWN);
-    box.run("spawn unpack", ["--path", ALL_SPAWN, "--dest", box.at("unpacked")]);
+    box.run("spawn unpack", [ALL_SPAWN, "--dest", box.at("unpacked")]);
     expectedProject = box.manifest();
     box.write("unpacked/stale/nested/sentinel.txt", "stale input must not survive forced export");
 
     projectBeforeRefusal = box.manifest();
-    refused = box.run("spawn unpack", ["--path", ALL_SPAWN, "--dest", box.at("unpacked")], { expectExit: 1 });
+    refused = box.run("spawn unpack", [ALL_SPAWN, "--dest", box.at("unpacked")], { expectExit: 1 });
     projectAfterRefusal = box.manifest();
     sourceAfterRefusal = sha(ALL_SPAWN);
 
-    forced = box.run("spawn unpack", ["--path", ALL_SPAWN, "--dest", box.at("unpacked"), "--force"]);
+    forced = box.run("spawn unpack", [ALL_SPAWN, "--dest", box.at("unpacked"), "--force"]);
     sourceAfterForced = sha(ALL_SPAWN);
   });
 

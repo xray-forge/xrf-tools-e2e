@@ -20,9 +20,8 @@ describe("particle find", () => {
   let groups: CliResult;
 
   beforeAll(() => {
-    sprites = box.run("particle find", ["--path", LIBRARY, "--texture", "PFX/pfx_splash_02.dds"]);
+    sprites = box.run("particle find", [LIBRARY, "--texture", "PFX/pfx_splash_02.dds"]);
     groups = box.run("particle find", [
-      "--path",
       LIBRARY,
       "--effect",
       "explosions\\effects\\campfire_sparks",
@@ -52,7 +51,7 @@ describe("particle find", () => {
   });
 
   it("should refuse an action type the library format has not", () => {
-    expect(box.run("particle find", ["--path", LIBRARY, "--action", "Flicker"], { expectExit: 2 })).toMatchSnapshot();
+    expect(box.run("particle find", [LIBRARY, "--action", "Flicker"], { expectExit: 2 })).toMatchSnapshot();
   });
 
   it("should write only the report", () => {

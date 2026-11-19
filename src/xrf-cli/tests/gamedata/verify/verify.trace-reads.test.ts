@@ -14,16 +14,8 @@ describe("gamedata verify read tracing", () => {
     box.write("gamedata/configs/test.scheme.ltx", "[$test]\r\n$strict = true\r\nvalue = u32\r\n");
     inputs = box.manifest();
 
-    normal = box.run("gamedata verify", [
-      "--path",
-      box.at("gamedata"),
-      "--checks",
-      "ltx",
-      "--report",
-      box.at("normal.json"),
-    ]);
+    normal = box.run("gamedata verify", [box.at("gamedata"), "--checks", "ltx", "--report", box.at("normal.json")]);
     traced = box.run("gamedata verify", [
-      "--path",
       box.at("gamedata"),
       "--checks",
       "ltx",

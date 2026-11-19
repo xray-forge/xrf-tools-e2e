@@ -27,7 +27,6 @@ describe("gamedata verify texture companion strictness", () => {
     inputs = box.manifest();
 
     ordinary = box.run("gamedata verify", [
-      "--path",
       box.at("companion"),
       "--checks",
       "textures",
@@ -36,11 +35,10 @@ describe("gamedata verify texture companion strictness", () => {
     ]);
     strict = box.run(
       "gamedata verify",
-      ["--path", box.at("companion"), "--checks", "textures", "--strict", "--report", box.at("strict.json")],
+      [box.at("companion"), "--checks", "textures", "--strict", "--report", box.at("strict.json")],
       { expectExit: 3 }
     );
     cleanStrict = box.run("gamedata verify", [
-      "--path",
       box.at("clean"),
       "--checks",
       "textures",

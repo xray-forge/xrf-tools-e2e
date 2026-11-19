@@ -10,7 +10,7 @@ describe("gamedata verify ignored unrelated subtree", () => {
 
   beforeAll(() => {
     // Meshes never reads configs, so its usual findings must be reported despite the ignored config tree.
-    result = box.run("gamedata verify", ["--path", gamedata(), "--checks", "meshes", "--ignore", "configs"], {
+    result = box.run("gamedata verify", [gamedata(), "--checks", "meshes", "--ignore", "configs"], {
       expectExit: 3,
     });
   });

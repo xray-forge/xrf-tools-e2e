@@ -46,17 +46,10 @@ describe("gamedata verify weapons", () => {
     );
     inputsBefore = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("missing/"));
 
-    valid = box.run("gamedata verify", [
-      "--path",
-      box.at("valid"),
-      "--checks",
-      "weapons",
-      "--report",
-      box.at("valid.json"),
-    ]);
+    valid = box.run("gamedata verify", [box.at("valid"), "--checks", "weapons", "--report", box.at("valid.json")]);
     missingVisual = box.run(
       "gamedata verify",
-      ["--path", box.at("missing"), "--checks", "weapons", "--report", box.at("missing.json")],
+      [box.at("missing"), "--checks", "weapons", "--report", box.at("missing.json")],
       { expectExit: 3 }
     );
     inputsAfter = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("missing/"));

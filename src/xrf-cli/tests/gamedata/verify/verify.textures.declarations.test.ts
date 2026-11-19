@@ -15,17 +15,10 @@ describe("gamedata verify ineffective texture declarations", () => {
     writeTextureDescriptor(box.at("gamedata/textures/disqualified.thm"), { bump: "detail", textureType: 2 });
     inputs = box.manifest();
 
-    box.run("gamedata verify", [
-      "--path",
-      box.at("gamedata"),
-      "--checks",
-      "textures",
-      "--report",
-      box.at("ordinary.json"),
-    ]);
+    box.run("gamedata verify", [box.at("gamedata"), "--checks", "textures", "--report", box.at("ordinary.json")]);
     box.run(
       "gamedata verify",
-      ["--path", box.at("gamedata"), "--checks", "textures", "--strict", "--report", box.at("strict.json")],
+      [box.at("gamedata"), "--checks", "textures", "--strict", "--report", box.at("strict.json")],
       { expectExit: 3 }
     );
   });

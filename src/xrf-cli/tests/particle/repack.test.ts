@@ -13,17 +13,9 @@ describe("particle repack and particle re-unpack", () => {
   let reUnpack: CliResult;
 
   beforeAll(() => {
-    repack = box.run("particle repack", [
-      "--path",
-      SOURCE,
-      "--dest",
-      box.at("repacked.xr"),
-      "--report",
-      box.at("repack.json"),
-    ]);
-    unpack = box.run("particle unpack", ["--path", SOURCE, "--dest", box.at("unpacked")]);
+    repack = box.run("particle repack", [SOURCE, "--dest", box.at("repacked.xr"), "--report", box.at("repack.json")]);
+    unpack = box.run("particle unpack", [SOURCE, "--dest", box.at("unpacked")]);
     reUnpack = box.run("particle re-unpack", [
-      "--path",
       box.at("unpacked"),
       "--dest",
       box.at("re-unpacked"),

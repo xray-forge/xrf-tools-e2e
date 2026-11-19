@@ -34,13 +34,9 @@ describe("gamedata verify texture bump declarations", () => {
 
     inputs = box.manifest();
 
-    verification = box.run(
-      "gamedata verify",
-      ["--path", root, "--checks", "textures", "--report", box.at("report.json")],
-      {
-        expectExit: 3,
-      }
-    );
+    verification = box.run("gamedata verify", [root, "--checks", "textures", "--report", box.at("report.json")], {
+      expectExit: 3,
+    });
   });
 
   it("should count a resolved orphan descriptor while naming missing bump and companion fixes separately", () => {

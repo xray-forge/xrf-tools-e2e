@@ -67,7 +67,7 @@ describe("spawn fork payloads", () => {
   let objects: Map<string, Array<string>>;
 
   beforeAll(() => {
-    box.run("spawn unpack", ["--path", ALL_SPAWN, "--dest", box.at("unpacked")]);
+    box.run("spawn unpack", [ALL_SPAWN, "--dest", box.at("unpacked")]);
 
     objects = objectsBySection(box.text("unpacked/alife_spawns.ltx"));
   });

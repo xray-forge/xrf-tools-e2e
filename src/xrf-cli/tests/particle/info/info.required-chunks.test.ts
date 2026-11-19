@@ -37,7 +37,7 @@ describe("particle info required chunks", () => {
       Buffer.concat([chunk(1, Buffer.from([1, 0])), chunk(3, chunk(0, Buffer.alloc(0))), chunk(4, Buffer.alloc(0))])
     );
 
-    result = box.run("particle info", ["--path", library], { expectExit: 1 });
+    result = box.run("particle info", [library], { expectExit: 1 });
   });
 
   it("should refuse the library with a parse error naming the missing chunk", () => {

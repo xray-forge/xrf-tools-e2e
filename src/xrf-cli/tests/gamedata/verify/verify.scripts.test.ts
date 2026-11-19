@@ -22,17 +22,10 @@ describe("gamedata verify scripts", () => {
       .manifest()
       .filter((file) => file.path.startsWith("valid/") || file.path.startsWith("malformed/"));
 
-    valid = box.run("gamedata verify", [
-      "--path",
-      box.at("valid"),
-      "--checks",
-      "scripts",
-      "--report",
-      box.at("valid.json"),
-    ]);
+    valid = box.run("gamedata verify", [box.at("valid"), "--checks", "scripts", "--report", box.at("valid.json")]);
     malformed = box.run(
       "gamedata verify",
-      ["--path", box.at("malformed"), "--checks", "scripts", "--report", box.at("malformed.json")],
+      [box.at("malformed"), "--checks", "scripts", "--report", box.at("malformed.json")],
       { expectExit: 3 }
     );
     inputsAfter = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("malformed/"));

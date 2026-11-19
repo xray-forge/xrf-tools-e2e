@@ -40,8 +40,8 @@ describe("readers reject damaged input", () => {
       [box.copyTruncated(gamedata("meshes/omf/wpn_svd_hud_animation.omf"), "bad.omf", 100)],
       fail
     );
-    particles = box.run("particle info", ["--path", box.copyTruncated(gamedata("particles.xr"), "bad.xr", 500)], fail);
-    spawn = box.run("spawn info", ["--path", box.copyTruncated(gamedata("spawns/all.spawn"), "bad.spawn", 400)], fail);
+    particles = box.run("particle info", [box.copyTruncated(gamedata("particles.xr"), "bad.xr", 500)], fail);
+    spawn = box.run("spawn info", [box.copyTruncated(gamedata("spawns/all.spawn"), "bad.spawn", 400)], fail);
     dds = box.run("dds info", [box.copyTruncated(gamedata("textures/ui/ui_test_sheet.dds"), "bad.dds", 60)], fail);
 
     empty = box.run("ogf info", [box.write("empty.ogf", "")], fail);

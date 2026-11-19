@@ -10,7 +10,7 @@ describe("gamemtl info report", () => {
   const box = new Sandbox(__filename);
 
   beforeAll(() => {
-    box.run("gamemtl info", ["--path", resource("gamemtl/gamemtl.xr"), "--silent", "--report", box.at("vanilla.json")]);
+    box.run("gamemtl info", [resource("gamemtl/gamemtl.xr"), "--silent", "--report", box.at("vanilla.json")]);
   });
 
   it("should report the counts and the game of the vanilla library", () => {

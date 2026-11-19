@@ -15,7 +15,7 @@ describe("spawn info report", () => {
   const box = new Sandbox(__filename);
 
   beforeAll(() => {
-    box.run("spawn info", ["--path", gamedata("spawns/all.spawn"), "--silent", "--report", box.at("report.json")]);
+    box.run("spawn info", [gamedata("spawns/all.spawn"), "--silent", "--report", box.at("report.json")]);
   });
 
   it("should report the kind, identity and census of a root spawn", () => {

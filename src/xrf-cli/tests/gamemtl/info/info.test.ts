@@ -27,10 +27,10 @@ describe("gamemtl info", () => {
       Buffer.from([0x00, 0x10, 0, 0, 2, 0, 0, 0, 2, 0, 0x01, 0x10, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
     );
 
-    vanilla = box.run("gamemtl info", ["--path", resource("gamemtl/gamemtl.xr")]);
-    shadowOfChernobyl = box.run("gamemtl info", ["--path", box.at("soc.xr")]);
-    otherVersion = box.run("gamemtl info", ["--path", box.at("version.xr")], { expectExit: 1 });
-    missing = box.run("gamemtl info", ["--path", box.at("absent.xr")], { expectExit: 1 });
+    vanilla = box.run("gamemtl info", [resource("gamemtl/gamemtl.xr")]);
+    shadowOfChernobyl = box.run("gamemtl info", [box.at("soc.xr")]);
+    otherVersion = box.run("gamemtl info", [box.at("version.xr")], { expectExit: 1 });
+    missing = box.run("gamemtl info", [box.at("absent.xr")], { expectExit: 1 });
   });
 
   it("should report the game, materials and pairs of the vanilla library", () => {

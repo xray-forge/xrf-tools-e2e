@@ -50,16 +50,12 @@ describe("gamedata verify named HUD animations", () => {
 
     inputsBefore = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("missing/"));
 
-    valid = box.run(
-      "gamedata verify",
-      ["--path", box.at("valid"), "--checks", "animations", "--report", box.at("valid.json")],
-      {
-        expectExit: 0,
-      }
-    );
+    valid = box.run("gamedata verify", [box.at("valid"), "--checks", "animations", "--report", box.at("valid.json")], {
+      expectExit: 0,
+    });
     missing = box.run(
       "gamedata verify",
-      ["--path", box.at("missing"), "--checks", "animations", "--report", box.at("missing.json")],
+      [box.at("missing"), "--checks", "animations", "--report", box.at("missing.json")],
       { expectExit: 3 }
     );
     inputsAfter = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("missing/"));

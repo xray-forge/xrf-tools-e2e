@@ -21,12 +21,12 @@ describe("particle inspect", () => {
   let missing: CliResult;
 
   beforeAll(() => {
-    effect = box.run("particle inspect", ["--path", LIBRARY, "explosions\\effects\\campfire_boar_grill_drop"]);
-    group = box.run("particle inspect", ["--path", LIBRARY, "EXPLOSIONS\\CAMPFIRE_BOAR_GRILL"]);
-    missing = box.run("particle inspect", ["--path", LIBRARY, "campfire_boar"], { expectExit: 1 });
+    effect = box.run("particle inspect", [LIBRARY, "--name", "explosions\\effects\\campfire_boar_grill_drop"]);
+    group = box.run("particle inspect", [LIBRARY, "--name", "EXPLOSIONS\\CAMPFIRE_BOAR_GRILL"]);
+    missing = box.run("particle inspect", [LIBRARY, "--name", "campfire_boar"], { expectExit: 1 });
     box.run("particle inspect", [
-      "--path",
       LIBRARY,
+      "--name",
       "explosions\\campfire_boar_grill",
       "--silent",
       "--report",

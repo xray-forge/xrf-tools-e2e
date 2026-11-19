@@ -22,17 +22,10 @@ describe("gamedata verify spawns", () => {
     box.copyTruncated(gamedata(SPAWN), `damaged/${SPAWN}`, 1024);
     inputsBefore = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("damaged/"));
 
-    valid = box.run("gamedata verify", [
-      "--path",
-      box.at("valid"),
-      "--checks",
-      "spawns",
-      "--report",
-      box.at("valid.json"),
-    ]);
+    valid = box.run("gamedata verify", [box.at("valid"), "--checks", "spawns", "--report", box.at("valid.json")]);
     damaged = box.run(
       "gamedata verify",
-      ["--path", box.at("damaged"), "--checks", "spawns", "--report", box.at("damaged.json")],
+      [box.at("damaged"), "--checks", "spawns", "--report", box.at("damaged.json")],
       { expectExit: 3 }
     );
     inputsAfter = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("damaged/"));

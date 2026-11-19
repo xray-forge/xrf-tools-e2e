@@ -105,31 +105,15 @@ describe("gamedata verify environment", () => {
     );
     inputsBefore = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("broken/"));
 
-    valid = box.run("gamedata verify", [
-      "--path",
-      box.at("valid"),
-      "--checks",
-      "environment",
-      "--report",
-      box.at("valid.json"),
-    ]);
+    valid = box.run("gamedata verify", [box.at("valid"), "--checks", "environment", "--report", box.at("valid.json")]);
     broken = box.run(
       "gamedata verify",
-      ["--path", box.at("broken"), "--checks", "environment", "--report", box.at("broken.json")],
+      [box.at("broken"), "--checks", "environment", "--report", box.at("broken.json")],
       { expectExit: 3 }
     );
     extended = box.run(
       "gamedata verify",
-      [
-        "--path",
-        box.at("valid"),
-        "--checks",
-        "environment",
-        "--engine",
-        "extended",
-        "--report",
-        box.at("extended.json"),
-      ],
+      [box.at("valid"), "--checks", "environment", "--engine", "extended", "--report", box.at("extended.json")],
       { expectExit: 3 }
     );
     inputsAfter = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("broken/"));

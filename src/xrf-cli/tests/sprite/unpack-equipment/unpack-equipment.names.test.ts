@@ -34,11 +34,9 @@ describe("sprite unpack-equipment escaping section names", () => {
       const systemLtx: string = box.write(`configs/escape-${index}.ltx`, icon("wpn_valid", 0) + icon(section, 1));
 
       results.push(
-        box.run(
-          "sprite unpack-equipment",
-          ["--system-ltx", systemLtx, "--path", SHEET, "--dest", box.at(`out-${index}`)],
-          { expectExit: 1 }
-        )
+        box.run("sprite unpack-equipment", ["--system-ltx", systemLtx, SHEET, "--dest", box.at(`out-${index}`)], {
+          expectExit: 1,
+        })
       );
     }
   });

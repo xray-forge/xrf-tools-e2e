@@ -29,16 +29,12 @@ describe("gamedata verify animations envelopes", () => {
     box.copyIn(resource("anims/effect_noise_granularity.ppe"), "damaged/anims/noise_granularity.ppe");
     inputsBefore = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("damaged/"));
 
-    valid = box.run(
-      "gamedata verify",
-      ["--path", box.at("valid"), "--checks", "animations", "--report", box.at("valid.json")],
-      {
-        expectExit: 0,
-      }
-    );
+    valid = box.run("gamedata verify", [box.at("valid"), "--checks", "animations", "--report", box.at("valid.json")], {
+      expectExit: 0,
+    });
     damaged = box.run(
       "gamedata verify",
-      ["--path", box.at("damaged"), "--checks", "animations", "--report", box.at("damaged.json")],
+      [box.at("damaged"), "--checks", "animations", "--report", box.at("damaged.json")],
       { expectExit: 3 }
     );
     inputsAfter = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("damaged/"));

@@ -50,22 +50,15 @@ describe("gamedata verify materials", () => {
 
     inputsBefore = box.manifest();
 
-    valid = box.run("gamedata verify", [
-      "--path",
-      box.at("valid"),
-      "--checks",
-      "materials",
-      "--report",
-      box.at("valid.json"),
-    ]);
+    valid = box.run("gamedata verify", [box.at("valid"), "--checks", "materials", "--report", box.at("valid.json")]);
     broken = box.run(
       "gamedata verify",
-      ["--path", box.at("broken"), "--checks", "materials", "--report", box.at("broken.json")],
+      [box.at("broken"), "--checks", "materials", "--report", box.at("broken.json")],
       { expectExit: 3 }
     );
     absent = box.run(
       "gamedata verify",
-      ["--path", box.at("absent"), "--checks", "materials", "--report", box.at("absent.json")],
+      [box.at("absent"), "--checks", "materials", "--report", box.at("absent.json")],
       { expectExit: 3 }
     );
 

@@ -22,16 +22,8 @@ describe("verifiers meet damaged input", () => {
     const fail = { expectExit: 3 };
 
     ogf = box.run("ogf verify", [box.copyTruncated(gamedata("meshes/ogf/part_none.ogf"), "bad.ogf", 200)], fail);
-    particles = box.run(
-      "particle verify",
-      ["--path", box.copyTruncated(gamedata("particles.xr"), "bad.xr", 500)],
-      fail
-    );
-    spawn = box.run(
-      "spawn verify",
-      ["--path", box.copyTruncated(gamedata("spawns/all.spawn"), "bad.spawn", 400)],
-      fail
-    );
+    particles = box.run("particle verify", [box.copyTruncated(gamedata("particles.xr"), "bad.xr", 500)], fail);
+    spawn = box.run("spawn verify", [box.copyTruncated(gamedata("spawns/all.spawn"), "bad.spawn", 400)], fail);
 
     icons = box.run(
       "sprite verify-equipment",

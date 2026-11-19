@@ -20,17 +20,17 @@ describe("particle unpack force", () => {
   let destinationAfterForce: Array<ManifestFile>;
 
   beforeAll(() => {
-    first = box.run("particle unpack", ["--path", SOURCE, "--dest", box.at("unpacked")]);
+    first = box.run("particle unpack", [SOURCE, "--dest", box.at("unpacked")]);
     projectBeforeStaleFile = box.manifest().filter((file) => file.path.startsWith("unpacked/"));
 
     box.write("unpacked/stale/nested/sentinel.ltx", "stale destination bytes\n");
     sourceBeforeRefusal = sha(SOURCE);
     destinationBeforeRefusal = box.manifest().filter((file) => file.path.startsWith("unpacked/"));
-    refused = box.run("particle unpack", ["--path", SOURCE, "--dest", box.at("unpacked")], { expectExit: 1 });
+    refused = box.run("particle unpack", [SOURCE, "--dest", box.at("unpacked")], { expectExit: 1 });
     sourceAfterRefusal = sha(SOURCE);
     destinationAfterRefusal = box.manifest().filter((file) => file.path.startsWith("unpacked/"));
 
-    forced = box.run("particle unpack", ["--path", SOURCE, "--dest", box.at("unpacked"), "--force"]);
+    forced = box.run("particle unpack", [SOURCE, "--dest", box.at("unpacked"), "--force"]);
     destinationAfterForce = box.manifest().filter((file) => file.path.startsWith("unpacked/"));
   });
 

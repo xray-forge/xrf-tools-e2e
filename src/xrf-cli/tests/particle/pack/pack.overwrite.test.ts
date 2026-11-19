@@ -23,12 +23,12 @@ describe("particle pack overwrite", () => {
   let destinationAfterForce: string;
 
   beforeAll(() => {
-    box.run("particle unpack", ["--path", SOURCE, "--dest", box.at("unpacked")]);
-    first = box.run("particle pack", ["--path", box.at("unpacked"), "--dest", box.at("packed.xr")]);
+    box.run("particle unpack", [SOURCE, "--dest", box.at("unpacked")]);
+    first = box.run("particle pack", [box.at("unpacked"), "--dest", box.at("packed.xr")]);
 
     inputBeforeRefusal = box.manifest().filter((file) => file.path.startsWith("unpacked/"));
     destinationBeforeRefusal = box.sha("packed.xr");
-    refused = box.run("particle pack", ["--path", box.at("unpacked"), "--dest", box.at("packed.xr")], {
+    refused = box.run("particle pack", [box.at("unpacked"), "--dest", box.at("packed.xr")], {
       expectExit: 1,
     });
     inputAfterRefusal = box.manifest().filter((file) => file.path.startsWith("unpacked/"));
@@ -36,9 +36,9 @@ describe("particle pack overwrite", () => {
 
     fs.appendFileSync(box.at("packed.xr"), "forced overwrite sentinel\n", "utf8");
     destinationBeforeForce = box.sha("packed.xr");
-    forced = box.run("particle pack", ["--path", box.at("unpacked"), "--dest", box.at("packed.xr"), "--force"]);
+    forced = box.run("particle pack", [box.at("unpacked"), "--dest", box.at("packed.xr"), "--force"]);
     destinationAfterForce = box.sha("packed.xr");
-    info = box.run("particle info", ["--path", box.at("packed.xr")]);
+    info = box.run("particle info", [box.at("packed.xr")]);
   });
 
   it("should publish into an empty destination", () => {

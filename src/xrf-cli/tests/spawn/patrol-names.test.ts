@@ -28,8 +28,8 @@ describe("spawn patrol names", () => {
   let points: Buffer;
 
   beforeAll(() => {
-    box.run("spawn unpack", ["--path", ALL_SPAWN, "--dest", box.at("unpacked")]);
-    box.run("spawn pack", ["--path", box.at("unpacked"), "--dest", box.at("repacked.spawn")]);
+    box.run("spawn unpack", [ALL_SPAWN, "--dest", box.at("unpacked")]);
+    box.run("spawn pack", [box.at("unpacked"), "--dest", box.at("repacked.spawn")]);
 
     points = fs.readFileSync(box.at("unpacked/patrol_points.ltx"));
   });

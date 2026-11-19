@@ -21,7 +21,6 @@ describe("gamedata verify sounds", () => {
     inputsBefore = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("missing/"));
 
     valid = box.run("gamedata verify", [
-      "--path",
       box.at("valid"),
       "--checks",
       "sounds",
@@ -31,7 +30,7 @@ describe("gamedata verify sounds", () => {
     ]);
     missing = box.run(
       "gamedata verify",
-      ["--path", box.at("missing"), "--checks", "sounds", "--strict", "--report", box.at("missing.json")],
+      [box.at("missing"), "--checks", "sounds", "--strict", "--report", box.at("missing.json")],
       { expectExit: 3 }
     );
     inputsAfter = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("missing/"));

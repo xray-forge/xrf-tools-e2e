@@ -15,14 +15,13 @@ describe("spawn repack", () => {
     // Repacking is the unpack and pack pair done in memory, so it has to land on the same bytes as
     // doing both by hand does.
     repack = box.run("spawn repack", [
-      "--path",
       ALL_SPAWN,
       "--dest",
       box.at("repacked.spawn"),
       "--report",
       box.at("report.json"),
     ]);
-    again = box.run("spawn repack", ["--path", box.at("repacked.spawn"), "--dest", box.at("twice.spawn")]);
+    again = box.run("spawn repack", [box.at("repacked.spawn"), "--dest", box.at("twice.spawn")]);
   });
 
   it("should repack in one step", () => {

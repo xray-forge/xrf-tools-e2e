@@ -24,17 +24,10 @@ describe("gamedata verify renderer shaders", () => {
     box.write("damaged/shaders/r3/main.ps", MISSING_SOURCE);
     inputsBefore = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("damaged/"));
 
-    valid = box.run("gamedata verify", [
-      "--path",
-      box.at("valid"),
-      "--checks",
-      "shaders",
-      "--report",
-      box.at("valid.json"),
-    ]);
+    valid = box.run("gamedata verify", [box.at("valid"), "--checks", "shaders", "--report", box.at("valid.json")]);
     damaged = box.run(
       "gamedata verify",
-      ["--path", box.at("damaged"), "--checks", "shaders", "--report", box.at("damaged.json")],
+      [box.at("damaged"), "--checks", "shaders", "--report", box.at("damaged.json")],
       { expectExit: 3 }
     );
     inputsAfter = box.manifest().filter((file) => file.path.startsWith("valid/") || file.path.startsWith("damaged/"));

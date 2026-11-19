@@ -17,7 +17,7 @@ describe("gamedata verify particle libraries", () => {
 
     damaged = box.run(
       "gamedata verify",
-      ["--path", box.at("gamedata"), "--checks", "particles", "--report", box.at("report.json")],
+      [box.at("gamedata"), "--checks", "particles", "--report", box.at("report.json")],
       { expectExit: 3 }
     );
     inputsAfter = box.manifest().filter((file) => file.path.startsWith("gamedata/"));

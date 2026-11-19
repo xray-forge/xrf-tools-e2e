@@ -41,7 +41,6 @@ describe("sprite pack-equipment gamedata resolution", () => {
     box.run("sprite unpack-equipment", [
       "--system-ltx",
       gamedata("configs/system.ltx"),
-      "--path",
       gamedata("textures/ui/ui_test_sheet.dds"),
       "--dest",
       box.at("icons"),
@@ -52,7 +51,6 @@ describe("sprite pack-equipment gamedata resolution", () => {
     withGamedata = box.run("sprite pack-equipment", [
       "--system-ltx",
       config,
-      "--path",
       box.at("icons"),
       "--dest",
       box.at("with-gamedata.dds"),
@@ -63,7 +61,6 @@ describe("sprite pack-equipment gamedata resolution", () => {
     withoutGamedata = box.run("sprite pack-equipment", [
       "--system-ltx",
       config,
-      "--path",
       box.at("icons"),
       "--dest",
       box.at("without-gamedata.dds"),

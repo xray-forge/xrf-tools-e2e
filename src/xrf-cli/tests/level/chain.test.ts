@@ -72,7 +72,6 @@ describe("level chain", () => {
     compiled(again, "compile-again.json", "1");
     verify = box.run("level verify", ["--path", level, "--report", box.at("verify.json")]);
     spawn = box.run("spawn build", [
-      "--gamedata",
       box.at("gamedata"),
       "--dest",
       box.at("gamedata/spawns/chain.spawn"),
@@ -83,9 +82,8 @@ describe("level chain", () => {
       "--report",
       box.at("spawn.json"),
     ]);
-    box.run("spawn info", ["--path", box.at("gamedata/spawns/chain.spawn"), "--report", box.at("spawn-info.json")]);
+    box.run("spawn info", [box.at("gamedata/spawns/chain.spawn"), "--report", box.at("spawn-info.json")]);
     spawnVerify = box.run("spawn verify", [
-      "--path",
       box.at("gamedata/spawns/chain.spawn"),
       "--report",
       box.at("spawn-verify.json"),

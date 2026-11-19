@@ -16,7 +16,7 @@ describe("spawn info refusals", () => {
   let neither: CliResult;
 
   beforeAll(() => {
-    neither = box.run("spawn info", ["--path", gamedata("particles.xr"), "--report", box.at("neither-report.json")], {
+    neither = box.run("spawn info", [gamedata("particles.xr"), "--report", box.at("neither-report.json")], {
       expectExit: 1,
     });
   });
