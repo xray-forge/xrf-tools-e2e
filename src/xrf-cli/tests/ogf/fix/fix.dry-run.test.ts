@@ -13,7 +13,7 @@ describe("ogf fix dry run", () => {
 
   beforeAll(() => {
     sourceBefore = sha(RESIDUE);
-    dryRun = box.run("ogf fix", ["--path", RESIDUE, "--dry-run", "--report", box.at("dry-run.json")]);
+    dryRun = box.run("ogf fix", [RESIDUE, "--dry-run", "--report", box.at("dry-run.json")]);
   });
 
   it("should report a dry run without writing", () => {

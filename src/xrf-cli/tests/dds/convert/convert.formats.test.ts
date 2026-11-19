@@ -27,7 +27,6 @@ describe("dds convert formats", () => {
 
   beforeAll(() => {
     compressed = box.run("dds convert", [
-      "--path",
       SHEET,
       "--dest",
       box.at("bc1.dds"),
@@ -40,7 +39,6 @@ describe("dds convert formats", () => {
     ]);
 
     uncompressed = box.run("dds convert", [
-      "--path",
       SHEET,
       "--dest",
       box.at("rgba8.dds"),
@@ -53,7 +51,6 @@ describe("dds convert formats", () => {
     ]);
 
     flat = box.run("dds convert", [
-      "--path",
       SHEET,
       "--dest",
       box.at("flat.dds"),
@@ -64,7 +61,7 @@ describe("dds convert formats", () => {
       "--no-mipmaps",
     ]);
 
-    compressedInfo = box.run("dds info", ["--path", box.at("bc1.dds")]);
+    compressedInfo = box.run("dds info", [box.at("bc1.dds")]);
   });
 
   it("should convert into a block format", () => {
@@ -108,7 +105,6 @@ describe("dds convert formats", () => {
   // finds out about until a modder does.
   it.each(CANDIDATES)("should write and read back $name", ({ flag, name, header }) => {
     const written = box.run("dds convert", [
-      "--path",
       SHEET,
       "--dest",
       box.at(`${flag}.dds`),
@@ -129,7 +125,7 @@ describe("dds convert formats", () => {
     // No shipped X-Ray texture carries a DX10 header - not one of the 13,274 across `gamedata` and
     // `gamedata-anomaly` - because the D3D9 loader reads only the old one. So every format with a
     // legacy spelling gets it, and BC7, which has none, is the exception that proves the rule.
-    box.run("dds info", ["--path", box.at(`${flag}.dds`), "--report", box.at(`info-${flag}.json`)]);
+    box.run("dds info", [box.at(`${flag}.dds`), "--report", box.at(`info-${flag}.json`)]);
 
     const described = (box.json(`info-${flag}.json`) as { result: { metadataSize: number } }).result;
 

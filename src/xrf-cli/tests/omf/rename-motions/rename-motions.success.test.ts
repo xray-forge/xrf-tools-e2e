@@ -16,7 +16,6 @@ describe("omf rename-motions success", () => {
     const map = box.write("rename-map.json", `${JSON.stringify({ idle: "stand", svd_shoot: "fire" }, undefined, 2)}\n`);
 
     renamed = box.run("omf rename-motions", [
-      "--path",
       SOURCE,
       "--dest",
       box.at("renamed.omf"),
@@ -25,7 +24,7 @@ describe("omf rename-motions success", () => {
       "--report",
       box.at("rename.json"),
     ]);
-    info = box.run("omf info", ["--path", box.at("renamed.omf")]);
+    info = box.run("omf info", [box.at("renamed.omf")]);
   });
 
   it("should rename motions through a map", () => {

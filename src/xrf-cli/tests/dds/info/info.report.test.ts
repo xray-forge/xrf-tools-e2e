@@ -15,14 +15,8 @@ describe("dds info report", () => {
   const box = new Sandbox(__filename);
 
   beforeAll(() => {
-    box.run("dds info", [
-      "--path",
-      gamedata("textures/prop_lampa_g.dds"),
-      "--silent",
-      "--report",
-      box.at("compressed.json"),
-    ]);
-    box.run("dds info", ["--path", gamedata("textures/ui_empty.dds"), "--silent", "--report", box.at("ui.json")]);
+    box.run("dds info", [gamedata("textures/prop_lampa_g.dds"), "--silent", "--report", box.at("compressed.json")]);
+    box.run("dds info", [gamedata("textures/ui_empty.dds"), "--silent", "--report", box.at("ui.json")]);
   });
 
   it("should report a compressed texture's format and mip chain", () => {

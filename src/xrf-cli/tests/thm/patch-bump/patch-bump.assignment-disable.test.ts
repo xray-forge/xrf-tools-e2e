@@ -19,7 +19,6 @@ describe("thm patch-bump assignment and disable", () => {
 
   beforeAll(() => {
     assigned = box.run("thm patch-bump", [
-      "--path",
       SOURCE,
       "--dest",
       box.at("assigned.thm"),
@@ -29,7 +28,6 @@ describe("thm patch-bump assignment and disable", () => {
       box.at("assigned.json"),
     ]);
     cleared = box.run("thm patch-bump", [
-      "--path",
       SOURCE,
       "--dest",
       box.at("cleared.thm"),
@@ -38,7 +36,6 @@ describe("thm patch-bump assignment and disable", () => {
       box.at("cleared.json"),
     ]);
     disabledAssigned = box.run("thm patch-bump", [
-      "--path",
       box.at("assigned.thm"),
       "--dest",
       box.at("disabled-assigned.thm"),

@@ -16,19 +16,12 @@ describe("ogf fix destination", () => {
 
   beforeAll(() => {
     sourceBefore = sha(RESIDUE);
-    sourceInfo = box.run("ogf info", ["--path", RESIDUE, "--report", box.at("source.json")]);
-    toDestination = box.run("ogf fix", [
-      "--path",
-      RESIDUE,
-      "--dest",
-      box.at("fixed.ogf"),
-      "--report",
-      box.at("fixed.json"),
-    ]);
-    fixedInfo = box.run("ogf info", ["--path", box.at("fixed.ogf"), "--report", box.at("fixed-info.json")]);
+    sourceInfo = box.run("ogf info", [RESIDUE, "--report", box.at("source.json")]);
+    toDestination = box.run("ogf fix", [RESIDUE, "--dest", box.at("fixed.ogf"), "--report", box.at("fixed.json")]);
+    fixedInfo = box.run("ogf info", [box.at("fixed.ogf"), "--report", box.at("fixed-info.json")]);
 
     box.copyIn(RESIDUE, "in-place.ogf");
-    inPlace = box.run("ogf fix", ["--path", box.at("in-place.ogf")]);
+    inPlace = box.run("ogf fix", [box.at("in-place.ogf")]);
   });
 
   it("should expose the split reference residue before fixing", () => {

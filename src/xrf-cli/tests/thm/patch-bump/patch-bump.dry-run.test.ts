@@ -21,7 +21,6 @@ describe("thm patch-bump dry run", () => {
 
     sourceBefore = sha(SOURCE);
     dryRun = box.run("thm patch-bump", [
-      "--path",
       SOURCE,
       "--dest",
       destination,
@@ -36,7 +35,6 @@ describe("thm patch-bump dry run", () => {
     box.copyIn(SOURCE, "never-written.thm");
     destinationBefore = box.sha("never-written.thm");
     box.run("thm patch-bump", [
-      "--path",
       SOURCE,
       "--dest",
       destination,

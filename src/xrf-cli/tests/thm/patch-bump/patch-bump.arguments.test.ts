@@ -18,10 +18,10 @@ describe("thm patch-bump arguments", () => {
     const input = box.copyIn(SOURCE, "input.thm");
 
     inputBefore = box.sha("input.thm");
-    neither = box.run("thm patch-bump", ["--path", input, "--report", box.at("neither.json")], { expectExit: 2 });
+    neither = box.run("thm patch-bump", [input, "--report", box.at("neither.json")], { expectExit: 2 });
     both = box.run(
       "thm patch-bump",
-      ["--path", input, "--to", "wpn\\wpn_pm\\wpn_pm_bump", "--off", "--report", box.at("both.json")],
+      [input, "--to", "wpn\\wpn_pm\\wpn_pm_bump", "--off", "--report", box.at("both.json")],
       { expectExit: 2 }
     );
   });

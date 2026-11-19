@@ -15,14 +15,8 @@ describe("ogf info report", () => {
   const box = new Sandbox(__filename);
 
   beforeAll(() => {
-    box.run("ogf info", [
-      "--path",
-      gamedata("meshes/ogf/part_none.ogf"),
-      "--silent",
-      "--report",
-      box.at("minimal.json"),
-    ]);
-    box.run("ogf info", ["--path", gamedata("meshes/ogf/wpn_pm_lod.ogf"), "--silent", "--report", box.at("lod.json")]);
+    box.run("ogf info", [gamedata("meshes/ogf/part_none.ogf"), "--silent", "--report", box.at("minimal.json")]);
+    box.run("ogf info", [gamedata("meshes/ogf/wpn_pm_lod.ogf"), "--silent", "--report", box.at("lod.json")]);
   });
 
   it("should report a visual's bones, bounds and material", () => {

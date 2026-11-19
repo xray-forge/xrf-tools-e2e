@@ -18,7 +18,6 @@ describe("ogf patch-motion-refs", () => {
 
   beforeAll(() => {
     repointed = box.run("ogf patch-motion-refs", [
-      "--path",
       SOURCE,
       "--dest",
       box.at("repointed.ogf"),
@@ -26,7 +25,6 @@ describe("ogf patch-motion-refs", () => {
       "dynamics\\devices\\dev_bolt\\dev_bolt_replacement",
     ]);
     dryRun = box.run("ogf patch-motion-refs", [
-      "--path",
       SOURCE,
       "--dest",
       box.at("never-written.ogf"),
@@ -38,7 +36,6 @@ describe("ogf patch-motion-refs", () => {
     // --refs stores a list, and storing several is the reason it takes one. A single value would
     // never show that the others survive alongside it.
     several = box.run("ogf patch-motion-refs", [
-      "--path",
       SOURCE,
       "--dest",
       box.at("several.ogf"),
@@ -49,13 +46,12 @@ describe("ogf patch-motion-refs", () => {
 
     // With no --dest the command rewrites its input, which is the destructive default.
     inPlace = box.run("ogf patch-motion-refs", [
-      "--path",
       box.copyIn(SOURCE, "in-place.ogf"),
       "--refs",
       "dynamics\\devices\\dev_bolt\\dev_bolt_replacement",
     ]);
 
-    info = box.run("ogf info", ["--path", box.at("repointed.ogf")]);
+    info = box.run("ogf info", [box.at("repointed.ogf")]);
   });
 
   it("should store motion refs", () => {
@@ -80,7 +76,7 @@ describe("ogf patch-motion-refs", () => {
   });
 
   it("should read back every stored ref", () => {
-    expect(box.run("ogf info", ["--path", box.at("several.ogf")])).toMatchSnapshot();
+    expect(box.run("ogf info", [box.at("several.ogf")])).toMatchSnapshot();
   });
 
   it("should rewrite in place when given no destination", () => {

@@ -12,7 +12,6 @@ describe("dds convert comparison", () => {
 
   beforeAll(() => {
     compared = box.run("dds convert", [
-      "--path",
       SHEET,
       "--dest",
       box.at("compared.dds"),

@@ -6,7 +6,7 @@ exports[`thm patch-bump arguments should reject both options during argument par
   "stderr": [
     "error: the argument '--to <to>' cannot be used with '--off'",
     "",
-    "Usage: xrf-cli thm patch-bump --path <path> --report <PATH> <--to <to>|--off>",
+    "Usage: xrf-cli thm patch-bump --report <PATH> <--to <to>|--off> <path>",
     "",
     "For more information, try '--help'.",
   ],
@@ -21,7 +21,7 @@ exports[`thm patch-bump arguments should reject neither assignment nor disable d
     "error: the following required arguments were not provided:",
     "  <--to <to>|--off>",
     "",
-    "Usage: xrf-cli thm patch-bump --path <path> --report <PATH> <--to <to>|--off>",
+    "Usage: xrf-cli thm patch-bump --report <PATH> <--to <to>|--off> <path>",
     "",
     "For more information, try '--help'.",
   ],

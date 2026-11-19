@@ -14,7 +14,6 @@ describe("dds crop fit", () => {
 
   beforeAll(() => {
     fitted = box.run("dds crop", [
-      "--path",
       SHEET,
       "--dest",
       box.at("fitted.dds"),
@@ -32,7 +31,7 @@ describe("dds crop fit", () => {
       "32",
     ]);
 
-    fittedInfo = box.run("dds info", ["--path", box.at("fitted.dds")]);
+    fittedInfo = box.run("dds info", [box.at("fitted.dds")]);
   });
 
   it("should scale a cropped region to fit", () => {

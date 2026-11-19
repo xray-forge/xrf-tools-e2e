@@ -15,13 +15,13 @@ describe("ogf verify", () => {
     // The visuals reference textures the trimmed tree does not carry, so the texture check cannot
     // complete and the command answers the operational 1 rather than the check verdict 3. Geometry
     // is still fully verified.
-    single = box.run("ogf verify", ["--path", gamedata("meshes/ogf/wpn_pm_lod.ogf")], { expectExit: 1 });
-    sweep = box.run("ogf verify", ["--path", gamedata("meshes/ogf"), "--report", box.at("report.json")], {
+    single = box.run("ogf verify", [gamedata("meshes/ogf/wpn_pm_lod.ogf")], { expectExit: 1 });
+    sweep = box.run("ogf verify", [gamedata("meshes/ogf"), "--report", box.at("report.json")], {
       expectExit: 1,
     });
     // A tree of meshes over a tree that carries one of the textures they name, which is how a mod overlay is read: the
     // sweep above measures the same visuals against nothing and calls every reference missing.
-    layered = box.run("ogf verify", ["--path", gamedata("meshes/ogf"), "--root", resource("base")], { expectExit: 1 });
+    layered = box.run("ogf verify", [gamedata("meshes/ogf"), "--root", resource("base")], { expectExit: 1 });
   });
 
   it("should verify a standalone visual", () => {

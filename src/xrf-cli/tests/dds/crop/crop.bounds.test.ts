@@ -23,7 +23,6 @@ describe("dds crop bounds", () => {
     sourceBefore = sha(SHEET);
 
     edge = box.run("dds crop", [
-      "--path",
       SHEET,
       "--dest",
       box.at("edge.dds"),
@@ -41,20 +40,7 @@ describe("dds crop bounds", () => {
 
     outOfBounds = box.run(
       "dds crop",
-      [
-        "--path",
-        SHEET,
-        "--dest",
-        box.at("never-written.dds"),
-        "--x",
-        "192",
-        "--y",
-        "0",
-        "--width",
-        "128",
-        "--height",
-        "64",
-      ],
+      [SHEET, "--dest", box.at("never-written.dds"), "--x", "192", "--y", "0", "--width", "128", "--height", "64"],
       { expectExit: 1 }
     );
     destinationWasAbsent = !fs.existsSync(box.at("never-written.dds"));
@@ -64,7 +50,6 @@ describe("dds crop bounds", () => {
     onePixelOverflow = box.run(
       "dds crop",
       [
-        "--path",
         SHEET,
         "--dest",
         box.at("preserved.dds"),
@@ -82,7 +67,7 @@ describe("dds crop bounds", () => {
     );
     unforced = box.run(
       "dds crop",
-      ["--path", SHEET, "--dest", box.at("PRESERVED.dds"), "--x", "0", "--y", "0", "--width", "64", "--height", "64"],
+      [SHEET, "--dest", box.at("PRESERVED.dds"), "--x", "0", "--y", "0", "--width", "64", "--height", "64"],
       { expectExit: 1 }
     );
   });

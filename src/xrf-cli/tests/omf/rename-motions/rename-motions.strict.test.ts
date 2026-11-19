@@ -22,7 +22,7 @@ describe("omf rename-motions strict map", () => {
     sourceBefore = sha(SOURCE);
     strict = box.run(
       "omf rename-motions",
-      ["--path", SOURCE, "--dest", destination, "--map", map, "--strict", "--report", box.at("strict.json")],
+      [SOURCE, "--dest", destination, "--map", map, "--strict", "--report", box.at("strict.json")],
       { expectExit: 1 }
     );
     destinationWasAbsent = !fs.existsSync(destination);
@@ -31,7 +31,7 @@ describe("omf rename-motions strict map", () => {
     destinationBefore = box.sha("never-strict.omf");
     box.run(
       "omf rename-motions",
-      ["--path", SOURCE, "--dest", destination, "--map", map, "--strict", "--report", box.at("strict.json")],
+      [SOURCE, "--dest", destination, "--map", map, "--strict", "--report", box.at("strict.json")],
       { expectExit: 1 }
     );
   });

@@ -21,7 +21,6 @@ describe("omf rename-motions dry run", () => {
 
     sourceBefore = sha(SOURCE);
     dryRun = box.run("omf rename-motions", [
-      "--path",
       SOURCE,
       "--dest",
       destination,
@@ -36,7 +35,6 @@ describe("omf rename-motions dry run", () => {
     box.copyIn(SOURCE, "never-renamed.omf");
     destinationBefore = box.sha("never-renamed.omf");
     box.run("omf rename-motions", [
-      "--path",
       SOURCE,
       "--dest",
       destination,

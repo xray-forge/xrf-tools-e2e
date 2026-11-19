@@ -21,7 +21,7 @@ describe("ogf residue", () => {
   let verify: CliResult;
 
   beforeAll(() => {
-    info = box.run("ogf info", ["--path", SOURCE, "--report", box.at("info.json")]);
+    info = box.run("ogf info", [SOURCE, "--report", box.at("info.json")]);
 
     box.write("gamedata/configs/system.ltx", "");
     box.copyIn(gamedata("shaders.xr"), "gamedata/shaders.xr");
@@ -35,7 +35,6 @@ describe("ogf residue", () => {
     );
 
     patch = box.run("ogf patch-motion-refs", [
-      "--path",
       SOURCE,
       "--dest",
       box.at("patched.ogf"),

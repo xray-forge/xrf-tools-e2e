@@ -36,7 +36,7 @@ describe("equipment sprite roundtrip", () => {
       box.at("pack.json"),
     ]);
 
-    info = box.run("dds info", ["--path", box.at("repacked.dds")]);
+    info = box.run("dds info", [box.at("repacked.dds")]);
   });
 
   // Only the opted-in sections are cut, so the section carrying $inventory_icon = false produces no

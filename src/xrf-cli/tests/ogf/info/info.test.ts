@@ -13,9 +13,9 @@ describe("ogf info", () => {
   beforeAll(() => {
     // A single bone with one child and progressive lods, a static prop, and a weapon lod: three
     // different shapes of the same header.
-    minimal = box.run("ogf info", ["--path", gamedata("meshes/ogf/part_none.ogf")]);
-    prop = box.run("ogf info", ["--path", gamedata("meshes/ogf/notes_paper_1.ogf")]);
-    weapon = box.run("ogf info", ["--path", gamedata("meshes/ogf/wpn_pm_lod.ogf")]);
+    minimal = box.run("ogf info", [gamedata("meshes/ogf/part_none.ogf")]);
+    prop = box.run("ogf info", [gamedata("meshes/ogf/notes_paper_1.ogf")]);
+    weapon = box.run("ogf info", [gamedata("meshes/ogf/wpn_pm_lod.ogf")]);
   });
 
   it("should report a minimal visual", () => {

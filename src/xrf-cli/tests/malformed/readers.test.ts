@@ -27,36 +27,25 @@ describe("readers reject damaged input", () => {
   beforeAll(() => {
     const fail = { expectExit: 1 };
 
-    ogf = box.run(
-      "ogf info",
-      ["--path", box.copyTruncated(gamedata("meshes/ogf/part_none.ogf"), "bad.ogf", 200)],
-      fail
-    );
+    ogf = box.run("ogf info", [box.copyTruncated(gamedata("meshes/ogf/part_none.ogf"), "bad.ogf", 200)], fail);
 
     unaccountableResidue = box.run(
       "ogf info",
-      [
-        "--path",
-        appendCutShortUserData(box.copyIn(gamedata("meshes/ogf/dev_bolt_hud.ogf"), "unaccountable-residue.ogf")),
-      ],
+      [appendCutShortUserData(box.copyIn(gamedata("meshes/ogf/dev_bolt_hud.ogf"), "unaccountable-residue.ogf"))],
       fail
     );
 
     omf = box.run(
       "omf info",
-      ["--path", box.copyTruncated(gamedata("meshes/omf/wpn_svd_hud_animation.omf"), "bad.omf", 100)],
+      [box.copyTruncated(gamedata("meshes/omf/wpn_svd_hud_animation.omf"), "bad.omf", 100)],
       fail
     );
     particles = box.run("particle info", ["--path", box.copyTruncated(gamedata("particles.xr"), "bad.xr", 500)], fail);
     spawn = box.run("spawn info", ["--path", box.copyTruncated(gamedata("spawns/all.spawn"), "bad.spawn", 400)], fail);
-    dds = box.run(
-      "dds info",
-      ["--path", box.copyTruncated(gamedata("textures/ui/ui_test_sheet.dds"), "bad.dds", 60)],
-      fail
-    );
+    dds = box.run("dds info", [box.copyTruncated(gamedata("textures/ui/ui_test_sheet.dds"), "bad.dds", 60)], fail);
 
-    empty = box.run("ogf info", ["--path", box.write("empty.ogf", "")], fail);
-    missing = box.run("ogf info", ["--path", box.at("does-not-exist.ogf")], fail);
+    empty = box.run("ogf info", [box.write("empty.ogf", "")], fail);
+    missing = box.run("ogf info", [box.at("does-not-exist.ogf")], fail);
 
     // The two verifiers below judge the damaged file rather than failing to run, so they answer
     // the check verdict 3 where the readers above answer the operational 1.

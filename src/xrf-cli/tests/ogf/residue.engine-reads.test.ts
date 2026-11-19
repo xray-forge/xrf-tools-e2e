@@ -116,9 +116,9 @@ describe("ogf residue the engine reads through", () => {
       fs.writeFileSync(box.at(`${name}.ogf`), shapes[name]);
 
       results[name] = {
-        info: box.run("ogf info", ["--path", box.at(`${name}.ogf`), "--report", box.at(`${name}.json`)]),
-        fix: box.run("ogf fix", ["--path", box.at(`${name}.ogf`), "--dest", box.at(`${name}-fixed.ogf`)]),
-        fixed: box.run("ogf info", ["--path", box.at(`${name}-fixed.ogf`), "--report", box.at(`${name}-fixed.json`)]),
+        info: box.run("ogf info", [box.at(`${name}.ogf`), "--report", box.at(`${name}.json`)]),
+        fix: box.run("ogf fix", [box.at(`${name}.ogf`), "--dest", box.at(`${name}-fixed.ogf`)]),
+        fixed: box.run("ogf info", [box.at(`${name}-fixed.ogf`), "--report", box.at(`${name}-fixed.json`)]),
       };
     }
   });

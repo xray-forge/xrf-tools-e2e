@@ -14,16 +14,9 @@ describe("omf repack roundtrip", () => {
 
   beforeAll(() => {
     // Verify mode reads, rebuilds, and compares in memory without writing anything.
-    verify = box.run("omf repack", ["--path", SOURCE, "--verify"]);
-    repack = box.run("omf repack", [
-      "--path",
-      SOURCE,
-      "--dest",
-      box.at("repacked.omf"),
-      "--report",
-      box.at("repack.json"),
-    ]);
-    info = box.run("omf info", ["--path", box.at("repacked.omf")]);
+    verify = box.run("omf repack", [SOURCE, "--verify"]);
+    repack = box.run("omf repack", [SOURCE, "--dest", box.at("repacked.omf"), "--report", box.at("repack.json")]);
+    info = box.run("omf info", [box.at("repacked.omf")]);
   });
 
   it("should verify in place", () => {

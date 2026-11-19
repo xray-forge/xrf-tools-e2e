@@ -11,7 +11,6 @@ describe("omf info report", () => {
 
   beforeAll(() => {
     box.run("omf info", [
-      "--path",
       gamedata("meshes/omf/wpn_knife_hud_animation.omf"),
       "--silent",
       "--report",

@@ -54,7 +54,7 @@ exports[`dds make-bump gloss should refuse a second gloss beside the height's al
   "stderr": [
     "error: the argument '--gloss-alpha' cannot be used with '--gloss-constant <gloss-constant>'",
     "",
-    "Usage: xrf-cli dds make-bump --path <path> --dest <dest> --gloss-alpha",
+    "Usage: xrf-cli dds make-bump --dest <dest> --gloss-alpha <path>",
     "",
     "For more information, try '--help'.",
   ],

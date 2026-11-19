@@ -10,8 +10,8 @@ describe("dds info", () => {
   let ui: CliResult;
 
   beforeAll(() => {
-    compressed = box.run("dds info", ["--path", gamedata("textures/prop_lampa_g.dds")]);
-    ui = box.run("dds info", ["--path", gamedata("textures/ui_empty.dds")]);
+    compressed = box.run("dds info", [gamedata("textures/prop_lampa_g.dds")]);
+    ui = box.run("dds info", [gamedata("textures/ui_empty.dds")]);
   });
 
   // DXT1 with a mip chain.

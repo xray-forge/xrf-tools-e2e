@@ -13,7 +13,6 @@ describe("ogf patch reports", () => {
 
   beforeAll(() => {
     box.run("ogf patch-motion-refs", [
-      "--path",
       SOURCE,
       "--dest",
       box.at("repointed.ogf"),
@@ -24,7 +23,6 @@ describe("ogf patch reports", () => {
       box.at("motion-refs.json"),
     ]);
     box.run("ogf patch-motion-refs", [
-      "--path",
       SOURCE,
       "--dest",
       box.at("never-written.ogf"),
@@ -36,7 +34,6 @@ describe("ogf patch reports", () => {
       box.at("motion-refs-dry.json"),
     ]);
     box.run("ogf patch-texture-refs", [
-      "--path",
       SOURCE,
       "--dest",
       box.at("renamed.ogf"),

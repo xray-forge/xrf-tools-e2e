@@ -22,10 +22,9 @@ describe("omf commands meet scrambled motion labels", () => {
   beforeAll(() => {
     source = writeScrambledMotionLabels(gamedata("meshes/omf/wpn_svd_hud_animation.omf"), box.at("scrambled.omf"));
 
-    info = box.run("omf info", ["--path", source, "--verbose", "--report", box.at("scrambled.json")]);
+    info = box.run("omf info", [source, "--verbose", "--report", box.at("scrambled.json")]);
 
     box.run("omf info", [
-      "--path",
       gamedata("meshes/omf/wpn_svd_hud_animation.omf"),
       "--silent",
       "--report",
@@ -54,20 +53,20 @@ describe("omf commands meet scrambled motion labels", () => {
 
   // Nothing is normalised on the way through, so an unmodified read and write is byte for byte.
   it("should repack a scrambled bank byte for byte", () => {
-    expect(box.run("omf repack", ["--path", source, "--verify", "--silent", "--json"])).toMatchSnapshot();
+    expect(box.run("omf repack", [source, "--verify", "--silent", "--json"])).toMatchSnapshot();
   });
 
   it("should rename motions without inventing labels for them", () => {
     const map: string = box.write("rename-map.json", `${JSON.stringify({ idle: "stand" }, undefined, 2)}\n`);
 
-    box.run("omf rename-motions", ["--path", source, "--dest", box.at("renamed.omf"), "--map", map, "--silent"]);
+    box.run("omf rename-motions", [source, "--dest", box.at("renamed.omf"), "--map", map, "--silent"]);
 
-    expect(box.run("omf info", ["--path", box.at("renamed.omf")])).toMatchSnapshot();
+    expect(box.run("omf info", [box.at("renamed.omf")])).toMatchSnapshot();
   });
 
   it("should filter motions and leave the survivors readable", () => {
-    box.run("omf filter-motions", ["--path", source, "--dest", box.at("filtered.omf"), "--keep", "idle", "--silent"]);
+    box.run("omf filter-motions", [source, "--dest", box.at("filtered.omf"), "--keep", "idle", "--silent"]);
 
-    expect(box.run("omf info", ["--path", box.at("filtered.omf")])).toMatchSnapshot();
+    expect(box.run("omf info", [box.at("filtered.omf")])).toMatchSnapshot();
   });
 });

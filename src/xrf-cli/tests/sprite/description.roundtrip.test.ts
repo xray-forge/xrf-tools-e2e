@@ -39,7 +39,7 @@ describe("description sprite roundtrip", () => {
       box.at("pack.json"),
     ]);
 
-    info = box.run("dds info", ["--path", box.at("packed/ui/ui_test_sheet.dds")]);
+    info = box.run("dds info", [box.at("packed/ui/ui_test_sheet.dds")]);
   });
 
   it("should unpack every described region", () => {

@@ -13,10 +13,10 @@ describe("thm patch-bump destination", () => {
   let inPlace: CliResult;
 
   beforeAll(() => {
-    assigned = box.run("thm patch-bump", ["--path", SOURCE, "--dest", box.at("assigned.thm"), "--to", BUMP]);
+    assigned = box.run("thm patch-bump", [SOURCE, "--dest", box.at("assigned.thm"), "--to", BUMP]);
 
     // With no destination the command rewrites its input, so it works on a copy.
-    inPlace = box.run("thm patch-bump", ["--path", box.copyIn(SOURCE, "in-place.thm"), "--to", BUMP]);
+    inPlace = box.run("thm patch-bump", [box.copyIn(SOURCE, "in-place.thm"), "--to", BUMP]);
   });
 
   it("should write the assigned reference to a destination", () => {

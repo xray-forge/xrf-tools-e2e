@@ -14,9 +14,9 @@ describe("ogf fix idempotence", () => {
 
   beforeAll(() => {
     box.copyIn(RESIDUE, "meshes/residue.ogf");
-    first = box.run("ogf fix", ["--path", box.at("meshes/residue.ogf")]);
+    first = box.run("ogf fix", [box.at("meshes/residue.ogf")]);
     fixedBytes = box.sha("meshes/residue.ogf");
-    again = box.run("ogf fix", ["--path", box.at("meshes/residue.ogf"), "--report", box.at("again.json")]);
+    again = box.run("ogf fix", [box.at("meshes/residue.ogf"), "--report", box.at("again.json")]);
   });
 
   it("should leave a visual it already fixed alone", () => {

@@ -21,7 +21,6 @@ describe("tooling reports", () => {
     });
 
     box.run("externs export", [
-      "--path",
       DECLARATIONS,
       "--format",
       "json",
@@ -32,7 +31,6 @@ describe("tooling reports", () => {
       box.at("externs-report.json"),
     ]);
     box.run("externs export", [
-      "--path",
       DECLARATIONS,
       "--dest",
       box.at("externs.json"),

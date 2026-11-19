@@ -15,7 +15,6 @@ describe("dds make-bump pair", () => {
 
   beforeAll(() => {
     generated = box.run("dds make-bump", [
-      "--path",
       HEIGHT,
       "--dest",
       box.at("wall"),
@@ -27,8 +26,8 @@ describe("dds make-bump pair", () => {
       box.at("bump.json"),
     ]);
 
-    bumpInfo = box.run("dds info", ["--path", box.at("wall_bump.dds")]);
-    companionInfo = box.run("dds info", ["--path", box.at("wall_bump#.dds")]);
+    bumpInfo = box.run("dds info", [box.at("wall_bump.dds")]);
+    companionInfo = box.run("dds info", [box.at("wall_bump#.dds")]);
   });
 
   it("should generate the pair", () => {

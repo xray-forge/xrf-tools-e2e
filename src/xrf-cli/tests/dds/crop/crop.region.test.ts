@@ -15,7 +15,6 @@ describe("dds crop regions", () => {
 
   beforeAll(() => {
     corner = box.run("dds crop", [
-      "--path",
       SHEET,
       "--dest",
       box.at("corner.dds"),
@@ -32,7 +31,6 @@ describe("dds crop regions", () => {
     ]);
 
     offset = box.run("dds crop", [
-      "--path",
       SHEET,
       "--dest",
       box.at("offset.dds"),
@@ -46,7 +44,7 @@ describe("dds crop regions", () => {
       "64",
     ]);
 
-    cornerInfo = box.run("dds info", ["--path", box.at("corner.dds")]);
+    cornerInfo = box.run("dds info", [box.at("corner.dds")]);
   });
 
   it("should crop the top left region", () => {

@@ -16,7 +16,6 @@ describe("omf duplicate-motion", () => {
 
   beforeAll(() => {
     duplicated = box.run("omf duplicate-motion", [
-      "--path",
       SOURCE,
       "--dest",
       box.at("duplicated.omf"),
@@ -31,7 +30,6 @@ describe("omf duplicate-motion", () => {
     // The copy can be made to play once instead of looping, which is the reason to duplicate a
     // motion rather than reuse it.
     duplicatedOnce = box.run("omf duplicate-motion", [
-      "--path",
       SOURCE,
       "--dest",
       box.at("duplicated-once.omf"),
@@ -45,7 +43,6 @@ describe("omf duplicate-motion", () => {
     // With no --dest the command rewrites its input, which is the destructive default, so it works
     // on a copy.
     inPlace = box.run("omf duplicate-motion", [
-      "--path",
       box.copyIn(SOURCE, "in-place.omf"),
       "--from",
       "idle",
@@ -53,7 +50,7 @@ describe("omf duplicate-motion", () => {
       "idle_copy",
     ]);
 
-    info = box.run("omf info", ["--path", box.at("duplicated.omf")]);
+    info = box.run("omf info", [box.at("duplicated.omf")]);
   });
 
   it("should duplicate a motion under a new name", () => {

@@ -15,7 +15,6 @@ describe("dds make-bump gloss", () => {
 
   beforeAll(() => {
     dark = box.run("dds make-bump", [
-      "--path",
       HEIGHT,
       "--dest",
       box.at("matte"),
@@ -27,12 +26,11 @@ describe("dds make-bump gloss", () => {
       box.at("matte.json"),
     ]);
 
-    refused = box.run("dds make-bump", ["--path", HEIGHT, "--dest", box.at("invalid"), "--gloss-constant", "4"], {
+    refused = box.run("dds make-bump", [HEIGHT, "--dest", box.at("invalid"), "--gloss-constant", "4"], {
       expectExit: 1,
     });
 
     fromAlpha = box.run("dds make-bump", [
-      "--path",
       HEIGHT,
       "--dest",
       box.at("sourced"),
@@ -45,7 +43,7 @@ describe("dds make-bump gloss", () => {
 
     conflicting = box.run(
       "dds make-bump",
-      ["--path", HEIGHT, "--dest", box.at("conflicting"), "--gloss-alpha", "--gloss-constant", "0.5"],
+      [HEIGHT, "--dest", box.at("conflicting"), "--gloss-alpha", "--gloss-constant", "0.5"],
       { expectExit: 2 }
     );
   });

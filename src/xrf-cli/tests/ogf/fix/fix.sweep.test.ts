@@ -21,7 +21,7 @@ describe("ogf fix sweep", () => {
     cleanBefore = box.sha("meshes/nested/clean.ogf");
     refusedBefore = box.sha("meshes/unaccountable.ogf");
 
-    tree = box.run("ogf fix", ["--path", box.at("meshes"), "-j", "1", "--report", box.at("tree.json")], {
+    tree = box.run("ogf fix", [box.at("meshes"), "-j", "1", "--report", box.at("tree.json")], {
       expectExit: 1,
     });
   });

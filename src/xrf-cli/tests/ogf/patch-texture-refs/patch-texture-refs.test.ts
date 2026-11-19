@@ -17,7 +17,6 @@ describe("ogf patch-texture-refs", () => {
 
   beforeAll(() => {
     renamed = box.run("ogf patch-texture-refs", [
-      "--path",
       SOURCE,
       "--dest",
       box.at("renamed.ogf"),
@@ -27,7 +26,6 @@ describe("ogf patch-texture-refs", () => {
       "wpn\\wpn_bolt_renamed",
     ]);
     dryRun = box.run("ogf patch-texture-refs", [
-      "--path",
       SOURCE,
       "--dest",
       box.at("never-renamed.ogf"),
@@ -43,22 +41,12 @@ describe("ogf patch-texture-refs", () => {
     // references the file actually carries, which is what makes the mistake obvious.
     unmatched = box.run(
       "ogf patch-texture-refs",
-      [
-        "--path",
-        SOURCE,
-        "--dest",
-        box.at("unmatched.ogf"),
-        "--from",
-        "wpn\\does_not_exist",
-        "--to",
-        "wpn\\replacement",
-      ],
+      [SOURCE, "--dest", box.at("unmatched.ogf"), "--from", "wpn\\does_not_exist", "--to", "wpn\\replacement"],
       { expectExit: 1 }
     );
 
     // With no --dest the command rewrites its input, which is the destructive default.
     inPlace = box.run("ogf patch-texture-refs", [
-      "--path",
       box.copyIn(SOURCE, "in-place.ogf"),
       "--from",
       "wpn\\wpn_bolt",
@@ -66,7 +54,7 @@ describe("ogf patch-texture-refs", () => {
       "wpn\\wpn_bolt_renamed",
     ]);
 
-    info = box.run("ogf info", ["--path", box.at("renamed.ogf")]);
+    info = box.run("ogf info", [box.at("renamed.ogf")]);
   });
 
   it("should rename a texture ref", () => {

@@ -21,11 +21,7 @@ describe("verifiers meet damaged input", () => {
     // Damaged content is a judged verdict: every verifier answers 3 rather than the operational 1.
     const fail = { expectExit: 3 };
 
-    ogf = box.run(
-      "ogf verify",
-      ["--path", box.copyTruncated(gamedata("meshes/ogf/part_none.ogf"), "bad.ogf", 200)],
-      fail
-    );
+    ogf = box.run("ogf verify", [box.copyTruncated(gamedata("meshes/ogf/part_none.ogf"), "bad.ogf", 200)], fail);
     particles = box.run(
       "particle verify",
       ["--path", box.copyTruncated(gamedata("particles.xr"), "bad.xr", 500)],

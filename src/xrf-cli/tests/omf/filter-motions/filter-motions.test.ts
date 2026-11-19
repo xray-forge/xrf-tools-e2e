@@ -17,7 +17,6 @@ describe("omf filter-motions", () => {
 
   beforeAll(() => {
     keptOne = box.run("omf filter-motions", [
-      "--path",
       SOURCE,
       "--dest",
       box.at("kept-idle.omf"),
@@ -26,16 +25,8 @@ describe("omf filter-motions", () => {
       "--report",
       box.at("filter.json"),
     ]);
-    keptPrefix = box.run("omf filter-motions", [
-      "--path",
-      SOURCE,
-      "--dest",
-      box.at("kept-svd.omf"),
-      "--keep-prefix",
-      "svd_",
-    ]);
+    keptPrefix = box.run("omf filter-motions", [SOURCE, "--dest", box.at("kept-svd.omf"), "--keep-prefix", "svd_"]);
     dryRun = box.run("omf filter-motions", [
-      "--path",
       SOURCE,
       "--dest",
       box.at("never-written.omf"),
@@ -49,7 +40,6 @@ describe("omf filter-motions", () => {
     // --keep takes several names after one flag rather than being repeated; passing it twice is a
     // usage error, so this is the only way to keep more than one motion by name.
     keptSeveral = box.run("omf filter-motions", [
-      "--path",
       SOURCE,
       "--dest",
       box.at("kept-two.omf"),
@@ -58,7 +48,7 @@ describe("omf filter-motions", () => {
       "svd_shoot",
     ]);
 
-    info = box.run("omf info", ["--path", box.at("kept-svd.omf")]);
+    info = box.run("omf info", [box.at("kept-svd.omf")]);
   });
 
   it("should keep a named motion", () => {
@@ -82,7 +72,7 @@ describe("omf filter-motions", () => {
   });
 
   it("should read back every kept motion", () => {
-    expect(box.run("omf info", ["--path", box.at("kept-two.omf")])).toMatchSnapshot();
+    expect(box.run("omf info", [box.at("kept-two.omf")])).toMatchSnapshot();
   });
 
   it("should report a dry run without writing", () => {

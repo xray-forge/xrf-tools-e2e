@@ -14,7 +14,6 @@ describe("externs export line endings", () => {
     // Both endings are asked for explicitly. The default follows the platform, so on Windows a
     // crlf run is byte-identical to the default one and would prove nothing on its own.
     crlf = box.run("externs export", [
-      "--path",
       DECLARATIONS,
       "--format",
       "json",
@@ -23,16 +22,7 @@ describe("externs export line endings", () => {
       "--line-endings",
       "crlf",
     ]);
-    box.run("externs export", [
-      "--path",
-      DECLARATIONS,
-      "--format",
-      "json",
-      "--dest",
-      box.at("lf.json"),
-      "--line-endings",
-      "lf",
-    ]);
+    box.run("externs export", [DECLARATIONS, "--format", "json", "--dest", box.at("lf.json"), "--line-endings", "lf"]);
   });
 
   it("should honour an explicit line ending", () => {

@@ -20,12 +20,12 @@ describe("thm bump-alignment report", () => {
   beforeAll(() => {
     // A bump drawn from its own diffuse, as the SDK draws one from a height map.
     box.copyIn(SHEET_DDS, "root/textures/sheet.dds");
-    box.run("dds make-bump", ["--path", box.at("root/textures/sheet.dds"), "--dest", box.at("root/textures/sheet")]);
+    box.run("dds make-bump", [box.at("root/textures/sheet.dds"), "--dest", box.at("root/textures/sheet")]);
     writeTextureDescriptor(box.at("root/textures/sheet.thm"), { bump: "sheet_bump" });
 
     // Another picture borrowing the sheet's relief: the right half of the sheet, stretched over the whole.
     box.run("dds crop", [
-      ...["--path", SHEET_DDS, "--dest", box.at("root/textures/props/patch.dds")],
+      ...[SHEET_DDS, "--dest", box.at("root/textures/props/patch.dds")],
       ...["--x", "128", "--y", "0", "--width", "128", "--height", "64", "--fit-width", "256", "--fit-height", "64"],
     ]);
     writeTextureDescriptor(box.at("root/textures/props/patch.thm"), { bump: "sheet_bump" });

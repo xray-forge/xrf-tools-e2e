@@ -11,9 +11,9 @@ describe("omf info", () => {
   let mp5: CliResult;
 
   beforeAll(() => {
-    knife = box.run("omf info", ["--path", gamedata("meshes/omf/wpn_knife_hud_animation.omf")]);
-    svd = box.run("omf info", ["--path", gamedata("meshes/omf/wpn_svd_hud_animation.omf")]);
-    mp5 = box.run("omf info", ["--path", gamedata("meshes/omf/wpn_mp5_hud_animation.omf")]);
+    knife = box.run("omf info", [gamedata("meshes/omf/wpn_knife_hud_animation.omf")]);
+    svd = box.run("omf info", [gamedata("meshes/omf/wpn_svd_hud_animation.omf")]);
+    mp5 = box.run("omf info", [gamedata("meshes/omf/wpn_mp5_hud_animation.omf")]);
   });
 
   // The smallest container in the corpus: one motion, two bones, one part.
