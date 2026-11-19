@@ -20,10 +20,10 @@ describe("volume set overrides", () => {
     box.write("base/textures/wpn/wpn_ak74.dds", "base texture");
     box.write("patch/Textures/Wpn/WPN_AK74.DDS", "patched texture");
 
-    box.run("archive pack", ["--path", box.at("base"), "--dest", box.at("db"), "--name", "base"]);
-    box.run("archive pack", ["--path", box.at("patch"), "--dest", box.at("db"), "--name", "patch"]);
+    box.run("archive pack", [box.at("base"), "--dest", box.at("db"), "--name", "base"]);
+    box.run("archive pack", [box.at("patch"), "--dest", box.at("db"), "--name", "patch"]);
 
-    verified = box.run("archive verify", ["--path", box.at("db"), "--report", box.at("verify.json")]);
+    verified = box.run("archive verify", [box.at("db"), "--report", box.at("verify.json")]);
     // `auto` mounts the directory as one volume set, which is the shape `archive verify` reads and the application
     // opens. `volumes` would mount each file as its own source, where the pair is shadowing between mounts instead.
     box.run("gamedata list", [

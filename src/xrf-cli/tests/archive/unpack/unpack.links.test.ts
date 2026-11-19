@@ -12,7 +12,7 @@ describe("archive unpack through a linked directory", () => {
   let refused: CliResult;
 
   beforeAll(() => {
-    box.run("archive pack", ["--path", gamedata("configs"), "--dest", box.at("packed"), "--name", "cfg"]);
+    box.run("archive pack", [gamedata("configs"), "--dest", box.at("packed"), "--name", "cfg"]);
 
     // A junctioned or symlink-deployed folder is the user's layout, as a mod manager leaves it. A junction needs no
     // privilege on Windows; elsewhere the type is ignored and this is a symlink.
@@ -22,12 +22,10 @@ describe("archive unpack through a linked directory", () => {
       fs.symlinkSync(box.at(`${name}/linked`), box.at(`${name}/out/gamedata`), "junction");
     }
 
-    followed = box.run("archive unpack", ["--path", box.at("packed/cfg.db"), "--dest", box.at("followed/out")]);
-    refused = box.run(
-      "archive unpack",
-      ["--path", box.at("packed/cfg.db"), "--dest", box.at("refused/out"), "--refuse-links"],
-      { expectExit: 1 }
-    );
+    followed = box.run("archive unpack", [box.at("packed/cfg.db"), "--dest", box.at("followed/out")]);
+    refused = box.run("archive unpack", [box.at("packed/cfg.db"), "--dest", box.at("refused/out"), "--refuse-links"], {
+      expectExit: 1,
+    });
   });
 
   it("should unpack through the link by default", () => {

@@ -15,11 +15,10 @@ describe("archive unpack precedence", () => {
     box.write(`base/${EXACT_PATH}`, "base exact bytes");
     box.write(`patch/${EXACT_PATH}`, "patch exact bytes");
 
-    box.run("archive pack", ["--path", box.at("base"), "--dest", box.at("archives"), "--name", "base"]);
-    box.run("archive pack", ["--path", box.at("patch"), "--dest", box.at("archives"), "--name", "patch"]);
+    box.run("archive pack", [box.at("base"), "--dest", box.at("archives"), "--name", "base"]);
+    box.run("archive pack", [box.at("patch"), "--dest", box.at("archives"), "--name", "patch"]);
 
     serial = box.run("archive unpack", [
-      "--path",
       box.at("archives"),
       "--dest",
       box.at("serial"),
@@ -29,7 +28,6 @@ describe("archive unpack precedence", () => {
       box.at("serial-report.json"),
     ]);
     parallel = box.run("archive unpack", [
-      "--path",
       box.at("archives"),
       "--dest",
       box.at("parallel"),

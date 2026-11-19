@@ -31,7 +31,7 @@ describe("gamedata list across mounts", () => {
     // different files and nothing would ever be hidden.
     box.copyIn(gamedata("configs/system.ltx"), "stage/configs/system.ltx");
     box.copyIn(gamedata("configs/fonts.ltx"), "stage/configs/fonts.ltx");
-    box.run("archive pack", ["--path", box.at("stage"), "--dest", box.at("install/database"), "--name", "gamedata"]);
+    box.run("archive pack", [box.at("stage"), "--dest", box.at("install/database"), "--name", "gamedata"]);
 
     // Only system.ltx exists loose, so it wins over the archived copy while fonts.ltx can only come
     // from the archive.

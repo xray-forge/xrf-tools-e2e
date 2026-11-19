@@ -21,7 +21,6 @@ describe("archive unpack volumes", () => {
 
   beforeAll(() => {
     box.run("archive pack", [
-      "--path",
       gamedata(),
       "--dest",
       box.at("split"),
@@ -33,8 +32,8 @@ describe("archive unpack volumes", () => {
 
     // Mounting the directory reads every volume; pointing at one volume reads only that volume,
     // because a volume is a standalone archive rather than a slice that knows about its siblings.
-    unpackedSet = box.run("archive unpack", ["--path", box.at("split"), "--dest", box.at("from-set")]);
-    unpackedFirst = box.run("archive unpack", ["--path", box.at("split/gamedata.db0"), "--dest", box.at("from-first")]);
+    unpackedSet = box.run("archive unpack", [box.at("split"), "--dest", box.at("from-set")]);
+    unpackedFirst = box.run("archive unpack", [box.at("split/gamedata.db0"), "--dest", box.at("from-first")]);
   });
 
   it("should unpack a whole volume set", () => {

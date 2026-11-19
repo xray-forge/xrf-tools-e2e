@@ -14,7 +14,6 @@ describe("archive info entry points", () => {
     box.write("configs/config.ltx", "[configs]\n");
     box.write("scripts/script.ltx", "[scripts]\n");
     box.run("archive pack", [
-      "--path",
       box.at("configs"),
       "--dest",
       box.at("archives"),
@@ -24,7 +23,6 @@ describe("archive info entry points", () => {
       "entry_point=$fs_root$\\gamedata\\configs\\",
     ]);
     box.run("archive pack", [
-      "--path",
       box.at("scripts"),
       "--dest",
       box.at("archives"),
@@ -34,8 +32,8 @@ describe("archive info entry points", () => {
       "entry_point=$fs_root$\\gamedata\\scripts\\",
     ]);
 
-    info = box.run("archive info", ["--path", box.at("archives"), "--silent", "--report", box.at("info.json")]);
-    unpack = box.run("archive unpack", ["--path", box.at("archives"), "--dest", box.at("restored"), "--silent"]);
+    info = box.run("archive info", [box.at("archives"), "--silent", "--report", box.at("info.json")]);
+    unpack = box.run("archive unpack", [box.at("archives"), "--dest", box.at("restored"), "--silent"]);
   });
 
   it("should report each volume's entry point in a discovered directory", () => {

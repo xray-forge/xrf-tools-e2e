@@ -66,7 +66,7 @@ describe("archive pack selection", () => {
         2
       )
     );
-    const common = ["--path", box.at("source"), "--name", "selection"];
+    const common = [box.at("source"), "--name", "selection"];
 
     direct = box.run("archive pack", [
       ...common,
@@ -85,9 +85,9 @@ describe("archive pack selection", () => {
     ]);
     fromLtx = box.run("archive pack", [...common, "--dest", box.at("ltx"), "--config", ltx]);
     fromJson = box.run("archive pack", [...common, "--dest", box.at("json"), "--config", json]);
-    listed = box.run("archive list", ["--path", box.at("direct/selection.db"), "--files"]);
-    listedDirectories = box.run("archive list", ["--path", box.at("direct/selection.db"), "--directories"]);
-    unpacked = box.run("archive unpack", ["--path", box.at("direct/selection.db"), "--dest", box.at("unpacked")]);
+    listed = box.run("archive list", [box.at("direct/selection.db"), "--files"]);
+    listedDirectories = box.run("archive list", [box.at("direct/selection.db"), "--directories"]);
+    unpacked = box.run("archive unpack", [box.at("direct/selection.db"), "--dest", box.at("unpacked")]);
   });
 
   it("should select the direct flag matrix", () => {

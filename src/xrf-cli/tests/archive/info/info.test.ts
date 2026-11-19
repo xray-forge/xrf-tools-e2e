@@ -9,9 +9,9 @@ describe("archive info", () => {
   let result: CliResult;
 
   beforeAll(() => {
-    box.run("archive pack", ["--path", gamedata("configs"), "--dest", box.at("packed"), "--name", "fixture"]);
+    box.run("archive pack", [gamedata("configs"), "--dest", box.at("packed"), "--name", "fixture"]);
 
-    result = box.run("archive info", ["--path", box.at("packed/fixture.db"), "--verbose"]);
+    result = box.run("archive info", [box.at("packed/fixture.db"), "--verbose"]);
   });
 
   it("should describe a volume set and its entries", () => {

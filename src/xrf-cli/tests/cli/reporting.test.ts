@@ -32,7 +32,7 @@ describe("CLI reporting contract", () => {
    * @returns Completed invocation.
    */
   function succeeding(args: Array<string> = [], options: RunOptions = {}): CliResult {
-    return box.run("archive info", ["--path", archive, ...args], options);
+    return box.run("archive info", [archive, ...args], options);
   }
 
   /**
@@ -54,11 +54,11 @@ describe("CLI reporting contract", () => {
    * @returns Completed invocation, expected to exit 1.
    */
   function failingExecution(args: Array<string> = []): CliResult {
-    return box.run("archive info", ["--path", box.at("missing.db"), ...args], { expectExit: 1 });
+    return box.run("archive info", [box.at("missing.db"), ...args], { expectExit: 1 });
   }
 
   beforeAll(() => {
-    box.run("archive pack", ["--path", gamedata("configs"), "--dest", box.at("packed"), "--name", "fixture"]);
+    box.run("archive pack", [gamedata("configs"), "--dest", box.at("packed"), "--name", "fixture"]);
 
     archive = box.at("packed/fixture.db");
     dialogs = box.at("dialogs");
@@ -208,21 +208,19 @@ describe("CLI reporting contract", () => {
      * The flags are global, so a caller may write one before the command and the other after it.
      */
     it("should refuse a contradictory pair written at two levels", () => {
-      const quiet: CliResult = box.run("", ["--verbose", "archive", "info", "--path", archive, "--silent"], {
+      const quiet: CliResult = box.run("", ["--verbose", "archive", "info", archive, "--silent"], {
         expectExit: 2,
       });
-      const both: CliResult = box.run(
-        "",
-        ["--json", "archive", "info", "--path", archive, "--report", box.at("unused.json")],
-        { expectExit: 2 }
-      );
+      const both: CliResult = box.run("", ["--json", "archive", "info", archive, "--report", box.at("unused.json")], {
+        expectExit: 2,
+      });
 
       expect(quiet.stderr.join("\n")).toMatch(/cannot be used with/);
       expect(both.stderr.join("\n")).toMatch(/cannot be used with/);
     });
 
     it("should still accept a global flag written before the command", () => {
-      const result: CliResult = box.run("", ["--verbose", "archive", "info", "--path", archive]);
+      const result: CliResult = box.run("", ["--verbose", "archive", "info", archive]);
 
       expect(result.stdout.length).toBeGreaterThan(0);
     });

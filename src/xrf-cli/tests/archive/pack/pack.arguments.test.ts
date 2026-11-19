@@ -8,15 +8,22 @@ describe("archive pack arguments", () => {
 
   let conflicting: CliResult;
   let malformedHeader: CliResult;
+  let missingSource: CliResult;
+  let namedSource: CliResult;
 
   beforeAll(() => {
+    // The source is the command's positional input; the flag that once named it is gone rather than aliased.
+    missingSource = box.run("archive pack", ["--dest", box.at("missing-source")], { expectExit: 2 });
+    namedSource = box.run("archive pack", ["--path", gamedata("configs"), "--dest", box.at("named-source")], {
+      expectExit: 2,
+    });
+
     const config = box.write("compress.ltx", ["[include_folders]", "misc = true", ""].join("\n"));
 
     // Two sources for one selection would need a precedence rule, so the parser refuses instead of inventing one.
     conflicting = box.run(
       "archive pack",
       [
-        "--path",
         gamedata("configs"),
         "--dest",
         box.at("conflicting"),
@@ -32,9 +39,17 @@ describe("archive pack arguments", () => {
 
     malformedHeader = box.run(
       "archive pack",
-      ["--path", gamedata("configs"), "--dest", box.at("malformed-header"), "--name", "cfg", "--header", "auto_load"],
+      [gamedata("configs"), "--dest", box.at("malformed-header"), "--name", "cfg", "--header", "auto_load"],
       { expectExit: 1 }
     );
+  });
+
+  it("should refuse a run that names no source", () => {
+    expect(missingSource).toMatchSnapshot();
+  });
+
+  it("should refuse the source named through --path", () => {
+    expect(namedSource).toMatchSnapshot();
   });
 
   it("should refuse a configuration file beside a direct selection", () => {

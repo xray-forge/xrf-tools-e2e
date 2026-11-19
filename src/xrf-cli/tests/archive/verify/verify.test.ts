@@ -9,9 +9,9 @@ describe("archive verify", () => {
   let result: CliResult;
 
   beforeAll(() => {
-    box.run("archive pack", ["--path", gamedata("configs"), "--dest", box.at("packed"), "--name", "fixture"]);
+    box.run("archive pack", [gamedata("configs"), "--dest", box.at("packed"), "--name", "fixture"]);
 
-    result = box.run("archive verify", ["--path", box.at("packed/fixture.db")]);
+    result = box.run("archive verify", [box.at("packed/fixture.db")]);
   });
 
   it("should read and validate every payload", () => {

@@ -23,7 +23,6 @@ describe("archive pack multiple indexed volumes", () => {
     }
 
     pack = box.run("archive pack", [
-      "--path",
       box.at("source"),
       "--dest",
       box.at("packed"),
@@ -36,7 +35,6 @@ describe("archive pack multiple indexed volumes", () => {
       box.at("pack-report.json"),
     ]);
     unpackedSet = box.run("archive unpack", [
-      "--path",
       box.at("packed"),
       "--dest",
       box.at("from-set"),
@@ -44,7 +42,6 @@ describe("archive pack multiple indexed volumes", () => {
       box.at("set-report.json"),
     ]);
     unpackedLast = box.run("archive unpack", [
-      "--path",
       box.at("packed/fixture.db2"),
       "--dest",
       box.at("from-last"),

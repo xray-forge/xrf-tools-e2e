@@ -32,15 +32,7 @@ describe("gamedata list source modes", () => {
     box.write("install/fsgame.ltx", FSGAME);
     before = inputs.map((input) => box.sha(input));
 
-    box.run("archive pack", [
-      "--path",
-      box.at("stage"),
-      "--dest",
-      box.at("install/database"),
-      "--name",
-      "gamedata",
-      "--silent",
-    ]);
+    box.run("archive pack", [box.at("stage"), "--dest", box.at("install/database"), "--name", "gamedata", "--silent"]);
     packedHash = box.sha("install/database/gamedata.db");
     automatic = box.run("gamedata list", [
       "--path",

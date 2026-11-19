@@ -18,13 +18,12 @@ describe("archive workflow", () => {
 
     const archive = box.at("packed");
 
-    pack = box.run("archive pack", ["--path", box.at("source"), "--dest", archive, "--name", "fixture"]);
-    info = box.run("archive info", ["--path", archive]);
-    verify = box.run("archive verify", ["--path", archive]);
-    list = box.run("archive list", ["--path", archive, "--files"]);
-    find = box.run("archive find", ["--path", archive, "--query", "system", "--files"]);
+    pack = box.run("archive pack", [box.at("source"), "--dest", archive, "--name", "fixture"]);
+    info = box.run("archive info", [archive]);
+    verify = box.run("archive verify", [archive]);
+    list = box.run("archive list", [archive, "--files"]);
+    find = box.run("archive find", [archive, "--query", "system", "--files"]);
     extract = box.run("archive extract", [
-      "--path",
       archive,
       "--file",
       "configs\\system.ltx",

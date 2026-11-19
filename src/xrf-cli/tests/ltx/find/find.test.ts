@@ -49,7 +49,7 @@ describe("ltx find", () => {
     // Packed from a staging tree shaped like a gamedata root, so the entries land on the logical
     // paths the loose copies would have used.
     box.copyIn(gamedataDltx("configs/items"), "stage/configs/items");
-    box.run("archive pack", ["--path", box.at("stage"), "--dest", box.at("install/database"), "--name", "gamedata"]);
+    box.run("archive pack", [box.at("stage"), "--dest", box.at("install/database"), "--name", "gamedata"]);
 
     for (const name of ["system.ltx", "weapons.scheme.ltx", "mod_system_aaa.ltx", "mod_system_xxx.ltx"]) {
       box.copyIn(gamedataDltx(`configs/${name}`), `install/gamedata/configs/${name}`);

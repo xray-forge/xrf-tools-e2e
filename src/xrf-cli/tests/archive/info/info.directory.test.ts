@@ -10,9 +10,8 @@ describe("archive info directory", () => {
 
   beforeAll(() => {
     box.copyIn(gamedata("configs"), "source/configs");
-    box.run("archive pack", ["--path", box.at("source"), "--dest", box.at("archives/configs"), "--name", "configs"]);
+    box.run("archive pack", [box.at("source"), "--dest", box.at("archives/configs"), "--name", "configs"]);
     box.run("archive pack", [
-      "--path",
       gamedata("configs/gameplay"),
       "--dest",
       box.at("archives/gameplay"),
@@ -20,7 +19,7 @@ describe("archive info directory", () => {
       "gameplay",
     ]);
 
-    result = box.run("archive info", ["--path", box.at("archives"), "--verbose"]);
+    result = box.run("archive info", [box.at("archives"), "--verbose"]);
   });
 
   it("should describe every volume below the directory root", () => {

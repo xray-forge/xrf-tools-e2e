@@ -17,9 +17,8 @@ describe("archive extract refusals", () => {
 
   beforeAll(() => {
     box.write("source/configs/one.ltx", "archived bytes");
-    box.run("archive pack", ["--path", box.at("source"), "--dest", box.at("packed"), "--name", "fixture"]);
+    box.run("archive pack", [box.at("source"), "--dest", box.at("packed"), "--name", "fixture"]);
     box.run("archive extract", [
-      "--path",
       box.at("packed/fixture.db"),
       "--file",
       "configs\\one.ltx",
@@ -37,7 +36,6 @@ describe("archive extract refusals", () => {
     missing = box.run(
       "archive extract",
       [
-        "--path",
         box.at("packed/fixture.db"),
         "--file",
         "configs\\missing.ltx",
@@ -52,7 +50,6 @@ describe("archive extract refusals", () => {
     blocked = box.run(
       "archive extract",
       [
-        "--path",
         box.at("packed/fixture.db"),
         "--file",
         "configs\\one.ltx",
@@ -65,20 +62,12 @@ describe("archive extract refusals", () => {
     );
     existing = box.run(
       "archive extract",
-      [
-        "--path",
-        box.at("packed/fixture.db"),
-        "--file",
-        "configs\\one.ltx",
-        "--dest",
-        box.at("destination/MISSING.ltx"),
-      ],
+      [box.at("packed/fixture.db"), "--file", "configs\\one.ltx", "--dest", box.at("destination/MISSING.ltx")],
       { expectExit: 1 }
     );
     conflictingSelectors = box.run(
       "archive extract",
       [
-        "--path",
         box.at("packed/fixture.db"),
         "--file",
         "configs\\one.ltx",

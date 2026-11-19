@@ -25,20 +25,11 @@ describe("archive pack LTX selection spellings", () => {
       const config = box.write(`${name}.ltx`, ["[exclude_folders]", `${spelling} = true`, ""].join("\n"));
 
       packed.push(
-        box.run("archive pack", [
-          "--path",
-          box.at("source"),
-          "--dest",
-          box.at(name),
-          "--name",
-          "fixture",
-          "--config",
-          config,
-        ])
+        box.run("archive pack", [box.at("source"), "--dest", box.at(name), "--name", "fixture", "--config", config])
       );
     }
 
-    listed = box.run("archive list", ["--path", box.at("forward/fixture.db"), "--files"]);
+    listed = box.run("archive list", [box.at("forward/fixture.db"), "--files"]);
   });
 
   it("should normalize separators, trailing separators, and case in xrCompress configuration", () => {

@@ -66,7 +66,7 @@ export function createPackedWorld(box: Sandbox, name: string, edits: Array<World
   const source: string = createWorld(box, `${name}-source`, edits);
   const destination: string = box.at(name);
 
-  box.run("archive pack", ["--path", source, "--dest", destination, "--name", name, "--silent"]);
+  box.run("archive pack", [source, "--dest", destination, "--name", name, "--silent"]);
 
   return destination;
 }
@@ -87,7 +87,7 @@ export function createPackedWorld(box: Sandbox, name: string, edits: Array<World
  * @returns Entry names, sorted, directory rows excluded.
  */
 export function listPatchedEntries(box: Sandbox, destination: string, reportName: string): Array<string> {
-  box.run("archive list", ["--path", destination, "--silent", "--report", box.at(reportName)]);
+  box.run("archive list", [destination, "--silent", "--report", box.at(reportName)]);
 
   const listed = box.json(reportName) as { result: { entries: Array<ListedEntry> } };
 
@@ -130,7 +130,7 @@ export function createInstallation(box: Sandbox, name: string, edits: Array<Worl
 
   const source: string = createWorld(box, `${name}-archived`);
 
-  box.run("archive pack", ["--path", source, "--dest", path.join(root, "db"), "--name", "base", "--silent"]);
+  box.run("archive pack", [source, "--dest", path.join(root, "db"), "--name", "base", "--silent"]);
 
   // Only the overrides go loose. Everything else has to come from the volumes, so a run that failed to mount `db\`
   // would report the whole corpus as added rather than quietly agreeing.

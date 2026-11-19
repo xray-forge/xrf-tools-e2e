@@ -9,10 +9,10 @@ describe("archive unpack execution width", () => {
   let serial: CliResult;
 
   beforeAll(() => {
-    box.run("archive pack", ["--path", gamedata("configs"), "--dest", box.at("packed"), "--name", "cfg"]);
+    box.run("archive pack", [gamedata("configs"), "--dest", box.at("packed"), "--name", "cfg"]);
 
     // Unpacking is parallel by default; forcing a single worker must not change what lands on disk.
-    serial = box.run("archive unpack", ["--path", box.at("packed/cfg.db"), "--dest", box.at("serial"), "-j", "1"]);
+    serial = box.run("archive unpack", [box.at("packed/cfg.db"), "--dest", box.at("serial"), "-j", "1"]);
   });
 
   it("should unpack on a single worker", () => {

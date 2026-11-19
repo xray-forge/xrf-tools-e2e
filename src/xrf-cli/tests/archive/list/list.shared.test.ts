@@ -15,17 +15,16 @@ describe("archive list shared payloads", () => {
     box.copyIn(gamedata("configs"), "source/configs");
     box.copyIn(gamedata("configs/system.ltx"), "source/configs/system_copy.ltx");
 
-    box.run("archive pack", ["--path", box.at("source"), "--dest", box.at("packed"), "--name", "fixture"]);
+    box.run("archive pack", [box.at("source"), "--dest", box.at("packed"), "--name", "fixture"]);
 
     listed = box.run("archive list", [
-      "--path",
       box.at("packed/fixture.db"),
       "--files",
       "--verbose",
       "--report",
       box.at("listing.json"),
     ]);
-    found = box.run("archive find", ["--path", box.at("packed/fixture.db"), "--query", "system_copy", "--verbose"]);
+    found = box.run("archive find", [box.at("packed/fixture.db"), "--query", "system_copy", "--verbose"]);
   });
 
   it("should say which entries read the same bytes", () => {

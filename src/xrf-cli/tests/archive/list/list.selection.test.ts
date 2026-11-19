@@ -12,10 +12,9 @@ describe("archive list selection", () => {
   beforeAll(() => {
     box.write("source/zeta.ltx", "zeta\n");
     box.write("source/nested/alpha.ltx", "alpha\n");
-    box.run("archive pack", ["--path", box.at("source"), "--dest", box.at("packed"), "--name", "fixture"]);
+    box.run("archive pack", [box.at("source"), "--dest", box.at("packed"), "--name", "fixture"]);
 
     files = box.run("archive list", [
-      "--path",
       box.at("packed/fixture.db"),
       "--files",
       "--silent",
@@ -23,7 +22,6 @@ describe("archive list selection", () => {
       box.at("files.json"),
     ]);
     directories = box.run("archive list", [
-      "--path",
       box.at("packed/fixture.db"),
       "--directories",
       "--silent",

@@ -21,8 +21,8 @@ describe("archive roundtrip", () => {
     fs.mkdirSync(box.at("source/empty"), { recursive: true });
 
     // A single volume is written as testdata.db rather than testdata.db0.
-    pack = box.run("archive pack", ["--path", source, "--dest", box.at("packed"), "--name", "testdata"]);
-    unpack = box.run("archive unpack", ["--path", box.at("packed/testdata.db"), "--dest", box.at("unpacked")]);
+    pack = box.run("archive pack", [source, "--dest", box.at("packed"), "--name", "testdata"]);
+    unpack = box.run("archive unpack", [box.at("packed/testdata.db"), "--dest", box.at("unpacked")]);
   });
 
   it("should pack a directory into a volume", () => {

@@ -11,13 +11,12 @@ describe("archive unpack dry run", () => {
 
   beforeAll(() => {
     box.write("source/configs/nested/system.ltx", "archived bytes");
-    box.run("archive pack", ["--path", box.at("source"), "--dest", box.at("packed"), "--name", "fixture"]);
+    box.run("archive pack", [box.at("source"), "--dest", box.at("packed"), "--name", "fixture"]);
 
     box.write("destination/sentinel.ltx", "leave this untouched");
     box.write("destination/gamedata/configs/nested/system.ltx", "pre-existing destination bytes");
     destinationBefore = box.manifest().filter((file) => file.path.startsWith("destination/"));
     dry = box.run("archive unpack", [
-      "--path",
       box.at("packed/fixture.db"),
       "--dest",
       box.at("destination"),
@@ -25,7 +24,7 @@ describe("archive unpack dry run", () => {
       "--report",
       box.at("dry-report.json"),
     ]);
-    unpack = box.run("archive unpack", ["--path", box.at("packed/fixture.db"), "--dest", box.at("restored")]);
+    unpack = box.run("archive unpack", [box.at("packed/fixture.db"), "--dest", box.at("restored")]);
   });
 
   it("should report the unpack it would perform", () => {

@@ -19,7 +19,7 @@ describe("archive pack shallow selection", () => {
       "selection.json",
       JSON.stringify({ includeDirectories: [{ path: "shallow-include", isRecursive: false }] }, null, 2)
     );
-    const common = ["--path", box.at("source"), "--name", "fixture"];
+    const common = [box.at("source"), "--name", "fixture"];
 
     direct = box.run("archive pack", [
       ...common,
@@ -30,7 +30,7 @@ describe("archive pack shallow selection", () => {
     ]);
     fromLtx = box.run("archive pack", [...common, "--dest", box.at("ltx"), "--config", ltx]);
     fromJson = box.run("archive pack", [...common, "--dest", box.at("json"), "--config", json]);
-    listed = box.run("archive list", ["--path", box.at("direct/fixture.db"), "--files"]);
+    listed = box.run("archive list", [box.at("direct/fixture.db"), "--files"]);
   });
 
   it("should select only a shallow include's own files through direct, LTX, and JSON configuration", () => {

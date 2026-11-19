@@ -15,10 +15,9 @@ describe("archive find selection", () => {
     box.write("source/nested/System_Alpha.ltx", "alpha\n");
     box.write("source/nested/system_copy.ltx", "alpha\n");
     box.write("source/zeta.ltx", "zeta\n");
-    box.run("archive pack", ["--path", box.at("source"), "--dest", box.at("packed"), "--name", "fixture"]);
+    box.run("archive pack", [box.at("source"), "--dest", box.at("packed"), "--name", "fixture"]);
 
     caseInsensitive = box.run("archive find", [
-      "--path",
       box.at("packed/fixture.db"),
       "--query",
       "CoPy",
@@ -28,7 +27,6 @@ describe("archive find selection", () => {
       box.at("case.json"),
     ]);
     noMatch = box.run("archive find", [
-      "--path",
       box.at("packed/fixture.db"),
       "--query",
       "absent",
@@ -38,7 +36,6 @@ describe("archive find selection", () => {
       box.at("absent.json"),
     ]);
     ordered = box.run("archive find", [
-      "--path",
       box.at("packed/fixture.db"),
       "--query",
       ".ltx",
@@ -48,7 +45,6 @@ describe("archive find selection", () => {
       box.at("ordered.json"),
     ]);
     directories = box.run("archive find", [
-      "--path",
       box.at("packed/fixture.db"),
       "--query",
       "nested",

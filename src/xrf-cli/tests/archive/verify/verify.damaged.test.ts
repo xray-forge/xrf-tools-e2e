@@ -18,31 +18,25 @@ describe("archive verify damaged volume", () => {
   beforeAll(() => {
     // Compression makes verification pass through decompression and CRC validation rather than merely copy a stored byte.
     box.write("source/payload.ltx", "payload ".repeat(4096));
-    box.run("archive pack", ["--path", box.at("source"), "--dest", box.at("packed"), "--name", "fixture"]);
+    box.run("archive pack", [box.at("source"), "--dest", box.at("packed"), "--name", "fixture"]);
 
     const volume = box.at("packed/fixture.db");
 
-    box.run("archive list", ["--path", volume, "--files", "--silent", "--report", box.at("listing.json")]);
+    box.run("archive list", [volume, "--files", "--silent", "--report", box.at("listing.json")]);
     corruptFirstArchivePayload(volume, box.at("damaged/payload.db"));
     truncateArchiveTail(volume, box.at("damaged/truncated.db"));
     completeHash = box.sha("packed/fixture.db");
     damagedHash = box.sha("damaged/payload.db");
     truncatedHash = box.sha("damaged/truncated.db");
 
-    opened = box.run("archive info", [
-      "--path",
-      box.at("damaged/payload.db"),
-      "--silent",
-      "--report",
-      box.at("opened.json"),
-    ]);
-    intact = box.run("archive verify", ["--path", volume, "--silent", "--report", box.at("intact.json")]);
+    opened = box.run("archive info", [box.at("damaged/payload.db"), "--silent", "--report", box.at("opened.json")]);
+    intact = box.run("archive verify", [volume, "--silent", "--report", box.at("intact.json")]);
     verified = box.run(
       "archive verify",
-      ["--path", box.at("damaged/payload.db"), "--silent", "--report", box.at("verify.json")],
+      [box.at("damaged/payload.db"), "--silent", "--report", box.at("verify.json")],
       { expectExit: 3 }
     );
-    unreadable = box.run("archive info", ["--path", box.at("damaged/truncated.db"), "--silent", "--json"], {
+    unreadable = box.run("archive info", [box.at("damaged/truncated.db"), "--silent", "--json"], {
       expectExit: 1,
     });
   });

@@ -19,30 +19,22 @@ describe("archive pack overwrite", () => {
   let publishedAfterRefusal: string;
 
   beforeAll(() => {
-    first = box.run("archive pack", ["--path", gamedata("configs"), "--dest", box.at("out"), "--name", "cfg"]);
+    first = box.run("archive pack", [gamedata("configs"), "--dest", box.at("out"), "--name", "cfg"]);
 
     publishedBefore = box.sha("out/cfg.db");
 
     // The same destination and the same set name over a different source. Refused before anything is read, so the
     // volume the first run published is still the one on disk.
-    refused = box.run("archive pack", ["--path", gamedata("textures"), "--dest", box.at("out"), "--name", "cfg"], {
+    refused = box.run("archive pack", [gamedata("textures"), "--dest", box.at("out"), "--name", "cfg"], {
       expectExit: 1,
     });
 
     publishedAfterRefusal = box.sha("out/cfg.db");
 
     // A second set in the same directory is ordinary: it publishes its own names and collides with nothing.
-    beside = box.run("archive pack", ["--path", gamedata("textures"), "--dest", box.at("out"), "--name", "tex"]);
+    beside = box.run("archive pack", [gamedata("textures"), "--dest", box.at("out"), "--name", "tex"]);
 
-    forced = box.run("archive pack", [
-      "--path",
-      gamedata("textures"),
-      "--dest",
-      box.at("out"),
-      "--name",
-      "cfg",
-      "--force",
-    ]);
+    forced = box.run("archive pack", [gamedata("textures"), "--dest", box.at("out"), "--name", "cfg", "--force"]);
   });
 
   it("should publish into an empty destination", () => {

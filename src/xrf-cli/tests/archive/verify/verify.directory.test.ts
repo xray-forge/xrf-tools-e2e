@@ -10,9 +10,8 @@ describe("archive verify directory", () => {
 
   beforeAll(() => {
     box.copyIn(gamedata("configs"), "source/configs");
-    box.run("archive pack", ["--path", box.at("source"), "--dest", box.at("archives/configs"), "--name", "configs"]);
+    box.run("archive pack", [box.at("source"), "--dest", box.at("archives/configs"), "--name", "configs"]);
     box.run("archive pack", [
-      "--path",
       gamedata("configs/gameplay"),
       "--dest",
       box.at("archives/gameplay"),
@@ -20,7 +19,7 @@ describe("archive verify directory", () => {
       "gameplay",
     ]);
 
-    result = box.run("archive verify", ["--path", box.at("archives")]);
+    result = box.run("archive verify", [box.at("archives")]);
   });
 
   it("should validate every file from every archive below the directory root", () => {

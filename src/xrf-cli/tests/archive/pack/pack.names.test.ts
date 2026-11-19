@@ -21,7 +21,6 @@ describe("archive pack names and aliases", () => {
     box.write("source/nested/payload_copy.ltx", "same payload\n");
 
     packed = box.run("archive pack", [
-      "--path",
       box.at("source"),
       "--dest",
       box.at("packed"),
@@ -31,7 +30,7 @@ describe("archive pack names and aliases", () => {
       box.at("pack.json"),
       "--verbose",
     ]);
-    unpacked = box.run("archive unpack", ["--path", box.at("packed/fixture.db"), "--dest", box.at("unpacked")]);
+    unpacked = box.run("archive unpack", [box.at("packed/fixture.db"), "--dest", box.at("unpacked")]);
   });
 
   it("should preserve an empty nested file and repeated payload aliases", () => {
