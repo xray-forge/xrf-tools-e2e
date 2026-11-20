@@ -66,7 +66,7 @@ describe("gamedata verify mesh texture references", () => {
   it("should report the missing referenced texture once at its mesh in check order", () => {
     expect(missing).toMatchSnapshot();
     expect(missing.stdout).toContain(
-      "Verified gamedata meshes in <duration>, 1/1 shader libraries valid, 205 blender definitions; 0/1 meshes valid"
+      "Verified meshes in <duration>, 1/1 shader libraries valid, 205 blender definitions; 0/1 meshes valid"
     );
     expect(missing.stderr).toContain("Check failed: 1 finding(s)");
     expect(box.json("missing.json")).toMatchObject({
