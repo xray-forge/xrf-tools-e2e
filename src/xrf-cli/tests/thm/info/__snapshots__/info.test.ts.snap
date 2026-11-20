@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`thm info should print every field of a texture descriptor 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read thm file <resources>/gamedata/textures/act_cat_bump.thm",
+    "Kind: texture descriptor, version 0x0012",
+    "Type: Bump Map",
+    "Format: DXT3",
+    "Size: 512 x 512",
+    "Mip filter: Box",
+    "Flags: flDitherColor, flHasAlpha",
+    "Border colour: 00000000",
+    "Fade: colour 00000000, amount 0%, delay 0",
+    "Detail: '', scale 1",
+    "Material: Blin <-> Phong, weight 0",
+    "Bump: None '', virtual height 0.05",
+    "External normal map: ''",
+  ],
+}
+`;
+
+exports[`thm info should refuse a file that is not a thumbnail 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: Chunk 0x20746f6e at position 8 declares 1752440929 bytes, 7 remain before source end 15",
+  ],
+  "stdout": [
+    "Read thm file <sandbox>/text.thm",
+  ],
+}
+`;
+
+exports[`thm info should report the descriptor as the reader reads it 1`] = `
+{
+  "build": {
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "profile": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "thm",
+    "info",
+  ],
+  "duration": "<duration>",
+  "execution": {
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "result": {
+    "file": {
+      "bump": {
+        "mode": 1,
+        "name": "",
+        "virtualHeight": 0.05000000074505806,
+      },
+      "detail": {
+        "name": "",
+        "scale": 1,
+      },
+      "extNormalMapName": "",
+      "extra": [],
+      "fadeDelay": 0,
+      "material": {
+        "material": 1,
+        "weight": 0,
+      },
+      "textureParam": {
+        "borderColor": 0,
+        "fadeAmount": 0,
+        "fadeColor": 0,
+        "flags": 33554688,
+        "format": 2,
+        "height": 512,
+        "mipFilter": 0,
+        "width": 512,
+      },
+      "textureType": 2,
+      "thumbnail": null,
+      "thumbnailType": 1,
+      "trailing": [],
+      "version": 18,
+    },
+    "kind": "texture",
+  },
+}
+`;
+
+exports[`thm info should write only the report 1`] = `
+[
+  {
+    "path": "info.json",
+    "sha256": "e427f66ba95dd81f6fa59d2c3840b8ea3ad8ee294550b6e0b52946baf43f195a",
+    "size": 1006,
+  },
+  {
+    "path": "text.thm",
+    "sha256": "b2dc465bbcd9dc031b37c802a64ad6b478f63bd8276a988c8128039b03681fc9",
+    "size": 15,
+  },
+]
+`;

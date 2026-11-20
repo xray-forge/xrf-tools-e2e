@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`thm set-field over other thumbnail kinds should edit the texture descriptor and skip every other kind in a directory 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Set fields; descriptors changed: 1, already as named: 0, skipped: 3",
+  ],
+}
+`;
+
+exports[`thm set-field over other thumbnail kinds should refuse each other kind named on its own 1`] = `
+[
+  {
+    "exitCode": 1,
+    "stderr": [
+      "Error: Invalid error: <sandbox>/named/crate.thm is not a texture descriptor",
+    ],
+    "stdout": [],
+  },
+  {
+    "exitCode": 1,
+    "stderr": [
+      "Error: Invalid error: <sandbox>/named/forest.thm is not a texture descriptor",
+    ],
+    "stdout": [],
+  },
+  {
+    "exitCode": 1,
+    "stderr": [
+      "Error: Invalid error: <sandbox>/named/door.thm is not a texture descriptor",
+    ],
+    "stdout": [],
+  },
+]
+`;
+
+exports[`thm set-field over other thumbnail kinds should write the expected files 1`] = `
+[
+  {
+    "path": "mixed.json",
+    "sha256": "8f22d93451348e7df2984e045b13fe8bcc8a9e9528159aa1305e97ceb5d12c18",
+    "size": 421,
+  },
+  {
+    "path": "mixed/cat.thm",
+    "sha256": "228519bc2c03f5c90737d87b416be5eccfb1eb2bebc100dd26a124bf783c1d86",
+    "size": 138,
+  },
+  {
+    "path": "mixed/crate.thm",
+    "sha256": "b2680fffe439d7a30c22c039437746a582731b57e6feaaeab49d602a2f4fc7f7",
+    "size": 54,
+  },
+  {
+    "path": "mixed/door.thm",
+    "sha256": "e877f01d29c3b3f9948e173d4ef24d82473f60fb25ca6c53b247cfa57cf7dd44",
+    "size": 70,
+  },
+  {
+    "path": "mixed/forest.thm",
+    "sha256": "474adcf64f0086b70b2802754ef41e73c5af175f93a90f94567ee036da13f15f",
+    "size": 83,
+  },
+  {
+    "path": "named/crate.thm",
+    "sha256": "b2680fffe439d7a30c22c039437746a582731b57e6feaaeab49d602a2f4fc7f7",
+    "size": 54,
+  },
+  {
+    "path": "named/door.thm",
+    "sha256": "e877f01d29c3b3f9948e173d4ef24d82473f60fb25ca6c53b247cfa57cf7dd44",
+    "size": 70,
+  },
+  {
+    "path": "named/forest.thm",
+    "sha256": "474adcf64f0086b70b2802754ef41e73c5af175f93a90f94567ee036da13f15f",
+    "size": 83,
+  },
+]
+`;

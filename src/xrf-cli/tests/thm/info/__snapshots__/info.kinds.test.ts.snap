@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`thm info of other thumbnail kinds should leave the thumbnails as they were and write only the reports 1`] = `
+[
+  {
+    "path": "crate.thm",
+    "sha256": "b2680fffe439d7a30c22c039437746a582731b57e6feaaeab49d602a2f4fc7f7",
+    "size": 54,
+  },
+  {
+    "path": "door.thm",
+    "sha256": "e877f01d29c3b3f9948e173d4ef24d82473f60fb25ca6c53b247cfa57cf7dd44",
+    "size": 70,
+  },
+  {
+    "path": "forest.thm",
+    "sha256": "474adcf64f0086b70b2802754ef41e73c5af175f93a90f94567ee036da13f15f",
+    "size": 83,
+  },
+  {
+    "path": "group.json",
+    "sha256": "a78ce88429c414133b16696dbdcc70c6152905760e35f29f11c99b48bd9d19c0",
+    "size": 657,
+  },
+  {
+    "path": "object.json",
+    "sha256": "05a07298c50c3652e777f35ed57c7953808164431b3ed62258b669b89e95b428",
+    "size": 625,
+  },
+  {
+    "path": "sound.json",
+    "sha256": "d5c9df36929032c5f78b7d8b4d12e3f2bc8872fca507882cd16157a914f11bcd",
+    "size": 531,
+  },
+]
+`;
+
+exports[`thm info of other thumbnail kinds should print a sound's parameters 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read thm file <sandbox>/door.thm",
+    "Kind: sound thumbnail",
+    "Quality: 0.5",
+    "Distance: 2 to <duration>",
+    "AI distance: <duration>",
+    "Base volume: 1",
+    "Game type: 0x00000000",
+  ],
+}
+`;
+
+exports[`thm info of other thumbnail kinds should print an object's size and preview 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read thm file <sandbox>/crate.thm",
+    "Kind: object thumbnail",
+    "Faces: 1200, vertices: 640",
+    "Preview: 8 bytes",
+  ],
+}
+`;
+
+exports[`thm info of other thumbnail kinds should report each thumbnail as its reader reads it 1`] = `
+[
+  {
+    "build": {
+      "commit": "<build>",
+      "isDirty": "<build>",
+      "kind": "<build>",
+      "profile": "<build>",
+      "version": "<build>",
+    },
+    "command": [
+      "thm",
+      "info",
+    ],
+    "duration": "<duration>",
+    "execution": {
+      "workers": "<workers>",
+    },
+    "exitCode": 0,
+    "result": {
+      "file": {
+        "extra": [],
+        "faceCount": 1200,
+        "thumbnail": {
+          "data": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+          ],
+          "isCompressed": false,
+        },
+        "trailing": [],
+        "vertexCount": 640,
+      },
+      "kind": "object",
+    },
+  },
+  {
+    "build": {
+      "commit": "<build>",
+      "isDirty": "<build>",
+      "kind": "<build>",
+      "profile": "<build>",
+      "version": "<build>",
+    },
+    "command": [
+      "thm",
+      "info",
+    ],
+    "duration": "<duration>",
+    "execution": {
+      "workers": "<workers>",
+    },
+    "exitCode": 0,
+    "result": {
+      "file": {
+        "extra": [],
+        "objects": [
+          "trees\\tree_pine_01",
+          "rocks\\rock_02",
+        ],
+        "thumbnail": {
+          "data": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+          ],
+          "isCompressed": false,
+        },
+        "trailing": [],
+      },
+      "kind": "group",
+    },
+  },
+  {
+    "build": {
+      "commit": "<build>",
+      "isDirty": "<build>",
+      "kind": "<build>",
+      "profile": "<build>",
+      "version": "<build>",
+    },
+    "command": [
+      "thm",
+      "info",
+    ],
+    "duration": "<duration>",
+    "execution": {
+      "workers": "<workers>",
+    },
+    "exitCode": 0,
+    "result": {
+      "file": {
+        "baseVolume": 1,
+        "extra": [],
+        "gameType": 0,
+        "maxAiDistance": 80,
+        "maxDistance": 80,
+        "minDistance": 2,
+        "quality": 0.5,
+        "trailing": [],
+      },
+      "kind": "sound",
+    },
+  },
+]
+`;
+
+exports[`thm info of other thumbnail kinds should tell a group from the object type it carries and list its objects 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read thm file <sandbox>/forest.thm",
+    "Kind: group thumbnail",
+    "Objects: 2",
+    "  trees\\tree_pine_01",
+    "  rocks\\rock_02",
+    "Preview: 8 bytes",
+  ],
+}
+`;

@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`thm write fields should read back with every field named 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read thm file <sandbox>/lamp.thm",
+    "Kind: texture descriptor, version 0x0012",
+    "Type: Terrain",
+    "Format: DXT1",
+    "Size: 8 x 8",
+    "Mip filter: Kaiser",
+    "Flags: flGenerateMipMaps, flDiffuseDetail, flImplicitLighted",
+    "Border colour: 00000000",
+    "Fade: colour 7F7F7F7F, amount 25%, delay 1",
+    "Detail: 'detail\\detail_grnd_earth', scale 4",
+    "Material: Blin <-> Phong, weight 0",
+    "Bump: None '', virtual height 0.05",
+    "External normal map: ''",
+  ],
+}
+`;
+
+exports[`thm write fields should refuse a flag both set and cleared 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Invalid error: Flag 'flHasAlpha' is both set and cleared",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`thm write fields should refuse a value outside a field's choices as a usage error 1`] = `
+{
+  "exitCode": 2,
+  "stderr": [
+    "error: invalid value 'bc7' for '--format <format>'",
+    "  [possible values: dxt1, dxt1-alpha, dxt3, dxt5, rgba4444, rgba1555, rgb565, rgb, rgba, nvhs, nvhu, a8, l8, a8l8]",
+    "",
+    "For more information, try '--help'.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`thm write fields should write only the named descriptor 1`] = `
+[
+  {
+    "path": "lamp.thm",
+    "sha256": "6f3c0a27620c9027e67f8cdd938b11477baa1b4e8dad958dfa77964c65055a76",
+    "size": 162,
+  },
+  {
+    "path": "named.json",
+    "sha256": "7ab34afbbe008f876ce9010704e456cb4ad68cffadab0f77fb1e2bc3c77fd441",
+    "size": 1150,
+  },
+]
+`;
+
+exports[`thm write fields should write the fields named over the defaults 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Wrote <sandbox>/lamp.thm describing <resources>/gamedata/textures/prop_lampa_g.dds",
+  ],
+}
+`;
+
+exports[`thm write fields should write the fields named over the defaults 2`] = `
+{
+  "build": {
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "profile": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "thm",
+    "write",
+  ],
+  "duration": "<duration>",
+  "execution": {
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "result": {
+    "descriptor": {
+      "bump": {
+        "mode": 1,
+        "name": "",
+        "virtualHeight": 0.05000000074505806,
+      },
+      "detail": {
+        "name": "detail\\detail_grnd_earth",
+        "scale": 4,
+      },
+      "extNormalMapName": "",
+      "extra": [],
+      "fadeDelay": 1,
+      "material": {
+        "material": 1,
+        "weight": 0,
+      },
+      "textureParam": {
+        "borderColor": 0,
+        "fadeAmount": 25,
+        "fadeColor": 2139062143,
+        "flags": 25165825,
+        "format": 0,
+        "height": 8,
+        "mipFilter": 14,
+        "width": 8,
+      },
+      "textureType": 4,
+      "thumbnail": null,
+      "thumbnailType": 1,
+      "trailing": [],
+      "version": 18,
+    },
+    "destination": "<sandbox>/lamp.thm",
+    "isDryRun": false,
+    "source": "<resources>/gamedata/textures/prop_lampa_g.dds",
+  },
+}
+`;

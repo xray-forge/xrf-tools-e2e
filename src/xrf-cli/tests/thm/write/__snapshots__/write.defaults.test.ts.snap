@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`thm write defaults should give the descriptor the SDK defaults with the texture's size and format 1`] = `
+{
+  "build": {
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "profile": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "thm",
+    "write",
+  ],
+  "duration": "<duration>",
+  "execution": {
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "result": {
+    "descriptor": {
+      "bump": {
+        "mode": 1,
+        "name": "",
+        "virtualHeight": 0.05000000074505806,
+      },
+      "detail": {
+        "name": "",
+        "scale": 1,
+      },
+      "extNormalMapName": "",
+      "extra": [],
+      "fadeDelay": 0,
+      "material": {
+        "material": 1,
+        "weight": 0,
+      },
+      "textureParam": {
+        "borderColor": 0,
+        "fadeAmount": 0,
+        "fadeColor": 0,
+        "flags": 257,
+        "format": 0,
+        "height": 8,
+        "mipFilter": 0,
+        "width": 8,
+      },
+      "textureType": 0,
+      "thumbnail": null,
+      "thumbnailType": 1,
+      "trailing": [],
+      "version": 18,
+    },
+    "destination": "<sandbox>/lamp.thm",
+    "isDryRun": false,
+    "source": "<sandbox>/lamp.dds",
+  },
+}
+`;
+
+exports[`thm write defaults should give the descriptor the SDK defaults with the texture's size and format 2`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read thm file <sandbox>/lamp.thm",
+    "Kind: texture descriptor, version 0x0012",
+    "Type: 2D Texture",
+    "Format: DXT1",
+    "Size: 8 x 8",
+    "Mip filter: Box",
+    "Flags: flGenerateMipMaps, flDitherColor",
+    "Border colour: 00000000",
+    "Fade: colour 00000000, amount 0%, delay 0",
+    "Detail: '', scale 1",
+    "Material: Blin <-> Phong, weight 0",
+    "Bump: None '', virtual height 0.05",
+    "External normal map: ''",
+  ],
+}
+`;
+
+exports[`thm write defaults should refuse to replace a descriptor without force 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: IO error: <sandbox> already holds what this run writes (lamp.thm); force it to replace them",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`thm write defaults should write a descriptor beside the texture 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Wrote <sandbox>/lamp.thm describing <sandbox>/lamp.dds",
+  ],
+}
+`;
+
+exports[`thm write defaults should write the expected files 1`] = `
+[
+  {
+    "path": "dry.json",
+    "sha256": "16276149e91b11b87d39e2b89ae72f7e5c63adbfd66da33824e46e315fbd005d",
+    "size": 1080,
+  },
+  {
+    "path": "lamp.dds",
+    "sha256": "d2173b19a162948957e7110c5a2807a3223571b0ade2e61c65345b3e7c7534ea",
+    "size": 184,
+  },
+  {
+    "path": "lamp.thm",
+    "sha256": "7dcd8c7e0b8eda214eb3053c6a4849ee41513b77e209c41fcaf56cfe77d661b9",
+    "size": 138,
+  },
+  {
+    "path": "write.json",
+    "sha256": "36a410ae6610984d25ee3d6cbec14786932de4dbca6cea6998b6d7e6303482dd",
+    "size": 1081,
+  },
+]
+`;

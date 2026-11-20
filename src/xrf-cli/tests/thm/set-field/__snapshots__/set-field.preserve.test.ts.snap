@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`thm set-field preservation should report the descriptor it changed 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Set fields; descriptors changed: 1, already as named: 0, skipped: 0",
+  ],
+}
+`;
+
+exports[`thm set-field preservation should report the descriptor it changed 2`] = `
+{
+  "build": {
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "profile": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "thm",
+    "set-field",
+  ],
+  "duration": "<duration>",
+  "execution": {
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "result": {
+    "changed": [
+      "<sandbox>/cat.thm",
+    ],
+    "isDryRun": false,
+    "skipped": 0,
+    "unchanged": 0,
+  },
+}
+`;
+
+exports[`thm set-field preservation should write the expected files 1`] = `
+[
+  {
+    "path": "cat.thm",
+    "sha256": "228519bc2c03f5c90737d87b416be5eccfb1eb2bebc100dd26a124bf783c1d86",
+    "size": 138,
+  },
+  {
+    "path": "dry.json",
+    "sha256": "9707422a8b0759420bc9b85efc6dc6b6e5617b06a64b6f287aac28ee7bfb8301",
+    "size": 414,
+  },
+  {
+    "path": "edit.json",
+    "sha256": "899d4daf35bf0d8fe7a529fb6590df80e65e7f2de04213d5a199b312f82724a9",
+    "size": 415,
+  },
+]
+`;

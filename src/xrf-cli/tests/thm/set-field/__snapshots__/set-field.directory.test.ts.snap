@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`thm set-field directory should edit every texture descriptor below the directory 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Set fields; descriptors changed: 2, already as named: 0, skipped: 0",
+  ],
+}
+`;
+
+exports[`thm set-field directory should edit every texture descriptor below the directory 2`] = `
+{
+  "build": {
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "profile": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "thm",
+    "set-field",
+  ],
+  "duration": "<duration>",
+  "execution": {
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "result": {
+    "changed": [
+      "<sandbox>/textures/a.thm",
+      "<sandbox>/textures/nested/b.thm",
+    ],
+    "isDryRun": false,
+    "skipped": 0,
+    "unchanged": 0,
+  },
+}
+`;
+
+exports[`thm set-field directory should leave descriptors already as named unwritten 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Set fields; descriptors changed: 0, already as named: 2, skipped: 0",
+  ],
+}
+`;
+
+exports[`thm set-field directory should leave descriptors already as named unwritten 2`] = `
+{
+  "build": {
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "profile": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "thm",
+    "set-field",
+  ],
+  "duration": "<duration>",
+  "execution": {
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "result": {
+    "changed": [],
+    "isDryRun": false,
+    "skipped": 0,
+    "unchanged": 2,
+  },
+}
+`;
+
+exports[`thm set-field directory should need a field to set 1`] = `
+{
+  "exitCode": 2,
+  "stderr": [
+    "error: the following required arguments were not provided:",
+    "  <--texture-type <texture-type>|--format <format>|--mip-filter <mip-filter>|--bump-mode <bump-mode>|--bump-name <bump-name>|--detail-name <detail-name>|--detail-scale <detail-scale>|--material <material>|--material-weight <material-weight>|--border-color <border-color>|--fade-color <fade-color>|--fade-amount <fade-amount>|--fade-delay <fade-delay>|--ext-normal-map <ext-normal-map>|--virtual-height <virtual-height>|--set-flag <set-flag>|--clear-flag <clear-flag>>",
+    "",
+    "Usage: xrf-cli thm set-field <--texture-type <texture-type>|--format <format>|--mip-filter <mip-filter>|--bump-mode <bump-mode>|--bump-name <bump-name>|--detail-name <detail-name>|--detail-scale <detail-scale>|--material <material>|--material-weight <material-weight>|--border-color <border-color>|--fade-color <fade-color>|--fade-amount <fade-amount>|--fade-delay <fade-delay>|--ext-normal-map <ext-normal-map>|--virtual-height <virtual-height>|--set-flag <set-flag>|--clear-flag <clear-flag>> <path>",
+    "",
+    "For more information, try '--help'.",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`thm set-field directory should read back with the detail and its flag set 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read thm file <sandbox>/textures/nested/b.thm",
+    "Kind: texture descriptor, version 0x0012",
+    "Type: Bump Map",
+    "Format: DXT3",
+    "Size: 512 x 512",
+    "Mip filter: Box",
+    "Flags: flDitherColor, flDiffuseDetail, flHasAlpha",
+    "Border colour: 00000000",
+    "Fade: colour 00000000, amount 0%, delay 0",
+    "Detail: 'detail\\detail_stone', scale 1",
+    "Material: Blin <-> Phong, weight 0",
+    "Bump: None '', virtual height 0.05",
+    "External normal map: ''",
+  ],
+}
+`;
+
+exports[`thm set-field directory should write the expected files 1`] = `
+[
+  {
+    "path": "edit.json",
+    "sha256": "223d4cba391c7b5b33c9774a79c6831405b835f2e6860a365cbcb9e5f260a84e",
+    "size": 463,
+  },
+  {
+    "path": "repeat.json",
+    "sha256": "48928adc86f47dd60ef3f3bbab334517635f9838cf2bd7a28508b2699de11004",
+    "size": 384,
+  },
+  {
+    "path": "textures/a.thm",
+    "sha256": "22b9e53ee23d0e1b9878b82ca4e45ff714d68cad9c7b784547bd47b85733d5dc",
+    "size": 157,
+  },
+  {
+    "path": "textures/nested/b.thm",
+    "sha256": "22b9e53ee23d0e1b9878b82ca4e45ff714d68cad9c7b784547bd47b85733d5dc",
+    "size": 157,
+  },
+]
+`;
