@@ -109,6 +109,8 @@ exports[`dds command help should keep each leaf command's help stable 1`] = `
       "          How hard the encoder works; \`slow\` costs seconds on BC7 and pennies on the rest [default: slow] [possible values: fast, normal, slow]",
       "      --virtual-height <virtual-height>",
       "          Relief depth the normals are derived at, \`bump_virtual_height\` of the descriptor [default: 0.05]",
+      "      --format <format>",
+      "          Format both halves are written in, the error plane measured against it; \`bc7\` loads on DX11 only, and a rebuild from the descriptor writes \`bc3\` again [default: bc3] [possible values: bc3, bc7]",
       "  -h, --help",
       "          Print help",
     ],

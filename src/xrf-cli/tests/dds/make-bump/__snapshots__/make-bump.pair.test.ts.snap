@@ -31,6 +31,21 @@ exports[`dds make-bump pair should report both halves and the gloss 1`] = `
   "result": {
     "bump": "<sandbox>/wall_bump.dds",
     "companion": "<sandbox>/wall_bump#.dds",
+    "compatibility": [
+      {
+        "renderer": "DX9",
+        "support": "supported",
+      },
+      {
+        "renderer": "DX11",
+        "support": "supported",
+      },
+      {
+        "renderer": "GL",
+        "support": "unverified",
+      },
+    ],
+    "format": "BC3 (DXT5)",
     "glossPower": 0.6000000238418579,
     "isGlossTooDark": false,
     "source": "<resources>/gamedata/textures/ui/ui_test_sheet.dds",
@@ -78,8 +93,8 @@ exports[`dds make-bump pair should write the expected files 1`] = `
 [
   {
     "path": "bump.json",
-    "sha256": "f7c4389a0548aa2efd5f516e536b2fbc5858377f5de32255d3cdd0fa6dfa9692",
-    "size": 523,
+    "sha256": "eacddbe7b2d93c5e0d60c752bc6b9029838c1c7258e3b4554525f8f2a971352f",
+    "size": 806,
   },
   {
     "path": "wall_bump#.dds",

@@ -31,6 +31,21 @@ exports[`dds make-bump gloss should read the gloss from the height's own alpha 2
   "result": {
     "bump": "<sandbox>/sourced_bump.dds",
     "companion": "<sandbox>/sourced_bump#.dds",
+    "compatibility": [
+      {
+        "renderer": "DX9",
+        "support": "supported",
+      },
+      {
+        "renderer": "DX11",
+        "support": "supported",
+      },
+      {
+        "renderer": "GL",
+        "support": "unverified",
+      },
+    ],
+    "format": "BC3 (DXT5)",
     "glossPower": 0.3010692000389099,
     "isGlossTooDark": false,
     "source": "<resources>/gamedata/textures/ui/ui_test_sheet.dds",
@@ -83,6 +98,21 @@ exports[`dds make-bump gloss should report the verdict rather than failing on it
   "result": {
     "bump": "<sandbox>/matte_bump.dds",
     "companion": "<sandbox>/matte_bump#.dds",
+    "compatibility": [
+      {
+        "renderer": "DX9",
+        "support": "supported",
+      },
+      {
+        "renderer": "DX11",
+        "support": "supported",
+      },
+      {
+        "renderer": "GL",
+        "support": "unverified",
+      },
+    ],
+    "format": "BC3 (DXT5)",
     "glossPower": 0.0470588244497776,
     "isGlossTooDark": true,
     "source": "<resources>/gamedata/textures/ui/ui_test_sheet.dds",
@@ -106,8 +136,8 @@ exports[`dds make-bump gloss should write the expected files 1`] = `
 [
   {
     "path": "matte.json",
-    "sha256": "5a4afe4ea3818d4e66ea2bf6cb768d19b71f3ddd9654a79bd514fb5798ffc3b1",
-    "size": 524,
+    "sha256": "5f97dffde09b107fc254aee35cdaed7423776d800076935087cd60e7946b59f7",
+    "size": 807,
   },
   {
     "path": "matte_bump#.dds",
@@ -121,8 +151,8 @@ exports[`dds make-bump gloss should write the expected files 1`] = `
   },
   {
     "path": "sourced.json",
-    "sha256": "5130d0ee31ed78d11a166a6935c468be77b5ffa463fb6e0d173df5d72180dbc2",
-    "size": 529,
+    "sha256": "8b401f94774df462c051d10068416347ad3f204f053d884e23dfbd597d25de9d",
+    "size": 812,
   },
   {
     "path": "sourced_bump#.dds",

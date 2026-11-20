@@ -360,6 +360,7 @@ exports[`docs generate should render dds.md 1`] = `
   "| \`--mip-filter <mip-filter>\` |  | \`box\` | Kernel the mip chain is reduced with, from the X-Ray converter's own family. Possible values: \`point\`, \`box\`, \`triangle\`, \`quadratic\`, \`cubic\`, \`catrom\`, \`mitchell\`, \`gaussian\`, \`sinc\`, \`bessel\`, \`hanning\`, \`hamming\`, \`blackman\`, \`kaiser\`. |",
   "| \`--quality <quality>\` |  | \`slow\` | How hard the encoder works; \`slow\` costs seconds on BC7 and pennies on the rest. Possible values: \`fast\`, \`normal\`, \`slow\`. |",
   "| \`--virtual-height <virtual-height>\` |  | \`0.05\` | Relief depth the normals are derived at, \`bump_virtual_height\` of the descriptor |",
+  "| \`--format <format>\` |  | \`bc3\` | Format both halves are written in, the error plane measured against it; \`bc7\` loads on DX11 only, and a rebuild from the descriptor writes \`bc3\` again. Possible values: \`bc3\`, \`bc7\`. |",
   "| \`-s, --silent\` |  |  | Turn off logging |",
   "| \`-v, --verbose\` |  |  | Turn on verbose logging |",
   "| \`--json\` |  |  | Write the run's JSON report to stdout, moving human output to stderr |",
@@ -1836,8 +1837,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "docs/dds.md",
-    "sha256": "c6137cb4947071db81f8ed4d024966378f27af03f77a1abb5277f891b185776a",
-    "size": 5168,
+    "sha256": "80fd294007d67055cf3203d4490bcfa91c9505612d4a60c1dfbba8c4cb4ccc4d",
+    "size": 5388,
   },
   {
     "path": "docs/dialog.md",
@@ -1931,8 +1932,8 @@ exports[`docs generate should write the expected pages 1`] = `
   },
   {
     "path": "foreign/dds.md",
-    "sha256": "c6137cb4947071db81f8ed4d024966378f27af03f77a1abb5277f891b185776a",
-    "size": 5168,
+    "sha256": "80fd294007d67055cf3203d4490bcfa91c9505612d4a60c1dfbba8c4cb4ccc4d",
+    "size": 5388,
   },
   {
     "path": "foreign/dialog.md",
