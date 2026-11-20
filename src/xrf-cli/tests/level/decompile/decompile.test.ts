@@ -28,6 +28,9 @@ describe("level decompile", () => {
 
   const STALE_PART: string = "scene/rawdata/levels/chain/stale.part";
   const STALE_OBJECT: string = "scene/rawdata/objects/levels/chain/chain_stale.object";
+  const STALE_SIDECAR: string = `${STALE_OBJECT}.xrf.json`;
+  // Named as the level's own, as the SDK names a level's objects, but with no decompile's sidecar.
+  const AUTHORED: string = "scene/rawdata/objects/levels/chain/chain_fence.object";
   const NOTES: string = "scene/rawdata/objects/levels/chain/notes.txt";
 
   let first: CliResult;
@@ -82,9 +85,15 @@ describe("level decompile", () => {
     first = decompile("first.json");
     decompiled = hashes();
 
-    // A part and an object an earlier, larger decompile would have left, and a file of the user's own beside them.
+    // A part and an object an earlier, larger decompile would have left, its sidecar marking it as a decompile's, and
+    // beside them an object the SDK authored under the level's name and a file of the user's own.
     box.write(STALE_PART, "an earlier decompile's part");
     box.write(STALE_OBJECT, "an earlier decompile's object");
+    box.write(
+      STALE_SIDECAR,
+      fs.readFileSync(box.at("scene/rawdata/objects/levels/chain/chain_sector_0.object.xrf.json"), "utf8")
+    );
+    box.write(AUTHORED, "an object the SDK authored");
     box.write(NOTES, "the user's own");
     held = hashes();
 
@@ -110,16 +119,17 @@ describe("level decompile", () => {
     expect({ ...refused, stderr: refused.stderr.map((line) => line.split("\\").join("/")) }).toMatchSnapshot();
   });
 
-  it("should replace the scene forced, removing its own stale part and object and keeping the user's file", () => {
+  it("should replace the scene forced, removing its own stale part and object and keeping the user's files", () => {
     const after: Record<string, string> = hashes();
 
     expect(envelopeAt(box.at("forced.json"))).toMatchObject({
       exitCode: 0,
-      result: { removed: [box.at(STALE_PART), box.at(STALE_OBJECT)] },
+      result: { removed: [box.at(STALE_PART), box.at(STALE_OBJECT), box.at(STALE_SIDECAR)] },
     });
     expect(forced).toMatchSnapshot();
 
-    expect(Object.keys(after)).toEqual([...Object.keys(decompiled), NOTES].sort());
+    expect(Object.keys(after)).toEqual([...Object.keys(decompiled), AUTHORED, NOTES].sort());
+    expect(after[AUTHORED]).toBe(held[AUTHORED]);
     expect(after[NOTES]).toBe(held[NOTES]);
 
     for (const file of Object.keys(decompiled).filter((it) => !isSidecar(it))) {

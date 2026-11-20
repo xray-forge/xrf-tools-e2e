@@ -31,7 +31,7 @@ describe("sprite verify-equipment partial overlap", () => {
   beforeAll(() => {
     // Kept out of the committed tree: a deliberately broken config there would also show up in
     // every other test that walks the configs directory.
-    overlapping = box.run("sprite verify-equipment", ["--system-ltx", box.write("overlapping.ltx", PARTIAL_OVERLAP)], {
+    overlapping = box.run("sprite verify-equipment", [box.write("overlapping.ltx", PARTIAL_OVERLAP)], {
       expectExit: 3,
     });
   });

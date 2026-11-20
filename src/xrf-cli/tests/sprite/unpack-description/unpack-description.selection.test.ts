@@ -14,17 +14,9 @@ describe("sprite unpack-description file selection", () => {
   beforeAll(() => {
     // Unpacked twice on purpose: selecting the only described file has to produce what unpacking
     // everything produces, and the comparison is the point of this file.
-    all = box.run("sprite unpack-description", [
-      "--description",
-      DESCRIPTION,
-      "--base",
-      gamedata("textures"),
-      "--dest",
-      box.at("all"),
-    ]);
+    all = box.run("sprite unpack-description", [DESCRIPTION, "--base", gamedata("textures"), "--dest", box.at("all")]);
 
     selected = box.run("sprite unpack-description", [
-      "--description",
       DESCRIPTION,
       "--base",
       gamedata("textures"),

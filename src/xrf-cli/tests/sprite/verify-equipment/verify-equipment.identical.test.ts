@@ -11,7 +11,7 @@ describe("sprite verify-equipment identical icon sharing", () => {
   let verified: CliResult;
 
   beforeAll(() => {
-    verified = box.run("sprite verify-equipment", ["--system-ltx", SYSTEM_LTX, "--report", box.at("verify.json")]);
+    verified = box.run("sprite verify-equipment", [SYSTEM_LTX, "--report", box.at("verify.json")]);
   });
 
   // The committed sections include a pair sharing one slot exactly. Identical rects are legitimate

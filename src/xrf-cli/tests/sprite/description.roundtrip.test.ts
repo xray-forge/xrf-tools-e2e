@@ -17,7 +17,6 @@ describe("description sprite roundtrip", () => {
     // The description names four 64x64 regions of a 256x64 sheet, so unpacking yields four files
     // under the sheet's own directory.
     unpack = box.run("sprite unpack-description", [
-      "--description",
       DESCRIPTION,
       "--base",
       gamedata("textures"),
@@ -29,7 +28,6 @@ describe("description sprite roundtrip", () => {
 
     // The description names the sheet under ui/, so packing must create that output subdirectory.
     pack = box.run("sprite pack-description", [
-      "--description",
       DESCRIPTION,
       "--base",
       box.at("unpacked"),

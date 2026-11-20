@@ -77,7 +77,7 @@ const workspace = fs.mkdtempSync(path.join(os.tmpdir(), "xrf-spawn-fixture-"));
 const unpacked = path.join(workspace, "unpacked");
 
 try {
-  run("spawn unpack", ["--path", FIXTURE, "--dest", unpacked, "--force", "--silent"]);
+  run("spawn unpack", [FIXTURE, "--dest", unpacked, "--force", "--silent"]);
 
   // ALife objects are keyed by their position in the file, so the merged list is renumbered from zero. Anything this
   // script added before is dropped first, so running it against an already rebuilt fixture is a no-op rather than a
@@ -118,7 +118,7 @@ try {
     ]);
   }
 
-  run("spawn pack", ["--path", unpacked, "--dest", FIXTURE, "--force", "--silent"]);
+  run("spawn pack", [unpacked, "--dest", FIXTURE, "--force", "--silent"]);
 
   console.log(`Rebuilt ${FIXTURE}`);
   console.log(`  added ${added.length} objects, ${objects.length} in total`);

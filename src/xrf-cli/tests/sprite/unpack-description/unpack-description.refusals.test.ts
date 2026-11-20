@@ -15,16 +15,7 @@ describe("sprite unpack-description unknown file", () => {
     // producing an empty run that looks like success.
     unknown = box.run(
       "sprite unpack-description",
-      [
-        "--description",
-        DESCRIPTION,
-        "--base",
-        gamedata("textures"),
-        "--dest",
-        box.at("unknown"),
-        "--file",
-        "no_such_file",
-      ],
+      [DESCRIPTION, "--base", gamedata("textures"), "--dest", box.at("unknown"), "--file", "no_such_file"],
       { expectExit: 1 }
     );
   });

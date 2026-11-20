@@ -167,7 +167,7 @@ exports[`level decompile should refuse a scene already there unforced, leaving e
 }
 `;
 
-exports[`level decompile should replace the scene forced, removing its own stale part and object and keeping the user's file 1`] = `
+exports[`level decompile should replace the scene forced, removing its own stale part and object and keeping the user's files 1`] = `
 {
   "exitCode": 0,
   "stderr": [
@@ -175,7 +175,7 @@ exports[`level decompile should replace the scene forced, removing its own stale
   ],
   "stdout": [
     "Workers: <workers> (requested)",
-    "Removed what an earlier decompile wrote and this one does not: <sandbox>/scene/rawdata/levels/chain/stale.part, <sandbox>/scene/rawdata/objects/levels/chain/chain_stale.object",
+    "Removed what an earlier decompile wrote and this one does not: <sandbox>/scene/rawdata/levels/chain/stale.part, <sandbox>/scene/rawdata/objects/levels/chain/chain_stale.object, <sandbox>/scene/rawdata/objects/levels/chain/chain_stale.object.xrf.json",
     "Surfaces: game materials from 24 triangles on a collision face and 0 traced to one, 0 on none; 2 compiler shaders chosen, each with its reason in the sidecar",
     "Static geometry: 1 objects under <sandbox>/scene/rawdata/objects, 24 faces from 24 triangles (0 two-sided folds, 0 repeats dropped); 0 tree placements of 0 tree models, 0 of them library trees, 0 with impostor strips under <sandbox>/scene/rawdata/../gamedata/textures; 0 collision faces no render triangle draws",
     "Decompiled <sandbox>/gamedata/levels/chain into <sandbox>/scene/rawdata/levels/chain.level from 12 files: ai_map, fog_volume 0, glow 0, light 1, scene_object 1, sector 1, shape 1, spawn 3, way 0; provenance in <sandbox>/scene/rawdata/levels/chain.level.xrf.json",
@@ -227,6 +227,10 @@ exports[`level decompile should write the scene's files 1`] = `
   {
     "path": "scene/rawdata/levels/chain/way.part",
     "size": 345,
+  },
+  {
+    "path": "scene/rawdata/objects/levels/chain/chain_fence.object",
+    "size": 26,
   },
   {
     "path": "scene/rawdata/objects/levels/chain/chain_sector_0.object",
