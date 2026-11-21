@@ -75,13 +75,13 @@ exports[`spawn unpack force should write the expected files 1`] = `
   },
   {
     "path": "unpacked/patrol_points.ltx",
-    "sha256": "532adc68c91e0c2f220fbacb53b308d55fd2a0932bf0cd53ca502fe7ebf02a71",
-    "size": 1246106,
+    "sha256": "fdb950549ceeee6436e9bde018f0dc7880ebe2ed0c92759cdf1834bab0157b20",
+    "size": 1187401,
   },
   {
     "path": "unpacked/patrols.ltx",
-    "sha256": "d05598e321601c1907300b8aa08209c3641621d1eb48542071f365b174989cfb",
-    "size": 518672,
+    "sha256": "58f44fc39af53c5d9c364acb1b06aca4e29ce41e7168cbdd0d255029ccb51561",
+    "size": 497101,
   },
 ]
 `;

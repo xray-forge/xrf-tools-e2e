@@ -7,20 +7,22 @@ import { Sandbox, sha } from "#/xrf-cli/test/sandbox";
 
 const ALL_SPAWN = gamedata("spawns/all.spawn");
 
-const PADDED_SECTION = "[e2e_padded_point_walk.0.wp00 ]";
+// `wp00 ` with its trailing space, as its Windows-1251 bytes in hex, under the point's index.
+const PADDED_POINT = "[e2e_padded_point_walk.0]\r\nname_bytes = 7770303020\r\n";
 
 // Windows-1251 `0xFD` is the Cyrillic letter this patrol point's name carries. Reading the file
 // bytewise keeps it a single byte, which is the whole point: written as UTF-8 it would be two.
-const W1251_NAME = Buffer.from("name01ý|ret=0", "latin1");
+const W1251_NAME = Buffer.from("name = name01ý|ret=0", "latin1");
 
 /**
- * Names that survive only in the section they were exported under.
+ * Names no value can carry.
  *
  * @remarks
- * Ltx trims values, so a trailing space in a patrol point name is lost from `points` and from the
- * `name` key, and lives only in the section name. Anomaly ships five such points, none exists in
- * Call of Pripyat, and a Call of Pripyat round trip was byte identical throughout — which is exactly
- * why the defect went unnoticed until a fork spawn could be read at all.
+ * Each point's section is keyed by its index, and its name is a field. Ltx trims values, so a
+ * trailing space in a patrol point name cannot be a value: such a name is written as its bytes in
+ * hex instead, as a name holding a comment or an open quote is. Anomaly ships five padded points,
+ * none exists in Call of Pripyat, and a Call of Pripyat round trip was byte identical throughout,
+ * which is why the defect went unnoticed until a fork spawn could be read at all.
  */
 describe("spawn patrol names", () => {
   const box = new Sandbox(__filename);
@@ -34,8 +36,8 @@ describe("spawn patrol names", () => {
     points = fs.readFileSync(box.at("unpacked/patrol_points.ltx"));
   });
 
-  it("should export the padding in the section name", () => {
-    expect(points.includes(PADDED_SECTION)).toBe(true);
+  it("should export a padded name as its bytes under the point's index", () => {
+    expect(points.includes(PADDED_POINT)).toBe(true);
   });
 
   it("should export a Windows-1251 name as one byte per character", () => {
