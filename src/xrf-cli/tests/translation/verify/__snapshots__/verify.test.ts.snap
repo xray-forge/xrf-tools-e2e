@@ -80,6 +80,7 @@ exports[`translation verify should report gaps across every language 1`] = `
     "Translation key missing: st_ui_start spa in st_ui.json",
     "Translation key missing: st_ui_quit spa in st_ui.json",
     "Translation key missing: st_ui_quit ukr in st_ui.json",
+    "Check 'translations' is passed with 24 finding(s)",
   ],
   "stdout": [
     "Verifying translations in <resources>/translations (containing-installation), language - all",
@@ -117,126 +118,150 @@ exports[`translation verify should report the gaps it found 1`] = `
           {
             "message": "Missing translation for key 'st_bread_name' in language 'fra'",
             "ruleId": "translations.missing",
+            "severity": "warning",
             "subject": "st_items.json",
           },
           {
             "message": "Missing translation for key 'st_bread_name' in language 'ita'",
             "ruleId": "translations.missing",
+            "severity": "warning",
             "subject": "st_items.json",
           },
           {
             "message": "Missing translation for key 'st_bread_name' in language 'pol'",
             "ruleId": "translations.missing",
+            "severity": "warning",
             "subject": "st_items.json",
           },
           {
             "message": "Missing translation for key 'st_bread_name' in language 'rus'",
             "ruleId": "translations.missing",
+            "severity": "warning",
             "subject": "st_items.json",
           },
           {
             "message": "Missing translation for key 'st_bread_name' in language 'spa'",
             "ruleId": "translations.missing",
+            "severity": "warning",
             "subject": "st_items.json",
           },
           {
             "message": "Missing translation for key 'st_medkit_name' in language 'fra'",
             "ruleId": "translations.missing",
+            "severity": "warning",
             "subject": "st_items.json",
           },
           {
             "message": "Missing translation for key 'st_medkit_name' in language 'ita'",
             "ruleId": "translations.missing",
+            "severity": "warning",
             "subject": "st_items.json",
           },
           {
             "message": "Missing translation for key 'st_medkit_name' in language 'pol'",
             "ruleId": "translations.missing",
+            "severity": "warning",
             "subject": "st_items.json",
           },
           {
             "message": "Missing translation for key 'st_medkit_name' in language 'rus'",
             "ruleId": "translations.missing",
+            "severity": "warning",
             "subject": "st_items.json",
           },
           {
             "message": "Missing translation for key 'st_medkit_name' in language 'spa'",
             "ruleId": "translations.missing",
+            "severity": "warning",
             "subject": "st_items.json",
           },
           {
             "message": "Missing translation for key 'st_medkit_name' in language 'ukr'",
             "ruleId": "translations.missing",
+            "severity": "warning",
             "subject": "st_items.json",
           },
           {
             "message": "Missing translation for key 'st_ui_quit' in language 'fra'",
             "ruleId": "translations.missing",
+            "severity": "warning",
             "subject": "st_ui.json",
           },
           {
             "message": "Missing translation for key 'st_ui_quit' in language 'ger'",
             "ruleId": "translations.missing",
+            "severity": "warning",
             "subject": "st_ui.json",
           },
           {
             "message": "Missing translation for key 'st_ui_quit' in language 'ita'",
             "ruleId": "translations.missing",
+            "severity": "warning",
             "subject": "st_ui.json",
           },
           {
             "message": "Missing translation for key 'st_ui_quit' in language 'pol'",
             "ruleId": "translations.missing",
+            "severity": "warning",
             "subject": "st_ui.json",
           },
           {
             "message": "Missing translation for key 'st_ui_quit' in language 'rus'",
             "ruleId": "translations.missing",
+            "severity": "warning",
             "subject": "st_ui.json",
           },
           {
             "message": "Missing translation for key 'st_ui_quit' in language 'spa'",
             "ruleId": "translations.missing",
+            "severity": "warning",
             "subject": "st_ui.json",
           },
           {
             "message": "Missing translation for key 'st_ui_quit' in language 'ukr'",
             "ruleId": "translations.missing",
+            "severity": "warning",
             "subject": "st_ui.json",
           },
           {
             "message": "Missing translation for key 'st_ui_start' in language 'fra'",
             "ruleId": "translations.missing",
+            "severity": "warning",
             "subject": "st_ui.json",
           },
           {
             "message": "Missing translation for key 'st_ui_start' in language 'ger'",
             "ruleId": "translations.missing",
+            "severity": "warning",
             "subject": "st_ui.json",
           },
           {
             "message": "Missing translation for key 'st_ui_start' in language 'ita'",
             "ruleId": "translations.missing",
+            "severity": "warning",
             "subject": "st_ui.json",
           },
           {
             "message": "Missing translation for key 'st_ui_start' in language 'pol'",
             "ruleId": "translations.missing",
+            "severity": "warning",
             "subject": "st_ui.json",
           },
           {
             "message": "Missing translation for key 'st_ui_start' in language 'rus'",
             "ruleId": "translations.missing",
+            "severity": "warning",
             "subject": "st_ui.json",
           },
           {
             "message": "Missing translation for key 'st_ui_start' in language 'spa'",
             "ruleId": "translations.missing",
+            "severity": "warning",
             "subject": "st_ui.json",
           },
         ],
         "id": "translations",
-        "status": "failed",
+        "status": "passed",
       },
       {
         "duration": "<duration>",
@@ -345,7 +370,7 @@ exports[`translation verify should report the gaps it found 1`] = `
       },
     ],
     "missingTranslations": 24,
-    "status": "failed",
+    "status": "passed",
   },
 }
 `;
@@ -378,6 +403,7 @@ exports[`translation verify should write a structured report 1`] = `
     "Translation key missing: st_ui_start spa in st_ui.json",
     "Translation key missing: st_ui_quit spa in st_ui.json",
     "Translation key missing: st_ui_quit ukr in st_ui.json",
+    "Check 'translations' is passed with 24 finding(s)",
   ],
   "stdout": [
     "Verifying translations in <resources>/translations (containing-installation), language - all",
@@ -392,8 +418,8 @@ exports[`translation verify should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "ec5100d4f9ecfd67e154eea995c25a1020c522d9cc6f77c552402366d0085e83",
-    "size": 7327,
+    "sha256": "c3042ee6b27614d7048419452950833cefcf1c0fbc09f586c3f8506ec463fcdd",
+    "size": 8167,
   },
 ]
 `;

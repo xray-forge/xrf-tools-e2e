@@ -133,31 +133,37 @@ exports[`gamedata verify animations envelopes should record the reports as reada
           {
             "message": "Does not write back to the bytes it was read from: 335 bytes read, 323 written, first difference at byte 323",
             "ruleId": "animations.object-motion-round-trip",
+            "severity": "failure",
             "subject": "anims/extra_chunk.anm",
           },
           {
             "message": "Noise granularity reaches 0.000 at time 1.000, which the engine refuses at full strength",
             "ruleId": "animations.post-process-noise-granularity",
+            "severity": "failure",
             "subject": "anims/noise_granularity.ppe",
           },
           {
             "message": "Channel 'position x' evaluates to NaN at time 0.200",
             "ruleId": "animations.object-motion-value",
+            "severity": "failure",
             "subject": "anims/non_finite.anm",
           },
           {
             "message": "Channel 'colour map influence' evaluates to inf at time -5.000",
             "ruleId": "animations.post-process-value",
+            "severity": "failure",
             "subject": "anims/non_finite.ppe",
           },
           {
             "message": "Failed to read object motion: Invalid error: Chunk 0x00001100 at position 8 declares 315 bytes, 92 remain before source end 100",
             "ruleId": "animations.object-motion-read",
+            "severity": "failure",
             "subject": "anims/truncated.anm",
           },
           {
             "message": "Failed to read post-process effect: IO error: failed to fill whole buffer",
             "ruleId": "animations.post-process-read",
+            "severity": "failure",
             "subject": "anims/truncated.ppe",
           },
         ],
@@ -215,8 +221,8 @@ exports[`gamedata verify animations envelopes should write only its fixture and 
 [
   {
     "path": "damaged.json",
-    "sha256": "460d23bf6620d888a56747476a3b568e4a37c01a4477ed47cc1e2b16b656773d",
-    "size": 2752,
+    "sha256": "63a5466d960b6a302393d58e9a8e8a9d74a2e9939ae10829d345c03e1ce9b3b0",
+    "size": 2962,
   },
   {
     "path": "damaged/anims/extra_chunk.anm",

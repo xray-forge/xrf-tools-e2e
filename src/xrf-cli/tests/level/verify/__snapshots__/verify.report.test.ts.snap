@@ -123,8 +123,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
 [
   {
     "path": "broken-geometry.json",
-    "sha256": "267a8ceef3f522d0cbfbe9b220326e4ffc57d02d8ac32e130b64d915762641ab",
-    "size": 1953,
+    "sha256": "7e73ec512a04b9238ad932235d4a91da96a415e65018802e57ba51a11d1a2153",
+    "size": 1988,
   },
   {
     "path": "broken-geometry/level",
@@ -138,8 +138,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "invalid-fastpath.json",
-    "sha256": "c30e64253f09396d14e8c19387534154a8272a00ae4067273b932fb33f8b4d75",
-    "size": 2141,
+    "sha256": "2287ef67032be9740a668799263b7e3c52b8de18fb2d87f6ab9be02d40ae66f5",
+    "size": 2176,
   },
   {
     "path": "invalid-fastpath/level",
@@ -158,8 +158,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "invalid-geometry.json",
-    "sha256": "bdc96469a25715a4df53fe08784fac429ac182dec33deaceee48a0b623c86314",
-    "size": 2384,
+    "sha256": "078fcb19c8b3b0e0a5561da89b74da6e2b2281ba8de7260d9dbe04694b4a3b0e",
+    "size": 2454,
   },
   {
     "path": "invalid-geometry/level",
@@ -178,8 +178,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "invalid-range.json",
-    "sha256": "e7bfcba9dfd9a4b5d3f6154c76973a20da05982b2a4674650a3ffa2780a4cd7c",
-    "size": 2429,
+    "sha256": "2431797e568450b27253162a38d48bb8e124a69d6ee2312ba68128f24f60004d",
+    "size": 2499,
   },
   {
     "path": "invalid-range/level",
@@ -198,8 +198,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "invalid-shader.json",
-    "sha256": "b469de6134da1f71d5887a72d5e4a1764905dae1f6f453eee9350d57cefe26de",
-    "size": 2140,
+    "sha256": "0fb125ce26be5c6afa59fe3f02ac98aee260d8503d90045a0107bafcb25d4894",
+    "size": 2175,
   },
   {
     "path": "invalid-shader/level",
@@ -218,8 +218,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "malformed-shader.json",
-    "sha256": "15b5fc7ad7db9b6f7d937d567eef7240a3a2fe75e5fbd4e1eb2c4a1d102a7301",
-    "size": 2210,
+    "sha256": "c878d217486db3b3547ba2388976e2fdf7dac99f4585578b77e98dae468fdebc",
+    "size": 2245,
   },
   {
     "path": "malformed-shader/level",
@@ -238,8 +238,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "minimal.json",
-    "sha256": "1a8c233eef5e7523726265b9ec8007da5d2fec4abfe0b4f56df817f70a9eed06",
-    "size": 1879,
+    "sha256": "937f4319932b9e01841a736cd1a4da250fd6067505e4ba7a3bd1ff773c3c8982",
+    "size": 1914,
   },
   {
     "path": "minimal/level",
@@ -248,8 +248,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "missing.json",
-    "sha256": "b8e9278998a5933075342e09f23957eb68c51608145fe97be4d3785a6062bc3a",
-    "size": 1854,
+    "sha256": "b29ee49f8d24eb30d7e3c38ecd3103ab6a08728b5480d67480ac622ca17b8595",
+    "size": 1889,
   },
   {
     "path": "triangle.json",
@@ -273,8 +273,8 @@ exports[`level verify report should preserve fixture bytes and write only the re
   },
   {
     "path": "truncated.json",
-    "sha256": "cfe01ae80bb35849a78b3c3ea38827519469d7a319f031aca26833105853ccb4",
-    "size": 1900,
+    "sha256": "1a48195d76bcb43a82a3371abf90cdcbc71f109f485be042f5df07fc61047d14",
+    "size": 1935,
   },
   {
     "path": "truncated/level",
@@ -302,8 +302,8 @@ exports[`level verify report should print all geometry findings and their failur
     "Layout positions only: 2 visuals",
     "MT_NORMAL: 1 visuals",
     "No AI map was checked",
-    "  [level.visuals.indices.out_of_range] <sandbox>/invalid-geometry/level.geom: Visual 0 draws index 3, past the 3 vertices it declares",
-    "  [level.visuals.vertices.not_finite] <sandbox>/invalid-geometry/level.geom: Visual 0 carries a vertex at 0 whose position is not a finite number",
+    "  failure [level.visuals.indices.out_of_range] <sandbox>/invalid-geometry/level.geom: Visual 0 draws index 3, past the 3 vertices it declares",
+    "  failure [level.visuals.vertices.not_finite] <sandbox>/invalid-geometry/level.geom: Visual 0 carries a vertex at 0 whose position is not a finite number",
   ],
 }
 `;
@@ -358,6 +358,7 @@ exports[`level verify report should report broken-geometry findings with a check
           {
             "message": "Invalid error: Chunk 0x0000000a at position 76 declares 14 bytes, 13 remain before source end 89",
             "ruleId": "level.geometry.read",
+            "severity": "failure",
             "subject": "<sandbox>/broken-geometry/level.geom",
           },
         ],
@@ -475,6 +476,7 @@ exports[`level verify report should report invalid-fastpath findings with a chec
           {
             "message": "Visual 0 draws index 3, past the 3 vertices it declares",
             "ruleId": "level.visuals.indices.out_of_range",
+            "severity": "failure",
             "subject": "<sandbox>/invalid-fastpath/level.geomx",
           },
         ],
@@ -580,11 +582,13 @@ exports[`level verify report should report invalid-geometry findings with a chec
           {
             "message": "Visual 0 draws index 3, past the 3 vertices it declares",
             "ruleId": "level.visuals.indices.out_of_range",
+            "severity": "failure",
             "subject": "<sandbox>/invalid-geometry/level.geom",
           },
           {
             "message": "Visual 0 carries a vertex at 0 whose position is not a finite number",
             "ruleId": "level.visuals.vertices.not_finite",
+            "severity": "failure",
             "subject": "<sandbox>/invalid-geometry/level.geom",
           },
         ],
@@ -684,11 +688,13 @@ exports[`level verify report should report invalid-range findings with a check-f
           {
             "message": "Visual 0 draws 2 indices, which is not a whole number of triangles",
             "ruleId": "level.visuals.indices.not_triangles",
+            "severity": "failure",
             "subject": "<sandbox>/invalid-range/level.geom",
           },
           {
             "message": "Visual 0: Invalid error: Unexpected level render geometry range [0..0+4) in vertex buffer 0, which declares 3",
             "ruleId": "level.visuals.vertices.unreadable",
+            "severity": "failure",
             "subject": "<sandbox>/invalid-range/level.geom",
           },
         ],
@@ -794,6 +800,7 @@ exports[`level verify report should report invalid-shader findings with a check-
           {
             "message": "Visual 0 names shader table entry 4, past the 4 the table holds",
             "ruleId": "level.visuals.shader.out_of_range",
+            "severity": "failure",
             "subject": "<sandbox>/invalid-shader/level",
           },
         ],
@@ -899,6 +906,7 @@ exports[`level verify report should report malformed-shader findings with a chec
           {
             "message": "Visual 0 names shader table entry 1 (broken), which carries no delimiter and the renderer dereferences the result without a null check",
             "ruleId": "level.visuals.shader.malformed",
+            "severity": "failure",
             "subject": "<sandbox>/malformed-shader/level",
           },
         ],
@@ -983,6 +991,7 @@ exports[`level verify report should report minimal findings with a check-failure
           {
             "message": "The level carries no shader table, which the renderer asserts on",
             "ruleId": "level.shaders.absent",
+            "severity": "failure",
             "subject": "<sandbox>/minimal/level",
           },
         ],
@@ -1073,6 +1082,7 @@ exports[`level verify report should report missing findings with a check-failure
           {
             "message": "Level file was not found: <sandbox>/missing/level",
             "ruleId": "level.read",
+            "severity": "failure",
             "subject": "<sandbox>/missing/level",
           },
         ],
@@ -1163,6 +1173,7 @@ exports[`level verify report should report truncated findings with a check-failu
           {
             "message": "Invalid error: Chunk 0x00000001 at position 8 declares 4 bytes, 3 remain before source end 11",
             "ruleId": "level.read",
+            "severity": "failure",
             "subject": "<sandbox>/truncated/level",
           },
         ],

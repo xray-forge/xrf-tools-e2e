@@ -47,32 +47,37 @@ exports[`gamedata verify dialogs should record a readable report and only expect
           {
             "message": "Character 'snag' offers actor dialog 'snag_missing_dialog', which no dialog file declares",
             "ruleId": "dialog.offer-missing",
+            "severity": "failure",
             "subject": "configs/gameplay/character_desc_zaton.xml",
           },
           {
             "message": "Dialog 'about_quests' phrase '0' text 'about_quests_0' is defined in no language",
             "ruleId": "dialog.text-missing",
+            "severity": "warning",
             "subject": "configs/gameplay/dialogs.xml",
           },
           {
             "message": "Dialog 'snag_cache_dialog' phrase '12' text 'snag_cache_12' is defined in no language",
             "ruleId": "dialog.text-missing",
+            "severity": "warning",
             "subject": "configs/gameplay/dialogs.xml",
           },
           {
             "message": "Profile 'nobody' picks by class 'no_such_class', which no team_default character without no_random has, and section [nobody_spawn] names it as its character_profile",
             "ruleId": "dialog.profile-unresolved",
+            "severity": "warning",
             "subject": "configs/gameplay/npc_profile.xml",
           },
           {
             "message": "[meet@snag] meet_dialog names dialog 'snag_gone_dialog', which no dialog file declares",
             "ruleId": "dialog.logic-missing",
+            "severity": "failure",
             "subject": "configs/scripts/snag.ltx",
           },
         ],
         "id": "dialogs",
         "status": "failed",
-        "summary": "5/5 dialogs valid; 3/4 profiles resolve; 9/11 references declared, 3 defects the engine tolerates",
+        "summary": "5/5 dialogs valid; 3/4 profiles resolve; 9/11 references declared, 3 warnings",
       },
     ],
     "duration": "<duration>",
@@ -91,8 +96,8 @@ exports[`gamedata verify dialogs should record a readable report and only expect
 [
   {
     "path": "report.json",
-    "sha256": "eea315c03e78049f539eee6bf60824f2d842389fc9941c90966343ae2cb25cd3",
-    "size": 2514,
+    "sha256": "24f3b65c51fd66271499c0bc70056109b0d7403b5ac6e7a8303d008d60d43e9e",
+    "size": 2669,
   },
   {
     "path": "tree/configs/gameplay/character_desc_general.xml",

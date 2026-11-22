@@ -108,6 +108,7 @@ exports[`gamedata verify named HUD animations should record the reports as reada
           {
             "message": "Motion 'missing', asked for by [wpn_test_hud] as anm_idle, is missing from player HUD section [actor_hud] under its own name and as 'missing1' to 'missing8': the engine asserts on it when it binds the HUD to those hands",
             "ruleId": "animations.player-hud",
+            "severity": "failure",
             "subject": "configs/system.ltx",
           },
         ],
@@ -185,8 +186,8 @@ exports[`gamedata verify named HUD animations should write only its fixture and 
 [
   {
     "path": "missing.json",
-    "sha256": "28e8bbcbd019726e0c4df6b0e33674e2f37c26bb395b4f310b4c4f6799a3713e",
-    "size": 1665,
+    "sha256": "9f73369a46e1e014000f4c403789dacfb1d2266ae815bf68f81d8f30994707a0",
+    "size": 1700,
   },
   {
     "path": "missing/configs/system.ltx",

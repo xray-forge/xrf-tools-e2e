@@ -61,31 +61,37 @@ exports[`ogf residue should identify the chunk residue rule in the verification 
           {
             "message": "Mesh carries 34 bytes the engine never reads, an uncounted motion reference 'actors\\stalker_scenario_animation' split across the declared bounds of the motion refs chunk",
             "ruleId": "meshes.chunk-residue",
+            "severity": "failure",
             "subject": "meshes/ogf/residue_split_motion_ref.ogf",
           },
           {
             "message": "Mesh references missing motion 'actors\\stalker_animation'",
             "ruleId": "meshes.motion-validation",
+            "severity": "failure",
             "subject": "meshes/ogf/residue_split_motion_ref.ogf",
           },
           {
             "message": "Mesh references missing motion 'actors\\stalker_scripts_animation'",
             "ruleId": "meshes.motion-validation",
+            "severity": "failure",
             "subject": "meshes/ogf/residue_split_motion_ref.ogf",
           },
           {
             "message": "Mesh references missing motion 'actors\\stalker_smart_cover_animation'",
             "ruleId": "meshes.motion-validation",
+            "severity": "failure",
             "subject": "meshes/ogf/residue_split_motion_ref.ogf",
           },
           {
             "message": "Mesh references missing motion 'actors\\zombied_animation'",
             "ruleId": "meshes.motion-validation",
+            "severity": "failure",
             "subject": "meshes/ogf/residue_split_motion_ref.ogf",
           },
           {
             "message": "Mesh references missing motion 'omf\\wpn_mp5_hud_animation'",
             "ruleId": "meshes.motion-validation",
+            "severity": "failure",
             "subject": "meshes/ogf/residue_split_motion_ref.ogf",
           },
         ],
@@ -282,8 +288,8 @@ exports[`ogf residue should write only the staged tree, reports and normalized v
   },
   {
     "path": "verify.json",
-    "sha256": "a1011e1e53d38d5c6bbeae7e7b5421a4e29d8613a962d26d4097b7c49cd361a9",
-    "size": 2682,
+    "sha256": "d1a3b0cb821e0e27a773ac7b9d8fc272555a379b6b6753948243ba2ae54e8ed4",
+    "size": 2892,
   },
 ]
 `;

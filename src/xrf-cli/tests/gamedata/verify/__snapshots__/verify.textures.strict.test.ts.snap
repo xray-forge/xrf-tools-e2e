@@ -47,6 +47,7 @@ exports[`gamedata verify texture companion strictness should write readable repo
           {
             "message": "Texture descriptor declares bump 'bump\\only' whose companion 'bump\\only#' is not in gamedata, the engine binds nothing",
             "ruleId": "textures.bump-companion",
+            "severity": "warning",
             "subject": "textures/descriptor.thm",
           },
         ],
@@ -114,6 +115,7 @@ exports[`gamedata verify texture companion strictness should write readable repo
           {
             "message": "Texture descriptor declares bump 'bump\\only' whose companion 'bump\\only#' is not in gamedata, the engine binds nothing",
             "ruleId": "textures.bump-companion",
+            "severity": "warning",
             "subject": "textures/descriptor.thm",
           },
         ],
@@ -239,13 +241,13 @@ exports[`gamedata verify texture companion strictness should write readable repo
   },
   {
     "path": "ordinary.json",
-    "sha256": "eca5e702ae98b7ad987db292b9e10701b01451f1e4ecc1c13c18f4cc45815c32",
-    "size": 1482,
+    "sha256": "5f528e9f7ec7e7cc64dbd61b6942b1e73de880ecd881c2de63654388fbc0af8a",
+    "size": 1517,
   },
   {
     "path": "strict.json",
-    "sha256": "b895fe7288142e1c669e14c8c68c9c571bce113329afa0e3c8ed99e24a7cdded",
-    "size": 1482,
+    "sha256": "0afe3a502220ba7416bd7dacaf6747996849c8aade7ef7d19d2b4eef88ffdce8",
+    "size": 1517,
   },
 ]
 `;

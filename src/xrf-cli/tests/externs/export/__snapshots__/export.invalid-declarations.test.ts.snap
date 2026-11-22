@@ -58,6 +58,7 @@ exports[`externs export invalid declarations should report what the declarations
           {
             "message": "Invalid error: Duplicate extern 'xr_effects.give_item' declared in 'externs.ts' and 'externs.ts'.",
             "ruleId": "externs.declarations",
+            "severity": "failure",
             "subject": "<sandbox>/duplicate",
           },
         ],
@@ -78,8 +79,8 @@ exports[`externs export invalid declarations should write the expected files 1`]
 [
   {
     "path": "duplicate.json",
-    "sha256": "eb602bb4ee9bb517a601c69c9cbc5da08988d432be6ff9688a187a9c1ee6db04",
-    "size": 857,
+    "sha256": "cca72075ab2d983d50dcb62c4a1c7391878bc0dbcdf9dc843800c806e144c111",
+    "size": 892,
   },
   {
     "path": "duplicate/externs.ts",

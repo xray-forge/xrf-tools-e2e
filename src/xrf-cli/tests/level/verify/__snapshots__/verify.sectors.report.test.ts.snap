@@ -121,8 +121,8 @@ exports[`level verify sectors and portals should preserve fixture bytes and writ
 [
   {
     "path": "invalid-sectors.json",
-    "sha256": "b6722ba531e19a4a934c9b30db5c95acd4ae258e213c1ff03a2edfe586407655",
-    "size": 3298,
+    "sha256": "9ca0b57a0b16e61e7c7c8e26bdd635ae19a000e726df4b5add2d122c52274f96",
+    "size": 3508,
   },
   {
     "path": "invalid-sectors/level",
@@ -161,8 +161,8 @@ exports[`level verify sectors and portals should preserve fixture bytes and writ
   },
   {
     "path": "truncated-portals.json",
-    "sha256": "8c8191d278634775e2375b2753f43eb2d9b9fbc67ce4359111e2075e1a8f4f35",
-    "size": 2159,
+    "sha256": "56ee6047c97289e76da647649ac03e60e7e42852f04138b2f4b08d01226bb377",
+    "size": 2194,
   },
   {
     "path": "truncated-portals/level",
@@ -201,12 +201,12 @@ exports[`level verify sectors and portals should print every sector and portal f
     "Layout positions only: 2 visuals",
     "MT_NORMAL: 1 visuals",
     "No AI map was checked",
-    "  [level.portals.sector.out_of_range] <sandbox>/invalid-sectors/level: Portal 0 joins sector 2 on its front, past the 2 the level holds",
-    "  [level.portals.sector.out_of_range] <sandbox>/invalid-sectors/level: Portal 0 joins sector 3 on its back, past the 2 the level holds",
-    "  [level.sectors.portal.out_of_range] <sandbox>/invalid-sectors/level: Sector 0 names portal 2, past the 2 the level holds",
-    "  [level.sectors.root.out_of_range] <sandbox>/invalid-sectors/level: Sector 0 draws visual 1, past the 1 the level holds",
-    "  [level.portals.not_a_polygon] <sandbox>/invalid-sectors/level: Portal 0 spans 2 vertices, where a polygon takes three and the record holds six",
-    "  [level.portals.not_a_polygon] <sandbox>/invalid-sectors/level: Portal 1 spans 7 vertices, where a polygon takes three and the record holds six",
+    "  failure [level.portals.sector.out_of_range] <sandbox>/invalid-sectors/level: Portal 0 joins sector 2 on its front, past the 2 the level holds",
+    "  failure [level.portals.sector.out_of_range] <sandbox>/invalid-sectors/level: Portal 0 joins sector 3 on its back, past the 2 the level holds",
+    "  failure [level.sectors.portal.out_of_range] <sandbox>/invalid-sectors/level: Sector 0 names portal 2, past the 2 the level holds",
+    "  failure [level.sectors.root.out_of_range] <sandbox>/invalid-sectors/level: Sector 0 draws visual 1, past the 1 the level holds",
+    "  failure [level.portals.not_a_polygon] <sandbox>/invalid-sectors/level: Portal 0 spans 2 vertices, where a polygon takes three and the record holds six",
+    "  failure [level.portals.not_a_polygon] <sandbox>/invalid-sectors/level: Portal 1 spans 7 vertices, where a polygon takes three and the record holds six",
   ],
 }
 `;
@@ -274,6 +274,7 @@ exports[`level verify sectors and portals should reject a partial portal record 
           {
             "message": "Invalid error: Unexpected level portals chunk of 159 bytes, which does not divide into 80 byte records",
             "ruleId": "level.read",
+            "severity": "failure",
             "subject": "<sandbox>/truncated-portals/level",
           },
         ],
@@ -385,21 +386,25 @@ exports[`level verify sectors and portals should report invalid roots, portal re
           {
             "message": "Portal 0 joins sector 2 on its front, past the 2 the level holds",
             "ruleId": "level.portals.sector.out_of_range",
+            "severity": "failure",
             "subject": "<sandbox>/invalid-sectors/level",
           },
           {
             "message": "Portal 0 joins sector 3 on its back, past the 2 the level holds",
             "ruleId": "level.portals.sector.out_of_range",
+            "severity": "failure",
             "subject": "<sandbox>/invalid-sectors/level",
           },
           {
             "message": "Sector 0 names portal 2, past the 2 the level holds",
             "ruleId": "level.sectors.portal.out_of_range",
+            "severity": "failure",
             "subject": "<sandbox>/invalid-sectors/level",
           },
           {
             "message": "Sector 0 draws visual 1, past the 1 the level holds",
             "ruleId": "level.sectors.root.out_of_range",
+            "severity": "failure",
             "subject": "<sandbox>/invalid-sectors/level",
           },
         ],
@@ -412,11 +417,13 @@ exports[`level verify sectors and portals should report invalid roots, portal re
           {
             "message": "Portal 0 spans 2 vertices, where a polygon takes three and the record holds six",
             "ruleId": "level.portals.not_a_polygon",
+            "severity": "failure",
             "subject": "<sandbox>/invalid-sectors/level",
           },
           {
             "message": "Portal 1 spans 7 vertices, where a polygon takes three and the record holds six",
             "ruleId": "level.portals.not_a_polygon",
+            "severity": "failure",
             "subject": "<sandbox>/invalid-sectors/level",
           },
         ],

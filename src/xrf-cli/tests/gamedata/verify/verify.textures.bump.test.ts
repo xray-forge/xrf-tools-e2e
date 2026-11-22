@@ -54,11 +54,13 @@ describe("gamedata verify texture bump declarations", () => {
             findings: [
               {
                 ruleId: "textures.bump",
+                severity: "failure",
                 subject: "textures/descriptors/missing-bump.thm",
                 message: expect.stringContaining("bump\\missing"),
               },
               {
                 ruleId: "textures.bump-companion",
+                severity: "warning",
                 subject: "textures/descriptors/missing-companion.thm",
                 message: expect.stringContaining("bump\\companion#"),
               },

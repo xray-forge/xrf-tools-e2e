@@ -46,8 +46,7 @@ describe("gamedata verify dialogs", () => {
           {
             id: "dialogs",
             status: "failed",
-            summary:
-              "5/5 dialogs valid; 3/4 profiles resolve; 9/11 references declared, 3 defects the engine tolerates",
+            summary: "5/5 dialogs valid; 3/4 profiles resolve; 9/11 references declared, 3 warnings",
             findings: [
               {
                 ruleId: "dialog.offer-missing",

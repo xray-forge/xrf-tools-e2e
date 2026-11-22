@@ -108,6 +108,7 @@ exports[`gamedata verify animations should record the reports as readable docume
           {
             "message": "Player HUD section [actor_hud] motion bank 'meshes\\dynamics\\devices\\dev_bolt\\dev_bolt_hud_animation.omf' does not read: Invalid error: Incomplete chunk header at position 79, expected 8 bytes but only 1 remain",
             "ruleId": "animations.player-hud",
+            "severity": "failure",
             "subject": "configs/system.ltx",
           },
         ],
@@ -185,8 +186,8 @@ exports[`gamedata verify animations should write only its fixture and reports 1`
 [
   {
     "path": "damaged.json",
-    "sha256": "c63bfce108a1f9b6e84c249c59feeec34636473f4e18fb17260bbb3ab14b9cbd",
-    "size": 1659,
+    "sha256": "71fcab43ff03c32b856ced59a2c02c2bd0a564bf8a3cc19e1429ba6183a6bfc1",
+    "size": 1694,
   },
   {
     "path": "damaged/configs/system.ltx",

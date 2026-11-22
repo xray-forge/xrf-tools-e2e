@@ -132,6 +132,7 @@ exports[`archive verify damaged volume should record the readable archive report
           {
             "message": "Read error: Failed to decompress 'payload.ltx' from '<sandbox>/damaged/payload.db': input overrun.",
             "ruleId": "archive.payload",
+            "severity": "failure",
             "subject": "payload.ltx",
           },
         ],
@@ -185,8 +186,8 @@ exports[`archive verify damaged volume should write the expected files 1`] = `
   },
   {
     "path": "verify.json",
-    "sha256": "0a855dfe50dbbef6e7fd0faf118f6e8173845ef0249f4f8915a5c0732ed5b1d9",
-    "size": 785,
+    "sha256": "a2f5384406f7f104bdf0d6a85a4d7ad95be4f7017668ace8c2cf885a0615020d",
+    "size": 820,
   },
 ]
 `;

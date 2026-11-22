@@ -28,6 +28,7 @@ exports[`ltx verify schemes --dltx report should report a valid section and an u
           {
             "message": "Ltx parse error: 4:1 Found DLTX section '![wpn_ak74]', which needs the dltx dialect; rerun with --dltx to evaluate patch files",
             "ruleId": "ltx.unreadable",
+            "severity": "failure",
             "subject": "<resources>/ltx-schemes-dltx/configs/mod_system_xxx.ltx",
           },
         ],
@@ -74,11 +75,13 @@ exports[`ltx verify schemes --dltx report should report the scheme findings the 
           {
             "message": "[wpn_ak74] cost: Invalid value, unsigned 32 bit number is expected, got 'expensive'",
             "ruleId": "ltx.scheme",
+            "severity": "failure",
             "subject": "<resources>/ltx-schemes-dltx/configs/items/w_ak74.ltx",
           },
           {
             "message": "[wpn_ak74] rpm: Required field was not provided",
             "ruleId": "ltx.scheme",
+            "severity": "failure",
             "subject": "<resources>/ltx-schemes-dltx/configs/items/w_ak74.ltx",
           },
         ],

@@ -108,6 +108,7 @@ exports[`gamedata verify spawns should record readable reports and only expected
           {
             "message": "Failed to read spawn file: Invalid error: Chunk 0x00000001 at position 60 declares 67940 bytes, 964 remain before source end 1024",
             "ruleId": "spawns.read",
+            "severity": "failure",
             "subject": "spawns/all.spawn",
           },
         ],
@@ -132,8 +133,8 @@ exports[`gamedata verify spawns should record readable reports and only expected
 [
   {
     "path": "damaged.json",
-    "sha256": "2bc51e9d46d677977ea31b1a12cf336ba468bb34648626ef8984e6fef39a7008",
-    "size": 1410,
+    "sha256": "aaab00aefe44f9bfabea2675269176ea40c9fde37727a8bbd9eb9cf28d89fef8",
+    "size": 1445,
   },
   {
     "path": "damaged/configs/system.ltx",

@@ -57,6 +57,7 @@ describe("gamedata verify texture files", () => {
             findings: [
               {
                 ruleId: "textures.read",
+                severity: "failure",
                 subject: "textures/truncated.dds",
                 message: expect.any(String),
               },

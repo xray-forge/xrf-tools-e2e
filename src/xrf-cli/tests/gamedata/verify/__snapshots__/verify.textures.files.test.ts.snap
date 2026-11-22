@@ -108,6 +108,7 @@ exports[`gamedata verify texture files should write the expected reports and fil
           {
             "message": "Texture processing error: Failed to read DDS from memory: failed to fill whole buffer.",
             "ruleId": "textures.read",
+            "severity": "failure",
             "subject": "textures/truncated.dds",
           },
         ],
@@ -132,8 +133,8 @@ exports[`gamedata verify texture files should write the expected reports and fil
 [
   {
     "path": "damaged.json",
-    "sha256": "6d17f59fdf4979782696d746ff5ad5b317da9ba6c6ca9239bc275e56628c8ff1",
-    "size": 1408,
+    "sha256": "b9a7b9bef951bd689964a86e218dc3bfda2196d83b279acb87b919a2a18f064c",
+    "size": 1443,
   },
   {
     "path": "damaged/configs/system.ltx",

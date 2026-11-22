@@ -108,6 +108,7 @@ exports[`gamedata verify sounds should record readable reports and only expected
           {
             "message": "Unknown sound reference: [test] snd_test = weapons\\missing",
             "ruleId": "sounds.references",
+            "severity": "failure",
             "subject": "configs/system.ltx",
           },
         ],
@@ -132,8 +133,8 @@ exports[`gamedata verify sounds should record readable reports and only expected
 [
   {
     "path": "missing.json",
-    "sha256": "357de5c7bf318d9831118404f615878f292a788599acbc015e92894dbf370106",
-    "size": 1377,
+    "sha256": "30b11e1f4b456bede0b4e2d59015c276a90a19a1348781f0f5476e2fc21c66e5",
+    "size": 1412,
   },
   {
     "path": "missing/configs/system.ltx",

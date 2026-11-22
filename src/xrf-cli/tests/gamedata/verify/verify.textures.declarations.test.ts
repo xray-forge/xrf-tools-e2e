@@ -41,11 +41,13 @@ describe("gamedata verify ineffective texture declarations", () => {
               findings: [
                 {
                   ruleId: "textures.bump-declaration",
+                  severity: "warning",
                   subject: "textures/disqualified.thm",
                   message: expect.stringContaining("Bump Map"),
                 },
                 {
                   ruleId: "textures.bump-declaration",
+                  severity: "warning",
                   subject: "textures/empty.thm",
                   message: expect.stringContaining("empty name"),
                 },

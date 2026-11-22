@@ -47,6 +47,7 @@ exports[`gamedata verify material usage should record the report as a readable d
           {
             "message": "Mesh bone 'link' is made of static game material 'objects\\clothes', and the engine asserts a bone's is dynamic",
             "ruleId": "meshes.game-material",
+            "severity": "failure",
             "subject": "meshes/ogf/notes_paper_1.ogf",
           },
         ],
@@ -60,6 +61,7 @@ exports[`gamedata verify material usage should record the report as a readable d
           {
             "message": "Unknown particle reference: collide particles of 1 pairs = missing_particle",
             "ruleId": "particles-usage.reference",
+            "severity": "failure",
             "subject": "gamemtl.xr",
           },
         ],
@@ -73,6 +75,7 @@ exports[`gamedata verify material usage should record the report as a readable d
           {
             "message": "Unknown sound reference: step sounds of 2 pairs = weapons\\missing",
             "ruleId": "sounds.references",
+            "severity": "failure",
             "subject": "gamemtl.xr",
           },
         ],
@@ -97,8 +100,8 @@ exports[`gamedata verify material usage should record the report as a readable d
 [
   {
     "path": "report.json",
-    "sha256": "26f31afd0d3bb931924c04427a4b8fb934f094518e90569759aa81c0914d06a5",
-    "size": 2332,
+    "sha256": "bdfbee62544f00ea4a284fc63782c28334722d2b4f60e3901021a392cd8de870",
+    "size": 2437,
   },
   {
     "path": "tree/configs/system.ltx",

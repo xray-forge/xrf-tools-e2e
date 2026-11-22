@@ -47,11 +47,13 @@ exports[`gamedata verify texture bump declarations should write a readable repor
           {
             "message": "Texture descriptor declares bump 'bump\\missing' that is not in gamedata, the engine binds nothing",
             "ruleId": "textures.bump",
+            "severity": "failure",
             "subject": "textures/descriptors/missing-bump.thm",
           },
           {
             "message": "Texture descriptor declares bump 'bump\\companion' whose companion 'bump\\companion#' is not in gamedata, the engine binds nothing",
             "ruleId": "textures.bump-companion",
+            "severity": "warning",
             "subject": "textures/descriptors/missing-companion.thm",
           },
         ],
@@ -116,8 +118,8 @@ exports[`gamedata verify texture bump declarations should write a readable repor
   },
   {
     "path": "report.json",
-    "sha256": "36099ab0a2355f73b63218f3c2f5a65dc9a1f7b4dfae03a1586c11bbae8d7b69",
-    "size": 1763,
+    "sha256": "9c61499159f0c2d37ffbaf0c2208860a7e17cffcd21eb2e5d4739f572b6ba4e9",
+    "size": 1833,
   },
 ]
 `;

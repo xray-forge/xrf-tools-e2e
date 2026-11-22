@@ -68,6 +68,7 @@ describe("gamedata verify texture companion strictness", () => {
               findings: [
                 {
                   ruleId: "textures.bump-companion",
+                  severity: "warning",
                   subject: "textures/descriptor.thm",
                   message: expect.stringContaining("bump\\only#"),
                 },

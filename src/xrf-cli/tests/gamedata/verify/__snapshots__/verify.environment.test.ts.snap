@@ -108,6 +108,7 @@ exports[`gamedata verify environment should record the reports as readable docum
           {
             "message": "Weather [00:00:00] references missing ambient [absent_ambient]",
             "ruleId": "environment.reference",
+            "severity": "failure",
             "subject": "configs/environment/weathers/test.ltx",
           },
         ],
@@ -175,11 +176,13 @@ exports[`gamedata verify environment should record the reports as readable docum
           {
             "message": "Ambient [ambient_ok] is missing required field [effects]",
             "ruleId": "environment.engine",
+            "severity": "failure",
             "subject": "configs/environment/ambients.ltx",
           },
           {
             "message": "There is no environment\\sun_positions.ltx, which the engine stands the sun by",
             "ruleId": "environment.engine",
+            "severity": "failure",
             "subject": "configs/environment/sun_positions.ltx",
           },
         ],
@@ -204,8 +207,8 @@ exports[`gamedata verify environment should write the expected reports and files
 [
   {
     "path": "broken.json",
-    "sha256": "5db48d39126141c77702e8c6829d961e36223c13da71979cb0e3be05e9ccc3a7",
-    "size": 1395,
+    "sha256": "04110bb8d4ee858b689c5187b7b2c89763c4700b1ac0268a47c571f5d3bea87c",
+    "size": 1430,
   },
   {
     "path": "broken/configs/environment/ambients.ltx",
@@ -274,8 +277,8 @@ exports[`gamedata verify environment should write the expected reports and files
   },
   {
     "path": "extended.json",
-    "sha256": "82a1f65ed8bae5d5854294ec2852c607e822aedc52233a5b76bbe04db1596e0d",
-    "size": 1617,
+    "sha256": "8b2c79f845d2e9b7c3461d6f158ad166815659423b5d5f313b67034d5ab60c16",
+    "size": 1687,
   },
   {
     "path": "valid.json",

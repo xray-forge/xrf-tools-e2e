@@ -108,6 +108,7 @@ exports[`gamedata verify DDS format compatibility should record the reports and 
           {
             "message": "Texture uses an unsupported format",
             "ruleId": "textures.dds",
+            "severity": "failure",
             "subject": "textures/format.dds",
           },
         ],
@@ -147,8 +148,8 @@ exports[`gamedata verify DDS format compatibility should record the reports and 
   },
   {
     "path": "unsupported.json",
-    "sha256": "a08e923e78211ef32b07c373c4da8d81976efb3af34b3b97b17f7d84e67966c2",
-    "size": 1352,
+    "sha256": "888dadeb774ec6769a07bde1dc44e7dedb247493d074178e0c847dac7868f86e",
+    "size": 1387,
   },
   {
     "path": "unsupported/configs/system.ltx",

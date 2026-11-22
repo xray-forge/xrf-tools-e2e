@@ -53,11 +53,13 @@ describe("gamedata verify resolved DLTX schema", () => {
               {
                 subject: "configs/system.ltx",
                 ruleId: "ltx.schema",
+                severity: "failure",
                 message: "[wpn_test] cost: Invalid value, unsigned 32 bit number is expected, got 'expensive'",
               },
               {
                 subject: "configs/system.ltx",
                 ruleId: "ltx.schema",
+                severity: "failure",
                 message: "[wpn_test] rpm: Required field was not provided",
               },
             ],

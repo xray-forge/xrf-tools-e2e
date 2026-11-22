@@ -74,6 +74,7 @@ exports[`ogf verify should report the census and findings of the sweep 1`] = `
           {
             "message": "Carries no geometry chunk",
             "ruleId": "ogf.geometry.unsupported",
+            "severity": "failure",
             "subject": "residue_split_motion_ref.ogf#0",
           },
         ],
@@ -92,21 +93,25 @@ exports[`ogf verify should report the census and findings of the sweep 1`] = `
           {
             "message": "'wpn\\wpn_bolt' does not resolve under <resources>/gamedata",
             "ruleId": "ogf.textures.missing",
+            "severity": "failure",
             "subject": "dev_bolt_hud.ogf#0",
           },
           {
             "message": "'item\\item_notes' does not resolve under <resources>/gamedata",
             "ruleId": "ogf.textures.missing",
+            "severity": "failure",
             "subject": "notes_paper_1.ogf#0",
           },
           {
             "message": "'glow\\glow_ghost' does not resolve under <resources>/gamedata",
             "ruleId": "ogf.textures.missing",
+            "severity": "failure",
             "subject": "part_none.ogf#0",
           },
           {
             "message": "'wpn\\wpn_pm' does not resolve under <resources>/gamedata",
             "ruleId": "ogf.textures.missing",
+            "severity": "failure",
             "subject": "wpn_pm_lod.ogf#0",
           },
         ],
@@ -201,8 +206,8 @@ exports[`ogf verify should write a report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "1d9dc142b2de77e2f119fc9dd5387f6571cb48dabaf00f580d04c468a0b6ec74",
-    "size": 3090,
+    "sha256": "dd31a6368aafc50722296f3d800bc3ae0276bae08f9bf958514e48d78cf51f40",
+    "size": 3265,
   },
 ]
 `;

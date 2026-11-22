@@ -18,7 +18,7 @@ exports[`level verify AI map should fail a map with a node linked to itself 1`] 
     "Layout positions only: 2 visuals",
     "MT_NORMAL: 1 visuals",
     "AI map of 1 nodes and 1 links in <duration>: 0 one-way to 0 nodes, 1 to themselves; 1 parts, the largest 1 nodes",
-    "  [level.ai.self-link] <sandbox>/ai-self-link/level.ai: 1 links name the node they leave, which xrAI refuses: nodes 0 at (0.0, 0.0, 0.0)",
+    "  failure [level.ai.self-link] <sandbox>/ai-self-link/level.ai: 1 links name the node they leave, which xrAI refuses: nodes 0 at (0.0, 0.0, 0.0)",
   ],
 }
 `;
@@ -40,8 +40,8 @@ exports[`level verify AI map should pass a map with a one-way link and a detache
     "Layout positions only: 2 visuals",
     "MT_NORMAL: 1 visuals",
     "AI map of 5 nodes and 5 links in <duration>: 1 one-way to 1 nodes, 0 to themselves; 2 parts, the largest 3 nodes",
-    "  [level.ai.disconnected] <sandbox>/ai-graph/level.ai: 2 nodes lie outside the largest of 2 parts no link joins; a node of each other part: 3 at (2.1, 0.0, 0.0)",
-    "  [level.ai.one-way] <sandbox>/ai-graph/level.ai: 1 links have no link back, reaching 1 nodes: 2 at (1.4, 0.0, 0.0)",
+    "  warning [level.ai.disconnected] <sandbox>/ai-graph/level.ai: 2 nodes lie outside the largest of 2 parts no link joins; a node of each other part: 3 at (2.1, 0.0, 0.0)",
+    "  warning [level.ai.one-way] <sandbox>/ai-graph/level.ai: 1 links have no link back, reaching 1 nodes: 2 at (1.4, 0.0, 0.0)",
     "Verification of the level: passed",
   ],
 }

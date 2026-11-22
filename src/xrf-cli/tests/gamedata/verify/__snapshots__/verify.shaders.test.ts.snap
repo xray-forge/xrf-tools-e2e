@@ -108,6 +108,7 @@ exports[`gamedata verify renderer shaders should record readable reports and onl
           {
             "message": "Not found error: Shader shaders\\r3\\main.ps includes missing file 'shared/missing.h' on line 1",
             "ruleId": "shaders.include-missing",
+            "severity": "failure",
             "subject": "shaders/r3/main.ps",
           },
         ],
@@ -132,8 +133,8 @@ exports[`gamedata verify renderer shaders should record readable reports and onl
 [
   {
     "path": "damaged.json",
-    "sha256": "b005cd246c12f72e1f5e228f66edc1a822c9bbdd5ac80475ff63b219419cb92b",
-    "size": 1432,
+    "sha256": "3104369ab98a14679dba74a791783b06cd35c9b977c17d62dfdbe297175875ce",
+    "size": 1467,
   },
   {
     "path": "damaged/configs/system.ltx",

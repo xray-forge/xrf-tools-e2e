@@ -68,11 +68,13 @@ exports[`ltx verify --dltx report should report the errors standard rules find i
           {
             "message": "Ltx parse error: 3:1 Found DLTX section '![wpn_ak74]', which needs the dltx dialect; rerun with --dltx to evaluate patch files",
             "ruleId": "ltx.unreadable",
+            "severity": "failure",
             "subject": "<resources>/gamedata-dltx/configs/mod_system_aaa.ltx",
           },
           {
             "message": "Ltx parse error: 3:1 Found DLTX section '![wpn_ak74]', which needs the dltx dialect; rerun with --dltx to evaluate patch files",
             "ruleId": "ltx.unreadable",
+            "severity": "failure",
             "subject": "<resources>/gamedata-dltx/configs/mod_system_xxx.ltx",
           },
         ],

@@ -22,8 +22,8 @@ exports[`level verify optional files should preserve fixture bytes and write onl
 [
   {
     "path": "no-bundle.json",
-    "sha256": "53a52209ed9ce8ddcf96ce5617d06d2a4ea3dc65776cbefd062621c2c598c833",
-    "size": 1858,
+    "sha256": "918b967471e28f9fd96a2834762b9e003f42931633c345c356321cfb6f5efc71",
+    "size": 1893,
   },
   {
     "path": "no-bundle/level.geom",

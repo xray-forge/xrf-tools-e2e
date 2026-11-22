@@ -47,11 +47,13 @@ exports[`gamedata verify ineffective texture declarations should write the expec
           {
             "message": "Texture descriptor declares bump 'detail' but its texture type 'Bump Map' is skipped by the engine",
             "ruleId": "textures.bump-declaration",
+            "severity": "warning",
             "subject": "textures/disqualified.thm",
           },
           {
             "message": "Texture descriptor asks for a bump in mode 'Use' with an empty name",
             "ruleId": "textures.bump-declaration",
+            "severity": "warning",
             "subject": "textures/empty.thm",
           },
         ],
@@ -119,11 +121,13 @@ exports[`gamedata verify ineffective texture declarations should write the expec
           {
             "message": "Texture descriptor declares bump 'detail' but its texture type 'Bump Map' is skipped by the engine",
             "ruleId": "textures.bump-declaration",
+            "severity": "warning",
             "subject": "textures/disqualified.thm",
           },
           {
             "message": "Texture descriptor asks for a bump in mode 'Use' with an empty name",
             "ruleId": "textures.bump-declaration",
+            "severity": "warning",
             "subject": "textures/empty.thm",
           },
         ],
@@ -163,13 +167,13 @@ exports[`gamedata verify ineffective texture declarations should write the expec
   },
   {
     "path": "ordinary.json",
-    "sha256": "cfce81685152dffbb619e554192d5e6a6f6522b56e4600c4fffe67fbeb47e492",
-    "size": 1693,
+    "sha256": "3f542870aa0846e48570b8fc3ca5604190a04d0d7efe76cf8c7c148b595bbad9",
+    "size": 1763,
   },
   {
     "path": "strict.json",
-    "sha256": "3524da02d11f7087d050d1f04f41c8b150ea144c32c004438c32d69aeccb9b7e",
-    "size": 1693,
+    "sha256": "9f874afc4a1431851e5c96e135cfcf185e8a03da40c0f57c4a8d581af84f2634",
+    "size": 1763,
   },
 ]
 `;

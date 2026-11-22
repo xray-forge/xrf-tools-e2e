@@ -47,6 +47,7 @@ exports[`gamedata verify particle libraries should record the report as a readab
           {
             "message": "Failed to read particle library: Invalid error: Chunk 0x00000003 at position 18 declares 1088704 bytes, 482 remain before source end 500",
             "ruleId": "particles.library",
+            "severity": "failure",
             "subject": "particles.xr",
           },
         ],
@@ -81,8 +82,8 @@ exports[`gamedata verify particle libraries should write the expected report and
   },
   {
     "path": "report.json",
-    "sha256": "72562067e95104f1c432a39de868647f3b138c4e2d50baae17322a819316f36a",
-    "size": 1438,
+    "sha256": "818f8e061e0a0e423b1556581c4012daf22c736b3a7201dea0cf05cb1937b2b0",
+    "size": 1473,
   },
 ]
 `;

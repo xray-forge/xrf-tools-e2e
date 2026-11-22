@@ -133,6 +133,7 @@ exports[`gamedata verify mesh texture references should record each report as a 
           {
             "message": "Mesh references missing texture 'item\\item_notes'",
             "ruleId": "meshes.validation",
+            "severity": "failure",
             "subject": "meshes/ogf/notes_paper_1.ogf",
           },
         ],
@@ -185,8 +186,8 @@ exports[`gamedata verify mesh texture references should write only its fixture a
 [
   {
     "path": "missing.json",
-    "sha256": "beaa8ca951892e023c9da65c5ca21eeb8cb48771668ec1f3ff78aef4d6948636",
-    "size": 1403,
+    "sha256": "14bf1fea3a2b8a55d7e30f5ac7b8116ba149a71ec8d23005eec385c1954468ca",
+    "size": 1438,
   },
   {
     "path": "missing/configs/system.ltx",

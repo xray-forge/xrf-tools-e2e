@@ -4,7 +4,7 @@ exports[`dialog info meets damaged input should record an unparseable file and r
 {
   "exitCode": 0,
   "stderr": [
-    "Check 'dialog.read' is failed with 1 finding(s)",
+    "Check 'dialog.read' is passed with 1 finding(s)",
   ],
   "stdout": [
     "Reading dialogs in <sandbox>/tree (directory)",
@@ -14,8 +14,8 @@ exports[`dialog info meets damaged input should record an unparseable file and r
     "Largest dialog: ok with 1 phrases",
     "Encodings: windows-1251: 1",
     "Phrase elements: text: 1",
-    "  [dialog.unreadable] dialogs_broken.xml: Parsing error: Failed to parse XML: the root node was opened but never closed",
-    "Read 2 files, status: failed",
+    "  warning [dialog.unreadable] dialogs_broken.xml: Parsing error: Failed to parse XML: the root node was opened but never closed",
+    "Reading dialogs in <sandbox>/tree: passed",
   ],
 }
 `;

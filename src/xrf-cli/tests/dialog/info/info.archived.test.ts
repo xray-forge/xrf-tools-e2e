@@ -37,11 +37,13 @@ describe("dialog info over an installation", () => {
     expect(installation).toMatchSnapshot();
   });
 
-  // The archived file is read like any other, so everything past the origin and the file tally is
-  // identical to sweeping the same two files loose. That comparison is the assertion here: a
+  // The archived file is read like any other, so everything past the origin and the file tally, up to the verdict that
+  // names the roots, is identical to sweeping the same two files loose. That comparison is the assertion here: a
   // snapshot alone would not say the archive changed nothing but where the bytes came from.
   it("should read an archived dialog exactly as a loose one", () => {
-    expect(installation.stdout.slice(2)).toEqual(loose.stdout.slice(2));
+    expect(installation.stdout.slice(2, -1)).toEqual(loose.stdout.slice(2, -1));
+    expect(installation.stdout.at(-1)).toMatch(/: passed$/);
+    expect(loose.stdout.at(-1)).toMatch(/: passed$/);
     expect(installation.stdout[1]).toContain("1 archived");
     expect(loose.stdout[1]).toContain("0 archived");
   });

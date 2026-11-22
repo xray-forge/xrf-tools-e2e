@@ -108,11 +108,13 @@ exports[`gamedata verify resolved DLTX schema should write the expected reports 
           {
             "message": "[wpn_test] cost: Invalid value, unsigned 32 bit number is expected, got 'expensive'",
             "ruleId": "ltx.schema",
+            "severity": "failure",
             "subject": "configs/system.ltx",
           },
           {
             "message": "[wpn_test] rpm: Required field was not provided",
             "ruleId": "ltx.schema",
+            "severity": "failure",
             "subject": "configs/system.ltx",
           },
         ],
@@ -152,8 +154,8 @@ exports[`gamedata verify resolved DLTX schema should write the expected reports 
   },
   {
     "path": "patched.json",
-    "sha256": "a323df09181afdc6b354869c5e685055562cb741411a092ebfee8f611e1b4d62",
-    "size": 1570,
+    "sha256": "596c570a34eaaccefa7b2cb89dbf45e9bccd0fd386f06054455ef3c3dc6d35e2",
+    "size": 1640,
   },
   {
     "path": "patched/configs/mod_system_test.ltx",

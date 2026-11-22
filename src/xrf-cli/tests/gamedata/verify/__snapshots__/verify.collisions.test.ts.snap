@@ -68,6 +68,7 @@ exports[`gamedata verify meets unreachable files should carry the collision as i
           {
             "message": "File '<sandbox>/gamedata/textures/K.dds' cannot be reached, '<sandbox>/gamedata/textures/k.dds' claims this path",
             "ruleId": "collisions.unreachable",
+            "severity": "failure",
             "subject": "textures/k.dds",
           },
         ],
@@ -135,6 +136,7 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
           {
             "message": "File '<sandbox>/gamedata/textures/K.dds' cannot be reached, '<sandbox>/gamedata/textures/k.dds' claims this path",
             "ruleId": "collisions.unreachable",
+            "severity": "failure",
             "subject": "textures/k.dds",
           },
         ],
@@ -202,6 +204,7 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
           {
             "message": "File '<sandbox>/gamedata/textures/K.dds' cannot be reached, '<sandbox>/gamedata/textures/k.dds' claims this path",
             "ruleId": "collisions.unreachable",
+            "severity": "failure",
             "subject": "textures/k.dds",
           },
         ],
@@ -370,8 +373,8 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
   },
   {
     "path": "empty-check.json",
-    "sha256": "15f5a52c5326f995a95a5481dec0bb91452a733ffb7e029a38afd50cce7785b5",
-    "size": 1445,
+    "sha256": "77b133cc02427e750cfb601e21b2b3f4f62c1cdac3ce883ae1cc25092cbaa74a",
+    "size": 1480,
   },
   {
     "path": "gamedata/configs/system.ltx",
@@ -395,13 +398,13 @@ exports[`gamedata verify meets unreachable files should preserve its inputs and 
   },
   {
     "path": "report.json",
-    "sha256": "a7f0f9c38741bc0f27f51f93c6e19bdcf4470d51066cede5619a5359c1c9259b",
-    "size": 1467,
+    "sha256": "677a58a16307d16d71ed8cd00f0bb73b9b72fcc1ebf9a01dfb3421f74c31a0da",
+    "size": 1502,
   },
   {
     "path": "unrelated-ignore.json",
-    "sha256": "15f5a52c5326f995a95a5481dec0bb91452a733ffb7e029a38afd50cce7785b5",
-    "size": 1445,
+    "sha256": "77b133cc02427e750cfb601e21b2b3f4f62c1cdac3ce883ae1cc25092cbaa74a",
+    "size": 1480,
   },
 ]
 `;

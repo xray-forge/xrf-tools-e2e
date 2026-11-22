@@ -108,6 +108,7 @@ exports[`gamedata verify particle usage should record both reports as readable d
           {
             "message": "Unknown particle reference: [sr_particle] name = missing_particle",
             "ruleId": "particles-usage.reference",
+            "severity": "failure",
             "subject": "configs/particles.ltx",
           },
         ],
@@ -132,8 +133,8 @@ exports[`gamedata verify particle usage should write the expected reports and fi
 [
   {
     "path": "missing.json",
-    "sha256": "a316a397cdf73bf9932b40e483e3967890bf97db773daa7246a272dd9fe68e6e",
-    "size": 1447,
+    "sha256": "f12024e1ac65ae30ece4ab78e825995517ace835995b41248e10f9cb97432704",
+    "size": 1482,
   },
   {
     "path": "missing/configs/particles.ltx",

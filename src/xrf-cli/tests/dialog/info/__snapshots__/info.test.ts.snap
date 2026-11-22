@@ -4,7 +4,7 @@ exports[`dialog info should count what the dialogs hold 1`] = `
 {
   "exitCode": 0,
   "stderr": [
-    "Check 'dialog.schema' is failed with 1 finding(s)",
+    "Check 'dialog.schema' is passed with 1 finding(s)",
   ],
   "stdout": [
     "Reading dialogs in <resources>/gamedata (containing-installation)",
@@ -15,7 +15,7 @@ exports[`dialog info should count what the dialogs hold 1`] = `
     "Encodings: UTF-8: 1, windows-1251: 1",
     "Dialog elements: dont_has_info: 1, has_info: 1, init_func: 1, precondition: 1",
     "Phrase elements: action: 1, disable_info: 1, give_info: 1, go_back: 1, has_info: 1, is_final: 3, next: 5, script_text: 1, text: 7",
-    "Read 2 files, status: failed",
+    "Reading dialogs in <resources>/gamedata: passed",
   ],
 }
 `;
@@ -44,7 +44,7 @@ exports[`dialog info should name each finding under verbose output 1`] = `
 {
   "exitCode": 0,
   "stderr": [
-    "Check 'dialog.schema' is failed with 1 finding(s)",
+    "Check 'dialog.schema' is passed with 1 finding(s)",
   ],
   "stdout": [
     "Reading dialogs in <resources>/gamedata (containing-installation)",
@@ -55,8 +55,8 @@ exports[`dialog info should name each finding under verbose output 1`] = `
     "Encodings: UTF-8: 1, windows-1251: 1",
     "Dialog elements: dont_has_info: 1, has_info: 1, init_func: 1, precondition: 1",
     "Phrase elements: action: 1, disable_info: 1, give_info: 1, go_back: 1, has_info: 1, is_final: 3, next: 5, script_text: 1, text: 7",
-    "  [dialog.unknown-element] configs\\gameplay\\dialogs_zaton.xml: zat_b30_test_owl_about_stash#1: unknown element 'go_back'",
-    "Read 2 files, status: failed",
+    "  warning [dialog.unknown-element] configs\\gameplay\\dialogs_zaton.xml: zat_b30_test_owl_about_stash#1: unknown element 'go_back'",
+    "Reading dialogs in <resources>/gamedata: passed",
   ],
 }
 `;
@@ -144,14 +144,15 @@ exports[`dialog info should report the census and checks it found 1`] = `
           {
             "message": "zat_b30_test_owl_about_stash#1: unknown element 'go_back'",
             "ruleId": "dialog.unknown-element",
+            "severity": "warning",
             "subject": "configs\\gameplay\\dialogs_zaton.xml",
           },
         ],
         "id": "dialog.schema",
-        "status": "failed",
+        "status": "passed",
       },
     ],
-    "status": "failed",
+    "status": "passed",
   },
 }
 `;
@@ -170,9 +171,7 @@ exports[`dialog info should report the failure even when silenced 1`] = `
 exports[`dialog info should say nothing when silenced 1`] = `
 {
   "exitCode": 0,
-  "stderr": [
-    "Check 'dialog.schema' is failed with 1 finding(s)",
-  ],
+  "stderr": [],
   "stdout": [],
 }
 `;
@@ -181,7 +180,7 @@ exports[`dialog info should write a structured report 1`] = `
 {
   "exitCode": 0,
   "stderr": [
-    "Check 'dialog.schema' is failed with 1 finding(s)",
+    "Check 'dialog.schema' is passed with 1 finding(s)",
   ],
   "stdout": [
     "Reading dialogs in <resources>/gamedata (containing-installation)",
@@ -192,7 +191,7 @@ exports[`dialog info should write a structured report 1`] = `
     "Encodings: UTF-8: 1, windows-1251: 1",
     "Dialog elements: dont_has_info: 1, has_info: 1, init_func: 1, precondition: 1",
     "Phrase elements: action: 1, disable_info: 1, give_info: 1, go_back: 1, has_info: 1, is_final: 3, next: 5, script_text: 1, text: 7",
-    "Read 2 files, status: failed",
+    "Reading dialogs in <resources>/gamedata: passed",
   ],
 }
 `;
@@ -201,8 +200,8 @@ exports[`dialog info should write only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "da0cbab2a4973dee2e2cc69bdbdfe430a1151c3a08162beb5d81cb01f38776f0",
-    "size": 1683,
+    "sha256": "0810133c8707604645fae8a28f0d40f4e300fc3213ae764b91c655780079a84e",
+    "size": 1718,
   },
 ]
 `;

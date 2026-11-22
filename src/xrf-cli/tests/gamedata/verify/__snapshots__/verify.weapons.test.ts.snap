@@ -108,6 +108,7 @@ exports[`gamedata verify weapons should record readable reports and only expecte
           {
             "message": "Weapon section [wpn_test] visual 'dynamics\\devices\\dev_bolt\\missing' is not found",
             "ruleId": "weapons.validation",
+            "severity": "failure",
             "subject": "configs/system.ltx",
           },
         ],
@@ -132,8 +133,8 @@ exports[`gamedata verify weapons should record readable reports and only expecte
 [
   {
     "path": "missing.json",
-    "sha256": "0c2ec986bab935fe1a43f3071867ee142c577e7bffd98c56e58eb63d091d80b8",
-    "size": 1379,
+    "sha256": "15f782510e63ba74b4ae228edb16c46651aa1cd070e8249e8c486bafc626f460",
+    "size": 1414,
   },
   {
     "path": "missing/configs/system.ltx",

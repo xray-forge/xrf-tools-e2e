@@ -109,6 +109,7 @@ exports[`gamedata verify scripts should record readable reports and only expecte
             "message": "Verify error: Failed to check LuaJIT script file: scripts\\broken.script, errors: error occurred while creating ast: unexpected token \`=\`. (starting from line 1, character 13 and ending on line 1, character 14)
 additional information: expected an expression",
             "ruleId": "scripts.syntax",
+            "severity": "failure",
             "subject": "scripts/broken.script",
           },
         ],
@@ -133,8 +134,8 @@ exports[`gamedata verify scripts should record readable reports and only expecte
 [
   {
     "path": "malformed.json",
-    "sha256": "b62e1d87e07368a4821b2f355e6edafaee3659cea326eed6aaa99e5c0dd425d5",
-    "size": 1549,
+    "sha256": "374e342ef3d4e1cfafce358f0426b445f9d0898702f54aca09bc5a4737aef534",
+    "size": 1584,
   },
   {
     "path": "malformed/configs/system.ltx",
