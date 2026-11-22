@@ -8,11 +8,18 @@ import { $ } from "@wdio/globals";
  * @param entry - Text of the entry, its shortcut aside.
  */
 export async function chooseWindowMenuEntry(menu: string, entry: string): Promise<void> {
-  await $('button[aria-label="Menu"]').click();
-
   const menubar = $('[role="menubar"]');
 
-  await menubar.waitForDisplayed({ timeout: 5_000 });
+  // A click landing while a tool is still mounting is lost to the focus its page takes, so the menubar is opened again
+  // until it shows; a shown menubar is never clicked, which would close it.
+  for (let attempt: number = 0; !(await menubar.isDisplayed()); attempt++) {
+    if (attempt === 3) {
+      throw new Error("The window's menubar did not open after three clicks on its menu button.");
+    }
+
+    await $('button[aria-label="Menu"]').click();
+    await menubar.waitForDisplayed({ timeout: 2_000 }).catch(() => undefined);
+  }
 
   const opened = menubar.$(`button=${menu}`);
 
@@ -20,7 +27,11 @@ export async function chooseWindowMenuEntry(menu: string, entry: string): Promis
     await opened.click();
   }
 
-  await $(`[role="menu"][aria-label="${menu}"]`).$(`li*=${entry}`).click();
+  // The button reads expanded a render before its menu is on screen, so the menu is waited for, not assumed.
+  const list = $(`[role="menu"][aria-label="${menu}"]`);
+
+  await list.waitForDisplayed({ timeout: 5_000 });
+  await list.$(`li*=${entry}`).click();
 }
 
 /** Closes the open tool through File > Close and goes back to the launcher. */
