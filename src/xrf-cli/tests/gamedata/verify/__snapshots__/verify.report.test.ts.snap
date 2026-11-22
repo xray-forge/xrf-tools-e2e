@@ -4,6 +4,12 @@ exports[`gamedata verify full run should answer non-zero and report only the fai
 {
   "exitCode": 3,
   "stderr": [
+    "<resources>/gamedata/configs/gameplay/dialogs.xml: Dialog 'zat_test_guide_travel' phrase '1' text 'zat_test_guide_travel_1' is defined in no language",
+    "<resources>/gamedata/configs/gameplay/dialogs.xml: Dialog 'zat_test_trader_start' phrase '0' text 'zat_test_trader_start_0' is defined in no language",
+    "<resources>/gamedata/configs/gameplay/dialogs.xml: Dialog 'zat_test_trader_start' phrase '1' text 'zat_test_trader_start_1' is defined in no language",
+    "<resources>/gamedata/configs/gameplay/dialogs.xml: Dialog 'zat_test_trader_start' phrase '2' text 'zat_test_trader_start_2' is defined in no language",
+    "<resources>/gamedata/configs/gameplay/dialogs_zaton.xml: Dialog 'zat_b30_test_owl_about_stash' phrase '0' text 'zat_b30_test_owl_about_stash_0' is defined in no language",
+    "<resources>/gamedata/configs/gameplay/dialogs_zaton.xml: Dialog 'zat_b30_test_owl_about_stash' phrase '1' text 'zat_b30_test_owl_about_stash_1' is defined in no language",
     "<resources>/gamedata/configs/system.ltx: There is no [thunderbolt_common] section, where the engine reads where thunderbolts strike from",
     "configs/environment/weathers: No weather cycles under environment\\weathers, where the engine requires at least one",
     "levels/jupiter: Game graph declares level [jupiter] with id 115, but no level bundle exists for it",
@@ -1007,7 +1013,7 @@ exports[`gamedata verify full run should answer non-zero and report only the fai
     "Check 'meshes' is failed with 11 finding(s)",
     "Check 'particles' is failed with 964 finding(s)",
     "Check 'shaders' is failed with 1 finding(s)",
-    "Check failed: 996 finding(s)",
+    "Check failed: 1002 finding(s)",
   ],
   "stdout": [],
 }
@@ -1017,8 +1023,8 @@ exports[`gamedata verify full run should write a findings report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "e16c2654d6f7fe2ca7747ba3a35bf6910a36d7c52d7d9550e64a015efa7490f9",
-    "size": 239114,
+    "sha256": "5d76f8be9113018f0a4d652cb149d30870dc14abd7b647c5d9380f617420ccfd",
+    "size": 240902,
   },
 ]
 `;

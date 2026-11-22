@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata verify dialogs should record a readable report and only expected artifacts 1`] = `
+{
+  "build": {
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "profile": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "gamedata",
+    "verify",
+  ],
+  "duration": "<duration>",
+  "execution": {
+    "workers": "<workers>",
+  },
+  "exitCode": 3,
+  "result": {
+    "cache": {
+      "bytes": 128,
+      "entries": 2,
+      "hits": 2,
+      "misses": 2,
+      "refused": 0,
+    },
+    "checks": [
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "coverage",
+        "status": "skipped",
+        "summary": "Every declared source opened",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [],
+        "id": "collisions",
+        "status": "skipped",
+        "summary": "No unreachable files",
+      },
+      {
+        "duration": "<duration>",
+        "findings": [
+          {
+            "message": "Character 'snag' offers actor dialog 'snag_missing_dialog', which no dialog file declares",
+            "ruleId": "dialog.offer-missing",
+            "subject": "configs/gameplay/character_desc_zaton.xml",
+          },
+          {
+            "message": "Dialog 'about_quests' phrase '0' text 'about_quests_0' is defined in no language",
+            "ruleId": "dialog.text-missing",
+            "subject": "configs/gameplay/dialogs.xml",
+          },
+          {
+            "message": "Dialog 'snag_cache_dialog' phrase '12' text 'snag_cache_12' is defined in no language",
+            "ruleId": "dialog.text-missing",
+            "subject": "configs/gameplay/dialogs.xml",
+          },
+          {
+            "message": "Profile 'nobody' picks by class 'no_such_class', which no team_default character without no_random has, and section [nobody_spawn] names it as its character_profile",
+            "ruleId": "dialog.profile-unresolved",
+            "subject": "configs/gameplay/npc_profile.xml",
+          },
+          {
+            "message": "[meet@snag] meet_dialog names dialog 'snag_gone_dialog', which no dialog file declares",
+            "ruleId": "dialog.logic-missing",
+            "subject": "configs/scripts/snag.ltx",
+          },
+        ],
+        "id": "dialogs",
+        "status": "failed",
+        "summary": "5/5 dialogs valid; 3/4 profiles resolve; 9/11 references declared, 3 defects the engine tolerates",
+      },
+    ],
+    "duration": "<duration>",
+    "engine": {
+      "engine": "vanilla",
+      "evidence": "noSigns",
+      "subject": null,
+    },
+    "skippedMounts": [],
+    "status": "failed",
+  },
+}
+`;
+
+exports[`gamedata verify dialogs should record a readable report and only expected artifacts 2`] = `
+[
+  {
+    "path": "report.json",
+    "sha256": "eea315c03e78049f539eee6bf60824f2d842389fc9941c90966343ae2cb25cd3",
+    "size": 2514,
+  },
+  {
+    "path": "tree/configs/gameplay/character_desc_general.xml",
+    "sha256": "42cc0be07d0904b9562e16fbc9ab6a4d8d8c838cec24ce9408c89299b4c66190",
+    "size": 113,
+  },
+  {
+    "path": "tree/configs/gameplay/character_desc_general_novice.xml",
+    "sha256": "0bd157df140240faf151581d2e10a2e3c7159335df1a8184c6d781c08a3d9ffc",
+    "size": 325,
+  },
+  {
+    "path": "tree/configs/gameplay/character_desc_zaton.xml",
+    "sha256": "ea950652521100a9633516e26894e067af167f2b49a4f3767c02a937fcbe45ff",
+    "size": 445,
+  },
+  {
+    "path": "tree/configs/gameplay/character_dialogs.xml",
+    "sha256": "df1c0958eb77fa125fef4baba40efb4e1129ee3248ce16358598832c92400aa0",
+    "size": 84,
+  },
+  {
+    "path": "tree/configs/gameplay/dialogs.xml",
+    "sha256": "589d3111a2fb7c26854c016c54e41e2043b615229767c3bc1d18d25ee194b121",
+    "size": 1305,
+  },
+  {
+    "path": "tree/configs/gameplay/dialogs_overlay.xml",
+    "sha256": "4d930a024be9a9c2db42201d9b104923f969783ee3654a42a775b83413cd8dee",
+    "size": 220,
+  },
+  {
+    "path": "tree/configs/gameplay/info_portions.xml",
+    "sha256": "5c1df7dba629c58ada16741d001e64e69a5ab11cb2067edd0d90286153a44bf2",
+    "size": 247,
+  },
+  {
+    "path": "tree/configs/gameplay/npc_profile.xml",
+    "sha256": "2c2360a3e642485f3d0f190a7577eae5247bcc7f1176a95a514ec97ea672ac39",
+    "size": 343,
+  },
+  {
+    "path": "tree/configs/scripts/snag.ltx",
+    "sha256": "d29fb38bffcf818c8885a7e5e3298f0b73f3c9301e040136d8b0b50923c35884",
+    "size": 84,
+  },
+  {
+    "path": "tree/configs/system.ltx",
+    "sha256": "199907b7094b4d2e4245db6ff9c797cee816f2c3f78ef314a3b59e8f33dfe357",
+    "size": 44,
+  },
+  {
+    "path": "tree/configs/text/eng/st_dialogs.xml",
+    "sha256": "0b431f918f0b292885bf85a00153a65bb50c35e88f8b3902a7e4726296aac608",
+    "size": 485,
+  },
+]
+`;
