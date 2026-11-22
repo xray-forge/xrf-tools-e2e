@@ -6,8 +6,14 @@ import { type Nullable, type Optional } from "#/types";
 /** Where the application under test keeps its logs, beside itself. */
 const APP_LOGS: string = path.resolve(__dirname, "../../../target/xrf-app/appdata/logs");
 
-/** A run's log, `xrf-app.<UTC start>.<process>.log`: its name sorts as the runs started. */
-const RUN_LOG: RegExp = /^xrf-app\.\d.*\.log$/;
+/**
+ * A run's log, `xrf-app.<UTC start>.<process>.log`: its name sorts as the runs started.
+ *
+ * @remarks
+ * Exactly that name, since the run also writes its webview's log beside it as `xrf-app.<UTC start>.<process>.ui.log`,
+ * which sorts after it and never logs the exit.
+ */
+const RUN_LOG: RegExp = /^xrf-app\.[^.]+\.\d+\.log$/;
 
 /**
  * The log of the last run the application started.
