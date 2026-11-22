@@ -10,6 +10,7 @@ exports[`gamedata verify full run should answer non-zero and report only the fai
     "<resources>/gamedata/configs/gameplay/dialogs.xml: Dialog 'zat_test_trader_start' phrase '2' text 'zat_test_trader_start_2' is defined in no language",
     "<resources>/gamedata/configs/gameplay/dialogs_zaton.xml: Dialog 'zat_b30_test_owl_about_stash' phrase '0' text 'zat_b30_test_owl_about_stash_0' is defined in no language",
     "<resources>/gamedata/configs/gameplay/dialogs_zaton.xml: Dialog 'zat_b30_test_owl_about_stash' phrase '1' text 'zat_b30_test_owl_about_stash_1' is defined in no language",
+    "spawns/all.spawn: NPC 'esc_m_trader' of section [m_trader] is spawned with profile 'esc_2_12_stalker_trader', which no profile file declares",
     "<resources>/gamedata/configs/system.ltx: There is no [thunderbolt_common] section, where the engine reads where thunderbolts strike from",
     "configs/environment/weathers: No weather cycles under environment\\weathers, where the engine requires at least one",
     "levels/jupiter: Game graph declares level [jupiter] with id 115, but no level bundle exists for it",
@@ -1006,6 +1007,7 @@ exports[`gamedata verify full run should answer non-zero and report only the fai
     "particles.xr: Particle effect 'zones_mine\\effects\\zone_graviti_mine_idle_leaves' references missing texture 'pfx\\pfx_leaves_01'",
     "particles.xr: Particle effect 'zones_mine\\effects\\zone_graviti_mine_idle_steam' references missing texture 'pfx\\pfx_anomaly_88'",
     "shaders/r3: DirectX 11 renderer shader root is missing",
+    "Check 'dialogs' is failed with 7 finding(s)",
     "Check 'environment' is failed with 2 finding(s)",
     "Check 'levels' is failed with 10 finding(s)",
     "Check 'ltx' is failed with 7 finding(s)",
@@ -1013,7 +1015,7 @@ exports[`gamedata verify full run should answer non-zero and report only the fai
     "Check 'meshes' is failed with 11 finding(s)",
     "Check 'particles' is failed with 964 finding(s)",
     "Check 'shaders' is failed with 1 finding(s)",
-    "Check failed: 1002 finding(s)",
+    "Check failed: 1003 finding(s)",
   ],
   "stdout": [],
 }
@@ -1023,8 +1025,8 @@ exports[`gamedata verify full run should write a findings report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "c314d59b6792f2c3b7a126ae4023d600c1f8f593b0648fce6cf2d8b72f5ac717",
-    "size": 275952,
+    "sha256": "a8bb0f31dd986e47704ab971a4ace886da573dc7fdc7741a41688f25a99baa57",
+    "size": 276252,
   },
 ]
 `;
