@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`dialog list over system.ltx lists should list only the dialogs of the listed files 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "snag_cache_dialog (configs\\gameplay\\dialogs.xml, 4 phrases): Want to earn some?",
+    "snag_share_dialog (configs\\gameplay\\dialogs.xml, 1 phrases): Here's the container.",
+    "hello_dialog (configs\\gameplay\\dialogs.xml, 1 phrases): Hello, stalker.",
+    "about_quests (configs\\gameplay\\dialogs.xml, 1 phrases): about_quests_0",
+    "actor_break_dialog (configs\\gameplay\\dialogs.xml, 1 phrases): Laters.",
+    "Listed 5 dialogs",
+  ],
+}
+`;
+
+exports[`dialog list over system.ltx lists should refuse a profile whose character only an unlisted file declares 1`] = `
+{
+  "exitCode": 1,
+  "stderr": [
+    "Error: Not found error: Profile 'snag' resolves to no character",
+  ],
+  "stdout": [],
+}
+`;
+
+exports[`dialog list over system.ltx lists should still offer the dialogs of a character a listed file declares 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "hello_dialog (configs\\gameplay\\dialogs.xml, 1 phrases, start of novice_1): Hello, stalker.",
+    "about_quests (configs\\gameplay\\dialogs.xml, 1 phrases, actor dialog of novice_1, actor dialog of novice_2): about_quests_0",
+    "actor_break_dialog (configs\\gameplay\\dialogs.xml, 1 phrases, with info global_dialogs): Laters.",
+    "Profile 'novice' (novice_1, novice_2) offers 3 dialogs",
+  ],
+}
+`;
