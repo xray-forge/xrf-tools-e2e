@@ -1,14 +1,33 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
 
+import { type Nullable, type Optional } from "#/types";
+
+/** Where the application under test keeps its logs, beside itself. */
+const APP_LOGS: string = path.resolve(__dirname, "../../../target/xrf-app/appdata/logs");
+
+/** A run's log, `xrf-app.<UTC start>.<process>.log`: its name sorts as the runs started. */
+const RUN_LOG: RegExp = /^xrf-app\.\d.*\.log$/;
+
 /**
- * The log the application under test keeps beside itself.
+ * The log of the last run the application started.
  *
  * @remarks
- * Every launch starts it afresh, moving the one before aside, and one spec file is one launch, so a spec reads only what
- * its own run logged.
+ * Every launch writes a log of its own, and one spec file is one launch, so a spec reads only what its own run logged.
+ *
+ * @returns The log's path, or null before any run.
  */
-const APP_LOG: string = path.resolve(__dirname, "../../../target/xrf-app/appdata/logs/xrf-app.log");
+function findLastRunLog(): Nullable<string> {
+  const runs: Array<string> = fs.existsSync(APP_LOGS)
+    ? fs
+        .readdirSync(APP_LOGS)
+        .filter((name: string) => RUN_LOG.test(name))
+        .sort()
+    : [];
+  const last: Optional<string> = runs.at(-1);
+
+  return last === undefined ? null : path.join(APP_LOGS, last);
+}
 
 /** The line the application logs last on its way out. */
 const EXIT_LINE: RegExp = /] Exiting application after /;
@@ -33,14 +52,15 @@ export async function readExitedAppLog(timeoutMs: number = 10_000): Promise<Arra
   const deadline: number = Date.now() + timeoutMs;
 
   for (;;) {
-    const lines: Array<string> = fs.existsSync(APP_LOG) ? fs.readFileSync(APP_LOG, "utf8").split(/\r?\n/) : [];
+    const log: Nullable<string> = findLastRunLog();
+    const lines: Array<string> = log === null ? [] : fs.readFileSync(log, "utf8").split(/\r?\n/);
 
     if (lines.some((line: string) => EXIT_LINE.test(line))) {
       return lines;
     }
 
     if (Date.now() > deadline) {
-      throw new Error(`The application logged no exit within ${timeoutMs} ms in '${APP_LOG}'.`);
+      throw new Error(`The application logged no exit within ${timeoutMs} ms in '${log ?? APP_LOGS}'.`);
     }
 
     await new Promise((resolve) => setTimeout(resolve, POLL_MS));
