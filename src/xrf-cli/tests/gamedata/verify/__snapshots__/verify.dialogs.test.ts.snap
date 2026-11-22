@@ -63,6 +63,12 @@ exports[`gamedata verify dialogs should record a readable report and only expect
             "subject": "configs/gameplay/dialogs.xml",
           },
           {
+            "message": "Dialog 'actor_break_dialog' is declared again, and the first declaration is the one the engine reads",
+            "ruleId": "dialog.duplicate",
+            "severity": "warning",
+            "subject": "configs/gameplay/dialogs_overlay.xml",
+          },
+          {
             "message": "Profile 'nobody' picks by class 'no_such_class', which no team_default character without no_random has, and section [nobody_spawn] names it as its character_profile",
             "ruleId": "dialog.profile-unresolved",
             "severity": "warning",
@@ -77,7 +83,7 @@ exports[`gamedata verify dialogs should record a readable report and only expect
         ],
         "id": "dialogs",
         "status": "failed",
-        "summary": "5/5 dialogs valid; 3/4 profiles resolve; 9/11 references declared, 3 warnings",
+        "summary": "5/5 dialogs valid; 3/4 profiles resolve; 9/11 references declared, 4 warnings",
       },
     ],
     "duration": "<duration>",
@@ -96,8 +102,8 @@ exports[`gamedata verify dialogs should record a readable report and only expect
 [
   {
     "path": "report.json",
-    "sha256": "24f3b65c51fd66271499c0bc70056109b0d7403b5ac6e7a8303d008d60d43e9e",
-    "size": 2669,
+    "sha256": "4760d2047c91b0f0d22779d22cc946c49abc137195b30fcabc22d4d58d32cca3",
+    "size": 2960,
   },
   {
     "path": "tree/configs/gameplay/character_desc_general.xml",

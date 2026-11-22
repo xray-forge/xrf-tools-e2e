@@ -10,7 +10,8 @@ import { Sandbox, type CliResult, type ManifestFile } from "#/xrf-cli/test/sandb
  * `dialog-partners` gives `snag` an actor dialog no file declares, which stops the engine, and a profile, `nobody`,
  * whose class no character carries; the `system.ltx` added here names that profile, which the finding says, but only a
  * spawned NPC makes it stop the engine, so it is reported without failing, as are the two phrases naming text no
- * language defines. The logic section added here hands Snag one declared and one undeclared start dialog.
+ * language defines, and the overlay's second declaration of `actor_break_dialog`. The logic section added here hands
+ * Snag one declared and one undeclared start dialog.
  */
 describe("gamedata verify dialogs", () => {
   const box = new Sandbox(__filename);
@@ -46,7 +47,7 @@ describe("gamedata verify dialogs", () => {
           {
             id: "dialogs",
             status: "failed",
-            summary: "5/5 dialogs valid; 3/4 profiles resolve; 9/11 references declared, 3 warnings",
+            summary: "5/5 dialogs valid; 3/4 profiles resolve; 9/11 references declared, 4 warnings",
             findings: [
               {
                 ruleId: "dialog.offer-missing",
@@ -62,6 +63,12 @@ describe("gamedata verify dialogs", () => {
                 ruleId: "dialog.text-missing",
                 subject: "configs/gameplay/dialogs.xml",
                 message: "Dialog 'snag_cache_dialog' phrase '12' text 'snag_cache_12' is defined in no language",
+              },
+              {
+                ruleId: "dialog.duplicate",
+                subject: "configs/gameplay/dialogs_overlay.xml",
+                message:
+                  "Dialog 'actor_break_dialog' is declared again, and the first declaration is the one the engine reads",
               },
               {
                 ruleId: "dialog.profile-unresolved",
