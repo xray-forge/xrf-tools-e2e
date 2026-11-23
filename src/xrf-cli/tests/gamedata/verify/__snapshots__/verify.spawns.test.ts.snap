@@ -20,8 +20,8 @@ exports[`gamedata verify spawns should record readable reports and only expected
   "exitCode": 0,
   "result": {
     "cache": {
-      "bytes": 0,
-      "entries": 1,
+      "bytes": 1053148,
+      "entries": 2,
       "hits": 0,
       "misses": 2,
       "refused": 0,
@@ -148,8 +148,8 @@ exports[`gamedata verify spawns should record readable reports and only expected
   },
   {
     "path": "valid.json",
-    "sha256": "edc6e3badbd590644ff998ef5f271792452b65af59f861cfdbccc74abd20684f",
-    "size": 1142,
+    "sha256": "a04b77f5b7e0fafe19689b134a4c2ee999847dbb19563cf838cb2bc998963f39",
+    "size": 1148,
   },
   {
     "path": "valid/configs/system.ltx",

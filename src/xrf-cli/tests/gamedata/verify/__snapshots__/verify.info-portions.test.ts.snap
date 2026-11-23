@@ -4,7 +4,7 @@ exports[`gamedata verify info-portions should record only the report 1`] = `
 [
   {
     "path": "report.json",
-    "sha256": "e4ed89a42966d539802fa38fdec9de1bb086b5e5130788bfde766bddb2b74477",
+    "sha256": "ded05c997e12629f89898145de477df8f91e7d0441c55550f5c372df323d8b3d",
     "size": 2217,
   },
 ]

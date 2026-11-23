@@ -20,10 +20,10 @@ exports[`gamedata verify scripts should record readable reports and only expecte
   "exitCode": 0,
   "result": {
     "cache": {
-      "bytes": 0,
-      "entries": 1,
+      "bytes": 15,
+      "entries": 2,
       "hits": 0,
-      "misses": 1,
+      "misses": 2,
       "refused": 0,
     },
     "checks": [
@@ -81,10 +81,10 @@ exports[`gamedata verify scripts should record readable reports and only expecte
   "exitCode": 3,
   "result": {
     "cache": {
-      "bytes": 0,
-      "entries": 1,
+      "bytes": 28,
+      "entries": 3,
       "hits": 0,
-      "misses": 1,
+      "misses": 3,
       "refused": 0,
     },
     "checks": [
@@ -134,8 +134,8 @@ exports[`gamedata verify scripts should record readable reports and only expecte
 [
   {
     "path": "malformed.json",
-    "sha256": "374e342ef3d4e1cfafce358f0426b445f9d0898702f54aca09bc5a4737aef534",
-    "size": 1584,
+    "sha256": "ae406ffe0475c95b971a69c14875573cc88add05bd63b62f298b320de8439ebd",
+    "size": 1585,
   },
   {
     "path": "malformed/configs/system.ltx",
@@ -154,8 +154,8 @@ exports[`gamedata verify scripts should record readable reports and only expecte
   },
   {
     "path": "valid.json",
-    "sha256": "c8575e6b192e4f7b19fe644f064cdfad4c9b3d09399f4b535669f1a26260086b",
-    "size": 1144,
+    "sha256": "4fb57c40c40f126fbac4dcb8bc08e94c0abaf4b5350c7e217fa9ec4b81f96efe",
+    "size": 1145,
   },
   {
     "path": "valid/configs/system.ltx",
