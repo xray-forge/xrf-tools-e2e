@@ -1,3 +1,4 @@
+import * as cp from "node:child_process";
 import * as fs from "node:fs/promises";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -10,10 +11,15 @@ if (process.platform !== "win32" && process.platform !== "linux") {
 }
 
 const WINDOWS = process.platform === "win32";
-const ASSET_NAME = WINDOWS ? "xrf-cli-dev.exe" : "xrf-cli-dev";
+// The CLI ships as an archive of one `xrf-cli/` folder: the executable beside its licence notices.
+const ASSET_NAME = WINDOWS ? "xrf-cli-dev-windows-x64.zip" : "xrf-cli-dev-linux-x64.tar.gz";
 const EXECUTABLE_NAME = WINDOWS ? "xrf-cli.exe" : "xrf-cli";
-const DESTINATION = path.resolve(PROJECT_ROOT, "target", EXECUTABLE_NAME);
-const DOWNLOAD = `${DESTINATION}.download`;
+const TARGET = path.resolve(PROJECT_ROOT, "target");
+const DESTINATION = path.resolve(TARGET, EXECUTABLE_NAME);
+const DOWNLOAD = path.resolve(TARGET, `${ASSET_NAME}.download`);
+const UNPACKED = path.resolve(TARGET, "xrf-cli-download");
+// Windows' own tar reads the zip; Git Bash's would not.
+const TAR = WINDOWS ? path.join(process.env.SystemRoot ?? "C:\\Windows", "System32", "tar.exe") : "tar";
 const URL = `https://github.com/xray-forge/xrf-tools/releases/download/nightly/${ASSET_NAME}`;
 
 try {
@@ -29,19 +35,23 @@ try {
     throw new Error("Downloaded asset is empty");
   }
 
-  await fs.mkdir(path.dirname(DESTINATION), { recursive: true });
+  await fs.mkdir(TARGET, { recursive: true });
   await fs.writeFile(DOWNLOAD, contents);
+  await fs.rm(UNPACKED, { recursive: true, force: true });
+  await fs.mkdir(UNPACKED, { recursive: true });
+  cp.execFileSync(TAR, ["-xf", DOWNLOAD, "-C", UNPACKED]);
+  await fs.rm(DESTINATION, { force: true });
+  await fs.rename(path.join(UNPACKED, "xrf-cli", EXECUTABLE_NAME), DESTINATION);
 
   if (!WINDOWS) {
-    await fs.chmod(DOWNLOAD, 0o755);
+    await fs.chmod(DESTINATION, 0o755);
   }
-
-  await fs.rm(DESTINATION, { force: true });
-  await fs.rename(DOWNLOAD, DESTINATION);
 
   console.log(`Downloaded ${URL}\n        to ${DESTINATION}`);
 } catch (error) {
-  await fs.rm(DOWNLOAD, { force: true });
   console.error(error instanceof Error ? error.message : error);
   process.exitCode = 1;
+} finally {
+  await fs.rm(DOWNLOAD, { force: true });
+  await fs.rm(UNPACKED, { recursive: true, force: true });
 }
