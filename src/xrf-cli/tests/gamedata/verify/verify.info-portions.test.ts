@@ -3,13 +3,14 @@ import { beforeAll, describe, expect, it } from "@jest/globals";
 import { Sandbox, type CliResult } from "#/xrf-cli/test/sandbox";
 
 /**
- * What the `info-portions` check of `gamedata verify` says about a tree whose quest reads portions nothing gives.
+ * What the `info-portions` check of `gamedata verify` says about a tree whose quest reads portions nothing gives and
+ * gives one nothing reads.
  *
  * @remarks
  * The tree is written here, since a portion's givers and readers hold together only across files. The logic reads
  * five portions: a condlist gives one, a dialog gives one, a script gives one by name, one is misspelt from the one
- * the condlist gives, and nothing gives the last. The engine accepts any spelling, so both findings are warnings: the
- * lenient run passes and only `--strict` fails it.
+ * the condlist gives, and nothing gives the last; the condlist also gives `quest_finished`, which nothing reads. The
+ * engine accepts any spelling, so every finding is a warning: the lenient run passes and only `--strict` fails it.
  */
 describe("gamedata verify info-portions", () => {
   const box = new Sandbox(__filename);
@@ -28,7 +29,7 @@ describe("gamedata verify info-portions", () => {
         "on_info3 = {+quest_forgotten} sr_idle@next",
         "",
         "[sr_idle@start]",
-        "on_info = sr_idle@wait %+quest_started%",
+        "on_info = sr_idle@wait %+quest_started +quest_finished%",
         "",
       ].join("\r\n")
     );
@@ -54,7 +55,7 @@ describe("gamedata verify info-portions", () => {
     });
   });
 
-  it("should report the portions read and never given, the misspelt one with its likely spelling", () => {
+  it("should report the portions read and never given, the misspelt one with its likely spelling, and the one never read", () => {
     expect(lenient.exitCode).toBe(0);
     expect(box.json("report.json")).toMatchObject({
       exitCode: 0,
@@ -65,7 +66,7 @@ describe("gamedata verify info-portions", () => {
           {
             id: "info-portions",
             status: "passed",
-            summary: "5 info portions named; 2 read but never given",
+            summary: "6 info portions named; 2 read but never given, 1 given but never read",
             findings: [
               {
                 ruleId: "info-portion.read-only",
@@ -82,6 +83,14 @@ describe("gamedata verify info-portions", () => {
                 message:
                   "Info portion 'quest_strated' is read by [sr_idle@wait] on_info2, but no condlist, dialog or " +
                   "spawned document gives it and no script names it; did you mean 'quest_started'?",
+              },
+              {
+                ruleId: "info-portion.unread",
+                severity: "warning",
+                subject: "configs/scripts/quest.ltx",
+                message:
+                  "Info portion 'quest_finished' is given by [sr_idle@start] on_info, but no condlist, dialog or " +
+                  "script reads it and holding it does nothing",
               },
             ],
           },
