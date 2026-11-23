@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`gamedata verify info-portions should record only the report 1`] = `
+[
+  {
+    "path": "report.json",
+    "sha256": "6153820169ba4ac98299f00393d5a540389506fd44da6a81354a1ef9de49ac3a",
+    "size": 1873,
+  },
+]
+`;
