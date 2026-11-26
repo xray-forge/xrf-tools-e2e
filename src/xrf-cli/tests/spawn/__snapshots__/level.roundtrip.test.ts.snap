@@ -1,0 +1,282 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`spawn level roundtrip should pack the unpacked list back to the same bytes 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Packing <sandbox>/unpacked into <sandbox>/packed.spawn",
+    "Packed <sandbox>/packed.spawn in <duration>",
+  ],
+}
+`;
+
+exports[`spawn level roundtrip should re-unpack the unpacked list to the same files 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Re-unpacking <sandbox>/unpacked into <sandbox>/reunpacked",
+    "Wrote 3 objects typed and 0 verbatim",
+    "Re-unpacked <sandbox>/reunpacked in <duration>",
+  ],
+}
+`;
+
+exports[`spawn level roundtrip should read it as a level's list of the actor and its two graph points 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Read spawn file <sandbox>/gamedata/levels/chain/level.spawn",
+    "Level spawn list information:",
+    "Objects count: 3",
+    "Sections count: 2",
+    "Section 'actor' objects: 1",
+    "Section 'graph_point' objects: 2",
+  ],
+}
+`;
+
+exports[`spawn level roundtrip should repack it in one step to the same bytes 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Repacking <sandbox>/gamedata/levels/chain/level.spawn into <sandbox>/repacked.spawn",
+    "Repacked <sandbox>/repacked.spawn in <duration>",
+  ],
+}
+`;
+
+exports[`spawn level roundtrip should unpack every object typed, none verbatim 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Unpacking <sandbox>/gamedata/levels/chain/level.spawn into <sandbox>/unpacked",
+    "Wrote 3 objects typed and 0 verbatim",
+    "Unpacked <sandbox>/unpacked in <duration>",
+  ],
+}
+`;
+
+exports[`spawn level roundtrip should unpack every object typed, none verbatim 2`] = `
+{
+  "build": {
+    "commit": "<build>",
+    "isDirty": "<build>",
+    "kind": "<build>",
+    "profile": "<build>",
+    "version": "<build>",
+  },
+  "command": [
+    "spawn",
+    "unpack",
+  ],
+  "duration": "<duration>",
+  "execution": {
+    "workers": "<workers>",
+  },
+  "exitCode": 0,
+  "result": {
+    "destination": "<sandbox>/unpacked",
+    "readDuration": "<duration>",
+    "source": "<sandbox>/gamedata/levels/chain/level.spawn",
+    "typedObjects": 3,
+    "verbatimObjects": [],
+    "writeDuration": "<duration>",
+  },
+}
+`;
+
+exports[`spawn level roundtrip should verify it 1`] = `
+{
+  "exitCode": 0,
+  "stderr": [],
+  "stdout": [
+    "Verifying spawn file <sandbox>/gamedata/levels/chain/level.spawn",
+    "Verification of <sandbox>/gamedata/levels/chain/level.spawn: passed",
+  ],
+}
+`;
+
+exports[`spawn level roundtrip should write the expected files 1`] = `
+[
+  {
+    "path": "build.json",
+    "sha256": "d6be006c6f5d645d3c413e0e9abcf56ccc4cfc4e34ef7a50ca87582a23e1aa69",
+    "size": 1871,
+  },
+  {
+    "path": "gamedata/configs/game_levels.ltx",
+    "sha256": "2b69ac2eca0b212bd1d7feb8783f324db8dfd2bc8b44cb236a47868841c00b65",
+    "size": 90,
+  },
+  {
+    "path": "gamedata/gamemtl.xr",
+    "sha256": "1f6e60187743bbca51e8659732a411d01e59ea15a7f2796e2cd09af10bf529a2",
+    "size": 817,
+  },
+  {
+    "path": "gamedata/levels/chain/build.aimap",
+    "sha256": "8a142b0885bef079db2fd500b08bcec91d9a07eb0e4e6c106ce2e2130d542629",
+    "size": 4498,
+  },
+  {
+    "path": "gamedata/levels/chain/build.details",
+    "sha256": "4a29e0e9ba1ec0a9bd7c41ed6ba7e92f61b8c080e1bf8b79bf45b34a2291c497",
+    "size": 544,
+  },
+  {
+    "path": "gamedata/levels/chain/build.prj",
+    "sha256": "054fa1272072112880762b247dd667020c817486559366e4e7d28041cc3d1523",
+    "size": 29252,
+  },
+  {
+    "path": "gamedata/levels/chain/build_details.dds",
+    "sha256": "a0329bda3e13feca63459600b87db3599f03e2dd347e3f6438f81a0208c8b847",
+    "size": 43832,
+  },
+  {
+    "path": "gamedata/levels/chain/level.env_mod",
+    "sha256": "5c46bfd7cb30073765e4cf6499d6f68c99c732b668654064363d195557db25e8",
+    "size": 12,
+  },
+  {
+    "path": "gamedata/levels/chain/level.fog_vol",
+    "sha256": "287a3387a6a65e0b5483d02992ed2649ef4a9f48d79c7c1d3484acfaec7367d3",
+    "size": 6,
+  },
+  {
+    "path": "gamedata/levels/chain/level.game",
+    "sha256": "c3d7e5cf3d22745953a4c1d91240b8739235550b6f7af1dea7b2e80734ee57b2",
+    "size": 16,
+  },
+  {
+    "path": "gamedata/levels/chain/level.ltx",
+    "sha256": "cc0b0d505915c8fa68dea7c3a04a49bbcac0c7531563fb3f421ee80b59c72e5f",
+    "size": 138,
+  },
+  {
+    "path": "gamedata/levels/chain/level.spawn",
+    "sha256": "3f92c53d3ccdbcb7c0f17d09a9b36497784aa657ad96405815404d658d149670",
+    "size": 400,
+  },
+  {
+    "path": "gamedata/shaders_xrlc.xr",
+    "sha256": "c7623e7b18d6d25efce72ffba9867c024091bec05d815e471d99762746b86be0",
+    "size": 288,
+  },
+  {
+    "path": "gamedata/textures/chain/box.thm",
+    "sha256": "6fe18bc7853b60647aebcb4adffda5d01502085d6542f72686a6f7f4ebcd8277",
+    "size": 138,
+  },
+  {
+    "path": "gamedata/textures/chain/ground.thm",
+    "sha256": "6fe18bc7853b60647aebcb4adffda5d01502085d6542f72686a6f7f4ebcd8277",
+    "size": 138,
+  },
+  {
+    "path": "gamedata/textures/detail/detail_grass.dds",
+    "sha256": "d118d5a3c05eb206a58e5aae901071752e30a63dd09663073c6aa6ff5755b091",
+    "size": 4224,
+  },
+  {
+    "path": "info.json",
+    "sha256": "076be9e90e05d2085b8b46d4b14407aaa922fecb784f29234a46a1bde76502c1",
+    "size": 478,
+  },
+  {
+    "path": "pack.json",
+    "sha256": "947f4a1ca553b518a4b130b309e09a8861908c13e48abcf37cc1a06f11aca358",
+    "size": 451,
+  },
+  {
+    "path": "packed.spawn",
+    "sha256": "3f92c53d3ccdbcb7c0f17d09a9b36497784aa657ad96405815404d658d149670",
+    "size": 400,
+  },
+  {
+    "path": "rawdata/levels/chain.level",
+    "sha256": "2464e49eebbc22982e9fc4c4ee19a9e9dff3827731afa0e0ab45f91399057b82",
+    "size": 1640,
+  },
+  {
+    "path": "rawdata/levels/chain/ai_map.part",
+    "sha256": "2bbf4d81bd5229ce4bffe5d09ecdde538537500c26c6d7fc62851247027d7154",
+    "size": 4803,
+  },
+  {
+    "path": "rawdata/levels/chain/detail_object.part",
+    "sha256": "415bfa0b99ace8e4ab34c61751e17b0a29e404b0a3a7467ce6b79374f67e2aaa",
+    "size": 510,
+  },
+  {
+    "path": "rawdata/levels/chain/light.part",
+    "sha256": "b79faec4c42a8491b0453096e8c98c0a1c66b9f38f915a6f51147a55f6dc422e",
+    "size": 1807,
+  },
+  {
+    "path": "rawdata/levels/chain/scene_object.part",
+    "sha256": "37e6404a90aa7f9b6dc00e8b906830a538905861f20211665c94f4b1e540d0eb",
+    "size": 2341,
+  },
+  {
+    "path": "rawdata/levels/chain/spawn.part",
+    "sha256": "105c6ba7699fff490d6b79b36ca8bd61e674a4a294104a368238e60b5c2f82db",
+    "size": 7211,
+  },
+  {
+    "path": "rawdata/objects/detail/grass.object",
+    "sha256": "b915c47d62edefb88f47a97b0f4c849ed1d39101a276ca76a68f78d0f7c8ac3e",
+    "size": 711,
+  },
+  {
+    "path": "rawdata/objects/levels/chain/box.object",
+    "sha256": "72cd4200cf5b948230b7b2a9cb2a4ca1d3a655ac56f1a82affd032c54456159c",
+    "size": 1642,
+  },
+  {
+    "path": "rawdata/objects/levels/chain/ground.object",
+    "sha256": "f97e5045603245c507fb2f729e280111ff2aeefbe2552e853c1c1c6eacc33dea",
+    "size": 570,
+  },
+  {
+    "path": "repack.json",
+    "sha256": "80879551b44ada647bd4007377d697fad2d0bd33c3a905bd81cbff2758bd9276",
+    "size": 480,
+  },
+  {
+    "path": "repacked.spawn",
+    "sha256": "3f92c53d3ccdbcb7c0f17d09a9b36497784aa657ad96405815404d658d149670",
+    "size": 400,
+  },
+  {
+    "path": "reunpack.json",
+    "sha256": "aa5c6b9e26701fba6da044ec61ca19262b5a5ade50b30c69710a3b99f65842e5",
+    "size": 504,
+  },
+  {
+    "path": "reunpacked/level_spawns.ltx",
+    "sha256": "dbdfad5b1b221005f81716f53b87b30446df95ff4bdb78001dff477a11557db3",
+    "size": 2758,
+  },
+  {
+    "path": "unpack.json",
+    "sha256": "3eddc83f1747d1a34f2176f2a78ac4519602ef74208599e63453bac1df111743",
+    "size": 524,
+  },
+  {
+    "path": "unpacked/level_spawns.ltx",
+    "sha256": "dbdfad5b1b221005f81716f53b87b30446df95ff4bdb78001dff477a11557db3",
+    "size": 2758,
+  },
+  {
+    "path": "verify.json",
+    "sha256": "18fe28563ad104dcb618b0caaac2e3cc7695353e2211d448e8f3974e5e6e1fa1",
+    "size": 538,
+  },
+]
+`;
